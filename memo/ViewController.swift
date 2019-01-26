@@ -14,6 +14,7 @@ class ViewController: UIViewController {
   @IBOutlet var monthLabel: UILabel!
   @IBOutlet var dayLabel: UILabel!
   
+  @IBOutlet var collectionView: UICollectionView!
   @IBOutlet weak var timeLabel: UILabel!
 
   fileprivate let gregorian = Calendar(identifier: .gregorian)
@@ -33,6 +34,9 @@ class ViewController: UIViewController {
     dayLabel.text = getStringDayOfWeek(weekDay: getDayOfWeek(formatter.string(from: Date())))
 
     timeChanger = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.updateTimeLabel), userInfo: nil, repeats: true)
+
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showInputTextViewController))
+    collectionView.addGestureRecognizer(tapGesture)
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +54,16 @@ class ViewController: UIViewController {
     if let timeChanger = self.timeChanger {
       timeChanger.invalidate()
     }
+  }
+}
+
+// MARK: - collectionView와 관련된 함수
+extension ViewController {
+  @objc func showInputTextViewController() {
+    let viewController = self.storyboard?.instantiateViewController(withIdentifier: "InputTextViewController")
+    viewController!.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+    viewController!.modalPresentationStyle = .overCurrentContext
+    self.present(viewController!, animated: true, completion: nil)
   }
 }
 
