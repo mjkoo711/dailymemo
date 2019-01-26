@@ -85,12 +85,21 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJM-Sh-xCC">
+                                        <rect key="frame" x="285" y="37" width="82" height="21"/>
+                                        <color key="backgroundColor" red="0.76618217330000005" green="0.64164052810000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.94886654619999999" green="0.95327824350000001" blue="0.93333119149999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="S2G-FY-aVc" firstAttribute="leading" secondItem="703-uA-LwR" secondAttribute="leadingMargin" id="1Cw-nv-YNV"/>
+                                    <constraint firstAttribute="trailing" secondItem="PJM-Sh-xCC" secondAttribute="trailing" constant="8" id="1R6-9V-cJx"/>
                                     <constraint firstItem="S2G-FY-aVc" firstAttribute="top" secondItem="703-uA-LwR" secondAttribute="top" id="KgI-9K-VcK"/>
                                     <constraint firstItem="S2G-FY-aVc" firstAttribute="leading" secondItem="Cji-4N-CJV" secondAttribute="leading" id="NGQ-nA-Bzm"/>
+                                    <constraint firstAttribute="bottom" secondItem="PJM-Sh-xCC" secondAttribute="bottom" constant="3.5" id="ZiB-qH-wKm"/>
                                     <constraint firstItem="S2G-FY-aVc" firstAttribute="width" secondItem="Cji-4N-CJV" secondAttribute="width" id="m8g-Sj-ZmB"/>
                                     <constraint firstItem="Cji-4N-CJV" firstAttribute="top" secondItem="S2G-FY-aVc" secondAttribute="bottom" constant="3" id="zIM-Gm-D8U"/>
                                 </constraints>
@@ -152,6 +161,7 @@
                         <outlet property="calendarView" destination="Ue5-Zv-IL9" id="Tx8-d0-UUo"/>
                         <outlet property="dayLabel" destination="S2G-FY-aVc" id="k7t-JH-bnD"/>
                         <outlet property="monthLabel" destination="Cji-4N-CJV" id="JVa-Xn-w1W"/>
+                        <outlet property="timeLabel" destination="PJM-Sh-xCC" id="kZu-Vz-n1M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

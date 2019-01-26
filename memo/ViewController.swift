@@ -14,6 +14,8 @@ class ViewController: UIViewController {
   @IBOutlet var monthLabel: UILabel!
   @IBOutlet var dayLabel: UILabel!
   
+  @IBOutlet weak var timeLabel: UILabel!
+
   fileprivate let gregorian = Calendar(identifier: .gregorian)
   fileprivate let formatter: DateFormatter = {
     let formatter = DateFormatter()
@@ -21,21 +23,46 @@ class ViewController: UIViewController {
     return formatter
   }()
 
+  let clock = Clock()
+  var timeChanger: Timer?
+
   override func viewDidLoad() {
     super.viewDidLoad()
     calendarView.placeholderType = .none
     monthLabel.text = formatter.string(from: Date())
     dayLabel.text = getStringDayOfWeek(weekDay: getDayOfWeek(formatter.string(from: Date())))
+
+    timeChanger = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.updateTimeLabel), userInfo: nil, repeats: true)
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    updateTimeLabel()
   }
 
   @IBAction func todayTapped(_ sender: Any) {
-    print("HI")
     calendarView.setCurrentPage(Date(), animated: false)
     calendarView.select(Date())
     monthLabel.text = formatter.string(from: Date())
   }
+
+  deinit {
+    if let timeChanger = self.timeChanger {
+      timeChanger.invalidate()
+    }
+  }
 }
 
+// MARK: - 시간 보여주는 함수
+extension ViewController {
+  @objc private func updateTimeLabel() {
+    let format = DateFormatter()
+    format.timeStyle = .medium
+    timeLabel.text = format.string(from: clock.currentTime())
+  }
+}
+
+// MARK: - FSCalendarDelegate 함수
 extension ViewController: FSCalendarDelegate {
   func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
     monthLabel.text = formatter.string(from: date)
@@ -43,6 +70,7 @@ extension ViewController: FSCalendarDelegate {
   }
 }
 
+// MARK: - 문자열 변환 함수
 extension ViewController {
   private func getStringYear(year: String) -> String {
     switch year {
