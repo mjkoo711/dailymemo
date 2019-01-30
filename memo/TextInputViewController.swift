@@ -17,6 +17,7 @@ class TextInputViewController: UIViewController {
   @IBOutlet var textField: UITextField!
 
   var date: String?
+  var time: String?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -51,6 +52,11 @@ extension TextInputViewController {
 
 extension TextInputViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    if let inputText = textField.text, let date = self.date, let time = self.time {
+      let text = Text(string: inputText, createdAt: date + " " + time)
+      let textManager = TextManager()
+      textManager.recordText(key: date, text: text)
+    }
     self.dismiss(animated: false, completion: nil)
     return true
   }

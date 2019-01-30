@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+struct Text: Codable {
+  var string: String
+  var createdAt: String
+
+  init(string: String, createdAt: String) {
+    self.string = string
+    self.createdAt = createdAt
+  }
+}
