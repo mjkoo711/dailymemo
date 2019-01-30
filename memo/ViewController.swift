@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     calendarView.placeholderType = .none
     monthLabel.text = formatter.string(from: Date())
-    dayLabel.text = getStringDayOfWeek(weekDay: getDayOfWeek(formatter.string(from: Date())))
+    dayLabel.text = DateManager().getStringDayOfWeek(weekDay: DateManager().getDayOfWeek(formatter.string(from: Date())))
 
     timeChanger = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.updateTimeLabel), userInfo: nil, repeats: true)
 
@@ -42,6 +42,11 @@ class ViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     updateTimeLabel()
+    let textManager = TextManager()
+    if let date = monthLabel.text {
+      let temp: [Text] = textManager.loadTextList(key: date)
+      dump(temp)
+    }
   }
 
   @IBAction func todayTapped(_ sender: Any) {
@@ -64,6 +69,7 @@ extension ViewController {
     viewController.modalTransitionStyle = UIModalTransitionStyle.coverVertical
     viewController.modalPresentationStyle = .overCurrentContext
     viewController.date = monthLabel.text
+    viewController.time = timeLabel.text
     self.present(viewController, animated: false, completion: nil)
   }
 }
@@ -81,68 +87,6 @@ extension ViewController {
 extension ViewController: FSCalendarDelegate {
   func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
     monthLabel.text = formatter.string(from: date)
-    dayLabel.text = getStringDayOfWeek(weekDay: getDayOfWeek(formatter.string(from: date)))
-  }
-}
-
-// MARK: - 문자열 변환 함수
-extension ViewController {
-  private func getStringYear(year: String) -> String {
-    switch year {
-    case "01":
-      return "January"
-    case "02":
-      return "Fabruary"
-    case "03":
-      return "March"
-    case "04":
-      return "April"
-    case "05":
-      return "May"
-    case "06":
-      return "June"
-    case "07":
-      return "July"
-    case "08":
-      return "August"
-    case "09":
-      return "September"
-    case "10":
-      return "October"
-    case "11":
-      return "November"
-    case "12":
-      return "December"
-    default:
-      return ""
-    }
-  }
-
-  private func getStringDayOfWeek(weekDay: Int) -> String {
-    switch weekDay {
-    case 1:
-      return "Sunday"
-    case 2:
-      return "Monday"
-    case 3:
-      return "Tuesday"
-    case 4:
-      return "Wednesday"
-    case 5:
-      return "Thursday"
-    case 6:
-      return "Friday"
-    case 7:
-      return "Saturday"
-    default:
-      return ""
-    }
-  }
-
-  func getDayOfWeek(_ today:String) -> Int { // yyyy-MM-dd
-    let todayDate = formatter.date(from: today)
-    let myCalendar = Calendar(identifier: .gregorian)
-    let weekDay = myCalendar.component(.weekday, from: todayDate!)
-    return weekDay
+    dayLabel.text = DateManager().getStringDayOfWeek(weekDay: DateManager().getDayOfWeek(formatter.string(from: date)))
   }
 }
