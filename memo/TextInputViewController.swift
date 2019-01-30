@@ -18,10 +18,13 @@ class TextInputViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    settingKeyboard()
 
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(returnMainViewController))
     grayAreaView.addGestureRecognizer(tapGesture)
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    settingKeyboard()
   }
 
   private func settingKeyboard() {
