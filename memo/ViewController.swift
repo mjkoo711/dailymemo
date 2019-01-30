@@ -63,7 +63,7 @@ extension ViewController {
     let viewController = self.storyboard?.instantiateViewController(withIdentifier: "InputTextViewController")
     viewController!.modalTransitionStyle = UIModalTransitionStyle.coverVertical
     viewController!.modalPresentationStyle = .overCurrentContext
-    self.present(viewController!, animated: true, completion: nil)
+    self.present(viewController!, animated: false, completion: nil)
   }
 }
 
