@@ -53,6 +53,7 @@ class ViewController: UIViewController {
     calendarView.setCurrentPage(Date(), animated: false)
     calendarView.select(Date())
     monthLabel.text = formatter.string(from: Date())
+    dayLabel.text = DateManager().getStringDayOfWeek(weekDay: DateManager().getDayOfWeek(formatter.string(from: Date())))
   }
 
   deinit {
