@@ -60,10 +60,11 @@ class ViewController: UIViewController {
 // MARK: - collectionView와 관련된 함수
 extension ViewController {
   @objc func showInputTextViewController() {
-    let viewController = self.storyboard?.instantiateViewController(withIdentifier: "InputTextViewController")
-    viewController!.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-    viewController!.modalPresentationStyle = .overCurrentContext
-    self.present(viewController!, animated: false, completion: nil)
+    let viewController = self.storyboard?.instantiateViewController(withIdentifier: "InputTextViewController") as! TextInputViewController
+    viewController.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+    viewController.modalPresentationStyle = .overCurrentContext
+    viewController.date = monthLabel.text
+    self.present(viewController, animated: false, completion: nil)
   }
 }
 

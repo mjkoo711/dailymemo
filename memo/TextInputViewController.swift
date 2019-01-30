@@ -16,11 +16,17 @@ class TextInputViewController: UIViewController {
 
   @IBOutlet var textField: UITextField!
 
+  var date: String?
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    textField.delegate = self
+
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(returnMainViewController))
     grayAreaView.addGestureRecognizer(tapGesture)
+
+    print(self.date ?? "")
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -40,5 +46,12 @@ extension TextInputViewController {
   @objc func returnMainViewController() {
     textField.resignFirstResponder()
     self.dismiss(animated: false, completion: nil)
+  }
+}
+
+extension TextInputViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    self.dismiss(animated: false, completion: nil)
+    return true
   }
 }
