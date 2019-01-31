@@ -13,7 +13,7 @@
         <!--Data Source-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" id="BYZ-38-t0r" customClass="MainViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,21 +22,42 @@
                                 <rect key="frame" x="0.0" y="83" width="375" height="316"/>
                                 <color key="backgroundColor" red="0.94886654619999999" green="0.95327824350000001" blue="0.93333119149999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ce1-cr-MMb">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="375" height="30"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wX9-vs-pSj">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TextCell" id="wX9-vs-pSj" customClass="TextCollectionViewCell" customModule="memo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Py-IL-e9i">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="1Py-IL-e9i" secondAttribute="trailing" id="8kl-CO-DWg"/>
+                                            <constraint firstItem="1Py-IL-e9i" firstAttribute="top" secondItem="wX9-vs-pSj" secondAttribute="top" id="9Hb-tv-C9I"/>
+                                            <constraint firstItem="1Py-IL-e9i" firstAttribute="leading" secondItem="wX9-vs-pSj" secondAttribute="leading" id="Lhj-VS-3Qk"/>
+                                            <constraint firstAttribute="bottom" secondItem="1Py-IL-e9i" secondAttribute="bottom" id="lRo-P1-eyT"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="textLabel" destination="1Py-IL-e9i" id="DhP-ae-C8V"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="5Q8-6W-nBQ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="2Jg-3w-nk7"/>
+                                </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ue5-Zv-IL9" customClass="FSCalendar">
                                 <rect key="frame" x="0.0" y="399" width="375" height="174.5"/>
@@ -85,9 +106,16 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJM-Sh-xCC">
-                                        <rect key="frame" x="285" y="37" width="82" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJM-Sh-xCC">
+                                        <rect key="frame" x="325" y="38.5" width="42" height="21"/>
                                         <color key="backgroundColor" red="0.76618217330000005" green="0.64164052810000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKe-hV-XoI">
+                                        <rect key="frame" x="321" y="15.5" width="46" height="21"/>
+                                        <color key="backgroundColor" red="0.12696174839999999" green="1" blue="0.1245767076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -99,6 +127,8 @@
                                     <constraint firstAttribute="trailing" secondItem="PJM-Sh-xCC" secondAttribute="trailing" constant="8" id="1R6-9V-cJx"/>
                                     <constraint firstItem="S2G-FY-aVc" firstAttribute="top" secondItem="703-uA-LwR" secondAttribute="top" id="KgI-9K-VcK"/>
                                     <constraint firstItem="S2G-FY-aVc" firstAttribute="leading" secondItem="Cji-4N-CJV" secondAttribute="leading" id="NGQ-nA-Bzm"/>
+                                    <constraint firstItem="PJM-Sh-xCC" firstAttribute="top" secondItem="fKe-hV-XoI" secondAttribute="bottom" constant="2" id="Slh-6C-OcD"/>
+                                    <constraint firstAttribute="trailing" secondItem="fKe-hV-XoI" secondAttribute="trailing" constant="8" id="VOW-fm-N9b"/>
                                     <constraint firstAttribute="bottom" secondItem="PJM-Sh-xCC" secondAttribute="bottom" constant="3.5" id="ZiB-qH-wKm"/>
                                     <constraint firstItem="S2G-FY-aVc" firstAttribute="width" secondItem="Cji-4N-CJV" secondAttribute="width" id="m8g-Sj-ZmB"/>
                                     <constraint firstItem="Cji-4N-CJV" firstAttribute="top" secondItem="S2G-FY-aVc" secondAttribute="bottom" constant="3" id="zIM-Gm-D8U"/>
@@ -163,16 +193,19 @@
                         <outlet property="dayLabel" destination="S2G-FY-aVc" id="k7t-JH-bnD"/>
                         <outlet property="monthLabel" destination="Cji-4N-CJV" id="JVa-Xn-w1W"/>
                         <outlet property="timeLabel" destination="PJM-Sh-xCC" id="kZu-Vz-n1M"/>
+                        <outlet property="todayLabel" destination="fKe-hV-XoI" id="YKu-K8-7xG"/>
+                        <segue destination="tn0-Aa-Vxe" kind="presentation" identifier="textInputSegue" id="XST-5e-hpe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="ZUu-MW-cpV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1072.8" y="133.5832083958021"/>
         </scene>
         <!--Text Input View Controller-->
         <scene sceneID="wuR-WJ-56r">
             <objects>
-                <viewController storyboardIdentifier="InputTextViewController" id="tn0-Aa-Vxe" customClass="TextInputViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InputTextViewController" modalPresentationStyle="overCurrentContext" id="tn0-Aa-Vxe" customClass="TextInputViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="neO-nE-iJE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,6 +252,7 @@
                         <outlet property="grayAreaView" destination="IMM-rN-nXj" id="pIL-aX-gRo"/>
                         <outlet property="textField" destination="Cn1-j2-8pK" id="Kha-NC-kUG"/>
                         <outlet property="textInputAreaView" destination="fzK-Fi-h80" id="qAW-Vg-k3G"/>
+                        <segue destination="ZUu-MW-cpV" kind="unwind" identifier="unwindMainVC" unwindAction="unwindMainViewControllerWithSegue:" id="CeS-yn-xQA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PtB-oR-vXq" userLabel="First Responder" sceneMemberID="firstResponder"/>

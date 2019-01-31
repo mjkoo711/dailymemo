@@ -9,6 +9,10 @@
 import UIKit
 import IQKeyboardManagerSwift
 
+protocol TextInputViewControllerDelegate {
+  func reloadCollectionView(date: String)
+}
+
 class TextInputViewController: UIViewController {
   @IBOutlet var grayAreaView: UIView!
   @IBOutlet var textInputAreaView: UIView!
@@ -16,11 +20,20 @@ class TextInputViewController: UIViewController {
 
   @IBOutlet var textField: UITextField!
 
+  var date: String?
+  var time: String?
+
+  var delegate: TextInputViewControllerDelegate?
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    textField.delegate = self
+
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(returnMainViewController))
     grayAreaView.addGestureRecognizer(tapGesture)
+
+    print(self.date ?? "")
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +52,21 @@ class TextInputViewController: UIViewController {
 extension TextInputViewController {
   @objc func returnMainViewController() {
     textField.resignFirstResponder()
-    self.dismiss(animated: false, completion: nil)
+    if let date = date {
+      self.delegate?.reloadCollectionView(date: date)
+    }
+    performSegue(withIdentifier: "unwindMainVC", sender: self)
+  }
+}
+
+extension TextInputViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    if let inputText = textField.text, let date = self.date, let time = self.time {
+      let text = Text(string: inputText, createdAt: date + " " + time)
+      let textManager = TextManager()
+      textManager.recordText(key: date, text: text)
+    }
+    returnMainViewController()
+    return true
   }
 }
