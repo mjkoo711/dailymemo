@@ -35,7 +35,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Py-IL-e9i">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Py-IL-e9i">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -217,7 +217,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzK-Fi-h80">
                                 <rect key="frame" x="0.0" y="628" width="375" height="39"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cn1-j2-8pK">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Cn1-j2-8pK">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -226,10 +226,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Cn1-j2-8pK" secondAttribute="bottom" id="88P-R0-qCC"/>
-                                    <constraint firstAttribute="trailing" secondItem="Cn1-j2-8pK" secondAttribute="trailing" id="Xow-oL-lek"/>
-                                    <constraint firstItem="Cn1-j2-8pK" firstAttribute="leading" secondItem="fzK-Fi-h80" secondAttribute="leading" id="aAq-Ue-Den"/>
-                                    <constraint firstItem="Cn1-j2-8pK" firstAttribute="top" secondItem="fzK-Fi-h80" secondAttribute="top" id="woc-PX-88j"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cn1-j2-8pK" secondAttribute="trailing" id="6us-zw-TWP"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cn1-j2-8pK" secondAttribute="bottom" id="PLf-1I-QrS"/>
+                                    <constraint firstItem="Cn1-j2-8pK" firstAttribute="height" secondItem="fzK-Fi-h80" secondAttribute="height" id="XWj-Fo-rgn"/>
+                                    <constraint firstItem="Cn1-j2-8pK" firstAttribute="leading" secondItem="fzK-Fi-h80" secondAttribute="leading" id="ejd-jH-Vil"/>
+                                    <constraint firstItem="Cn1-j2-8pK" firstAttribute="top" secondItem="fzK-Fi-h80" secondAttribute="top" id="i3A-Fl-ioE"/>
+                                    <constraint firstItem="Cn1-j2-8pK" firstAttribute="width" secondItem="fzK-Fi-h80" secondAttribute="width" id="vzY-tk-g16"/>
                                 </constraints>
                             </view>
                         </subviews>

@@ -42,9 +42,7 @@ class TextInputViewController: UIViewController {
 
   private func settingKeyboard() {
     textField.becomeFirstResponder()
-    textField.keyboardToolbar.isHidden = true
     textField.inputAccessoryView = UIView()
-    textField.keyboardDistanceFromTextField = 8;
     textField.returnKeyType = .done
   }
 }
