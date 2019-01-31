@@ -13,7 +13,9 @@ class MainViewController: UIViewController {
   @IBOutlet var calendarView: FSCalendar!
   @IBOutlet var monthLabel: UILabel!
   @IBOutlet var dayLabel: UILabel!
-  
+
+  @IBOutlet var todayLabel: UILabel!
+
   @IBOutlet var collectionView: UICollectionView!
   @IBOutlet weak var timeLabel: UILabel!
 
@@ -53,6 +55,7 @@ class MainViewController: UIViewController {
   }
 
   @IBAction func todayTapped(_ sender: Any) {
+    todayLabel.isHidden = false
     calendarView.setCurrentPage(Date(), animated: false)
     calendarView.select(Date())
     monthLabel.text = formatter.string(from: Date())
@@ -88,9 +91,18 @@ extension MainViewController {
 // MARK: - FSCalendarDelegate 함수
 extension MainViewController: FSCalendarDelegate {
   func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-    monthLabel.text = formatter.string(from: date)
-    dayLabel.text = DateManager().getStringDayOfWeek(weekDay: DateManager().getDayOfWeek(formatter.string(from: date)))
-    reloadCollectionView(date: formatter.string(from: date))
+    let today = formatter.string(from: Date())
+    let selectDay = formatter.string(from: date)
+
+    if today == selectDay {
+      todayLabel.isHidden = false
+    } else {
+      todayLabel.isHidden = true
+    }
+
+    monthLabel.text = selectDay
+    dayLabel.text = DateManager().getStringDayOfWeek(weekDay: DateManager().getDayOfWeek(selectDay))
+    reloadCollectionView(date: selectDay)
   }
 }
 

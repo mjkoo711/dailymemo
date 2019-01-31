@@ -106,9 +106,16 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJM-Sh-xCC">
-                                        <rect key="frame" x="285" y="37" width="82" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJM-Sh-xCC">
+                                        <rect key="frame" x="325" y="38.5" width="42" height="21"/>
                                         <color key="backgroundColor" red="0.76618217330000005" green="0.64164052810000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKe-hV-XoI">
+                                        <rect key="frame" x="321" y="15.5" width="46" height="21"/>
+                                        <color key="backgroundColor" red="0.12696174839999999" green="1" blue="0.1245767076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -120,6 +127,8 @@
                                     <constraint firstAttribute="trailing" secondItem="PJM-Sh-xCC" secondAttribute="trailing" constant="8" id="1R6-9V-cJx"/>
                                     <constraint firstItem="S2G-FY-aVc" firstAttribute="top" secondItem="703-uA-LwR" secondAttribute="top" id="KgI-9K-VcK"/>
                                     <constraint firstItem="S2G-FY-aVc" firstAttribute="leading" secondItem="Cji-4N-CJV" secondAttribute="leading" id="NGQ-nA-Bzm"/>
+                                    <constraint firstItem="PJM-Sh-xCC" firstAttribute="top" secondItem="fKe-hV-XoI" secondAttribute="bottom" constant="2" id="Slh-6C-OcD"/>
+                                    <constraint firstAttribute="trailing" secondItem="fKe-hV-XoI" secondAttribute="trailing" constant="8" id="VOW-fm-N9b"/>
                                     <constraint firstAttribute="bottom" secondItem="PJM-Sh-xCC" secondAttribute="bottom" constant="3.5" id="ZiB-qH-wKm"/>
                                     <constraint firstItem="S2G-FY-aVc" firstAttribute="width" secondItem="Cji-4N-CJV" secondAttribute="width" id="m8g-Sj-ZmB"/>
                                     <constraint firstItem="Cji-4N-CJV" firstAttribute="top" secondItem="S2G-FY-aVc" secondAttribute="bottom" constant="3" id="zIM-Gm-D8U"/>
@@ -184,6 +193,7 @@
                         <outlet property="dayLabel" destination="S2G-FY-aVc" id="k7t-JH-bnD"/>
                         <outlet property="monthLabel" destination="Cji-4N-CJV" id="JVa-Xn-w1W"/>
                         <outlet property="timeLabel" destination="PJM-Sh-xCC" id="kZu-Vz-n1M"/>
+                        <outlet property="todayLabel" destination="fKe-hV-XoI" id="YKu-K8-7xG"/>
                         <segue destination="tn0-Aa-Vxe" kind="presentation" identifier="textInputSegue" id="XST-5e-hpe"/>
                     </connections>
                 </viewController>
