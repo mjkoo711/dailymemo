@@ -30,6 +30,7 @@ class MainViewController: UIViewController {
   var timeChanger: Timer?
 
   var textList: [Text] = []
+  private let leftRightMargin: CGFloat = 12.0
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -38,6 +39,14 @@ class MainViewController: UIViewController {
     dayLabel.text = DateManager().getStringDayOfWeek(weekDay: DateManager().getDayOfWeek(formatter.string(from: Date())))
 
     timeChanger = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(MainViewController.updateTimeLabel), userInfo: nil, repeats: true)
+
+    collectionView.register(UINib.init(nibName: "TextCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TextCell")
+
+    collectionView.dataSource = self
+
+    if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+      flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
+    }
 
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showInputTextViewController))
     collectionView.addGestureRecognizer(tapGesture)
@@ -130,7 +139,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextCell", for: indexPath) as! TextCollectionViewCell
 
-    cell.textLabel.text = textList[indexPath.row].string
+    cell.descriptionLabel.text = textList[indexPath.row].string
+    cell.widthConstraint.constant = collectionView.frame.size.width - 2.0 * leftRightMargin
     return cell
   }
 }

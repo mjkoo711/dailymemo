@@ -10,11 +10,12 @@
 		DF191B90BF36C3030333F89D /* Pods_memo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A59B9B7599E790392A2260F /* Pods_memo.framework */; };
 		E20CE65321FD8E0300FF495E /* TextInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20CE65221FD8E0300FF495E /* TextInputViewController.swift */; };
 		E21E11F121FC2485004BBFD9 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E11F021FC2485004BBFD9 /* Clock.swift */; };
+		E2C4D21E220342120071990E /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C4D21C220342120071990E /* TextCollectionViewCell.swift */; };
+		E2C4D21F220342120071990E /* TextCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2C4D21D220342120071990E /* TextCollectionViewCell.xib */; };
 		E2E3C3D7220175A500C74C57 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3D6220175A500C74C57 /* Text.swift */; };
 		E2E3C3D92201767600C74C57 /* TextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3D82201767600C74C57 /* TextManager.swift */; };
 		E2E3C3DB22017A2100C74C57 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3DA22017A2100C74C57 /* UserDefaultsExtension.swift */; };
 		E2E3C3DD2201839B00C74C57 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3DC2201839B00C74C57 /* DateManager.swift */; };
-		E2EA66942202ABAA008FA182 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA66932202ABAA008FA182 /* TextCollectionViewCell.swift */; };
 		E2F36CF421FAE0FA00A9C24C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F36CF321FAE0FA00A9C24C /* AppDelegate.swift */; };
 		E2F36CF621FAE0FA00A9C24C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F36CF521FAE0FA00A9C24C /* MainViewController.swift */; };
 		E2F36CF921FAE0FA00A9C24C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F36CF721FAE0FA00A9C24C /* Main.storyboard */; };
@@ -28,11 +29,12 @@
 		7C0BA77D5BF37360BE2D4CF1 /* Pods-memo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-memo/Pods-memo.debug.xcconfig"; sourceTree = "<group>"; };
 		E20CE65221FD8E0300FF495E /* TextInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputViewController.swift; sourceTree = "<group>"; };
 		E21E11F021FC2485004BBFD9 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		E2C4D21C220342120071990E /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
+		E2C4D21D220342120071990E /* TextCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextCollectionViewCell.xib; sourceTree = "<group>"; };
 		E2E3C3D6220175A500C74C57 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		E2E3C3D82201767600C74C57 /* TextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextManager.swift; sourceTree = "<group>"; };
 		E2E3C3DA22017A2100C74C57 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		E2E3C3DC2201839B00C74C57 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
-		E2EA66932202ABAA008FA182 /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
 		E2F36CF021FAE0FA00A9C24C /* memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F36CF321FAE0FA00A9C24C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2F36CF521FAE0FA00A9C24C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -96,7 +98,8 @@
 				E2E3C3D82201767600C74C57 /* TextManager.swift */,
 				E2E3C3DA22017A2100C74C57 /* UserDefaultsExtension.swift */,
 				E2E3C3DC2201839B00C74C57 /* DateManager.swift */,
-				E2EA66932202ABAA008FA182 /* TextCollectionViewCell.swift */,
+				E2C4D21C220342120071990E /* TextCollectionViewCell.swift */,
+				E2C4D21D220342120071990E /* TextCollectionViewCell.xib */,
 			);
 			path = memo;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				E2F36CFE21FAE0FD00A9C24C /* LaunchScreen.storyboard in Resources */,
 				E2F36CFB21FAE0FD00A9C24C /* Assets.xcassets in Resources */,
 				E2F36CF921FAE0FA00A9C24C /* Main.storyboard in Resources */,
+				E2C4D21F220342120071990E /* TextCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,7 +242,7 @@
 				E2F36CF621FAE0FA00A9C24C /* MainViewController.swift in Sources */,
 				E2E3C3DD2201839B00C74C57 /* DateManager.swift in Sources */,
 				E2E3C3DB22017A2100C74C57 /* UserDefaultsExtension.swift in Sources */,
-				E2EA66942202ABAA008FA182 /* TextCollectionViewCell.swift in Sources */,
+				E2C4D21E220342120071990E /* TextCollectionViewCell.swift in Sources */,
 				E2F36CF421FAE0FA00A9C24C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
