@@ -167,6 +167,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="ZUu-MW-cpV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1072.8" y="133.5832083958021"/>
         </scene>
@@ -220,6 +221,7 @@
                         <outlet property="grayAreaView" destination="IMM-rN-nXj" id="pIL-aX-gRo"/>
                         <outlet property="textField" destination="Cn1-j2-8pK" id="Kha-NC-kUG"/>
                         <outlet property="textInputAreaView" destination="fzK-Fi-h80" id="qAW-Vg-k3G"/>
+                        <segue destination="ZUu-MW-cpV" kind="unwind" identifier="unwindMainVC" unwindAction="unwindMainViewControllerWithSegue:" id="CeS-yn-xQA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PtB-oR-vXq" userLabel="First Responder" sceneMemberID="firstResponder"/>

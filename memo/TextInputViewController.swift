@@ -52,9 +52,8 @@ class TextInputViewController: UIViewController {
 extension TextInputViewController {
   @objc func returnMainViewController() {
     textField.resignFirstResponder()
-    self.dismiss(animated: false, completion: {
-      self.delegate?.reloadCollectionView()
-    })
+    self.delegate?.reloadCollectionView()
+    performSegue(withIdentifier: "unwindMainVC", sender: self)
   }
 }
 

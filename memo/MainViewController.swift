@@ -56,6 +56,8 @@ class MainViewController: UIViewController {
     dayLabel.text = DateManager().getStringDayOfWeek(weekDay: DateManager().getDayOfWeek(formatter.string(from: Date())))
   }
 
+  @IBAction func unwindMainViewController(segue: UIStoryboardSegue) {}
+
   deinit {
     if let timeChanger = self.timeChanger {
       timeChanger.invalidate()
@@ -95,6 +97,8 @@ extension MainViewController: TextInputViewControllerDelegate {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "textInputSegue" {
       let viewController: TextInputViewController = segue.destination as! TextInputViewController
+      viewController.date = monthLabel.text
+      viewController.time = timeLabel.text
       viewController.delegate = self
     }
   }
