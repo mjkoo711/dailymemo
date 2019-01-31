@@ -66,7 +66,7 @@ class MainViewController: UIViewController {
 // MARK: - collectionView와 관련된 함수
 extension MainViewController {
   @objc func showInputTextViewController() {
-    performSegue(withIdentifier: "show", sender: self)
+    performSegue(withIdentifier: "textInputSegue", sender: self)
   }
 }
 
