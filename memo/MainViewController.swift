@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  memo
 //
 //  Created by MinJun KOO on 25/01/2019.
@@ -9,7 +9,7 @@
 import UIKit
 import FSCalendar
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
   @IBOutlet var calendarView: FSCalendar!
   @IBOutlet var monthLabel: UILabel!
   @IBOutlet var dayLabel: UILabel!
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     monthLabel.text = formatter.string(from: Date())
     dayLabel.text = DateManager().getStringDayOfWeek(weekDay: DateManager().getDayOfWeek(formatter.string(from: Date())))
 
-    timeChanger = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.updateTimeLabel), userInfo: nil, repeats: true)
+    timeChanger = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(MainViewController.updateTimeLabel), userInfo: nil, repeats: true)
 
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showInputTextViewController))
     collectionView.addGestureRecognizer(tapGesture)
@@ -64,14 +64,14 @@ class ViewController: UIViewController {
 }
 
 // MARK: - collectionView와 관련된 함수
-extension ViewController {
+extension MainViewController {
   @objc func showInputTextViewController() {
     performSegue(withIdentifier: "show", sender: self)
   }
 }
 
 // MARK: - 시간 보여주는 함수
-extension ViewController {
+extension MainViewController {
   @objc private func updateTimeLabel() {
     let format = DateFormatter()
     format.timeStyle = .medium
@@ -80,21 +80,20 @@ extension ViewController {
 }
 
 // MARK: - FSCalendarDelegate 함수
-extension ViewController: FSCalendarDelegate {
+extension MainViewController: FSCalendarDelegate {
   func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
     monthLabel.text = formatter.string(from: date)
     dayLabel.text = DateManager().getStringDayOfWeek(weekDay: DateManager().getDayOfWeek(formatter.string(from: date)))
   }
 }
 
-
-extension ViewController: TextInputViewControllerDelegate {
+extension MainViewController: TextInputViewControllerDelegate {
   func reloadCollectionView() {
     collectionView.reloadData()
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "show" {
+    if segue.identifier == "textInputSegue" {
       let viewController: TextInputViewController = segue.destination as! TextInputViewController
       viewController.delegate = self
     }
