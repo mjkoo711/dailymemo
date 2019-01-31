@@ -13,7 +13,7 @@
         <!--Data Source-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,6 +163,7 @@
                         <outlet property="dayLabel" destination="S2G-FY-aVc" id="k7t-JH-bnD"/>
                         <outlet property="monthLabel" destination="Cji-4N-CJV" id="JVa-Xn-w1W"/>
                         <outlet property="timeLabel" destination="PJM-Sh-xCC" id="kZu-Vz-n1M"/>
+                        <segue destination="tn0-Aa-Vxe" kind="presentation" identifier="show" id="XST-5e-hpe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -172,7 +173,7 @@
         <!--Text Input View Controller-->
         <scene sceneID="wuR-WJ-56r">
             <objects>
-                <viewController storyboardIdentifier="InputTextViewController" id="tn0-Aa-Vxe" customClass="TextInputViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InputTextViewController" modalPresentationStyle="overCurrentContext" id="tn0-Aa-Vxe" customClass="TextInputViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="neO-nE-iJE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
