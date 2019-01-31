@@ -10,4 +10,13 @@ import UIKit
 
 class TextCollectionViewCell: UICollectionViewCell {
   @IBOutlet var textLabel: UILabel!
+
+  override func awakeFromNib() {
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleCell))
+    self.addGestureRecognizer(tapGesture)
+  }
+
+  @objc func handleCell() {
+    print("KOO")
+  }
 }
