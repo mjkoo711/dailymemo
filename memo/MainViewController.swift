@@ -27,6 +27,8 @@ class MainViewController: UIViewController {
   let clock = Clock()
   var timeChanger: Timer?
 
+  var textList: [Text] = []
+
   override func viewDidLoad() {
     super.viewDidLoad()
     calendarView.placeholderType = .none
@@ -37,6 +39,7 @@ class MainViewController: UIViewController {
 
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showInputTextViewController))
     collectionView.addGestureRecognizer(tapGesture)
+    reloadCollectionView(date: formatter.string(from: Date()))
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +57,7 @@ class MainViewController: UIViewController {
     calendarView.select(Date())
     monthLabel.text = formatter.string(from: Date())
     dayLabel.text = DateManager().getStringDayOfWeek(weekDay: DateManager().getDayOfWeek(formatter.string(from: Date())))
+    reloadCollectionView(date: formatter.string(from: Date()))
   }
 
   @IBAction func unwindMainViewController(segue: UIStoryboardSegue) {}
@@ -86,11 +90,13 @@ extension MainViewController: FSCalendarDelegate {
   func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
     monthLabel.text = formatter.string(from: date)
     dayLabel.text = DateManager().getStringDayOfWeek(weekDay: DateManager().getDayOfWeek(formatter.string(from: date)))
+    reloadCollectionView(date: formatter.string(from: date))
   }
 }
 
 extension MainViewController: TextInputViewControllerDelegate {
-  func reloadCollectionView() {
+  func reloadCollectionView(date: String) {
+    textList = TextManager().loadTextList(key: date)
     collectionView.reloadData()
   }
 
@@ -101,5 +107,18 @@ extension MainViewController: TextInputViewControllerDelegate {
       viewController.time = timeLabel.text
       viewController.delegate = self
     }
+  }
+}
+
+extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return textList.count
+  }
+
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextCell", for: indexPath) as! TextCollectionViewCell
+
+    cell.textLabel.text = textList[indexPath.row].string
+    return cell
   }
 }

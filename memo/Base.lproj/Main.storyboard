@@ -22,21 +22,42 @@
                                 <rect key="frame" x="0.0" y="83" width="375" height="316"/>
                                 <color key="backgroundColor" red="0.94886654619999999" green="0.95327824350000001" blue="0.93333119149999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ce1-cr-MMb">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="375" height="30"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wX9-vs-pSj">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TextCell" id="wX9-vs-pSj" customClass="TextCollectionViewCell" customModule="memo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Py-IL-e9i">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="1Py-IL-e9i" secondAttribute="trailing" id="8kl-CO-DWg"/>
+                                            <constraint firstItem="1Py-IL-e9i" firstAttribute="top" secondItem="wX9-vs-pSj" secondAttribute="top" id="9Hb-tv-C9I"/>
+                                            <constraint firstItem="1Py-IL-e9i" firstAttribute="leading" secondItem="wX9-vs-pSj" secondAttribute="leading" id="Lhj-VS-3Qk"/>
+                                            <constraint firstAttribute="bottom" secondItem="1Py-IL-e9i" secondAttribute="bottom" id="lRo-P1-eyT"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="textLabel" destination="1Py-IL-e9i" id="DhP-ae-C8V"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="5Q8-6W-nBQ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="2Jg-3w-nk7"/>
+                                </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ue5-Zv-IL9" customClass="FSCalendar">
                                 <rect key="frame" x="0.0" y="399" width="375" height="174.5"/>

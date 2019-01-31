@@ -10,7 +10,7 @@ import UIKit
 import IQKeyboardManagerSwift
 
 protocol TextInputViewControllerDelegate {
-  func reloadCollectionView()
+  func reloadCollectionView(date: String)
 }
 
 class TextInputViewController: UIViewController {
@@ -52,7 +52,9 @@ class TextInputViewController: UIViewController {
 extension TextInputViewController {
   @objc func returnMainViewController() {
     textField.resignFirstResponder()
-    self.delegate?.reloadCollectionView()
+    if let date = date {
+      self.delegate?.reloadCollectionView(date: date)
+    }
     performSegue(withIdentifier: "unwindMainVC", sender: self)
   }
 }
