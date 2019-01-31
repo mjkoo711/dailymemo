@@ -9,6 +9,10 @@
 import UIKit
 import IQKeyboardManagerSwift
 
+protocol TextInputViewControllerDelegate {
+  func reloadCollectionView()
+}
+
 class TextInputViewController: UIViewController {
   @IBOutlet var grayAreaView: UIView!
   @IBOutlet var textInputAreaView: UIView!
@@ -18,6 +22,8 @@ class TextInputViewController: UIViewController {
 
   var date: String?
   var time: String?
+
+  var delegate: TextInputViewControllerDelegate?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -46,7 +52,9 @@ class TextInputViewController: UIViewController {
 extension TextInputViewController {
   @objc func returnMainViewController() {
     textField.resignFirstResponder()
-    self.dismiss(animated: false, completion: nil)
+    self.dismiss(animated: false, completion: {
+      self.delegate?.reloadCollectionView()
+    })
   }
 }
 
@@ -57,8 +65,7 @@ extension TextInputViewController: UITextFieldDelegate {
       let textManager = TextManager()
       textManager.recordText(key: date, text: text)
     }
-    textField.resignFirstResponder()
-    self.dismiss(animated: false, completion: nil)
+    returnMainViewController()
     return true
   }
 }

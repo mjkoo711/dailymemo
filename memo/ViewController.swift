@@ -86,3 +86,17 @@ extension ViewController: FSCalendarDelegate {
     dayLabel.text = DateManager().getStringDayOfWeek(weekDay: DateManager().getDayOfWeek(formatter.string(from: date)))
   }
 }
+
+
+extension ViewController: TextInputViewControllerDelegate {
+  func reloadCollectionView() {
+    collectionView.reloadData()
+  }
+
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "show" {
+      let viewController: TextInputViewController = segue.destination as! TextInputViewController
+      viewController.delegate = self
+    }
+  }
+}
