@@ -57,6 +57,7 @@ extension TextInputViewController: UITextFieldDelegate {
       let textManager = TextManager()
       textManager.recordText(key: date, text: text)
     }
+    textField.resignFirstResponder()
     self.dismiss(animated: false, completion: nil)
     return true
   }
