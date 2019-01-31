@@ -205,7 +205,7 @@
         <!--Text Input View Controller-->
         <scene sceneID="wuR-WJ-56r">
             <objects>
-                <viewController storyboardIdentifier="InputTextViewController" modalPresentationStyle="overCurrentContext" id="tn0-Aa-Vxe" customClass="TextInputViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InputTextViewController" modalPresentationStyle="overFullScreen" id="tn0-Aa-Vxe" customClass="TextInputViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="neO-nE-iJE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
