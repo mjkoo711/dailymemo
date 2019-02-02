@@ -30,6 +30,7 @@ class MainViewController: UIViewController {
   var timeChanger: Timer?
 
   var textList: [Text] = []
+  private let leftRightMargin: CGFloat = 12.0
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -129,8 +130,14 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextCell", for: indexPath) as! TextCollectionViewCell
-
-    cell.textLabel.text = textList[indexPath.row].string
+    cell.descriptionLabel.text = textList[indexPath.row].string
     return cell
+  }
+}
+
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let height = textList[indexPath.row].string.height(withConstrainedWidth: UIScreen.main.bounds.width, font: UIFont(name: "Helvetica Neue", size: 17)!) + 10
+    return CGSize(width: UIScreen.main.bounds.width, height: height)
   }
 }
