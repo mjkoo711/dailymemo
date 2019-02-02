@@ -144,3 +144,14 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     return cell
   }
 }
+
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextCell", for: indexPath) as! TextCollectionViewCell
+
+    let width = collectionView.frame.size.width - 2.0 * leftRightMargin
+    let height = cell.descriptionLabel.frame.height
+
+    return CGSize(width: width, height: height)
+  }
+}
