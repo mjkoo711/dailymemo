@@ -80,10 +80,10 @@
 		E26636762208A247001D05C8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				E266365F22058BC2001D05C8 /* TextCollectionViewCell.swift */,
 				E2F36CF521FAE0FA00A9C24C /* MainViewController.swift */,
 				E20CE65221FD8E0300FF495E /* TextInputViewController.swift */,
 				E266367422089106001D05C8 /* TextModifyViewController.swift */,
+				E266367B2208A37C001D05C8 /* Cell */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -125,6 +125,14 @@
 				E2663670220871BE001D05C8 /* DayManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		E266367B2208A37C001D05C8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E266365F22058BC2001D05C8 /* TextCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		E2F36CE721FAE0FA00A9C24C = {

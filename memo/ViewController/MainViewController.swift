@@ -76,9 +76,6 @@ class MainViewController: UIViewController {
     textCellSelected = nil
   }
 
-  @IBAction func modifyTapped(_ sender: Any) {
-  }
-
   @IBAction func todayTapped(_ sender: Any) {
     todayLabel.isHidden = false
     calendarView.setCurrentPage(Date(), animated: false)
