@@ -123,7 +123,6 @@
                                             <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="modifyTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kgz-OQ-TyR"/>
                                             <segue destination="1tT-NR-09D" kind="presentation" identifier="textModifySegue" id="lvd-rH-0Fx"/>
                                         </connections>
                                     </button>
