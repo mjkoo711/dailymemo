@@ -10,10 +10,14 @@ import Foundation
 
 struct Text: Codable {
   var string: String
-  var createdAt: String
+  var date: String
+  var time: String
+  var createdAt: String!
 
-  init(string: String, createdAt: String) {
+  init(string: String, date: String, time: String) {
     self.string = string
-    self.createdAt = createdAt
+    self.date = date
+    self.time = time
+    self.createdAt = date + " " + time
   }
 }

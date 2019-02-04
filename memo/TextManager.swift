@@ -9,35 +9,34 @@
 import Foundation
 
 class TextManager {
-  func recordText(dayKey: String, text: Text) {
-    if isExistText(dayKey: dayKey, text: text) {
-      updateText(dayKey: dayKey, text: text)
+  func recordText(date: String, time: String, text: Text) {
+    if isExistText(date: date, time: time, text: text) {
+      updateText(date: date, time: time, text: text)
     } else {
-      insertText(dayKey: dayKey, text: text)
+      insertText(date: date, time: time, text: text)
     }
   }
 
-  func loadTextList(dayKey: String) -> [Text] {
+  func loadTextList(date: String) -> [Text] {
     let manager = DayManager()
     let dayList = manager.loadDayList()
     var textList: [Text] = []
 
     for day in dayList {
-      if day.dayKey == dayKey {
+      if day.date == date {
         textList = day.textList
         break
       }
     }
-
     return textList
   }
 
-  private func isExistText(dayKey: String, text: Text) -> Bool {
+  private func isExistText(date: String, time: String, text: Text) -> Bool {
     let manager = DayManager()
     let dayList = manager.loadDayList()
 
     for day in dayList {
-      if day.dayKey == dayKey && day.textList.count != 0 {
+      if day.date == date && day.textList.count != 0 {
 
         for textItem in day.textList {
           if textItem.createdAt == text.createdAt {
@@ -49,13 +48,13 @@ class TextManager {
     return false
   }
 
-  private func updateText(dayKey: String, text: Text) {
+  private func updateText(date: String, time: String, text: Text) {
     let manager = DayManager()
     let dayList = manager.loadDayList()
     var modifyDay: Day!
 
     for day in dayList {
-      if day.dayKey == dayKey {
+      if day.date == date {
         modifyDay = day
         break
       }
@@ -71,14 +70,14 @@ class TextManager {
     manager.recordDay(day: modifyDay)
   }
 
-  private func insertText(dayKey: String, text: Text) {
+  private func insertText(date: String, time: String, text: Text) {
     let manager = DayManager()
     let dayList = manager.loadDayList()
     var modifyDay: Day!
 
-    if manager.isExistDayInstance(dayKey: dayKey) {
+    if manager.isExistDayInstance(dayKey: date) {
       for day in dayList {
-        if day.dayKey == dayKey {
+        if day.date == date {
           modifyDay = day
           modifyDay.textList.append(text)
           manager.recordDay(day: modifyDay)
@@ -86,19 +85,19 @@ class TextManager {
         }
       }
     } else {
-      modifyDay = Day(date: dayKey, textList: [text])
+      modifyDay = Day(date: date, textList: [text])
       manager.recordDay(day: modifyDay)
     }
   }
 
-  func deleteText(dayKey: String, text: Text) {
+  func deleteText(date: String, time: String, text: Text) {
     let manager = DayManager()
     let dayList = manager.loadDayList()
     var modifyDay: Day!
 
-    if manager.isExistDayInstance(dayKey: dayKey) {
+    if manager.isExistDayInstance(dayKey: date) {
       for day in dayList {
-        if day.dayKey == dayKey {
+        if day.date == date {
           modifyDay = day
           let textList = modifyDay.textList.filter{ $0.createdAt != text.createdAt }
           modifyDay.textList = textList

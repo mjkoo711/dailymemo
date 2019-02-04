@@ -9,11 +9,11 @@
 import Foundation
 
 class Day: Codable {
-  var dayKey: String
+  var date: String
   var textList: [Text]
 
   init(date: String, textList: [Text]) {
-    dayKey = date
+    self.date = date
     self.textList = textList
   }
 }

@@ -1,25 +1,27 @@
 //
-//  TextInputViewController.swift
+//  TextModifyViewController.swift
 //  memo
 //
-//  Created by MinJun KOO on 27/01/2019.
+//  Created by MinJun KOO on 05/02/2019.
 //  Copyright © 2019 mjkoo. All rights reserved.
 //
 
 import UIKit
 
-protocol TextInputViewControllerDelegate {
+protocol TextModifyViewControllerDelegate {
   func reloadCollectionView(date: String)
 }
 
-class TextInputViewController: UIViewController {
+class TextModifyViewController: UIViewController {
   @IBOutlet var grayAreaView: UIView!
   @IBOutlet var textField: UITextField!
 
   var date: String?
   var time: String?
 
-  var delegate: TextInputViewControllerDelegate?
+  var existText: Text?
+
+  var delegate: TextModifyViewControllerDelegate?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -36,12 +38,13 @@ class TextInputViewController: UIViewController {
 
   private func settingKeyboard() {
     textField.becomeFirstResponder()
+    textField.text = existText?.string
     textField.inputAccessoryView = UIView()
     textField.returnKeyType = .done
   }
 }
 
-extension TextInputViewController {
+extension TextModifyViewController {
   @objc func returnMainViewController() {
     textField.resignFirstResponder()
     if let date = date {
@@ -51,12 +54,15 @@ extension TextInputViewController {
   }
 }
 
-extension TextInputViewController: UITextFieldDelegate {
+extension TextModifyViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    if let inputText = textField.text, !inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let date = self.date, let time = self.time {
-      let text = Text(string: inputText, date: date, time: time)
+    if let inputText = textField.text, !inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
       let textManager = TextManager()
-      textManager.recordText(date: date, time: time, text: text)
+
+      if var exist = self.existText {
+        exist.string = inputText
+        textManager.recordText(date: exist.date, time: exist.time, text: exist)
+      }
     }
     returnMainViewController()
     return true

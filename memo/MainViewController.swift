@@ -52,17 +52,28 @@ class MainViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     updateTimeLabel()
-    let textManager = TextManager()
-    if let date = monthLabel.text {
-      let temp: [Text] = textManager.loadTextList(dayKey: date)
-      dump(temp)
+  }
+
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "textInputSegue" {
+      let viewController: TextInputViewController = segue.destination as! TextInputViewController
+      viewController.date = monthLabel.text
+      viewController.time = timeLabel.text
+      viewController.delegate = self
+    } else if segue.identifier == "textModifySegue" {
+      let viewController: TextModifyViewController = segue.destination as! TextModifyViewController
+      viewController.date = monthLabel.text
+      viewController.time = timeLabel.text
+      viewController.existText = textCellSelected
+      viewController.delegate = self
     }
   }
 
   @IBAction func removeTapped(_ sender: Any) {
     let manager = TextManager()
-    manager.deleteText(dayKey: monthLabel.text!, text: textCellSelected!)
+    manager.deleteText(date: monthLabel.text!, time: timeLabel.text!, text: textCellSelected!)
     reloadCollectionView(date: monthLabel.text!)
+    textCellSelected = nil
   }
 
   @IBAction func modifyTapped(_ sender: Any) {
@@ -120,21 +131,12 @@ extension MainViewController: FSCalendarDelegate {
   }
 }
 
-extension MainViewController: TextInputViewControllerDelegate {
+extension MainViewController: TextInputViewControllerDelegate, TextModifyViewControllerDelegate {
   func reloadCollectionView(date: String) {
-    textList = TextManager().loadTextList(dayKey: date)
+    textList = TextManager().loadTextList(date: date)
     collectionView.reloadData()
     removeButton.isHidden = true
     modifyButton.isHidden = true
-  }
-
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "textInputSegue" {
-      let viewController: TextInputViewController = segue.destination as! TextInputViewController
-      viewController.date = monthLabel.text
-      viewController.time = timeLabel.text
-      viewController.delegate = self
-    }
   }
 }
 

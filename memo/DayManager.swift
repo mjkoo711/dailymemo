@@ -33,7 +33,7 @@ class DayManager {
     let dayList = loadDayList()
 
     for dayItem in dayList {
-      if dayItem.dayKey == day.dayKey {
+      if dayItem.date == day.date {
         return true
       }
     }
@@ -44,7 +44,7 @@ class DayManager {
     var dayList = loadDayList()
 
     for index in 0..<dayList.count {
-      if dayList[index].dayKey == day.dayKey {
+      if dayList[index].date == day.date {
         dayList[index] = day
         break
       }
@@ -61,7 +61,7 @@ class DayManager {
 
   private func deleteDay(day: Day) {
     let dayList = loadDayList()
-    saveDayList(dayList: dayList.filter{ $0.dayKey != day.dayKey })
+    saveDayList(dayList: dayList.filter{ $0.date != day.date })
   }
 
   func isExistDayInstance(dayKey: String) -> Bool {
@@ -72,7 +72,7 @@ class DayManager {
     }
 
     for day in dayList {
-      if day.dayKey == dayKey {
+      if day.date == dayKey {
         return true
       }
     }
