@@ -77,6 +77,7 @@ class MainViewController: UIViewController {
   }
 
   @IBAction func todayTapped(_ sender: Any) {
+    Vibration.medium.vibrate()
     todayLabel.isHidden = false
     calendarView.setCurrentPage(Date(), animated: false)
     calendarView.select(Date())
