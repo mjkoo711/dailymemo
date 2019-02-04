@@ -27,15 +27,12 @@ class TextCollectionViewCell: UICollectionViewCell {
   }
 
   @objc func handleCell() {
-    print("KOO")
+    // TODO: 첫번째 클릭시, 두번째 클릭시
   }
 
   @objc func handleLongPress(sender: UILongPressGestureRecognizer) {
     if sender.state == UIGestureRecognizerState.began {
-      print("CreatedAt: \(textInstance.createdAt)")
       delegate?.showEditAndRemoveButton(text: textInstance)
-    } else if sender.state == UIGestureRecognizerState.ended {
-      print("JUN")
     }
   }
 }
