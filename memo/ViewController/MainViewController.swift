@@ -40,7 +40,7 @@ class MainViewController: UIViewController {
     super.viewDidLoad()
     calendarView.placeholderType = .none
     monthLabel.text = formatter.string(from: Date())
-    dayLabel.text = DateManager().getStringDayOfWeek(weekDay: DateManager().getDayOfWeek(formatter.string(from: Date())))
+    dayLabel.text = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(formatter.string(from: Date())))
 
     timeChanger = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(MainViewController.updateTimeLabel), userInfo: nil, repeats: true)
 
@@ -84,7 +84,7 @@ class MainViewController: UIViewController {
     calendarView.setCurrentPage(Date(), animated: false)
     calendarView.select(Date())
     monthLabel.text = formatter.string(from: Date())
-    dayLabel.text = DateManager().getStringDayOfWeek(weekDay: DateManager().getDayOfWeek(formatter.string(from: Date())))
+    dayLabel.text = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(formatter.string(from: Date())))
     reloadCollectionView(date: formatter.string(from: Date()))
   }
 
@@ -126,7 +126,7 @@ extension MainViewController: FSCalendarDelegate {
     }
 
     monthLabel.text = selectDay
-    dayLabel.text = DateManager().getStringDayOfWeek(weekDay: DateManager().getDayOfWeek(selectDay))
+    dayLabel.text = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(selectDay))
     reloadCollectionView(date: selectDay)
   }
 }

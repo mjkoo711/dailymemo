@@ -1,5 +1,5 @@
 //
-//  DateManager.swift
+//  DateStringChanger.swift
 //  memo
 //
 //  Created by MinJun KOO on 30/01/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DateManager {
+class DateStringChanger {
   fileprivate let formatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateFormat = "YYYY-MM-dd"

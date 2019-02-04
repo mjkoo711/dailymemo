@@ -21,7 +21,7 @@
 		E2E3C3D7220175A500C74C57 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3D6220175A500C74C57 /* Text.swift */; };
 		E2E3C3D92201767600C74C57 /* TextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3D82201767600C74C57 /* TextManager.swift */; };
 		E2E3C3DB22017A2100C74C57 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3DA22017A2100C74C57 /* UserDefaultsExtension.swift */; };
-		E2E3C3DD2201839B00C74C57 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3DC2201839B00C74C57 /* DateManager.swift */; };
+		E2E3C3DD2201839B00C74C57 /* DateStringChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3DC2201839B00C74C57 /* DateStringChanger.swift */; };
 		E2F36CF421FAE0FA00A9C24C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F36CF321FAE0FA00A9C24C /* AppDelegate.swift */; };
 		E2F36CF621FAE0FA00A9C24C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F36CF521FAE0FA00A9C24C /* MainViewController.swift */; };
 		E2F36CF921FAE0FA00A9C24C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F36CF721FAE0FA00A9C24C /* Main.storyboard */; };
@@ -46,7 +46,7 @@
 		E2E3C3D6220175A500C74C57 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		E2E3C3D82201767600C74C57 /* TextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextManager.swift; sourceTree = "<group>"; };
 		E2E3C3DA22017A2100C74C57 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
-		E2E3C3DC2201839B00C74C57 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		E2E3C3DC2201839B00C74C57 /* DateStringChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStringChanger.swift; sourceTree = "<group>"; };
 		E2F36CF021FAE0FA00A9C24C /* memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F36CF321FAE0FA00A9C24C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2F36CF521FAE0FA00A9C24C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +77,56 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E26636762208A247001D05C8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E266365F22058BC2001D05C8 /* TextCollectionViewCell.swift */,
+				E2F36CF521FAE0FA00A9C24C /* MainViewController.swift */,
+				E20CE65221FD8E0300FF495E /* TextInputViewController.swift */,
+				E266367422089106001D05C8 /* TextModifyViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E26636772208A25D001D05C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E21E11F021FC2485004BBFD9 /* Clock.swift */,
+				E2E3C3D6220175A500C74C57 /* Text.swift */,
+				E266366E22087162001D05C8 /* Day.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E26636782208A27B001D05C8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E2E3C3DA22017A2100C74C57 /* UserDefaultsExtension.swift */,
+				E266366122059357001D05C8 /* StringExtension.swift */,
+				E26636632205A210001D05C8 /* UIFontExtension.swift */,
+				E26636662205A225001D05C8 /* UILabelExtension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E26636792208A28F001D05C8 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				E266367222087213001D05C8 /* Const.swift */,
+			);
+			path = Const;
+			sourceTree = "<group>";
+		};
+		E266367A2208A2A9001D05C8 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E2E3C3D82201767600C74C57 /* TextManager.swift */,
+				E2E3C3DC2201839B00C74C57 /* DateStringChanger.swift */,
+				E2663670220871BE001D05C8 /* DayManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		E2F36CE721FAE0FA00A9C24C = {
 			isa = PBXGroup;
 			children = (
@@ -98,26 +148,16 @@
 		E2F36CF221FAE0FA00A9C24C /* memo */ = {
 			isa = PBXGroup;
 			children = (
-				E2F36CF321FAE0FA00A9C24C /* AppDelegate.swift */,
-				E2F36CF521FAE0FA00A9C24C /* MainViewController.swift */,
+				E26636762208A247001D05C8 /* ViewController */,
+				E26636792208A28F001D05C8 /* Const */,
+				E26636782208A27B001D05C8 /* Utils */,
+				E26636772208A25D001D05C8 /* Model */,
+				E266367A2208A2A9001D05C8 /* Manager */,
 				E2F36CF721FAE0FA00A9C24C /* Main.storyboard */,
+				E2F36CF321FAE0FA00A9C24C /* AppDelegate.swift */,
 				E2F36CFA21FAE0FD00A9C24C /* Assets.xcassets */,
 				E2F36CFC21FAE0FD00A9C24C /* LaunchScreen.storyboard */,
 				E2F36CFF21FAE0FD00A9C24C /* Info.plist */,
-				E21E11F021FC2485004BBFD9 /* Clock.swift */,
-				E20CE65221FD8E0300FF495E /* TextInputViewController.swift */,
-				E2E3C3D6220175A500C74C57 /* Text.swift */,
-				E2E3C3D82201767600C74C57 /* TextManager.swift */,
-				E2E3C3DA22017A2100C74C57 /* UserDefaultsExtension.swift */,
-				E2E3C3DC2201839B00C74C57 /* DateManager.swift */,
-				E266365F22058BC2001D05C8 /* TextCollectionViewCell.swift */,
-				E266366122059357001D05C8 /* StringExtension.swift */,
-				E26636632205A210001D05C8 /* UIFontExtension.swift */,
-				E26636662205A225001D05C8 /* UILabelExtension.swift */,
-				E266366E22087162001D05C8 /* Day.swift */,
-				E2663670220871BE001D05C8 /* DayManager.swift */,
-				E266367222087213001D05C8 /* Const.swift */,
-				E266367422089106001D05C8 /* TextModifyViewController.swift */,
 			);
 			path = memo;
 			sourceTree = "<group>";
@@ -262,7 +302,7 @@
 				E21E11F121FC2485004BBFD9 /* Clock.swift in Sources */,
 				E266366F22087162001D05C8 /* Day.swift in Sources */,
 				E2F36CF621FAE0FA00A9C24C /* MainViewController.swift in Sources */,
-				E2E3C3DD2201839B00C74C57 /* DateManager.swift in Sources */,
+				E2E3C3DD2201839B00C74C57 /* DateStringChanger.swift in Sources */,
 				E2E3C3DB22017A2100C74C57 /* UserDefaultsExtension.swift in Sources */,
 				E266366022058BC2001D05C8 /* TextCollectionViewCell.swift in Sources */,
 				E2F36CF421FAE0FA00A9C24C /* AppDelegate.swift in Sources */,
