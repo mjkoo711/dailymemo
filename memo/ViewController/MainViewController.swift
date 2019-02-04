@@ -131,11 +131,25 @@ extension MainViewController: FSCalendarDelegate {
   }
 }
 
+extension MainViewController: FSCalendarDataSource {
+  func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+    let dateString = formatter.string(from: date)
+
+    for day in dayList {
+      if day.date == dateString {
+        return 1
+      }
+    }
+    return 0
+  }
+}
+
 extension MainViewController: TextInputViewControllerDelegate, TextModifyViewControllerDelegate {
   func reloadCollectionView(date: String) {
     textList = TextManager().loadTextList(date: date)
     dayList = DayManager().loadDayList()
     collectionView.reloadData()
+    calendarView.reloadData()
     removeButton.isHidden = true
     modifyButton.isHidden = true
   }
