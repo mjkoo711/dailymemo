@@ -108,12 +108,36 @@
                                             <action selector="todayTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y0i-yl-nJW"/>
                                         </connections>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8m2-AI-cp8">
+                                        <rect key="frame" x="290" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" red="0.95349058909999995" green="1" blue="0.17444826890000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="삭제"/>
+                                        <connections>
+                                            <action selector="removeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0B7-4X-lD7"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cr5-7Z-dAA">
+                                        <rect key="frame" x="250" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="수정">
+                                            <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="modifyTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kgz-OQ-TyR"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.54065519549999996" blue="0.3784734971" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="cr5-7Z-dAA" secondAttribute="bottom" id="12G-ot-eNk"/>
                                     <constraint firstItem="Bck-WJ-8HD" firstAttribute="top" secondItem="7nI-qG-yjq" secondAttribute="top" id="1Hh-UQ-qJ1"/>
+                                    <constraint firstAttribute="bottom" secondItem="8m2-AI-cp8" secondAttribute="bottom" id="BfA-Cz-u0j"/>
                                     <constraint firstItem="Bck-WJ-8HD" firstAttribute="centerX" secondItem="7nI-qG-yjq" secondAttribute="centerX" id="GXL-Qe-ZWW"/>
+                                    <constraint firstItem="8m2-AI-cp8" firstAttribute="leading" secondItem="cr5-7Z-dAA" secondAttribute="trailing" constant="10" id="axy-YS-sYt"/>
+                                    <constraint firstAttribute="trailing" secondItem="8m2-AI-cp8" secondAttribute="trailing" id="bFz-gQ-pnI"/>
                                     <constraint firstItem="Bck-WJ-8HD" firstAttribute="height" secondItem="7nI-qG-yjq" secondAttribute="height" id="g60-lk-rUw"/>
+                                    <constraint firstItem="8m2-AI-cp8" firstAttribute="top" secondItem="7nI-qG-yjq" secondAttribute="top" id="qP3-o2-68J"/>
+                                    <constraint firstItem="cr5-7Z-dAA" firstAttribute="top" secondItem="7nI-qG-yjq" secondAttribute="top" id="tyO-Xt-IiT"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NZu-dQ-sUh">
@@ -202,7 +226,9 @@
                         <outlet property="calendarView" destination="Ue5-Zv-IL9" id="Tx8-d0-UUo"/>
                         <outlet property="collectionView" destination="NZu-dQ-sUh" id="HLQ-wf-sH2"/>
                         <outlet property="dayLabel" destination="S2G-FY-aVc" id="k7t-JH-bnD"/>
+                        <outlet property="modifyButton" destination="cr5-7Z-dAA" id="aY8-u9-Jnt"/>
                         <outlet property="monthLabel" destination="Cji-4N-CJV" id="JVa-Xn-w1W"/>
+                        <outlet property="removeButton" destination="8m2-AI-cp8" id="cgD-tA-yTP"/>
                         <outlet property="timeLabel" destination="PJM-Sh-xCC" id="kZu-Vz-n1M"/>
                         <outlet property="todayLabel" destination="fKe-hV-XoI" id="YKu-K8-7xG"/>
                         <segue destination="tn0-Aa-Vxe" kind="presentation" identifier="textInputSegue" id="XST-5e-hpe"/>

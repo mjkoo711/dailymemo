@@ -91,7 +91,7 @@ class TextManager {
     }
   }
 
-  private func deleteText(dayKey: String, text: Text) {
+  func deleteText(dayKey: String, text: Text) {
     let manager = DayManager()
     let dayList = manager.loadDayList()
     var modifyDay: Day!
