@@ -50,7 +50,7 @@ class MainViewController: UIViewController {
     updateTimeLabel()
     let textManager = TextManager()
     if let date = monthLabel.text {
-      let temp: [Text] = textManager.loadTextList(key: date)
+      let temp: [Text] = textManager.loadTextList(dayKey: date)
       dump(temp)
     }
   }
@@ -109,7 +109,7 @@ extension MainViewController: FSCalendarDelegate {
 
 extension MainViewController: TextInputViewControllerDelegate {
   func reloadCollectionView(date: String) {
-    textList = TextManager().loadTextList(key: date)
+    textList = TextManager().loadTextList(dayKey: date)
     collectionView.reloadData()
   }
 

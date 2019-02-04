@@ -9,63 +9,102 @@
 import Foundation
 
 class TextManager {
-  func recordText(key: String, text: Text) {
-    if isExistText(key: key, text: text) {
-      updateText(key: key, text: text)
+  func recordText(dayKey: String, text: Text) {
+    if isExistText(dayKey: dayKey, text: text) {
+      updateText(dayKey: dayKey, text: text)
     } else {
-      insertText(key: key, text: text)
+      insertText(dayKey: dayKey, text: text)
     }
   }
 
-  func loadTextList(key: String) -> [Text] {
-    let defaults = UserDefaults.standard
-    let textList = defaults.decode(for: [Text].self, using: key)
-    return textList ?? []
+  func loadTextList(dayKey: String) -> [Text] {
+    let manager = DayManager()
+    let dayList = manager.loadDayList()
+    var textList: [Text] = []
+
+    for day in dayList {
+      if day.dayKey == dayKey {
+        textList = day.textList
+        break
+      }
+    }
+
+    return textList
   }
 
-  private func saveTextList(key: String, textList: [Text]) {
-    let defaults = UserDefaults.standard
-    defaults.encode(for: textList, using: key)
-    defaults.synchronize()
-  }
+  private func isExistText(dayKey: String, text: Text) -> Bool {
+    let manager = DayManager()
+    let dayList = manager.loadDayList()
 
-  private func isExistText(key: String, text: Text) -> Bool {
-    let textLists = loadTextList(key: key)
+    for day in dayList {
+      if day.dayKey == dayKey && day.textList.count != 0 {
 
-    for textItem in textLists {
-      if textItem.createdAt == text.createdAt {
-        return true
+        for textItem in day.textList {
+          if textItem.createdAt == text.createdAt {
+            return true
+          }
+        }
       }
     }
     return false
   }
 
-  private func updateText(key: String, text: Text) {
-    let textList = loadTextList(key: key)
+  private func updateText(dayKey: String, text: Text) {
+    let manager = DayManager()
+    let dayList = manager.loadDayList()
+    var modifyDay: Day!
 
-    for var textItem in textList {
-      if textItem.createdAt == text.createdAt {
-        textItem.string = text.string
-        break;
+    for day in dayList {
+      if day.dayKey == dayKey {
+        modifyDay = day
+        break
       }
     }
-    saveTextList(key: key, textList: textList)
-  }
 
-  private func insertText(key: String, text: Text) {
-    var textList: [Text] = []
-    let defaults = UserDefaults.standard
-
-    if (defaults.decode(for: [Text].self, using: key) != nil) {
-      textList = loadTextList(key: key)
+    for index in 0..<modifyDay.textList.count {
+      if modifyDay.textList[index].createdAt == text.createdAt {
+        modifyDay.textList[index].string = text.string
+        break
+      }
     }
 
-    textList.append(text)
-    saveTextList(key: key, textList: textList)
+    manager.recordDay(day: modifyDay)
   }
 
-  private func deleteText(key: String, text: Text) {
-    let textList = loadTextList(key: key)
-    saveTextList(key: key, textList: textList.filter{ $0.createdAt != text.createdAt })
+  private func insertText(dayKey: String, text: Text) {
+    let manager = DayManager()
+    let dayList = manager.loadDayList()
+    var modifyDay: Day!
+
+    if manager.isExistDayInstance(dayKey: dayKey) {
+      for day in dayList {
+        if day.dayKey == dayKey {
+          modifyDay = day
+          modifyDay.textList.append(text)
+          manager.recordDay(day: modifyDay)
+          break
+        }
+      }
+    } else {
+      modifyDay = Day(date: dayKey, textList: [text])
+      manager.recordDay(day: modifyDay)
+    }
+  }
+
+  private func deleteText(dayKey: String, text: Text) {
+    let manager = DayManager()
+    let dayList = manager.loadDayList()
+    var modifyDay: Day!
+
+    if manager.isExistDayInstance(dayKey: dayKey) {
+      for day in dayList {
+        if day.dayKey == dayKey {
+          modifyDay = day
+          let textList = modifyDay.textList.filter{ $0.createdAt != text.createdAt }
+          modifyDay.textList = textList
+          manager.recordDay(day: modifyDay)
+        }
+      }
+    }
   }
 }

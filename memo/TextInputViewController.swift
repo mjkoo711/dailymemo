@@ -62,7 +62,7 @@ extension TextInputViewController: UITextFieldDelegate {
     if let inputText = textField.text, inputText != "", let date = self.date, let time = self.time {
       let text = Text(string: inputText, createdAt: date + " " + time)
       let textManager = TextManager()
-      textManager.recordText(key: date, text: text)
+      textManager.recordText(dayKey: date, text: text)
     }
     returnMainViewController()
     return true
