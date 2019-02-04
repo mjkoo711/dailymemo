@@ -27,11 +27,13 @@ class TextCollectionViewCell: UICollectionViewCell {
   }
 
   @objc func handleCell() {
+    Vibration.medium.vibrate()
     // TODO: 첫번째 클릭시, 두번째 클릭시
   }
 
   @objc func handleLongPress(sender: UILongPressGestureRecognizer) {
-    if sender.state == UIGestureRecognizerState.began {
+    if sender.state == UIGestureRecognizer.State.began {
+      Vibration.success.vibrate()
       delegate?.showEditAndRemoveButton(text: textInstance)
     }
   }

@@ -18,6 +18,7 @@
 		E2663671220871BE001D05C8 /* DayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2663670220871BE001D05C8 /* DayManager.swift */; };
 		E266367322087213001D05C8 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367222087213001D05C8 /* Const.swift */; };
 		E266367522089106001D05C8 /* TextModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367422089106001D05C8 /* TextModifyViewController.swift */; };
+		E266367D2208B319001D05C8 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367C2208B319001D05C8 /* Vibration.swift */; };
 		E2E3C3D7220175A500C74C57 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3D6220175A500C74C57 /* Text.swift */; };
 		E2E3C3D92201767600C74C57 /* TextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3D82201767600C74C57 /* TextManager.swift */; };
 		E2E3C3DB22017A2100C74C57 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3DA22017A2100C74C57 /* UserDefaultsExtension.swift */; };
@@ -43,6 +44,7 @@
 		E2663670220871BE001D05C8 /* DayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayManager.swift; sourceTree = "<group>"; };
 		E266367222087213001D05C8 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E266367422089106001D05C8 /* TextModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifyViewController.swift; sourceTree = "<group>"; };
+		E266367C2208B319001D05C8 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
 		E2E3C3D6220175A500C74C57 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		E2E3C3D82201767600C74C57 /* TextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextManager.swift; sourceTree = "<group>"; };
 		E2E3C3DA22017A2100C74C57 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				E266367222087213001D05C8 /* Const.swift */,
+				E266367C2208B319001D05C8 /* Vibration.swift */,
 			);
 			path = Const;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				E266366022058BC2001D05C8 /* TextCollectionViewCell.swift in Sources */,
 				E2F36CF421FAE0FA00A9C24C /* AppDelegate.swift in Sources */,
 				E26636642205A210001D05C8 /* UIFontExtension.swift in Sources */,
+				E266367D2208B319001D05C8 /* Vibration.swift in Sources */,
 				E266367322087213001D05C8 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,7 +476,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mjkoo.memo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -492,7 +496,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mjkoo.memo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
