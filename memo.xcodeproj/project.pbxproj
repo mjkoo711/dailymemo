@@ -14,6 +14,9 @@
 		E266366222059357001D05C8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266366122059357001D05C8 /* StringExtension.swift */; };
 		E26636642205A210001D05C8 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26636632205A210001D05C8 /* UIFontExtension.swift */; };
 		E26636672205A225001D05C8 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26636662205A225001D05C8 /* UILabelExtension.swift */; };
+		E266366F22087162001D05C8 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266366E22087162001D05C8 /* Day.swift */; };
+		E2663671220871BE001D05C8 /* DayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2663670220871BE001D05C8 /* DayManager.swift */; };
+		E266367322087213001D05C8 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367222087213001D05C8 /* Const.swift */; };
 		E2E3C3D7220175A500C74C57 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3D6220175A500C74C57 /* Text.swift */; };
 		E2E3C3D92201767600C74C57 /* TextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3D82201767600C74C57 /* TextManager.swift */; };
 		E2E3C3DB22017A2100C74C57 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3DA22017A2100C74C57 /* UserDefaultsExtension.swift */; };
@@ -35,6 +38,9 @@
 		E266366122059357001D05C8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		E26636632205A210001D05C8 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		E26636662205A225001D05C8 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		E266366E22087162001D05C8 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		E2663670220871BE001D05C8 /* DayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayManager.swift; sourceTree = "<group>"; };
+		E266367222087213001D05C8 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E2E3C3D6220175A500C74C57 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		E2E3C3D82201767600C74C57 /* TextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextManager.swift; sourceTree = "<group>"; };
 		E2E3C3DA22017A2100C74C57 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
@@ -106,6 +112,9 @@
 				E266366122059357001D05C8 /* StringExtension.swift */,
 				E26636632205A210001D05C8 /* UIFontExtension.swift */,
 				E26636662205A225001D05C8 /* UILabelExtension.swift */,
+				E266366E22087162001D05C8 /* Day.swift */,
+				E2663670220871BE001D05C8 /* DayManager.swift */,
+				E266367222087213001D05C8 /* Const.swift */,
 			);
 			path = memo;
 			sourceTree = "<group>";
@@ -240,18 +249,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2663671220871BE001D05C8 /* DayManager.swift in Sources */,
 				E20CE65321FD8E0300FF495E /* TextInputViewController.swift in Sources */,
 				E2E3C3D7220175A500C74C57 /* Text.swift in Sources */,
 				E266366222059357001D05C8 /* StringExtension.swift in Sources */,
 				E2E3C3D92201767600C74C57 /* TextManager.swift in Sources */,
 				E26636672205A225001D05C8 /* UILabelExtension.swift in Sources */,
 				E21E11F121FC2485004BBFD9 /* Clock.swift in Sources */,
+				E266366F22087162001D05C8 /* Day.swift in Sources */,
 				E2F36CF621FAE0FA00A9C24C /* MainViewController.swift in Sources */,
 				E2E3C3DD2201839B00C74C57 /* DateManager.swift in Sources */,
 				E2E3C3DB22017A2100C74C57 /* UserDefaultsExtension.swift in Sources */,
 				E266366022058BC2001D05C8 /* TextCollectionViewCell.swift in Sources */,
 				E2F36CF421FAE0FA00A9C24C /* AppDelegate.swift in Sources */,
 				E26636642205A210001D05C8 /* UIFontExtension.swift in Sources */,
+				E266367322087213001D05C8 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
