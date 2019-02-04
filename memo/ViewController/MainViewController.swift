@@ -34,6 +34,8 @@ class MainViewController: UIViewController {
   var textCellSelected: Text?
 
   var textList: [Text] = []
+  var dayList: [Day] = []
+
   private let leftRightMargin: CGFloat = 12.0
 
   override func viewDidLoad() {
@@ -132,6 +134,7 @@ extension MainViewController: FSCalendarDelegate {
 extension MainViewController: TextInputViewControllerDelegate, TextModifyViewControllerDelegate {
   func reloadCollectionView(date: String) {
     textList = TextManager().loadTextList(date: date)
+    dayList = DayManager().loadDayList()
     collectionView.reloadData()
     removeButton.isHidden = true
     modifyButton.isHidden = true

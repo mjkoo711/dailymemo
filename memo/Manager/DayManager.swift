@@ -59,7 +59,7 @@ class DayManager {
     saveDayList(dayList: dayList)
   }
 
-  private func deleteDay(day: Day) {
+  func deleteDay(day: Day) {
     let dayList = loadDayList()
     saveDayList(dayList: dayList.filter{ $0.date != day.date })
   }

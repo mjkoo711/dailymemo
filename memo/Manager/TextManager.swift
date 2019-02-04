@@ -98,10 +98,14 @@ class TextManager {
     if manager.isExistDayInstance(dayKey: date) {
       for day in dayList {
         if day.date == date {
-          modifyDay = day
-          let textList = modifyDay.textList.filter{ $0.createdAt != text.createdAt }
-          modifyDay.textList = textList
-          manager.recordDay(day: modifyDay)
+          if day.textList.count == 1 { // 한개가 남았을 땐, 이걸 지우면 그냥 전체가 없어지면 됌.
+            manager.deleteDay(day: day)
+          } else {
+            modifyDay = day
+            let textList = modifyDay.textList.filter{ $0.createdAt != text.createdAt }
+            modifyDay.textList = textList
+            manager.recordDay(day: modifyDay)
+          }
         }
       }
     }
