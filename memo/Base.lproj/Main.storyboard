@@ -108,12 +108,37 @@
                                             <action selector="todayTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y0i-yl-nJW"/>
                                         </connections>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8m2-AI-cp8">
+                                        <rect key="frame" x="290" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" red="0.95349058909999995" green="1" blue="0.17444826890000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="삭제"/>
+                                        <connections>
+                                            <action selector="removeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0B7-4X-lD7"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cr5-7Z-dAA">
+                                        <rect key="frame" x="250" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="수정">
+                                            <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="modifyTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kgz-OQ-TyR"/>
+                                            <segue destination="1tT-NR-09D" kind="presentation" identifier="textModifySegue" id="lvd-rH-0Fx"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.54065519549999996" blue="0.3784734971" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="cr5-7Z-dAA" secondAttribute="bottom" id="12G-ot-eNk"/>
                                     <constraint firstItem="Bck-WJ-8HD" firstAttribute="top" secondItem="7nI-qG-yjq" secondAttribute="top" id="1Hh-UQ-qJ1"/>
+                                    <constraint firstAttribute="bottom" secondItem="8m2-AI-cp8" secondAttribute="bottom" id="BfA-Cz-u0j"/>
                                     <constraint firstItem="Bck-WJ-8HD" firstAttribute="centerX" secondItem="7nI-qG-yjq" secondAttribute="centerX" id="GXL-Qe-ZWW"/>
+                                    <constraint firstItem="8m2-AI-cp8" firstAttribute="leading" secondItem="cr5-7Z-dAA" secondAttribute="trailing" constant="10" id="axy-YS-sYt"/>
+                                    <constraint firstAttribute="trailing" secondItem="8m2-AI-cp8" secondAttribute="trailing" id="bFz-gQ-pnI"/>
                                     <constraint firstItem="Bck-WJ-8HD" firstAttribute="height" secondItem="7nI-qG-yjq" secondAttribute="height" id="g60-lk-rUw"/>
+                                    <constraint firstItem="8m2-AI-cp8" firstAttribute="top" secondItem="7nI-qG-yjq" secondAttribute="top" id="qP3-o2-68J"/>
+                                    <constraint firstItem="cr5-7Z-dAA" firstAttribute="top" secondItem="7nI-qG-yjq" secondAttribute="top" id="tyO-Xt-IiT"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NZu-dQ-sUh">
@@ -202,7 +227,9 @@
                         <outlet property="calendarView" destination="Ue5-Zv-IL9" id="Tx8-d0-UUo"/>
                         <outlet property="collectionView" destination="NZu-dQ-sUh" id="HLQ-wf-sH2"/>
                         <outlet property="dayLabel" destination="S2G-FY-aVc" id="k7t-JH-bnD"/>
+                        <outlet property="modifyButton" destination="cr5-7Z-dAA" id="aY8-u9-Jnt"/>
                         <outlet property="monthLabel" destination="Cji-4N-CJV" id="JVa-Xn-w1W"/>
+                        <outlet property="removeButton" destination="8m2-AI-cp8" id="cgD-tA-yTP"/>
                         <outlet property="timeLabel" destination="PJM-Sh-xCC" id="kZu-Vz-n1M"/>
                         <outlet property="todayLabel" destination="fKe-hV-XoI" id="YKu-K8-7xG"/>
                         <segue destination="tn0-Aa-Vxe" kind="presentation" identifier="textInputSegue" id="XST-5e-hpe"/>
@@ -261,16 +288,69 @@
                         <viewLayoutGuide key="safeArea" id="ras-cf-iPB"/>
                     </view>
                     <connections>
-                        <outlet property="bottomConstraint" destination="QGe-QP-bHY" id="CO8-Sd-ncv"/>
                         <outlet property="grayAreaView" destination="IMM-rN-nXj" id="pIL-aX-gRo"/>
                         <outlet property="textField" destination="Cn1-j2-8pK" id="Kha-NC-kUG"/>
-                        <outlet property="textInputAreaView" destination="fzK-Fi-h80" id="qAW-Vg-k3G"/>
                         <segue destination="ZUu-MW-cpV" kind="unwind" identifier="unwindMainVC" unwindAction="unwindMainViewControllerWithSegue:" id="CeS-yn-xQA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PtB-oR-vXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1804" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1974" y="15"/>
+        </scene>
+        <!--Text Modify View Controller-->
+        <scene sceneID="vk8-99-CFV">
+            <objects>
+                <viewController modalPresentationStyle="overFullScreen" id="1tT-NR-09D" customClass="TextModifyViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OI7-By-2fx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFH-Px-Uiv">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="534.5"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MAY-tJ-jcx">
+                                <rect key="frame" x="0.0" y="534.5" width="320" height="33.5"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="uLg-qr-gwf">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="33.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="uLg-qr-gwf" secondAttribute="bottom" id="A1s-Ny-QUn"/>
+                                    <constraint firstItem="uLg-qr-gwf" firstAttribute="leading" secondItem="MAY-tJ-jcx" secondAttribute="leading" id="JKo-rw-vWt"/>
+                                    <constraint firstAttribute="trailing" secondItem="uLg-qr-gwf" secondAttribute="trailing" id="NFU-cI-LJD"/>
+                                    <constraint firstItem="uLg-qr-gwf" firstAttribute="top" secondItem="MAY-tJ-jcx" secondAttribute="top" id="ghJ-ax-qoJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MAY-tJ-jcx" firstAttribute="top" secondItem="BFH-Px-Uiv" secondAttribute="bottom" id="37k-mZ-6NA"/>
+                            <constraint firstItem="BFH-Px-Uiv" firstAttribute="height" secondItem="MAY-tJ-jcx" secondAttribute="height" multiplier="16:1" id="IZs-fC-ZIa"/>
+                            <constraint firstItem="MAY-tJ-jcx" firstAttribute="top" secondItem="BFH-Px-Uiv" secondAttribute="bottom" id="Ilt-Ag-RHf"/>
+                            <constraint firstItem="BFH-Px-Uiv" firstAttribute="top" secondItem="OI7-By-2fx" secondAttribute="top" id="Pk9-WY-YNw"/>
+                            <constraint firstItem="MAY-tJ-jcx" firstAttribute="leading" secondItem="RiI-ba-MAj" secondAttribute="leading" id="ZUS-7L-SsM"/>
+                            <constraint firstItem="BFH-Px-Uiv" firstAttribute="trailing" secondItem="RiI-ba-MAj" secondAttribute="trailing" id="foN-BQ-pv5"/>
+                            <constraint firstItem="RiI-ba-MAj" firstAttribute="bottom" secondItem="MAY-tJ-jcx" secondAttribute="bottom" id="k6Z-SP-cQG"/>
+                            <constraint firstItem="BFH-Px-Uiv" firstAttribute="leading" secondItem="RiI-ba-MAj" secondAttribute="leading" id="rIh-dj-Djr"/>
+                            <constraint firstItem="MAY-tJ-jcx" firstAttribute="trailing" secondItem="RiI-ba-MAj" secondAttribute="trailing" id="w6l-2N-K2r"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RiI-ba-MAj"/>
+                    </view>
+                    <connections>
+                        <outlet property="grayAreaView" destination="BFH-Px-Uiv" id="n6b-1u-mk9"/>
+                        <outlet property="textField" destination="uLg-qr-gwf" id="wqe-Ja-3yI"/>
+                        <segue destination="ZUu-MW-cpV" kind="unwind" identifier="unwindMainVC" unwindAction="unwindMainViewControllerWithSegue:" id="0UL-E2-owH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WCh-Mx-Oi3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1972.5" y="709.85915492957747"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vQs-rZ-B3P">

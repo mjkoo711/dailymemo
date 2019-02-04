@@ -15,6 +15,8 @@ class MainViewController: UIViewController {
   @IBOutlet var dayLabel: UILabel!
 
   @IBOutlet var todayLabel: UILabel!
+  @IBOutlet var modifyButton: UIButton!
+  @IBOutlet var removeButton: UIButton!
 
   @IBOutlet var collectionView: UICollectionView!
   @IBOutlet weak var timeLabel: UILabel!
@@ -28,6 +30,8 @@ class MainViewController: UIViewController {
 
   let clock = Clock()
   var timeChanger: Timer?
+
+  var textCellSelected: Text?
 
   var textList: [Text] = []
   private let leftRightMargin: CGFloat = 12.0
@@ -48,11 +52,31 @@ class MainViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     updateTimeLabel()
-    let textManager = TextManager()
-    if let date = monthLabel.text {
-      let temp: [Text] = textManager.loadTextList(dayKey: date)
-      dump(temp)
+  }
+
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "textInputSegue" {
+      let viewController: TextInputViewController = segue.destination as! TextInputViewController
+      viewController.date = monthLabel.text
+      viewController.time = timeLabel.text
+      viewController.delegate = self
+    } else if segue.identifier == "textModifySegue" {
+      let viewController: TextModifyViewController = segue.destination as! TextModifyViewController
+      viewController.date = monthLabel.text
+      viewController.time = timeLabel.text
+      viewController.existText = textCellSelected
+      viewController.delegate = self
     }
+  }
+
+  @IBAction func removeTapped(_ sender: Any) {
+    let manager = TextManager()
+    manager.deleteText(date: monthLabel.text!, time: timeLabel.text!, text: textCellSelected!)
+    reloadCollectionView(date: monthLabel.text!)
+    textCellSelected = nil
+  }
+
+  @IBAction func modifyTapped(_ sender: Any) {
   }
 
   @IBAction func todayTapped(_ sender: Any) {
@@ -107,19 +131,12 @@ extension MainViewController: FSCalendarDelegate {
   }
 }
 
-extension MainViewController: TextInputViewControllerDelegate {
+extension MainViewController: TextInputViewControllerDelegate, TextModifyViewControllerDelegate {
   func reloadCollectionView(date: String) {
-    textList = TextManager().loadTextList(dayKey: date)
+    textList = TextManager().loadTextList(date: date)
     collectionView.reloadData()
-  }
-
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "textInputSegue" {
-      let viewController: TextInputViewController = segue.destination as! TextInputViewController
-      viewController.date = monthLabel.text
-      viewController.time = timeLabel.text
-      viewController.delegate = self
-    }
+    removeButton.isHidden = true
+    modifyButton.isHidden = true
   }
 }
 
@@ -130,8 +147,18 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextCell", for: indexPath) as! TextCollectionViewCell
+    cell.textInstance = textList[indexPath.row]
     cell.descriptionLabel.text = textList[indexPath.row].string
+    cell.delegate = self
     return cell
+  }
+}
+
+extension MainViewController: TextCollectionViewCellDelegate {
+  func showEditAndRemoveButton(text: Text) {
+    modifyButton.isHidden = false
+    removeButton.isHidden = false
+    textCellSelected = text
   }
 }
 
