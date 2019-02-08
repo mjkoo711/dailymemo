@@ -15,7 +15,7 @@
             <objects>
                 <viewController wantsFullScreenLayout="YES" definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" id="BYZ-38-t0r" customClass="MainViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="703-uA-LwR">
@@ -213,6 +213,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N7D-sa-VyY"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="gqN-AJ-KhC"/>
                     <connections>
                         <outlet property="calendarView" destination="Ue5-Zv-IL9" id="Tx8-d0-UUo"/>
@@ -402,6 +403,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="j8Y-rA-4aO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S3m-3r-zUb">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
