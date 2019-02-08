@@ -1,20 +1,24 @@
 PODS:
+  - Floaty (4.1.0)
   - FSCalendar (2.8.0)
   - IQKeyboardManagerSwift (6.2.0)
 
 DEPENDENCIES:
+  - Floaty
   - FSCalendar
   - IQKeyboardManagerSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Floaty
     - FSCalendar
     - IQKeyboardManagerSwift
 
 SPEC CHECKSUMS:
+  Floaty: 1a4e213f3512cf3045ef9cb0c1ff456226d1f66a
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
 
-PODFILE CHECKSUM: 577b013ad83f52e197f231bb082771a5925aae2c
+PODFILE CHECKSUM: eb321450811b7f108165b7517e6f19d3aa37a99c
 
 COCOAPODS: 1.5.3
