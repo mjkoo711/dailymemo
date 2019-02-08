@@ -13,13 +13,13 @@
         <!--Data Source-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" id="BYZ-38-t0r" customClass="MainViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" id="BYZ-38-t0r" customClass="MainViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="703-uA-LwR">
-                                <rect key="frame" x="0.0" y="20" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="61"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cji-4N-CJV">
                                         <rect key="frame" x="8" y="38" width="161" height="20"/>
@@ -40,14 +40,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJM-Sh-xCC">
-                                        <rect key="frame" x="270" y="35.5" width="42" height="21"/>
+                                        <rect key="frame" x="270" y="36.5" width="42" height="21"/>
                                         <color key="backgroundColor" red="0.76618217330000005" green="0.64164052810000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKe-hV-XoI">
-                                        <rect key="frame" x="266" y="12.5" width="46" height="21"/>
+                                        <rect key="frame" x="266" y="13.5" width="46" height="21"/>
                                         <color key="backgroundColor" red="0.12696174839999999" green="1" blue="0.1245767076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -67,41 +67,11 @@
                                     <constraint firstItem="Cji-4N-CJV" firstAttribute="top" secondItem="S2G-FY-aVc" secondAttribute="bottom" constant="3" id="zIM-Gm-D8U"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ue5-Zv-IL9" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="260.5" width="320" height="180"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="titleWeekendColor">
-                                        <color key="value" red="0.99180871248245239" green="0.19711933781238508" blue="0.21345315111523794" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="headerMinimumDissolvedAlpha">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
-                                        <color key="value" red="0.68710190059999998" green="0.74876362090000004" blue="0.76078790429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
-                                        <color key="value" red="0.98823529409999999" green="0.7843137255" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="headerDateFormat" value="MMM, YYYY"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="headerHeight">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="m8J-mV-xKF"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="3fT-N5-p6P"/>
-                                </connections>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P22-hY-Qas">
-                                <rect key="frame" x="0.0" y="471" width="320" height="48"/>
-                                <color key="backgroundColor" red="0.93034672740000002" green="0.54546749589999999" blue="0.54116308690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nI-qG-yjq">
-                                <rect key="frame" x="0.0" y="441" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="488.5" width="320" height="30.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bck-WJ-8HD">
-                                        <rect key="frame" x="135.5" y="0.0" width="49" height="30"/>
+                                        <rect key="frame" x="135.5" y="0.0" width="49" height="30.5"/>
                                         <color key="backgroundColor" red="0.12696174839999999" green="1" blue="0.1245767076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="TODAY"/>
                                         <connections>
@@ -109,7 +79,7 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8m2-AI-cp8">
-                                        <rect key="frame" x="290" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="290" y="0.0" width="30" height="30.5"/>
                                         <color key="backgroundColor" red="0.95349058909999995" green="1" blue="0.17444826890000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="삭제"/>
                                         <connections>
@@ -117,7 +87,7 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cr5-7Z-dAA">
-                                        <rect key="frame" x="250" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="250" y="0.0" width="30" height="30.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="수정">
                                             <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -141,7 +111,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NZu-dQ-sUh">
-                                <rect key="frame" x="0.0" y="80" width="320" height="180.5"/>
+                                <rect key="frame" x="0.0" y="81" width="320" height="224.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zvb-aA-vvr">
                                     <size key="itemSize" width="320" height="50"/>
@@ -195,28 +165,50 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="luE-C4-UN5"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ue5-Zv-IL9" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="305.5" width="320" height="183"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleWeekendColor">
+                                        <color key="value" red="0.99180871248245239" green="0.19711933781238508" blue="0.21345315111523794" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="headerMinimumDissolvedAlpha">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                                        <color key="value" red="0.68710190059999998" green="0.74876362090000004" blue="0.76078790429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                                        <color key="value" red="0.98823529409999999" green="0.7843137255" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="headerDateFormat" value="MMM, YYYY"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="headerHeight">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="m8J-mV-xKF"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="3fT-N5-p6P"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.94886654619999999" green="0.95327824350000001" blue="0.93333119149999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="7nI-qG-yjq" firstAttribute="bottom" secondItem="N7D-sa-VyY" secondAttribute="bottom" id="0Y2-KG-5KK"/>
                             <constraint firstItem="NZu-dQ-sUh" firstAttribute="trailing" secondItem="N7D-sa-VyY" secondAttribute="trailing" id="0rV-5f-edy"/>
                             <constraint firstItem="NZu-dQ-sUh" firstAttribute="leading" secondItem="N7D-sa-VyY" secondAttribute="leading" id="1ul-Yh-1xh"/>
-                            <constraint firstItem="P22-hY-Qas" firstAttribute="bottom" secondItem="N7D-sa-VyY" secondAttribute="bottom" id="26V-QJ-ETL"/>
+                            <constraint firstItem="7nI-qG-yjq" firstAttribute="leading" secondItem="Ue5-Zv-IL9" secondAttribute="leading" id="2gn-tQ-oxX"/>
                             <constraint firstItem="7nI-qG-yjq" firstAttribute="bottom" secondItem="Ue5-Zv-IL9" secondAttribute="bottom" constant="30.5" id="5kF-US-xiw"/>
-                            <constraint firstItem="P22-hY-Qas" firstAttribute="top" secondItem="Ue5-Zv-IL9" secondAttribute="bottom" constant="30.5" id="CQo-Mj-Ncz"/>
-                            <constraint firstItem="P22-hY-Qas" firstAttribute="trailing" secondItem="N7D-sa-VyY" secondAttribute="trailing" id="MkT-yb-YMp"/>
-                            <constraint firstItem="P22-hY-Qas" firstAttribute="top" secondItem="Ue5-Zv-IL9" secondAttribute="bottom" constant="30.5" id="OkJ-HD-59j"/>
                             <constraint firstItem="703-uA-LwR" firstAttribute="leading" secondItem="N7D-sa-VyY" secondAttribute="leading" id="Un4-nY-3ce"/>
+                            <constraint firstItem="7nI-qG-yjq" firstAttribute="trailing" secondItem="Ue5-Zv-IL9" secondAttribute="trailing" id="Uq1-Zk-2Wn"/>
                             <constraint firstItem="NZu-dQ-sUh" firstAttribute="top" secondItem="703-uA-LwR" secondAttribute="bottom" id="Vz1-Q8-0Ng"/>
                             <constraint firstItem="703-uA-LwR" firstAttribute="trailing" secondItem="N7D-sa-VyY" secondAttribute="trailing" id="XFi-pX-FoS"/>
                             <constraint firstItem="Ue5-Zv-IL9" firstAttribute="top" secondItem="NZu-dQ-sUh" secondAttribute="bottom" id="aLY-5Q-zbi"/>
                             <constraint firstItem="Ue5-Zv-IL9" firstAttribute="leading" secondItem="N7D-sa-VyY" secondAttribute="leading" id="btA-yv-tpR"/>
                             <constraint firstItem="Ue5-Zv-IL9" firstAttribute="trailing" secondItem="N7D-sa-VyY" secondAttribute="trailing" id="cr3-l3-GJO"/>
                             <constraint firstItem="703-uA-LwR" firstAttribute="height" secondItem="Ue5-Zv-IL9" secondAttribute="height" multiplier="1:3" id="elR-Zc-B7u"/>
+                            <constraint firstItem="7nI-qG-yjq" firstAttribute="top" secondItem="Ue5-Zv-IL9" secondAttribute="bottom" id="esM-Le-bbh"/>
                             <constraint firstItem="703-uA-LwR" firstAttribute="top" secondItem="N7D-sa-VyY" secondAttribute="top" id="lof-3x-rbY"/>
-                            <constraint firstItem="7nI-qG-yjq" firstAttribute="trailing" secondItem="P22-hY-Qas" secondAttribute="trailing" id="mQ3-6S-5ES"/>
-                            <constraint firstItem="P22-hY-Qas" firstAttribute="leading" secondItem="N7D-sa-VyY" secondAttribute="leading" id="nR0-mD-JxI"/>
-                            <constraint firstItem="703-uA-LwR" firstAttribute="height" secondItem="P22-hY-Qas" secondAttribute="height" multiplier="1:0.8" id="okJ-KZ-K1R"/>
-                            <constraint firstItem="7nI-qG-yjq" firstAttribute="leading" secondItem="P22-hY-Qas" secondAttribute="leading" id="scf-qJ-IBO"/>
                             <constraint firstItem="703-uA-LwR" firstAttribute="height" secondItem="7nI-qG-yjq" secondAttribute="height" multiplier="1:0.5" id="y5b-vP-wce"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N7D-sa-VyY"/>
