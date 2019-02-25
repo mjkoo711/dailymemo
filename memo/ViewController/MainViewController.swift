@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
   @IBOutlet var todayLabel: UILabel!
   @IBOutlet var modifyButton: UIButton!
   @IBOutlet var removeButton: UIButton!
+  @IBOutlet var alarmButton: UIButton!
 
   @IBOutlet var collectionView: UICollectionView!
   @IBOutlet weak var timeLabel: UILabel!
@@ -158,6 +159,7 @@ extension MainViewController: TextInputViewControllerDelegate, TextModifyViewCon
     collectionViewScrollToBottom()
     removeButton.isHidden = true
     modifyButton.isHidden = true
+    alarmButton.isHidden = true
   }
 }
 
@@ -179,6 +181,7 @@ extension MainViewController: TextCollectionViewCellDelegate {
   func showEditAndRemoveButton(text: Text) {
     modifyButton.isHidden = false
     removeButton.isHidden = false
+    alarmButton.isHidden = false
     textCellSelected = text
   }
 }
