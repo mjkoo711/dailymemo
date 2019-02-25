@@ -90,6 +90,12 @@ class MainViewController: UIViewController {
 
   @IBAction func unwindMainViewController(segue: UIStoryboardSegue) {}
 
+  private func collectionViewScrollToBottom() {
+    let item = self.collectionView(self.collectionView!, numberOfItemsInSection: 0) - 1
+    let lastItemIndex = IndexPath(item: item, section: 0)
+    collectionView.scrollToItem(at: lastItemIndex, at: .top, animated: true)
+  }
+
   deinit {
     if let timeChanger = self.timeChanger {
       timeChanger.invalidate()
@@ -149,7 +155,7 @@ extension MainViewController: TextInputViewControllerDelegate, TextModifyViewCon
     textList = TextManager().loadTextList(date: date)
     dayList = DayManager().loadDayList()
     collectionView.reloadData()
-    calendarView.reloadData()
+    collectionViewScrollToBottom()
     removeButton.isHidden = true
     modifyButton.isHidden = true
   }
