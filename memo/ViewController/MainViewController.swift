@@ -8,6 +8,7 @@
 
 import UIKit
 import FSCalendar
+import SCLAlertView
 
 class MainViewController: UIViewController {
   @IBOutlet var calendarView: FSCalendar!
@@ -36,6 +37,8 @@ class MainViewController: UIViewController {
 
   var textList: [Text] = []
   var dayList: [Day] = []
+
+  var selectedDatePicked: Date!
 
   private let leftRightMargin: CGFloat = 12.0
 
@@ -72,6 +75,37 @@ class MainViewController: UIViewController {
     }
   }
 
+  @IBAction func alarmTapped(_ sender: Any) {
+    showDatePicker()
+  }
+
+  private func showDatePicker() {
+    let alart = UIAlertController(title: "Title", message: "message", preferredStyle: .actionSheet)
+    let doneAction = UIAlertAction(title: "Done", style: .cancel, handler: { (action) in
+      // TODO: alert창 띄워서 매일, 매주, 매달, 한번, 취소 할지 고르게하기
+      print(self.selectedDatePicked)
+    })
+
+    let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 260))
+    datePicker.datePickerMode = .dateAndTime
+    datePicker.minimumDate = Date()
+    datePicker.locale = Locale.init(identifier: Locale.current.languageCode!)
+    datePicker.addTarget(self, action:
+      #selector(MainViewController.dateSelected(datePicker:)), for: UIControl.Event.valueChanged)
+
+    alart.view.addSubview(datePicker)
+    alart.addAction(doneAction)
+
+    let height:NSLayoutConstraint = NSLayoutConstraint(item: alart.view, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 300)
+    alart.view.addConstraint(height);
+
+    present(alart, animated: true, completion: nil)
+  }
+
+  @objc private func dateSelected(datePicker: UIDatePicker) {
+    selectedDatePicked = datePicker.date
+  }
+
   @IBAction func removeTapped(_ sender: Any) {
     let manager = TextManager()
     manager.deleteText(date: monthLabel.text!, time: timeLabel.text!, text: textCellSelected!)
@@ -93,8 +127,10 @@ class MainViewController: UIViewController {
 
   private func collectionViewScrollToBottom() {
     let item = self.collectionView(self.collectionView!, numberOfItemsInSection: 0) - 1
-    let lastItemIndex = IndexPath(item: item, section: 0)
-    collectionView.scrollToItem(at: lastItemIndex, at: .top, animated: true)
+    if item != -1 {
+      let lastItemIndex = IndexPath(item: item, section: 0)
+      self.collectionView.scrollToItem(at: lastItemIndex, at: .top, animated: true)
+    }
   }
 
   deinit {

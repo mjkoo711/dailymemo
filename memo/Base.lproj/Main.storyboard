@@ -107,6 +107,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="234.5" id="KSW-g8-I3F"/>
+                                    <constraint firstAttribute="width" constant="320" id="nN9-81-LnX"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="zvb-aA-vvr">
                                     <size key="itemSize" width="320" height="50"/>
@@ -167,8 +168,9 @@
                                 <rect key="frame" x="0.0" y="313" width="320" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bck-WJ-8HD">
-                                        <rect key="frame" x="135.5" y="0.0" width="49" height="30"/>
+                                        <rect key="frame" x="132" y="0.0" width="56" height="30"/>
                                         <color key="backgroundColor" red="0.12696174839999999" green="1" blue="0.1245767076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="TODAY"/>
                                         <connections>
                                             <action selector="todayTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y0i-yl-nJW"/>
@@ -196,6 +198,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="52" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.10344365699999999" blue="0.2167260114" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="알림설정"/>
+                                        <connections>
+                                            <action selector="alarmTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="itj-vS-ng6"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.54065519549999996" blue="0.3784734971" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
