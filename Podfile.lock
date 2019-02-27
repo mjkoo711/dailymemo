@@ -1,24 +1,69 @@
 PODS:
   - FSCalendar (2.8.0)
   - IQKeyboardManagerSwift (6.2.0)
+  - MaterialComponents/AnimationTiming (78.0.0)
+  - MaterialComponents/Buttons (78.0.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Shapes
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - MaterialComponents/Ink (78.0.0):
+    - MaterialComponents/private/Math
+  - MaterialComponents/OverlayWindow (78.0.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Application (78.0.0)
+  - MaterialComponents/private/KeyboardWatcher (78.0.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Math (78.0.0)
+  - MaterialComponents/private/Overlay (78.0.0)
+  - MaterialComponents/ShadowElevations (78.0.0)
+  - MaterialComponents/ShadowLayer (78.0.0):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Shapes (78.0.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/Snackbar (78.0.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Buttons
+    - MaterialComponents/OverlayWindow
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Overlay
+    - MaterialComponents/Typography
+  - MaterialComponents/Typography (78.0.0):
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Math
+  - MDFInternationalization (2.0.0)
+  - MDFTextAccessibility (2.0.0)
   - SCLAlertView (0.8)
 
 DEPENDENCIES:
   - FSCalendar
   - IQKeyboardManagerSwift
+  - MaterialComponents/Snackbar
   - SCLAlertView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - FSCalendar
     - IQKeyboardManagerSwift
+    - MaterialComponents
+    - MDFInternationalization
+    - MDFTextAccessibility
     - SCLAlertView
 
 SPEC CHECKSUMS:
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
+  MaterialComponents: f50582fcff415a2459e62a29310fb3ec70a70234
+  MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
+  MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
 
-PODFILE CHECKSUM: 34c364b9d265ce805d93e71fabf7edc20c81c126
+PODFILE CHECKSUM: fc7c3b6621f509d43f1800573011b94c6969e43d
 
 COCOAPODS: 1.5.3

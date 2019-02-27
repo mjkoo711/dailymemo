@@ -9,6 +9,8 @@
 import UIKit
 import FSCalendar
 import SCLAlertView
+import MaterialComponents.MaterialSnackbar
+import UserNotifications
 
 class MainViewController: UIViewController {
   @IBOutlet var calendarView: FSCalendar!
@@ -25,6 +27,15 @@ class MainViewController: UIViewController {
     let formatter = DateFormatter()
     formatter.dateFormat = "YYYY-MM-dd"
     return formatter
+  }()
+
+  fileprivate let formatter2: DateFormatter = {
+    let formatter2 = DateFormatter()
+    formatter2.locale = Locale.init(identifier: Locale.current.languageCode!)
+    formatter2.amSymbol = "AM"
+    formatter2.pmSymbol = "PM"
+    formatter2.dateFormat = "YYYY-MM-dd hh:mm a"
+    return formatter2
   }()
 
   let clock = Clock()
@@ -88,6 +99,25 @@ class MainViewController: UIViewController {
     weak var appDelegate = UIApplication.shared.delegate as? AppDelegate
     alertView.addButton("DONE") {
       appDelegate?.showEduNotification(textSelected: self.textSelected!, datePicked: self.selectedDatePicked, notificationType: .Once)
+
+      // MARK: snackbar
+      let message = MDCSnackbarMessage()
+      message.buttonTextColor = UIColor.red
+      message.text = "알람이 \(self.formatter2.string(from: datePicker.date))에 울립니다."
+
+      let action = MDCSnackbarMessageAction()
+      let actionHandler = {() in
+        let answerMessage = MDCSnackbarMessage()
+        answerMessage.text = "취소되었습니다."
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(self.textSelected!.createdAt ?? "")"])
+        MDCSnackbarManager.show(answerMessage)
+      }
+      action.handler = actionHandler
+      action.title = "취소하기"
+      message.action = action
+
+      MDCSnackbarManager.show(message)
+
     }
     alertView.addButton("CANCEL", backgroundColor: UIColor.red) {
 
