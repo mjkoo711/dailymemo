@@ -10,6 +10,7 @@
 		DF191B90BF36C3030333F89D /* Pods_memo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A59B9B7599E790392A2260F /* Pods_memo.framework */; };
 		E20CE65321FD8E0300FF495E /* TextInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20CE65221FD8E0300FF495E /* TextInputViewController.swift */; };
 		E21E11F121FC2485004BBFD9 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E11F021FC2485004BBFD9 /* Clock.swift */; };
+		E25447C022253F2F00F48A80 /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25447BF22253F2F00F48A80 /* NotificationType.swift */; };
 		E266366022058BC2001D05C8 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266365F22058BC2001D05C8 /* TextCollectionViewCell.swift */; };
 		E266366222059357001D05C8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266366122059357001D05C8 /* StringExtension.swift */; };
 		E26636642205A210001D05C8 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26636632205A210001D05C8 /* UIFontExtension.swift */; };
@@ -36,6 +37,7 @@
 		7C0BA77D5BF37360BE2D4CF1 /* Pods-memo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-memo/Pods-memo.debug.xcconfig"; sourceTree = "<group>"; };
 		E20CE65221FD8E0300FF495E /* TextInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputViewController.swift; sourceTree = "<group>"; };
 		E21E11F021FC2485004BBFD9 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		E25447BF22253F2F00F48A80 /* NotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
 		E266365F22058BC2001D05C8 /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
 		E266366122059357001D05C8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		E26636632205A210001D05C8 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				E21E11F021FC2485004BBFD9 /* Clock.swift */,
 				E2E3C3D6220175A500C74C57 /* Text.swift */,
 				E266366E22087162001D05C8 /* Day.swift */,
+				E25447BF22253F2F00F48A80 /* NotificationType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-memo/Pods-memo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -268,6 +272,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -307,6 +312,7 @@
 				E20CE65321FD8E0300FF495E /* TextInputViewController.swift in Sources */,
 				E2E3C3D7220175A500C74C57 /* Text.swift in Sources */,
 				E266366222059357001D05C8 /* StringExtension.swift in Sources */,
+				E25447C022253F2F00F48A80 /* NotificationType.swift in Sources */,
 				E2E3C3D92201767600C74C57 /* TextManager.swift in Sources */,
 				E266367522089106001D05C8 /* TextModifyViewController.swift in Sources */,
 				E26636672205A225001D05C8 /* UILabelExtension.swift in Sources */,

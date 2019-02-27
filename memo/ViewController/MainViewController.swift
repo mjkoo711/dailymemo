@@ -8,15 +8,14 @@
 
 import UIKit
 import FSCalendar
+import SCLAlertView
 
 class MainViewController: UIViewController {
   @IBOutlet var calendarView: FSCalendar!
   @IBOutlet var monthLabel: UILabel!
-  @IBOutlet var dayLabel: UILabel!
+  @IBOutlet var dateLabel: UILabel!
 
   @IBOutlet var todayLabel: UILabel!
-  @IBOutlet var modifyButton: UIButton!
-  @IBOutlet var removeButton: UIButton!
 
   @IBOutlet var collectionView: UICollectionView!
   @IBOutlet weak var timeLabel: UILabel!
@@ -31,18 +30,18 @@ class MainViewController: UIViewController {
   let clock = Clock()
   var timeChanger: Timer?
 
-  var textCellSelected: Text?
+  var textSelected: Text?
 
   var textList: [Text] = []
   var dayList: [Day] = []
 
-  private let leftRightMargin: CGFloat = 12.0
+  var selectedDatePicked: Date!
 
   override func viewDidLoad() {
     super.viewDidLoad()
     calendarView.placeholderType = .none
     monthLabel.text = formatter.string(from: Date())
-    dayLabel.text = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(formatter.string(from: Date())))
+    dateLabel.text = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(formatter.string(from: Date())))
 
     timeChanger = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(MainViewController.updateTimeLabel), userInfo: nil, repeats: true)
 
@@ -66,16 +65,50 @@ class MainViewController: UIViewController {
       let viewController: TextModifyViewController = segue.destination as! TextModifyViewController
       viewController.date = monthLabel.text
       viewController.time = timeLabel.text
-      viewController.existText = textCellSelected
+      viewController.existText = textSelected
       viewController.delegate = self
     }
   }
 
-  @IBAction func removeTapped(_ sender: Any) {
+  private func showAlarmSettingView() {
+    let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 230))
+    datePicker.datePickerMode = .dateAndTime
+    datePicker.minimumDate = Date()
+    datePicker.locale = Locale.init(identifier: Locale.current.languageCode!)
+    datePicker.addTarget(self, action:
+      #selector(MainViewController.dateSelected(datePicker:)), for: UIControl.Event.valueChanged)
+
+    let appearance = SCLAlertView.SCLAppearance(
+      kWindowWidth: datePicker.frame.size.width + 10.0, showCloseButton: false
+    )
+
+    let alertView = SCLAlertView(appearance: appearance)
+    alertView.customSubview = datePicker
+
+    weak var appDelegate = UIApplication.shared.delegate as? AppDelegate
+    alertView.addButton("DONE") {
+      appDelegate?.showEduNotification(textSelected: self.textSelected!, datePicked: self.selectedDatePicked, notificationType: .Once)
+    }
+    alertView.addButton("CANCEL", backgroundColor: UIColor.red) {
+
+    }
+    alertView.showTitle("알림설정", subTitle: "해당 키워드에 대해 알람을 설정하신 적이 있다면 지금 설정하는 것으로 최신화됩니다.", style: .notice)
+  }
+
+  @objc private func dateSelected(datePicker: UIDatePicker) {
+    selectedDatePicked = datePicker.date
+  }
+
+  func removeTapped() {
     let manager = TextManager()
-    manager.deleteText(date: monthLabel.text!, time: timeLabel.text!, text: textCellSelected!)
+    manager.deleteText(date: monthLabel.text!, time: timeLabel.text!, text: textSelected!)
     reloadCollectionView(date: monthLabel.text!)
-    textCellSelected = nil
+    calendarView.reloadData()
+    textSelected = nil
+  }
+
+  func modifyTapped() {
+    performSegue(withIdentifier: "textModifySegue", sender: self)
   }
 
   @IBAction func todayTapped(_ sender: Any) {
@@ -84,7 +117,7 @@ class MainViewController: UIViewController {
     calendarView.setCurrentPage(Date(), animated: false)
     calendarView.select(Date())
     monthLabel.text = formatter.string(from: Date())
-    dayLabel.text = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(formatter.string(from: Date())))
+    dateLabel.text = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(formatter.string(from: Date())))
     reloadCollectionView(date: formatter.string(from: Date()))
   }
 
@@ -92,8 +125,10 @@ class MainViewController: UIViewController {
 
   private func collectionViewScrollToBottom() {
     let item = self.collectionView(self.collectionView!, numberOfItemsInSection: 0) - 1
-    let lastItemIndex = IndexPath(item: item, section: 0)
-    collectionView.scrollToItem(at: lastItemIndex, at: .top, animated: true)
+    if item != -1 {
+      let lastItemIndex = IndexPath(item: item, section: 0)
+      self.collectionView.scrollToItem(at: lastItemIndex, at: .top, animated: true)
+    }
   }
 
   deinit {
@@ -132,7 +167,7 @@ extension MainViewController: FSCalendarDelegate {
     }
 
     monthLabel.text = selectDay
-    dayLabel.text = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(selectDay))
+    dateLabel.text = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(selectDay))
     reloadCollectionView(date: selectDay)
   }
 }
@@ -156,8 +191,6 @@ extension MainViewController: TextInputViewControllerDelegate, TextModifyViewCon
     dayList = DayManager().loadDayList()
     collectionView.reloadData()
     collectionViewScrollToBottom()
-    removeButton.isHidden = true
-    modifyButton.isHidden = true
   }
 }
 
@@ -176,10 +209,27 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 extension MainViewController: TextCollectionViewCellDelegate {
-  func showEditAndRemoveButton(text: Text) {
-    modifyButton.isHidden = false
-    removeButton.isHidden = false
-    textCellSelected = text
+  func showActionSheet(text: Text) {
+    textSelected = text
+
+    let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+    let setAlarmAction = UIAlertAction(title: "Alarm", style: .default, handler: { (action) in
+      self.showAlarmSettingView()
+    })
+    let modifyAction = UIAlertAction(title: "Modify", style: .destructive, handler: {(action) in
+      self.modifyTapped()
+    })
+    let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: {(action) in
+      self.removeTapped()
+    })
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+    actionSheet.addAction(setAlarmAction)
+    actionSheet.addAction(modifyAction)
+    actionSheet.addAction(deleteAction)
+    actionSheet.addAction(cancelAction)
+
+    present(actionSheet, animated: true, completion: nil)
   }
 }
 

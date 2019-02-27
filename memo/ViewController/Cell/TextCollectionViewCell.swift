@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TextCollectionViewCellDelegate {
-  func showEditAndRemoveButton(text: Text)
+  func showActionSheet(text: Text)
 }
 
 class TextCollectionViewCell: UICollectionViewCell {
@@ -34,7 +34,7 @@ class TextCollectionViewCell: UICollectionViewCell {
   @objc func handleLongPress(sender: UILongPressGestureRecognizer) {
     if sender.state == UIGestureRecognizer.State.began {
       Vibration.success.vibrate()
-      delegate?.showEditAndRemoveButton(text: textInstance)
+      delegate?.showActionSheet(text: textInstance)
     }
   }
 }
