@@ -13,7 +13,7 @@ protocol TextCollectionViewCellDelegate {
 }
 
 class TextCollectionViewCell: UICollectionViewCell {
-  var textInstance: Text!
+  var textInstance: Text?
   @IBOutlet var descriptionLabel: UILabel!
 
   var delegate: TextCollectionViewCellDelegate?
@@ -34,7 +34,7 @@ class TextCollectionViewCell: UICollectionViewCell {
   @objc func handleLongPress(sender: UILongPressGestureRecognizer) {
     if sender.state == UIGestureRecognizer.State.began {
       Vibration.success.vibrate()
-      delegate?.showActionSheet(text: textInstance)
+      delegate?.showActionSheet(text: textInstance!)
     }
   }
 }

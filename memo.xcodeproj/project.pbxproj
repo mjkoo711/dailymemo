@@ -20,6 +20,7 @@
 		E266367322087213001D05C8 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367222087213001D05C8 /* Const.swift */; };
 		E266367522089106001D05C8 /* TextModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367422089106001D05C8 /* TextModifyViewController.swift */; };
 		E266367D2208B319001D05C8 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367C2208B319001D05C8 /* Vibration.swift */; };
+		E2D0402D222783F400D10B51 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0402C222783F400D10B51 /* AlarmManager.swift */; };
 		E2E3C3D7220175A500C74C57 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3D6220175A500C74C57 /* Text.swift */; };
 		E2E3C3D92201767600C74C57 /* TextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3D82201767600C74C57 /* TextManager.swift */; };
 		E2E3C3DB22017A2100C74C57 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3DA22017A2100C74C57 /* UserDefaultsExtension.swift */; };
@@ -47,6 +48,7 @@
 		E266367222087213001D05C8 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E266367422089106001D05C8 /* TextModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifyViewController.swift; sourceTree = "<group>"; };
 		E266367C2208B319001D05C8 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
+		E2D0402C222783F400D10B51 /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
 		E2E3C3D6220175A500C74C57 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		E2E3C3D82201767600C74C57 /* TextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextManager.swift; sourceTree = "<group>"; };
 		E2E3C3DA22017A2100C74C57 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				E2E3C3D82201767600C74C57 /* TextManager.swift */,
 				E2E3C3DC2201839B00C74C57 /* DateStringChanger.swift */,
 				E2663670220871BE001D05C8 /* DayManager.swift */,
+				E2D0402C222783F400D10B51 /* AlarmManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				E266367522089106001D05C8 /* TextModifyViewController.swift in Sources */,
 				E26636672205A225001D05C8 /* UILabelExtension.swift in Sources */,
 				E21E11F121FC2485004BBFD9 /* Clock.swift in Sources */,
+				E2D0402D222783F400D10B51 /* AlarmManager.swift in Sources */,
 				E266366F22087162001D05C8 /* Day.swift in Sources */,
 				E2F36CF621FAE0FA00A9C24C /* MainViewController.swift in Sources */,
 				E2E3C3DD2201839B00C74C57 /* DateStringChanger.swift in Sources */,

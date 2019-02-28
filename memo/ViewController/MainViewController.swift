@@ -88,6 +88,7 @@ class MainViewController: UIViewController {
     datePicker.locale = Locale.init(identifier: Locale.current.languageCode!)
     datePicker.addTarget(self, action:
       #selector(MainViewController.dateSelected(datePicker:)), for: UIControl.Event.valueChanged)
+    self.selectedDatePicked = datePicker.date // 이것을 넣은 이유는 selectedDatePicked가 처음에 값이 없기때문
 
     let appearance = SCLAlertView.SCLAppearance(
       kWindowWidth: datePicker.frame.size.width + 10.0, showCloseButton: false
@@ -95,10 +96,11 @@ class MainViewController: UIViewController {
 
     let alertView = SCLAlertView(appearance: appearance)
     alertView.customSubview = datePicker
-
-    weak var appDelegate = UIApplication.shared.delegate as? AppDelegate
     alertView.addButton("DONE") {
-      appDelegate?.showEduNotification(textSelected: self.textSelected!, datePicked: self.selectedDatePicked, notificationType: .Once)
+      self.textAlarmTrigger(text: self.textSelected!, isAlarmSetting: true)
+      self.textSelected?.alarmDatePicked = self.selectedDatePicked
+      AlarmManager().addNotification(textSelected: self.textSelected!, datePicked: self.selectedDatePicked, notificationType: .Once)
+      self.collectionView.reloadData()
 
       // MARK: snackbar
       let message = MDCSnackbarMessage()
@@ -109,6 +111,7 @@ class MainViewController: UIViewController {
       let actionHandler = {() in
         let answerMessage = MDCSnackbarMessage()
         answerMessage.text = "취소되었습니다."
+        self.textAlarmTrigger(text: self.textSelected!, isAlarmSetting: false)
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(self.textSelected!.createdAt ?? "")"])
         MDCSnackbarManager.show(answerMessage)
       }
@@ -125,6 +128,17 @@ class MainViewController: UIViewController {
     alertView.showTitle("알림설정", subTitle: "해당 키워드에 대해 알람을 설정하신 적이 있다면 지금 설정하는 것으로 최신화됩니다.", style: .notice)
   }
 
+  private func textAlarmTrigger(text: Text, isAlarmSetting: Bool) {
+    let textManager = TextManager()
+    if isAlarmSetting {
+      text.onAlarmSetting()
+    } else {
+      text.offAlarmSetting()
+    }
+    textManager.recordText(date: text.date, time: text.time, text: text)
+    reloadCollectionView(date: monthLabel.text!)
+  }
+
   @objc private func dateSelected(datePicker: UIDatePicker) {
     selectedDatePicked = datePicker.date
   }
@@ -134,7 +148,9 @@ class MainViewController: UIViewController {
     manager.deleteText(date: monthLabel.text!, time: timeLabel.text!, text: textSelected!)
     reloadCollectionView(date: monthLabel.text!)
     calendarView.reloadData()
+    UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(self.textSelected!.createdAt ?? "")"])
     textSelected = nil
+    
   }
 
   func modifyTapped() {
@@ -142,13 +158,14 @@ class MainViewController: UIViewController {
   }
 
   @IBAction func todayTapped(_ sender: Any) {
+    let date = Date()
     Vibration.medium.vibrate()
     todayLabel.isHidden = false
-    calendarView.setCurrentPage(Date(), animated: false)
-    calendarView.select(Date())
-    monthLabel.text = formatter.string(from: Date())
-    dateLabel.text = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(formatter.string(from: Date())))
-    reloadCollectionView(date: formatter.string(from: Date()))
+    calendarView.setCurrentPage(date, animated: false)
+    calendarView.select(date)
+    monthLabel.text = formatter.string(from: date)
+    dateLabel.text = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(formatter.string(from: date)))
+    reloadCollectionView(date: formatter.string(from: date))
   }
 
   @IBAction func unwindMainViewController(segue: UIStoryboardSegue) {}
@@ -233,6 +250,11 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextCell", for: indexPath) as! TextCollectionViewCell
     cell.textInstance = textList[indexPath.row]
     cell.descriptionLabel.text = textList[indexPath.row].string
+    if textList[indexPath.row].isAlarmSetting {
+      cell.descriptionLabel.textColor = UIColor.blue
+    } else {
+      cell.descriptionLabel.textColor = UIColor.black
+    }
     cell.delegate = self
     return cell
   }
@@ -246,6 +268,14 @@ extension MainViewController: TextCollectionViewCellDelegate {
     let setAlarmAction = UIAlertAction(title: "Alarm", style: .default, handler: { (action) in
       self.showAlarmSettingView()
     })
+    let deleteAlarm = UIAlertAction(title: "Remove Alarm", style: .destructive, handler: { (action) in
+      if let text = self.textSelected {
+        text.offAlarmSetting()
+        TextManager().recordText(date: text.date, time: text.time, text: text)
+        AlarmManager().removeNotification(textSelected: text)
+        self.reloadCollectionView(date: self.monthLabel.text!)
+      }
+    })
     let modifyAction = UIAlertAction(title: "Modify", style: .destructive, handler: {(action) in
       self.modifyTapped()
     })
@@ -254,6 +284,9 @@ extension MainViewController: TextCollectionViewCellDelegate {
     })
     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 
+    if let text = textSelected, text.isAlarmSetting {
+      actionSheet.addAction(deleteAlarm)
+    }
     actionSheet.addAction(setAlarmAction)
     actionSheet.addAction(modifyAction)
     actionSheet.addAction(deleteAction)

@@ -59,9 +59,10 @@ extension TextModifyViewController: UITextFieldDelegate {
     if let inputText = textField.text, !inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
       let textManager = TextManager()
 
-      if var exist = self.existText {
+      if let exist = self.existText {
         exist.string = inputText
         textManager.recordText(date: exist.date, time: exist.time, text: exist)
+        AlarmManager().modifyNotification(textSelected: exist, notificationType: .Once)
       }
     }
     returnMainViewController()

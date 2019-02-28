@@ -62,7 +62,7 @@ class TextManager {
 
     for index in 0..<modifyDay.textList.count {
       if modifyDay.textList[index].createdAt == text.createdAt {
-        modifyDay.textList[index].string = text.string
+        modifyDay.textList[index] = text
         break
       }
     }

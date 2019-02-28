@@ -8,16 +8,27 @@
 
 import Foundation
 
-struct Text: Codable {
+class Text: Codable {
   var string: String
   var date: String
   var time: String
   var createdAt: String!
+  private(set) var isAlarmSetting: Bool
+  var alarmDatePicked: Date?
 
   init(string: String, date: String, time: String) {
     self.string = string
     self.date = date
     self.time = time
     self.createdAt = date + " " + time
+    self.isAlarmSetting = false
+  }
+
+  func onAlarmSetting() {
+    isAlarmSetting = true
+  }
+
+  func offAlarmSetting() {
+    isAlarmSetting = false
   }
 }
