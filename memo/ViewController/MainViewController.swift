@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
   @IBOutlet var dateLabel: UILabel!
 
   @IBOutlet var showAlarmListButtonView: UIView!
+  @IBOutlet var showSettingButtonView: UIView!
   @IBOutlet var todayLabel: UILabel!
 
   @IBOutlet var collectionView: UICollectionView!
@@ -69,6 +70,9 @@ class MainViewController: UIViewController {
     let tapGestureForAlarmListButtonView = UITapGestureRecognizer(target: self, action: #selector(showAlarmList))
     showAlarmListButtonView.addGestureRecognizer(tapGestureForAlarmListButtonView)
 
+    let tapGestureForSettingButtonView = UITapGestureRecognizer(target: self, action: #selector(showSettingViewController))
+    showSettingButtonView.addGestureRecognizer(tapGestureForSettingButtonView)
+
     let tapGestureForPreviousMonthButtonView = UITapGestureRecognizer(target: self, action: #selector(movePreviousMonth))
     previousMonthButtonView.addGestureRecognizer(tapGestureForPreviousMonthButtonView)
 
@@ -111,6 +115,10 @@ class MainViewController: UIViewController {
 
   @objc private func showAlarmList() {
     performSegue(withIdentifier: "showAlarmList", sender: self)
+  }
+
+  @objc private func showSettingViewController() {
+    performSegue(withIdentifier: "showSetting", sender: self)
   }
 
   private func showAlarmSettingView() {
