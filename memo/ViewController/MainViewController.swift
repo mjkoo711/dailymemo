@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
   @IBOutlet var monthLabel: UILabel!
   @IBOutlet var dateLabel: UILabel!
 
+  @IBOutlet var showAlarmListButtonView: UIView!
   @IBOutlet var todayLabel: UILabel!
 
   @IBOutlet var collectionView: UICollectionView!
@@ -56,14 +57,23 @@ class MainViewController: UIViewController {
 
     timeChanger = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(MainViewController.updateTimeLabel), userInfo: nil, repeats: true)
 
-    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showInputTextViewController))
-    collectionView.addGestureRecognizer(tapGesture)
+    let tapGestureForCollectionView = UITapGestureRecognizer(target: self, action: #selector(showInputTextViewController))
+    collectionView.addGestureRecognizer(tapGestureForCollectionView)
+
+    let tapGestureForAlarmListButtonView = UITapGestureRecognizer(target: self, action: #selector(showAlarmList))
+    showAlarmListButtonView.addGestureRecognizer(tapGestureForAlarmListButtonView)
+
     reloadCollectionView(date: formatter.string(from: Date()))
   }
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    navigationController?.setNavigationBarHidden(true, animated: animated)
     updateTimeLabel()
+  }
+
+  override func viewWillDisappear(_ animated: Bool) {
+    navigationController?.setNavigationBarHidden(false, animated: animated)
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -79,6 +89,10 @@ class MainViewController: UIViewController {
       viewController.existText = textSelected
       viewController.delegate = self
     }
+  }
+
+  @objc private func showAlarmList() {
+    performSegue(withIdentifier: "showAlarmList", sender: self)
   }
 
   private func showAlarmSettingView() {
