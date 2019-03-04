@@ -97,9 +97,12 @@ class MainViewController: UIViewController {
     let alertView = SCLAlertView(appearance: appearance)
     alertView.customSubview = datePicker
     alertView.addButton("DONE") {
-      self.textAlarmTrigger(text: self.textSelected!, isAlarmSetting: true)
-      self.textSelected?.alarmDatePicked = self.selectedDatePicked
-      AlarmManager().addNotification(textSelected: self.textSelected!, datePicked: self.selectedDatePicked, notificationType: .Once)
+      guard let text = self.textSelected else { return }
+
+      text.alarmDatePicked = self.selectedDatePicked
+      TextManager().recordText(date: text.date, time: text.time, text: text)
+      self.textAlarmTrigger(text: text, isAlarmSetting: true)
+      AlarmManager().addNotification(textSelected: text, datePicked: self.selectedDatePicked, notificationType: .Once)
       self.collectionView.reloadData()
 
       // MARK: snackbar
@@ -111,7 +114,7 @@ class MainViewController: UIViewController {
       let actionHandler = {() in
         let answerMessage = MDCSnackbarMessage()
         answerMessage.text = "취소되었습니다."
-        self.textAlarmTrigger(text: self.textSelected!, isAlarmSetting: false)
+        self.textAlarmTrigger(text: text, isAlarmSetting: false)
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(self.textSelected!.createdAt ?? "")"])
         MDCSnackbarManager.show(answerMessage)
       }
@@ -286,8 +289,9 @@ extension MainViewController: TextCollectionViewCellDelegate {
 
     if let text = textSelected, text.isAlarmSetting {
       actionSheet.addAction(deleteAlarm)
+    } else if !text.isAlarmSetting {
+      actionSheet.addAction(setAlarmAction)
     }
-    actionSheet.addAction(setAlarmAction)
     actionSheet.addAction(modifyAction)
     actionSheet.addAction(deleteAction)
     actionSheet.addAction(cancelAction)
