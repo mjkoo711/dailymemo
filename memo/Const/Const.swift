@@ -10,4 +10,6 @@ import Foundation
 
 enum Const {
   static let CalenderKey = "KCalendar"
+  static let DAY = TimeInterval(60.0 * 60.0 * 24.0)
 }
+
