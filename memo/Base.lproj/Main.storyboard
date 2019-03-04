@@ -364,6 +364,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="알람리스트" leftItemsSupplementBackButton="YES" id="GHu-tl-tjo"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="collectionView" destination="4Fx-au-0oq" id="YJV-6R-7lD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Khz-Ut-OfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

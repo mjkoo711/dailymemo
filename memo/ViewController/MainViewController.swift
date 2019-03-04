@@ -62,12 +62,12 @@ class MainViewController: UIViewController {
 
     let tapGestureForAlarmListButtonView = UITapGestureRecognizer(target: self, action: #selector(showAlarmList))
     showAlarmListButtonView.addGestureRecognizer(tapGestureForAlarmListButtonView)
-
-    reloadCollectionView(date: formatter.string(from: Date()))
   }
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    reloadCollectionView(date: formatter.string(from: Date()))
+
     navigationController?.setNavigationBarHidden(true, animated: animated)
     updateTimeLabel()
   }
@@ -282,10 +282,15 @@ extension MainViewController: TextCollectionViewCellDelegate {
     textSelected = text
 
     let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+
+    if let textAlarmDate = text.alarmDatePicked, text.isAlarmSetting {
+      actionSheet.title = "알람 예정시간"
+      actionSheet.message = "\(formatter2.string(from: textAlarmDate))"
+    }
     let setAlarmAction = UIAlertAction(title: "Alarm", style: .default, handler: { (action) in
       self.showAlarmSettingView()
     })
-    let deleteAlarm = UIAlertAction(title: "Remove Alarm", style: .destructive, handler: { (action) in
+    let deleteAlarm = UIAlertAction(title: "Remove Alarm", style: .default, handler: { (action) in
       if let text = self.textSelected {
         text.offAlarmSetting()
         TextManager().recordText(date: text.date, time: text.time, text: text)
