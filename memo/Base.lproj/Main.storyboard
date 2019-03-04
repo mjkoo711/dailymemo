@@ -112,7 +112,7 @@
                                 </connections>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NZu-dQ-sUh">
-                                <rect key="frame" x="0.0" y="79" width="320" height="227"/>
+                                <rect key="frame" x="0.0" y="78.5" width="320" height="227.5"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="227" id="KSW-g8-I3F"/>
@@ -300,7 +300,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PtB-oR-vXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2970" y="14.788732394366198"/>
+            <point key="canvasLocation" x="2428" y="935"/>
         </scene>
         <!--Text Modify View Controller-->
         <scene sceneID="vk8-99-CFV">
@@ -355,7 +355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCh-Mx-Oi3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2970" y="709.85915492957747"/>
+            <point key="canvasLocation" x="1719" y="935"/>
         </scene>
         <!--Item-->
         <scene sceneID="vQs-rZ-B3P">
