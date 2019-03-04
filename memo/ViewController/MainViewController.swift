@@ -23,6 +23,12 @@ class MainViewController: UIViewController {
   @IBOutlet var collectionView: UICollectionView!
   @IBOutlet weak var timeLabel: UILabel!
 
+  @IBOutlet var previousMonthButtonView: UIView!
+  @IBOutlet var nextMonthButtonView: UIView!
+  @IBOutlet var previousDayButtonView: UIView!
+  @IBOutlet var nextDayButtonView: UIView!
+
+
   fileprivate let gregorian = Calendar(identifier: .gregorian)
   fileprivate let formatter: DateFormatter = {
     let formatter = DateFormatter()
@@ -62,6 +68,18 @@ class MainViewController: UIViewController {
 
     let tapGestureForAlarmListButtonView = UITapGestureRecognizer(target: self, action: #selector(showAlarmList))
     showAlarmListButtonView.addGestureRecognizer(tapGestureForAlarmListButtonView)
+
+    let tapGestureForPreviousMonthButtonView = UITapGestureRecognizer(target: self, action: #selector(movePreviousMonth))
+    previousMonthButtonView.addGestureRecognizer(tapGestureForPreviousMonthButtonView)
+
+    let tapGestureForPreviousDayButtonView = UITapGestureRecognizer(target: self, action: #selector(movePreviousDay))
+    previousDayButtonView.addGestureRecognizer(tapGestureForPreviousDayButtonView)
+
+    let tapGestureForNextMonthButtonView = UITapGestureRecognizer(target: self, action: #selector(moveNextMonth))
+    nextMonthButtonView.addGestureRecognizer(tapGestureForNextMonthButtonView)
+
+    let tapGestureForNextDayButtonView = UITapGestureRecognizer(target: self, action: #selector(moveNextDay))
+    nextDayButtonView.addGestureRecognizer(tapGestureForNextDayButtonView)
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -178,10 +196,8 @@ class MainViewController: UIViewController {
     let date = Date()
     Vibration.medium.vibrate()
     todayLabel.isHidden = false
-    calendarView.setCurrentPage(date, animated: false)
     calendarView.select(date)
-    monthLabel.text = formatter.string(from: date)
-    dateLabel.text = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(formatter.string(from: date)))
+    reloadDataShowed(date: date)
     reloadCollectionView(date: formatter.string(from: date))
   }
 
@@ -221,6 +237,10 @@ extension MainViewController {
 // MARK: - FSCalendarDelegate 함수
 extension MainViewController: FSCalendarDelegate {
   func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+    reloadDataShowed(date: date)
+  }
+
+  private func reloadDataShowed(date: Date) {
     let today = formatter.string(from: Date())
     let selectDay = formatter.string(from: date)
 
@@ -323,5 +343,40 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let height = textList[indexPath.row].string.height(withConstrainedWidth: UIScreen.main.bounds.width, font: UIFont(name: "Helvetica Neue", size: 17)!) + 10
     return CGSize(width: UIScreen.main.bounds.width, height: height)
+  }
+}
+
+extension MainViewController {
+  //MARK: move calender
+  @objc private func moveNextDay() {
+    Vibration.medium.vibrate()
+    guard let currentDate = formatter.date(from: monthLabel.text!) else { return }
+    guard let date = Calendar.current.date(byAdding: .day, value: 1, to: currentDate) else { return }
+    calendarView.select(date, scrollToDate: true)
+    reloadDataShowed(date: date)
+  }
+
+  @objc private func movePreviousDay() {
+    Vibration.medium.vibrate()
+    guard let currentDate = formatter.date(from: monthLabel.text!) else { return }
+    guard let date = Calendar.current.date(byAdding: .day, value: -1, to: currentDate) else { return }
+    calendarView.select(date, scrollToDate: true)
+    reloadDataShowed(date: date)
+  }
+
+  @objc private func moveNextMonth() {
+    Vibration.medium.vibrate()
+    guard let currentDate = formatter.date(from: monthLabel.text!) else { return }
+    guard let date = Calendar.current.date(byAdding: .month, value: 1, to: currentDate) else { return }
+    calendarView.select(date, scrollToDate: true)
+    reloadDataShowed(date: date)
+  }
+
+  @objc private func movePreviousMonth() {
+    Vibration.medium.vibrate()
+    guard let currentDate = formatter.date(from: monthLabel.text!) else { return }
+    guard let date = Calendar.current.date(byAdding: .month, value: -1, to: currentDate) else { return }
+    calendarView.select(date, scrollToDate: true)
+    reloadDataShowed(date: date)
   }
 }
