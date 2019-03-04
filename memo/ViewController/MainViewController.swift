@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
   @IBOutlet var monthLabel: UILabel!
   @IBOutlet var dateLabel: UILabel!
 
+  @IBOutlet var showAlarmListButtonView: UIView!
   @IBOutlet var todayLabel: UILabel!
 
   @IBOutlet var collectionView: UICollectionView!
@@ -56,14 +57,23 @@ class MainViewController: UIViewController {
 
     timeChanger = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(MainViewController.updateTimeLabel), userInfo: nil, repeats: true)
 
-    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showInputTextViewController))
-    collectionView.addGestureRecognizer(tapGesture)
-    reloadCollectionView(date: formatter.string(from: Date()))
+    let tapGestureForCollectionView = UITapGestureRecognizer(target: self, action: #selector(showInputTextViewController))
+    collectionView.addGestureRecognizer(tapGestureForCollectionView)
+
+    let tapGestureForAlarmListButtonView = UITapGestureRecognizer(target: self, action: #selector(showAlarmList))
+    showAlarmListButtonView.addGestureRecognizer(tapGestureForAlarmListButtonView)
   }
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    reloadCollectionView(date: formatter.string(from: Date()))
+
+    navigationController?.setNavigationBarHidden(true, animated: animated)
     updateTimeLabel()
+  }
+
+  override func viewWillDisappear(_ animated: Bool) {
+    navigationController?.setNavigationBarHidden(false, animated: animated)
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -79,6 +89,10 @@ class MainViewController: UIViewController {
       viewController.existText = textSelected
       viewController.delegate = self
     }
+  }
+
+  @objc private func showAlarmList() {
+    performSegue(withIdentifier: "showAlarmList", sender: self)
   }
 
   private func showAlarmSettingView() {
@@ -268,10 +282,15 @@ extension MainViewController: TextCollectionViewCellDelegate {
     textSelected = text
 
     let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+
+    if let textAlarmDate = text.alarmDatePicked, text.isAlarmSetting {
+      actionSheet.title = "알람 예정시간"
+      actionSheet.message = "\(formatter2.string(from: textAlarmDate))"
+    }
     let setAlarmAction = UIAlertAction(title: "Alarm", style: .default, handler: { (action) in
       self.showAlarmSettingView()
     })
-    let deleteAlarm = UIAlertAction(title: "Remove Alarm", style: .destructive, handler: { (action) in
+    let deleteAlarm = UIAlertAction(title: "Remove Alarm", style: .default, handler: { (action) in
       if let text = self.textSelected {
         text.offAlarmSetting()
         TextManager().recordText(date: text.date, time: text.time, text: text)
