@@ -155,7 +155,7 @@ class MainViewController: UIViewController {
         let answerMessage = MDCSnackbarMessage()
         answerMessage.text = "취소되었습니다."
         self.textAlarmTrigger(text: text, isAlarmSetting: false)
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(self.textSelected!.createdAt ?? "")"])
+        AlarmManager().removeNotification(textSelected: self.textSelected!)
         MDCSnackbarManager.show(answerMessage)
       }
       action.handler = actionHandler

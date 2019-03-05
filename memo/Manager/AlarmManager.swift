@@ -41,7 +41,10 @@ class AlarmManager {
   }
 
   func removeNotification(textSelected: Text) {
-    UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(textSelected.createdAt)"])
+    var identifiers: [String] = []
+    identifiers.append(textSelected.createdAt)
+
+    UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
   }
 
 
