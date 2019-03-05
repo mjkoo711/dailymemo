@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TextInputViewControllerDelegate {
-  func reloadCollectionView(date: String)
+  func reloadCollectionViewAndCalendarView(date: String)
 }
 
 class TextInputViewController: UIViewController {
@@ -45,7 +45,7 @@ extension TextInputViewController {
   @objc func returnMainViewController() {
     textField.resignFirstResponder()
     if let date = date {
-      self.delegate?.reloadCollectionView(date: date)
+      self.delegate?.reloadCollectionViewAndCalendarView(date: date)
     }
     performSegue(withIdentifier: "unwindMainVC", sender: self)
   }

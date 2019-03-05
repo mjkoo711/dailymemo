@@ -284,6 +284,14 @@ extension MainViewController: TextInputViewControllerDelegate, TextModifyViewCon
     collectionView.reloadData()
     collectionViewScrollToBottom()
   }
+
+  func reloadCollectionViewAndCalendarView(date: String) {
+    textList = TextManager().loadTextList(date: date)
+    dayList = DayManager().loadDayList()
+    collectionView.reloadData()
+    calendarView.reloadData()
+    collectionViewScrollToBottom()
+  }
 }
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
