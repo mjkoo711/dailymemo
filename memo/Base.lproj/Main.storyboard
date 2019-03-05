@@ -427,14 +427,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMM-rN-nXj">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="534.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="505"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzK-Fi-h80">
-                                <rect key="frame" x="0.0" y="534.5" width="320" height="33.5"/>
+                                <rect key="frame" x="0.0" y="536.5" width="320" height="31.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Cn1-j2-8pK">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="33.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="31.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -450,17 +450,39 @@
                                     <constraint firstItem="Cn1-j2-8pK" firstAttribute="width" secondItem="fzK-Fi-h80" secondAttribute="width" id="vzY-tk-g16"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPJ-5I-vLa">
+                                <rect key="frame" x="0.0" y="505" width="320" height="31.5"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Hh8-DQ-8TO">
+                                        <rect key="frame" x="84.5" y="1.5" width="151" height="29"/>
+                                        <segments>
+                                            <segment title="한번"/>
+                                            <segment title="매일"/>
+                                            <segment title="매주"/>
+                                            <segment title="매월"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Hh8-DQ-8TO" firstAttribute="centerX" secondItem="PPJ-5I-vLa" secondAttribute="centerX" id="9nW-Gh-Jvr"/>
+                                    <constraint firstItem="Hh8-DQ-8TO" firstAttribute="centerY" secondItem="PPJ-5I-vLa" secondAttribute="centerY" id="c8b-B9-FAh"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="IMM-rN-nXj" firstAttribute="leading" secondItem="ras-cf-iPB" secondAttribute="leading" id="2Tk-CM-ib3"/>
                             <constraint firstItem="IMM-rN-nXj" firstAttribute="height" secondItem="fzK-Fi-h80" secondAttribute="height" multiplier="16:1" id="QGe-QP-bHY"/>
                             <constraint firstItem="ras-cf-iPB" firstAttribute="trailing" secondItem="fzK-Fi-h80" secondAttribute="trailing" id="RtD-ev-iOq"/>
-                            <constraint firstItem="fzK-Fi-h80" firstAttribute="top" secondItem="IMM-rN-nXj" secondAttribute="bottom" id="TO0-DC-kaU"/>
-                            <constraint firstItem="fzK-Fi-h80" firstAttribute="top" secondItem="IMM-rN-nXj" secondAttribute="bottom" id="Wgw-aS-eTz"/>
+                            <constraint firstItem="IMM-rN-nXj" firstAttribute="height" secondItem="PPJ-5I-vLa" secondAttribute="height" multiplier="16:1" id="Xpt-6y-nOa"/>
                             <constraint firstItem="fzK-Fi-h80" firstAttribute="bottom" secondItem="ras-cf-iPB" secondAttribute="bottom" id="ZHF-4X-S29"/>
+                            <constraint firstItem="fzK-Fi-h80" firstAttribute="top" secondItem="PPJ-5I-vLa" secondAttribute="bottom" id="e8D-Xq-Geb"/>
                             <constraint firstItem="IMM-rN-nXj" firstAttribute="trailing" secondItem="ras-cf-iPB" secondAttribute="trailing" id="hlZ-zL-GPd"/>
+                            <constraint firstItem="PPJ-5I-vLa" firstAttribute="trailing" secondItem="ras-cf-iPB" secondAttribute="trailing" id="p93-fs-XXc"/>
                             <constraint firstItem="IMM-rN-nXj" firstAttribute="top" secondItem="neO-nE-iJE" secondAttribute="top" id="ru6-FM-xST"/>
+                            <constraint firstItem="PPJ-5I-vLa" firstAttribute="leading" secondItem="ras-cf-iPB" secondAttribute="leading" id="vsq-vI-3gT"/>
+                            <constraint firstItem="PPJ-5I-vLa" firstAttribute="top" secondItem="IMM-rN-nXj" secondAttribute="bottom" id="wPb-Cv-I4R"/>
                             <constraint firstItem="fzK-Fi-h80" firstAttribute="leading" secondItem="ras-cf-iPB" secondAttribute="leading" id="xGY-wE-sHe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ras-cf-iPB"/>
@@ -473,7 +495,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PtB-oR-vXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2428" y="935"/>
+            <point key="canvasLocation" x="2426.25" y="934.85915492957747"/>
         </scene>
         <!--Setting-->
         <scene sceneID="ut4-vD-EQZ">
