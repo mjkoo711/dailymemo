@@ -18,6 +18,7 @@ class TextInputViewController: UIViewController {
 
   var date: String?
   var time: String?
+  var day: String?
 
   var delegate: TextInputViewControllerDelegate?
 
@@ -53,8 +54,8 @@ extension TextInputViewController {
 
 extension TextInputViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    if let inputText = textField.text, !inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let date = self.date, let time = self.time {
-      let text = Text(string: inputText, date: date, time: time)
+    if let inputText = textField.text, !inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let date = self.date, let time = self.time, let day = self.day {
+      let text = Text(string: inputText, date: date, time: time, day: day)
       let textManager = TextManager()
       textManager.recordText(date: date, time: time, text: text)
     }

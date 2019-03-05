@@ -103,6 +103,7 @@ class MainViewController: UIViewController {
       let viewController: TextInputViewController = segue.destination as! TextInputViewController
       viewController.date = dateLabel.text
       viewController.time = timeLabel.text
+      viewController.day = dayLabel.text
       viewController.delegate = self
     } else if segue.identifier == "textModifySegue" {
       let viewController: TextModifyViewController = segue.destination as! TextModifyViewController
