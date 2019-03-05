@@ -43,12 +43,12 @@ class AlarmListViewController: UIViewController {
   }
 
   private func loadSetAlarmText() {
-    let dayList = DayManager().loadDayList()
+    let dateList = DateManager().loadDateList()
     var textList: [Text] = []
     var dic: [String: [Text]] = [:]
 
-    for day in dayList {
-      textList += day.textList
+    for dateItem in dateList {
+      textList += dateItem.textList
     }
 
     for text in textList {

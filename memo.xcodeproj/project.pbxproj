@@ -15,8 +15,8 @@
 		E266366222059357001D05C8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266366122059357001D05C8 /* StringExtension.swift */; };
 		E26636642205A210001D05C8 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26636632205A210001D05C8 /* UIFontExtension.swift */; };
 		E26636672205A225001D05C8 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26636662205A225001D05C8 /* UILabelExtension.swift */; };
-		E266366F22087162001D05C8 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266366E22087162001D05C8 /* Day.swift */; };
-		E2663671220871BE001D05C8 /* DayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2663670220871BE001D05C8 /* DayManager.swift */; };
+		E266366F22087162001D05C8 /* MDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266366E22087162001D05C8 /* MDate.swift */; };
+		E2663671220871BE001D05C8 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2663670220871BE001D05C8 /* DateManager.swift */; };
 		E266367322087213001D05C8 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367222087213001D05C8 /* Const.swift */; };
 		E266367522089106001D05C8 /* TextModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367422089106001D05C8 /* TextModifyViewController.swift */; };
 		E266367D2208B319001D05C8 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367C2208B319001D05C8 /* Vibration.swift */; };
@@ -48,8 +48,8 @@
 		E266366122059357001D05C8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		E26636632205A210001D05C8 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		E26636662205A225001D05C8 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
-		E266366E22087162001D05C8 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
-		E2663670220871BE001D05C8 /* DayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayManager.swift; sourceTree = "<group>"; };
+		E266366E22087162001D05C8 /* MDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDate.swift; sourceTree = "<group>"; };
+		E2663670220871BE001D05C8 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		E266367222087213001D05C8 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E266367422089106001D05C8 /* TextModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifyViewController.swift; sourceTree = "<group>"; };
 		E266367C2208B319001D05C8 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 			children = (
 				E21E11F021FC2485004BBFD9 /* Clock.swift */,
 				E2E3C3D6220175A500C74C57 /* Text.swift */,
-				E266366E22087162001D05C8 /* Day.swift */,
+				E266366E22087162001D05C8 /* MDate.swift */,
 				E25447BF22253F2F00F48A80 /* NotificationType.swift */,
 			);
 			path = Model;
@@ -144,7 +144,7 @@
 			children = (
 				E2E3C3D82201767600C74C57 /* TextManager.swift */,
 				E2E3C3DC2201839B00C74C57 /* DateStringChanger.swift */,
-				E2663670220871BE001D05C8 /* DayManager.swift */,
+				E2663670220871BE001D05C8 /* DateManager.swift */,
 				E2D0402C222783F400D10B51 /* AlarmManager.swift */,
 			);
 			path = Manager;
@@ -340,7 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2663671220871BE001D05C8 /* DayManager.swift in Sources */,
+				E2663671220871BE001D05C8 /* DateManager.swift in Sources */,
 				E20CE65321FD8E0300FF495E /* TextInputViewController.swift in Sources */,
 				E2E3C3D7220175A500C74C57 /* Text.swift in Sources */,
 				E266366222059357001D05C8 /* StringExtension.swift in Sources */,
@@ -352,7 +352,7 @@
 				E2C37AEB222D7B2B00D84894 /* IntExtensions.swift in Sources */,
 				E2D0402D222783F400D10B51 /* AlarmManager.swift in Sources */,
 				E2C37AED222D87A900D84894 /* SettingViewController.swift in Sources */,
-				E266366F22087162001D05C8 /* Day.swift in Sources */,
+				E266366F22087162001D05C8 /* MDate.swift in Sources */,
 				E2F36CF621FAE0FA00A9C24C /* MainViewController.swift in Sources */,
 				E2C37AE5222D146400D84894 /* AlarmCollectionViewCell.swift in Sources */,
 				E2E3C3DD2201839B00C74C57 /* DateStringChanger.swift in Sources */,

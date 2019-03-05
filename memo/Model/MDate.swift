@@ -1,5 +1,5 @@
 //
-//  Day.swift
+//  MDate.swift
 //  memo
 //
 //  Created by MinJun KOO on 04/02/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Day: Codable {
+class MDate: Codable {
   var date: String
   var textList: [Text]
 

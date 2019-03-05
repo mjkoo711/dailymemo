@@ -18,13 +18,13 @@ class TextManager {
   }
 
   func loadTextList(date: String) -> [Text] {
-    let manager = DayManager()
-    let dayList = manager.loadDayList()
+    let manager = DateManager()
+    let dateList = manager.loadDateList()
     var textList: [Text] = []
 
-    for day in dayList {
-      if day.date == date {
-        textList = day.textList
+    for dateItem in dateList {
+      if dateItem.date == date {
+        textList = dateItem.textList
         break
       }
     }
@@ -32,13 +32,13 @@ class TextManager {
   }
 
   private func isExistText(date: String, time: String, text: Text) -> Bool {
-    let manager = DayManager()
-    let dayList = manager.loadDayList()
+    let manager = DateManager()
+    let dateList = manager.loadDateList()
 
-    for day in dayList {
-      if day.date == date && day.textList.count != 0 {
+    for dateItem in dateList {
+      if dateItem.date == date && dateItem.textList.count != 0 {
 
-        for textItem in day.textList {
+        for textItem in dateItem.textList {
           if textItem.createdAt == text.createdAt {
             return true
           }
@@ -49,62 +49,62 @@ class TextManager {
   }
 
   private func updateText(date: String, time: String, text: Text) {
-    let manager = DayManager()
-    let dayList = manager.loadDayList()
-    var modifyDay: Day!
+    let manager = DateManager()
+    let dateList = manager.loadDateList()
+    var modifyDate: MDate!
 
-    for day in dayList {
-      if day.date == date {
-        modifyDay = day
+    for dateItem in dateList {
+      if dateItem.date == date {
+        modifyDate = dateItem
         break
       }
     }
 
-    for index in 0..<modifyDay.textList.count {
-      if modifyDay.textList[index].createdAt == text.createdAt {
-        modifyDay.textList[index] = text
+    for index in 0..<modifyDate.textList.count {
+      if modifyDate.textList[index].createdAt == text.createdAt {
+        modifyDate.textList[index] = text
         break
       }
     }
 
-    manager.recordDay(day: modifyDay)
+    manager.recordDate(date: modifyDate)
   }
 
   private func insertText(date: String, time: String, text: Text) {
-    let manager = DayManager()
-    let dayList = manager.loadDayList()
-    var modifyDay: Day!
+    let manager = DateManager()
+    let dateList = manager.loadDateList()
+    var modifyDate: MDate!
 
-    if manager.isExistDayInstance(dayKey: date) {
-      for day in dayList {
-        if day.date == date {
-          modifyDay = day
-          modifyDay.textList.append(text)
-          manager.recordDay(day: modifyDay)
+    if manager.isExistDateInstance(dateKey: date) {
+      for dateItem in dateList {
+        if dateItem.date == date {
+          modifyDate = dateItem
+          modifyDate.textList.append(text)
+          manager.recordDate(date: modifyDate)
           break
         }
       }
     } else {
-      modifyDay = Day(date: date, textList: [text])
-      manager.recordDay(day: modifyDay)
+      modifyDate = MDate(date: date, textList: [text])
+      manager.recordDate(date: modifyDate)
     }
   }
 
   func deleteText(date: String, time: String, text: Text) {
-    let manager = DayManager()
-    let dayList = manager.loadDayList()
-    var modifyDay: Day!
+    let manager = DateManager()
+    let dateList = manager.loadDateList()
+    var modifyDate: MDate!
 
-    if manager.isExistDayInstance(dayKey: date) {
-      for day in dayList {
-        if day.date == date {
-          if day.textList.count == 1 { // 한개가 남았을 땐, 이걸 지우면 그냥 전체가 없어지면 됌.
-            manager.deleteDay(day: day)
+    if manager.isExistDateInstance(dateKey: date) {
+      for dateItem in dateList {
+        if dateItem.date == date {
+          if dateItem.textList.count == 1 { // 한개가 남았을 땐, 이걸 지우면 그냥 전체가 없어지면 됌.
+            manager.deleteDate(date: dateItem)
           } else {
-            modifyDay = day
-            let textList = modifyDay.textList.filter{ $0.createdAt != text.createdAt }
-            modifyDay.textList = textList
-            manager.recordDay(day: modifyDay)
+            modifyDate = dateItem
+            let textList = modifyDate.textList.filter{ $0.createdAt != text.createdAt }
+            modifyDate.textList = textList
+            manager.recordDate(date: modifyDate)
           }
         }
       }
