@@ -62,7 +62,9 @@ extension TextModifyViewController: UITextFieldDelegate {
       if let exist = self.existText {
         exist.string = inputText
         textManager.recordText(date: exist.date, time: exist.time, text: exist)
-        AlarmManager().modifyNotification(textSelected: exist, notificationType: .Once)
+        if exist.isAlarmSetting {
+          AlarmManager().modifyNotification(textSelected: exist, notificationType: .Once)
+        }
       }
     }
     returnMainViewController()
