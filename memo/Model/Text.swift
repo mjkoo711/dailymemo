@@ -13,7 +13,7 @@ class Text: Codable {
   var date: String
   var time: String
   var day: String
-  var createdAt: String!
+  var createdAt: String
   var repeatMode: RepeatMode
   private(set) var isAlarmSetting: Bool
   var alarmDatePicked: Date?

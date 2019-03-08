@@ -29,6 +29,9 @@
 		E2C37AFA2232406900D84894 /* DailyTextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AF92232406900D84894 /* DailyTextManager.swift */; };
 		E2C37AFC2232407B00D84894 /* WeeklyTextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AFB2232407B00D84894 /* WeeklyTextManager.swift */; };
 		E2C37AFE2232408A00D84894 /* MonthlyTextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AFD2232408A00D84894 /* MonthlyTextManager.swift */; };
+		E2C37B042232534200D84894 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C37B032232534200D84894 /* libsqlite3.tbd */; };
+		E2C37B062232544900D84894 /* FMDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37B052232544900D84894 /* FMDBManager.swift */; };
+		E2C37B0822325A7000D84894 /* MDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37B0722325A7000D84894 /* MDateFormatter.swift */; };
 		E2D0402D222783F400D10B51 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0402C222783F400D10B51 /* AlarmManager.swift */; };
 		E2E3C3D7220175A500C74C57 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3D6220175A500C74C57 /* Text.swift */; };
 		E2E3C3D92201767600C74C57 /* OnceTextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3D82201767600C74C57 /* OnceTextManager.swift */; };
@@ -66,6 +69,10 @@
 		E2C37AF92232406900D84894 /* DailyTextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTextManager.swift; sourceTree = "<group>"; };
 		E2C37AFB2232407B00D84894 /* WeeklyTextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTextManager.swift; sourceTree = "<group>"; };
 		E2C37AFD2232408A00D84894 /* MonthlyTextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyTextManager.swift; sourceTree = "<group>"; };
+		E2C37B012232515100D84894 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		E2C37B032232534200D84894 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		E2C37B052232544900D84894 /* FMDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMDBManager.swift; sourceTree = "<group>"; };
+		E2C37B0722325A7000D84894 /* MDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDateFormatter.swift; sourceTree = "<group>"; };
 		E2D0402C222783F400D10B51 /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
 		E2E3C3D6220175A500C74C57 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		E2E3C3D82201767600C74C57 /* OnceTextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnceTextManager.swift; sourceTree = "<group>"; };
@@ -85,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2C37B042232534200D84894 /* libsqlite3.tbd in Frameworks */,
 				DF191B90BF36C3030333F89D /* Pods_memo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,6 +166,8 @@
 				E2C37AF92232406900D84894 /* DailyTextManager.swift */,
 				E2C37AFB2232407B00D84894 /* WeeklyTextManager.swift */,
 				E2C37AFD2232408A00D84894 /* MonthlyTextManager.swift */,
+				E2C37B052232544900D84894 /* FMDBManager.swift */,
+				E2C37B0722325A7000D84894 /* MDateFormatter.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -217,6 +227,8 @@
 		E32097C5322B1DB39896B99C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E2C37B032232534200D84894 /* libsqlite3.tbd */,
+				E2C37B012232515100D84894 /* libsqlite3.0.tbd */,
 				0A59B9B7599E790392A2260F /* Pods_memo.framework */,
 			);
 			name = Frameworks;
@@ -300,6 +312,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-memo/Pods-memo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
@@ -311,6 +324,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
@@ -378,6 +392,8 @@
 				E2C37AE3222D12CE00D84894 /* AlarmListViewController.swift in Sources */,
 				E26636642205A210001D05C8 /* UIFontExtension.swift in Sources */,
 				E266367D2208B319001D05C8 /* Vibration.swift in Sources */,
+				E2C37B0822325A7000D84894 /* MDateFormatter.swift in Sources */,
+				E2C37B062232544900D84894 /* FMDBManager.swift in Sources */,
 				E2C37AFE2232408A00D84894 /* MonthlyTextManager.swift in Sources */,
 				E266367322087213001D05C8 /* Const.swift in Sources */,
 			);
