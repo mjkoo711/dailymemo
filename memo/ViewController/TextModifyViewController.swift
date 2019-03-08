@@ -57,7 +57,7 @@ extension TextModifyViewController {
 extension TextModifyViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     if let inputText = textField.text, !inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-      let textManager = TextManager()
+      let textManager = OnceTextManager()
 
       if let exist = self.existText {
         exist.string = inputText

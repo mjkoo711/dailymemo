@@ -1,5 +1,5 @@
 //
-//  TextManager.swift
+//  OnceTextManager.swift
 //  memo
 //
 //  Created by MinJun KOO on 30/01/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TextManager {
+class OnceTextManager {
   func recordText(date: String, time: String, text: Text) {
     if isExistText(date: date, time: time, text: text) {
       updateText(date: date, time: time, text: text)

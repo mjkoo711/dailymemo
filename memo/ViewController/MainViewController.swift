@@ -141,7 +141,7 @@ class MainViewController: UIViewController {
       guard let text = self.textSelected else { return }
 
       text.alarmDatePicked = self.selectedDatePicked
-      TextManager().recordText(date: text.date, time: text.time, text: text)
+      OnceTextManager().recordText(date: text.date, time: text.time, text: text)
       self.textAlarmTrigger(text: text, isAlarmSetting: true)
       AlarmManager().addNotification(textSelected: text, datePicked: self.selectedDatePicked, notificationType: .Once)
       self.collectionView.reloadData()
@@ -173,7 +173,7 @@ class MainViewController: UIViewController {
   }
 
   private func textAlarmTrigger(text: Text, isAlarmSetting: Bool) {
-    let textManager = TextManager()
+    let textManager = OnceTextManager()
     if isAlarmSetting {
       text.onAlarmSetting()
     } else {
@@ -188,7 +188,7 @@ class MainViewController: UIViewController {
   }
 
   func removeTapped() {
-    let manager = TextManager()
+    let manager = OnceTextManager()
     manager.deleteText(date: dateLabel.text!, time: timeLabel.text!, text: textSelected!)
     reloadCollectionView(date: dateLabel.text!)
     calendarView.reloadData()
@@ -280,14 +280,14 @@ extension MainViewController: FSCalendarDataSource {
 
 extension MainViewController: TextInputViewControllerDelegate, TextModifyViewControllerDelegate {
   func reloadCollectionView(date: String) {
-    textList = TextManager().loadTextList(date: date)
+    textList = OnceTextManager().loadTextList(date: date) + DailyTextManager().loadTextList()
     dateList = DateManager().loadDateList()
     collectionView.reloadData()
     collectionViewScrollToBottom()
   }
 
   func reloadCollectionViewAndCalendarView(date: String) {
-    textList = TextManager().loadTextList(date: date)
+    textList = OnceTextManager().loadTextList(date: date) + DailyTextManager().loadTextList()
     dateList = DateManager().loadDateList()
     collectionView.reloadData()
     calendarView.reloadData()
@@ -330,7 +330,7 @@ extension MainViewController: TextCollectionViewCellDelegate {
     let deleteAlarm = UIAlertAction(title: "Remove Alarm", style: .default, handler: { (action) in
       if let text = self.textSelected {
         text.offAlarmSetting()
-        TextManager().recordText(date: text.date, time: text.time, text: text)
+        OnceTextManager().recordText(date: text.date, time: text.time, text: text)
         AlarmManager().removeNotification(textSelected: text)
         self.reloadCollectionView(date: self.dateLabel.text!)
       }
@@ -343,9 +343,9 @@ extension MainViewController: TextCollectionViewCellDelegate {
     })
     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 
-    if let text = textSelected, text.isAlarmSetting {
+    if let text = textSelected, text.isAlarmSetting, text.repeatMode == .Once {
       actionSheet.addAction(deleteAlarm)
-    } else if !text.isAlarmSetting {
+    } else if !text.isAlarmSetting, text.repeatMode == .Once {
       actionSheet.addAction(setAlarmAction)
     }
     actionSheet.addAction(modifyAction)
