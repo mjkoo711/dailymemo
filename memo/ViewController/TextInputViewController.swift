@@ -15,6 +15,7 @@ protocol TextInputViewControllerDelegate {
 class TextInputViewController: UIViewController {
   @IBOutlet var grayAreaView: UIView!
   @IBOutlet var textField: UITextField!
+  @IBOutlet var repeatSegmentedControl: UISegmentedControl!
 
   var date: String?
   var time: String?
@@ -55,9 +56,22 @@ extension TextInputViewController {
 extension TextInputViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     if let inputText = textField.text, !inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let date = self.date, let time = self.time, let day = self.day {
-      let text = Text(string: inputText, date: date, time: time, day: day)
-      let textManager = TextManager()
-      textManager.recordText(date: date, time: time, text: text)
+      switch repeatSegmentedControl.selectedSegmentIndex {
+      case RepeatMode.Once.rawValue:
+        let text = Text(string: inputText, date: date, time: time, day: day, repeatMode: .Once)
+        let textManager = TextManager()
+        textManager.recordText(date: date, time: time, text: text)
+      case RepeatMode.Daily.rawValue:
+        let text = Text(string: inputText, date: date, time: time, day: day, repeatMode: .Daily)
+
+      case RepeatMode.Weekly.rawValue:
+        let text = Text(string: inputText, date: date, time: time, day: day, repeatMode: .Weekly)
+
+      case RepeatMode.Monthly.rawValue:
+        let text = Text(string: inputText, date: date, time: time, day: day, repeatMode: .Monthly)
+      default:
+        return true
+      }
     }
     returnMainViewController()
     return true

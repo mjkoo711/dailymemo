@@ -25,6 +25,7 @@
 		E2C37AE9222D59C400D84894 /* AlarmCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE8222D59C400D84894 /* AlarmCollectionReusableView.swift */; };
 		E2C37AEB222D7B2B00D84894 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AEA222D7B2B00D84894 /* IntExtensions.swift */; };
 		E2C37AED222D87A900D84894 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AEC222D87A900D84894 /* SettingViewController.swift */; };
+		E2C37AF822323D1F00D84894 /* RepeatMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AF722323D1F00D84894 /* RepeatMode.swift */; };
 		E2D0402D222783F400D10B51 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0402C222783F400D10B51 /* AlarmManager.swift */; };
 		E2E3C3D7220175A500C74C57 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3D6220175A500C74C57 /* Text.swift */; };
 		E2E3C3D92201767600C74C57 /* TextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3D82201767600C74C57 /* TextManager.swift */; };
@@ -58,6 +59,7 @@
 		E2C37AE8222D59C400D84894 /* AlarmCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCollectionReusableView.swift; sourceTree = "<group>"; };
 		E2C37AEA222D7B2B00D84894 /* IntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
 		E2C37AEC222D87A900D84894 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		E2C37AF722323D1F00D84894 /* RepeatMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatMode.swift; sourceTree = "<group>"; };
 		E2D0402C222783F400D10B51 /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
 		E2E3C3D6220175A500C74C57 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		E2E3C3D82201767600C74C57 /* TextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextManager.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			children = (
 				E266367222087213001D05C8 /* Const.swift */,
 				E266367C2208B319001D05C8 /* Vibration.swift */,
+				E2C37AF722323D1F00D84894 /* RepeatMode.swift */,
 			);
 			path = Const;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				E26636672205A225001D05C8 /* UILabelExtension.swift in Sources */,
 				E21E11F121FC2485004BBFD9 /* Clock.swift in Sources */,
 				E2C37AEB222D7B2B00D84894 /* IntExtensions.swift in Sources */,
+				E2C37AF822323D1F00D84894 /* RepeatMode.swift in Sources */,
 				E2D0402D222783F400D10B51 /* AlarmManager.swift in Sources */,
 				E2C37AED222D87A900D84894 /* SettingViewController.swift in Sources */,
 				E266366F22087162001D05C8 /* MDate.swift in Sources */,
