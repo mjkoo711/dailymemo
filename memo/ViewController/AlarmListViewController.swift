@@ -43,12 +43,12 @@ class AlarmListViewController: UIViewController {
   }
 
   private func loadSetAlarmText() {
-    let dayList = DayManager().loadDayList()
+    let dateList = DateManager().loadDateList()
     var textList: [Text] = []
     var dic: [String: [Text]] = [:]
 
-    for day in dayList {
-      textList += day.textList
+    for dateItem in dateList {
+      textList += dateItem.textList
     }
 
     for text in textList {
@@ -121,7 +121,7 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
     let deleteAlarm = UIAlertAction(title: "Remove Alarm", style: .destructive, handler: { (action) in
       if let text = self.textSelected {
         text.offAlarmSetting()
-        TextManager().recordText(date: text.date, time: text.time, text: text)
+        OnceTextManager().recordText(date: text.date, time: text.time, text: text)
         AlarmManager().removeNotification(textSelected: text)
         self.reloadCollectionView()
       }
@@ -156,7 +156,7 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
       guard let text = self.textSelected else { return }
 
       text.alarmDatePicked = self.selectedDatePicked
-      TextManager().recordText(date: text.date, time: text.time, text: text)
+      OnceTextManager().recordText(date: text.date, time: text.time, text: text)
       self.textAlarmTrigger(text: text, isAlarmSetting: true)
       AlarmManager().addNotification(textSelected: text, datePicked: self.selectedDatePicked, notificationType: .Once)
       self.collectionView.reloadData()
@@ -180,7 +180,7 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
   }
 
   private func textAlarmTrigger(text: Text, isAlarmSetting: Bool) {
-    let textManager = TextManager()
+    let textManager = OnceTextManager()
     if isAlarmSetting {
       text.onAlarmSetting()
     } else {

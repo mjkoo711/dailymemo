@@ -9,15 +9,17 @@
 import UIKit
 
 protocol TextInputViewControllerDelegate {
-  func reloadCollectionView(date: String)
+  func reloadCollectionViewAndCalendarView(date: String)
 }
 
 class TextInputViewController: UIViewController {
   @IBOutlet var grayAreaView: UIView!
   @IBOutlet var textField: UITextField!
+  @IBOutlet var repeatSegmentedControl: UISegmentedControl!
 
   var date: String?
   var time: String?
+  var day: String?
 
   var delegate: TextInputViewControllerDelegate?
 
@@ -45,7 +47,7 @@ extension TextInputViewController {
   @objc func returnMainViewController() {
     textField.resignFirstResponder()
     if let date = date {
-      self.delegate?.reloadCollectionView(date: date)
+      self.delegate?.reloadCollectionViewAndCalendarView(date: date)
     }
     performSegue(withIdentifier: "unwindMainVC", sender: self)
   }
@@ -53,10 +55,24 @@ extension TextInputViewController {
 
 extension TextInputViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    if let inputText = textField.text, !inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let date = self.date, let time = self.time {
-      let text = Text(string: inputText, date: date, time: time)
-      let textManager = TextManager()
-      textManager.recordText(date: date, time: time, text: text)
+    if let inputText = textField.text, !inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, let date = self.date, let time = self.time, let day = self.day {
+      switch repeatSegmentedControl.selectedSegmentIndex {
+      case RepeatMode.Once.rawValue:
+        let text = Text(string: inputText, date: date, time: time, day: day, repeatMode: .Once)
+        let textManager = OnceTextManager()
+        textManager.recordText(date: date, time: time, text: text)
+      case RepeatMode.Daily.rawValue:
+        let text = Text(string: inputText, date: date, time: time, day: day, repeatMode: .Daily)
+        let textManager = DailyTextManager()
+        textManager.recordText(text: text)
+      case RepeatMode.Weekly.rawValue:
+        let text = Text(string: inputText, date: date, time: time, day: day, repeatMode: .Weekly)
+
+      case RepeatMode.Monthly.rawValue:
+        let text = Text(string: inputText, date: date, time: time, day: day, repeatMode: .Monthly)
+      default:
+        return true
+      }
     }
     returnMainViewController()
     return true

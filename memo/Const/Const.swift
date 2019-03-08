@@ -10,6 +10,10 @@ import Foundation
 
 enum Const {
   static let CalenderKey = "KCalendar"
+  static let DailyTextKey = "KDailyTextKey"
+  static let WeeklyTextKey = "KWeeklyTextKey"
+  static let MonthlyTextKey = "KMonthlyTextKey"
+  
   static let DAY = TimeInterval(60.0 * 60.0 * 24.0)
 }
 

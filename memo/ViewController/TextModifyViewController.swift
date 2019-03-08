@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TextModifyViewControllerDelegate {
-  func reloadCollectionView(date: String)
+  func reloadCollectionViewAndCalendarView(date: String)
 }
 
 class TextModifyViewController: UIViewController {
@@ -48,7 +48,7 @@ extension TextModifyViewController {
   @objc func returnMainViewController() {
     textField.resignFirstResponder()
     if let date = date {
-      self.delegate?.reloadCollectionView(date: date)
+      self.delegate?.reloadCollectionViewAndCalendarView(date: date)
     }
     performSegue(withIdentifier: "unwindMainVC", sender: self)
   }
@@ -56,13 +56,25 @@ extension TextModifyViewController {
 
 extension TextModifyViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    if let inputText = textField.text, !inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-      let textManager = TextManager()
+    guard let exist = existText else { return false }
 
-      if let exist = self.existText {
+    if let inputText = textField.text, !inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+      switch exist.repeatMode {
+      case .Once:
+        let textManager = OnceTextManager()
         exist.string = inputText
         textManager.recordText(date: exist.date, time: exist.time, text: exist)
-        AlarmManager().modifyNotification(textSelected: exist, notificationType: .Once)
+        if exist.isAlarmSetting {
+          AlarmManager().modifyNotification(textSelected: exist, notificationType: .Once)
+        }
+      case .Daily:
+        let textManager = DailyTextManager()
+        exist.string = inputText
+        textManager.recordText(text: exist)
+      case .Weekly:
+        let textManager = WeeklyTextManager()
+      case .Monthly:
+        let textManager = MonthlyTextManager()
       }
     }
     returnMainViewController()
