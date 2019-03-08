@@ -188,13 +188,26 @@ class MainViewController: UIViewController {
   }
 
   func removeTapped() {
-    let manager = OnceTextManager()
-    manager.deleteText(date: dateLabel.text!, time: timeLabel.text!, text: textSelected!)
-    reloadCollectionView(date: dateLabel.text!)
-    calendarView.reloadData()
-    UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(self.textSelected!.createdAt ?? "")"])
-    textSelected = nil
-    
+    guard let textSelected = self.textSelected else { return }
+
+    switch textSelected.repeatMode {
+    case .Once:
+      let manager = OnceTextManager()
+      manager.deleteText(date: dateLabel.text!, time: timeLabel.text!, text: textSelected)
+      reloadCollectionViewAndCalendarView(date: dateLabel.text!)
+      UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(textSelected.createdAt ?? "")"])
+      self.textSelected = nil
+    case .Daily:
+      let manager = DailyTextManager()
+      manager.deleteText(text: textSelected)
+      reloadCollectionViewAndCalendarView(date: dateLabel.text!)
+    case .Weekly:
+      let manager = WeeklyTextManager()
+    case .Monthly:
+      let manager = MonthlyTextManager()
+    default:
+      return
+    }
   }
 
   func modifyTapped() {
