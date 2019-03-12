@@ -28,7 +28,7 @@ class FMDBManager {
       let contactDB = FMDatabase(path: databasesPath)
 
       if contactDB.open() {
-        let sqlStatement = "CREATE TABLE IF NOT EXISTS CONTACTS (ID INTEGER PRIMARY KEY AUTOINCREMENT, CONTENTS TEXT, DATE TEXT, TIME TEXT, DAY TEXT, CREATED_AT TEXT, REPEATMODE INTEGER, IS_ALARM_SETTING BOOL, ALARM_DATE TEXT)"
+        let sqlStatement = "CREATE TABLE IF NOT EXISTS CONTACTS (ID INTEGER PRIMARY KEY AUTOINCREMENT, CONTENTS TEXT, DATE TEXT, TIME TEXT, DAY TEXT, CREATED_AT TEXT, REPEATMODE INTEGER, IS_ALARM_SETTING INTEGER, ALARM_DATE TEXT)"
         if !contactDB.executeStatements(sqlStatement) {
           print("Error \(contactDB.lastErrorMessage())")
         }
@@ -45,7 +45,7 @@ class FMDBManager {
     let alarmDateString = text.alarmDatePicked != nil ? formatter.string(from: text.alarmDatePicked!) : ""
 
     if contactDB.open() {
-      let insertSQL = "INSERT INTO CONTACTS (contents, date, time, day, created_at, repeatmode, is_alarm_setting, alarm_date) VALUES ( '\(text.string), '\(text.date)', '\(text.time)', '\(text.day)', '\(text.createdAt)', '\(text.repeatMode.rawValue)', '\(text.isAlarmSetting)', '\(alarmDateString))' )"
+      let insertSQL = "INSERT INTO CONTACTS (contents, date, time, day, created_at, repeatmode, is_alarm_setting, alarm_date) VALUES ( '\(text.string)', '\(text.date)', '\(text.time)', '\(text.day)', '\(text.createdAt)', '\(text.repeatMode.rawValue)', '\(text.isAlarmSetting)', '\(alarmDateString)' )"
 
       let result = contactDB.executeUpdate(insertSQL, withArgumentsIn: [])
       if result {
@@ -64,7 +64,7 @@ class FMDBManager {
     let alarmDateString = text.alarmDatePicked != nil ? formatter.string(from: text.alarmDatePicked!) : ""
 
     if contactDB.open() {
-      let updateSQL = "UPDATE CONTACTS SET repeatmode = '\(text.repeatMode.rawValue), is_alarm_setting = '\(text.isAlarmSetting)', 'alarm_date = '\(alarmDateString)' WHERE created_at = '\(text.createdAt)'"
+      let updateSQL = "UPDATE CONTACTS SET contents = '\(text.string)', repeatmode = '\(text.repeatMode.rawValue)', is_alarm_setting = '\(text.isAlarmSetting)', alarm_date = '\(alarmDateString)' WHERE created_at = '\(text.createdAt)'"
       let result = contactDB.executeUpdate(updateSQL, withArgumentsIn: [])
       if result {
         print("update Text in DB")
@@ -92,8 +92,7 @@ class FMDBManager {
     }
   }
 
-  // TODO: Date로 찾기, repeatMode로 찾기
-  func findText(date: String) -> [Text] {
+  func findTextList(date: String) -> [Text] {
     let contactDB = FMDatabase(path: databasesPath)
     var textList: [Text] = []
     let formatter = MDateFormatter().formatter
@@ -127,4 +126,75 @@ class FMDBManager {
     }
     return textList
   }
+
+  func selectTextList(sql: String, likeQuery: String?) -> [Text] {
+    let contactDB = FMDatabase(path: databasesPath)
+    var textList: [Text] = []
+    let formatter = MDateFormatter().formatter
+
+    if contactDB.open() {
+      let result: FMResultSet? = try? contactDB.executeQuery(sql, values: [likeQuery ?? ""])
+
+      guard let resultTextList = result else { return textList }
+
+      while resultTextList.next() {
+        let contents = resultTextList.string(forColumn: "contents")
+        let date = resultTextList.string(forColumn: "date")
+        let time = resultTextList.string(forColumn: "time")
+        let day = resultTextList.string(forColumn: "day")
+        let repeatMode = resultTextList.int(forColumn: "repeatmode")
+        let isAlarmSetting = resultTextList.bool(forColumn: "is_alarm_setting")
+        let alarm_date = resultTextList.string(forColumn: "alarm_date")
+
+        let text = Text(string: contents!, date: date!, time: time!, day: day!, repeatMode: RepeatMode(rawValue: Int(repeatMode))!)
+
+        isAlarmSetting ? text.onAlarmSetting() : text.offAlarmSetting()
+        if let alarmDate = alarm_date, alarmDate.count > 0 {
+          text.alarmDatePicked = formatter.date(from: alarmDate)
+        }
+        textList.append(text)
+      }
+      contactDB.close()
+    }
+    return textList
+  }
+
+  func selectDateList(sql: String) -> [String] {
+    let contactDB = FMDatabase(path: databasesPath)
+    var dateList: [String] = []
+
+    if contactDB.open() {
+      let result: FMResultSet? = contactDB.executeQuery(sql, withArgumentsIn: [])
+
+      guard let resultDateList = result else { return dateList }
+
+      while resultDateList.next() {
+        dateList.append(resultDateList.string(forColumn: "date")!)
+      }
+      contactDB.close()
+    }
+
+    return dateList
+  }
+//  func loadDataList() -> [MDate] {
+//    var dateList: [MDate] = []
+//    let contactDB = FMDatabase(path: databasesPath)
+//
+//    if contactDB.open() {
+//      let querySQL = "SELECT DISTINCT date FROM CONTACTS WHERE repeatmode = 0"
+//      let result: FMResultSet? = contactDB.executeQuery(querySQL, withArgumentsIn: [])
+//
+//      guard let resultDateList = result else { return dateList }
+//
+//      while resultDateList.next() {
+//        let date = resultDateList.string(forColumn: "date")
+//        let textList = findTextList(date: date!)
+//        let dateItem = MDate(date: date!, textList: textList)
+//        dateList.append(dateItem)
+//      }
+//    } else {
+//      print("Error \(contactDB.lastErrorMessage())")
+//    }
+//    return dateList
+//  }
 }

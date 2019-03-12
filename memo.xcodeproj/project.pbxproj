@@ -15,8 +15,6 @@
 		E266366222059357001D05C8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266366122059357001D05C8 /* StringExtension.swift */; };
 		E26636642205A210001D05C8 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26636632205A210001D05C8 /* UIFontExtension.swift */; };
 		E26636672205A225001D05C8 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26636662205A225001D05C8 /* UILabelExtension.swift */; };
-		E266366F22087162001D05C8 /* MDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266366E22087162001D05C8 /* MDate.swift */; };
-		E2663671220871BE001D05C8 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2663670220871BE001D05C8 /* DateManager.swift */; };
 		E266367322087213001D05C8 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367222087213001D05C8 /* Const.swift */; };
 		E266367522089106001D05C8 /* TextModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367422089106001D05C8 /* TextModifyViewController.swift */; };
 		E266367D2208B319001D05C8 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367C2208B319001D05C8 /* Vibration.swift */; };
@@ -26,15 +24,15 @@
 		E2C37AEB222D7B2B00D84894 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AEA222D7B2B00D84894 /* IntExtensions.swift */; };
 		E2C37AED222D87A900D84894 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AEC222D87A900D84894 /* SettingViewController.swift */; };
 		E2C37AF822323D1F00D84894 /* RepeatMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AF722323D1F00D84894 /* RepeatMode.swift */; };
-		E2C37AFA2232406900D84894 /* DailyTextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AF92232406900D84894 /* DailyTextManager.swift */; };
-		E2C37AFC2232407B00D84894 /* WeeklyTextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AFB2232407B00D84894 /* WeeklyTextManager.swift */; };
-		E2C37AFE2232408A00D84894 /* MonthlyTextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AFD2232408A00D84894 /* MonthlyTextManager.swift */; };
 		E2C37B042232534200D84894 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C37B032232534200D84894 /* libsqlite3.tbd */; };
 		E2C37B062232544900D84894 /* FMDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37B052232544900D84894 /* FMDBManager.swift */; };
 		E2C37B0822325A7000D84894 /* MDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37B0722325A7000D84894 /* MDateFormatter.swift */; };
+		E2C37B0A2232793900D84894 /* TextLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37B092232793900D84894 /* TextLoader.swift */; };
+		E2C37B0C22327A5C00D84894 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37B0B22327A5C00D84894 /* Day.swift */; };
+		E2C37B0E22327AB400D84894 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37B0D22327AB400D84894 /* Month.swift */; };
+		E2C37B102232ADEA00D84894 /* DateLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37B0F2232ADEA00D84894 /* DateLoader.swift */; };
 		E2D0402D222783F400D10B51 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0402C222783F400D10B51 /* AlarmManager.swift */; };
 		E2E3C3D7220175A500C74C57 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3D6220175A500C74C57 /* Text.swift */; };
-		E2E3C3D92201767600C74C57 /* OnceTextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3D82201767600C74C57 /* OnceTextManager.swift */; };
 		E2E3C3DB22017A2100C74C57 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3DA22017A2100C74C57 /* UserDefaultsExtension.swift */; };
 		E2E3C3DD2201839B00C74C57 /* DateStringChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3DC2201839B00C74C57 /* DateStringChanger.swift */; };
 		E2F36CF421FAE0FA00A9C24C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F36CF321FAE0FA00A9C24C /* AppDelegate.swift */; };
@@ -55,8 +53,6 @@
 		E266366122059357001D05C8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		E26636632205A210001D05C8 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		E26636662205A225001D05C8 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
-		E266366E22087162001D05C8 /* MDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDate.swift; sourceTree = "<group>"; };
-		E2663670220871BE001D05C8 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		E266367222087213001D05C8 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E266367422089106001D05C8 /* TextModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifyViewController.swift; sourceTree = "<group>"; };
 		E266367C2208B319001D05C8 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
@@ -66,16 +62,16 @@
 		E2C37AEA222D7B2B00D84894 /* IntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
 		E2C37AEC222D87A900D84894 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		E2C37AF722323D1F00D84894 /* RepeatMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatMode.swift; sourceTree = "<group>"; };
-		E2C37AF92232406900D84894 /* DailyTextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTextManager.swift; sourceTree = "<group>"; };
-		E2C37AFB2232407B00D84894 /* WeeklyTextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTextManager.swift; sourceTree = "<group>"; };
-		E2C37AFD2232408A00D84894 /* MonthlyTextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyTextManager.swift; sourceTree = "<group>"; };
 		E2C37B012232515100D84894 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		E2C37B032232534200D84894 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		E2C37B052232544900D84894 /* FMDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMDBManager.swift; sourceTree = "<group>"; };
 		E2C37B0722325A7000D84894 /* MDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDateFormatter.swift; sourceTree = "<group>"; };
+		E2C37B092232793900D84894 /* TextLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLoader.swift; sourceTree = "<group>"; };
+		E2C37B0B22327A5C00D84894 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		E2C37B0D22327AB400D84894 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		E2C37B0F2232ADEA00D84894 /* DateLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLoader.swift; sourceTree = "<group>"; };
 		E2D0402C222783F400D10B51 /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
 		E2E3C3D6220175A500C74C57 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
-		E2E3C3D82201767600C74C57 /* OnceTextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnceTextManager.swift; sourceTree = "<group>"; };
 		E2E3C3DA22017A2100C74C57 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		E2E3C3DC2201839B00C74C57 /* DateStringChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStringChanger.swift; sourceTree = "<group>"; };
 		E2F36CF021FAE0FA00A9C24C /* memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,7 +124,6 @@
 			children = (
 				E21E11F021FC2485004BBFD9 /* Clock.swift */,
 				E2E3C3D6220175A500C74C57 /* Text.swift */,
-				E266366E22087162001D05C8 /* MDate.swift */,
 				E25447BF22253F2F00F48A80 /* NotificationType.swift */,
 			);
 			path = Model;
@@ -152,6 +147,8 @@
 				E266367222087213001D05C8 /* Const.swift */,
 				E266367C2208B319001D05C8 /* Vibration.swift */,
 				E2C37AF722323D1F00D84894 /* RepeatMode.swift */,
+				E2C37B0B22327A5C00D84894 /* Day.swift */,
+				E2C37B0D22327AB400D84894 /* Month.swift */,
 			);
 			path = Const;
 			sourceTree = "<group>";
@@ -159,15 +156,12 @@
 		E266367A2208A2A9001D05C8 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				E2E3C3D82201767600C74C57 /* OnceTextManager.swift */,
 				E2E3C3DC2201839B00C74C57 /* DateStringChanger.swift */,
-				E2663670220871BE001D05C8 /* DateManager.swift */,
 				E2D0402C222783F400D10B51 /* AlarmManager.swift */,
-				E2C37AF92232406900D84894 /* DailyTextManager.swift */,
-				E2C37AFB2232407B00D84894 /* WeeklyTextManager.swift */,
-				E2C37AFD2232408A00D84894 /* MonthlyTextManager.swift */,
 				E2C37B052232544900D84894 /* FMDBManager.swift */,
 				E2C37B0722325A7000D84894 /* MDateFormatter.swift */,
+				E2C37B092232793900D84894 /* TextLoader.swift */,
+				E2C37B0F2232ADEA00D84894 /* DateLoader.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -366,22 +360,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2C37AFC2232407B00D84894 /* WeeklyTextManager.swift in Sources */,
-				E2C37AFA2232406900D84894 /* DailyTextManager.swift in Sources */,
-				E2663671220871BE001D05C8 /* DateManager.swift in Sources */,
 				E20CE65321FD8E0300FF495E /* TextInputViewController.swift in Sources */,
 				E2E3C3D7220175A500C74C57 /* Text.swift in Sources */,
+				E2C37B0A2232793900D84894 /* TextLoader.swift in Sources */,
 				E266366222059357001D05C8 /* StringExtension.swift in Sources */,
+				E2C37B102232ADEA00D84894 /* DateLoader.swift in Sources */,
 				E25447C022253F2F00F48A80 /* NotificationType.swift in Sources */,
-				E2E3C3D92201767600C74C57 /* OnceTextManager.swift in Sources */,
 				E266367522089106001D05C8 /* TextModifyViewController.swift in Sources */,
+				E2C37B0C22327A5C00D84894 /* Day.swift in Sources */,
 				E26636672205A225001D05C8 /* UILabelExtension.swift in Sources */,
 				E21E11F121FC2485004BBFD9 /* Clock.swift in Sources */,
 				E2C37AEB222D7B2B00D84894 /* IntExtensions.swift in Sources */,
 				E2C37AF822323D1F00D84894 /* RepeatMode.swift in Sources */,
 				E2D0402D222783F400D10B51 /* AlarmManager.swift in Sources */,
 				E2C37AED222D87A900D84894 /* SettingViewController.swift in Sources */,
-				E266366F22087162001D05C8 /* MDate.swift in Sources */,
 				E2F36CF621FAE0FA00A9C24C /* MainViewController.swift in Sources */,
 				E2C37AE5222D146400D84894 /* AlarmCollectionViewCell.swift in Sources */,
 				E2E3C3DD2201839B00C74C57 /* DateStringChanger.swift in Sources */,
@@ -389,12 +381,12 @@
 				E266366022058BC2001D05C8 /* TextCollectionViewCell.swift in Sources */,
 				E2F36CF421FAE0FA00A9C24C /* AppDelegate.swift in Sources */,
 				E2C37AE9222D59C400D84894 /* AlarmCollectionReusableView.swift in Sources */,
+				E2C37B0E22327AB400D84894 /* Month.swift in Sources */,
 				E2C37AE3222D12CE00D84894 /* AlarmListViewController.swift in Sources */,
 				E26636642205A210001D05C8 /* UIFontExtension.swift in Sources */,
 				E266367D2208B319001D05C8 /* Vibration.swift in Sources */,
 				E2C37B0822325A7000D84894 /* MDateFormatter.swift in Sources */,
 				E2C37B062232544900D84894 /* FMDBManager.swift in Sources */,
-				E2C37AFE2232408A00D84894 /* MonthlyTextManager.swift in Sources */,
 				E266367322087213001D05C8 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

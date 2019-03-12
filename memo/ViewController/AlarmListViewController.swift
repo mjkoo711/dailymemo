@@ -15,8 +15,8 @@ import UserNotifications
 class AlarmListViewController: UIViewController {
   @IBOutlet var collectionView: UICollectionView!
 
-  var setAlarmTextList: [Text] = []
-  var alarmSortList: [(key: String, value: [Text])] = []
+  var alarmTextList: [Text] = []
+  var alarmTextDictionary: [(key: String, value: [Text])] = []
   var textSelected: Text?
 
   var selectedDatePicked: Date!
@@ -43,53 +43,46 @@ class AlarmListViewController: UIViewController {
   }
 
   private func loadSetAlarmText() {
-    let dateList = DateManager().loadDateList()
-    var textList: [Text] = []
+    alarmTextList = TextLoader().findAlarmTextList()
+
     var dic: [String: [Text]] = [:]
 
-    for dateItem in dateList {
-      textList += dateItem.textList
-    }
-
-    for text in textList {
-      if text.isAlarmSetting {
-        setAlarmTextList.append(text)
-        if let _ = dic["\(formatter.string(from: text.alarmDatePicked!))"] {
-          dic["\(formatter.string(from: text.alarmDatePicked!))"]?.append(text)
-        } else {
-          dic["\(formatter.string(from: text.alarmDatePicked!))"] = [text]
-        }
+    for text in alarmTextList {
+      if let _ = dic["\(formatter.string(from: text.alarmDatePicked!))"] {
+        dic["\(formatter.string(from: text.alarmDatePicked!))"]?.append(text)
+      } else {
+        dic["\(formatter.string(from: text.alarmDatePicked!))"] = [text]
       }
     }
-    alarmSortList = dic.sorted { $0.0 < $1.0 }
+    alarmTextDictionary = dic.sorted { $0.0 < $1.0 }
   }
 }
 
 extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return alarmSortList[section].value.count
+    return alarmTextDictionary[section].value.count
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlarmCollectionViewCell", for: indexPath) as! AlarmCollectionViewCell
-    cell.textInstance = alarmSortList[indexPath.section].value[indexPath.row]
+    cell.textInstance = alarmTextDictionary[indexPath.section].value[indexPath.row]
 
-    cell.textLabel.text = alarmSortList[indexPath.section].value[indexPath.row].string
-    cell.dateLabel.text = alarmSortList[indexPath.section].value[indexPath.row].date + "에 작성"
+    cell.textLabel.text = alarmTextDictionary[indexPath.section].value[indexPath.row].string
+    cell.dateLabel.text = alarmTextDictionary[indexPath.section].value[indexPath.row].date + "에 작성"
 
     cell.delegate = self
     return cell
   }
 
   func numberOfSections(in collectionView: UICollectionView) -> Int {
-    return alarmSortList.count
+    return alarmTextDictionary.count
   }
 
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
     let alarmTimeHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "AlarmCollectionReusableView", for: indexPath) as! AlarmCollectionReusableView
 
-    alarmTimeHeaderView.alarmTimeLabel.text = alarmSortList[indexPath.section].key
+    alarmTimeHeaderView.alarmTimeLabel.text = alarmTextDictionary[indexPath.section].key
     return alarmTimeHeaderView
   }
 }
@@ -98,7 +91,7 @@ extension AlarmListViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let constDateTextHeight = "text".height(withConstrainedWidth: UIScreen.main.bounds.width, font: UIFont(name: "Helvetica Neue", size: 17)!)
 
-    let height = alarmSortList[indexPath.section].value[indexPath.row].string.height(withConstrainedWidth: UIScreen.main.bounds.width, font: UIFont(name: "Helvetica Neue", size: 17)!) + 10 + constDateTextHeight
+    let height = alarmTextDictionary[indexPath.section].value[indexPath.row].string.height(withConstrainedWidth: UIScreen.main.bounds.width, font: UIFont(name: "Helvetica Neue", size: 17)!) + 10 + constDateTextHeight
     return CGSize(width: UIScreen.main.bounds.width, height: height)
   }
 }
@@ -109,7 +102,7 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
 
     let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
-    if let textAlarmDate = text.alarmDatePicked, text.isAlarmSetting {
+    if let textAlarmDate = text.alarmDatePicked, text.isAlarmable() {
       actionSheet.title = "알람 예정시간"
       actionSheet.message = "\(formatter2.string(from: textAlarmDate))"
     }
@@ -121,7 +114,7 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
     let deleteAlarm = UIAlertAction(title: "Remove Alarm", style: .destructive, handler: { (action) in
       if let text = self.textSelected {
         text.offAlarmSetting()
-        OnceTextManager().recordText(date: text.date, time: text.time, text: text)
+        FMDBManager.shared.updateText(text: text)
         AlarmManager().removeNotification(textSelected: text)
         self.reloadCollectionView()
       }
@@ -156,7 +149,7 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
       guard let text = self.textSelected else { return }
 
       text.alarmDatePicked = self.selectedDatePicked
-      OnceTextManager().recordText(date: text.date, time: text.time, text: text)
+      FMDBManager.shared.updateText(text: text)
       self.textAlarmTrigger(text: text, isAlarmSetting: true)
       AlarmManager().addNotification(textSelected: text, datePicked: self.selectedDatePicked, notificationType: .Once)
       self.collectionView.reloadData()
@@ -180,13 +173,13 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
   }
 
   private func textAlarmTrigger(text: Text, isAlarmSetting: Bool) {
-    let textManager = OnceTextManager()
+//    let textManager = OnceTextManager()
     if isAlarmSetting {
       text.onAlarmSetting()
     } else {
       text.offAlarmSetting()
     }
-    textManager.recordText(date: text.date, time: text.time, text: text)
+    FMDBManager.shared.updateText(text: text)
     reloadCollectionView()
   }
 

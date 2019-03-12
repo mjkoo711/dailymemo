@@ -59,17 +59,16 @@ extension TextInputViewController: UITextFieldDelegate {
       switch repeatSegmentedControl.selectedSegmentIndex {
       case RepeatMode.Once.rawValue:
         let text = Text(string: inputText, date: date, time: time, day: day, repeatMode: .Once)
-        let textManager = OnceTextManager()
-        textManager.recordText(date: date, time: time, text: text)
+        FMDBManager.shared.insertText(text: text)
       case RepeatMode.Daily.rawValue:
         let text = Text(string: inputText, date: date, time: time, day: day, repeatMode: .Daily)
-        let textManager = DailyTextManager()
-        textManager.recordText(text: text)
+        FMDBManager.shared.insertText(text: text)
       case RepeatMode.Weekly.rawValue:
         let text = Text(string: inputText, date: date, time: time, day: day, repeatMode: .Weekly)
-
+        FMDBManager.shared.insertText(text: text)
       case RepeatMode.Monthly.rawValue:
         let text = Text(string: inputText, date: date, time: time, day: day, repeatMode: .Monthly)
+        FMDBManager.shared.insertText(text: text)
       default:
         return true
       }

@@ -67,10 +67,10 @@ class DateStringChanger {
     }
   }
 
-  func getDayOfWeek(_ today:String) -> Int { // yyyy-MM-dd
-    let todayDate = formatter.date(from: today)
+  func getDayOfWeek(_ date: String) -> Int { // yyyy-MM-dd
+    let dateChanged = formatter.date(from: date)
     let myCalendar = Calendar(identifier: .gregorian)
-    let weekDay = myCalendar.component(.weekday, from: todayDate!)
+    let weekDay = myCalendar.component(.weekday, from: dateChanged!)
     return weekDay
   }
 }

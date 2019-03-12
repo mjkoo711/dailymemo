@@ -59,22 +59,16 @@ extension TextModifyViewController: UITextFieldDelegate {
     guard let exist = existText else { return false }
 
     if let inputText = textField.text, !inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+      exist.string = inputText
+
       switch exist.repeatMode {
       case .Once:
-        let textManager = OnceTextManager()
-        exist.string = inputText
-        textManager.recordText(date: exist.date, time: exist.time, text: exist)
-        if exist.isAlarmSetting {
+        FMDBManager.shared.updateText(text: exist)
+        if exist.isAlarmable() {
           AlarmManager().modifyNotification(textSelected: exist, notificationType: .Once)
         }
-      case .Daily:
-        let textManager = DailyTextManager()
-        exist.string = inputText
-        textManager.recordText(text: exist)
-      case .Weekly:
-        let textManager = WeeklyTextManager()
-      case .Monthly:
-        let textManager = MonthlyTextManager()
+      case .Daily, .Weekly, .Monthly:
+        FMDBManager.shared.updateText(text: exist)
       }
     }
     returnMainViewController()
