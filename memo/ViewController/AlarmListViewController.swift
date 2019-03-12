@@ -143,13 +143,13 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
 
       // MARK: snackbar
       let message = MDCSnackbarMessage()
-      message.buttonTextColor = UIColor.red
+      message.buttonTextColor = Color.LightRed
       message.text = "알람시간이 \(self.formatter2.string(from: datePicker.date))로 변경되었습니다."
 
       MDCSnackbarManager.show(message)
 
     }
-    alertView.addButton("CANCEL", backgroundColor: UIColor.red) {
+    alertView.addButton("CANCEL", backgroundColor: Color.LightRed) {
 
     }
     alertView.showTitle("알림설정", subTitle: "해당 키워드에 대해 알람을 설정하신 적이 있다면 지금 설정하는 것으로 최신화됩니다.", style: .notice)

@@ -17,10 +17,13 @@ class MainViewController: UIViewController {
   @IBOutlet var dateLabel: UILabel!
   @IBOutlet var dayLabel: UILabel!
 
+  @IBOutlet var calendarHeightConstraint: NSLayoutConstraint!
   @IBOutlet var showAlarmListButtonView: UIView!
   @IBOutlet var showSettingButtonView: UIView!
   @IBOutlet var todayLabel: UILabel!
 
+  @IBOutlet var expandView: UIView!
+  @IBOutlet var expandImageButtonView: UIImageView!
   @IBOutlet var collectionView: UICollectionView!
   @IBOutlet weak var timeLabel: UILabel!
 
@@ -57,6 +60,8 @@ class MainViewController: UIViewController {
 
     timeChanger = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(MainViewController.updateTimeLabel), userInfo: nil, repeats: true)
 
+    calendarView.scope = .month
+
     let tapGestureForCollectionView = UITapGestureRecognizer(target: self, action: #selector(showInputTextViewController))
     collectionView.addGestureRecognizer(tapGestureForCollectionView)
 
@@ -80,6 +85,9 @@ class MainViewController: UIViewController {
 
     let tapGestureForTodayButtonView = UITapGestureRecognizer(target: self, action: #selector(moveToday))
     todayButtonView.addGestureRecognizer(tapGestureForTodayButtonView)
+
+    let tapGestureForExpandButtonView = UITapGestureRecognizer(target: self, action: #selector(expandCalendar))
+    expandView.addGestureRecognizer(tapGestureForExpandButtonView)
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -142,7 +150,7 @@ class MainViewController: UIViewController {
       self.reloadCollectionView(date: self.selectDateString)
       // MARK: snackbar
       let message = MDCSnackbarMessage()
-      message.buttonTextColor = UIColor.red
+      message.buttonTextColor = Color.LightRed
       message.text = "알람이 \(self.formatter2.string(from: datePicker.date))에 울립니다."
 
       let action = MDCSnackbarMessageAction()
@@ -160,7 +168,7 @@ class MainViewController: UIViewController {
       MDCSnackbarManager.show(message)
 
     }
-    alertView.addButton("CANCEL", backgroundColor: UIColor.red) {
+    alertView.addButton("CANCEL", backgroundColor: Color.LightRed) {
 
     }
     alertView.showTitle("알림설정", subTitle: "해당 키워드에 대해 알람을 설정하신 적이 있다면 지금 설정하는 것으로 최신화됩니다.", style: .notice)
@@ -262,6 +270,14 @@ extension MainViewController: FSCalendarDataSource {
     }
     return 0
   }
+
+  func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
+    calendarHeightConstraint.constant = bounds.size.height
+    collectionView.layoutIfNeeded()
+  }
+}
+
+extension MainViewController: FSCalendarDelegateAppearance {
 }
 
 extension MainViewController: TextInputViewControllerDelegate, TextModifyViewControllerDelegate {
@@ -289,9 +305,9 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     cell.textInstance = textList[indexPath.row]
     cell.descriptionLabel.text = textList[indexPath.row].string
     if textList[indexPath.row].isAlarmable() {
-      cell.descriptionLabel.textColor = UIColor.blue
+      cell.descriptionLabel.textColor = Color.Blue
     } else {
-      cell.descriptionLabel.textColor = UIColor.black
+      cell.descriptionLabel.textColor = Color.Black
     }
     cell.delegate = self
     return cell
@@ -403,5 +419,16 @@ extension MainViewController {
     guard let date = Calendar.current.date(byAdding: .month, value: -1, to: currentDate) else { return }
     calendarView.select(date, scrollToDate: true)
     reloadDataShowed(date: date)
+  }
+
+  @objc private func expandCalendar() {
+    Vibration.medium.vibrate()
+    if calendarView.scope == .week {
+      calendarView.scope = .month
+      expandImageButtonView.image = UIImage(named: "Down")
+    } else {
+      calendarView.scope = .week
+      expandImageButtonView.image = UIImage(named: "Up")
+    }
   }
 }
