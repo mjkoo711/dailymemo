@@ -259,16 +259,16 @@ extension MainViewController: FSCalendarDelegate {
 }
 
 extension MainViewController: FSCalendarDataSource {
-  func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+  func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, borderDefaultColorFor date: Date) -> UIColor? {
     let dateList = DateLoader().findOnceDateList()
     let dateString = formatter.string(from: date)
 
     for dateItem in dateList {
       if dateItem == dateString {
-        return 1
+        return Color.Gray
       }
     }
-    return 0
+    return Color.White
   }
 
   func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {

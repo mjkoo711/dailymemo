@@ -339,20 +339,19 @@
                                 <rect key="frame" x="8" y="370" width="359" height="25"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Down" translatesAutoresizingMaskIntoConstraints="NO" id="wgH-aY-NVD">
-                                        <rect key="frame" x="162" y="0.0" width="35" height="25"/>
+                                        <rect key="frame" x="153.5" y="0.0" width="52" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="35" id="cL7-Ud-rbC"/>
+                                            <constraint firstAttribute="width" constant="52" id="tRd-B4-J11"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="wgH-aY-NVD" firstAttribute="height" secondItem="VMC-8u-7Zw" secondAttribute="height" id="DO7-50-84r"/>
+                                    <constraint firstItem="wgH-aY-NVD" firstAttribute="centerX" secondItem="VMC-8u-7Zw" secondAttribute="centerX" id="3cV-FH-GKI"/>
+                                    <constraint firstItem="wgH-aY-NVD" firstAttribute="centerY" secondItem="VMC-8u-7Zw" secondAttribute="centerY" id="9S7-uJ-WfK"/>
                                     <constraint firstAttribute="height" constant="25" id="Fbo-Yb-dOZ"/>
-                                    <constraint firstItem="wgH-aY-NVD" firstAttribute="top" secondItem="VMC-8u-7Zw" secondAttribute="top" id="JgZ-lC-jgB"/>
-                                    <constraint firstItem="wgH-aY-NVD" firstAttribute="leading" secondItem="VMC-8u-7Zw" secondAttribute="leading" constant="162" id="XyZ-rA-ukr"/>
-                                    <constraint firstAttribute="bottom" secondItem="wgH-aY-NVD" secondAttribute="bottom" id="bie-2u-4sJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="wgH-aY-NVD" secondAttribute="trailing" constant="162" id="rjv-lX-y9J"/>
+                                    <constraint firstItem="wgH-aY-NVD" firstAttribute="top" secondItem="VMC-8u-7Zw" secondAttribute="top" id="ZiO-dY-Taj"/>
+                                    <constraint firstAttribute="bottom" secondItem="wgH-aY-NVD" secondAttribute="bottom" id="e4n-um-2vI"/>
                                 </constraints>
                             </view>
                         </subviews>
