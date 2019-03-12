@@ -28,9 +28,14 @@ class MainViewController: UIViewController {
   @IBOutlet var nextMonthButtonView: UIView!
   @IBOutlet var previousDayButtonView: UIView!
   @IBOutlet var nextDayButtonView: UIView!
+  @IBOutlet var todayButtonView: UIView!
+
+  private var selectDateString: String!
+  private var selectDayString: String!
 
   fileprivate let formatter = MDateFormatter().formatter
   fileprivate let formatter2 = MDateFormatter().formatter2
+  fileprivate let formatterKorea = MDateFormatter().formatterKorea
 
   let clock = Clock()
   var timeChanger: Timer?
@@ -44,8 +49,11 @@ class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     calendarView.placeholderType = .none
-    dateLabel.text = formatter.string(from: Date())
-    dayLabel.text = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(formatter.string(from: Date())))
+    selectDateString = formatter.string(from: Date())
+    selectDayString = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(formatter.string(from: Date())))
+
+    dateLabel.text = formatterKorea.string(from: Date())
+    dayLabel.text = selectDayString
 
     timeChanger = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(MainViewController.updateTimeLabel), userInfo: nil, repeats: true)
 
@@ -69,6 +77,9 @@ class MainViewController: UIViewController {
 
     let tapGestureForNextDayButtonView = UITapGestureRecognizer(target: self, action: #selector(moveNextDay))
     nextDayButtonView.addGestureRecognizer(tapGestureForNextDayButtonView)
+
+    let tapGestureForTodayButtonView = UITapGestureRecognizer(target: self, action: #selector(moveToday))
+    todayButtonView.addGestureRecognizer(tapGestureForTodayButtonView)
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -86,13 +97,13 @@ class MainViewController: UIViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "textInputSegue" {
       let viewController: TextInputViewController = segue.destination as! TextInputViewController
-      viewController.date = dateLabel.text
+      viewController.date = selectDateString
       viewController.time = timeLabel.text
-      viewController.day = dayLabel.text
+      viewController.day = selectDayString
       viewController.delegate = self
     } else if segue.identifier == "textModifySegue" {
       let viewController: TextModifyViewController = segue.destination as! TextModifyViewController
-      viewController.date = dateLabel.text
+      viewController.date = selectDateString
       viewController.time = timeLabel.text
       viewController.existText = textSelected
       viewController.delegate = self
@@ -128,7 +139,7 @@ class MainViewController: UIViewController {
       text.alarmDatePicked = self.selectedDatePicked
       self.textAlarmTrigger(text: text, isAlarmSetting: true)
       AlarmManager().addNotification(textSelected: text, datePicked: self.selectedDatePicked, notificationType: .Once)
-      self.reloadCollectionView(date: self.dateLabel.text!)
+      self.reloadCollectionView(date: self.selectDateString)
       // MARK: snackbar
       let message = MDCSnackbarMessage()
       message.buttonTextColor = UIColor.red
@@ -162,7 +173,7 @@ class MainViewController: UIViewController {
       text.offAlarmSetting()
     }
     FMDBManager.shared.updateText(text: text)
-    reloadCollectionView(date: dateLabel.text!)
+    reloadCollectionView(date: selectDateString)
   }
 
   @objc private func dateSelected(datePicker: UIDatePicker) {
@@ -173,22 +184,13 @@ class MainViewController: UIViewController {
     guard let textSelected = self.textSelected else { return }
 
     FMDBManager.shared.deleteText(text: textSelected)
-    reloadCollectionViewAndCalendarView(date: dateLabel.text!)
+    reloadCollectionViewAndCalendarView(date: selectDateString)
     AlarmManager().removeNotification(textSelected: textSelected)
     self.textSelected = nil
   }
 
   func modifyTapped() {
     performSegue(withIdentifier: "textModifySegue", sender: self)
-  }
-
-  @IBAction func todayTapped(_ sender: Any) {
-    let date = Date()
-    Vibration.medium.vibrate()
-    todayLabel.isHidden = false
-    calendarView.select(date)
-    reloadDataShowed(date: date)
-    reloadCollectionView(date: formatter.string(from: date))
   }
 
   @IBAction func unwindMainViewController(segue: UIStoryboardSegue) {}
@@ -239,9 +241,11 @@ extension MainViewController: FSCalendarDelegate {
     } else {
       todayLabel.isHidden = true
     }
+    selectDateString = selectDate
+    selectDayString = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(selectDate))
 
     dateLabel.text = selectDate
-    dayLabel.text = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(selectDate))
+    dayLabel.text = selectDayString
     reloadCollectionView(date: selectDate)
   }
 }
@@ -328,7 +332,7 @@ extension MainViewController: TextCollectionViewCellDelegate {
         text.offAlarmSetting()
         FMDBManager.shared.updateText(text: text)
         AlarmManager().removeNotification(textSelected: text)
-        self.reloadCollectionView(date: self.dateLabel.text!)
+        self.reloadCollectionView(date: self.selectDateString)
       }
     })
     let modifyAction = UIAlertAction(title: "Modify", style: .destructive, handler: {(action) in
@@ -361,9 +365,17 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 
 extension MainViewController {
   //MARK: move calender
+  @objc private func moveToday() {
+    Vibration.medium.vibrate()
+    let date = Date()
+    todayLabel.isHidden = false
+    calendarView.select(date)
+    reloadDataShowed(date: date)
+  }
+
   @objc private func moveNextDay() {
     Vibration.medium.vibrate()
-    guard let currentDate = formatter.date(from: dateLabel.text!) else { return }
+    guard let currentDate = formatter.date(from: selectDateString) else { return }
     guard let date = Calendar.current.date(byAdding: .day, value: 1, to: currentDate) else { return }
     calendarView.select(date, scrollToDate: true)
     reloadDataShowed(date: date)
@@ -371,7 +383,7 @@ extension MainViewController {
 
   @objc private func movePreviousDay() {
     Vibration.medium.vibrate()
-    guard let currentDate = formatter.date(from: dateLabel.text!) else { return }
+    guard let currentDate = formatter.date(from: selectDateString) else { return }
     guard let date = Calendar.current.date(byAdding: .day, value: -1, to: currentDate) else { return }
     calendarView.select(date, scrollToDate: true)
     reloadDataShowed(date: date)
@@ -379,7 +391,7 @@ extension MainViewController {
 
   @objc private func moveNextMonth() {
     Vibration.medium.vibrate()
-    guard let currentDate = formatter.date(from: dateLabel.text!) else { return }
+    guard let currentDate = formatter.date(from: selectDateString) else { return }
     guard let date = Calendar.current.date(byAdding: .month, value: 1, to: currentDate) else { return }
     calendarView.select(date, scrollToDate: true)
     reloadDataShowed(date: date)
@@ -387,7 +399,7 @@ extension MainViewController {
 
   @objc private func movePreviousMonth() {
     Vibration.medium.vibrate()
-    guard let currentDate = formatter.date(from: dateLabel.text!) else { return }
+    guard let currentDate = formatter.date(from: selectDateString) else { return }
     guard let date = Calendar.current.date(byAdding: .month, value: -1, to: currentDate) else { return }
     calendarView.select(date, scrollToDate: true)
     reloadDataShowed(date: date)

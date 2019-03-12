@@ -23,4 +23,10 @@ struct MDateFormatter {
     formatter.dateFormat = "YYYY-MM-dd hh:mm a"
     return formatter
   }()
+
+  let formatterKorea: DateFormatter = {
+    let formatterKorea = DateFormatter()
+    formatterKorea.dateFormat = "YYYY년 MM월 dd일"
+    return formatterKorea
+  }()
 }
