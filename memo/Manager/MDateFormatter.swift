@@ -11,6 +11,12 @@ import Foundation
 struct MDateFormatter {
   let formatter: DateFormatter = {
     let formatter = DateFormatter()
+    formatter.dateFormat = "YYYY-MM-dd"
+    return formatter
+  }()
+
+  let formatter2: DateFormatter = {
+    let formatter = DateFormatter()
     formatter.locale = Locale.init(identifier: Locale.current.languageCode!)
     formatter.amSymbol = "AM"
     formatter.pmSymbol = "PM"

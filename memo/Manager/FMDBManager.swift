@@ -41,7 +41,7 @@ class FMDBManager {
 
   func insertText(text: Text) {
     let contactDB = FMDatabase(path: databasesPath)
-    let formatter = MDateFormatter().formatter
+    let formatter = MDateFormatter().formatter2
     let alarmDateString = text.alarmDatePicked != nil ? formatter.string(from: text.alarmDatePicked!) : ""
 
     if contactDB.open() {
@@ -60,7 +60,7 @@ class FMDBManager {
 
   func updateText(text: Text) {
     let contactDB = FMDatabase(path: databasesPath)
-    let formatter = MDateFormatter().formatter
+    let formatter = MDateFormatter().formatter2
     let alarmDateString = text.alarmDatePicked != nil ? formatter.string(from: text.alarmDatePicked!) : ""
 
     if contactDB.open() {
@@ -95,7 +95,7 @@ class FMDBManager {
   func findTextList(date: String) -> [Text] {
     let contactDB = FMDatabase(path: databasesPath)
     var textList: [Text] = []
-    let formatter = MDateFormatter().formatter
+    let formatter = MDateFormatter().formatter2
 
     if contactDB.open() {
       let querySQL = "SELECT contents, date, time, day, repeatmode, is_alarm_setting, alarm_date FROM CONTACTS WHERE date = '\(date)'"
@@ -130,7 +130,7 @@ class FMDBManager {
   func selectTextList(sql: String, likeQuery: String?) -> [Text] {
     let contactDB = FMDatabase(path: databasesPath)
     var textList: [Text] = []
-    let formatter = MDateFormatter().formatter
+    let formatter = MDateFormatter().formatter2
 
     if contactDB.open() {
       let result: FMResultSet? = try? contactDB.executeQuery(sql, values: [likeQuery ?? ""])

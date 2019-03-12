@@ -29,22 +29,8 @@ class MainViewController: UIViewController {
   @IBOutlet var previousDayButtonView: UIView!
   @IBOutlet var nextDayButtonView: UIView!
 
-
-  fileprivate let gregorian = Calendar(identifier: .gregorian)
-  fileprivate let formatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "YYYY-MM-dd"
-    return formatter
-  }()
-
-  fileprivate let formatter2: DateFormatter = {
-    let formatter2 = DateFormatter()
-    formatter2.locale = Locale.init(identifier: Locale.current.languageCode!)
-    formatter2.amSymbol = "AM"
-    formatter2.pmSymbol = "PM"
-    formatter2.dateFormat = "YYYY-MM-dd hh:mm a"
-    return formatter2
-  }()
+  fileprivate let formatter = MDateFormatter().formatter
+  fileprivate let formatter2 = MDateFormatter().formatter2
 
   let clock = Clock()
   var timeChanger: Timer?

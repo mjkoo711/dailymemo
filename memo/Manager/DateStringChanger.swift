@@ -9,11 +9,7 @@
 import Foundation
 
 class DateStringChanger {
-  fileprivate let formatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "YYYY-MM-dd"
-    return formatter
-  }()
+  fileprivate let formatter = MDateFormatter().formatter
   
   func getStringYear(year: String) -> String {
     switch year {

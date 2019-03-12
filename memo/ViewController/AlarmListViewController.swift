@@ -21,21 +21,8 @@ class AlarmListViewController: UIViewController {
 
   var selectedDatePicked: Date!
 
-  fileprivate let formatter2: DateFormatter = {
-    let formatter2 = DateFormatter()
-    formatter2.locale = Locale.init(identifier: Locale.current.languageCode!)
-    formatter2.amSymbol = "AM"
-    formatter2.pmSymbol = "PM"
-    formatter2.dateFormat = "YYYY-MM-dd hh:mm a"
-    return formatter2
-  }()
-
-  fileprivate let formatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.locale = Locale.init(identifier: Locale.current.languageCode!)
-    formatter.dateFormat = "YYYY-MM-dd"
-    return formatter
-  }()
+  fileprivate let formatter2 = MDateFormatter().formatter2
+  fileprivate let formatter = MDateFormatter().formatter
 
   override func viewDidLoad() {
     super.viewDidLoad()
