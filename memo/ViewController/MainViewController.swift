@@ -298,11 +298,27 @@ extension MainViewController: TextCollectionViewCellDelegate {
   func showActionSheet(text: Text) {
     textSelected = text
 
-    let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+    let actionSheet = UIAlertController(title: text.string, message: "예정된 알람 없음", preferredStyle: .actionSheet)
 
     if let textAlarmDate = text.alarmDatePicked, text.isAlarmable() {
-      actionSheet.title = "알람 예정시간"
-      actionSheet.message = "\(formatter2.string(from: textAlarmDate))"
+      actionSheet.title = text.string
+      actionSheet.message =  "알람 예정시간\n" + "\(formatter2.string(from: textAlarmDate))"
+    }
+
+    if !text.isAlarmable() && text.repeatMode != .Once {
+      var repeatModeString = ""
+
+      switch text.repeatMode {
+      case .Daily:
+        repeatModeString = "매일"
+      case .Weekly:
+        repeatModeString = "매주"
+      case .Monthly:
+        repeatModeString = "매달"
+      default:
+        repeatModeString = ""
+      }
+      actionSheet.message = "\(repeatModeString)" + " 설정된 메모는 알람설정이 불가합니다."
     }
     let setAlarmAction = UIAlertAction(title: "Alarm", style: .default, handler: { (action) in
       self.showAlarmSettingView()

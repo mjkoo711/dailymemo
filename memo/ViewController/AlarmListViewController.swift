@@ -90,8 +90,8 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
     let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
     if let textAlarmDate = text.alarmDatePicked, text.isAlarmable() {
-      actionSheet.title = "알람 예정시간"
-      actionSheet.message = "\(formatter2.string(from: textAlarmDate))"
+      actionSheet.title = text.string
+      actionSheet.message = "알람 예정시간\n" + "\(formatter2.string(from: textAlarmDate))"
     }
 
     let setAlarmAction = UIAlertAction(title: "Modify Alarm", style: .default, handler: { (action) in
