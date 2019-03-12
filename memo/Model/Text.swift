@@ -13,9 +13,9 @@ class Text: Codable {
   var date: String
   var time: String
   var day: String
-  var createdAt: String!
+  var createdAt: String
   var repeatMode: RepeatMode
-  private(set) var isAlarmSetting: Bool
+  private(set) var isAlarmSetting: Int
   var alarmDatePicked: Date?
 
   init(string: String, date: String, time: String, day: String, repeatMode: RepeatMode) {
@@ -25,14 +25,18 @@ class Text: Codable {
     self.day = day
     self.repeatMode = repeatMode
     self.createdAt = date + " " + time
-    self.isAlarmSetting = false
+    self.isAlarmSetting = 0
   }
 
   func onAlarmSetting() {
-    isAlarmSetting = true
+    isAlarmSetting = 1
   }
 
   func offAlarmSetting() {
-    isAlarmSetting = false
+    isAlarmSetting = 0
+  }
+
+  func isAlarmable() -> Bool {
+    return isAlarmSetting == 1 ? true : false
   }
 }

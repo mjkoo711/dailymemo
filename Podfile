@@ -8,5 +8,7 @@ target 'memo' do
   pod 'IQKeyboardManagerSwift'
   pod 'FSCalendar'
   pod 'MaterialComponents/Snackbar'
+  pod 'FMDB'
+
   # Pods for memo
 end

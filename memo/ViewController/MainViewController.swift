@@ -52,7 +52,6 @@ class MainViewController: UIViewController {
   var textSelected: Text?
 
   var textList: [Text] = []
-  var dateList: [MDate] = []
 
   var selectedDatePicked: Date!
 
@@ -141,11 +140,9 @@ class MainViewController: UIViewController {
       guard let text = self.textSelected else { return }
 
       text.alarmDatePicked = self.selectedDatePicked
-      OnceTextManager().recordText(date: text.date, time: text.time, text: text)
       self.textAlarmTrigger(text: text, isAlarmSetting: true)
       AlarmManager().addNotification(textSelected: text, datePicked: self.selectedDatePicked, notificationType: .Once)
-      self.collectionView.reloadData()
-
+      self.reloadCollectionView(date: self.dateLabel.text!)
       // MARK: snackbar
       let message = MDCSnackbarMessage()
       message.buttonTextColor = UIColor.red
@@ -173,13 +170,12 @@ class MainViewController: UIViewController {
   }
 
   private func textAlarmTrigger(text: Text, isAlarmSetting: Bool) {
-    let textManager = OnceTextManager()
     if isAlarmSetting {
       text.onAlarmSetting()
     } else {
       text.offAlarmSetting()
     }
-    textManager.recordText(date: text.date, time: text.time, text: text)
+    FMDBManager.shared.updateText(text: text)
     reloadCollectionView(date: dateLabel.text!)
   }
 
@@ -190,24 +186,10 @@ class MainViewController: UIViewController {
   func removeTapped() {
     guard let textSelected = self.textSelected else { return }
 
-    switch textSelected.repeatMode {
-    case .Once:
-      let manager = OnceTextManager()
-      manager.deleteText(date: dateLabel.text!, time: timeLabel.text!, text: textSelected)
-      reloadCollectionViewAndCalendarView(date: dateLabel.text!)
-      UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(textSelected.createdAt ?? "")"])
-      self.textSelected = nil
-    case .Daily:
-      let manager = DailyTextManager()
-      manager.deleteText(text: textSelected)
-      reloadCollectionViewAndCalendarView(date: dateLabel.text!)
-    case .Weekly:
-      let manager = WeeklyTextManager()
-    case .Monthly:
-      let manager = MonthlyTextManager()
-    default:
-      return
-    }
+    FMDBManager.shared.deleteText(text: textSelected)
+    reloadCollectionViewAndCalendarView(date: dateLabel.text!)
+    AlarmManager().removeNotification(textSelected: textSelected)
+    self.textSelected = nil
   }
 
   func modifyTapped() {
@@ -278,30 +260,15 @@ extension MainViewController: FSCalendarDelegate {
   }
 }
 
-extension MainViewController: FSCalendarDataSource {
-  func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-    let dateString = formatter.string(from: date)
-
-    for dateItem in dateList {
-      if dateItem.date == dateString {
-        return 1
-      }
-    }
-    return 0
-  }
-}
-
 extension MainViewController: TextInputViewControllerDelegate, TextModifyViewControllerDelegate {
   func reloadCollectionView(date: String) {
-    textList = OnceTextManager().loadTextList(date: date) + DailyTextManager().loadTextList()
-    dateList = DateManager().loadDateList()
+    textList = TextLoader().findOnceTextList(date: date) + TextLoader().findDailyTextList() + TextLoader().findWeeklyTextList(date: date) + TextLoader().findMonthlyTextList(date: date)
     collectionView.reloadData()
     collectionViewScrollToBottom()
   }
 
   func reloadCollectionViewAndCalendarView(date: String) {
-    textList = OnceTextManager().loadTextList(date: date) + DailyTextManager().loadTextList()
-    dateList = DateManager().loadDateList()
+    textList = TextLoader().findOnceTextList(date: date) + TextLoader().findDailyTextList() + TextLoader().findWeeklyTextList(date: date) + TextLoader().findMonthlyTextList(date: date)
     collectionView.reloadData()
     calendarView.reloadData()
     collectionViewScrollToBottom()
@@ -317,7 +284,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextCell", for: indexPath) as! TextCollectionViewCell
     cell.textInstance = textList[indexPath.row]
     cell.descriptionLabel.text = textList[indexPath.row].string
-    if textList[indexPath.row].isAlarmSetting {
+    if textList[indexPath.row].isAlarmable() {
       cell.descriptionLabel.textColor = UIColor.blue
     } else {
       cell.descriptionLabel.textColor = UIColor.black
@@ -333,7 +300,7 @@ extension MainViewController: TextCollectionViewCellDelegate {
 
     let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
-    if let textAlarmDate = text.alarmDatePicked, text.isAlarmSetting {
+    if let textAlarmDate = text.alarmDatePicked, text.isAlarmable() {
       actionSheet.title = "알람 예정시간"
       actionSheet.message = "\(formatter2.string(from: textAlarmDate))"
     }
@@ -343,7 +310,7 @@ extension MainViewController: TextCollectionViewCellDelegate {
     let deleteAlarm = UIAlertAction(title: "Remove Alarm", style: .default, handler: { (action) in
       if let text = self.textSelected {
         text.offAlarmSetting()
-        OnceTextManager().recordText(date: text.date, time: text.time, text: text)
+        FMDBManager.shared.updateText(text: text)
         AlarmManager().removeNotification(textSelected: text)
         self.reloadCollectionView(date: self.dateLabel.text!)
       }
@@ -356,9 +323,9 @@ extension MainViewController: TextCollectionViewCellDelegate {
     })
     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 
-    if let text = textSelected, text.isAlarmSetting, text.repeatMode == .Once {
+    if let text = textSelected, text.isAlarmable(), text.repeatMode == .Once {
       actionSheet.addAction(deleteAlarm)
-    } else if !text.isAlarmSetting, text.repeatMode == .Once {
+    } else if !text.isAlarmable(), text.repeatMode == .Once {
       actionSheet.addAction(setAlarmAction)
     }
     actionSheet.addAction(modifyAction)
