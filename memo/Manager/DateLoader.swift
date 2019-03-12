@@ -13,4 +13,9 @@ class DateLoader {
     let querySQL = "SELECT date FROM CONTACTS WHERE repeatmode = 0 and is_alarm_setting = 1 GROUP BY date ORDER BY date"
     return FMDBManager.shared.selectDateList(sql: querySQL)
   }
+
+  func findOnceDateList() -> [String] {
+    let querySQL = "SELECT date FROM CONTACTS WHERE repeatmode = 0 GROUP BY date ORDER BY date"
+    return FMDBManager.shared.selectDateList(sql: querySQL)
+  }
 }

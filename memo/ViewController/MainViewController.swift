@@ -260,6 +260,20 @@ extension MainViewController: FSCalendarDelegate {
   }
 }
 
+extension MainViewController: FSCalendarDataSource {
+  func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+    let dateList = DateLoader().findOnceDateList()
+    let dateString = formatter.string(from: date)
+
+    for dateItem in dateList {
+      if dateItem == dateString {
+        return 1
+      }
+    }
+    return 0
+  }
+}
+
 extension MainViewController: TextInputViewControllerDelegate, TextModifyViewControllerDelegate {
   func reloadCollectionView(date: String) {
     textList = TextLoader().findOnceTextList(date: date) + TextLoader().findDailyTextList() + TextLoader().findWeeklyTextList(date: date) + TextLoader().findMonthlyTextList(date: date)
