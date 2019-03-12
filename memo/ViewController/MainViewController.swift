@@ -244,7 +244,7 @@ extension MainViewController: FSCalendarDelegate {
     selectDateString = selectDate
     selectDayString = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(selectDate))
 
-    dateLabel.text = selectDate
+    dateLabel.text = formatterKorea.string(from: date)
     dayLabel.text = selectDayString
     reloadCollectionView(date: selectDate)
   }
