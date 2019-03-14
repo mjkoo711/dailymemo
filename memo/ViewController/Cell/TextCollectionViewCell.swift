@@ -10,6 +10,8 @@ import UIKit
 
 protocol TextCollectionViewCellDelegate {
   func showActionSheet(text: Text)
+  func setAlarm(text: Text)
+  func removeAlarm(text: Text)
 }
 
 class TextCollectionViewCell: UICollectionViewCell {
@@ -19,18 +21,34 @@ class TextCollectionViewCell: UICollectionViewCell {
   var delegate: TextCollectionViewCellDelegate?
   
   override func awakeFromNib() {
-    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleCell))
-    self.addGestureRecognizer(tapGesture)
+    let singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(didPressPartButton))
+    singleTapGesture.numberOfTapsRequired = 1
+    self.addGestureRecognizer(singleTapGesture)
+
+    let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(didDoubleTap))
+    doubleTapGesture.numberOfTapsRequired = 2
+    self.addGestureRecognizer(doubleTapGesture)
+    singleTapGesture.require(toFail: doubleTapGesture)
 
     let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
     self.addGestureRecognizer(longPressGesture)
   }
 
-  @objc func handleCell() {
-    Vibration.medium.vibrate()
-    // TODO: 첫번째 클릭시, 두번째 클릭시
+  @objc func didPressPartButton() {
+
   }
 
+  @objc func didDoubleTap() {
+    if let text = textInstance, text.isAlarmSetting == 0 {
+      Vibration.error.vibrate()
+      delegate?.setAlarm(text: textInstance!)
+    }
+    
+    if let text = textInstance, text.isAlarmSetting == 1 {
+      Vibration.oldSchool.vibrate()
+      delegate?.removeAlarm(text: textInstance!)
+    }
+  }
   @objc func handleLongPress(sender: UILongPressGestureRecognizer) {
     if sender.state == UIGestureRecognizer.State.began {
       Vibration.success.vibrate()

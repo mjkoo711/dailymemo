@@ -171,8 +171,8 @@ class MainViewController: UIViewController {
     alertView.addButton("CANCEL", backgroundColor: Color.LightRed) {
 
     }
-    alertView.showTitle("알림설정", subTitle: "해당 키워드에 대해 알람을 설정하신 적이 있다면 지금 설정하는 것으로 최신화됩니다.", style: .notice)
-  }
+    alertView.showCustom("알림설정", subTitle: "", color: Color.Blue, icon: UIImage(named: "AlarmOn")!)
+    }
 
   private func textAlarmTrigger(text: Text, isAlarmSetting: Bool) {
     if isAlarmSetting {
@@ -315,6 +315,22 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 extension MainViewController: TextCollectionViewCellDelegate {
+  func setAlarm(text: Text) {
+    textSelected = text
+
+    self.showAlarmSettingView()
+  }
+
+  func removeAlarm(text: Text) {
+    textSelected = text
+
+    text.offAlarmSetting()
+    FMDBManager.shared.updateText(text: text)
+    AlarmManager().removeNotification(textSelected: text)
+    self.reloadCollectionView(date: self.selectDateString)
+
+  }
+
   func showActionSheet(text: Text) {
     textSelected = text
 
@@ -340,17 +356,17 @@ extension MainViewController: TextCollectionViewCellDelegate {
       }
       actionSheet.message = "\(repeatModeString)" + " 설정된 메모는 알람설정이 불가합니다."
     }
-    let setAlarmAction = UIAlertAction(title: "Alarm", style: .default, handler: { (action) in
-      self.showAlarmSettingView()
-    })
-    let deleteAlarm = UIAlertAction(title: "Remove Alarm", style: .default, handler: { (action) in
-      if let text = self.textSelected {
-        text.offAlarmSetting()
-        FMDBManager.shared.updateText(text: text)
-        AlarmManager().removeNotification(textSelected: text)
-        self.reloadCollectionView(date: self.selectDateString)
-      }
-    })
+//    let setAlarmAction = UIAlertAction(title: "Alarm", style: .default, handler: { (action) in
+//      self.showAlarmSettingView()
+//    })
+//    let deleteAlarm = UIAlertAction(title: "Remove Alarm", style: .default, handler: { (action) in
+//      if let text = self.textSelected {
+//        text.offAlarmSetting()
+//        FMDBManager.shared.updateText(text: text)
+//        AlarmManager().removeNotification(textSelected: text)
+//        self.reloadCollectionView(date: self.selectDateString)
+//      }
+//    })
     let modifyAction = UIAlertAction(title: "Modify", style: .destructive, handler: {(action) in
       self.modifyTapped()
     })
@@ -359,11 +375,11 @@ extension MainViewController: TextCollectionViewCellDelegate {
     })
     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 
-    if let text = textSelected, text.isAlarmable(), text.repeatMode == .Once {
-      actionSheet.addAction(deleteAlarm)
-    } else if !text.isAlarmable(), text.repeatMode == .Once {
-      actionSheet.addAction(setAlarmAction)
-    }
+//    if let text = textSelected, text.isAlarmable(), text.repeatMode == .Once {
+//      actionSheet.addAction(deleteAlarm)
+//    } else if !text.isAlarmable(), text.repeatMode == .Once {
+//      actionSheet.addAction(setAlarmAction)
+//    }
     actionSheet.addAction(modifyAction)
     actionSheet.addAction(deleteAction)
     actionSheet.addAction(cancelAction)
@@ -374,7 +390,7 @@ extension MainViewController: TextCollectionViewCellDelegate {
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let height = textList[indexPath.row].string.height(withConstrainedWidth: UIScreen.main.bounds.width - 52, font: UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.medium)) + 10
+    let height = textList[indexPath.row].string.height(withConstrainedWidth: UIScreen.main.bounds.width - 52, font: UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.medium)) + 15
     return CGSize(width: UIScreen.main.bounds.width - 20, height: height)
   }
 }
