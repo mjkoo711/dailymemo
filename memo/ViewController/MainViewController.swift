@@ -367,6 +367,9 @@ extension MainViewController: TextCollectionViewCellDelegate {
 //        self.reloadCollectionView(date: self.selectDateString)
 //      }
 //    })
+    let copyAction = UIAlertAction(title: "Copy", style: .default, handler: { (action) in
+      UIPasteboard.general.string = text.string
+    })
     let modifyAction = UIAlertAction(title: "Modify", style: .destructive, handler: {(action) in
       self.modifyTapped()
     })
@@ -380,6 +383,7 @@ extension MainViewController: TextCollectionViewCellDelegate {
 //    } else if !text.isAlarmable(), text.repeatMode == .Once {
 //      actionSheet.addAction(setAlarmAction)
 //    }
+    actionSheet.addAction(copyAction)
     actionSheet.addAction(modifyAction)
     actionSheet.addAction(deleteAction)
     actionSheet.addAction(cancelAction)
