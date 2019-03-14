@@ -12,6 +12,7 @@
 		E21E11F121FC2485004BBFD9 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E11F021FC2485004BBFD9 /* Clock.swift */; };
 		E246D339223781E50022FC4D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246D338223781E50022FC4D /* Color.swift */; };
 		E25447C022253F2F00F48A80 /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25447BF22253F2F00F48A80 /* NotificationType.swift */; };
+		E2639620223AABA700CA25C0 /* UIVIewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263961F223AABA700CA25C0 /* UIVIewExtensions.swift */; };
 		E266366022058BC2001D05C8 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266365F22058BC2001D05C8 /* TextCollectionViewCell.swift */; };
 		E266366222059357001D05C8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266366122059357001D05C8 /* StringExtension.swift */; };
 		E26636642205A210001D05C8 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26636632205A210001D05C8 /* UIFontExtension.swift */; };
@@ -51,6 +52,7 @@
 		E21E11F021FC2485004BBFD9 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		E246D338223781E50022FC4D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E25447BF22253F2F00F48A80 /* NotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
+		E263961F223AABA700CA25C0 /* UIVIewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewExtensions.swift; sourceTree = "<group>"; };
 		E266365F22058BC2001D05C8 /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
 		E266366122059357001D05C8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		E26636632205A210001D05C8 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				E26636632205A210001D05C8 /* UIFontExtension.swift */,
 				E26636662205A225001D05C8 /* UILabelExtension.swift */,
 				E2C37AEA222D7B2B00D84894 /* IntExtensions.swift */,
+				E263961F223AABA700CA25C0 /* UIVIewExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				E266366022058BC2001D05C8 /* TextCollectionViewCell.swift in Sources */,
 				E2F36CF421FAE0FA00A9C24C /* AppDelegate.swift in Sources */,
 				E2C37AE9222D59C400D84894 /* AlarmCollectionReusableView.swift in Sources */,
+				E2639620223AABA700CA25C0 /* UIVIewExtensions.swift in Sources */,
 				E2C37B0E22327AB400D84894 /* Month.swift in Sources */,
 				E2C37AE3222D12CE00D84894 /* AlarmListViewController.swift in Sources */,
 				E26636642205A210001D05C8 /* UIFontExtension.swift in Sources */,
