@@ -92,10 +92,7 @@ class MainViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    reloadCollectionView(date: formatter.string(from: Date()))
-
     navigationController?.setNavigationBarHidden(true, animated: animated)
-    updateTimeLabel()
   }
 
   override func viewWillDisappear(_ animated: Bool) {
