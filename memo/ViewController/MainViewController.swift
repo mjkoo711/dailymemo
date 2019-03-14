@@ -425,10 +425,10 @@ extension MainViewController {
     Vibration.medium.vibrate()
     if calendarView.scope == .week {
       calendarView.scope = .month
-      expandImageButtonView.image = UIImage(named: "Down")
+      expandImageButtonView.image = UIImage(named: "DownWhite")
     } else {
       calendarView.scope = .week
-      expandImageButtonView.image = UIImage(named: "Up")
+      expandImageButtonView.image = UIImage(named: "UpWhite")
     }
   }
 }

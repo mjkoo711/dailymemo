@@ -338,7 +338,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VMC-8u-7Zw">
                                 <rect key="frame" x="8" y="370" width="359" height="25"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Down" translatesAutoresizingMaskIntoConstraints="NO" id="wgH-aY-NVD">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DownWhite" translatesAutoresizingMaskIntoConstraints="NO" id="wgH-aY-NVD">
                                         <rect key="frame" x="153.5" y="0.0" width="52" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="52" id="tRd-B4-J11"/>
@@ -718,7 +718,7 @@
     </scenes>
     <resources>
         <image name="Alarm" width="48" height="48"/>
-        <image name="Down" width="48" height="48"/>
+        <image name="DownWhite" width="48" height="48"/>
         <image name="Left" width="48" height="48"/>
         <image name="MoreLeft" width="48" height="48"/>
         <image name="MoreRight" width="48" height="48"/>
