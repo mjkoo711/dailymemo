@@ -53,10 +53,11 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlarmCollectionViewCell", for: indexPath) as! AlarmCollectionViewCell
+    let dateWritten = alarmTextDictionary[indexPath.section].value[indexPath.row].date
     cell.textInstance = alarmTextDictionary[indexPath.section].value[indexPath.row]
 
     cell.textLabel.text = alarmTextDictionary[indexPath.section].value[indexPath.row].string
-    cell.dateLabel.text = "작성 일자: " + alarmTextDictionary[indexPath.section].value[indexPath.row].date
+    cell.dateLabel.text = "작성 일자 : " + DateStringChanger().dateFormatChange(dateWithHyphen: dateWritten)
 
     cell.delegate = self
 
