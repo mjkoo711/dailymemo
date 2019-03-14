@@ -69,4 +69,10 @@ class DateStringChanger {
     let weekDay = myCalendar.component(.weekday, from: dateChanged!)
     return weekDay
   }
+
+  func dateFormatChange(dateWithHyphen: String) -> String {
+    let array = dateWithHyphen.split(separator: "-")
+
+    return "\(array[0])년 \(array[1])월 \(array[2])일"
+  }
 }

@@ -374,7 +374,7 @@ extension MainViewController: TextCollectionViewCellDelegate {
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let height = textList[indexPath.row].string.height(withConstrainedWidth: UIScreen.main.bounds.width - 20, font: UIFont.systemFont(ofSize: 19, weight: UIFont.Weight.medium)) + 10
+    let height = textList[indexPath.row].string.height(withConstrainedWidth: UIScreen.main.bounds.width - 52, font: UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.medium)) + 10
     return CGSize(width: UIScreen.main.bounds.width - 20, height: height)
   }
 }

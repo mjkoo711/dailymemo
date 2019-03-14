@@ -56,7 +56,7 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
     cell.textInstance = alarmTextDictionary[indexPath.section].value[indexPath.row]
 
     cell.textLabel.text = alarmTextDictionary[indexPath.section].value[indexPath.row].string
-    cell.dateLabel.text = alarmTextDictionary[indexPath.section].value[indexPath.row].date + "에 작성"
+    cell.dateLabel.text = alarmTextDictionary[indexPath.section].value[indexPath.row].date
 
     cell.delegate = self
     return cell
@@ -69,17 +69,17 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
     let alarmTimeHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "AlarmCollectionReusableView", for: indexPath) as! AlarmCollectionReusableView
 
-    alarmTimeHeaderView.alarmTimeLabel.text = alarmTextDictionary[indexPath.section].key
+    alarmTimeHeaderView.alarmTimeLabel.text = DateStringChanger().dateFormatChange(dateWithHyphen: alarmTextDictionary[indexPath.section].key)
     return alarmTimeHeaderView
   }
 }
 
 extension AlarmListViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let constDateTextHeight = "text".height(withConstrainedWidth: UIScreen.main.bounds.width, font: UIFont(name: "Helvetica Neue", size: 17)!)
+    let constDateTextHeight = "text".height(withConstrainedWidth: UIScreen.main.bounds.width - 40, font: UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.medium))
 
-    let height = alarmTextDictionary[indexPath.section].value[indexPath.row].string.height(withConstrainedWidth: UIScreen.main.bounds.width, font: UIFont(name: "Helvetica Neue", size: 17)!) + 10 + constDateTextHeight
-    return CGSize(width: UIScreen.main.bounds.width, height: height)
+    let height = alarmTextDictionary[indexPath.section].value[indexPath.row].string.height(withConstrainedWidth: UIScreen.main.bounds.width - 40, font: UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.medium)) + constDateTextHeight + 10
+    return CGSize(width: UIScreen.main.bounds.width - 20, height: height)
   }
 }
 
