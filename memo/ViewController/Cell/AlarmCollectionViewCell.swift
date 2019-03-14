@@ -10,17 +10,27 @@ import UIKit
 
 protocol AlarmCollectionViewCellDelegate {
   func showActionSheet(text: Text)
+  func deleteAlarmText(text: Text)
 }
 
 class AlarmCollectionViewCell: UICollectionViewCell {
+  @IBOutlet var deleteButtonView: UIView!
+  @IBOutlet var parentView: UIView!
+
   @IBOutlet var dateLabel: UILabel!
   @IBOutlet var textLabel: UILabel!
   var textInstance: Text?
   var delegate: AlarmCollectionViewCellDelegate?
 
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    deleteButtonView.roundCorners(corners: [.topRight, .bottomRight], radius: 10.0)
+  }
   override func awakeFromNib() {
+    let tapDeleteButtonView = UITapGestureRecognizer(target: self, action: #selector(tapDelete))
     let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
     self.addGestureRecognizer(longPressGesture)
+    deleteButtonView.addGestureRecognizer(tapDeleteButtonView)
   }
 
   @objc private func handleLongPress(sender: UILongPressGestureRecognizer) {
@@ -28,5 +38,10 @@ class AlarmCollectionViewCell: UICollectionViewCell {
       Vibration.success.vibrate()
       delegate?.showActionSheet(text: textInstance!)
     }
+  }
+
+  @objc private func tapDelete() {
+    Vibration.success.vibrate()
+    delegate?.deleteAlarmText(text: textInstance!)
   }
 }

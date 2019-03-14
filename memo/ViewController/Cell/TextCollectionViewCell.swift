@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialSnackbar
 
 protocol TextCollectionViewCellDelegate {
   func showActionSheet(text: Text)
+  func setAlarm(text: Text)
+  func removeAlarm(text: Text)
 }
 
 class TextCollectionViewCell: UICollectionViewCell {
@@ -19,18 +22,54 @@ class TextCollectionViewCell: UICollectionViewCell {
   var delegate: TextCollectionViewCellDelegate?
   
   override func awakeFromNib() {
-    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleCell))
-    self.addGestureRecognizer(tapGesture)
+    let singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(didPressPartButton))
+    singleTapGesture.numberOfTapsRequired = 1
+    self.addGestureRecognizer(singleTapGesture)
+
+    let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(didDoubleTap))
+    doubleTapGesture.numberOfTapsRequired = 2
+    self.addGestureRecognizer(doubleTapGesture)
+    singleTapGesture.require(toFail: doubleTapGesture)
 
     let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
     self.addGestureRecognizer(longPressGesture)
   }
 
-  @objc func handleCell() {
-    Vibration.medium.vibrate()
-    // TODO: 첫번째 클릭시, 두번째 클릭시
+  @objc func didPressPartButton() {
+
   }
 
+  @objc func didDoubleTap() {
+    guard let text = textInstance else { return }
+    if text.repeatMode == .Once {
+      if text.isAlarmSetting == 0 {
+        Vibration.error.vibrate()
+        delegate?.setAlarm(text: textInstance!)
+      }
+
+      if text.isAlarmSetting == 1 {
+        Vibration.oldSchool.vibrate()
+
+        let message = MDCSnackbarMessage()
+        message.text = "알람이 삭제되었습니다."
+        MDCSnackbarManager.show(message)
+
+        delegate?.removeAlarm(text: textInstance!)
+      }
+    } else if text.repeatMode == .Daily {
+      let message = MDCSnackbarMessage()
+      message.text = "매일 반복되는 메모는 알람설정이 불가능합니다."
+      MDCSnackbarManager.show(message)
+    } else if text.repeatMode == .Weekly {
+      let message = MDCSnackbarMessage()
+      message.text = "매주 반복되는 메모는 알람설정이 불가능합니다."
+      MDCSnackbarManager.show(message)
+    } else if text.repeatMode == .Monthly {
+      let message = MDCSnackbarMessage()
+      message.text = "매월 반복되는 메모는 알람설정이 불가능합니다."
+      MDCSnackbarManager.show(message)
+    }
+  }
   @objc func handleLongPress(sender: UILongPressGestureRecognizer) {
     if sender.state == UIGestureRecognizer.State.began {
       Vibration.success.vibrate()

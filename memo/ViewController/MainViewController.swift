@@ -17,10 +17,13 @@ class MainViewController: UIViewController {
   @IBOutlet var dateLabel: UILabel!
   @IBOutlet var dayLabel: UILabel!
 
+  @IBOutlet var calendarHeightConstraint: NSLayoutConstraint!
   @IBOutlet var showAlarmListButtonView: UIView!
   @IBOutlet var showSettingButtonView: UIView!
   @IBOutlet var todayLabel: UILabel!
 
+  @IBOutlet var expandView: UIView!
+  @IBOutlet var expandImageButtonView: UIImageView!
   @IBOutlet var collectionView: UICollectionView!
   @IBOutlet weak var timeLabel: UILabel!
 
@@ -28,9 +31,14 @@ class MainViewController: UIViewController {
   @IBOutlet var nextMonthButtonView: UIView!
   @IBOutlet var previousDayButtonView: UIView!
   @IBOutlet var nextDayButtonView: UIView!
+  @IBOutlet var todayButtonView: UIView!
+
+  private var selectDateString: String!
+  private var selectDayString: String!
 
   fileprivate let formatter = MDateFormatter().formatter
   fileprivate let formatter2 = MDateFormatter().formatter2
+  fileprivate let formatterKorea = MDateFormatter().formatterKorea
 
   let clock = Clock()
   var timeChanger: Timer?
@@ -44,10 +52,15 @@ class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     calendarView.placeholderType = .none
-    dateLabel.text = formatter.string(from: Date())
-    dayLabel.text = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(formatter.string(from: Date())))
+    selectDateString = formatter.string(from: Date())
+    selectDayString = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(formatter.string(from: Date())))
+
+    dateLabel.text = formatterKorea.string(from: Date())
+    dayLabel.text = selectDayString
 
     timeChanger = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(MainViewController.updateTimeLabel), userInfo: nil, repeats: true)
+
+    calendarView.scope = .month
 
     let tapGestureForCollectionView = UITapGestureRecognizer(target: self, action: #selector(showInputTextViewController))
     collectionView.addGestureRecognizer(tapGestureForCollectionView)
@@ -69,6 +82,12 @@ class MainViewController: UIViewController {
 
     let tapGestureForNextDayButtonView = UITapGestureRecognizer(target: self, action: #selector(moveNextDay))
     nextDayButtonView.addGestureRecognizer(tapGestureForNextDayButtonView)
+
+    let tapGestureForTodayButtonView = UITapGestureRecognizer(target: self, action: #selector(moveToday))
+    todayButtonView.addGestureRecognizer(tapGestureForTodayButtonView)
+
+    let tapGestureForExpandButtonView = UITapGestureRecognizer(target: self, action: #selector(expandCalendar))
+    expandView.addGestureRecognizer(tapGestureForExpandButtonView)
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -86,13 +105,13 @@ class MainViewController: UIViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "textInputSegue" {
       let viewController: TextInputViewController = segue.destination as! TextInputViewController
-      viewController.date = dateLabel.text
+      viewController.date = selectDateString
       viewController.time = timeLabel.text
-      viewController.day = dayLabel.text
+      viewController.day = selectDayString
       viewController.delegate = self
     } else if segue.identifier == "textModifySegue" {
       let viewController: TextModifyViewController = segue.destination as! TextModifyViewController
-      viewController.date = dateLabel.text
+      viewController.date = selectDateString
       viewController.time = timeLabel.text
       viewController.existText = textSelected
       viewController.delegate = self
@@ -128,10 +147,10 @@ class MainViewController: UIViewController {
       text.alarmDatePicked = self.selectedDatePicked
       self.textAlarmTrigger(text: text, isAlarmSetting: true)
       AlarmManager().addNotification(textSelected: text, datePicked: self.selectedDatePicked, notificationType: .Once)
-      self.reloadCollectionView(date: self.dateLabel.text!)
+      self.reloadCollectionView(date: self.selectDateString)
       // MARK: snackbar
       let message = MDCSnackbarMessage()
-      message.buttonTextColor = UIColor.red
+      message.buttonTextColor = Color.LightRed
       message.text = "알람이 \(self.formatter2.string(from: datePicker.date))에 울립니다."
 
       let action = MDCSnackbarMessageAction()
@@ -149,11 +168,11 @@ class MainViewController: UIViewController {
       MDCSnackbarManager.show(message)
 
     }
-    alertView.addButton("CANCEL", backgroundColor: UIColor.red) {
+    alertView.addButton("CANCEL", backgroundColor: Color.LightRed) {
 
     }
-    alertView.showTitle("알림설정", subTitle: "해당 키워드에 대해 알람을 설정하신 적이 있다면 지금 설정하는 것으로 최신화됩니다.", style: .notice)
-  }
+    alertView.showCustom("알림설정", subTitle: "", color: Color.Blue, icon: UIImage(named: "AlarmOn")!)
+    }
 
   private func textAlarmTrigger(text: Text, isAlarmSetting: Bool) {
     if isAlarmSetting {
@@ -162,7 +181,7 @@ class MainViewController: UIViewController {
       text.offAlarmSetting()
     }
     FMDBManager.shared.updateText(text: text)
-    reloadCollectionView(date: dateLabel.text!)
+    reloadCollectionView(date: selectDateString)
   }
 
   @objc private func dateSelected(datePicker: UIDatePicker) {
@@ -173,22 +192,13 @@ class MainViewController: UIViewController {
     guard let textSelected = self.textSelected else { return }
 
     FMDBManager.shared.deleteText(text: textSelected)
-    reloadCollectionViewAndCalendarView(date: dateLabel.text!)
+    reloadCollectionViewAndCalendarView(date: selectDateString)
     AlarmManager().removeNotification(textSelected: textSelected)
     self.textSelected = nil
   }
 
   func modifyTapped() {
     performSegue(withIdentifier: "textModifySegue", sender: self)
-  }
-
-  @IBAction func todayTapped(_ sender: Any) {
-    let date = Date()
-    Vibration.medium.vibrate()
-    todayLabel.isHidden = false
-    calendarView.select(date)
-    reloadDataShowed(date: date)
-    reloadCollectionView(date: formatter.string(from: date))
   }
 
   @IBAction func unwindMainViewController(segue: UIStoryboardSegue) {}
@@ -239,25 +249,35 @@ extension MainViewController: FSCalendarDelegate {
     } else {
       todayLabel.isHidden = true
     }
+    selectDateString = selectDate
+    selectDayString = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(selectDate))
 
-    dateLabel.text = selectDate
-    dayLabel.text = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(selectDate))
+    dateLabel.text = formatterKorea.string(from: date)
+    dayLabel.text = selectDayString
     reloadCollectionView(date: selectDate)
   }
 }
 
 extension MainViewController: FSCalendarDataSource {
-  func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+  func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, borderDefaultColorFor date: Date) -> UIColor? {
     let dateList = DateLoader().findOnceDateList()
     let dateString = formatter.string(from: date)
 
     for dateItem in dateList {
       if dateItem == dateString {
-        return 1
+        return Color.Gray
       }
     }
-    return 0
+    return Color.White
   }
+
+  func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
+    calendarHeightConstraint.constant = bounds.size.height
+    collectionView.layoutIfNeeded()
+  }
+}
+
+extension MainViewController: FSCalendarDelegateAppearance {
 }
 
 extension MainViewController: TextInputViewControllerDelegate, TextModifyViewControllerDelegate {
@@ -285,9 +305,9 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     cell.textInstance = textList[indexPath.row]
     cell.descriptionLabel.text = textList[indexPath.row].string
     if textList[indexPath.row].isAlarmable() {
-      cell.descriptionLabel.textColor = UIColor.blue
+      cell.descriptionLabel.textColor = Color.Blue
     } else {
-      cell.descriptionLabel.textColor = UIColor.black
+      cell.descriptionLabel.textColor = Color.Black
     }
     cell.delegate = self
     return cell
@@ -295,26 +315,58 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 extension MainViewController: TextCollectionViewCellDelegate {
+  func setAlarm(text: Text) {
+    textSelected = text
+
+    self.showAlarmSettingView()
+  }
+
+  func removeAlarm(text: Text) {
+    textSelected = text
+
+    text.offAlarmSetting()
+    FMDBManager.shared.updateText(text: text)
+    AlarmManager().removeNotification(textSelected: text)
+    self.reloadCollectionView(date: self.selectDateString)
+
+  }
+
   func showActionSheet(text: Text) {
     textSelected = text
 
-    let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+    let actionSheet = UIAlertController(title: text.string, message: "예정된 알람 없음", preferredStyle: .actionSheet)
 
     if let textAlarmDate = text.alarmDatePicked, text.isAlarmable() {
-      actionSheet.title = "알람 예정시간"
-      actionSheet.message = "\(formatter2.string(from: textAlarmDate))"
+      actionSheet.title = text.string
+      actionSheet.message =  "알람 예정시간\n" + "\(formatter2.string(from: textAlarmDate))"
     }
-    let setAlarmAction = UIAlertAction(title: "Alarm", style: .default, handler: { (action) in
-      self.showAlarmSettingView()
-    })
-    let deleteAlarm = UIAlertAction(title: "Remove Alarm", style: .default, handler: { (action) in
-      if let text = self.textSelected {
-        text.offAlarmSetting()
-        FMDBManager.shared.updateText(text: text)
-        AlarmManager().removeNotification(textSelected: text)
-        self.reloadCollectionView(date: self.dateLabel.text!)
+
+    if !text.isAlarmable() && text.repeatMode != .Once {
+      var repeatModeString = ""
+
+      switch text.repeatMode {
+      case .Daily:
+        repeatModeString = "매일"
+      case .Weekly:
+        repeatModeString = "매주"
+      case .Monthly:
+        repeatModeString = "매달"
+      default:
+        repeatModeString = ""
       }
-    })
+      actionSheet.message = "\(repeatModeString)" + " 설정된 메모는 알람설정이 불가합니다."
+    }
+//    let setAlarmAction = UIAlertAction(title: "Alarm", style: .default, handler: { (action) in
+//      self.showAlarmSettingView()
+//    })
+//    let deleteAlarm = UIAlertAction(title: "Remove Alarm", style: .default, handler: { (action) in
+//      if let text = self.textSelected {
+//        text.offAlarmSetting()
+//        FMDBManager.shared.updateText(text: text)
+//        AlarmManager().removeNotification(textSelected: text)
+//        self.reloadCollectionView(date: self.selectDateString)
+//      }
+//    })
     let modifyAction = UIAlertAction(title: "Modify", style: .destructive, handler: {(action) in
       self.modifyTapped()
     })
@@ -323,11 +375,11 @@ extension MainViewController: TextCollectionViewCellDelegate {
     })
     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 
-    if let text = textSelected, text.isAlarmable(), text.repeatMode == .Once {
-      actionSheet.addAction(deleteAlarm)
-    } else if !text.isAlarmable(), text.repeatMode == .Once {
-      actionSheet.addAction(setAlarmAction)
-    }
+//    if let text = textSelected, text.isAlarmable(), text.repeatMode == .Once {
+//      actionSheet.addAction(deleteAlarm)
+//    } else if !text.isAlarmable(), text.repeatMode == .Once {
+//      actionSheet.addAction(setAlarmAction)
+//    }
     actionSheet.addAction(modifyAction)
     actionSheet.addAction(deleteAction)
     actionSheet.addAction(cancelAction)
@@ -338,16 +390,24 @@ extension MainViewController: TextCollectionViewCellDelegate {
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let height = textList[indexPath.row].string.height(withConstrainedWidth: UIScreen.main.bounds.width, font: UIFont(name: "Helvetica Neue", size: 17)!) + 10
-    return CGSize(width: UIScreen.main.bounds.width, height: height)
+    let height = textList[indexPath.row].string.height(withConstrainedWidth: UIScreen.main.bounds.width - 52, font: UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.medium)) + 15
+    return CGSize(width: UIScreen.main.bounds.width - 20, height: height)
   }
 }
 
 extension MainViewController {
   //MARK: move calender
+  @objc private func moveToday() {
+    Vibration.medium.vibrate()
+    let date = Date()
+    todayLabel.isHidden = false
+    calendarView.select(date)
+    reloadDataShowed(date: date)
+  }
+
   @objc private func moveNextDay() {
     Vibration.medium.vibrate()
-    guard let currentDate = formatter.date(from: dateLabel.text!) else { return }
+    guard let currentDate = formatter.date(from: selectDateString) else { return }
     guard let date = Calendar.current.date(byAdding: .day, value: 1, to: currentDate) else { return }
     calendarView.select(date, scrollToDate: true)
     reloadDataShowed(date: date)
@@ -355,7 +415,7 @@ extension MainViewController {
 
   @objc private func movePreviousDay() {
     Vibration.medium.vibrate()
-    guard let currentDate = formatter.date(from: dateLabel.text!) else { return }
+    guard let currentDate = formatter.date(from: selectDateString) else { return }
     guard let date = Calendar.current.date(byAdding: .day, value: -1, to: currentDate) else { return }
     calendarView.select(date, scrollToDate: true)
     reloadDataShowed(date: date)
@@ -363,7 +423,7 @@ extension MainViewController {
 
   @objc private func moveNextMonth() {
     Vibration.medium.vibrate()
-    guard let currentDate = formatter.date(from: dateLabel.text!) else { return }
+    guard let currentDate = formatter.date(from: selectDateString) else { return }
     guard let date = Calendar.current.date(byAdding: .month, value: 1, to: currentDate) else { return }
     calendarView.select(date, scrollToDate: true)
     reloadDataShowed(date: date)
@@ -371,9 +431,20 @@ extension MainViewController {
 
   @objc private func movePreviousMonth() {
     Vibration.medium.vibrate()
-    guard let currentDate = formatter.date(from: dateLabel.text!) else { return }
+    guard let currentDate = formatter.date(from: selectDateString) else { return }
     guard let date = Calendar.current.date(byAdding: .month, value: -1, to: currentDate) else { return }
     calendarView.select(date, scrollToDate: true)
     reloadDataShowed(date: date)
+  }
+
+  @objc private func expandCalendar() {
+    Vibration.medium.vibrate()
+    if calendarView.scope == .week {
+      calendarView.scope = .month
+      expandImageButtonView.image = UIImage(named: "DownWhite")
+    } else {
+      calendarView.scope = .week
+      expandImageButtonView.image = UIImage(named: "UpWhite")
+    }
   }
 }
