@@ -95,6 +95,11 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
     text.offAlarmSetting()
     FMDBManager.shared.updateText(text: text)
     AlarmManager().removeNotification(textSelected: text)
+
+    let message = MDCSnackbarMessage()
+    message.text = "알람이 삭제되었습니다."
+    MDCSnackbarManager.show(message)
+
     self.reloadCollectionView()
   }
 
