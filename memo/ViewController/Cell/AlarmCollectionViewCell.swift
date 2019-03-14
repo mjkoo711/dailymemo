@@ -30,7 +30,7 @@ class AlarmCollectionViewCell: UICollectionViewCell {
     let tapDeleteButtonView = UITapGestureRecognizer(target: self, action: #selector(tapDelete))
     let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
     self.addGestureRecognizer(longPressGesture)
-    self.addGestureRecognizer(tapDeleteButtonView)
+    deleteButtonView.addGestureRecognizer(tapDeleteButtonView)
   }
 
   @objc private func handleLongPress(sender: UILongPressGestureRecognizer) {
