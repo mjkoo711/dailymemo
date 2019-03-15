@@ -65,6 +65,9 @@ class MainViewController: UIViewController {
     let tapGestureForCollectionView = UITapGestureRecognizer(target: self, action: #selector(showInputTextViewController))
     collectionView.addGestureRecognizer(tapGestureForCollectionView)
 
+    let longTapGestureForCollectionView = UILongPressGestureRecognizer(target: self, action: #selector(showVoiceView))
+    collectionView.addGestureRecognizer(longTapGestureForCollectionView)
+
     let tapGestureForAlarmListButtonView = UITapGestureRecognizer(target: self, action: #selector(showAlarmList))
     showAlarmListButtonView.addGestureRecognizer(tapGestureForAlarmListButtonView)
 
@@ -94,6 +97,7 @@ class MainViewController: UIViewController {
     super.viewWillAppear(animated)
     reloadCollectionView(date: selectDateString)
     navigationController?.setNavigationBarHidden(true, animated: animated)
+    updateTimeLabel()
   }
 
   override func viewWillDisappear(_ animated: Bool) {
@@ -447,6 +451,19 @@ extension MainViewController {
     } else {
       calendarView.scope = .week
       expandImageButtonView.image = UIImage(named: "UpWhite")
+    }
+  }
+
+
+  @objc private func showVoiceView(sender: UILongPressGestureRecognizer) {
+    if sender.state == UIGestureRecognizer.State.began {
+      Vibration.selection.vibrate()
+      self.view.alpha = 0.5
+    } else if sender.state == UIGestureRecognizer.State.changed {
+      // TODO: 음성녹음
+
+    } else if sender.state == UIGestureRecognizer.State.ended {
+      self.view.alpha = 1
     }
   }
 }

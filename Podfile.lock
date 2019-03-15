@@ -48,6 +48,7 @@ DEPENDENCIES:
   - FMDB
   - FSCalendar
   - IQKeyboardManagerSwift
+  - MaterialComponents/AnimationTiming
   - MaterialComponents/Snackbar
   - SCLAlertView
 
@@ -70,6 +71,6 @@ SPEC CHECKSUMS:
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
 
-PODFILE CHECKSUM: 50249953d0931cb1d67397f26fc35e394060ad77
+PODFILE CHECKSUM: aaaad1b56d332b9fe739da5a4d1c6ad5fbee3a5f
 
 COCOAPODS: 1.5.3
