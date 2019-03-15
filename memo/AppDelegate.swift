@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     setIQKeyboardPreference()
     setUNUserNotification()
     FMDBManager.shared.createDatabase()
+    initSetting()
     return true
   }
 
@@ -51,6 +52,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
       print("Say Hellow!")
     } else {
       print("Say Bye~")
+    }
+  }
+
+  private func initSetting() {
+    if let _ = UserDefaults.standard.loadSettings(key: Key.DarkTheme) {
+      // TODO : 그값으로 설정 다하기
+    } else {
+      UserDefaults.standard.saveSettings(value: 0, key: Key.DarkTheme)
+    }
+
+    if let _ = UserDefaults.standard.loadSettings(key: Key.FontSize) {
+      // TODO
+    } else {
+      UserDefaults.standard.saveSettings(value: 2, key: Key.FontSize)
+    }
+
+    if let _ = UserDefaults.standard.loadSettings(key: Key.FontThickness) {
+      // TODO
+    } else {
+      UserDefaults.standard.saveSettings(value: 1, key: Key.FontThickness)
+    }
+
+    if let _ = UserDefaults.standard.loadSettings(key: Key.Vibrate) {
+      // TODO
+    } else {
+      UserDefaults.standard.saveSettings(value: 1, key: Key.Vibrate)
+    }
+
+    if let _ = UserDefaults.standard.loadSettings(key: Key.LockFeature) {
+      // TODO
+    } else {
+      UserDefaults.standard.saveSettings(value: 0, key: Key.LockFeature)
     }
   }
 

@@ -816,6 +816,7 @@
                     <navigationItem key="navigationItem" title="Setting" id="7YK-WR-vV0"/>
                     <connections>
                         <outlet property="closeButtonView" destination="1V7-T3-NKf" id="ysI-Gn-gAa"/>
+                        <outlet property="collectionView" destination="MYt-RD-xHl" id="Fr6-Bv-00U"/>
                         <segue destination="ZUu-MW-cpV" kind="unwind" identifier="unwindMainVC" unwindAction="unwindMainViewControllerWithSegue:" id="P48-T8-k2C"/>
                     </connections>
                 </viewController>

@@ -14,6 +14,8 @@
 		E246D339223781E50022FC4D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246D338223781E50022FC4D /* Color.swift */; };
 		E25447C022253F2F00F48A80 /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25447BF22253F2F00F48A80 /* NotificationType.swift */; };
 		E2635382223C06DF006A2E43 /* SettingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635381223C06DF006A2E43 /* SettingCollectionViewCell.swift */; };
+		E2635384223C23B0006A2E43 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635383223C23B0006A2E43 /* Key.swift */; };
+		E2635386223C2633006A2E43 /* SettingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635385223C2633006A2E43 /* SettingList.swift */; };
 		E2639620223AABA700CA25C0 /* UIVIewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263961F223AABA700CA25C0 /* UIVIewExtensions.swift */; };
 		E266366022058BC2001D05C8 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266365F22058BC2001D05C8 /* TextCollectionViewCell.swift */; };
 		E266366222059357001D05C8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266366122059357001D05C8 /* StringExtension.swift */; };
@@ -56,6 +58,8 @@
 		E246D338223781E50022FC4D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E25447BF22253F2F00F48A80 /* NotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
 		E2635381223C06DF006A2E43 /* SettingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionViewCell.swift; sourceTree = "<group>"; };
+		E2635383223C23B0006A2E43 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		E2635385223C2633006A2E43 /* SettingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingList.swift; sourceTree = "<group>"; };
 		E263961F223AABA700CA25C0 /* UIVIewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewExtensions.swift; sourceTree = "<group>"; };
 		E266365F22058BC2001D05C8 /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
 		E266366122059357001D05C8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 				E2C37B0B22327A5C00D84894 /* Day.swift */,
 				E2C37B0D22327AB400D84894 /* Month.swift */,
 				E246D338223781E50022FC4D /* Color.swift */,
+				E2635383223C23B0006A2E43 /* Key.swift */,
+				E2635385223C2633006A2E43 /* SettingList.swift */,
 			);
 			path = Const;
 			sourceTree = "<group>";
@@ -374,6 +380,8 @@
 			files = (
 				E20CE65321FD8E0300FF495E /* TextInputViewController.swift in Sources */,
 				E2E3C3D7220175A500C74C57 /* Text.swift in Sources */,
+				E2635386223C2633006A2E43 /* SettingList.swift in Sources */,
+				E2635384223C23B0006A2E43 /* Key.swift in Sources */,
 				E2C37B0A2232793900D84894 /* TextLoader.swift in Sources */,
 				E266366222059357001D05C8 /* StringExtension.swift in Sources */,
 				E2314808223B925200161724 /* UIShortTapGestureRecognizer.swift in Sources */,

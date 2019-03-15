@@ -9,10 +9,13 @@
 import UIKit
 
 class SettingViewController: UIViewController {
-  // 다크모드, 글자크기(작게중간크게), 글자두께(얇게보통두껍게), 터치onoff, 잠금onoff
-  // 백업및복원, 메모모두초기화, 리뷰부탁하기, 문의하기, 프로버전 구매
   let designList = ["어두운 테마", "글자 크기", "글자 두께", "진동", "잠금 설정"]
   let serviceList = ["프로버전 구매", "백업 / 복원", "리뷰 남기기", "문의메일 보내기"]
+  let size = ["작게", "중간", "크게"]
+  let thickness = ["얇게", "보통", "굵게"]
+  let onoff = ["끄기", "켜기"]
+
+  @IBOutlet var collectionView: UICollectionView!
   @IBOutlet var closeButtonView: UIView!
   
   override func viewDidLoad() {
@@ -35,10 +38,52 @@ extension SettingViewController: UICollectionViewDataSource, UICollectionViewDel
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SettingCollectionViewCell", for: indexPath) as! SettingCollectionViewCell
     if indexPath.section == 0 {
       cell.settingTitleLabel.text = designList[indexPath.row]
+
+      if indexPath.row == SettingList.Theme.rawValue {
+        if let value = UserDefaults.standard.loadSettings(key: Key.DarkTheme) {
+          cell.switchLabel.text = onoff[value]
+          cell.optionTotalCount = onoff.count
+          cell.currentOption = value
+          cell.settingMode = .Theme
+        }
+      } else if indexPath.row == SettingList.FontSize.rawValue {
+        if let value = UserDefaults.standard.loadSettings(key: Key.FontSize) {
+          cell.switchLabel.text = size[value]
+          cell.optionTotalCount = size.count
+          cell.currentOption = value
+          cell.settingMode = .FontSize
+        }
+      } else if indexPath.row == SettingList.FontThickness.rawValue {
+        if let value = UserDefaults.standard.loadSettings(key: Key.FontThickness) {
+          cell.switchLabel.text = thickness[value]
+          cell.optionTotalCount = thickness.count
+          cell.currentOption = value
+          cell.settingMode = .FontThickness
+        }
+      } else if indexPath.row == SettingList.Vibration.rawValue {
+        if let value = UserDefaults.standard.loadSettings(key: Key.Vibrate) {
+          cell.switchLabel.text = onoff[value]
+          cell.optionTotalCount = onoff.count
+          cell.currentOption = value
+          cell.settingMode = .Vibration
+        }
+      } else if indexPath.row == SettingList.Lock.rawValue {
+        if let value = UserDefaults.standard.loadSettings(key: Key.LockFeature) {
+          cell.switchLabel.text = onoff[value]
+          cell.optionTotalCount = onoff.count
+          cell.currentOption = value
+          cell.settingMode = .Lock
+        }
+      }
+
+      cell.settingTitleLabel.text = designList[indexPath.row]
     } else {
       cell.settingTitleLabel.text = serviceList[indexPath.row]
       cell.switchLabel.isHidden = true
     }
+
+    cell.delegate = self
+    cell.indexPath = indexPath
     return cell
   }
 
@@ -56,5 +101,11 @@ extension SettingViewController: UICollectionViewDelegateFlowLayout {
 extension SettingViewController {
   @objc func returnMainViewController() {
     performSegue(withIdentifier: "unwindMainVC", sender: self)
+  }
+}
+
+extension SettingViewController: SettingCollectionViewCellDelegate {
+  func reloadSettings(indexPath: IndexPath) {
+    collectionView.reloadItems(at: [indexPath])
   }
 }
