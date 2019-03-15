@@ -425,7 +425,7 @@
                         <segue destination="tn0-Aa-Vxe" kind="presentation" identifier="textInputSegue" animates="NO" id="XST-5e-hpe"/>
                         <segue destination="1tT-NR-09D" kind="presentation" identifier="textModifySegue" animates="NO" id="3k1-ZI-Ovd"/>
                         <segue destination="PlM-GZ-WKH" kind="show" identifier="showAlarmList" id="ZGY-Yp-MGe"/>
-                        <segue destination="C2d-1L-H3u" kind="show" identifier="showSetting" id="Zty-7p-0zc"/>
+                        <segue destination="C2d-1L-H3u" kind="presentation" identifier="showSetting" id="Zty-7p-0zc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -683,15 +683,25 @@
         <!--Setting-->
         <scene sceneID="ut4-vD-EQZ">
             <objects>
-                <viewController id="C2d-1L-H3u" customClass="SettingViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="C2d-1L-H3u" customClass="SettingViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3ov-Sp-y0m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1V7-T3-NKf">
+                                <rect key="frame" x="135" y="72" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.9409202337" green="0.22157785299999999" blue="0.1763938665" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vyA-tc-Ufu"/>
                     </view>
                     <navigationItem key="navigationItem" title="Setting" id="7YK-WR-vV0"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="closeButtonView" destination="1V7-T3-NKf" id="ysI-Gn-gAa"/>
+                        <segue destination="ZUu-MW-cpV" kind="unwind" identifier="unwindMainVC" unwindAction="unwindMainViewControllerWithSegue:" id="P48-T8-k2C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8c-id-7JG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
