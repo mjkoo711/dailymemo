@@ -118,10 +118,12 @@ class MainViewController: UIViewController {
   }
 
   @objc private func showAlarmList() {
+    Vibration.medium.vibrate()
     performSegue(withIdentifier: "showAlarmList", sender: self)
   }
 
   @objc private func showSettingViewController() {
+    Vibration.medium.vibrate()
     performSegue(withIdentifier: "showSetting", sender: self)
   }
 
@@ -220,6 +222,7 @@ class MainViewController: UIViewController {
 // MARK: - collectionView와 관련된 함수
 extension MainViewController {
   @objc func showInputTextViewController() {
+    Vibration.heavy.vibrate()
     performSegue(withIdentifier: "textInputSegue", sender: self)
   }
 }
@@ -236,6 +239,7 @@ extension MainViewController {
 // MARK: - FSCalendarDelegate 함수
 extension MainViewController: FSCalendarDelegate {
   func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+    Vibration.medium.vibrate()
     reloadDataShowed(date: date)
   }
 

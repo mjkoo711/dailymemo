@@ -422,8 +422,8 @@
                         <outlet property="timeLabel" destination="PJM-Sh-xCC" id="kZu-Vz-n1M"/>
                         <outlet property="todayButtonView" destination="ZvD-AG-ffo" id="0pC-Lc-ufd"/>
                         <outlet property="todayLabel" destination="fKe-hV-XoI" id="YKu-K8-7xG"/>
-                        <segue destination="tn0-Aa-Vxe" kind="presentation" identifier="textInputSegue" id="XST-5e-hpe"/>
-                        <segue destination="1tT-NR-09D" kind="presentation" identifier="textModifySegue" id="3k1-ZI-Ovd"/>
+                        <segue destination="tn0-Aa-Vxe" kind="presentation" identifier="textInputSegue" animates="NO" id="XST-5e-hpe"/>
+                        <segue destination="1tT-NR-09D" kind="presentation" identifier="textModifySegue" animates="NO" id="3k1-ZI-Ovd"/>
                         <segue destination="PlM-GZ-WKH" kind="show" identifier="showAlarmList" id="ZGY-Yp-MGe"/>
                         <segue destination="C2d-1L-H3u" kind="show" identifier="showSetting" id="Zty-7p-0zc"/>
                     </connections>
@@ -608,9 +608,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMM-rN-nXj">
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMM-rN-nXj">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="593"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzK-Fi-h80">
                                 <rect key="frame" x="0.0" y="630" width="375" height="37"/>
@@ -673,7 +673,7 @@
                         <outlet property="grayAreaView" destination="IMM-rN-nXj" id="pIL-aX-gRo"/>
                         <outlet property="repeatSegmentedControl" destination="Hh8-DQ-8TO" id="1zz-x3-Kx1"/>
                         <outlet property="textField" destination="Cn1-j2-8pK" id="Kha-NC-kUG"/>
-                        <segue destination="ZUu-MW-cpV" kind="unwind" identifier="unwindMainVC" unwindAction="unwindMainViewControllerWithSegue:" id="CeS-yn-xQA"/>
+                        <segue destination="ZUu-MW-cpV" kind="unwind" identifier="unwindMainVC" animates="NO" unwindAction="unwindMainViewControllerWithSegue:" id="CeS-yn-xQA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PtB-oR-vXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -705,9 +705,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFH-Px-Uiv">
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFH-Px-Uiv">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="628"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MAY-tJ-jcx">
                                 <rect key="frame" x="0.0" y="628" width="375" height="39"/>
@@ -745,7 +745,7 @@
                     <connections>
                         <outlet property="grayAreaView" destination="BFH-Px-Uiv" id="n6b-1u-mk9"/>
                         <outlet property="textField" destination="uLg-qr-gwf" id="wqe-Ja-3yI"/>
-                        <segue destination="ZUu-MW-cpV" kind="unwind" identifier="unwindMainVC" unwindAction="unwindMainViewControllerWithSegue:" id="0UL-E2-owH"/>
+                        <segue destination="ZUu-MW-cpV" kind="unwind" identifier="unwindMainVC" animates="NO" unwindAction="unwindMainViewControllerWithSegue:" id="0UL-E2-owH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCh-Mx-Oi3" userLabel="First Responder" sceneMemberID="firstResponder"/>
