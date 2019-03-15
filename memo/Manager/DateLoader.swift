@@ -18,4 +18,14 @@ class DateLoader {
     let querySQL = "SELECT date FROM CONTACTS WHERE repeatmode = 0 GROUP BY date ORDER BY date"
     return FMDBManager.shared.selectDateList(sql: querySQL)
   }
+
+  func findWeeklyDateList(date: String) -> [String] {
+    let querySQL = "SELECT date FROM CONTACTS WHERE repeatmode = 2 and date = \(date) GROUP BY date ORDER BY date"
+    return FMDBManager.shared.selectDateList(sql: querySQL)
+  }
+
+  func findMonthlyDateList(date: String) -> [String] {
+    let querySQL = "SELECT date FROM CONTACTS WHERE repeatmode = 3 and date = \(date) GROUP BY date ORDER BY date"
+    return FMDBManager.shared.selectDateList(sql: querySQL)
+  }
 }

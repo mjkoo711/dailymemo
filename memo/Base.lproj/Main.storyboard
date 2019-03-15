@@ -353,6 +353,12 @@
                                     <constraint firstItem="wgH-aY-NVD" firstAttribute="top" secondItem="VMC-8u-7Zw" secondAttribute="top" id="ZiO-dY-Taj"/>
                                     <constraint firstAttribute="bottom" secondItem="wgH-aY-NVD" secondAttribute="bottom" id="e4n-um-2vI"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBound" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

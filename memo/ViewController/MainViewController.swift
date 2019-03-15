@@ -258,8 +258,21 @@ extension MainViewController: FSCalendarDelegate {
 
 extension MainViewController: FSCalendarDataSource {
   func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, borderDefaultColorFor date: Date) -> UIColor? {
-    let dateList = DateLoader().findOnceDateList()
     let dateString = formatter.string(from: date)
+
+    let dateList = DateLoader().findOnceDateList()
+
+    if TextLoader().findDailyTextList().count != 0 {
+      return Color.Gray
+    }
+
+    if TextLoader().findWeeklyTextList(date: dateString).count != 0 {
+      return Color.Gray
+    }
+
+    if TextLoader().findMonthlyTextList(date: dateString).count != 0 {
+      return Color.Gray
+    }
 
     for dateItem in dateList {
       if dateItem == dateString {
@@ -354,17 +367,6 @@ extension MainViewController: TextCollectionViewCellDelegate {
       }
       actionSheet.message = "\(repeatModeString)" + " 설정된 메모는 알람설정이 불가합니다."
     }
-//    let setAlarmAction = UIAlertAction(title: "Alarm", style: .default, handler: { (action) in
-//      self.showAlarmSettingView()
-//    })
-//    let deleteAlarm = UIAlertAction(title: "Remove Alarm", style: .default, handler: { (action) in
-//      if let text = self.textSelected {
-//        text.offAlarmSetting()
-//        FMDBManager.shared.updateText(text: text)
-//        AlarmManager().removeNotification(textSelected: text)
-//        self.reloadCollectionView(date: self.selectDateString)
-//      }
-//    })
     let copyAction = UIAlertAction(title: "Copy", style: .default, handler: { (action) in
       UIPasteboard.general.string = text.string
     })
@@ -376,11 +378,6 @@ extension MainViewController: TextCollectionViewCellDelegate {
     })
     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 
-//    if let text = textSelected, text.isAlarmable(), text.repeatMode == .Once {
-//      actionSheet.addAction(deleteAlarm)
-//    } else if !text.isAlarmable(), text.repeatMode == .Once {
-//      actionSheet.addAction(setAlarmAction)
-//    }
     actionSheet.addAction(copyAction)
     actionSheet.addAction(modifyAction)
     actionSheet.addAction(deleteAction)
