@@ -92,6 +92,7 @@ class MainViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    reloadCollectionView(date: selectDateString)
     navigationController?.setNavigationBarHidden(true, animated: animated)
   }
 
