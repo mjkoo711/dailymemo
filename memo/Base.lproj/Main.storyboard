@@ -504,7 +504,7 @@
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.94092023372650146" green="0.22157785296440125" blue="0.17639386653900146" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="backgroundColor" red="0.9409202337" green="0.22157785299999999" blue="0.1763938665" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstItem="sAW-zl-alk" firstAttribute="centerY" secondItem="Hno-Wg-OfL" secondAttribute="centerY" id="BH5-8h-OHf"/>
                                                         <constraint firstAttribute="width" constant="40" id="dJc-vN-x6O"/>

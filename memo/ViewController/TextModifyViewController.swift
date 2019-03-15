@@ -74,4 +74,9 @@ extension TextModifyViewController: UITextFieldDelegate {
     returnMainViewController()
     return true
   }
+
+  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    Vibration.medium.vibrate()
+    return true
+  }
 }

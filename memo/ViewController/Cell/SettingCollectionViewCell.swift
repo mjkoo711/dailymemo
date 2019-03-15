@@ -41,7 +41,7 @@ class SettingCollectionViewCell: UICollectionViewCell {
       else if settingMode == .Lock { UserDefaults.standard.saveSettings(value: value, key: Key.LockFeature) }
     }
 
-    if let indexPath = indexPath {
+    if let indexPath = indexPath, indexPath.section == 0 {
       delegate?.reloadSettings(indexPath: indexPath)
     }
   }
