@@ -30,4 +30,11 @@ extension UILabel {
 
     return attribs
   }
+
+  func blink() {
+    self.alpha = 0.0
+    UITextView.animate(withDuration: 0.7, delay: 0.0, options: [.curveLinear, .curveEaseInOut], animations: {
+      self.alpha = 1.0
+    }, completion: nil)
+  }
 }

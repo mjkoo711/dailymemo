@@ -22,7 +22,7 @@ class TextCollectionViewCell: UICollectionViewCell {
   var delegate: TextCollectionViewCellDelegate?
   
   override func awakeFromNib() {
-    let singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(didPressPartButton))
+    let singleTapGesture = UIShortTapGestureRecognizer(target: self, action: #selector(didPressPartButton))
     singleTapGesture.numberOfTapsRequired = 1
     self.addGestureRecognizer(singleTapGesture)
 
@@ -36,16 +36,23 @@ class TextCollectionViewCell: UICollectionViewCell {
   }
 
   @objc func didPressPartButton() {
+    guard let text = textInstance else { return }
+    self.descriptionLabel.blink()
 
+    if text.repeatMode == .Once, text.isAlarmSetting == 0 {
+        Vibration.heavy.vibrate()
+        delegate?.setAlarm(text: textInstance!)
+    }
   }
+
 
   @objc func didDoubleTap() {
     guard let text = textInstance else { return }
     if text.repeatMode == .Once {
-      if text.isAlarmSetting == 0 {
-        Vibration.error.vibrate()
-        delegate?.setAlarm(text: textInstance!)
-      }
+//      if text.isAlarmSetting == 0 {
+//        Vibration.error.vibrate()
+//        delegate?.setAlarm(text: textInstance!)
+//      }
 
       if text.isAlarmSetting == 1 {
         Vibration.oldSchool.vibrate()

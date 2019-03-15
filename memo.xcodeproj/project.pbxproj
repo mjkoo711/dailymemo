@@ -10,6 +10,7 @@
 		DF191B90BF36C3030333F89D /* Pods_memo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A59B9B7599E790392A2260F /* Pods_memo.framework */; };
 		E20CE65321FD8E0300FF495E /* TextInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20CE65221FD8E0300FF495E /* TextInputViewController.swift */; };
 		E21E11F121FC2485004BBFD9 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E11F021FC2485004BBFD9 /* Clock.swift */; };
+		E2314808223B925200161724 /* UIShortTapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2314807223B925200161724 /* UIShortTapGestureRecognizer.swift */; };
 		E246D339223781E50022FC4D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246D338223781E50022FC4D /* Color.swift */; };
 		E25447C022253F2F00F48A80 /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25447BF22253F2F00F48A80 /* NotificationType.swift */; };
 		E2639620223AABA700CA25C0 /* UIVIewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263961F223AABA700CA25C0 /* UIVIewExtensions.swift */; };
@@ -50,6 +51,7 @@
 		7C0BA77D5BF37360BE2D4CF1 /* Pods-memo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-memo/Pods-memo.debug.xcconfig"; sourceTree = "<group>"; };
 		E20CE65221FD8E0300FF495E /* TextInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputViewController.swift; sourceTree = "<group>"; };
 		E21E11F021FC2485004BBFD9 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		E2314807223B925200161724 /* UIShortTapGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIShortTapGestureRecognizer.swift; sourceTree = "<group>"; };
 		E246D338223781E50022FC4D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E25447BF22253F2F00F48A80 /* NotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
 		E263961F223AABA700CA25C0 /* UIVIewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewExtensions.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				E26636662205A225001D05C8 /* UILabelExtension.swift */,
 				E2C37AEA222D7B2B00D84894 /* IntExtensions.swift */,
 				E263961F223AABA700CA25C0 /* UIVIewExtensions.swift */,
+				E2314807223B925200161724 /* UIShortTapGestureRecognizer.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				E2E3C3D7220175A500C74C57 /* Text.swift in Sources */,
 				E2C37B0A2232793900D84894 /* TextLoader.swift in Sources */,
 				E266366222059357001D05C8 /* StringExtension.swift in Sources */,
+				E2314808223B925200161724 /* UIShortTapGestureRecognizer.swift in Sources */,
 				E2C37B102232ADEA00D84894 /* DateLoader.swift in Sources */,
 				E25447C022253F2F00F48A80 /* NotificationType.swift in Sources */,
 				E266367522089106001D05C8 /* TextModifyViewController.swift in Sources */,
