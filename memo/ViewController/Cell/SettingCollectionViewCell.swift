@@ -14,11 +14,13 @@ protocol SettingCollectionViewCellDelegate {
   func reloadSettings(indexPath: IndexPath)
   func reloadMainViewController()
   func changeTheme()
+  func updateSettingViewController()
 }
 
 class SettingCollectionViewCell: UICollectionViewCell {
   @IBOutlet var settingTitleLabel: UILabel!
   @IBOutlet var switchLabel: UILabel!
+  @IBOutlet var imageView: UIImageView!
 
   var indexPath: IndexPath?
   var optionTotalCount: Int?
@@ -40,7 +42,7 @@ class SettingCollectionViewCell: UICollectionViewCell {
 
       if settingMode == .Theme {
         UserDefaults.standard.saveSettings(value: value, key: Key.Theme)
-        SettingManager.shared.setDarkTheme(value: value)
+        SettingManager.shared.setTheme(value: value)
         delegate?.changeTheme()
       }
       else if settingMode == .FontSize {

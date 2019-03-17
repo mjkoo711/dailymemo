@@ -16,8 +16,7 @@ class SettingManager {
   var vibrate: Bool?
   var theme: Theme?
 
-  private init() {
-  }
+  private init() { }
 
   func setFontSize(value: Int) {
     if value == FontSize.small.rawValue {
@@ -47,7 +46,7 @@ class SettingManager {
     }
   }
 
-  func setDarkTheme(value: Int) {
+  func setTheme(value: Int) {
     if value == Theme.whiteBlue.rawValue {
       theme = Theme.whiteBlue
     } else if value == Theme.whiteRed.rawValue {

@@ -10,7 +10,7 @@ import UIKit
 
 protocol SettingViewControllerDelegate {
   func reloadCollectionViewAndCalendarView(date: String)
-  func changeTheme()
+  func changeMainViewControllerTheme()
 }
 
 class SettingViewController: UIViewController {
@@ -24,11 +24,13 @@ class SettingViewController: UIViewController {
   var delegate: SettingViewControllerDelegate?
   var date: String?
 
+  @IBOutlet var closeImageView: UIImageView!
   @IBOutlet var collectionView: UICollectionView!
   @IBOutlet var closeButtonView: UIView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    updateSettingViewController()
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(returnMainViewController))
     closeButtonView.addGestureRecognizer(tapGesture)
   }
@@ -45,45 +47,72 @@ extension SettingViewController: UICollectionViewDataSource, UICollectionViewDel
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SettingCollectionViewCell", for: indexPath) as! SettingCollectionViewCell
+    guard let themeValue = SettingManager.shared.theme else { return cell }
+
+    if themeValue == .blackBlue || themeValue == .blackRed {
+      cell.settingTitleLabel.textColor = Color.DarkModeFontColorSub
+      cell.switchLabel.textColor = Color.DarkModeFontColorSub
+      cell.imageView.image = UIImage(named: "ArrowWhite")
+    } else if themeValue == .whiteRed || themeValue == .whiteBlue {
+      cell.settingTitleLabel.textColor = Color.Black
+      cell.switchLabel.textColor = Color.WhiteModeFontColorSub
+      cell.imageView.image = UIImage(named: "Arrow")
+    }
+
+
     if indexPath.section == 0 {
       cell.settingTitleLabel.text = designList[indexPath.row]
-      
       if indexPath.row == SettingList.Theme.rawValue {
         if let value = UserDefaults.standard.loadSettings(key: Key.Theme) {
           cell.switchLabel.text = theme[value]
           cell.optionTotalCount = theme.count
           cell.currentOption = value
           cell.settingMode = .Theme
+          cell.switchLabel.isHidden = false
         }
-      } else if indexPath.row == SettingList.FontSize.rawValue {
+      }
+
+      if indexPath.row == SettingList.FontSize.rawValue {
         if let value = UserDefaults.standard.loadSettings(key: Key.FontSize) {
           cell.switchLabel.text = size[value]
           cell.optionTotalCount = size.count
           cell.currentOption = value
           cell.settingMode = .FontSize
+          cell.switchLabel.isHidden = false
         }
-      } else if indexPath.row == SettingList.FontThickness.rawValue {
+      }
+
+      if indexPath.row == SettingList.FontThickness.rawValue {
         if let value = UserDefaults.standard.loadSettings(key: Key.FontWeight) {
           cell.switchLabel.text = thickness[value]
           cell.optionTotalCount = thickness.count
           cell.currentOption = value
           cell.settingMode = .FontThickness
+          cell.switchLabel.isHidden = false
         }
-      } else if indexPath.row == SettingList.Vibration.rawValue {
+      }
+
+      if indexPath.row == SettingList.Vibration.rawValue {
         if let value = UserDefaults.standard.loadSettings(key: Key.Vibrate) {
           cell.switchLabel.text = onoff[value]
           cell.optionTotalCount = onoff.count
           cell.currentOption = value
           cell.settingMode = .Vibration
+          cell.switchLabel.isHidden = false
         }
-      } else if indexPath.row == SettingList.Lock.rawValue {
+      }
+
+      if indexPath.row == SettingList.Lock.rawValue {
         if let value = UserDefaults.standard.loadSettings(key: Key.LockFeature) {
           cell.switchLabel.text = onoff[value]
           cell.optionTotalCount = onoff.count
           cell.currentOption = value
           cell.settingMode = .Lock
+          cell.switchLabel.isHidden = false
         }
-      } else if indexPath.row == SettingList.Alarm.rawValue {
+      }
+
+      if indexPath.row == SettingList.Alarm.rawValue {
         cell.switchLabel.isHidden = true
         cell.optionTotalCount = 0
         cell.currentOption = 0
@@ -118,12 +147,24 @@ extension SettingViewController {
 }
 
 extension SettingViewController: SettingCollectionViewCellDelegate {
+  func updateSettingViewController() {
+    guard let value = SettingManager.shared.theme else { return }
+    if value == .blackBlue || value == .blackRed {
+      self.view.backgroundColor = Color.DarkModeMain
+      self.closeImageView.image = UIImage(named: "CloseWhite")
+    } else if value == .whiteRed || value == .whiteBlue {
+      self.view.backgroundColor = Color.WhiteModeMain
+      self.closeImageView.image = UIImage(named: "Close")
+    }
+  }
+
   func changeTheme() {
-    delegate?.changeTheme()
+    delegate?.changeMainViewControllerTheme()
   }
 
   func reloadSettings(indexPath: IndexPath) {
-    collectionView.reloadItems(at: [indexPath])
+    updateSettingViewController()
+    collectionView.reloadData()
   }
 
   func reloadMainViewController() {

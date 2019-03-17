@@ -424,12 +424,13 @@ extension MainViewController: FSCalendarDataSource {
     collectionView.layoutIfNeeded()
   }
 
+  // MAKR : select date color
   func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
     if let value = SettingManager.shared.theme {
       if value == .blackBlue || value == .whiteBlue{
-        return Color.Blue
-      } else  if value == .blackRed || value == .whiteRed{
         return Color.LightRed
+      } else  if value == .blackRed || value == .whiteRed{
+        return Color.Blue
       }
     }
     return nil
@@ -440,7 +441,7 @@ extension MainViewController: FSCalendarDelegateAppearance {
 }
 
 extension MainViewController: TextInputViewControllerDelegate, TextModifyViewControllerDelegate, SettingViewControllerDelegate {
-  func changeTheme() {
+  func changeMainViewControllerTheme() {
     setTheme()
   }
 
@@ -470,13 +471,28 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
       cell.descriptionLabel.font = UIFont.systemFont(ofSize: fontSize, weight: fontWeight)
     }
 
+    guard let theme = SettingManager.shared.theme else { return cell }
+
+    if theme == .blackBlue || theme == .blackRed {
+      cell.descriptionLabel.textColor = Color.DarkModeFontColor
+    } else if theme == .whiteRed || theme == .whiteBlue {
+      cell.descriptionLabel.textColor = Color.WhiteModeFontColor
+    }
 
     cell.textInstance = textList[indexPath.row]
     cell.descriptionLabel.text = textList[indexPath.row].string
     if textList[indexPath.row].isAlarmable() {
-      cell.descriptionLabel.textColor = Color.Blue
+      if theme == .whiteBlue || theme == .blackBlue {
+        cell.descriptionLabel.textColor = Color.Blue
+      } else if theme == .whiteRed || theme == .whiteRed {
+        cell.descriptionLabel.textColor = Color.LightRed
+      }
     } else {
-      cell.descriptionLabel.textColor = Color.Black
+      if theme == .whiteBlue || theme == .whiteRed {
+        cell.descriptionLabel.textColor = Color.WhiteModeFontColor
+      } else if theme == .blackRed || theme == .blackBlue {
+        cell.descriptionLabel.textColor = Color.DarkModeFontColor
+      }
     }
     cell.delegate = self
     return cell

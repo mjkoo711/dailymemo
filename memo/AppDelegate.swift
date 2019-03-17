@@ -57,34 +57,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
   private func initSetting() {
     if let value = UserDefaults.standard.loadSettings(key: Key.Theme) {
-      // TODO : 그값으로 설정 다하기
-      SettingManager.shared.setDarkTheme(value: value)
+      SettingManager.shared.setTheme(value: value)
     } else {
       UserDefaults.standard.saveSettings(value: 0, key: Key.Theme)
+      SettingManager.shared.setTheme(value: 0)
     }
 
     if let value = UserDefaults.standard.loadSettings(key: Key.FontSize) {
       SettingManager.shared.setFontSize(value: value)
     } else {
       UserDefaults.standard.saveSettings(value: 2, key: Key.FontSize)
+      SettingManager.shared.setFontSize(value: 2)
+
     }
 
     if let value = UserDefaults.standard.loadSettings(key: Key.FontWeight) {
       SettingManager.shared.setFontWeight(value: value)
     } else {
       UserDefaults.standard.saveSettings(value: 1, key: Key.FontWeight)
+      SettingManager.shared.setFontWeight(value: 1)
     }
 
     if let value = UserDefaults.standard.loadSettings(key: Key.Vibrate) {
       SettingManager.shared.setVibration(value: value)
     } else {
       UserDefaults.standard.saveSettings(value: 1, key: Key.Vibrate)
+      SettingManager.shared.setVibration(value: 1)
     }
 
     if let _ = UserDefaults.standard.loadSettings(key: Key.LockFeature) {
       // TODO
     } else {
       UserDefaults.standard.saveSettings(value: 0, key: Key.LockFeature)
+      //TODO: set
     }
   }
 

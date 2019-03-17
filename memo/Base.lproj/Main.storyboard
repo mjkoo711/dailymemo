@@ -697,7 +697,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MYt-RD-xHl">
                                 <rect key="frame" x="0.0" y="91" width="375" height="576"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZAp-t1-UN9">
                                     <size key="itemSize" width="320" height="42"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -741,7 +741,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="GB1-b8-Igf" firstAttribute="leading" secondItem="vZN-k4-WTq" secondAttribute="trailing" constant="8" id="6dG-fA-Hy4"/>
                                                         <constraint firstAttribute="trailing" secondItem="MgG-fJ-RwX" secondAttribute="trailing" constant="35" id="CCS-35-IyE"/>
@@ -753,6 +753,7 @@
                                                 </view>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="l0v-kB-OHU" secondAttribute="trailing" id="32Z-7c-CYx"/>
                                             <constraint firstItem="l0v-kB-OHU" firstAttribute="top" secondItem="032-sr-gax" secondAttribute="top" id="W68-ug-8LY"/>
@@ -761,6 +762,7 @@
                                         </constraints>
                                         <size key="customSize" width="320" height="30"/>
                                         <connections>
+                                            <outlet property="imageView" destination="vZN-k4-WTq" id="TqD-rT-6Hm"/>
                                             <outlet property="settingTitleLabel" destination="GB1-b8-Igf" id="DNZ-HU-nXc"/>
                                             <outlet property="switchLabel" destination="MgG-fJ-RwX" id="G53-pW-QGu"/>
                                         </connections>
@@ -786,7 +788,7 @@
                                                 </constraints>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="vF5-A6-UcA" firstAttribute="top" secondItem="1V7-T3-NKf" secondAttribute="top" id="9ZS-gx-JKa"/>
                                             <constraint firstAttribute="height" constant="30" id="AfN-st-gxa"/>
@@ -798,7 +800,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="1V7-T3-NKf" firstAttribute="top" secondItem="Wec-Cb-V7L" secondAttribute="top" constant="8" id="8nX-h3-h9H"/>
                                     <constraint firstAttribute="height" constant="71" id="Zek-TP-aWk"/>
@@ -823,6 +825,7 @@
                     <navigationItem key="navigationItem" title="Setting" id="7YK-WR-vV0"/>
                     <connections>
                         <outlet property="closeButtonView" destination="1V7-T3-NKf" id="ysI-Gn-gAa"/>
+                        <outlet property="closeImageView" destination="vF5-A6-UcA" id="rZX-nI-s4d"/>
                         <outlet property="collectionView" destination="MYt-RD-xHl" id="Fr6-Bv-00U"/>
                         <segue destination="ZUu-MW-cpV" kind="unwind" identifier="unwindMainVC" unwindAction="unwindMainViewControllerWithSegue:" id="P48-T8-k2C"/>
                     </connections>
