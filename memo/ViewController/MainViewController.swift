@@ -484,7 +484,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     if textList[indexPath.row].isAlarmable() {
       if theme == .whiteBlue || theme == .blackBlue {
         cell.descriptionLabel.textColor = Color.Blue
-      } else if theme == .whiteRed || theme == .whiteRed {
+      } else if theme == .whiteRed || theme == .blackRed {
         cell.descriptionLabel.textColor = Color.LightRed
       }
     } else {
