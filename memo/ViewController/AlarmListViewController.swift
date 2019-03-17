@@ -27,6 +27,7 @@ class AlarmListViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     loadSetAlarmText()
+    setTheme()
   }
 
   private func loadSetAlarmText() {
@@ -43,6 +44,30 @@ class AlarmListViewController: UIViewController {
     }
     alarmTextDictionary = dic.sorted { $0.0 < $1.0 }
   }
+
+  private func setTheme() {
+    guard let theme = SettingManager.shared.theme else { return }
+    if theme == .blackBlue || theme == .blackRed {
+      view.backgroundColor = Color.DarkModeMain
+      navigationController?.navigationBar.barTintColor = Color.DarkModeMain
+      navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: Color.DarkModeFontColor]
+      if theme == .blackRed {
+        UINavigationBar.appearance().tintColor = Color.LightRed
+      } else if theme == .blackBlue {
+        UINavigationBar.appearance().tintColor = Color.Blue
+      }
+    } else if theme == .whiteBlue || theme == .whiteRed {
+      view.backgroundColor = Color.WhiteModeMain
+      navigationController?.navigationBar.barTintColor = Color.WhiteModeMain
+      navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: Color.WhiteModeFontColor]
+
+      if theme == .whiteRed {
+        UINavigationBar.appearance().tintColor = Color.LightRed
+      } else if theme == .whiteBlue {
+        UINavigationBar.appearance().tintColor = Color.Blue
+      }
+    }
+  }
 }
 
 extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -53,6 +78,19 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlarmCollectionViewCell", for: indexPath) as! AlarmCollectionViewCell
+
+    guard let theme = SettingManager.shared.theme else { return cell }
+
+    if theme == .blackBlue || theme == .blackRed {
+      cell.textLabel.textColor = Color.DarkModeFontColor
+      cell.dateLabel.textColor = Color.DarkModeFontColorSub
+      cell.backgroundColor = Color.DarkModeSub
+    } else if theme == .whiteBlue || theme == .whiteRed {
+      cell.textLabel.textColor = Color.WhiteModeFontColor
+      cell.dateLabel.textColor = Color.WhiteModeFontColorSub
+      cell.backgroundColor = Color.White
+    }
+
     let dateWritten = alarmTextDictionary[indexPath.section].value[indexPath.row].date
     cell.textInstance = alarmTextDictionary[indexPath.section].value[indexPath.row]
 
@@ -76,6 +114,14 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
     let alarmTimeHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "AlarmCollectionReusableView", for: indexPath) as! AlarmCollectionReusableView
 
     alarmTimeHeaderView.alarmTimeLabel.text = DateStringChanger().dateFormatChange(dateWithHyphen: alarmTextDictionary[indexPath.section].key)
+
+    guard let theme = SettingManager.shared.theme else { return alarmTimeHeaderView }
+
+    if theme == .blackBlue || theme == .blackRed {
+      alarmTimeHeaderView.alarmTimeLabel.textColor = Color.DarkModeFontColor
+    } else if theme == .whiteBlue || theme == .whiteRed {
+      alarmTimeHeaderView.alarmTimeLabel.textColor = Color.WhiteModeFontColor
+    }
     return alarmTimeHeaderView
   }
 }
