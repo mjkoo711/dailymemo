@@ -13,6 +13,7 @@ class SettingManager {
   static let shared = SettingManager()
   var fontSize: CGFloat?
   var fontWeight: UIFont.Weight?
+  var vibrate: Bool?
 
   private init() {
   }
@@ -34,6 +35,14 @@ class SettingManager {
       fontWeight = FontWeight.regular.size()
     } else if value == FontWeight.medium.rawValue {
       fontWeight = FontWeight.medium.size()
+    }
+  }
+
+  func setVibration(value: Int) {
+    if value == 0 {
+      vibrate = false
+    } else {
+      vibrate = true
     }
   }
 }

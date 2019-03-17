@@ -44,7 +44,11 @@ class SettingCollectionViewCell: UICollectionViewCell {
         UserDefaults.standard.saveSettings(value: value, key: Key.FontWeight)
         SettingManager.shared.setFontWeight(value: value)
       }
-      else if settingMode == .Vibration { UserDefaults.standard.saveSettings(value: value, key: Key.Vibrate) }
+      else if settingMode == .Vibration {
+        UserDefaults.standard.saveSettings(value: value, key: Key.Vibrate)
+        SettingManager.shared.setVibration(value: value)
+
+      }
       else if settingMode == .Lock { UserDefaults.standard.saveSettings(value: value, key: Key.LockFeature) }
     }
 

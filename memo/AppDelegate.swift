@@ -74,8 +74,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
       UserDefaults.standard.saveSettings(value: 1, key: Key.FontWeight)
     }
 
-    if let _ = UserDefaults.standard.loadSettings(key: Key.Vibrate) {
-      // TODO
+    if let value = UserDefaults.standard.loadSettings(key: Key.Vibrate) {
+      SettingManager.shared.setVibration(value: value)
     } else {
       UserDefaults.standard.saveSettings(value: 1, key: Key.Vibrate)
     }
