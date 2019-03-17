@@ -14,6 +14,7 @@ class SettingManager {
   var fontSize: CGFloat?
   var fontWeight: UIFont.Weight?
   var vibrate: Bool?
+  var theme: Theme?
 
   private init() {
   }
@@ -43,6 +44,18 @@ class SettingManager {
       vibrate = false
     } else {
       vibrate = true
+    }
+  }
+
+  func setDarkTheme(value: Int) {
+    if value == Theme.whiteBlue.rawValue {
+      theme = Theme.whiteBlue
+    } else if value == Theme.whiteRed.rawValue {
+      theme = Theme.whiteRed
+    } else if value == Theme.blackBlue.rawValue {
+      theme = Theme.blackBlue
+    } else if value == Theme.blackRed.rawValue {
+      theme = Theme.blackRed
     }
   }
 }

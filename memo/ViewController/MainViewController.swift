@@ -19,7 +19,9 @@ class MainViewController: UIViewController {
 
   @IBOutlet var calendarHeightConstraint: NSLayoutConstraint!
   @IBOutlet var showAlarmListButtonView: UIView!
+  @IBOutlet var showAlarmListButtonViewImage: UIImageView!
   @IBOutlet var showSettingButtonView: UIView!
+  @IBOutlet var showSettingButtonViewImage: UIImageView!
   @IBOutlet var todayLabel: UILabel!
 
   @IBOutlet var expandView: UIView!
@@ -32,6 +34,12 @@ class MainViewController: UIViewController {
   @IBOutlet var previousDayButtonView: UIView!
   @IBOutlet var nextDayButtonView: UIView!
   @IBOutlet var todayButtonView: UIView!
+
+  @IBOutlet var previousMonthButtonViewImage: UIImageView!
+  @IBOutlet var nextMonthButtonViewImage: UIImageView!
+  @IBOutlet var previousDayButtonViewImage: UIImageView!
+  @IBOutlet var nextDayButtonViewImage: UIImageView!
+  @IBOutlet var todayButtonViewImage: UIImageView!
 
   private var selectDateString: String!
   private var selectDayString: String!
@@ -46,11 +54,12 @@ class MainViewController: UIViewController {
   var textSelected: Text?
 
   var textList: [Text] = []
-
   var selectedDatePicked: Date!
+  var today: Date!
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    today = Date()
     calendarView.placeholderType = .none
     selectDateString = formatter.string(from: Date())
     selectDayString = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(formatter.string(from: Date())))
@@ -95,6 +104,7 @@ class MainViewController: UIViewController {
     reloadCollectionView(date: selectDateString)
     navigationController?.setNavigationBarHidden(true, animated: animated)
     updateTimeLabel()
+    setTheme()
   }
 
   override func viewWillDisappear(_ animated: Bool) {
@@ -118,6 +128,78 @@ class MainViewController: UIViewController {
       let viewController: SettingViewController = segue.destination as! SettingViewController
       viewController.date = selectDateString
       viewController.delegate = self
+    }
+  }
+
+  private func setTheme() {
+    guard let value = SettingManager.shared.theme else { return }
+    if value == .blackBlue || value == .blackRed { // Dark
+      view.backgroundColor = Color.DarkModeMain
+      timeLabel.textColor = Color.DarkModeFontColor
+      dayLabel.textColor = Color.DarkModeFontColor
+      calendarView.backgroundColor = Color.DarkModeMain
+      collectionView.backgroundColor = Color.DarkModeSub
+      if value == .blackRed {
+        calendarView.appearance.todayColor = Color.LightRed
+        expandView.backgroundColor = Color.LightRed
+        todayLabel.backgroundColor = Color.LightRed
+      } else if value == .blackBlue {
+        calendarView.appearance.todayColor = Color.Blue
+        expandView.backgroundColor = Color.Blue
+        todayLabel.backgroundColor = Color.Blue
+      }
+      showSettingButtonViewImage.image = UIImage(named: "SettingWhite")
+      showAlarmListButtonViewImage.image = UIImage(named: "AlarmWhite")
+      previousMonthButtonViewImage.image = UIImage(named: "MoreLeftWhite")
+      previousDayButtonViewImage.image = UIImage(named: "LeftWhite")
+      todayButtonViewImage.image = UIImage(named: "TodayWhite")
+      nextDayButtonViewImage.image = UIImage(named: "RightWhite")
+      nextMonthButtonViewImage.image = UIImage(named: "MoreRightWhite")
+
+
+      for index in 0..<calendarView.calendarWeekdayView.weekdayLabels.count {
+        let label = calendarView.calendarWeekdayView.weekdayLabels[index]
+        if index == 0 {
+          label.textColor = Color.LightRed
+        } else if index == 6 {
+          label.textColor = Color.Blue
+        } else {
+          label.textColor = Color.DarkModeFontColor
+        }
+      }
+    } else if value == .whiteRed || value == .whiteBlue { // White
+      view.backgroundColor = Color.WhiteModeMain
+      timeLabel.textColor = Color.WhiteModeFontColor
+      dayLabel.textColor = Color.WhiteModeFontColor
+      calendarView.backgroundColor = Color.WhiteModeMain
+      collectionView.backgroundColor = Color.WhiteModeSub
+      if value == .whiteRed {
+        calendarView.appearance.todayColor = Color.LightRed
+        expandView.backgroundColor = Color.LightRed
+        todayLabel.backgroundColor = Color.LightRed
+      } else if value == .whiteBlue {
+        calendarView.appearance.todayColor = Color.Blue
+        expandView.backgroundColor = Color.Blue
+        todayLabel.backgroundColor = Color.Blue
+      }
+      showSettingButtonViewImage.image = UIImage(named: "Setting")
+      showAlarmListButtonViewImage.image = UIImage(named: "Alarm")
+      previousMonthButtonViewImage.image = UIImage(named: "MoreLeft")
+      previousDayButtonViewImage.image = UIImage(named: "Left")
+      todayButtonViewImage.image = UIImage(named: "Today")
+      nextDayButtonViewImage.image = UIImage(named: "Right")
+      nextMonthButtonViewImage.image = UIImage(named: "MoreRight")
+
+      for index in 0..<calendarView.calendarWeekdayView.weekdayLabels.count {
+        let label = calendarView.calendarWeekdayView.weekdayLabels[index]
+        if index == 0 {
+          label.textColor = Color.LightRed
+        } else if index == 6 {
+          label.textColor = Color.Blue
+        } else {
+          label.textColor = Color.WhiteModeFontColor
+        }
+      }
     }
   }
 
@@ -268,32 +350,89 @@ extension MainViewController: FSCalendarDelegate {
 extension MainViewController: FSCalendarDataSource {
   func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, borderDefaultColorFor date: Date) -> UIColor? {
     let dateString = formatter.string(from: date)
-
     let dateList = DateLoader().findOnceDateList()
 
     if TextLoader().findDailyTextList().count != 0 {
-      return Color.Gray
+      if let value = SettingManager.shared.theme {
+        if value == .blackRed || value == .blackBlue {
+          return Color.DarkModeFontColorSub
+        } else {
+          return Color.WhiteModeFontColorSub
+        }
+      }
     }
 
     if TextLoader().findWeeklyTextList(date: dateString).count != 0 {
-      return Color.Gray
+      if let value = SettingManager.shared.theme {
+        if value == .blackRed || value == .blackBlue {
+          return Color.DarkModeFontColorSub
+        } else {
+          return Color.WhiteModeFontColorSub
+        }
+      }
     }
 
     if TextLoader().findMonthlyTextList(date: dateString).count != 0 {
-      return Color.Gray
+      if let value = SettingManager.shared.theme {
+        if value == .blackRed || value == .blackBlue {
+          return Color.DarkModeFontColorSub
+        } else {
+          return Color.WhiteModeFontColorSub
+        }
+      }
     }
 
     for dateItem in dateList {
       if dateItem == dateString {
-        return Color.Gray
+        if let value = SettingManager.shared.theme {
+          if value == .blackRed || value == .blackBlue {
+            return Color.DarkModeFontColorSub
+          } else {
+            return Color.WhiteModeFontColorSub
+          }
+        }
       }
     }
-    return Color.White
+
+    if let value = SettingManager.shared.theme {
+      if value == .blackRed || value == .blackBlue {
+        return Color.DarkModeMain
+      } else {
+        return Color.WhiteModeMain
+      }
+    }
+
+    return nil
+  }
+
+  func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
+    if let value = SettingManager.shared.theme {
+      if formatter.string(from: date) == formatter.string(from: today) {
+        return Color.White
+      }
+      if value == .blackRed || value == .blackBlue {
+        return Color.DarkModeFontColor
+      } else {
+        return Color.WhiteModeFontColor
+      }
+    }
+    return nil
   }
 
   func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
     calendarHeightConstraint.constant = bounds.size.height
     collectionView.layoutIfNeeded()
+  }
+
+  func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
+    if let value = SettingManager.shared.theme {
+      if value == .blackBlue || value == .whiteBlue{
+        return Color.Blue
+      } else  if value == .blackRed || value == .whiteRed{
+        return Color.LightRed
+      }
+    }
+    return nil
   }
 }
 
@@ -301,6 +440,10 @@ extension MainViewController: FSCalendarDelegateAppearance {
 }
 
 extension MainViewController: TextInputViewControllerDelegate, TextModifyViewControllerDelegate, SettingViewControllerDelegate {
+  func changeTheme() {
+    setTheme()
+  }
+
   func reloadCollectionView(date: String) {
     textList = TextLoader().findOnceTextList(date: date) + TextLoader().findDailyTextList() + TextLoader().findWeeklyTextList(date: date) + TextLoader().findMonthlyTextList(date: date)
     collectionView.reloadData()

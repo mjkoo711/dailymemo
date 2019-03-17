@@ -13,6 +13,7 @@ import UserNotifications
 protocol SettingCollectionViewCellDelegate {
   func reloadSettings(indexPath: IndexPath)
   func reloadMainViewController()
+  func changeTheme()
 }
 
 class SettingCollectionViewCell: UICollectionViewCell {
@@ -37,7 +38,11 @@ class SettingCollectionViewCell: UICollectionViewCell {
       let nextOption = currentOption + 1
       let value = nextOption == optionTotalCount ? 0 : nextOption
 
-      if settingMode == .Theme { UserDefaults.standard.saveSettings(value: value, key: Key.DarkTheme) }
+      if settingMode == .Theme {
+        UserDefaults.standard.saveSettings(value: value, key: Key.Theme)
+        SettingManager.shared.setDarkTheme(value: value)
+        delegate?.changeTheme()
+      }
       else if settingMode == .FontSize {
         UserDefaults.standard.saveSettings(value: value, key: Key.FontSize)
         SettingManager.shared.setFontSize(value: value)

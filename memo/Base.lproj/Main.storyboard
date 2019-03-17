@@ -186,7 +186,7 @@
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNr-Yo-yb2">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="PSR-cL-nna"/>
                                 </constraints>
@@ -322,10 +322,10 @@
                                         <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderDefaultColor">
-                                        <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderSelectionColor">
-                                        <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="headerHeight">
                                         <real key="value" value="0.0"/>
@@ -414,13 +414,20 @@
                         <outlet property="expandImageButtonView" destination="wgH-aY-NVD" id="tn0-M3-CCU"/>
                         <outlet property="expandView" destination="VMC-8u-7Zw" id="Wl8-Da-E98"/>
                         <outlet property="nextDayButtonView" destination="fdV-IP-90j" id="USc-3h-J6C"/>
+                        <outlet property="nextDayButtonViewImage" destination="WZw-8Z-Tua" id="YYa-6X-trz"/>
                         <outlet property="nextMonthButtonView" destination="XbR-3n-qkW" id="0WF-Bk-1aS"/>
+                        <outlet property="nextMonthButtonViewImage" destination="sZu-DK-V4I" id="AuI-QW-42k"/>
                         <outlet property="previousDayButtonView" destination="lUl-ap-67b" id="JvZ-D9-t86"/>
+                        <outlet property="previousDayButtonViewImage" destination="NHE-g9-cFM" id="hbe-gf-ek4"/>
                         <outlet property="previousMonthButtonView" destination="SXw-Dn-k6v" id="jZa-HO-xUD"/>
+                        <outlet property="previousMonthButtonViewImage" destination="ivg-Zb-rsp" id="TTQ-Ou-9Ba"/>
                         <outlet property="showAlarmListButtonView" destination="JJ4-M2-L03" id="JNi-cr-ttN"/>
+                        <outlet property="showAlarmListButtonViewImage" destination="ieB-fx-G1S" id="RYt-tB-24d"/>
                         <outlet property="showSettingButtonView" destination="7kO-DX-Wzu" id="31F-p5-jsp"/>
+                        <outlet property="showSettingButtonViewImage" destination="Q7I-ef-yy6" id="axm-5E-aOM"/>
                         <outlet property="timeLabel" destination="PJM-Sh-xCC" id="kZu-Vz-n1M"/>
                         <outlet property="todayButtonView" destination="ZvD-AG-ffo" id="0pC-Lc-ufd"/>
+                        <outlet property="todayButtonViewImage" destination="cf5-7X-P4D" id="McI-wz-8VH"/>
                         <outlet property="todayLabel" destination="fKe-hV-XoI" id="YKu-K8-7xG"/>
                         <segue destination="tn0-Aa-Vxe" kind="presentation" identifier="textInputSegue" animates="NO" id="XST-5e-hpe"/>
                         <segue destination="1tT-NR-09D" kind="presentation" identifier="textModifySegue" animates="NO" id="3k1-ZI-Ovd"/>

@@ -56,10 +56,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   }
 
   private func initSetting() {
-    if let _ = UserDefaults.standard.loadSettings(key: Key.DarkTheme) {
+    if let value = UserDefaults.standard.loadSettings(key: Key.Theme) {
       // TODO : 그값으로 설정 다하기
+      SettingManager.shared.setDarkTheme(value: value)
     } else {
-      UserDefaults.standard.saveSettings(value: 0, key: Key.DarkTheme)
+      UserDefaults.standard.saveSettings(value: 0, key: Key.Theme)
     }
 
     if let value = UserDefaults.standard.loadSettings(key: Key.FontSize) {

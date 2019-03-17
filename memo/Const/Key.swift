@@ -9,7 +9,7 @@
 import Foundation
 
 enum Key {
-  static let DarkTheme = "DarkTheme"
+  static let Theme = "Theme"
   static let FontSize = "FontSize"
   static let FontWeight = "FontWeight"
   static let Vibrate = "Vibrate"
