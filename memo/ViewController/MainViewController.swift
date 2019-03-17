@@ -176,7 +176,7 @@ class MainViewController: UIViewController {
     alertView.addButton("CANCEL", backgroundColor: Color.LightRed) {
 
     }
-    alertView.showCustom("알림설정", subTitle: "", color: Color.Blue, icon: UIImage(named: "AlarmOn")!)
+    alertView.showCustom("알림설정", subTitle: "", color: Color.Blue, icon: UIImage(named: "AlarmOnWhite")!)
     }
 
   private func textAlarmTrigger(text: Text, isAlarmSetting: Bool) {
