@@ -11,7 +11,7 @@ import Foundation
 enum Key {
   static let DarkTheme = "DarkTheme"
   static let FontSize = "FontSize"
-  static let FontThickness = "FontThickness"
+  static let FontWeight = "FontWeight"
   static let Vibrate = "Vibrate"
   static let LockFeature = "LockFeature"
 }

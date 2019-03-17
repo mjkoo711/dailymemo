@@ -26,6 +26,7 @@
 		E266367322087213001D05C8 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367222087213001D05C8 /* Const.swift */; };
 		E266367522089106001D05C8 /* TextModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367422089106001D05C8 /* TextModifyViewController.swift */; };
 		E266367D2208B319001D05C8 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367C2208B319001D05C8 /* Vibration.swift */; };
+		E268F3B8223E2FBE00534565 /* FontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268F3B7223E2FBE00534565 /* FontWeight.swift */; };
 		E2C37AE3222D12CE00D84894 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE2222D12CE00D84894 /* AlarmListViewController.swift */; };
 		E2C37AE5222D146400D84894 /* AlarmCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE4222D146400D84894 /* AlarmCollectionViewCell.swift */; };
 		E2C37AE9222D59C400D84894 /* AlarmCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE8222D59C400D84894 /* AlarmCollectionReusableView.swift */; };
@@ -72,6 +73,7 @@
 		E266367222087213001D05C8 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E266367422089106001D05C8 /* TextModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifyViewController.swift; sourceTree = "<group>"; };
 		E266367C2208B319001D05C8 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
+		E268F3B7223E2FBE00534565 /* FontWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWeight.swift; sourceTree = "<group>"; };
 		E2C37AE2222D12CE00D84894 /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
 		E2C37AE4222D146400D84894 /* AlarmCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCollectionViewCell.swift; sourceTree = "<group>"; };
 		E2C37AE8222D59C400D84894 /* AlarmCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				E2635383223C23B0006A2E43 /* Key.swift */,
 				E2635385223C2633006A2E43 /* SettingList.swift */,
 				E2635387223CF894006A2E43 /* FontSize.swift */,
+				E268F3B7223E2FBE00534565 /* FontWeight.swift */,
 			);
 			path = Const;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				E2D0402D222783F400D10B51 /* AlarmManager.swift in Sources */,
 				E2C37AED222D87A900D84894 /* SettingViewController.swift in Sources */,
 				E2F36CF621FAE0FA00A9C24C /* MainViewController.swift in Sources */,
+				E268F3B8223E2FBE00534565 /* FontWeight.swift in Sources */,
 				E2C37AE5222D146400D84894 /* AlarmCollectionViewCell.swift in Sources */,
 				E2E3C3DD2201839B00C74C57 /* DateStringChanger.swift in Sources */,
 				E246D339223781E50022FC4D /* Color.swift in Sources */,

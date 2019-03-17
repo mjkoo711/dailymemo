@@ -61,7 +61,7 @@ extension SettingViewController: UICollectionViewDataSource, UICollectionViewDel
           cell.settingMode = .FontSize
         }
       } else if indexPath.row == SettingList.FontThickness.rawValue {
-        if let value = UserDefaults.standard.loadSettings(key: Key.FontThickness) {
+        if let value = UserDefaults.standard.loadSettings(key: Key.FontWeight) {
           cell.switchLabel.text = thickness[value]
           cell.optionTotalCount = thickness.count
           cell.currentOption = value
@@ -108,9 +108,6 @@ extension SettingViewController: UICollectionViewDelegateFlowLayout {
 extension SettingViewController {
   @objc func returnMainViewController() {
     Vibration.medium.vibrate()
-    if let date = date {
-      delegate?.reloadCollectionViewAndCalendarView(date: date)
-    }
     performSegue(withIdentifier: "unwindMainVC", sender: self)
   }
 }
@@ -118,5 +115,11 @@ extension SettingViewController {
 extension SettingViewController: SettingCollectionViewCellDelegate {
   func reloadSettings(indexPath: IndexPath) {
     collectionView.reloadItems(at: [indexPath])
+  }
+
+  func reloadMainViewController() {
+    if let date = date {
+      delegate?.reloadCollectionViewAndCalendarView(date: date)
+    }
   }
 }

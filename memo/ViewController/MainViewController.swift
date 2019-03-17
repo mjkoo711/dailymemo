@@ -127,7 +127,7 @@ class MainViewController: UIViewController {
   }
 
   @objc private func showSettingViewController() {
-    Vibration.medium.vibrate()
+    Vibration.heavy.vibrate()
     performSegue(withIdentifier: "showSetting", sender: self)
   }
 
@@ -323,8 +323,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextCell", for: indexPath) as! TextCollectionViewCell
 
-    if let fontSize = SettingManager.shared.fontSize {
-      cell.descriptionLabel.font = cell.descriptionLabel.font.withSize(CGFloat(fontSize))
+    if let fontSize = SettingManager.shared.fontSize, let fontWeight = SettingManager.shared.fontWeight {
+      cell.descriptionLabel.font = UIFont.systemFont(ofSize: fontSize, weight: fontWeight)
     }
 
 

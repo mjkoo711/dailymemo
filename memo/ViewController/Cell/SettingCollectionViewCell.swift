@@ -10,6 +10,7 @@ import UIKit
 
 protocol SettingCollectionViewCellDelegate {
   func reloadSettings(indexPath: IndexPath)
+  func reloadMainViewController()
 }
 
 class SettingCollectionViewCell: UICollectionViewCell {
@@ -39,13 +40,17 @@ class SettingCollectionViewCell: UICollectionViewCell {
         UserDefaults.standard.saveSettings(value: value, key: Key.FontSize)
         SettingManager.shared.setFontSize(value: value)
       }
-      else if settingMode == .FontThickness { UserDefaults.standard.saveSettings(value: value, key: Key.FontThickness) }
+      else if settingMode == .FontThickness {
+        UserDefaults.standard.saveSettings(value: value, key: Key.FontWeight)
+        SettingManager.shared.setFontWeight(value: value)
+      }
       else if settingMode == .Vibration { UserDefaults.standard.saveSettings(value: value, key: Key.Vibrate) }
       else if settingMode == .Lock { UserDefaults.standard.saveSettings(value: value, key: Key.LockFeature) }
     }
 
     if let indexPath = indexPath, indexPath.section == 0 {
       delegate?.reloadSettings(indexPath: indexPath)
+      delegate?.reloadMainViewController()
     }
   }
 }

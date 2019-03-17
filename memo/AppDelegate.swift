@@ -68,10 +68,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
       UserDefaults.standard.saveSettings(value: 2, key: Key.FontSize)
     }
 
-    if let _ = UserDefaults.standard.loadSettings(key: Key.FontThickness) {
-      // TODO
+    if let value = UserDefaults.standard.loadSettings(key: Key.FontWeight) {
+      SettingManager.shared.setFontWeight(value: value)
     } else {
-      UserDefaults.standard.saveSettings(value: 1, key: Key.FontThickness)
+      UserDefaults.standard.saveSettings(value: 1, key: Key.FontWeight)
     }
 
     if let _ = UserDefaults.standard.loadSettings(key: Key.Vibrate) {

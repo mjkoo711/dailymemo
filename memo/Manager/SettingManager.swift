@@ -12,6 +12,7 @@ import UIKit
 class SettingManager {
   static let shared = SettingManager()
   var fontSize: CGFloat?
+  var fontWeight: UIFont.Weight?
 
   private init() {
   }
@@ -23,6 +24,16 @@ class SettingManager {
       fontSize = FontSize.middle.size()
     } else if value == FontSize.large.rawValue {
       fontSize = FontSize.large.size()
+    }
+  }
+
+  func setFontWeight(value: Int) {
+    if value == FontWeight.light.rawValue {
+      fontWeight = FontWeight.light.size()
+    } else if value == FontWeight.regular.rawValue {
+      fontWeight = FontWeight.regular.size()
+    } else if value == FontWeight.medium.rawValue {
+      fontWeight = FontWeight.medium.size()
     }
   }
 }
