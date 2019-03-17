@@ -114,6 +114,10 @@ class MainViewController: UIViewController {
       viewController.time = timeLabel.text
       viewController.existText = textSelected
       viewController.delegate = self
+    } else if segue.identifier == "showSetting" {
+      let viewController: SettingViewController = segue.destination as! SettingViewController
+      viewController.date = selectDateString
+      viewController.delegate = self
     }
   }
 
@@ -296,7 +300,7 @@ extension MainViewController: FSCalendarDataSource {
 extension MainViewController: FSCalendarDelegateAppearance {
 }
 
-extension MainViewController: TextInputViewControllerDelegate, TextModifyViewControllerDelegate {
+extension MainViewController: TextInputViewControllerDelegate, TextModifyViewControllerDelegate, SettingViewControllerDelegate {
   func reloadCollectionView(date: String) {
     textList = TextLoader().findOnceTextList(date: date) + TextLoader().findDailyTextList() + TextLoader().findWeeklyTextList(date: date) + TextLoader().findMonthlyTextList(date: date)
     collectionView.reloadData()
@@ -318,6 +322,12 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextCell", for: indexPath) as! TextCollectionViewCell
+
+    if let fontSize = SettingManager.shared.fontSize {
+      cell.descriptionLabel.font = cell.descriptionLabel.font.withSize(CGFloat(fontSize))
+    }
+
+
     cell.textInstance = textList[indexPath.row]
     cell.descriptionLabel.text = textList[indexPath.row].string
     if textList[indexPath.row].isAlarmable() {
@@ -394,7 +404,7 @@ extension MainViewController: TextCollectionViewCellDelegate {
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let height = textList[indexPath.row].string.height(withConstrainedWidth: UIScreen.main.bounds.width - 52, font: UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.medium)) + 15
+    let height = textList[indexPath.row].string.height(withConstrainedWidth: UIScreen.main.bounds.width - 52, font: UIFont.systemFont(ofSize: SettingManager.shared.fontSize!, weight: UIFont.Weight.medium)) + 14
     return CGSize(width: UIScreen.main.bounds.width - 20, height: height)
   }
 }

@@ -62,8 +62,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
       UserDefaults.standard.saveSettings(value: 0, key: Key.DarkTheme)
     }
 
-    if let _ = UserDefaults.standard.loadSettings(key: Key.FontSize) {
-      // TODO
+    if let value = UserDefaults.standard.loadSettings(key: Key.FontSize) {
+      SettingManager.shared.setFontSize(value: value)
     } else {
       UserDefaults.standard.saveSettings(value: 2, key: Key.FontSize)
     }

@@ -35,7 +35,10 @@ class SettingCollectionViewCell: UICollectionViewCell {
       let value = nextOption == optionTotalCount ? 0 : nextOption
 
       if settingMode == .Theme { UserDefaults.standard.saveSettings(value: value, key: Key.DarkTheme) }
-      else if settingMode == .FontSize { UserDefaults.standard.saveSettings(value: value, key: Key.FontSize) }
+      else if settingMode == .FontSize {
+        UserDefaults.standard.saveSettings(value: value, key: Key.FontSize)
+        SettingManager.shared.setFontSize(value: value)
+      }
       else if settingMode == .FontThickness { UserDefaults.standard.saveSettings(value: value, key: Key.FontThickness) }
       else if settingMode == .Vibration { UserDefaults.standard.saveSettings(value: value, key: Key.Vibrate) }
       else if settingMode == .Lock { UserDefaults.standard.saveSettings(value: value, key: Key.LockFeature) }

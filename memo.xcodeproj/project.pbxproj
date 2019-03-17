@@ -16,6 +16,8 @@
 		E2635382223C06DF006A2E43 /* SettingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635381223C06DF006A2E43 /* SettingCollectionViewCell.swift */; };
 		E2635384223C23B0006A2E43 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635383223C23B0006A2E43 /* Key.swift */; };
 		E2635386223C2633006A2E43 /* SettingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635385223C2633006A2E43 /* SettingList.swift */; };
+		E2635388223CF894006A2E43 /* FontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635387223CF894006A2E43 /* FontSize.swift */; };
+		E263538A223CFA46006A2E43 /* SettingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635389223CFA46006A2E43 /* SettingManager.swift */; };
 		E2639620223AABA700CA25C0 /* UIVIewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263961F223AABA700CA25C0 /* UIVIewExtensions.swift */; };
 		E266366022058BC2001D05C8 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266365F22058BC2001D05C8 /* TextCollectionViewCell.swift */; };
 		E266366222059357001D05C8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266366122059357001D05C8 /* StringExtension.swift */; };
@@ -60,6 +62,8 @@
 		E2635381223C06DF006A2E43 /* SettingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionViewCell.swift; sourceTree = "<group>"; };
 		E2635383223C23B0006A2E43 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		E2635385223C2633006A2E43 /* SettingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingList.swift; sourceTree = "<group>"; };
+		E2635387223CF894006A2E43 /* FontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSize.swift; sourceTree = "<group>"; };
+		E2635389223CFA46006A2E43 /* SettingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingManager.swift; sourceTree = "<group>"; };
 		E263961F223AABA700CA25C0 /* UIVIewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewExtensions.swift; sourceTree = "<group>"; };
 		E266365F22058BC2001D05C8 /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
 		E266366122059357001D05C8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 				E246D338223781E50022FC4D /* Color.swift */,
 				E2635383223C23B0006A2E43 /* Key.swift */,
 				E2635385223C2633006A2E43 /* SettingList.swift */,
+				E2635387223CF894006A2E43 /* FontSize.swift */,
 			);
 			path = Const;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 				E2C37B0722325A7000D84894 /* MDateFormatter.swift */,
 				E2C37B092232793900D84894 /* TextLoader.swift */,
 				E2C37B0F2232ADEA00D84894 /* DateLoader.swift */,
+				E2635389223CFA46006A2E43 /* SettingManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -384,7 +390,9 @@
 				E2635384223C23B0006A2E43 /* Key.swift in Sources */,
 				E2C37B0A2232793900D84894 /* TextLoader.swift in Sources */,
 				E266366222059357001D05C8 /* StringExtension.swift in Sources */,
+				E2635388223CF894006A2E43 /* FontSize.swift in Sources */,
 				E2314808223B925200161724 /* UIShortTapGestureRecognizer.swift in Sources */,
+				E263538A223CFA46006A2E43 /* SettingManager.swift in Sources */,
 				E2C37B102232ADEA00D84894 /* DateLoader.swift in Sources */,
 				E25447C022253F2F00F48A80 /* NotificationType.swift in Sources */,
 				E266367522089106001D05C8 /* TextModifyViewController.swift in Sources */,

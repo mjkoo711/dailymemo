@@ -8,12 +8,19 @@
 
 import UIKit
 
+protocol SettingViewControllerDelegate {
+  func reloadCollectionViewAndCalendarView(date: String)
+}
+
 class SettingViewController: UIViewController {
   let designList = ["어두운 테마", "메모 글자 크기", "메모 글자 두께", "진동", "잠금 설정"]
   let serviceList = ["프로버전 구매", "백업 / 복원", "리뷰 남기기", "문의메일 보내기"]
   let size = ["작게", "중간", "크게"]
   let thickness = ["얇게", "보통", "굵게"]
   let onoff = ["끄기", "켜기"]
+
+  var delegate: SettingViewControllerDelegate?
+  var date: String?
 
   @IBOutlet var collectionView: UICollectionView!
   @IBOutlet var closeButtonView: UIView!
@@ -101,6 +108,9 @@ extension SettingViewController: UICollectionViewDelegateFlowLayout {
 extension SettingViewController {
   @objc func returnMainViewController() {
     Vibration.medium.vibrate()
+    if let date = date {
+      delegate?.reloadCollectionViewAndCalendarView(date: date)
+    }
     performSegue(withIdentifier: "unwindMainVC", sender: self)
   }
 }
