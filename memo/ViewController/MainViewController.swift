@@ -122,7 +122,7 @@ class MainViewController: UIViewController {
   }
 
   @objc private func showAlarmList() {
-    Vibration.medium.vibrate()
+    Vibration.heavy.vibrate()
     performSegue(withIdentifier: "showAlarmList", sender: self)
   }
 
@@ -243,7 +243,7 @@ extension MainViewController {
 // MARK: - FSCalendarDelegate 함수
 extension MainViewController: FSCalendarDelegate {
   func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-    Vibration.medium.vibrate()
+    Vibration.heavy.vibrate()
     reloadDataShowed(date: date)
   }
 
@@ -412,7 +412,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 extension MainViewController {
   //MARK: move calender
   @objc private func moveToday() {
-    Vibration.medium.vibrate()
+    Vibration.heavy.vibrate()
     let date = Date()
     todayLabel.isHidden = false
     calendarView.select(date)
@@ -420,7 +420,7 @@ extension MainViewController {
   }
 
   @objc private func moveNextDay() {
-    Vibration.medium.vibrate()
+    Vibration.heavy.vibrate()
     guard let currentDate = formatter.date(from: selectDateString) else { return }
     guard let date = Calendar.current.date(byAdding: .day, value: 1, to: currentDate) else { return }
     calendarView.select(date, scrollToDate: true)
@@ -428,7 +428,7 @@ extension MainViewController {
   }
 
   @objc private func movePreviousDay() {
-    Vibration.medium.vibrate()
+    Vibration.heavy.vibrate()
     guard let currentDate = formatter.date(from: selectDateString) else { return }
     guard let date = Calendar.current.date(byAdding: .day, value: -1, to: currentDate) else { return }
     calendarView.select(date, scrollToDate: true)
@@ -436,7 +436,7 @@ extension MainViewController {
   }
 
   @objc private func moveNextMonth() {
-    Vibration.medium.vibrate()
+    Vibration.heavy.vibrate()
     guard let currentDate = formatter.date(from: selectDateString) else { return }
     guard let date = Calendar.current.date(byAdding: .month, value: 1, to: currentDate) else { return }
     calendarView.select(date, scrollToDate: true)
@@ -444,7 +444,7 @@ extension MainViewController {
   }
 
   @objc private func movePreviousMonth() {
-    Vibration.medium.vibrate()
+    Vibration.heavy.vibrate()
     guard let currentDate = formatter.date(from: selectDateString) else { return }
     guard let date = Calendar.current.date(byAdding: .month, value: -1, to: currentDate) else { return }
     calendarView.select(date, scrollToDate: true)
@@ -452,7 +452,7 @@ extension MainViewController {
   }
 
   @objc private func expandCalendar() {
-    Vibration.medium.vibrate()
+    Vibration.heavy.vibrate()
     if calendarView.scope == .week {
       calendarView.scope = .month
       expandImageButtonView.image = UIImage(named: "DownWhite")

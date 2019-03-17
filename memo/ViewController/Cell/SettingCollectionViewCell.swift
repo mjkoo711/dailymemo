@@ -30,7 +30,7 @@ class SettingCollectionViewCell: UICollectionViewCell {
   }
 
   @objc private func tapOptionChange() {
-    Vibration.medium.vibrate()
+    Vibration.heavy.vibrate()
     if let optionTotalCount = optionTotalCount, let currentOption = currentOption, let settingMode = settingMode {
       let nextOption = currentOption + 1
       let value = nextOption == optionTotalCount ? 0 : nextOption

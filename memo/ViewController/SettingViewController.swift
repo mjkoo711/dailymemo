@@ -107,7 +107,7 @@ extension SettingViewController: UICollectionViewDelegateFlowLayout {
 
 extension SettingViewController {
   @objc func returnMainViewController() {
-    Vibration.medium.vibrate()
+    Vibration.heavy.vibrate()
     performSegue(withIdentifier: "unwindMainVC", sender: self)
   }
 }
