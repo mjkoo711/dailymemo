@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialSnackbar
+import UserNotifications
 
 protocol SettingCollectionViewCellDelegate {
   func reloadSettings(indexPath: IndexPath)
@@ -50,9 +52,53 @@ class SettingCollectionViewCell: UICollectionViewCell {
 
       }
       else if settingMode == .Lock { UserDefaults.standard.saveSettings(value: value, key: Key.LockFeature) }
+      else if settingMode == .Alarm {
+        let current = UNUserNotificationCenter.current()
+
+        current.getNotificationSettings(completionHandler: { settings in
+
+          switch settings.authorizationStatus {
+          case .denied, .notDetermined:
+            DispatchQueue.main.async {
+              let message = MDCSnackbarMessage()
+              message.text = "알람 권한이 허용되어있지 않습니다."
+              message.buttonTextColor = Color.Blue
+
+              let action = MDCSnackbarMessageAction()
+              let actionHandler = {() in
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                  return
+                }
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                  UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                    print("Settings opened: \(success)") // Prints true
+                  })
+                }
+              }
+              action.handler = actionHandler
+              action.title = "설정하기"
+
+              message.action = action
+              MDCSnackbarManager.show(message)
+            }
+          case .authorized:
+            DispatchQueue.main.async {
+              let message = MDCSnackbarMessage()
+              message.text = "알람 권한이 이미 허용되어 있습니다."
+              MDCSnackbarManager.show(message)
+            }
+          case .provisional:
+            DispatchQueue.main.async {
+              let message = MDCSnackbarMessage()
+              message.text = "provisinal"
+              MDCSnackbarManager.show(message)
+            }
+          }
+        })
+      }
     }
 
-    if let indexPath = indexPath, indexPath.section == 0 {
+    if let indexPath = indexPath, indexPath.section == 0, indexPath.row != SettingList.Alarm.rawValue {
       delegate?.reloadSettings(indexPath: indexPath)
       delegate?.reloadMainViewController()
     }

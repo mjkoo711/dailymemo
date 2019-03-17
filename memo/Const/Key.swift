@@ -14,4 +14,5 @@ enum Key {
   static let FontWeight = "FontWeight"
   static let Vibrate = "Vibrate"
   static let LockFeature = "LockFeature"
+  static let Alarm = "Alarm"
 }
