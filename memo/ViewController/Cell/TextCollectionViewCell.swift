@@ -43,34 +43,30 @@ class TextCollectionViewCell: UICollectionViewCell {
   @objc func didDoubleTap() {
     guard let text = textInstance else { return }
 
-    if text.repeatMode == .Once {
-      if text.isAlarmSetting == 0 {
-        Vibration.heavy.vibrate()
-        delegate?.setAlarm(text: textInstance!)
-      } else if text.repeatMode == .Daily {
-        let message = MDCSnackbarMessage()
-        message.text = "매일 반복되는 메모는 알람설정이 불가능합니다."
-        MDCSnackbarManager.show(message)
-      } else if text.repeatMode == .Weekly {
-        let message = MDCSnackbarMessage()
-        message.text = "매주 반복되는 메모는 알람설정이 불가능합니다."
-        MDCSnackbarManager.show(message)
-      } else if text.repeatMode == .Monthly {
-        let message = MDCSnackbarMessage()
-        message.text = "매월 반복되는 메모는 알람설정이 불가능합니다."
-        MDCSnackbarManager.show(message)
-      } else if text.isAlarmSetting == 1 {
-        Vibration.oldSchool.vibrate()
+    if text.repeatMode == .Once, text.isAlarmSetting == 0 {
+      Vibration.heavy.vibrate()
+      delegate?.setAlarm(text: textInstance!)
+    } else if text.repeatMode == .Daily {
+      let message = MDCSnackbarMessage()
+      message.text = "매일 반복되는 메모는 알람설정이 불가능합니다."
+      MDCSnackbarManager.show(message)
+    } else if text.repeatMode == .Weekly {
+      let message = MDCSnackbarMessage()
+      message.text = "매주 반복되는 메모는 알람설정이 불가능합니다."
+      MDCSnackbarManager.show(message)
+    } else if text.repeatMode == .Monthly {
+      let message = MDCSnackbarMessage()
+      message.text = "매월 반복되는 메모는 알람설정이 불가능합니다."
+      MDCSnackbarManager.show(message)
+    } else if text.isAlarmSetting == 1 {
+      Vibration.oldSchool.vibrate()
 
-        let message = MDCSnackbarMessage()
-        message.text = "알람이 삭제되었습니다."
-        MDCSnackbarManager.show(message)
+      let message = MDCSnackbarMessage()
+      message.text = "알람이 삭제되었습니다."
+      MDCSnackbarManager.show(message)
 
-        delegate?.removeAlarm(text: textInstance!)
-      }
+      delegate?.removeAlarm(text: textInstance!)
     }
-
-
   }
 
   @objc func handleLongPress(sender: UILongPressGestureRecognizer) {

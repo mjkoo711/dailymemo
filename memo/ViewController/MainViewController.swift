@@ -575,10 +575,13 @@ extension MainViewController: TextCollectionViewCellDelegate {
       }
       actionSheet.message = "\(repeatModeString)" + " 설정된 메모는 알람설정이 불가합니다."
     }
+    let modifyAlarmAction = UIAlertAction(title: "Modify Alarm", style: .default, handler: { (action) in
+      self.showActionSheet(text: text)
+    })
     let copyAction = UIAlertAction(title: "Copy", style: .default, handler: { (action) in
       UIPasteboard.general.string = text.string
     })
-    let modifyAction = UIAlertAction(title: "Modify", style: .destructive, handler: {(action) in
+    let modifyAction = UIAlertAction(title: "Modify", style: .default, handler: {(action) in
       self.modifyTapped()
     })
     let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: {(action) in
@@ -586,6 +589,9 @@ extension MainViewController: TextCollectionViewCellDelegate {
     })
     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 
+    if text.isAlarmable() {
+      actionSheet.addAction(modifyAlarmAction)
+    }
     actionSheet.addAction(copyAction)
     actionSheet.addAction(modifyAction)
     actionSheet.addAction(deleteAction)

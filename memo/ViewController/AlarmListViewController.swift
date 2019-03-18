@@ -180,7 +180,6 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
     actionSheet.addAction(cancelAction)
 
     present(actionSheet, animated: true, completion: nil)
-
   }
 
   private func showAlarmSettingView() {
