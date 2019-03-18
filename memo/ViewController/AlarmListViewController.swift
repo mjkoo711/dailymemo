@@ -217,7 +217,7 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
     alertView.addButton("CANCEL", backgroundColor: Color.LightRed) {
 
     }
-    alertView.showTitle("알림설정", subTitle: "해당 키워드에 대해 알람을 설정하신 적이 있다면 지금 설정하는 것으로 최신화됩니다.", style: .notice)
+     alertView.showCustom("알림 변경", subTitle: "", color: Color.Blue, icon: UIImage(named: "AlarmOnWhite")!)
   }
 
   @objc private func dateSelected(datePicker: UIDatePicker) {

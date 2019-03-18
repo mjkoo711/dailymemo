@@ -576,7 +576,7 @@ extension MainViewController: TextCollectionViewCellDelegate {
       actionSheet.message = "\(repeatModeString)" + " 설정된 메모는 알람설정이 불가합니다."
     }
     let modifyAlarmAction = UIAlertAction(title: "Modify Alarm", style: .default, handler: { (action) in
-      self.showActionSheet(text: text)
+      self.showAlarmSettingView()
     })
     let copyAction = UIAlertAction(title: "Copy", style: .default, handler: { (action) in
       UIPasteboard.general.string = text.string
