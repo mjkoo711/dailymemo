@@ -50,12 +50,12 @@ extension SettingViewController: UICollectionViewDataSource, UICollectionViewDel
     guard let themeValue = SettingManager.shared.theme else { return cell }
 
     if themeValue == .blackBlue || themeValue == .blackRed {
-      cell.settingTitleLabel.textColor = Color.DarkModeFontColorSub
-      cell.switchLabel.textColor = Color.DarkModeFontColorSub
+      cell.settingTitleLabel.textColor = Color.DarkModeFontColor
+      cell.switchLabel.textColor = Color.DarkModeFontColor
       cell.imageView.image = UIImage(named: "ArrowWhite")
     } else if themeValue == .whiteRed || themeValue == .whiteBlue {
-      cell.settingTitleLabel.textColor = Color.Black
-      cell.switchLabel.textColor = Color.WhiteModeFontColorSub
+      cell.settingTitleLabel.textColor = Color.WhiteModeFontColor
+      cell.switchLabel.textColor = Color.WhiteModeFontColor
       cell.imageView.image = UIImage(named: "Arrow")
     }
 

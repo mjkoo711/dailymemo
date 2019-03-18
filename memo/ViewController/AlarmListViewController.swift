@@ -86,10 +86,20 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
       cell.textLabel.textColor = Color.DarkModeFontColor
       cell.dateLabel.textColor = Color.DarkModeFontColorSub
       cell.backgroundColor = Color.DarkModeSub
+      if theme == .blackBlue {
+        cell.deleteButtonView.backgroundColor = Color.Blue
+      } else if theme == .blackRed {
+        cell.deleteButtonView.backgroundColor = Color.LightRed
+      }
     } else if theme == .whiteBlue || theme == .whiteRed {
       cell.textLabel.textColor = Color.WhiteModeFontColor
       cell.dateLabel.textColor = Color.WhiteModeFontColorSub
       cell.backgroundColor = Color.White
+      if theme == .whiteBlue {
+        cell.deleteButtonView.backgroundColor = Color.Blue
+      } else if theme == .whiteRed {
+        cell.deleteButtonView.backgroundColor = Color.LightRed
+      }
     }
 
     let dateWritten = alarmTextDictionary[indexPath.section].value[indexPath.row].date

@@ -263,7 +263,7 @@ class MainViewController: UIViewController {
 
     }
     alertView.showCustom("알림설정", subTitle: "", color: Color.Blue, icon: UIImage(named: "AlarmOnWhite")!)
-    }
+  }
 
   private func textAlarmTrigger(text: Text, isAlarmSetting: Bool) {
     if isAlarmSetting {
@@ -428,13 +428,43 @@ extension MainViewController: FSCalendarDataSource {
     collectionView.layoutIfNeeded()
   }
 
-  // MAKR : select date color
+  // MARK: select date border color
+  func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, borderSelectionColorFor date: Date) -> UIColor? {
+    if let value = SettingManager.shared.theme {
+      if value == .blackBlue || value == .whiteBlue {
+        return Color.Blue
+      } else  if value == .blackRed || value == .whiteRed {
+        return Color.LightRed
+      }
+    }
+    return nil
+  }
+
+  // MARK: select date font color
+  func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleSelectionColorFor date: Date) -> UIColor? {
+    if let value = SettingManager.shared.theme {
+      if value == .blackBlue || value == .blackRed {
+        return Color.DarkModeFontColor
+      } else if value == .whiteBlue || value == .whiteRed {
+        return Color.WhiteModeFontColor
+      }
+    }
+    return nil
+  }
+
+  // MAKR : select date fill color
   func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
     if let value = SettingManager.shared.theme {
-      if value == .blackBlue || value == .whiteBlue{
-        return Color.LightRed
-      } else  if value == .blackRed || value == .whiteRed{
-        return Color.Blue
+      if value == .blackBlue || value == .blackRed {
+        if date == today {
+          return Color.Blue
+        }
+        return Color.DarkModeMain
+      } else  if value == .whiteBlue || value == .whiteRed {
+        if date == today {
+          return Color.LightRed
+        }
+        return Color.WhiteModeMain
       }
     }
     return nil
