@@ -22,4 +22,15 @@ extension UserDefaults {
     defaults.set(encodedData, forKey: key)
     defaults.synchronize()
   }
+
+  func saveSettings(value: Int, key: String) {
+    let defaults = UserDefaults.standard
+    defaults.set(value, forKey: key)
+    defaults.synchronize()
+  }
+
+  func loadSettings(key: String) -> Int? {
+    let defaults = UserDefaults.standard
+    return defaults.object(forKey: key) as? Int
+  }
 }

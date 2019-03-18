@@ -13,6 +13,11 @@
 		E2314808223B925200161724 /* UIShortTapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2314807223B925200161724 /* UIShortTapGestureRecognizer.swift */; };
 		E246D339223781E50022FC4D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246D338223781E50022FC4D /* Color.swift */; };
 		E25447C022253F2F00F48A80 /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25447BF22253F2F00F48A80 /* NotificationType.swift */; };
+		E2635382223C06DF006A2E43 /* SettingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635381223C06DF006A2E43 /* SettingCollectionViewCell.swift */; };
+		E2635384223C23B0006A2E43 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635383223C23B0006A2E43 /* Key.swift */; };
+		E2635386223C2633006A2E43 /* SettingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635385223C2633006A2E43 /* SettingList.swift */; };
+		E2635388223CF894006A2E43 /* FontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635387223CF894006A2E43 /* FontSize.swift */; };
+		E263538A223CFA46006A2E43 /* SettingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635389223CFA46006A2E43 /* SettingManager.swift */; };
 		E2639620223AABA700CA25C0 /* UIVIewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263961F223AABA700CA25C0 /* UIVIewExtensions.swift */; };
 		E266366022058BC2001D05C8 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266365F22058BC2001D05C8 /* TextCollectionViewCell.swift */; };
 		E266366222059357001D05C8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266366122059357001D05C8 /* StringExtension.swift */; };
@@ -21,6 +26,8 @@
 		E266367322087213001D05C8 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367222087213001D05C8 /* Const.swift */; };
 		E266367522089106001D05C8 /* TextModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367422089106001D05C8 /* TextModifyViewController.swift */; };
 		E266367D2208B319001D05C8 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367C2208B319001D05C8 /* Vibration.swift */; };
+		E268F3B8223E2FBE00534565 /* FontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268F3B7223E2FBE00534565 /* FontWeight.swift */; };
+		E272F750223E6F2000CD5FA8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E272F74F223E6F2000CD5FA8 /* Theme.swift */; };
 		E2C37AE3222D12CE00D84894 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE2222D12CE00D84894 /* AlarmListViewController.swift */; };
 		E2C37AE5222D146400D84894 /* AlarmCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE4222D146400D84894 /* AlarmCollectionViewCell.swift */; };
 		E2C37AE9222D59C400D84894 /* AlarmCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE8222D59C400D84894 /* AlarmCollectionReusableView.swift */; };
@@ -54,6 +61,11 @@
 		E2314807223B925200161724 /* UIShortTapGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIShortTapGestureRecognizer.swift; sourceTree = "<group>"; };
 		E246D338223781E50022FC4D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E25447BF22253F2F00F48A80 /* NotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
+		E2635381223C06DF006A2E43 /* SettingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionViewCell.swift; sourceTree = "<group>"; };
+		E2635383223C23B0006A2E43 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		E2635385223C2633006A2E43 /* SettingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingList.swift; sourceTree = "<group>"; };
+		E2635387223CF894006A2E43 /* FontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSize.swift; sourceTree = "<group>"; };
+		E2635389223CFA46006A2E43 /* SettingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingManager.swift; sourceTree = "<group>"; };
 		E263961F223AABA700CA25C0 /* UIVIewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewExtensions.swift; sourceTree = "<group>"; };
 		E266365F22058BC2001D05C8 /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
 		E266366122059357001D05C8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -62,6 +74,8 @@
 		E266367222087213001D05C8 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E266367422089106001D05C8 /* TextModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifyViewController.swift; sourceTree = "<group>"; };
 		E266367C2208B319001D05C8 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
+		E268F3B7223E2FBE00534565 /* FontWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWeight.swift; sourceTree = "<group>"; };
+		E272F74F223E6F2000CD5FA8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E2C37AE2222D12CE00D84894 /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
 		E2C37AE4222D146400D84894 /* AlarmCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCollectionViewCell.swift; sourceTree = "<group>"; };
 		E2C37AE8222D59C400D84894 /* AlarmCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -158,6 +172,11 @@
 				E2C37B0B22327A5C00D84894 /* Day.swift */,
 				E2C37B0D22327AB400D84894 /* Month.swift */,
 				E246D338223781E50022FC4D /* Color.swift */,
+				E2635383223C23B0006A2E43 /* Key.swift */,
+				E2635385223C2633006A2E43 /* SettingList.swift */,
+				E2635387223CF894006A2E43 /* FontSize.swift */,
+				E268F3B7223E2FBE00534565 /* FontWeight.swift */,
+				E272F74F223E6F2000CD5FA8 /* Theme.swift */,
 			);
 			path = Const;
 			sourceTree = "<group>";
@@ -171,6 +190,7 @@
 				E2C37B0722325A7000D84894 /* MDateFormatter.swift */,
 				E2C37B092232793900D84894 /* TextLoader.swift */,
 				E2C37B0F2232ADEA00D84894 /* DateLoader.swift */,
+				E2635389223CFA46006A2E43 /* SettingManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -180,6 +200,7 @@
 			children = (
 				E266365F22058BC2001D05C8 /* TextCollectionViewCell.swift */,
 				E2C37AE4222D146400D84894 /* AlarmCollectionViewCell.swift */,
+				E2635381223C06DF006A2E43 /* SettingCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -371,13 +392,18 @@
 			files = (
 				E20CE65321FD8E0300FF495E /* TextInputViewController.swift in Sources */,
 				E2E3C3D7220175A500C74C57 /* Text.swift in Sources */,
+				E2635386223C2633006A2E43 /* SettingList.swift in Sources */,
+				E2635384223C23B0006A2E43 /* Key.swift in Sources */,
 				E2C37B0A2232793900D84894 /* TextLoader.swift in Sources */,
 				E266366222059357001D05C8 /* StringExtension.swift in Sources */,
+				E2635388223CF894006A2E43 /* FontSize.swift in Sources */,
 				E2314808223B925200161724 /* UIShortTapGestureRecognizer.swift in Sources */,
+				E263538A223CFA46006A2E43 /* SettingManager.swift in Sources */,
 				E2C37B102232ADEA00D84894 /* DateLoader.swift in Sources */,
 				E25447C022253F2F00F48A80 /* NotificationType.swift in Sources */,
 				E266367522089106001D05C8 /* TextModifyViewController.swift in Sources */,
 				E2C37B0C22327A5C00D84894 /* Day.swift in Sources */,
+				E272F750223E6F2000CD5FA8 /* Theme.swift in Sources */,
 				E26636672205A225001D05C8 /* UILabelExtension.swift in Sources */,
 				E21E11F121FC2485004BBFD9 /* Clock.swift in Sources */,
 				E2C37AEB222D7B2B00D84894 /* IntExtensions.swift in Sources */,
@@ -385,6 +411,7 @@
 				E2D0402D222783F400D10B51 /* AlarmManager.swift in Sources */,
 				E2C37AED222D87A900D84894 /* SettingViewController.swift in Sources */,
 				E2F36CF621FAE0FA00A9C24C /* MainViewController.swift in Sources */,
+				E268F3B8223E2FBE00534565 /* FontWeight.swift in Sources */,
 				E2C37AE5222D146400D84894 /* AlarmCollectionViewCell.swift in Sources */,
 				E2E3C3DD2201839B00C74C57 /* DateStringChanger.swift in Sources */,
 				E246D339223781E50022FC4D /* Color.swift in Sources */,
@@ -400,6 +427,7 @@
 				E2C37B0822325A7000D84894 /* MDateFormatter.swift in Sources */,
 				E2C37B062232544900D84894 /* FMDBManager.swift in Sources */,
 				E266367322087213001D05C8 /* Const.swift in Sources */,
+				E2635382223C06DF006A2E43 /* SettingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

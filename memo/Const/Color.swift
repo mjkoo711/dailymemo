@@ -24,4 +24,20 @@ enum Color {
   static let LightGray = UIColor(red: 200/255.0, green: 199/255.0, blue: 204/255.0, alpha: 1.0)
   static let MoreLightGray = UIColor(red: 239/255.0, green: 239/255.0, blue: 244/255.0, alpha: 1.0)
 
+  static let DarkModeMain = UIColor(red: 39/255.0, green: 40/255.0, blue: 41/255.0, alpha: 1.0)
+  static let DarkModeSub = UIColor(red: 25/255.0, green: 26/255.0, blue: 27/255.0, alpha: 1.0)
+  static let DarkModeFontColor = UIColor(red: 254/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0)
+  static let DarkModeFontColorSub = UIColor(red: 150/255.0, green: 151/255.0, blue: 151/255.0, alpha: 1.0)
+
+  static let WhiteModeMain = UIColor(red: 254/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0)
+  static let WhiteModeSub = UIColor(red: 238/255.0, green: 239/255.0, blue: 243/255.0, alpha: 1.0)
+  static let WhiteModeFontColor = Color.Black
+  static let WhiteModeFontColorSub = UIColor(red: 111/255.0, green: 113/255.0, blue: 120/255.0, alpha: 1.0)
+
+  
+
+
+
+
+
 }
