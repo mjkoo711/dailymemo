@@ -48,6 +48,10 @@ class MainViewController: UIViewController {
   fileprivate let formatter2 = MDateFormatter().formatter2
   fileprivate let formatterKorea = MDateFormatter().formatterKorea
 
+  override var prefersStatusBarHidden: Bool {
+    return true
+  }
+
   let clock = Clock()
   var timeChanger: Timer?
 
