@@ -66,8 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     if let value = UserDefaults.standard.loadSettings(key: Key.FontSize) {
       SettingManager.shared.setFontSize(value: value)
     } else {
-      UserDefaults.standard.saveSettings(value: 2, key: Key.FontSize)
-      SettingManager.shared.setFontSize(value: 2)
+      UserDefaults.standard.saveSettings(value: 1, key: Key.FontSize)
+      SettingManager.shared.setFontSize(value: 1)
 
     }
 
