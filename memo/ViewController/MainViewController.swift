@@ -580,12 +580,18 @@ extension MainViewController: TextCollectionViewCellDelegate {
     })
     let copyAction = UIAlertAction(title: "Copy", style: .default, handler: { (action) in
       UIPasteboard.general.string = text.string
+      let message = MDCSnackbarMessage()
+      message.text = "복사되었습니다."
+      MDCSnackbarManager.show(message)
     })
     let modifyAction = UIAlertAction(title: "Modify", style: .default, handler: {(action) in
       self.modifyTapped()
     })
     let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: {(action) in
       self.removeTapped()
+      let message = MDCSnackbarMessage()
+      message.text = "삭제되었습니다."
+      MDCSnackbarManager.show(message)
     })
     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 

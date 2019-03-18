@@ -69,7 +69,13 @@ class SettingCollectionViewCell: UICollectionViewCell {
             DispatchQueue.main.async {
               let message = MDCSnackbarMessage()
               message.text = "알람 권한이 허용되어있지 않습니다."
-              message.buttonTextColor = Color.Blue
+              if let theme = SettingManager.shared.theme {
+                if theme == .blackRed || theme == .whiteRed {
+                  message.buttonTextColor = Color.LightRed
+                } else if theme == .blackBlue || theme == .whiteBlue {
+                  message.buttonTextColor = Color.Blue
+                }
+              }
 
               let action = MDCSnackbarMessageAction()
               let actionHandler = {() in
