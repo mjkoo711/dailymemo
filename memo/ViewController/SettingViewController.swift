@@ -59,7 +59,6 @@ extension SettingViewController: UICollectionViewDataSource, UICollectionViewDel
       cell.imageView.image = UIImage(named: "Arrow")
     }
 
-
     if indexPath.section == 0 {
       cell.settingTitleLabel.text = designList[indexPath.row]
       if indexPath.row == SettingList.Theme.rawValue {
@@ -68,6 +67,12 @@ extension SettingViewController: UICollectionViewDataSource, UICollectionViewDel
           cell.optionTotalCount = theme.count
           cell.currentOption = value
           cell.settingMode = .Theme
+
+          if themeValue == .whiteRed || themeValue == .blackRed {
+            cell.switchLabel.textColor = Color.LightRed
+          } else if themeValue == .blackBlue || themeValue == .whiteBlue {
+            cell.switchLabel.textColor = Color.Blue
+          }
           cell.switchLabel.isHidden = false
         }
       }
