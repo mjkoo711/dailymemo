@@ -58,6 +58,7 @@ class MainViewController: UIViewController {
   var textSelected: Text?
 
   var textList: [Text] = []
+  var textCompletedList: [String] = []
   var selectedDatePicked: Date!
   var today: Date!
 
@@ -481,12 +482,16 @@ extension MainViewController: TextInputViewControllerDelegate, TextModifyViewCon
 
   func reloadCollectionView(date: String) {
     textList = TextLoader().findOnceTextList(date: date) + TextLoader().findDailyTextList() + TextLoader().findWeeklyTextList(date: date) + TextLoader().findMonthlyTextList(date: date)
+    textCompletedList = FMDBManager.shared.findTextCompleted(currentDate: selectDateString)
+
     collectionView.reloadData()
     collectionViewScrollToBottom()
   }
 
   func reloadCollectionViewAndCalendarView(date: String) {
     textList = TextLoader().findOnceTextList(date: date) + TextLoader().findDailyTextList() + TextLoader().findWeeklyTextList(date: date) + TextLoader().findMonthlyTextList(date: date)
+    textCompletedList = FMDBManager.shared.findTextCompleted(currentDate: selectDateString)
+
     collectionView.reloadData()
     calendarView.reloadData()
     collectionViewScrollToBottom()
@@ -515,6 +520,24 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
     cell.textInstance = textList[indexPath.row]
     cell.descriptionLabel.text = textList[indexPath.row].string
+    cell.currentDate = selectDateString
+
+    if textCompletedList.contains(textList[indexPath.row].createdAt) {
+      cell.isCompleted = true
+      if theme == .blackBlue || theme == .blackRed {
+        cell.checkImage.image = UIImage(named: "CheckBoxWhite")
+      } else if theme == .whiteBlue || theme == .whiteRed {
+        cell.checkImage.image = UIImage(named: "CheckBox")
+      }
+    } else {
+      cell.isCompleted = false
+      if theme == .blackBlue || theme == .blackRed {
+        cell.checkImage.image = UIImage(named: "UncheckBoxWhite")
+      } else if theme == .whiteBlue || theme == .whiteRed {
+        cell.checkImage.image = UIImage(named: "UncheckBox")
+      }
+    }
+
     if textList[indexPath.row].isAlarmable() {
       if theme == .whiteBlue || theme == .blackBlue {
         cell.descriptionLabel.textColor = Color.Blue
@@ -536,7 +559,6 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension MainViewController: TextCollectionViewCellDelegate {
   func setAlarm(text: Text) {
     textSelected = text
-
     self.showAlarmSettingView()
   }
 
@@ -547,7 +569,6 @@ extension MainViewController: TextCollectionViewCellDelegate {
     FMDBManager.shared.updateText(text: text)
     AlarmManager().removeNotification(textSelected: text)
     self.reloadCollectionView(date: self.selectDateString)
-
   }
 
   func showActionSheet(text: Text) {
@@ -603,8 +624,8 @@ extension MainViewController: TextCollectionViewCellDelegate {
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let height = textList[indexPath.row].string.height(withConstrainedWidth: UIScreen.main.bounds.width - 52, font: UIFont.systemFont(ofSize: SettingManager.shared.fontSize!, weight: UIFont.Weight.medium)) + 14
-    return CGSize(width: UIScreen.main.bounds.width - 20, height: height)
+    let height = textList[indexPath.row].string.height(withConstrainedWidth: UIScreen.main.bounds.width - 57, font: UIFont.systemFont(ofSize: SettingManager.shared.fontSize!, weight: UIFont.Weight.medium)) + 14
+    return CGSize(width: UIScreen.main.bounds.width - 25, height: height)
   }
 }
 

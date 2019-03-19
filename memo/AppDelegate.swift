@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     setIQKeyboardPreference()
     setUNUserNotification()
     FMDBManager.shared.createDatabase()
+    FMDBManager.shared.createDatabaseCompleted()
     initSetting()
     return true
   }
