@@ -15,6 +15,7 @@ protocol AlarmCollectionViewCellDelegate {
 
 class AlarmCollectionViewCell: UICollectionViewCell {
   @IBOutlet var deleteButtonView: UIView!
+  @IBOutlet var deleteButtonViewImage: UIImageView!
   @IBOutlet var parentView: UIView!
 
   @IBOutlet var dateLabel: UILabel!

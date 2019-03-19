@@ -26,6 +26,10 @@ class AlarmListViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.navigationController?.navigationBar.prefersLargeTitles = true
+    if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+      flowLayout.sectionHeadersPinToVisibleBounds = true
+    }
     loadSetAlarmText()
     setTheme()
   }
@@ -82,23 +86,26 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
 
     guard let theme = SettingManager.shared.theme else { return cell }
 
+    cell.textLabel.textColor = Color.White
+    cell.dateLabel.textColor = Color.White
+    cell.deleteButtonViewImage.image = UIImage(named: "DeleteWhite")
+
     if theme == .blackBlue || theme == .blackRed {
-      cell.textLabel.textColor = Color.DarkModeFontColor
-      cell.dateLabel.textColor = Color.DarkModeFontColorSub
       cell.backgroundColor = Color.DarkModeSub
       if theme == .blackBlue {
-        cell.deleteButtonView.backgroundColor = Color.Blue
+        cell.backgroundColor = Color.Blue
+        cell.deleteButtonView.backgroundColor = UIColor.clear
       } else if theme == .blackRed {
-        cell.deleteButtonView.backgroundColor = Color.LightRed
+        cell.backgroundColor = Color.LightRed
+        cell.deleteButtonView.backgroundColor = UIColor.clear
       }
     } else if theme == .whiteBlue || theme == .whiteRed {
-      cell.textLabel.textColor = Color.WhiteModeFontColor
-      cell.dateLabel.textColor = Color.WhiteModeFontColorSub
-      cell.backgroundColor = Color.White
       if theme == .whiteBlue {
-        cell.deleteButtonView.backgroundColor = Color.Blue
+        cell.backgroundColor = Color.Blue
+        cell.deleteButtonView.backgroundColor = UIColor.clear
       } else if theme == .whiteRed {
-        cell.deleteButtonView.backgroundColor = Color.LightRed
+        cell.backgroundColor = Color.LightRed
+        cell.deleteButtonView.backgroundColor = UIColor.clear
       }
     }
 
@@ -130,8 +137,10 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
 
     if theme == .blackBlue || theme == .blackRed {
       alarmTimeHeaderView.alarmTimeLabel.textColor = Color.DarkModeFontColor
+      alarmTimeHeaderView.backgroundColor = Color.DarkModeMain
     } else if theme == .whiteBlue || theme == .whiteRed {
       alarmTimeHeaderView.alarmTimeLabel.textColor = Color.WhiteModeFontColor
+      alarmTimeHeaderView.backgroundColor = Color.WhiteModeMain
     }
     return alarmTimeHeaderView
   }
