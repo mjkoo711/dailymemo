@@ -14,7 +14,8 @@ import UserNotifications
 
 class AlarmListViewController: UIViewController {
   @IBOutlet var collectionView: UICollectionView!
-
+  @IBOutlet var messageLabel: UILabel!
+  
   var alarmTextList: [Text] = []
   var alarmTextDictionary: [(key: String, value: [Text])] = []
   var textSelected: Text?
@@ -47,6 +48,12 @@ class AlarmListViewController: UIViewController {
       }
     }
     alarmTextDictionary = dic.sorted { $0.0 < $1.0 }
+    if alarmTextList.count == 0 {
+      messageLabel.isHidden = false
+      messageLabel.text = "예정된 알람 없음"
+    } else {
+      messageLabel.isHidden = true
+    }
   }
 
   private func setTheme() {
