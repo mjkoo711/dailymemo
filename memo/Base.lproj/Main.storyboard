@@ -156,7 +156,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UncheckBox" translatesAutoresizingMaskIntoConstraints="NO" id="c8I-Or-B6I">
-                                                            <rect key="frame" x="2" y="11" width="13" height="13"/>
+                                                            <rect key="frame" x="2" y="8" width="13" height="13"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="13" id="axb-BT-V6T"/>
@@ -170,7 +170,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="0rF-Ca-XuN" secondAttribute="bottom" id="3rp-3d-4sd"/>
                                                         <constraint firstItem="0rF-Ca-XuN" firstAttribute="leading" secondItem="u0e-MM-HhC" secondAttribute="leading" constant="21" id="8WH-zs-H9W"/>
                                                         <constraint firstItem="c8I-Or-B6I" firstAttribute="leading" secondItem="u0e-MM-HhC" secondAttribute="leading" constant="2" id="K2q-Pf-Xji"/>
-                                                        <constraint firstItem="c8I-Or-B6I" firstAttribute="firstBaseline" secondItem="0rF-Ca-XuN" secondAttribute="firstBaseline" constant="-5" id="skX-S3-dOa"/>
+                                                        <constraint firstItem="c8I-Or-B6I" firstAttribute="firstBaseline" secondItem="0rF-Ca-XuN" secondAttribute="firstBaseline" constant="-8" id="skX-S3-dOa"/>
                                                         <constraint firstAttribute="trailing" secondItem="0rF-Ca-XuN" secondAttribute="trailing" constant="16" id="y6y-3a-HmP"/>
                                                     </constraints>
                                                 </view>
