@@ -150,17 +150,27 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rF-Ca-XuN">
-                                                            <rect key="frame" x="16" y="0.0" width="288" height="50"/>
+                                                            <rect key="frame" x="21" y="0.0" width="283" height="50"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UncheckBox" translatesAutoresizingMaskIntoConstraints="NO" id="c8I-Or-B6I">
+                                                            <rect key="frame" x="2" y="11" width="13" height="13"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="13" id="axb-BT-V6T"/>
+                                                                <constraint firstAttribute="height" constant="13" id="xmr-cl-Tgs"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="0rF-Ca-XuN" firstAttribute="top" secondItem="u0e-MM-HhC" secondAttribute="top" id="0LB-S2-PGx"/>
                                                         <constraint firstAttribute="bottom" secondItem="0rF-Ca-XuN" secondAttribute="bottom" id="3rp-3d-4sd"/>
-                                                        <constraint firstItem="0rF-Ca-XuN" firstAttribute="leading" secondItem="u0e-MM-HhC" secondAttribute="leading" constant="16" id="8WH-zs-H9W"/>
+                                                        <constraint firstItem="0rF-Ca-XuN" firstAttribute="leading" secondItem="u0e-MM-HhC" secondAttribute="leading" constant="21" id="8WH-zs-H9W"/>
+                                                        <constraint firstItem="c8I-Or-B6I" firstAttribute="leading" secondItem="u0e-MM-HhC" secondAttribute="leading" constant="2" id="K2q-Pf-Xji"/>
+                                                        <constraint firstItem="c8I-Or-B6I" firstAttribute="firstBaseline" secondItem="0rF-Ca-XuN" secondAttribute="firstBaseline" constant="-5" id="skX-S3-dOa"/>
                                                         <constraint firstAttribute="trailing" secondItem="0rF-Ca-XuN" secondAttribute="trailing" constant="16" id="y6y-3a-HmP"/>
                                                     </constraints>
                                                 </view>
@@ -174,6 +184,7 @@
                                             <constraint firstItem="u0e-MM-HhC" firstAttribute="top" secondItem="cze-ON-oo7" secondAttribute="top" id="hi3-io-xRW"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="checkImage" destination="c8I-Or-B6I" id="56Y-zO-39F"/>
                                             <outlet property="descriptionLabel" destination="0rF-Ca-XuN" id="NMu-sC-vWz"/>
                                         </connections>
                                     </collectionViewCell>
@@ -918,5 +929,6 @@
         <image name="Right" width="48" height="48"/>
         <image name="Setting" width="48" height="48"/>
         <image name="Today" width="48" height="48"/>
+        <image name="UncheckBox" width="48" height="48"/>
     </resources>
 </document>
