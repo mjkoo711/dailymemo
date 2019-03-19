@@ -22,7 +22,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     FMDBManager.shared.createDatabase()
     FMDBManager.shared.createDatabaseCompleted()
     initSetting()
+    setNavigationbarTheme()
     return true
+  }
+
+  private func setNavigationbarTheme() {
+    guard let theme = SettingManager.shared.theme else { return }
+    if theme == .blackRed {
+      UINavigationBar.appearance().tintColor = Color.LightRed
+    } else if theme == .blackBlue {
+      UINavigationBar.appearance().tintColor = Color.Blue
+    }
   }
 
   private func setIQKeyboardPreference() {
