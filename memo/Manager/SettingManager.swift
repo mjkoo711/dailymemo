@@ -15,6 +15,7 @@ class SettingManager {
   var fontWeight: UIFont.Weight?
   var vibrate: Bool?
   var theme: Theme?
+  var lineBreak: Bool?
 
   private init() { }
 
@@ -55,6 +56,14 @@ class SettingManager {
       theme = Theme.blackBlue
     } else if value == Theme.blackRed.rawValue {
       theme = Theme.blackRed
+    }
+  }
+
+  func setLineBreak(value: Int) {
+    if value == 0 {
+      lineBreak = false
+    } else {
+      lineBreak = true
     }
   }
 }

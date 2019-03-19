@@ -506,8 +506,17 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextCell", for: indexPath) as! TextCollectionViewCell
 
-    if let fontSize = SettingManager.shared.fontSize, let fontWeight = SettingManager.shared.fontWeight {
+    if let fontSize = SettingManager.shared.fontSize,
+      let fontWeight = SettingManager.shared.fontWeight {
       cell.descriptionLabel.font = UIFont.systemFont(ofSize: fontSize, weight: fontWeight)
+    }
+
+    if let lineBreak = SettingManager.shared.lineBreak {
+      if lineBreak {
+        cell.descriptionLabel.lineBreakMode = .byWordWrapping
+      } else {
+        cell.descriptionLabel.lineBreakMode = .byCharWrapping
+      }
     }
 
     guard let theme = SettingManager.shared.theme else { return cell }

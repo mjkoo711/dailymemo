@@ -14,7 +14,7 @@ protocol SettingViewControllerDelegate {
 }
 
 class SettingViewController: UIViewController {
-  let designList = ["테마", "메모 글자 크기", "메모 글자 두께", "진동", "잠금 설정", "알림권한 확인"]
+  let designList = ["테마", "메모 글자 크기", "메모 글자 두께", "진동", "잠금 설정", "단어잘림 방지", "알림권한 확인"]
   let serviceList = ["프로버전 구매", "백업 / 복원", "리뷰 남기기", "문의메일 보내기"]
   let size = ["작게", "중간", "크게"]
   let thickness = ["얇게", "보통", "굵게"]
@@ -113,6 +113,16 @@ extension SettingViewController: UICollectionViewDataSource, UICollectionViewDel
           cell.optionTotalCount = onoff.count
           cell.currentOption = value
           cell.settingMode = .Lock
+          cell.switchLabel.isHidden = false
+        }
+      }
+
+      if indexPath.row == SettingList.LineBreak.rawValue {
+        if let value = UserDefaults.standard.loadSettings(key: Key.LineBreak) {
+          cell.switchLabel.text = onoff[value]
+          cell.optionTotalCount = onoff.count
+          cell.currentOption = value
+          cell.settingMode = .LineBreak
           cell.switchLabel.isHidden = false
         }
       }

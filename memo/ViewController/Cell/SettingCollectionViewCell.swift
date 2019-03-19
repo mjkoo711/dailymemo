@@ -56,9 +56,15 @@ class SettingCollectionViewCell: UICollectionViewCell {
       else if settingMode == .Vibration {
         UserDefaults.standard.saveSettings(value: value, key: Key.Vibrate)
         SettingManager.shared.setVibration(value: value)
-
       }
-      else if settingMode == .Lock { UserDefaults.standard.saveSettings(value: value, key: Key.LockFeature) }
+      else if settingMode == .Lock {
+        UserDefaults.standard.saveSettings(value: value, key: Key.LockFeature)
+        // TODO
+      }
+      else if settingMode == .LineBreak {
+        UserDefaults.standard.saveSettings(value: value, key: Key.LineBreak)
+        SettingManager.shared.setLineBreak(value: value)
+      }
       else if settingMode == .Alarm {
         let current = UNUserNotificationCenter.current()
 

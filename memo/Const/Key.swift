@@ -15,4 +15,5 @@ enum Key {
   static let Vibrate = "Vibrate"
   static let LockFeature = "LockFeature"
   static let Alarm = "Alarm"
+  static let LineBreak = "LineBreak"
 }

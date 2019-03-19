@@ -92,6 +92,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
       UserDefaults.standard.saveSettings(value: 0, key: Key.LockFeature)
       //TODO: set
     }
+
+    if let value = UserDefaults.standard.loadSettings(key: Key.LineBreak) {
+      SettingManager.shared.setVibration(value: value)
+    } else {
+      UserDefaults.standard.saveSettings(value: 1, key: Key.LineBreak)
+      SettingManager.shared.setVibration(value: 1)
+    }
   }
 
   func applicationWillResignActive(_ application: UIApplication) { }
