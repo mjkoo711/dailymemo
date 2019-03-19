@@ -21,7 +21,7 @@ enum Vibration {
   case oldSchool
 
   func vibrate() {
-    if let vibrate = SettingManager.shared.vibrate, vibrate == false {
+    if let vibrate = SettingManager.shared.vibrate, vibrate == .off {
       return
     }
     

@@ -512,10 +512,10 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 
     if let lineBreak = SettingManager.shared.lineBreak {
-      if lineBreak {
-        cell.descriptionLabel.lineBreakMode = .byWordWrapping
-      } else {
+      if lineBreak == .off {
         cell.descriptionLabel.lineBreakMode = .byCharWrapping
+      } else {
+        cell.descriptionLabel.lineBreakMode = .byWordWrapping
       }
     }
 

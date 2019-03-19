@@ -13,9 +13,9 @@ class SettingManager {
   static let shared = SettingManager()
   var fontSize: CGFloat?
   var fontWeight: UIFont.Weight?
-  var vibrate: Bool?
+  var vibrate: Vibrate?
   var theme: Theme?
-  var lineBreak: Bool?
+  var lineBreak: LineBreak?
 
   private init() { }
 
@@ -41,9 +41,9 @@ class SettingManager {
 
   func setVibration(value: Int) {
     if value == 0 {
-      vibrate = false
+      vibrate = Vibrate.off
     } else {
-      vibrate = true
+      vibrate = Vibrate.on
     }
   }
 
@@ -61,9 +61,9 @@ class SettingManager {
 
   func setLineBreak(value: Int) {
     if value == 0 {
-      lineBreak = false
+      lineBreak = LineBreak.off
     } else {
-      lineBreak = true
+      lineBreak = LineBreak.on
     }
   }
 }

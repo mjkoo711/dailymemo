@@ -94,10 +94,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     if let value = UserDefaults.standard.loadSettings(key: Key.LineBreak) {
-      SettingManager.shared.setVibration(value: value)
+      SettingManager.shared.setLineBreak(value: value)
     } else {
       UserDefaults.standard.saveSettings(value: 1, key: Key.LineBreak)
-      SettingManager.shared.setVibration(value: 1)
+      SettingManager.shared.setLineBreak(value: 1)
     }
   }
 
