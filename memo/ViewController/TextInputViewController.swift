@@ -25,7 +25,7 @@ class TextInputViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    setTheme()
     textField.delegate = self
 
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(returnMainViewController))
@@ -34,6 +34,16 @@ class TextInputViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     settingKeyboard()
+  }
+
+  private func setTheme() {
+    if let theme = SettingManager.shared.theme {
+      if theme == .blackRed || theme == .whiteRed {
+        repeatSegmentedControl.tintColor = Color.LightRed
+      } else if theme == .blackBlue || theme == .whiteBlue {
+        repeatSegmentedControl.tintColor = Color.Blue
+      }
+    }
   }
 
   private func settingKeyboard() {
