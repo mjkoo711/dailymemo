@@ -28,9 +28,55 @@
 		E266367D2208B319001D05C8 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367C2208B319001D05C8 /* Vibration.swift */; };
 		E268F3B8223E2FBE00534565 /* FontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268F3B7223E2FBE00534565 /* FontWeight.swift */; };
 		E272F750223E6F2000CD5FA8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E272F74F223E6F2000CD5FA8 /* Theme.swift */; };
+		E28D44FE2242813800F67B08 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28D44FD2242813800F67B08 /* NotificationCenter.framework */; };
+		E28D45012242813800F67B08 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D45002242813800F67B08 /* TodayViewController.swift */; };
+		E28D45042242813800F67B08 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E28D45022242813800F67B08 /* MainInterface.storyboard */; };
+		E28D45082242813800F67B08 /* memoWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E28D44FC2242813800F67B08 /* memoWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E28D450D2242814800F67B08 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E28D45022242813800F67B08 /* MainInterface.storyboard */; };
+		E28D450F2242817100F67B08 /* MDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37B0722325A7000D84894 /* MDateFormatter.swift */; };
+		E28D45102242817300F67B08 /* FMDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37B052232544900D84894 /* FMDBManager.swift */; };
+		E28D45112242817600F67B08 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3D6220175A500C74C57 /* Text.swift */; };
+		E28D45122242849D00F67B08 /* TextInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20CE65221FD8E0300FF495E /* TextInputViewController.swift */; };
+		E28D4513224284A100F67B08 /* TextModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367422089106001D05C8 /* TextModifyViewController.swift */; };
+		E28D4514224284A300F67B08 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE2222D12CE00D84894 /* AlarmListViewController.swift */; };
+		E28D4515224284A400F67B08 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE2222D12CE00D84894 /* AlarmListViewController.swift */; };
+		E28D4517224284AB00F67B08 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266365F22058BC2001D05C8 /* TextCollectionViewCell.swift */; };
+		E28D4518224284AE00F67B08 /* AlarmCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE4222D146400D84894 /* AlarmCollectionViewCell.swift */; };
+		E28D451A224284B300F67B08 /* AlarmCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE8222D59C400D84894 /* AlarmCollectionReusableView.swift */; };
+		E28D451B224284B800F67B08 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367222087213001D05C8 /* Const.swift */; };
+		E28D451C224284BC00F67B08 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367C2208B319001D05C8 /* Vibration.swift */; };
+		E28D451D224284BE00F67B08 /* RepeatMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AF722323D1F00D84894 /* RepeatMode.swift */; };
+		E28D451E224284C100F67B08 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37B0B22327A5C00D84894 /* Day.swift */; };
+		E28D451F224284C300F67B08 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37B0D22327AB400D84894 /* Month.swift */; };
+		E28D4520224284C600F67B08 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246D338223781E50022FC4D /* Color.swift */; };
+		E28D4521224284C900F67B08 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635383223C23B0006A2E43 /* Key.swift */; };
+		E28D4522224284CB00F67B08 /* SettingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635385223C2633006A2E43 /* SettingList.swift */; };
+		E28D4523224284CE00F67B08 /* FontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635387223CF894006A2E43 /* FontSize.swift */; };
+		E28D4524224284D100F67B08 /* FontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268F3B7223E2FBE00534565 /* FontWeight.swift */; };
+		E28D4525224284D300F67B08 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E272F74F223E6F2000CD5FA8 /* Theme.swift */; };
+		E28D4526224284D600F67B08 /* Vibrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A247322415655004504B8 /* Vibrate.swift */; };
+		E28D4527224284D800F67B08 /* LineBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A247522415665004504B8 /* LineBreak.swift */; };
+		E28D4528224284DB00F67B08 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3DA22017A2100C74C57 /* UserDefaultsExtension.swift */; };
+		E28D4529224284DE00F67B08 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266366122059357001D05C8 /* StringExtension.swift */; };
+		E28D452A224284E000F67B08 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26636632205A210001D05C8 /* UIFontExtension.swift */; };
+		E28D452B224284E200F67B08 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26636662205A225001D05C8 /* UILabelExtension.swift */; };
+		E28D452C224284E500F67B08 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AEA222D7B2B00D84894 /* IntExtensions.swift */; };
+		E28D452D224284E800F67B08 /* UIVIewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263961F223AABA700CA25C0 /* UIVIewExtensions.swift */; };
+		E28D452E224284EA00F67B08 /* UIShortTapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2314807223B925200161724 /* UIShortTapGestureRecognizer.swift */; };
+		E28D452F224284ED00F67B08 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E11F021FC2485004BBFD9 /* Clock.swift */; };
+		E28D4530224284F200F67B08 /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25447BF22253F2F00F48A80 /* NotificationType.swift */; };
+		E28D4531224284F700F67B08 /* DateStringChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3DC2201839B00C74C57 /* DateStringChanger.swift */; };
+		E28D4532224284FA00F67B08 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0402C222783F400D10B51 /* AlarmManager.swift */; };
+		E28D4533224284FF00F67B08 /* TextLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37B092232793900D84894 /* TextLoader.swift */; };
+		E28D45342242850200F67B08 /* DateLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37B0F2232ADEA00D84894 /* DateLoader.swift */; };
+		E28D45352242850400F67B08 /* SettingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635389223CFA46006A2E43 /* SettingManager.swift */; };
+		E28D45362242850800F67B08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F36CF721FAE0FA00A9C24C /* Main.storyboard */; };
+		E28D45372242850B00F67B08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F36CF321FAE0FA00A9C24C /* AppDelegate.swift */; };
+		E28D45382242851000F67B08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2F36CFA21FAE0FD00A9C24C /* Assets.xcassets */; };
+		E28D45392242851600F67B08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F36CFC21FAE0FD00A9C24C /* LaunchScreen.storyboard */; };
+		E28D453C2242869600F67B08 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C37B032232534200D84894 /* libsqlite3.tbd */; };
 		E29A247422415655004504B8 /* Vibrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A247322415655004504B8 /* Vibrate.swift */; };
 		E29A247622415665004504B8 /* LineBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A247522415665004504B8 /* LineBreak.swift */; };
-		E2C37AE3222D12CE00D84894 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE2222D12CE00D84894 /* AlarmListViewController.swift */; };
 		E2C37AE5222D146400D84894 /* AlarmCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE4222D146400D84894 /* AlarmCollectionViewCell.swift */; };
 		E2C37AE9222D59C400D84894 /* AlarmCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE8222D59C400D84894 /* AlarmCollectionReusableView.swift */; };
 		E2C37AEB222D7B2B00D84894 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AEA222D7B2B00D84894 /* IntExtensions.swift */; };
@@ -52,12 +98,38 @@
 		E2F36CF921FAE0FA00A9C24C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F36CF721FAE0FA00A9C24C /* Main.storyboard */; };
 		E2F36CFB21FAE0FD00A9C24C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2F36CFA21FAE0FD00A9C24C /* Assets.xcassets */; };
 		E2F36CFE21FAE0FD00A9C24C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F36CFC21FAE0FD00A9C24C /* LaunchScreen.storyboard */; };
+		F1698F54E74780C2EE726D0F /* Pods_memoWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3FA0E321A4090A0FAC04CD /* Pods_memoWidget.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E28D45062242813800F67B08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E2F36CE821FAE0FA00A9C24C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E28D44FB2242813800F67B08;
+			remoteInfo = memoWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E28D450C2242813800F67B08 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E28D45082242813800F67B08 /* memoWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A59B9B7599E790392A2260F /* Pods_memo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_memo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54DCB30A6A5930EA771ADEFC /* Pods-memo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memo.release.xcconfig"; path = "Pods/Target Support Files/Pods-memo/Pods-memo.release.xcconfig"; sourceTree = "<group>"; };
 		7C0BA77D5BF37360BE2D4CF1 /* Pods-memo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-memo/Pods-memo.debug.xcconfig"; sourceTree = "<group>"; };
+		CDA1FC91C7A6A2F05C1A2E33 /* Pods-memoWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memoWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-memoWidget/Pods-memoWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		E20CE65221FD8E0300FF495E /* TextInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputViewController.swift; sourceTree = "<group>"; };
 		E21E11F021FC2485004BBFD9 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		E2314807223B925200161724 /* UIShortTapGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIShortTapGestureRecognizer.swift; sourceTree = "<group>"; };
@@ -78,6 +150,13 @@
 		E266367C2208B319001D05C8 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
 		E268F3B7223E2FBE00534565 /* FontWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWeight.swift; sourceTree = "<group>"; };
 		E272F74F223E6F2000CD5FA8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		E28D44FC2242813800F67B08 /* memoWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = memoWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E28D44FD2242813800F67B08 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		E28D45002242813800F67B08 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		E28D45032242813800F67B08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		E28D45052242813800F67B08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E28D453D2242872700F67B08 /* memoWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = memoWidget.entitlements; sourceTree = "<group>"; };
+		E28D453E2242881400F67B08 /* memo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = memo.entitlements; sourceTree = "<group>"; };
 		E29A247322415655004504B8 /* Vibrate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibrate.swift; sourceTree = "<group>"; };
 		E29A247522415665004504B8 /* LineBreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineBreak.swift; sourceTree = "<group>"; };
 		E2C37AE2222D12CE00D84894 /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
@@ -105,9 +184,21 @@
 		E2F36CFA21FAE0FD00A9C24C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2F36CFD21FAE0FD00A9C24C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2F36CFF21FAE0FD00A9C24C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFCC3A4D82504480A31990A0 /* Pods-memoWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memoWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-memoWidget/Pods-memoWidget.release.xcconfig"; sourceTree = "<group>"; };
+		FE3FA0E321A4090A0FAC04CD /* Pods_memoWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_memoWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E28D44F92242813800F67B08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E28D453C2242869600F67B08 /* libsqlite3.tbd in Frameworks */,
+				E28D44FE2242813800F67B08 /* NotificationCenter.framework in Frameworks */,
+				F1698F54E74780C2EE726D0F /* Pods_memoWidget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E2F36CED21FAE0FA00A9C24C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -125,6 +216,8 @@
 			children = (
 				7C0BA77D5BF37360BE2D4CF1 /* Pods-memo.debug.xcconfig */,
 				54DCB30A6A5930EA771ADEFC /* Pods-memo.release.xcconfig */,
+				CDA1FC91C7A6A2F05C1A2E33 /* Pods-memoWidget.debug.xcconfig */,
+				EFCC3A4D82504480A31990A0 /* Pods-memoWidget.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -211,6 +304,17 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		E28D44FF2242813800F67B08 /* memoWidget */ = {
+			isa = PBXGroup;
+			children = (
+				E28D453D2242872700F67B08 /* memoWidget.entitlements */,
+				E28D45002242813800F67B08 /* TodayViewController.swift */,
+				E28D45022242813800F67B08 /* MainInterface.storyboard */,
+				E28D45052242813800F67B08 /* Info.plist */,
+			);
+			path = memoWidget;
+			sourceTree = "<group>";
+		};
 		E2C37AEE222D87B000D84894 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				E2F36CF221FAE0FA00A9C24C /* memo */,
+				E28D44FF2242813800F67B08 /* memoWidget */,
 				E2F36CF121FAE0FA00A9C24C /* Products */,
 				D12702431830094425274DF2 /* Pods */,
 				E32097C5322B1DB39896B99C /* Frameworks */,
@@ -233,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				E2F36CF021FAE0FA00A9C24C /* memo.app */,
+				E28D44FC2242813800F67B08 /* memoWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,6 +346,7 @@
 		E2F36CF221FAE0FA00A9C24C /* memo */ = {
 			isa = PBXGroup;
 			children = (
+				E28D453E2242881400F67B08 /* memo.entitlements */,
 				E26636762208A247001D05C8 /* ViewController */,
 				E26636792208A28F001D05C8 /* Const */,
 				E26636782208A27B001D05C8 /* Utils */,
@@ -260,6 +367,8 @@
 				E2C37B032232534200D84894 /* libsqlite3.tbd */,
 				E2C37B012232515100D84894 /* libsqlite3.0.tbd */,
 				0A59B9B7599E790392A2260F /* Pods_memo.framework */,
+				E28D44FD2242813800F67B08 /* NotificationCenter.framework */,
+				FE3FA0E321A4090A0FAC04CD /* Pods_memoWidget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -267,6 +376,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E28D44FB2242813800F67B08 /* memoWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E28D450B2242813800F67B08 /* Build configuration list for PBXNativeTarget "memoWidget" */;
+			buildPhases = (
+				5ED5CEF7247E995BBEC4FAB9 /* [CP] Check Pods Manifest.lock */,
+				E28D44F82242813800F67B08 /* Sources */,
+				E28D44F92242813800F67B08 /* Frameworks */,
+				E28D44FA2242813800F67B08 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = memoWidget;
+			productName = memoWidget;
+			productReference = E28D44FC2242813800F67B08 /* memoWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		E2F36CEF21FAE0FA00A9C24C /* memo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2F36D0221FAE0FD00A9C24C /* Build configuration list for PBXNativeTarget "memo" */;
@@ -276,10 +403,12 @@
 				E2F36CED21FAE0FA00A9C24C /* Frameworks */,
 				E2F36CEE21FAE0FA00A9C24C /* Resources */,
 				2A7FDB28308AB8969210F588 /* [CP] Embed Pods Frameworks */,
+				E28D450C2242813800F67B08 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E28D45072242813800F67B08 /* PBXTargetDependency */,
 			);
 			name = memo;
 			productName = memo;
@@ -296,8 +425,21 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = mjkoo;
 				TargetAttributes = {
+					E28D44FB2242813800F67B08 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					E2F36CEF21FAE0FA00A9C24C = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -315,16 +457,29 @@
 			projectRoot = "";
 			targets = (
 				E2F36CEF21FAE0FA00A9C24C /* memo */,
+				E28D44FB2242813800F67B08 /* memoWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E28D44FA2242813800F67B08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E28D45042242813800F67B08 /* MainInterface.storyboard in Resources */,
+				E28D45392242851600F67B08 /* LaunchScreen.storyboard in Resources */,
+				E28D45382242851000F67B08 /* Assets.xcassets in Resources */,
+				E28D45362242850800F67B08 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E2F36CEE21FAE0FA00A9C24C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E2F36CFE21FAE0FD00A9C24C /* LaunchScreen.storyboard in Resources */,
+				E28D450D2242814800F67B08 /* MainInterface.storyboard in Resources */,
 				E2F36CFB21FAE0FD00A9C24C /* Assets.xcassets in Resources */,
 				E2F36CF921FAE0FA00A9C24C /* Main.storyboard in Resources */,
 			);
@@ -367,6 +522,28 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-memo/Pods-memo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5ED5CEF7247E995BBEC4FAB9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-memoWidget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B2E84021D9D3EB8ACA993977 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -392,6 +569,51 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E28D44F82242813800F67B08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E28D45352242850400F67B08 /* SettingManager.swift in Sources */,
+				E28D4514224284A300F67B08 /* AlarmListViewController.swift in Sources */,
+				E28D4521224284C900F67B08 /* Key.swift in Sources */,
+				E28D451D224284BE00F67B08 /* RepeatMode.swift in Sources */,
+				E28D45372242850B00F67B08 /* AppDelegate.swift in Sources */,
+				E28D451F224284C300F67B08 /* Month.swift in Sources */,
+				E28D45102242817300F67B08 /* FMDBManager.swift in Sources */,
+				E28D4523224284CE00F67B08 /* FontSize.swift in Sources */,
+				E28D452F224284ED00F67B08 /* Clock.swift in Sources */,
+				E28D452E224284EA00F67B08 /* UIShortTapGestureRecognizer.swift in Sources */,
+				E28D4513224284A100F67B08 /* TextModifyViewController.swift in Sources */,
+				E28D4528224284DB00F67B08 /* UserDefaultsExtension.swift in Sources */,
+				E28D4529224284DE00F67B08 /* StringExtension.swift in Sources */,
+				E28D4533224284FF00F67B08 /* TextLoader.swift in Sources */,
+				E28D45112242817600F67B08 /* Text.swift in Sources */,
+				E28D451A224284B300F67B08 /* AlarmCollectionReusableView.swift in Sources */,
+				E28D4525224284D300F67B08 /* Theme.swift in Sources */,
+				E28D4530224284F200F67B08 /* NotificationType.swift in Sources */,
+				E28D45012242813800F67B08 /* TodayViewController.swift in Sources */,
+				E28D452C224284E500F67B08 /* IntExtensions.swift in Sources */,
+				E28D4526224284D600F67B08 /* Vibrate.swift in Sources */,
+				E28D4517224284AB00F67B08 /* TextCollectionViewCell.swift in Sources */,
+				E28D452A224284E000F67B08 /* UIFontExtension.swift in Sources */,
+				E28D4520224284C600F67B08 /* Color.swift in Sources */,
+				E28D4527224284D800F67B08 /* LineBreak.swift in Sources */,
+				E28D451E224284C100F67B08 /* Day.swift in Sources */,
+				E28D452B224284E200F67B08 /* UILabelExtension.swift in Sources */,
+				E28D4518224284AE00F67B08 /* AlarmCollectionViewCell.swift in Sources */,
+				E28D45342242850200F67B08 /* DateLoader.swift in Sources */,
+				E28D45122242849D00F67B08 /* TextInputViewController.swift in Sources */,
+				E28D452D224284E800F67B08 /* UIVIewExtensions.swift in Sources */,
+				E28D4524224284D100F67B08 /* FontWeight.swift in Sources */,
+				E28D4531224284F700F67B08 /* DateStringChanger.swift in Sources */,
+				E28D4522224284CB00F67B08 /* SettingList.swift in Sources */,
+				E28D451C224284BC00F67B08 /* Vibration.swift in Sources */,
+				E28D4532224284FA00F67B08 /* AlarmManager.swift in Sources */,
+				E28D450F2242817100F67B08 /* MDateFormatter.swift in Sources */,
+				E28D451B224284B800F67B08 /* Const.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E2F36CEC21FAE0FA00A9C24C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -412,6 +634,7 @@
 				E29A247422415655004504B8 /* Vibrate.swift in Sources */,
 				E272F750223E6F2000CD5FA8 /* Theme.swift in Sources */,
 				E26636672205A225001D05C8 /* UILabelExtension.swift in Sources */,
+				E28D4515224284A400F67B08 /* AlarmListViewController.swift in Sources */,
 				E21E11F121FC2485004BBFD9 /* Clock.swift in Sources */,
 				E2C37AEB222D7B2B00D84894 /* IntExtensions.swift in Sources */,
 				E2C37AF822323D1F00D84894 /* RepeatMode.swift in Sources */,
@@ -429,7 +652,6 @@
 				E2C37AE9222D59C400D84894 /* AlarmCollectionReusableView.swift in Sources */,
 				E2639620223AABA700CA25C0 /* UIVIewExtensions.swift in Sources */,
 				E2C37B0E22327AB400D84894 /* Month.swift in Sources */,
-				E2C37AE3222D12CE00D84894 /* AlarmListViewController.swift in Sources */,
 				E26636642205A210001D05C8 /* UIFontExtension.swift in Sources */,
 				E266367D2208B319001D05C8 /* Vibration.swift in Sources */,
 				E2C37B0822325A7000D84894 /* MDateFormatter.swift in Sources */,
@@ -441,7 +663,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		E28D45072242813800F67B08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E28D44FB2242813800F67B08 /* memoWidget */;
+			targetProxy = E28D45062242813800F67B08 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		E28D45022242813800F67B08 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E28D45032242813800F67B08 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		E2F36CF721FAE0FA00A9C24C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -461,6 +699,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E28D45092242813800F67B08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDA1FC91C7A6A2F05C1A2E33 /* Pods-memoWidget.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = memoWidget/memoWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TYXYQ3XS3W;
+				INFOPLIST_FILE = memoWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mjkoo.memo.memoWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E28D450A2242813800F67B08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFCC3A4D82504480A31990A0 /* Pods-memoWidget.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = memoWidget/memoWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TYXYQ3XS3W;
+				INFOPLIST_FILE = memoWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mjkoo.memo.memoWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		E2F36D0021FAE0FD00A9C24C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -581,9 +863,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7C0BA77D5BF37360BE2D4CF1 /* Pods-memo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = memo/memo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 67369282ZY;
+				DEVELOPMENT_TEAM = TYXYQ3XS3W;
 				INFOPLIST_FILE = memo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -601,9 +885,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 54DCB30A6A5930EA771ADEFC /* Pods-memo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = memo/memo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 67369282ZY;
+				DEVELOPMENT_TEAM = TYXYQ3XS3W;
 				INFOPLIST_FILE = memo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -620,6 +906,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E28D450B2242813800F67B08 /* Build configuration list for PBXNativeTarget "memoWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E28D45092242813800F67B08 /* Debug */,
+				E28D450A2242813800F67B08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E2F36CEB21FAE0FA00A9C24C /* Build configuration list for PBXProject "memo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
