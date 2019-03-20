@@ -163,6 +163,20 @@ class FMDBManager {
     } else {
       print("Error \(contactDB.lastErrorMessage())")
     }
+
+    let completedDB = FMDatabase(path: databasePathCompleted)
+
+    if completedDB.open() {
+      let deleteSQL = "DELETE FROM COMPLETED WHERE created_at = '\(text.createdAt)'"
+      let result = completedDB.executeUpdate(deleteSQL, withArgumentsIn: [])
+      if result {
+        print("delete Text in Completed DB")
+      } else {
+        print("Error \(completedDB.lastErrorMessage())")
+      }
+    } else {
+      print("Error \(completedDB.lastErrorMessage())")
+    }
   }
 
   func findTextList(date: String) -> [Text] {
