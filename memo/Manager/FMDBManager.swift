@@ -12,22 +12,28 @@ import FMDB
 class FMDBManager {
   static let shared = FMDBManager()
   private var fileManager: FileManager
-  private var directoryPath: [String]
-  private var documentDirectory: String
-  private var databasePath: String
-  private var databasePathCompleted: String
+  private var directory: URL?
+//  private var directoryPath: [String]
+//  private var documentDirectory: String
+  private var databasePath: URL
+  private var databasePathCompleted: URL
 
   private init() {
+//    fileManager = FileManager.default
+//    directoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+//    documentDirectory = directoryPath[0] as String
+//    databasePath = documentDirectory.appending("/contact.db")
+//    databasePathCompleted = documentDirectory.appending("/completed.db")
     fileManager = FileManager.default
-    directoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-    documentDirectory = directoryPath[0] as String
-    databasePath = documentDirectory.appending("/contact.db")
-    databasePathCompleted = documentDirectory.appending("/completed.db")
+    directory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.mjkoo.memo")
+    databasePath = directory!.appendingPathComponent("contacts.db")
+    databasePathCompleted = directory!.appendingPathComponent("completed.db")
+
   }
 
   func createDatabase() {
-    if !fileManager.fileExists(atPath: databasePath) {
-      let contactDB = FMDatabase(path: databasePath)
+    if !fileManager.fileExists(atPath: databasePath.path) {
+      let contactDB = FMDatabase(url: databasePath)
 
       if contactDB.open() {
         let sqlStatement = "CREATE TABLE IF NOT EXISTS CONTACTS (ID INTEGER PRIMARY KEY AUTOINCREMENT, CONTENTS TEXT, DATE TEXT, TIME TEXT, DAY TEXT, CREATED_AT TEXT, REPEATMODE INTEGER, IS_ALARM_SETTING INTEGER, ALARM_DATE TEXT)"
@@ -42,8 +48,8 @@ class FMDBManager {
   }
 
   func createDatabaseCompleted() {
-    if !fileManager.fileExists(atPath: databasePathCompleted) {
-      let contactDB = FMDatabase(path: databasePathCompleted)
+    if !fileManager.fileExists(atPath: databasePathCompleted.path) {
+      let contactDB = FMDatabase(url: databasePathCompleted)
 
       if contactDB.open() {
         let sqlStatement = "CREATE TABLE IF NOT EXISTS COMPLETED (ID INTEGER PRIMARY KEY AUTOINCREMENT, CONTENTS TEXT, CURRENTDATE TEXT, CREATED_AT TEXT)"
@@ -58,7 +64,7 @@ class FMDBManager {
   }
 
   func insertTextCompleted(text: Text, currentDate: String) {
-    let contactDB = FMDatabase(path: databasePathCompleted)
+    let contactDB = FMDatabase(url: databasePathCompleted)
 
     if contactDB.open() {
       let insertSQL = "INSERT INTO COMPLETED (contents, currentdate, created_at) VALUES ( '\(text.string)', '\(currentDate)', '\(text.createdAt)')"
@@ -75,7 +81,7 @@ class FMDBManager {
   }
 
   func deleteTextCompleted(text: Text, currentDate: String) {
-    let contactDB = FMDatabase(path: databasePathCompleted)
+    let contactDB = FMDatabase(url: databasePathCompleted)
 
     if contactDB.open() {
       let deleteSQL = "DELETE FROM COMPLETED WHERE currentdate = '\(currentDate)' and created_at = '\(text.createdAt)'"
@@ -92,7 +98,7 @@ class FMDBManager {
 
   // return is CREATED_AT ex) 2019-01-01 -> [2019-01-01 12:00:12, 2019-01-01 13:00:13, ...]
   func findTextCompleted(currentDate: String) -> [String] {
-    let contactDB = FMDatabase(path: databasePathCompleted)
+    let contactDB = FMDatabase(url: databasePathCompleted)
     var createdAtList: [String] = []
 
     if contactDB.open() {
@@ -113,7 +119,7 @@ class FMDBManager {
 
 
   func insertText(text: Text) {
-    let contactDB = FMDatabase(path: databasePath)
+    let contactDB = FMDatabase(url: databasePath)
     let formatter = MDateFormatter().formatter2
     let alarmDateString = text.alarmDatePicked != nil ? formatter.string(from: text.alarmDatePicked!) : ""
 
@@ -132,7 +138,7 @@ class FMDBManager {
   }
 
   func updateText(text: Text) {
-    let contactDB = FMDatabase(path: databasePath)
+    let contactDB = FMDatabase(url: databasePath)
     let formatter = MDateFormatter().formatter2
     let alarmDateString = text.alarmDatePicked != nil ? formatter.string(from: text.alarmDatePicked!) : ""
 
@@ -150,7 +156,7 @@ class FMDBManager {
   }
 
   func deleteText(text: Text) {
-    let contactDB = FMDatabase(path: databasePath)
+    let contactDB = FMDatabase(url: databasePath)
 
     if contactDB.open() {
       let deleteSQL = "DELETE FROM CONTACTS WHERE created_at = '\(text.createdAt)'"
@@ -164,7 +170,7 @@ class FMDBManager {
       print("Error \(contactDB.lastErrorMessage())")
     }
 
-    let completedDB = FMDatabase(path: databasePathCompleted)
+    let completedDB = FMDatabase(url: databasePathCompleted)
 
     if completedDB.open() {
       let deleteSQL = "DELETE FROM COMPLETED WHERE created_at = '\(text.createdAt)'"
@@ -180,7 +186,7 @@ class FMDBManager {
   }
 
   func findTextList(date: String) -> [Text] {
-    let contactDB = FMDatabase(path: databasePath)
+    let contactDB = FMDatabase(url: databasePath)
     var textList: [Text] = []
     let formatter = MDateFormatter().formatter2
 
@@ -215,7 +221,7 @@ class FMDBManager {
   }
 
   func selectTextList(sql: String, likeQuery: String?) -> [Text] {
-    let contactDB = FMDatabase(path: databasePath)
+    let contactDB = FMDatabase(url: databasePath)
     var textList: [Text] = []
     let formatter = MDateFormatter().formatter2
 
@@ -247,7 +253,7 @@ class FMDBManager {
   }
 
   func selectDateList(sql: String) -> [String] {
-    let contactDB = FMDatabase(path: databasePath)
+    let contactDB = FMDatabase(url: databasePath)
     var dateList: [String] = []
 
     if contactDB.open() {
