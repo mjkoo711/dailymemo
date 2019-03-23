@@ -14,12 +14,13 @@ protocol SettingViewControllerDelegate {
 }
 
 class SettingViewController: UIViewController {
-  let designList = ["테마", "메모 글자 크기", "메모 글자 두께", "진동", "잠금 설정", "단어잘림 방지", "알림권한 확인"]
+  let designList = ["테마", "메모 글자 크기", "메모 글자 두께", "진동", "단어잘림 방지", "알림권한 확인", "잠금 설정"]
   let serviceList = ["프로버전 구매", "백업 / 복원", "리뷰 남기기", "문의메일 보내기"]
   let size = ["작게", "중간", "크게"]
   let thickness = ["얇게", "보통", "굵게"]
   let onoff = ["끄기", "켜기"]
   let theme = ["화이트 & 블루", "화이트 & 레드", "블랙 & 블루", "블랙 & 레드"]
+  let lock = ["업데이트 예정"]
 
   var delegate: SettingViewControllerDelegate?
   var date: String?
@@ -109,8 +110,10 @@ extension SettingViewController: UICollectionViewDataSource, UICollectionViewDel
 
       if indexPath.row == SettingList.Lock.rawValue {
         if let value = UserDefaults.standard.loadSettings(key: Key.LockFeature) {
-          cell.switchLabel.text = onoff[value]
-          cell.optionTotalCount = onoff.count
+          cell.switchLabel.text = lock[value]
+          cell.settingTitleLabel.textColor = Color.LightGray
+          cell.switchLabel.textColor = Color.LightGray
+          cell.optionTotalCount = lock.count
           cell.currentOption = value
           cell.settingMode = .Lock
           cell.switchLabel.isHidden = false
