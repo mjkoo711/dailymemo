@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  memo
+
+  Created by MinJun KOO on 23/03/2019.
+  Copyright © 2019 mjkoo. All rights reserved.
+*/
+
+"SUNDAY" = "Vasárnap";
+
+"MONDAY" = "Hétfő";
+
+"TUESDAY" = "Kedd";
+
+"WEDNESDAY" = "Szerda";
+
+"THURSDAY" = "Csütörtök";
+
+"FRIDAY" = "Péntek";
+
+"SATURDAY" = "Szombat";
+
+"%@년 %@월 %@일" = "%@ %@ %@";

@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  memo
+
+  Created by MinJun KOO on 23/03/2019.
+  Copyright © 2019 mjkoo. All rights reserved.
+*/
+
+"SUNDAY" = "日曜日";
+
+"MONDAY" = "月曜日";
+
+"TUESDAY" = "火曜日";
+
+"WEDNESDAY" = "水曜日";
+
+"THURSDAY" = "木曜日";
+
+"FRIDAY" = "金曜日";
+
+"SATURDAY" = "土曜日";
+
+"%@년 %@월 %@일" = "%@年 %@月 %@日";

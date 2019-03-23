@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  memo
+
+  Created by MinJun KOO on 23/03/2019.
+  Copyright © 2019 mjkoo. All rights reserved.
+*/
+
+"SUNDAY" = "Le dimanche";
+
+"MONDAY" = "Le lundi";
+
+"TUESDAY" = "Mardi";
+
+"WEDNESDAY" = "Le mercredi";
+
+"THURSDAY" = "Jeudi";
+
+"FRIDAY" = "Vendredi";
+
+"SATURDAY" = "Samedi";

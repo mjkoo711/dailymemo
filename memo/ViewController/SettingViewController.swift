@@ -25,6 +25,8 @@ class SettingViewController: UIViewController {
   var delegate: SettingViewControllerDelegate?
   var date: String?
 
+  @IBOutlet var appNameLabel: UILabel!
+  @IBOutlet var appVersionLabel: UILabel!
   @IBOutlet var closeImageView: UIImageView!
   @IBOutlet var collectionView: UICollectionView!
   @IBOutlet var closeButtonView: UIView!
@@ -32,6 +34,19 @@ class SettingViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     updateSettingViewController()
+    if let appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String {
+      appVersionLabel.text = "Version \(appVersion)"
+    }
+
+    if let theme = SettingManager.shared.theme {
+      if theme == .blackRed || theme == .whiteRed {
+        appNameLabel.textColor = Color.LightRed
+      } else if theme == .blackBlue || theme == .whiteBlue {
+        appNameLabel.textColor = Color.Blue
+      }
+    }
+
+    appNameLabel.text = "Quick Memo"
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(returnMainViewController))
     closeButtonView.addGestureRecognizer(tapGesture)
   }
@@ -177,6 +192,13 @@ extension SettingViewController: SettingCollectionViewCellDelegate {
   }
 
   func changeTheme() {
+    if let theme = SettingManager.shared.theme {
+      if theme == .blackRed || theme == .whiteRed {
+        appNameLabel.textColor = Color.LightRed
+      } else if theme == .blackBlue || theme == .whiteBlue {
+        appNameLabel.textColor = Color.Blue
+      }
+    }
     delegate?.changeMainViewControllerTheme()
   }
 

@@ -31,6 +31,7 @@ class AlarmListViewController: UIViewController {
     if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
       flowLayout.sectionHeadersPinToVisibleBounds = true
     }
+    self.navigationItem.title = "예정된 알림"
     loadSetAlarmText()
     setTheme()
   }

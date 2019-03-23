@@ -69,7 +69,7 @@ class MainViewController: UIViewController {
     selectDateString = formatter.string(from: Date())
     selectDayString = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(formatter.string(from: Date())))
 
-    dateLabel.text = formatterKorea.string(from: Date())
+    dateLabel.text = DateStringChanger().dateFormatChange(dateWithHyphen: formatter.string(from: today))
     dayLabel.text = selectDayString
 
     timeChanger = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(MainViewController.updateTimeLabel), userInfo: nil, repeats: true)
@@ -346,7 +346,7 @@ extension MainViewController: FSCalendarDelegate {
     selectDateString = selectDate
     selectDayString = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(selectDate))
 
-    dateLabel.text = formatterKorea.string(from: date)
+    dateLabel.text = DateStringChanger().dateFormatChange(dateWithHyphen: formatter.string(from: date))
     dayLabel.text = selectDayString
     reloadCollectionView(date: selectDate)
   }

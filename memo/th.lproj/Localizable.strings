@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  memo
+
+  Created by MinJun KOO on 23/03/2019.
+  Copyright © 2019 mjkoo. All rights reserved.
+*/
+
+"SUNDAY" = "วันอาทิตย์";
+
+"MONDAY" = "วันจันทร์";
+
+"TUESDAY" = "วันอังคาร";
+
+"WEDNESDAY" = "วันพุธ";
+
+"THURSDAY" = "วันพฤหัสบดี";
+
+"FRIDAY" = "วันศุกร์";
+
+"SATURDAY" = "วันเสาร์";
