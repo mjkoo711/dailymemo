@@ -20,9 +20,30 @@
 
 "SATURDAY" = "Sabtu";
 
+"Notification Settings" = "Tetapan Pemberitahuan";
 
+"No Upcoming Notification" = "Pemberitahuan Akan Datang";
 
+"Notification Time" = "Waktu Pemberitahuan";
 
+"You can not set reminders for repeatedly saved notes." = "Anda tidak boleh menetapkan peringatan untuk nota berulang kali disimpan.";
 
+"Modify Notification" = "Ubah Suai Pemberitahuan";
 
+"Copy" = "Salinan";
 
+"Copied." = "Disalin.";
+
+"Modify" = "Ubah suai";
+
+"Delete" = "Padam";
+
+"Deleted." = "Dihapuskan.";
+
+"Cancel" = "Batalkan";
+
+"CANCEL" = "Batalkan";
+
+"The Notification sounds at %@" = "Pemberitahuan berbunyi pada jam %@";
+
+"DONE" = "Dilakukan";

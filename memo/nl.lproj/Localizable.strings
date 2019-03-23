@@ -19,3 +19,32 @@
 "FRIDAY" = "Vrijdag";
 
 "SATURDAY" = "Zaterdag";
+
+"Notification Settings" = "Notificatie Instellingen";
+
+"No Upcoming Notification" = "Geen Aankomende Notification";
+
+"Notification Time" = "Notification Time";
+
+"You can not set reminders for repeatedly saved notes." = "U kunt geen herinneringen instellen voor herhaald opgeslagen aantekeningen.";
+
+"Modify Notification" = "Wijzig bericht";
+
+"Copy" = "Kopiëren";
+
+"Copied." = "Gekopieerde.";
+
+"Modify" = "Wijzigen";
+
+"Delete" = "Verwijder";
+
+"Deleted." = "Verwijderde.";
+
+"Cancel" = "Annuleren";
+
+"CANCEL" = "ANNULEREN";
+
+"The Notification sounds at %@" = "De notificatie klinkt om %@";
+
+"DONE" = "GEDAAN";
+

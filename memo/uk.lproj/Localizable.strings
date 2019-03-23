@@ -19,3 +19,32 @@
 "FRIDAY" = "П'ятниця";
 
 "SATURDAY" = "Субота";
+
+"Notification Settings" = "Налаштування сповіщень";
+
+"No Upcoming Notification" = "Немає попереднього сповіщення";
+
+"Notification Time" = "Час сповіщення";
+
+"You can not set reminders for repeatedly saved notes." = "Не можна встановлювати нагадування для повторно збережених нотаток.";
+
+"Modify Notification" = "Змінити сповіщення";
+
+"Copy" = "Копіювати";
+
+"Copied." = "Скопійовано.";
+
+"Modify" = "Змінити";
+
+"Delete" = "Видалити";
+
+"Deleted." = "Видалено.";
+
+"Cancel" = "Скасувати";
+
+"CANCEL" = "Скасувати
+";
+
+"The Notification sounds at %@" = "Повідомлення звучить о %@";
+
+"DONE" = "Виконано";

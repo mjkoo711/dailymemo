@@ -22,7 +22,33 @@
 
 "%@년 %@월 %@일" = "%@년 %@월 %@일";
 
+"Notification Settings" = "알림 설정";
 
+"No Upcoming Notification" = "예정된 알림 없음";
+
+"Notification Time" = "알림 시간";
+
+"You can not set reminders for repeatedly saved notes." = "반복적으로 기록된 메모는 알림 설정이 불가능합니다.";
+
+"Modify Notification" = "알림 변경";
+
+"Copy" = "복사";
+
+"Copied." = "복사됨.";
+
+"Modify" = "변경";
+
+"Delete" = "삭제";
+
+"Deleted." = "삭제됨.";
+
+"Cancel" = "취소";
+
+"CANCEL" = "취소";
+
+"The Notification sounds at %@" = "알림이 %@에 울립니다.";
+
+"DONE" = "완료";
 
 
 

@@ -19,3 +19,31 @@
 "FRIDAY" = "शुक्रवार";
 
 "SATURDAY" = "शनिवार";
+
+"Notification Settings" = "अधिसूचना सेटिंग";
+
+"No Upcoming Notification" = "कोई आगामी अधिसूचना नहीं";
+
+"Notification Time" = "अधिसूचना समय";
+
+"You can not set reminders for repeatedly saved notes." = "आप बार-बार सहेजे गए नोटों के लिए अनुस्मारक सेट नहीं कर सकते।";
+
+"Modify Notification" = "अधिसूचना संशोधित करें";
+
+"Copy" = "प्रतिलिपि";
+
+"Copied." = "कॉपी किया गया.";
+
+"Modify" = "संशोधित करें";
+
+"Delete" = "हटाना";
+
+"Deleted." = "हटाए गए.";
+
+"Cancel" = "रद्द करना";
+
+"CANCEL" = "रद्द करना";
+
+"The Notification sounds at %@" = "अधिसूचना %@ बजे लगती है";
+
+"DONE" = "किया हुआ";

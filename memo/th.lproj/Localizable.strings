@@ -19,3 +19,31 @@
 "FRIDAY" = "วันศุกร์";
 
 "SATURDAY" = "วันเสาร์";
+
+"Notification Settings" = "การตั้งค่าการแจ้งเตือน";
+
+"No Upcoming Notification" = "ไม่มีการแจ้งเตือน";
+
+"Notification Time" = "เวลาแจ้งเตือน";
+
+"You can not set reminders for repeatedly saved notes." = "คุณไม่สามารถตั้งการเตือนสำหรับบันทึกที่บันทึกซ้ำ ๆ";
+
+"Modify Notification" = "ปรับเปลี่ยนการแจ้งเตือน";
+
+"Copy" = "สำเนา";
+
+"Copied." = "คัดลอก.";
+
+"Modify" = "แก้ไข";
+
+"Delete" = "ลบ";
+
+"Deleted." = "ที่ถูกลบ.";
+
+"Cancel" = "ยกเลิก";
+
+"CANCEL" = "ยกเลิก";
+
+"The Notification sounds at %@" = "เสียงเตือนดังขึ้นที่ %@";
+
+"DONE" = "เสร็จสิ้น";

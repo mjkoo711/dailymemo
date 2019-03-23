@@ -19,3 +19,31 @@
 "FRIDAY" = "Fredag";
 
 "SATURDAY" = "Lørdag";
+
+"Notification Settings" = "Varslingsinnstillinger";
+
+"No Upcoming Notification" = "Ingen kommende varsling";
+
+"Notification Time" = "Varseltid";
+
+"You can not set reminders for repeatedly saved notes." = "Du kan ikke angi påminnelser for gjentatte notater.";
+
+"Modify Notification" = "Endre varsling";
+
+"Copy" = "Kopiere";
+
+"Copied." = "Kopiert.";
+
+"Modify" = "Endre";
+
+"Delete" = "Slett";
+
+"Deleted." = "Slettet.";
+
+"Cancel" = "Avbryt";
+
+"CANCEL" = "AVBRYT";
+
+"The Notification sounds at %@" = "Meldingen lyder klokken %@";
+
+"DONE" = "Suksess";

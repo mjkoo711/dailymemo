@@ -21,3 +21,31 @@
 "SATURDAY" = "星期六";
 
 "%@년 %@월 %@일" = "%@年 %@月 %@日";
+
+"Notification Settings" = "通知设置";
+
+"No Upcoming Notification" = "沒有即將發布的通知";
+
+"Notification Time" = "通知時間";
+
+"You can not set reminders for repeatedly saved notes." = "您無法為重複保存的筆記設置提醒。";
+
+"Modify Notification" = "修改通知";
+
+"Copy" = "複製";
+
+"Copied." = "複製.";
+
+"Modify" = "修改";
+
+"Delete" = "刪除";
+
+"Deleted." = "刪除.";
+
+"Cancel" = "取消";
+
+"CANCEL" = "取消";
+
+"The Notification sounds at %@" = "通知在%@處響起";
+
+"DONE" = "成功";

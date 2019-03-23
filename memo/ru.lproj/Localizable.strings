@@ -19,3 +19,31 @@
 "FRIDAY" = "пятница";
 
 "SATURDAY" = "суббота";
+
+"Notification Settings" = "Настройки уведомлений";
+
+"No Upcoming Notification" = "Нет предстоящих уведомлений";
+
+"Notification Time" = "Время уведомления";
+
+"You can not set reminders for repeatedly saved notes." = "Вы не можете установить напоминания для неоднократно сохраненных заметок.";
+
+"Modify Notification" = "Изменить уведомление";
+
+"Copy" = "копия";
+
+"Copied." = "скопированный";
+
+"Modify" = "изменять";
+
+"Delete" = "удалять";
+
+"Deleted." = "удаленный";
+
+"Cancel" = "отменить";
+
+"CANCEL" = "ОТМЕНИТЬ";
+
+"The Notification sounds at %@" = "Уведомление звучит в %@";
+
+"DONE" = "СДЕЛАННЫЙ";

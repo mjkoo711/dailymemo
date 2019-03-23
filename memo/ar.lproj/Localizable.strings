@@ -19,3 +19,31 @@
 "FRIDAY" = "الجمعة";
 
 "SATURDAY" = "السبت";
+
+"Notification Settings" = "إعدادات الإشعار";
+
+"No Upcoming Notification" = "لا الإخطار القادم";
+
+"Notification Time" = "وقت الإخطار";
+
+"You can not set reminders for repeatedly saved notes." = "لا يمكنك تعيين تذكيرات للملاحظات المحفوظة بشكل متكرر.";
+
+"Modify Notification" = "تعديل الإخطار";
+
+"Copy" = "نسخ";
+
+"Copied." = "نسخ.";
+
+"Modify" = "تعديل";
+
+"Delete" = "حذف";
+
+"Deleted." = "تم الحذف.";
+
+"Cancel" = "إلغاء";
+
+"CANCEL" = "إلغاء";
+
+"The Notification sounds at %@" = "يبدو الإخطار في الساعة @%";
+
+"DONE" = "فعله";

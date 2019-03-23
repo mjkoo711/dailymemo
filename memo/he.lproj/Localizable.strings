@@ -20,6 +20,33 @@
 
 "SATURDAY" = "יום שבת";
 
+"Notification Settings" = "הגדרות התראה";
+
+"No Upcoming Notification" = "אין הודעה קרובה";
+
+"Notification Time" = "זמן התראה";
+
+"You can not set reminders for repeatedly saved notes." = "לא ניתן להגדיר תזכורות עבור הערות שנשמרו שוב ושוב.";
+
+"Modify Notification" = "שנה הודעה";
+
+"Copy" = "עותק";
+
+"Copied." = "הועתק.";
+
+"Modify" = "שנה";
+
+"Delete" = "מחק";
+
+"Deleted." = "נמחק.";
+
+"Cancel" = "בטל";
+
+"CANCEL" = "בטל";
+
+"The Notification sounds at %@" = "ההודעה תישמע בשעה %@";
+
+"DONE" = "בוצע";
 
 
 

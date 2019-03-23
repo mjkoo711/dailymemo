@@ -19,3 +19,31 @@
 "FRIDAY" = "Παρασκευή";
 
 "SATURDAY" = "Σάββατο";
+
+"Notification Settings" = "Ρυθμίσεις ειδοποιήσεων";
+
+"No Upcoming Notification" = "Δεν υπάρχει επερχόμενη ειδοποίηση";
+
+"Notification Time" = "Χρόνος ειδοποίησης";
+
+"You can not set reminders for repeatedly saved notes." = "Δεν μπορείτε να ορίσετε υπενθυμίσεις για επαναλαμβανόμενες αποθηκευμένες σημειώσεις.";
+
+"Modify Notification" = "Τροποποίηση ειδοποίησης";
+
+"Copy" = "αντίγραφο";
+
+"Copied." = "Αντιγραφή.";
+
+"Modify" = "Τροποποιώ";
+
+"Delete" = "Διαγράφω";
+
+"Deleted." = "Διαγράφηκε.";
+
+"Cancel" = "Ματαίωση";
+
+"CANCEL" = "ΜΑΤΑΙΩΣΗ";
+
+"The Notification sounds at %@" = "Η ειδοποίηση ακούγεται στις %@";
+
+"DONE" = "ΕΓΙΝΕ";

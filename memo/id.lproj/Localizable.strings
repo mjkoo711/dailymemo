@@ -19,3 +19,31 @@
 "FRIDAY" = "Jumat";
 
 "SATURDAY" = "Sabtu";
+
+"Notification Settings" = "Pengaturan pemberitahuan";
+
+"No Upcoming Notification" = "Tidak Ada Pemberitahuan Mendatang";
+
+"Notification Time" = "Waktu Pemberitahuan";
+
+"You can not set reminders for repeatedly saved notes." = "Anda tidak dapat mengatur pengingat untuk catatan yang berulang kali disimpan.";
+
+"Modify Notification" = "Ubah Notifikasi";
+
+"Copy" = "Salinan";
+
+"Copied." = "Disalin";
+
+"Modify" = "Memodifikasi";
+
+"Delete" = "Menghapus";
+
+"Deleted." = "Dihapus";
+
+"Cancel" = "Membatalkan";
+
+"CANCEL" = "MEMBATALKAN";
+
+"The Notification sounds at %@" = "Notifikasi berbunyi pukul %@";
+
+"DONE" = "Selesai";

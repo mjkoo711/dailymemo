@@ -20,9 +20,30 @@
 
 "SATURDAY" = "Thứ bảy";
 
+"Notification Settings" = "Thiết lập thông báo";
 
+"No Upcoming Notification" = "Không có thông báo sắp tới";
 
+"Notification Time" = "Thời gian thông báo";
 
+"You can not set reminders for repeatedly saved notes." = "Bạn không thể đặt lời nhắc cho ghi chú đã lưu nhiều lần.";
 
+"Modify Notification" = "Sửa đổi thông báo";
 
+"Copy" = "Sao chép";
 
+"Copied." = "Sao chép.";
+
+"Modify" = "Sửa đổi";
+
+"Delete" = "Xóa bỏ";
+
+"Deleted." = "Đã xóa.";
+
+"Cancel" = "Hủy bỏ";
+
+"CANCEL" = "HỦY BỎ";
+
+"The Notification sounds at %@" = "Thông báo phát ra lúc %@";
+
+"DONE" = "LÀM XONG";

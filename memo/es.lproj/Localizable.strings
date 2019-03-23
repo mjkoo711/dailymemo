@@ -19,3 +19,31 @@
 "FRIDAY" = "El viernes";
 
 "SATURDAY" = "Sabado";
+
+"Notification Settings" = "Configuración de las notificaciones";
+
+"No Upcoming Notification" = "No hay próxima notificación";
+
+"Notification Time" = "Hora de notificación";
+
+"You can not set reminders for repeatedly saved notes." = "No puede configurar recordatorios para notas guardadas repetidamente.";
+
+"Modify Notification" = "Modificar Notificación";
+
+"Copy" = "Dupdo";
+
+"Copied." = "Copiado";
+
+"Modify" = "Modificar";
+
+"Delete" = "Borrar";
+
+"Deleted." = "Eliminado";
+
+"Cancel" = "Cancelar";
+
+"CANCEL" = "CANCELAR";
+
+"The Notification sounds at %@" = "La notificación suena a las %@";
+
+"DONE" = "HECHO";

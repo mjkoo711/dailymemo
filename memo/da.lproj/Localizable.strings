@@ -19,3 +19,31 @@
 "FRIDAY" = "Fredag";
 
 "SATURDAY" = "Lørdag";
+
+"Notification Settings" = "Meddelelsesindstillinger";
+
+"No Upcoming Notification" = "Ingen kommende meddelelse";
+
+"Notification Time" = "Meddelelsestid";
+
+"You can not set reminders for repeatedly saved notes." = "Du kan ikke angive påmindelser for gentagne gemte noter.";
+
+"Modify Notification" = "Ændring af meddelelse";
+
+"Copy" = "Kopi";
+
+"Copied." = "Kopieret.";
+
+"Modify" = "Modificere";
+
+"Delete" = "Slet";
+
+"Deleted." = "Slettet.";
+
+"Cancel" = "Afbestille";
+
+"CANCEL" = "AFBESTILLE";
+
+"The Notification sounds at %@" = "Meddelelsen lyder klokken %@";
+
+"DONE" = "FÆRDIG";

@@ -19,3 +19,35 @@
 "FRIDAY" = "FRIDAY";
 
 "SATURDAY" = "SATURDAY";
+
+"Canceled" = "Canceled";
+
+"CANCEL" = "CANCEL";
+
+"Notification Settings" = "Notification Settings";
+
+"No Upcoming Notification" = "No Upcoming Notification";
+
+"Notification Time" = "Notification Time";
+
+"You can not set reminders for repeatedly saved notes." = "You can not set reminders for repeatedly saved notes.";
+
+"Modify Notification" = "Modify Notification";
+
+"Copy" = "Copy";
+
+"Copied." = "Copied.";
+
+"Modify" = "Modify";
+
+"Delete" = "Delete";
+
+"Deleted." = "Deleted.";
+
+"Cancel" = "Cancel";
+
+"CANCEL" = "CANCEL";
+
+"The Notification sounds at %@" = "The Notification sounds at %@";
+
+"DONE" = "DONE";

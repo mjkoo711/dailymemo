@@ -19,3 +19,31 @@
 "FRIDAY" = "Vineri";
 
 "SATURDAY" = "Sâmbătă";
+
+"Notification Settings" = "Setări de notificare";
+
+"No Upcoming Notification" = "Nicio notificare viitoare";
+
+"Notification Time" = "Timp de notificare";
+
+"You can not set reminders for repeatedly saved notes." = "Nu puteți seta mementouri pentru notele salvate în mod repetat.";
+
+"Modify Notification" = "Modificați Notificarea";
+
+"Copy" = "Copie";
+
+"Copied." = "Copiată.";
+
+"Modify" = "Modifica";
+
+"Delete" = "Șterge";
+
+"Deleted." = "Șters.";
+
+"Cancel" = "Anulare";
+
+"CANCEL" = "ANULARE";
+
+"The Notification sounds at %@" = "Notificarea suna la ora %@";
+
+"DONE" = "TERMINAT";

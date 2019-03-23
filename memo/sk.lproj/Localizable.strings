@@ -19,3 +19,31 @@
 "FRIDAY" = "Piatok";
 
 "SATURDAY" = "Sobota";
+
+"Notification Settings" = "Nastavenia upozornení";
+
+"No Upcoming Notification" = "Žiadne prichádzajúce oznámenie";
+
+"Notification Time" = "Čas oznámenia";
+
+"You can not set reminders for repeatedly saved notes." = "Nie je možné nastaviť pripomenutia pre opakovane uložené poznámky.";
+
+"Modify Notification" = "Zmeniť upozornenie";
+
+"Copy" = "Kópie";
+
+"Copied." = "Skopírované.";
+
+"Modify" = "Pozmeniť";
+
+"Delete" = "Vymazať";
+
+"Deleted." = "Vypúšťa.";
+
+"Cancel" = "Zrušiť";
+
+"CANCEL" = "ZRUŠIŤ";
+
+"The Notification sounds at %@" = "Oznámenie zaznie o %@";
+
+"DONE" = "HOTOVÝ";

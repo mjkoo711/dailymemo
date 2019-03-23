@@ -21,3 +21,31 @@
 "SATURDAY" = "土曜日";
 
 "%@년 %@월 %@일" = "%@年 %@月 %@日";
+
+"Notification Settings" = "通知設定";
+
+"No Upcoming Notification" = "今後の通知はありません";
+
+"Notification Time" = "通知時間";
+
+"You can not set reminders for repeatedly saved notes." = "繰り返し保存されたメモにアラームを設定することはできません。";
+
+"Modify Notification" = "通知を変更";
+
+"Copy" = "コピーする";
+
+"Copied." = "コピーしました";
+
+"Modify" = "修正する";
+
+"Delete" = "削除する";
+
+"Deleted." = "削除済み";
+
+"Cancel" = "キャンセル";
+
+"CANCEL" = "キャンセル";
+
+"The Notification sounds at %@" = "通知は%@に鳴ります";
+
+"DONE" = "完了";

@@ -19,3 +19,31 @@
 "FRIDAY" = "Fredag";
 
 "SATURDAY" = "Lördag";
+
+"Notification Settings" = "Anmälningsinställningar";
+
+"No Upcoming Notification" = "Ingen kommande meddelande";
+
+"Notification Time" = "Anmälningstid";
+
+"You can not set reminders for repeatedly saved notes." = "Du kan inte ställa in påminnelser för upprepade gånger sparade anteckningar.";
+
+"Modify Notification" = "Modify Notification";
+
+"Copy" = "Kopia";
+
+"Copied." = "Kopierade";
+
+"Modify" = "Ändra";
+
+"Delete" = "Radera";
+
+"Deleted." = "raderade";
+
+"Cancel" = "Annullera";
+
+"CANCEL" = "ANNULLERA";
+
+"The Notification sounds at %@" = "Meddelandet låter klockan %@";
+
+"DONE" = "GJORT";

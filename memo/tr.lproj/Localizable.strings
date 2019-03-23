@@ -19,3 +19,32 @@
 "FRIDAY" = "Cuma";
 
 "SATURDAY" = "Cumartesi";
+
+"Notification Settings" = "Bildirim ayarları";
+
+"No Upcoming Notification" = "Yakında Bildirim Yok";
+
+"Notification Time" = "Bildirim Zamanı";
+
+"You can not set reminders for repeatedly saved notes." = "Tekrar tekrar kaydedilmiş notlar için hatırlatıcı ayarlayamazsınız.";
+
+"Modify Notification" = "Bildirimi Değiştir";
+
+"Copy" = "Kopya";
+
+"Copied." = "Kopyalanan.";
+
+"Modify" = "Değiştirmek";
+
+"Delete" = "Silmek";
+
+"Deleted." = "Silindi.";
+
+"Cancel" = "İptal etmek";
+
+"CANCEL" = "İPTAL ETMEK";
+
+"The Notification sounds at %@" = "Bildirim %@ de geliyor";
+
+"DONE" = "TAMAMLANDI";
+

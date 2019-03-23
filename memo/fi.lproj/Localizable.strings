@@ -19,3 +19,31 @@
 "FRIDAY" = "Perjantai";
 
 "SATURDAY" = "Lauantai";
+
+"Notification Settings" = "Ilmoitusasetukset";
+
+"No Upcoming Notification" = "Ei tulevaa ilmoitusta";
+
+"Notification Time" = "Ilmoitusaika";
+
+"You can not set reminders for repeatedly saved notes." = "Et voi asettaa muistutuksia toistuvasti tallennetuille muistiinpanoille.";
+
+"Modify Notification" = "Muokkaa ilmoitusta";
+
+"Copy" = "Kopio";
+
+"Copied." = "Kopioitu.";
+
+"Modify" = "Muuttaa";
+
+"Delete" = "Poistaa";
+
+"Deleted." = "Poistettu.";
+
+"Cancel" = "Peruuttaa";
+
+"CANCEL" = "PERUUTTAA";
+
+"The Notification sounds at %@" = "Ilmoitus kuulostaa kello %@";
+
+"DONE" = "TEHTY";

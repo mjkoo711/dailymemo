@@ -19,3 +19,31 @@
 "FRIDAY" = "Petak";
 
 "SATURDAY" = "Subota";
+
+"Notification Settings" = "Postavke obavijesti";
+
+"No Upcoming Notification" = "Nema nadolazeće obavijesti";
+
+"Notification Time" = "Vrijeme obavijesti";
+
+"You can not set reminders for repeatedly saved notes." = "Ne možete podesiti podsjetnike za opetovano spremljene bilješke.";
+
+"Modify Notification" = "Izmijeni obavijest";
+
+"Copy" = "Kopirati";
+
+"Copied." = "Kopirano.";
+
+"Modify" = "izmijeniti";
+
+"Delete" = "Izbrisati";
+
+"Deleted." = "Izbrisana.";
+
+"Cancel" = "Otkazati";
+
+"CANCEL" = "OTKAZATI";
+
+"The Notification sounds at %@" = "Obavijest se oglašava u %@";
+
+"DONE" = "Učinjen";

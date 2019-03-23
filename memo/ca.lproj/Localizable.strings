@@ -19,3 +19,31 @@
 "FRIDAY" = "Divendres";
 
 "SATURDAY" = "Dissabte";
+
+"Notification Settings" = "Configuració de notificació";
+
+"No Upcoming Notification" = "Sense notificació futura";
+
+"Notification Time" = "Hora de notificació";
+
+"You can not set reminders for repeatedly saved notes." = "No podeu establir recordatoris per a les notes guardades repetidament.";
+
+"Modify Notification" = "Modifica la notificació";
+
+"Copy" = "Copia";
+
+"Copied." = "Copiat.";
+
+"Modify" = "Modificar";
+
+"Delete" = "Suprimeix";
+
+"Deleted." = "Eliminat.";
+
+"Cancel" = "Cancel · lar";
+
+"CANCEL" = "CANCEL · LAR";
+
+"The Notification sounds at %@" = "La notificació sona a les %@";
+
+"DONE" = "Fet";

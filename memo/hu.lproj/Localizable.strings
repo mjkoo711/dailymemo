@@ -21,3 +21,31 @@
 "SATURDAY" = "Szombat";
 
 "%@년 %@월 %@일" = "%@ %@ %@";
+
+"Notification Settings" = "Értesítési beállítások";
+
+"No Upcoming Notification" = "Nincs közelgő értesítés";
+
+"Notification Time" = "Értesítési idő";
+
+"You can not set reminders for repeatedly saved notes." = "Az ismételten mentett jegyzetekre nem lehet emlékeztetőket beállítani.";
+
+"Modify Notification" = "Értesítés módosítása";
+
+"Copy" = "Másolat";
+
+"Copied." = "Másolt.";
+
+"Modify" = "Módosít";
+
+"Delete" = "Töröl";
+
+"Deleted." = "Törölve.";
+
+"Cancel" = "Megszünteti";
+
+"CANCEL" = "MEGSZÜNTETI";
+
+"The Notification sounds at %@" = "Az értesítés %@ órakor hangzik";
+
+"DONE" = "KÉSZ";

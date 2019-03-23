@@ -20,9 +20,30 @@
 
 "SATURDAY" = "Sobota";
 
+"Notification Settings" = "Nastavení upozornění";
 
+"No Upcoming Notification" = "Žádné nadcházející oznámení";
 
+"Notification Time" = "Doba oznámení";
 
+"You can not set reminders for repeatedly saved notes." = "Nelze nastavit připomenutí opakovaně uložených poznámek.";
 
+"Modify Notification" = "Změnit oznámení";
 
+"Copy" = "Kopírovat";
 
+"Copied." = "Kopírováno.";
+
+"Modify" = "Upravit";
+
+"Delete" = "Smazat";
+
+"Deleted." = "Smazáno.";
+
+"Cancel" = "Zrušení";
+
+"CANCEL" = "ZRUŠENÍ";
+
+"The Notification sounds at %@" = "Oznámení zazní ve %@";
+
+"DONE" = "HOTOVO";
