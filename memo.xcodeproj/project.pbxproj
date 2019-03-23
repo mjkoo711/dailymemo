@@ -28,6 +28,7 @@
 		E266367D2208B319001D05C8 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367C2208B319001D05C8 /* Vibration.swift */; };
 		E268F3B8223E2FBE00534565 /* FontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268F3B7223E2FBE00534565 /* FontWeight.swift */; };
 		E272F750223E6F2000CD5FA8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E272F74F223E6F2000CD5FA8 /* Theme.swift */; };
+		E27FD82C2245EC6B00339705 /* WidgetHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27FD82B2245EC6B00339705 /* WidgetHeaderView.swift */; };
 		E28D44FE2242813800F67B08 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28D44FD2242813800F67B08 /* NotificationCenter.framework */; };
 		E28D45012242813800F67B08 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D45002242813800F67B08 /* TodayViewController.swift */; };
 		E28D45042242813800F67B08 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E28D45022242813800F67B08 /* MainInterface.storyboard */; };
@@ -151,6 +152,7 @@
 		E266367C2208B319001D05C8 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
 		E268F3B7223E2FBE00534565 /* FontWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWeight.swift; sourceTree = "<group>"; };
 		E272F74F223E6F2000CD5FA8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		E27FD82B2245EC6B00339705 /* WidgetHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetHeaderView.swift; sourceTree = "<group>"; };
 		E28D44FC2242813800F67B08 /* memoWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = memoWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E28D44FD2242813800F67B08 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		E28D45002242813800F67B08 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 			children = (
 				E28D453D2242872700F67B08 /* memoWidget.entitlements */,
 				E28D45002242813800F67B08 /* TodayViewController.swift */,
+				E27FD82B2245EC6B00339705 /* WidgetHeaderView.swift */,
 				E28D45022242813800F67B08 /* MainInterface.storyboard */,
 				E28D45052242813800F67B08 /* Info.plist */,
 				E28D454022432AF600F67B08 /* WidgetTextCollectionViewCell.swift */,
@@ -601,6 +604,7 @@
 				E28D452A224284E000F67B08 /* UIFontExtension.swift in Sources */,
 				E28D4520224284C600F67B08 /* Color.swift in Sources */,
 				E28D4527224284D800F67B08 /* LineBreak.swift in Sources */,
+				E27FD82C2245EC6B00339705 /* WidgetHeaderView.swift in Sources */,
 				E28D451E224284C100F67B08 /* Day.swift in Sources */,
 				E28D452B224284E200F67B08 /* UILabelExtension.swift in Sources */,
 				E28D4518224284AE00F67B08 /* AlarmCollectionViewCell.swift in Sources */,

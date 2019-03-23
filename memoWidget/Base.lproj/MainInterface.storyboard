@@ -23,13 +23,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="TpL-Av-kjD">
                                     <size key="itemSize" width="320" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="50"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" layoutMarginsFollowReadableWidth="YES" reuseIdentifier="TextCell2" id="1GE-vI-pgL" customClass="WidgetTextCollectionViewCell" customModule="memoWidget">
-                                        <rect key="frame" x="27.5" y="10" width="320" height="50"/>
+                                        <rect key="frame" x="27.5" y="60" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -65,7 +65,7 @@
                                                 </view>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.99559158089999999" green="0.23343959450000001" blue="0.1881542504" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="f6p-sR-vv4" secondAttribute="bottom" id="48F-U2-tFt"/>
                                             <constraint firstAttribute="trailing" secondItem="f6p-sR-vv4" secondAttribute="trailing" id="bai-Ia-nm8"/>
@@ -78,13 +78,41 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WidgetCollectionReusableView" id="Kql-gw-1fN" customClass="WidgetCollectionReusableView" customModule="memoWidget">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메모에 알림 설정 하러가기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKp-lo-twk">
+                                            <rect key="frame" x="8" y="0.0" width="359" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="No5-I3-M8n"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="ftC-rL-Ckv"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="BKp-lo-twk" firstAttribute="leading" secondItem="Kql-gw-1fN" secondAttribute="leading" constant="8" id="KvE-Yl-52t"/>
+                                        <constraint firstAttribute="bottom" secondItem="BKp-lo-twk" secondAttribute="bottom" id="YHM-88-nRF"/>
+                                        <constraint firstAttribute="trailing" secondItem="BKp-lo-twk" secondAttribute="trailing" constant="8" id="gxo-AZ-uF7"/>
+                                        <constraint firstItem="BKp-lo-twk" firstAttribute="top" secondItem="Kql-gw-1fN" secondAttribute="top" id="wcI-fH-tdz"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBound" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="M4Y-Lb-cyx" id="xju-kR-r60"/>
                                     <outlet property="delegate" destination="M4Y-Lb-cyx" id="kGe-DF-7gI"/>
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XdC-XT-I9N" firstAttribute="trailing" secondItem="kM4-lF-PR3" secondAttribute="trailing" id="E9p-uS-3OG"/>
                             <constraint firstItem="kM4-lF-PR3" firstAttribute="top" secondItem="XdC-XT-I9N" secondAttribute="top" id="Zlc-Nz-Mfz"/>

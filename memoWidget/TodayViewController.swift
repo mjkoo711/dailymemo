@@ -27,12 +27,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     date = formatter.string(from: Date())
     reloadCollectionView(date: date)
     completionHandler(NCUpdateResult.newData)
-
   }
 
   func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
     if activeDisplayMode == .expanded {
-      preferredContentSize = CGSize(width: maxSize.width, height: 300)
+      preferredContentSize = collectionView.contentSize
     } else {
       preferredContentSize = maxSize
     }
@@ -40,7 +39,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
   override func viewWillAppear(_ animated: Bool) {
     date = formatter.string(from: Date())
-    reloadCollectionView(date: date)
   }
 }
 
@@ -52,7 +50,7 @@ extension TodayViewController: UICollectionViewDataSource, UICollectionViewDeleg
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextCell2", for: indexPath) as! WidgetTextCollectionViewCell
 
-    cell.descriptionLabel.font = UIFont.systemFont(ofSize: 15.0, weight: .regular)
+    cell.descriptionLabel.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
     cell.descriptionLabel.textColor = Color.Black
 
     cell.textInstance = textList[indexPath.row]
@@ -70,6 +68,13 @@ extension TodayViewController: UICollectionViewDataSource, UICollectionViewDeleg
 
     return cell
   }
+
+  func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    let widgetTitleHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "WidgetCollectionReusableView", for: indexPath) as! WidgetCollectionReusableView
+    widgetTitleHeaderView.delegate = self
+
+    return widgetTitleHeaderView
+  }
 }
 
 extension TodayViewController: UICollectionViewDelegateFlowLayout {
@@ -84,5 +89,14 @@ extension TodayViewController: WidgetTextCollectionViewCellDelegate {
     textList = TextLoader().findOnceTextList(date: date) + TextLoader().findDailyTextList() + TextLoader().findWeeklyTextList(date: date) + TextLoader().findMonthlyTextList(date: date)
     textCompletedList = FMDBManager.shared.findTextCompleted(currentDate: date)
     collectionView.reloadData()
+    collectionView.layoutIfNeeded()
+    preferredContentSize.height = collectionView.contentSize.height
+  }
+}
+
+extension TodayViewController: WidgetCollectionReusableViewDelegate {
+  func goApp() {
+    guard let appURL = URL(string: "mjkooMemo://") else { return }
+    self.extensionContext?.open(appURL, completionHandler: nil)
   }
 }
