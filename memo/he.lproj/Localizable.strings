@@ -65,3 +65,51 @@
 "Notification was deleted." = "ההודעה נמחקה.";
 
 "The notification time has been changed to %@." = "זמן ההודעה השתנה ל- %@.";
+
+"Theme" = "נושא";
+
+"Text Size" = "גודל טקסט";
+
+"Text Thickness" = "עובי טקסט";
+
+"Vibration" = "רטט";
+
+"Prevent Word Truncation" = "מנע Word Truncation";
+
+"Notification Permissions Check" = "בדיקת הרשאות";
+
+"Locking" = "נעילה";
+
+"Buy Pro Edition" = "קנה Pro Edition";
+
+"Backup / Restore" = "שחזור גיבוי";
+
+"Leave a Review" = "השאירו סקירה";
+
+"Contact Us" = "תיצור איתנו קשר";
+
+"Small" = "קטן";
+
+"Middle" = "התיכון";
+
+"Big" = "ביג";
+
+"Thin" = "רזה";
+
+"Regular" = "רגיל";
+
+"Bold" = "מודגש";
+
+"Off" = "כבוי";
+
+"On" = "מופעל";
+
+"White & Blue" = "לבן & כחול";
+
+"White & Red" = "לבן & אדום";
+
+"Black & Blue" = "שחור & כחול";
+
+"Black & Red" = "שחור & אדום";
+
+"To Be Updated" = "להתעדכן";

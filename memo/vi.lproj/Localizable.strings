@@ -65,3 +65,51 @@
 "Notification was deleted." = "Thông báo đã bị xóa.";
 
 "The notification time has been changed to %@." = "Thời gian thông báo đã được thay đổi thành %@.";
+
+"Theme" = "Chủ đề";
+
+"Text Size" = "Cỡ chữ";
+
+"Text Thickness" = "Độ dày văn bản";
+
+"Vibration" = "Rung";
+
+"Prevent Word Truncation" = "Ngăn chặn từ cắt ngắn";
+
+"Notification Permissions Check" = "Kiểm tra quyền thông báo";
+
+"Locking" = "Khóa";
+
+"Buy Pro Edition" = "Mua phiên bản Pro";
+
+"Backup / Restore" = "Phục hồi dữ liệu đã lưu";
+
+"Leave a Review" = "Để lại một đánh giá";
+
+"Contact Us" = "Liên hệ chúng tôi";
+
+"Small" = "Nhỏ bé";
+
+"Middle" = "Ở giữa";
+
+"Big" = "Lớn";
+
+"Thin" = "Gầy";
+
+"Regular" = "Đều đặn";
+
+"Bold" = "Dũng cảm";
+
+"Off" = "Tắt";
+
+"On" = "Trên";
+
+"White & Blue" = "Trắng & xanh";
+
+"White & Red" = "Trắng & đỏ";
+
+"Black & Blue" = "Đen & xanh";
+
+"Black & Red" = "Đen & đỏ";
+
+"To Be Updated" = "Được cập nhật";

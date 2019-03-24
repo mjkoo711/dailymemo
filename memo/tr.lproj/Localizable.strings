@@ -65,3 +65,52 @@
 "Notification was deleted." = "Bildirim silindi.";
 
 "The notification time has been changed to %@." = "Bildirim zamanı %@ olarak değiştirildi.";
+
+"Theme" = "Tema";
+
+"Text Size" = "Yazı Boyutu";
+
+"Text Thickness" = "Metin Kalınlığı";
+
+"Vibration" = "Titreşim";
+
+"Prevent Word Truncation" = "Sözcük Kısaltmasını Önle";
+
+"Notification Permissions Check" = "Bildirim İzinleri Kontrolü";
+
+"Locking" = "Kilitleme";
+
+"Buy Pro Edition" = "Pro Edition Satın Alın";
+
+"Backup / Restore" = "Yedekle / Geri Yükle";
+
+"Leave a Review" = "Lİnceleme bırak";
+
+"Contact Us" = "Bizimle iletişime geçin";
+
+"Small" = "Küçük";
+
+"Middle" = "Orta";
+
+"Big" = "Büyük";
+
+"Thin" = "İnce";
+
+"Regular" = "Düzenli";
+
+"Bold" = "Cesur";
+
+"Off" = "Kapalı";
+
+"On" = "üzerinde";
+
+"White & Blue" = "Beyaz & Mavi";
+
+"White & Red" = "Beyaz & Kırmızı";
+
+"Black & Blue" = "Siyah & Mavi";
+
+"Black & Red" = "Siyah & Kırmızı";
+
+"To Be Updated" = "Güncellenecek";
+

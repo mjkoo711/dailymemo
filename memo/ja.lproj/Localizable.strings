@@ -67,3 +67,52 @@
 "Notification was deleted." = "通知が削除されました";
 
 "The notification time has been changed to %@." = "通知時間は%@に変更されました。";
+
+"Theme" = "テーマ";
+
+"Text Size" = "文字サイズ";
+
+"Text Thickness" = "テキストの太さ";
+
+"Vibration" = "振動";
+
+"Prevent Word Truncation" = "単語の切り捨てを防ぐ";
+
+"Notification Permissions Check" = "通知権限チェック";
+
+"Locking" = "ロッキング";
+
+"Buy Pro Edition" = "Pro Editionを購入する";
+
+"Backup / Restore" = "復元する";
+
+"Leave a Review" = "レビューを残す";
+
+"Contact Us" = "お問い合わせ";
+
+"Small" = "小さい";
+
+"Middle" = "中間";
+
+"Big" = "大きい";
+
+"Thin" = "薄いです";
+
+"Regular" = "定期的";
+
+"Bold" = "大胆な";
+
+"Off" = "オフ";
+
+"On" = "に";
+
+"White & Blue" = "白 & 青";
+
+"White & Red" = "白 & 赤";
+
+"Black & Blue" = "黒 & 青";
+
+"Black & Red" = "黒 & 赤";
+
+"To Be Updated" = "更新する";
+

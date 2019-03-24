@@ -65,3 +65,51 @@
 "Notification was deleted." = "تم حذف الإشعار.";
 
 "The notification time has been changed to %@." = "تم تغيير وقت الإخطار إلى %@.";
+
+"Theme" = "موضوع";
+
+"Text Size" ="حجم الخط";
+
+"Text Thickness" = "سمك النص";
+
+"Vibration" = "اهتزاز";
+
+"Prevent Word Truncation" = "منع كلمة اقتطاع";
+
+"Notification Permissions Check" = "أذونات الإعلام تحقق";
+
+"Locking" = "قفل";
+
+"Buy Pro Edition" = "شراء برو الطبعة";
+
+"Backup / Restore" = "اسنرجاع البيانات";
+
+"Leave a Review" = "ترك التعليق";
+
+"Contact Us" = "اتصل بنا";
+
+"Small" = "صغير";
+
+"Middle" = "وسط";
+
+"Big" = "كبير";
+
+"Thin" = "نحيف ضعيف";
+
+"Regular" = "منتظم";
+
+"Bold" = "بالخط العريض";
+
+"Off" = "إيقاف";
+
+"On" = "على";
+
+"White & Blue" = "ابيض & ازرق";
+
+"White & Red" = "الأبيض & والأحمر";
+
+"Black & Blue" = "الأسود & والأزرق";
+
+"Black & Red" = "أسود & أحمر";
+
+"To Be Updated" = "ليتم تحديثه";

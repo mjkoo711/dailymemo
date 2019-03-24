@@ -65,3 +65,51 @@
 "Notification was deleted." = "Obavijest je izbrisana.";
 
 "The notification time has been changed to %@." = "Vrijeme obavijesti je promijenjeno u %@.";
+
+"Theme" = "Tema";
+
+"Text Size" = "Veličina teksta";
+
+"Text Thickness" = "Debljina teksta";
+
+"Vibration" = "Vibracija";
+
+"Prevent Word Truncation" = "Spriječite skraćivanje riječi";
+
+"Notification Permissions Check" = "Provjera dopuštenja za obavijesti";
+
+"Locking" = "Zaključavanje";
+
+"Buy Pro Edition" = "Kupite Pro Edition";
+
+"Backup / Restore" = "Sigurnosna kopija / vraćanje";
+
+"Leave a Review" = "Ostavite pregled";
+
+"Contact Us" = "Kontaktirajte nas";
+
+"Small" = "Mali";
+
+"Middle" = "Srednji";
+
+"Big" = "Velik";
+
+"Thin" = "Tanak";
+
+"Regular" = "Redovan";
+
+"Bold" = "Odvažan";
+
+"Off" = "Od";
+
+"On" = "Na";
+
+"White & Blue" = "Bijela & Plava";
+
+"White & Red" = "Bijela & Crvena";
+
+"Black & Blue" = "Crna & Plava";
+
+"Black & Red" = "Crno & Crveno";
+
+"To Be Updated" = "Biti nadograđen";

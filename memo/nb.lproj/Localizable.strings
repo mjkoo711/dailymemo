@@ -65,3 +65,51 @@
 "Notification was deleted." = "Meldingen ble slettet.";
 
 "The notification time has been changed to %@." = "Meldingen er endret til %@.";
+
+"Theme" = "Tema";
+
+"Text Size" = "Tekststørrelse";
+
+"Text Thickness" = "Teksttykkelse";
+
+"Vibration" = "Vibrasjon";
+
+"Prevent Word Truncation" = "Forhindre Word-avkorting";
+
+"Notification Permissions Check" = "Varsling om tillatelser";
+
+"Locking" = "Låse";
+
+"Buy Pro Edition" = "Kjøp Pro Edition";
+
+"Backup / Restore" = "Gjenopprette fra sikkerhetskopi";
+
+"Leave a Review" = "Legg igjen en anmeldelse";
+
+"Contact Us" = "Kontakt oss";
+
+"Small" = "Liten";
+
+"Middle" = "Midten";
+
+"Big" = "Stor";
+
+"Thin" = "Tynn";
+
+"Regular" = "Regelmessig";
+
+"Bold" = "Modig";
+
+"Off" = "Av";
+
+"On" = "På";
+
+"White & Blue" = "Hvit & Blå";
+
+"White & Red" = "Hvit & Rød";
+
+"Black & Blue" = "Svart & Blå";
+
+"Black & Red" = "Svart & Rød";
+
+"To Be Updated" = "Å være oppdatert";

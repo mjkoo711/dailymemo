@@ -65,3 +65,51 @@
 "Notification was deleted." = "Ilmoitus poistettiin.";
 
 "The notification time has been changed to %@." = "Ilmoitusaika on muutettu %@.";
+
+"Theme" = "Teema";
+
+"Text Size" = "Tekstin koko";
+
+"Text Thickness" = "Tekstin paksuus";
+
+"Vibration" = "värähtely";
+
+"Prevent Word Truncation" = "Estä sanan lyhentäminen";
+
+"Notification Permissions Check" = "Ilmoituslupien tarkistus";
+
+"Locking" = "Lukitus";
+
+"Buy Pro Edition" = "Osta Pro Edition";
+
+"Backup / Restore" = "Varmuuskopio";
+
+"Leave a Review" = "Jätä arvostelu";
+
+"Contact Us" = "Ota meihin yhteyttä";
+
+"Small" = "Pieni";
+
+"Middle" = "keskimmäinen";
+
+"Big" = "Iso";
+
+"Thin" = "Ohut";
+
+"Regular" = "säännöllinen";
+
+"Bold" = "rohkea";
+
+"Off" = "Pois päältä";
+
+"On" = "Päällä";
+
+"White & Blue" = "Valkoinen & Sininen";
+
+"White & Red" = "Valkoinen & Punainen";
+
+"Black & Blue" = "Musta & Sininen";
+
+"Black & Red" = "Musta & Punainen";
+
+"To Be Updated" = "Tulla päivitetyksi";

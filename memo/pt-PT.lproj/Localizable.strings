@@ -1,10 +1,10 @@
-/* 
-  Localizable.strings
-  memo
+/*
+ Localizable.strings
+ memo
 
-  Created by MinJun KOO on 23/03/2019.
-  Copyright © 2019 mjkoo. All rights reserved.
-*/
+ Created by MinJun KOO on 23/03/2019.
+ Copyright © 2019 mjkoo. All rights reserved.
+ */
 
 "SUNDAY" = "Domingo";
 
@@ -65,3 +65,52 @@
 "Notification was deleted." = "Notificação foi eliminada.";
 
 "The notification time has been changed to %@." = "O horário da notificação foi alterado para %@.";
+
+"Theme" = "Tema";
+
+"Text Size" = "Tamanho do texto";
+
+"Text Thickness" = "Espessura do Texto";
+
+"Vibration" = "Vibração";
+
+"Prevent Word Truncation" = "Evitar truncamento de palavras";
+
+"Notification Permissions Check" = "Verificação de permissões de notificação";
+
+"Locking" = "Bloqueio";
+
+"Buy Pro Edition" = "Compre a edição Pro";
+
+"Backup / Restore" = "Restauração de backup";
+
+"Leave a Review" = "Deixe um comentário";
+
+"Contact Us" = "Contate-Nos";
+
+"Small" = "Pequeno";
+
+"Middle" = "Meio";
+
+"Big" = "grande";
+
+"Thin" = "Fino";
+
+"Regular" = "Regular";
+
+"Bold" = "Negrito";
+
+"Off" = "Fora";
+
+"On" = "Em";
+
+"White & Blue" = "Branco & Azul";
+
+"White & Red" = "Branco & Vermelho";
+
+"Black & Blue" = "Preto & Azul";
+
+"Black & Red" = "Preto & Vermelho";
+
+"To Be Updated" = "Ser atualizado";
+

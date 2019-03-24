@@ -65,3 +65,51 @@
 "Notification was deleted." = "Upozornenie bolo odstránené.";
 
 "The notification time has been changed to %@." = "Čas oznámenia bol zmenený na %@.";
+
+"Theme" = "Téma";
+
+"Text Size" = "Veľkosť textu";
+
+"Text Thickness" = "Hrúbka textu";
+
+"Vibration" = "chvenie";
+
+"Prevent Word Truncation" = "Zabrániť skráteniu slov";
+
+"Notification Permissions Check" = "Kontrola povolení na oznámenie";
+
+"Locking" = "zamykanie";
+
+"Buy Pro Edition" = "Kúpiť Pro Edition";
+
+"Backup / Restore" = "Zálohovanie / Obnovenie";
+
+"Leave a Review" = "Zanechajte recenziu";
+
+"Contact Us" = "Kontaktuj nás";
+
+"Small" = "malý";
+
+"Middle" = "prostredný";
+
+"Big" = "veľký";
+
+"Thin" = "Tenký";
+
+"Regular" = "pravidelný";
+
+"Bold" = "smelý";
+
+"Off" = "preč";
+
+"On" = "na";
+
+"White & Blue" = "Biela & Modrá";
+
+"White & Red" = "Biela & Červená";
+
+"Black & Blue" = "Čierna & Modrá";
+
+"Black & Red" = "Čierna & Červená";
+
+"To Be Updated" = "Aktualizovať";

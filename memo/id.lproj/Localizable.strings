@@ -65,3 +65,51 @@
 "Notification was deleted." = "Pemberitahuan telah dihapus.";
 
 "The notification time has been changed to %@." = "Waktu pemberitahuan telah diubah menjadi %@.";
+
+"Theme" = "Tema";
+
+"Text Size" = "Ukuran teks";
+
+"Text Thickness" = "Ketebalan teks";
+
+"Vibration" = "Getaran";
+
+"Prevent Word Truncation" = "Cegah Pemotongan Kata";
+
+"Notification Permissions Check" = "Periksa Izin Notifikasi";
+
+"Locking" = "Mengunci";
+
+"Buy Pro Edition" = "Beli Edisi Pro";
+
+"Backup / Restore" = "Cadangkan / Kembalikan";
+
+"Leave a Review" = "Tinggalkan Ulasan";
+
+"Contact Us" = "Hubungi kami";
+
+"Small" = "Kecil";
+
+"Middle" = "Tengah";
+
+"Big" = "Besar";
+
+"Thin" = "Tipis";
+
+"Regular" = "Reguler";
+
+"Bold" = "Berani";
+
+"Off" = "Mati";
+
+"On" = "Di";
+
+"White & Blue" = "Putih & Biru";
+
+"White & Red" = "Putih & Merah";
+
+"Black & Blue" = "Hitam & Biru";
+
+"Black & Red" = "Hitam & Merah";
+
+"To Be Updated" = "Untuk Diperbarui";

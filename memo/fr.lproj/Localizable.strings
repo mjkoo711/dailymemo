@@ -65,3 +65,52 @@
 "Notification was deleted." = "La notification a été supprimée.";
 
 "The notification time has been changed to %@." = "L'heure de notification a été changée à %@.";
+
+"Theme" = "Thème";
+
+"Text Size" = "Taille du texte";
+
+"Text Thickness" = "Epaisseur du texte";
+
+"Vibration" = "Vibration";
+
+"Prevent Word Truncation" = "Empêcher la troncature des mots";
+
+"Notification Permissions Check" = "Contrôle des autorisations de notification";
+
+"Locking" = "Verrouillage";
+
+"Buy Pro Edition" = "Acheter Pro Edition";
+
+"Backup / Restore" = "Sauvegarde de restauration";
+
+"Leave a Review" = "Laisser un commentaire";
+
+"Contact Us" = "Contactez nous";
+
+"Small" = "Petit";
+
+"Middle" = "Milieu";
+
+"Big" = "Gros";
+
+"Thin" = "Mince";
+
+"Regular" = "Ordinaire";
+
+"Bold" = "Audacieux";
+
+"Off" = "De";
+
+"On" = "Sur";
+
+"White & Blue" = "Blanc & Bleu";
+
+"White & Red" = "Blanc & Rouge";
+
+"Black & Blue" = "Noir & Bleu";
+
+"Black & Red" = "Noir & Rouge";
+
+"To Be Updated" = "À mettre à jour";
+

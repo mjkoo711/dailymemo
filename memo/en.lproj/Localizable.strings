@@ -67,3 +67,52 @@
 "Notification was deleted." = "Notification was deleted.";
 
 "The notification time has been changed to %@." = "The notification time has been changed to %@.";
+
+"Theme" = "Theme";
+
+"Text Size" = "Text Size";
+
+"Text Thickness" = "Text Thickness";
+
+"Vibration" = "Vibration";
+
+"Prevent Word Truncation" = "Prevent Word Truncation";
+
+"Notification Permissions Check" = "Notification Permissions Check";
+
+"Locking" = "Locking";
+
+"Buy Pro Edition" = "Buy Pro Edition";
+
+"Backup / Restore" = "Backup / Restore";
+
+"Leave a Review" = "Leave a Review";
+
+"Contact Us" = "Contact Us";
+
+"Small" = "Small";
+
+"Middle" = "Middle";
+
+"Big" = "Big";
+
+"Thin" = "Thin";
+
+"Regular" = "Regular";
+
+"Bold" = "Bold";
+
+"Off" = "Off";
+
+"On" = "On";
+
+"White & Blue" = "White & Blue";
+
+"White & Red" = "White & Red";
+
+"Black & Blue" = "Black & Blue";
+
+"Black & Red" = "Black & Red";
+
+"To Be Updated" = "To Be Updated";
+

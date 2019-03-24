@@ -65,3 +65,51 @@
 "Notification was deleted." = "S'ha suprimit la notificació.";
 
 "The notification time has been changed to %@." = "L’hora de notificació s’ha canviat a %@.";
+
+"Theme" = "Tema";
+
+"Text Size" = "Mida del text";
+
+"Text Thickness" = "Gruix de text";
+
+"Vibration" = "Vibració";
+
+"Prevent Word Truncation" = "Evita la truncació de paraules";
+
+"Notification Permissions Check" = "Comproveu els permisos de notificació";
+
+"Locking" = "Bloqueig";
+
+"Buy Pro Edition" = "Compra Pro Edition";
+
+"Backup / Restore" = "Restaurar còpia de seguretat";
+
+"Leave a Review" = "Deixa un comentari";
+
+"Contact Us" = "Contacti amb nosaltres";
+
+"Small" = "Petit";
+
+"Middle" = "Mig";
+
+"Big" = "Gran";
+
+"Thin" = "Prim";
+
+"Regular" = "Regular";
+
+"Bold" = "Negreta";
+
+"Off" = "Desactivat";
+
+"On" = "Activat";
+
+"White & Blue" = "Blanc & Blau";
+
+"White & Red" = "Blanc & Vermell";
+
+"Black & Blue" = "Negre & Blau";
+
+"Black & Red" = "Negre & Vermell";
+
+"To Be Updated" = "S'ha d'actualitzar";

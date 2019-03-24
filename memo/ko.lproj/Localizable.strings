@@ -67,3 +67,51 @@
 "Notification was deleted." = "알림을 삭제했습니다.";
 
 "The notification time has been changed to %@." = "알림 시간이 %@로 변경되었습니다.";
+
+"Theme" = "테마";
+
+"Text Size" = "텍스트 크기";
+
+"Text Thickness" = "텍스트 두께";
+
+"Vibration" = "진동";
+
+"Prevent Word Truncation" = "단어잘림 방지";
+
+"Notification Permissions Check" = "알림권한 확인";
+
+"Locking" = "잠금설정";
+
+"Buy Pro Edition" = "프로버전 구매";
+
+"Backup / Restore" = "백업 / 복원";
+
+"Leave a Review" = "리뷰 남기기";
+
+"Contact Us" = "문의메일 보내기";
+
+"Small" = "작게";
+
+"Middle" = "중간";
+
+"Big" = "크게";
+
+"Thin" = "얇게";
+
+"Regular" = "보통";
+
+"Bold" = "굵게";
+
+"Off" = "끄기";
+
+"On" = "켜기";
+
+"White & Blue" = "화이트 & 블루";
+
+"White & Red" = "화이트 & 레드";
+
+"Black & Blue" = "블랙 & 블루";
+
+"Black & Red" = "블랙 & 레드";
+
+"To Be Updated" = "업데이트 예정";

@@ -65,3 +65,52 @@
 "Notification was deleted." = "Уведомление было удалено.";
 
 "The notification time has been changed to %@." = "Время уведомления было изменено на %@.";
+
+"Theme" = "Тема";
+
+"Text Size" = "Размер текста";
+
+"Text Thickness" = "Толщина текста";
+
+"Vibration" = "вибрация";
+
+"Prevent Word Truncation" = "Запрет усечения слова";
+
+"Notification Permissions Check" = "Проверка разрешений уведомлений";
+
+"Locking" = "Блокировка";
+
+"Buy Pro Edition" = "Купить Pro Edition";
+
+"Backup / Restore" = "Восстановления резервной копии";
+
+"Leave a Review" = "Оставить отзыв";
+
+"Contact Us" = "Связаться с нами";
+
+"Small" = "Маленький";
+
+"Middle" = "средний";
+
+"Big" = "большой";
+
+"Thin" = "тонкий";
+
+"Regular" = "регулярное";
+
+"Bold" = "Смелый";
+
+"Off" = "от";
+
+"On" = "На";
+
+"White & Blue" = "Белый & синий";
+
+"White & Red" = "Белый & красный";
+
+"Black & Blue" = "Черный & синий";
+
+"Black & Red" = "Черный & Красный";
+
+"To Be Updated" = "Быть обновленным";
+

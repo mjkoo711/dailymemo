@@ -65,3 +65,51 @@
 "Notification was deleted." = "Сповіщення було видалено.";
 
 "The notification time has been changed to %@." = "Час сповіщення змінено на %@.";
+
+"Theme" = "Тема";
+
+"Text Size" = "Розмір тексту";
+
+"Text Thickness" = "Товщина тексту";
+
+"Vibration" = "Вібрація";
+
+"Prevent Word Truncation" = "Запобігання укороченню слів";
+
+"Notification Permissions Check" = "Перевірка дозволів на сповіщення";
+
+"Locking" = "Блокування";
+
+"Buy Pro Edition" = "Купити Pro Edition";
+
+"Backup / Restore" = "Резервне копіювання / відновлення";
+
+"Leave a Review" = "Залишити відгук";
+
+"Contact Us" = "Зв'яжіться з нами";
+
+"Small" = "Малий";
+
+"Middle" = "Середній";
+
+"Big" = "Великий";
+
+"Thin" = "Тонкий";
+
+"Regular" = "Регулярні";
+
+"Bold" = "Жирний";
+
+"Off" = "Вимкнено";
+
+"On" = "Увімкнено";
+
+"White & Blue" = "Білий & синій";
+
+"White & Red" = "Білий & червоний";
+
+"Black & Blue" = "Чорний & синій";
+
+"Black & Red" = "Чорний & червоний";
+
+"To Be Updated" = "Для оновлення";

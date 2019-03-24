@@ -67,3 +67,51 @@
 "Notification was deleted." = "Az értesítést törölték.";
 
 "The notification time has been changed to %@." = "Az értesítési idő %@ órára változott.";
+
+"Theme" = "Téma";
+
+"Text Size" = "Szövegméret";
+
+"Text Thickness" = "Szövegvastagság";
+
+"Vibration" = "Rezgés";
+
+"Prevent Word Truncation" = "Megakadályozza a Word csonkítását";
+
+"Notification Permissions Check" = "Értesítési engedélyek ellenőrzése";
+
+"Locking" = "Záró";
+
+"Buy Pro Edition" = "Vásárlás Pro Edition";
+
+"Backup / Restore" = "Biztonsági mentés visszaállítása";
+
+"Leave a Review" = "Hagy egy áttekintést";
+
+"Contact Us" = "Lépjen kapcsolatba velünk";
+
+"Small" = "Kicsi";
+
+"Middle" = "Középső";
+
+"Big" = "Nagy";
+
+"Thin" = "Vékony";
+
+"Regular" = "Szabályos";
+
+"Bold" = "Bátor";
+
+"Off" = "Ki";
+
+"On" = "Tovább";
+
+"White & Blue" = "Fehér & Kék";
+
+"White & Red" = "Fehér & Piros";
+
+"Black & Blue" = "Fekete & Kék";
+
+"Black & Red" = "Fekete & Piros";
+
+"To Be Updated" = "Frissíteni";

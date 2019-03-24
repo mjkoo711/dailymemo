@@ -65,3 +65,51 @@
 "Notification was deleted." = "Notificarea a fost ștearsă.";
 
 "The notification time has been changed to %@." = "Timpul de notificare a fost schimbat la %@.";
+
+"Theme" = "Temă";
+
+"Text Size" = "Mărimea textului";
+
+"Text Thickness" = "Grosimea textului";
+
+"Vibration" = "Vibrație";
+
+"Prevent Word Truncation" = "Împiedicați trunchierea cuvintelor";
+
+"Notification Permissions Check" = "Notificări privind permisiunile de verificare";
+
+"Locking" = "blocarea";
+
+"Buy Pro Edition" = "Cumpărați Pro Edition";
+
+"Backup / Restore" = "Backup / Restaurare";
+
+"Leave a Review" = "Lăsați o revizuire";
+
+"Contact Us" = "Contacteaza-ne";
+
+"Small" = "Mic";
+
+"Middle" = "Mijloc";
+
+"Big" = "Mare";
+
+"Thin" = "Subţire";
+
+"Regular" = "Regulat";
+
+"Bold" = "Îndrăzneţ";
+
+"Off" = "de pe";
+
+"On" = "Pe";
+
+"White & Blue" = "Alb & Albastru";
+
+"White & Red" = "Alb & Roșu";
+
+"Black & Blue" = "Negru & Albastru";
+
+"Black & Red" = "Negru & Roșu";
+
+"To Be Updated" = "A fi tinut la curent";

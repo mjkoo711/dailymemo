@@ -65,3 +65,52 @@
 "Notification was deleted." = "การแจ้งเตือนถูกลบ";
 
 "The notification time has been changed to %@." = "เวลาการแจ้งเตือนเปลี่ยนเป็น %@";
+
+"Theme" = "กระทู้";
+
+"Text Size" = "ขนาดตัวอักษร";
+
+"Text Thickness" = "ความหนาของข้อความ";
+
+"Vibration" = "การสั่นสะเทือน";
+
+"Prevent Word Truncation" = "ป้องกันการตัดคำ";
+
+"Notification Permissions Check" = "ตรวจสอบสิทธิ์การแจ้งเตือน";
+
+"Locking" = "ล็อค";
+
+"Buy Pro Edition" = "ซื้อรุ่น Pro";
+
+"Backup / Restore" = "สำรอง / กู้คืน";
+
+"Leave a Review" = "ออกความคิดเห็น";
+
+"Contact Us" = "ติดต่อเรา";
+
+"Small" = "เล็ก";
+
+"Middle" = "กลาง";
+
+"Big" = "ใหญ่";
+
+"Thin" = "ผอม";
+
+"Regular" = "ปกติ";
+
+"Bold" = "กล้า";
+
+"Off" = "ปิด";
+
+"On" = "บน";
+
+"White & Blue" = "ขาว น้ำเงิน";
+
+"White & Red" = "ขาวแดง";
+
+"Black & Blue" = "Bดำ น้ำเงิน";
+
+"Black & Red" = "ดำแดง";
+
+"To Be Updated" = "ที่จะอัปเดต";
+

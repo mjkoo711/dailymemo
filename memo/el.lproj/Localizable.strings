@@ -65,3 +65,51 @@
 "Notification was deleted." = "Η ειδοποίηση διαγράφηκε.";
 
 "The notification time has been changed to %@." = "Ο χρόνος ειδοποίησης έχει αλλάξει σε %@.";
+
+"Theme" = "Θέμα";
+
+"Text Size" = "Μέγεθος κειμένου";
+
+"Text Thickness" = "Πάχος κειμένου";
+
+"Vibration" = "Δόνηση";
+
+"Prevent Word Truncation" = "Αποτρέψτε την περικοπή λέξεων";
+
+"Notification Permissions Check" = "Έλεγχος δικαιωμάτων ειδοποίησης";
+
+"Locking" = "Κλείδωμα";
+
+"Buy Pro Edition" = "Αγοράστε την έκδοση Pro";
+
+"Backup / Restore" = "Δημιουργία αντιγράφων ασφαλείας / Επαναφορά";
+
+"Leave a Review" = "Αφήστε μια κριτική";
+
+"Contact Us" = "Επικοινωνήστε μαζί μας";
+
+"Small" = "Μικρό";
+
+"Middle" = "Μεσαία";
+
+"Big" = "Μεγάλο";
+
+"Thin" = "Λεπτός";
+
+"Regular" = "Τακτικός";
+
+"Bold" = "Τολμηρός";
+
+"Off" = "Μακριά από";
+
+"On" = "Επί";
+
+"White & Blue" = "Λευκό & Μπλε";
+
+"White & Red" = "Λευκό & Κόκκινο";
+
+"Black & Blue" = "Μαύρο & μπλε";
+
+"Black & Red" = "Μαύρο & κόκκινο";
+
+"To Be Updated" = "Για να ενημερωθείτε";

@@ -65,3 +65,51 @@
 "Notification was deleted." = "अधिसूचना हटा दी गई थी।";
 
 "The notification time has been changed to %@." = "अधिसूचना समय को बदलकर %@ कर दिया गया है।";
+
+"Theme" = "विषय";
+
+"Text Size" = "शब्दों का आकर";
+
+"Text Thickness" = "पाठ की मोटाई";
+
+"Vibration" = "कंपन";
+
+"Prevent Word Truncation" = "वर्ड ट्रंकेशन को रोकें";
+
+"Notification Permissions Check" = "अधिसूचना अनुमतियाँ जाँचें";
+
+"Locking" = "लॉक करना";
+
+"Buy Pro Edition" = "प्रो संस्करण खरीदें";
+
+"Backup / Restore" = "बैकअप बहाल";
+
+"Leave a Review" = "समीक्षा लिखें";
+
+"Contact Us" = "हमसे संपर्क करें";
+
+"Small" = "छोटा";
+
+"Middle" = "मध्य";
+
+"Big" = "बड़े";
+
+"Thin" = "पतला";
+
+"Regular" = "नियमित";
+
+"Bold" = "साहसिक";
+
+"Off" = "बंद";
+
+"On" = "पर";
+
+"White & Blue" = "सफ़ेद & नीला";
+
+"White & Red" = "सफेद & लाल";
+
+"Black & Blue" = "काला & नीला";
+
+"Black & Red" = "काला & लाल";
+
+"To Be Updated" = "अद्यतन किया जाएगा";
