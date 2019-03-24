@@ -10,7 +10,9 @@ target 'memo' do
   pod 'FSCalendar'
   pod 'MaterialComponents/Snackbar'
   pod 'FMDB'
-
+  pod 'Google-Mobile-Ads-SDK'
+  pod 'Firebase/Core'
+  pod 'Firebase/AdMob'
   # Pods for memo
   target 'memoWidget' do 
     inherit! :search_paths

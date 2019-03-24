@@ -9,6 +9,7 @@
 import UIKit
 import FSCalendar
 import SCLAlertView
+import GoogleMobileAds
 import MaterialComponents.MaterialSnackbar
 import UserNotifications
 
@@ -41,6 +42,7 @@ class MainViewController: UIViewController {
   @IBOutlet var nextDayButtonViewImage: UIImageView!
   @IBOutlet var todayButtonViewImage: UIImageView!
 
+  @IBOutlet var bannerView: GADBannerView!
   private var selectDateString: String!
   private var selectDayString: String!
 
@@ -64,6 +66,7 @@ class MainViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    loadBannerView()
     today = Date()
     calendarView.placeholderType = .none
     selectDateString = formatter.string(from: Date())
@@ -74,7 +77,7 @@ class MainViewController: UIViewController {
 
     timeChanger = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(MainViewController.updateTimeLabel), userInfo: nil, repeats: true)
 
-    calendarView.scope = .month
+    calendarView.scope = .week
 
     let tapGestureForCollectionView = UITapGestureRecognizer(target: self, action: #selector(showInputTextViewController))
     collectionView.addGestureRecognizer(tapGestureForCollectionView)
@@ -136,6 +139,11 @@ class MainViewController: UIViewController {
     }
   }
 
+  private func loadBannerView() {
+    self.bannerView.adUnitID = Const.appId
+    self.bannerView.rootViewController = self
+    self.bannerView.load(GADRequest())
+  }
   private func setTheme() {
     guard let value = SettingManager.shared.theme else { return }
     if value == .blackBlue || value == .blackRed { // Dark
