@@ -47,3 +47,9 @@
 "The Notification sounds at %@" = "Ilmoitus kuulostaa kello %@";
 
 "DONE" = "TEHTY";
+
+"Upcoming Notification" = "Tuleva ilmoitus";
+
+"No Upcoming Notification" = "Ei tulevaa ilmoitusta";
+
+"Date Created by %@" = "Päivämäärä luotiin klo %@ mennessä";

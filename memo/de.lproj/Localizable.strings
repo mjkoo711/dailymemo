@@ -44,6 +44,16 @@
 
 "CANCEL" = "STORNIEREN";
 
-"The Notification sounds at %@" = "Die Benachrichtigung ertönt um %@";
+"The Notification sounds at %@" = "Die Benachrichtigung ertönt um %@ Uhr";
 
 "DONE" = "ERLEDIGT";
+
+"Upcoming Notification" = "Kommende Benachrichtigung";
+
+"No Upcoming Notification" = "Keine bevorstehende Benachrichtigung";
+
+"Date Created by %@" = "Erstellt am um %@ Uhr";
+
+
+
+

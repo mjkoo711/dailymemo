@@ -47,3 +47,9 @@
 "The Notification sounds at %@" = "Oznámení zazní ve %@";
 
 "DONE" = "HOTOVO";
+
+"Upcoming Notification" = "Nadcházející oznámení";
+
+"No Upcoming Notification" = "Žádné nadcházející oznámení";
+
+"Date Created by %@" = "Datum Vytvořeno do %@";

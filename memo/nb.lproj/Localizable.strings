@@ -47,3 +47,9 @@
 "The Notification sounds at %@" = "Meldingen lyder klokken %@";
 
 "DONE" = "Suksess";
+
+"Upcoming Notification" = "Kommende Melding";
+
+"No Upcoming Notification" = "Ingen Kommende Varsling";
+
+"Date Created by %@" = "Dato Opprettet av %@";

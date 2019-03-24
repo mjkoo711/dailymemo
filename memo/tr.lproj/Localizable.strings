@@ -48,3 +48,8 @@
 
 "DONE" = "TAMAMLANDI";
 
+"Upcoming Notification" = "Yaklaşan Bildirim";
+
+"No Upcoming Notification" = "Yakında Bildirim Yok";
+
+"Date Created by %@" = "Tarih %@ tarafından oluşturulan";

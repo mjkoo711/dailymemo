@@ -49,3 +49,9 @@
 "The Notification sounds at %@" = "通知在%@响起";
 
 "DONE" = "完成";
+
+"Upcoming Notification" = "即将发布的通知";
+
+"No Upcoming Notification" = "没有即将发布的通知";
+
+"Date Created by %@" = "日期由%@创建";

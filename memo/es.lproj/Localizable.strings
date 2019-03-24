@@ -47,3 +47,9 @@
 "The Notification sounds at %@" = "La notificación suena a las %@";
 
 "DONE" = "HECHO";
+
+"Upcoming Notification" = "Próxima notificación";
+
+"No Upcoming Notification" = "No hay notificación próxima";
+
+"Date Created by %@" = "Fecha de creación a las %@";

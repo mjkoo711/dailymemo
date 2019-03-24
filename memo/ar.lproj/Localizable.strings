@@ -47,3 +47,9 @@
 "The Notification sounds at %@" = "يبدو الإخطار في الساعة @%";
 
 "DONE" = "فعله";
+
+"Upcoming Notification" = "الإخطار القادم";
+
+"No Upcoming Notification" = "لا الإخطار القادم";
+
+"Date Created by %@" = "تاريخ الإنشاء بواسطة %@";

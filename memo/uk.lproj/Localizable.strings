@@ -48,3 +48,9 @@
 "The Notification sounds at %@" = "Повідомлення звучить о %@";
 
 "DONE" = "Виконано";
+
+"Upcoming Notification" = "Майбутнє повідомлення";
+
+"No Upcoming Notification" = "Немає попереднього сповіщення";
+
+"Date Created by %@" = "Дата створення: %@";

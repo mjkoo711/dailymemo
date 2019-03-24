@@ -47,3 +47,9 @@
 "The Notification sounds at %@" = "La notificació sona a les %@";
 
 "DONE" = "Fet";
+
+"Upcoming Notification" = "Notificació pròxima";
+
+"No Upcoming Notification" = "Sense notificació pròxima";
+
+"Date Created by %@" = "Data de creació a partir de les %@";

@@ -47,3 +47,9 @@
 "The Notification sounds at %@" = "अधिसूचना %@ बजे लगती है";
 
 "DONE" = "किया हुआ";
+
+"Upcoming Notification" = "आगामी अधिसूचना";
+
+"No Upcoming Notification" = "कोई आगामी अधिसूचना नहीं";
+
+"Date Created by %@" = "दिनांक %@ बजे तक बनाया गया";

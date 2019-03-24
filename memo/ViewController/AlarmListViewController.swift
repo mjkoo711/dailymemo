@@ -31,7 +31,7 @@ class AlarmListViewController: UIViewController {
     if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
       flowLayout.sectionHeadersPinToVisibleBounds = true
     }
-    self.navigationItem.title = "예정된 알림"
+    self.navigationItem.title = "Upcoming Notification".localized
     loadSetAlarmText()
     setTheme()
   }
@@ -51,7 +51,7 @@ class AlarmListViewController: UIViewController {
     alarmTextDictionary = dic.sorted { $0.0 < $1.0 }
     if alarmTextList.count == 0 {
       messageLabel.isHidden = false
-      messageLabel.text = "예정된 알람 없음"
+      messageLabel.text = "No Upcoming Notification".localized
     } else {
       messageLabel.isHidden = true
     }
@@ -118,10 +118,12 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
     }
 
     let dateWritten = alarmTextDictionary[indexPath.section].value[indexPath.row].date
+    let dateWrittenFormat = DateStringChanger().dateFormatChange(dateWithHyphen: dateWritten)
+
     cell.textInstance = alarmTextDictionary[indexPath.section].value[indexPath.row]
 
     cell.textLabel.text = alarmTextDictionary[indexPath.section].value[indexPath.row].string
-    cell.dateLabel.text = "작성 일자 : " + DateStringChanger().dateFormatChange(dateWithHyphen: dateWritten)
+    cell.dateLabel.text = String(format: NSLocalizedString("Date Created by %@", comment: ""), dateWrittenFormat)
 
     cell.delegate = self
 

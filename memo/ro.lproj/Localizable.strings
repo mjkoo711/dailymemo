@@ -47,3 +47,9 @@
 "The Notification sounds at %@" = "Notificarea suna la ora %@";
 
 "DONE" = "TERMINAT";
+
+"Upcoming Notification" = "Notificare viitoare";
+
+"No Upcoming Notification" = "Nicio notificare viitoare";
+
+"Date Created by %@" = "Data creării până la ora %@";

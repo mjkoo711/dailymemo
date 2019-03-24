@@ -47,3 +47,9 @@
 "The Notification sounds at %@" = "Powiadomienie brzmi o %@";
 
 "DONE" = "GOTOWE";
+
+"Upcoming Notification" = "Nadchodzące Powiadomienie";
+
+"No Upcoming Notification" = "Brak Nadchodzących Powiadomień";
+
+"Date Created by %@" = "Data Utworzona do %@";

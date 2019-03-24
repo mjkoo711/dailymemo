@@ -47,3 +47,9 @@
 "The Notification sounds at %@" = "Obavijest se oglašava u %@";
 
 "DONE" = "Učinjen";
+
+"Upcoming Notification" = "Nadolazeća obavijest";
+
+"No Upcoming Notification" = "Nema nadolazeće Obavijesti";
+
+"Date Created by %@" = "Datum kreiranja %@";

@@ -49,3 +49,10 @@
 "The Notification sounds at %@" = "Az értesítés %@ órakor hangzik";
 
 "DONE" = "KÉSZ";
+
+"Upcoming Notification" = "Közelgő értesítés";
+
+"No Upcoming Notification" = "Nincs közelgő értesítés";
+
+"Date Created by %@" = "A dátum létrehozása: %@";
+
