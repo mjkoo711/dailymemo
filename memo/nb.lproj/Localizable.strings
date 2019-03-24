@@ -20,6 +20,8 @@
 
 "SATURDAY" = "Lørdag";
 
+"Canceled" = "Kansellert";
+
 "Notification Settings" = "Varslingsinnstillinger";
 
 "No Upcoming Notification" = "Ingen kommende varsling";
@@ -52,7 +54,7 @@
 
 "No Upcoming Notification" = "Ingen Kommende Varsling";
 
-"Date Created by %@" = "Dato Opprettet av %@";
+"Date created by %@" = "Dato Opprettet av %@";
 
 "You can not set notification for text that are repeated every day." = "Du kan ikke angi varsel for tekst som gjentas hver dag.";
 
@@ -61,3 +63,5 @@
 "You can not set notification for text that are repeated every month." = "Du kan ikke angi varsel for tekst som gjentas hver måned.";
 
 "Notification was deleted." = "Meldingen ble slettet.";
+
+"The notification time has been changed to %@." = "Meldingen er endret til %@.";

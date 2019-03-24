@@ -20,6 +20,8 @@
 
 "SATURDAY" = "יום שבת";
 
+"Canceled" = "מבוטל";
+
 "Notification Settings" = "הגדרות התראה";
 
 "No Upcoming Notification" = "אין הודעה קרובה";
@@ -52,7 +54,7 @@
 
 "No Upcoming Notification" = "אין הודעה קרובה";
 
-"Date Created by %@" = "תאריך יצירה: %@";
+"Date created by %@" = "תאריך יצירה: %@";
 
 "You can not set notification for text that are repeated every day." = "לא ניתן להגדיר הודעה לטקסט החוזרים על עצמם מדי יום.";
 
@@ -61,3 +63,5 @@
 "You can not set notification for text that are repeated every month." = "לא ניתן להגדיר התראה לטקסט החוזר על עצמו מדי חודש.";
 
 "Notification was deleted." = "ההודעה נמחקה.";
+
+"The notification time has been changed to %@." = "זמן ההודעה השתנה ל- %@.";

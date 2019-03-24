@@ -45,8 +45,8 @@ class MainViewController: UIViewController {
   private var selectDayString: String!
 
   fileprivate let formatter = MDateFormatter().formatter
-  fileprivate let formatter2 = MDateFormatter().formatter2
   fileprivate let formatterKorea = MDateFormatter().formatterKorea
+  fileprivate let formatterLocalized = MDateFormatter().formatterLocalized
 
   override var prefersStatusBarHidden: Bool {
     return true
@@ -243,7 +243,7 @@ class MainViewController: UIViewController {
       // MARK: snackbar
       let message = MDCSnackbarMessage()
       message.buttonTextColor = Color.LightRed
-      message.text = String(format: NSLocalizedString("The Notification sounds at %@".localized, comment: ""), "\(self.formatter2.string(from: datePicker.date))")
+      message.text = String(format: NSLocalizedString("The Notification sounds at %@".localized, comment: ""), "\(self.formatterLocalized.string(from: datePicker.date))")
 
       let action = MDCSnackbarMessageAction()
       let actionHandler = {() in
@@ -587,7 +587,7 @@ extension MainViewController: TextCollectionViewCellDelegate {
 
     if let textAlarmDate = text.alarmDatePicked, text.isAlarmable() {
       actionSheet.title = text.string
-      actionSheet.message =  "Notification Time".localized + "\n" + "\(formatter2.string(from: textAlarmDate))"
+      actionSheet.message =  "Notification Time".localized + "\n" + "\(formatterLocalized.string(from: textAlarmDate))"
     }
 
     if !text.isAlarmable() && text.repeatMode != .Once {

@@ -20,6 +20,8 @@
 
 "SATURDAY" = "토요일";
 
+"Canceled" = "취소됨";
+
 "%@년 %@월 %@일" = "%@년 %@월 %@일";
 
 "Notification Settings" = "알림 설정";
@@ -54,7 +56,7 @@
 
 "No Upcoming Notification" = "예정된 알림 없음";
 
-"Date Created by %@" = "작성일 : %@";
+"Date created by %@" = "작성일 : %@";
 
 "You can not set notification for text that are repeated every day." = "매일 반복되는 텍스트에 대한 알림을 설정할 수 없습니다.";
 
@@ -63,3 +65,5 @@
 "You can not set notification for text that are repeated every month." = "매월 반복되는 텍스트에 대한 알림을 설정할 수 없습니다.";
 
 "Notification was deleted." = "알림을 삭제했습니다.";
+
+"The notification time has been changed to %@." = "알림 시간이 %@로 변경되었습니다.";

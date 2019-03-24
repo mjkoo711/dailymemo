@@ -76,7 +76,7 @@ class TextCollectionViewCell: UICollectionViewCell {
       Vibration.oldSchool.vibrate()
 
       let message = MDCSnackbarMessage()
-      message.text = "Notifcation was deleted.".localized
+      message.text = "Notification was deleted.".localized
       MDCSnackbarManager.show(message)
 
       delegate?.removeAlarm(text: textInstance!)

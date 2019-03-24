@@ -20,6 +20,8 @@
 
 "SATURDAY" = "土曜日";
 
+"Canceled" = "キャンセル";
+
 "%@년 %@월 %@일" = "%@年 %@月 %@日";
 
 "Notification Settings" = "通知設定";
@@ -54,7 +56,7 @@
 
 "No Upcoming Notification" = "今後の通知はありません";
 
-"Date Created by %@" = "%@作成日";
+"Date created by %@" = "%@作成日";
 
 "You can not set notification for text that are repeated every day." = "毎日繰り返されるテキストには通知を設定できません。";
 
@@ -63,3 +65,5 @@
 "You can not set notification for text that are repeated every month." = "毎月繰り返されるテキストには通知を設定できません。";
 
 "Notification was deleted." = "通知が削除されました";
+
+"The notification time has been changed to %@." = "通知時間は%@に変更されました。";

@@ -20,6 +20,8 @@
 
 "SATURDAY" = "Thứ bảy";
 
+"Canceled" = "Hủy bỏ";
+
 "Notification Settings" = "Thiết lập thông báo";
 
 "No Upcoming Notification" = "Không có thông báo sắp tới";
@@ -52,7 +54,7 @@
 
 "No Upcoming Notification" = "Không có thông báo sắp tới";
 
-"Date Created by %@" = "Ngày tạo bởi %@";
+"Date created by %@" = "Ngày tạo bởi %@";
 
 "You can not set notification for text that are repeated every day." = "Bạn không thể đặt thông báo cho văn bản được lặp lại mỗi ngày.";
 
@@ -61,3 +63,5 @@
 "You can not set notification for text that are repeated every month." = "Bạn không thể đặt thông báo cho văn bản được lặp lại hàng tháng.";
 
 "Notification was deleted." = "Thông báo đã bị xóa.";
+
+"The notification time has been changed to %@." = "Thời gian thông báo đã được thay đổi thành %@.";

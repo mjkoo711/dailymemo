@@ -20,6 +20,8 @@
 
 "SATURDAY" = "วันเสาร์";
 
+"Canceled" = "ยกเลิก";
+
 "Notification Settings" = "การตั้งค่าการแจ้งเตือน";
 
 "No Upcoming Notification" = "ไม่มีการแจ้งเตือน";
@@ -52,7 +54,7 @@
 
 "No Upcoming Notification" = "ไม่มีการแจ้งเตือนที่จะมาถึง";
 
-"Date Created by %@" = "วันที่สร้างโดย %@";
+"Date created by %@" = "วันที่สร้างโดย %@";
 
 "You can not set notification for text that are repeated every day." = "คุณไม่สามารถตั้งค่าการแจ้งเตือนสำหรับข้อความที่ทำซ้ำทุกวัน";
 
@@ -61,3 +63,5 @@
 "You can not set notification for text that are repeated every month." = "คุณไม่สามารถตั้งค่าการแจ้งเตือนสำหรับข้อความที่ทำซ้ำทุกเดือน";
 
 "Notification was deleted." = "การแจ้งเตือนถูกลบ";
+
+"The notification time has been changed to %@." = "เวลาการแจ้งเตือนเปลี่ยนเป็น %@";

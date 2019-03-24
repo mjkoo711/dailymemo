@@ -20,6 +20,8 @@
 
 "SATURDAY" = "Sobota";
 
+"Canceled" = "Zrušený";
+
 "Notification Settings" = "Nastavenia upozornení";
 
 "No Upcoming Notification" = "Žiadne prichádzajúce oznámenie";
@@ -52,7 +54,7 @@
 
 "No Upcoming Notification" = "Žiadne nadchádzajúce oznámenie";
 
-"Date Created by %@" = "Dátum Vytvorené do %@";
+"Date created by %@" = "Dátum Vytvorené do %@";
 
 "You can not set notification for text that are repeated every day." = "Nie je možné nastaviť upozornenie na text, ktorý sa opakuje každý deň.";
 
@@ -61,3 +63,5 @@
 "You can not set notification for text that are repeated every month." = "Nie je možné nastaviť upozornenie na text, ktorý sa opakuje každý mesiac.";
 
 "Notification was deleted." = "Upozornenie bolo odstránené.";
+
+"The notification time has been changed to %@." = "Čas oznámenia bol zmenený na %@.";

@@ -20,6 +20,8 @@
 
 "SATURDAY" = "Sabado";
 
+"Canceled" = "Cancelado";
+
 "Notification Settings" = "Configuración de las notificaciones";
 
 "No Upcoming Notification" = "No hay próxima notificación";
@@ -52,7 +54,7 @@
 
 "No Upcoming Notification" = "No hay notificación próxima";
 
-"Date Created by %@" = "Fecha de creación a las %@";
+"Date created by %@" = "Fecha de creación a las %@";
 
 "You can not set notification for text that are repeated every day." = "No se puede configurar la notificación de texto que se repite todos los días.";
 
@@ -61,3 +63,5 @@
 "You can not set notification for text that are repeated every month." = "No se puede establecer una notificación para el texto que se repite cada mes.";
 
 "Notification was deleted." = "Se eliminó la notificación.";
+
+"The notification time has been changed to %@." = "La hora de notificación ha sido cambiada a %@.";

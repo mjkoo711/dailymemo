@@ -20,6 +20,8 @@
 
 "SATURDAY" = "суббота";
 
+"Canceled" = "отменен";
+
 "Notification Settings" = "Настройки уведомлений";
 
 "No Upcoming Notification" = "Нет предстоящих уведомлений";
@@ -52,7 +54,7 @@
 
 "No Upcoming Notification" = "Нет предстоящих уведомлений";
 
-"Date Created by %@" = "Дата создания %@";
+"Date created by %@" = "Дата создания %@";
 
 "You can not set notification for text that are repeated every day." = "Вы не можете установить уведомление для текста, который повторяется каждый день.";
 
@@ -61,3 +63,5 @@
 "You can not set notification for text that are repeated every month." = "Вы не можете установить уведомление для текста, который повторяется каждый месяц.";
 
 "Notification was deleted." = "Уведомление было удалено.";
+
+"The notification time has been changed to %@." = "Время уведомления было изменено на %@.";

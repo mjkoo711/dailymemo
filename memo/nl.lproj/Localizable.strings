@@ -20,6 +20,8 @@
 
 "SATURDAY" = "Zaterdag";
 
+"Canceled" = "Geannuleerd";
+
 "Notification Settings" = "Notificatie Instellingen";
 
 "No Upcoming Notification" = "Geen Aankomende Notification";
@@ -52,7 +54,7 @@
 
 "No Upcoming Notification" = "Geen aankomende melding";
 
-"Date Created by %@" = "Datum gemaakt om %@";
+"Date created by %@" = "Datum gemaakt om %@";
 
 "You can not set notification for text that are repeated every day." = "YU kunt geen melding instellen voor tekst die elke dag wordt herhaald.";
 
@@ -61,3 +63,5 @@
 "You can not set notification for text that are repeated every month." = "U kunt geen melding instellen voor tekst die elke maand wordt herhaald.";
 
 "Notification was deleted." = "Melding is verwijderd.";
+
+"The notification time has been changed to %@." = "De meldingstijd is gewijzigd in %@.";

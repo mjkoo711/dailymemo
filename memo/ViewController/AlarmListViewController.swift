@@ -22,8 +22,8 @@ class AlarmListViewController: UIViewController {
 
   var selectedDatePicked: Date!
 
-  fileprivate let formatter2 = MDateFormatter().formatter2
   fileprivate let formatter = MDateFormatter().formatter
+  fileprivate let formatterLocalized = MDateFormatter().formatterLocalized
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -123,7 +123,7 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
     cell.textInstance = alarmTextDictionary[indexPath.section].value[indexPath.row]
 
     cell.textLabel.text = alarmTextDictionary[indexPath.section].value[indexPath.row].string
-    cell.dateLabel.text = String(format: NSLocalizedString("Date Created by %@", comment: ""), dateWrittenFormat)
+    cell.dateLabel.text = String(format: NSLocalizedString("Date created by %@", comment: ""), dateWrittenFormat)
 
     cell.delegate = self
 
@@ -173,7 +173,7 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
     AlarmManager().removeNotification(textSelected: text)
 
     let message = MDCSnackbarMessage()
-    message.text = "알람이 삭제되었습니다."
+    message.text = "Notification was deleted.".localized
     MDCSnackbarManager.show(message)
 
     self.reloadCollectionView()
@@ -186,14 +186,14 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
 
     if let textAlarmDate = text.alarmDatePicked, text.isAlarmable() {
       actionSheet.title = text.string
-      actionSheet.message = "알람 예정시간\n" + "\(formatter2.string(from: textAlarmDate))"
+      actionSheet.message = "Notification Time".localized + "\n" + "\(formatterLocalized.string(from: textAlarmDate))"
     }
 
-    let setAlarmAction = UIAlertAction(title: "Modify Alarm", style: .default, handler: { (action) in
+    let setAlarmAction = UIAlertAction(title: "Modify Notification".localized, style: .default, handler: { (action) in
       self.showAlarmSettingView()
     })
 
-    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    let cancelAction = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
 
     actionSheet.addAction(setAlarmAction)
     actionSheet.addAction(cancelAction)
@@ -216,7 +216,7 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
 
     let alertView = SCLAlertView(appearance: appearance)
     alertView.customSubview = datePicker
-    alertView.addButton("DONE") {
+    alertView.addButton("DONE".localized) {
       guard let text = self.textSelected else { return }
 
       text.alarmDatePicked = self.selectedDatePicked
@@ -228,15 +228,15 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
       // MARK: snackbar
       let message = MDCSnackbarMessage()
       message.buttonTextColor = Color.LightRed
-      message.text = "알람시간이 \(self.formatter2.string(from: datePicker.date))로 변경되었습니다."
+      message.text = String(format: NSLocalizedString("The notification time has been changed to %@.", comment: ""), "\(self.formatterLocalized.string(from: datePicker.date))")
 
       MDCSnackbarManager.show(message)
 
     }
-    alertView.addButton("CANCEL", backgroundColor: Color.LightRed) {
+    alertView.addButton("CANCEL".localized, backgroundColor: Color.LightRed) {
 
     }
-     alertView.showCustom("알림 변경", subTitle: "", color: Color.Blue, icon: UIImage(named: "AlarmOnWhite")!)
+     alertView.showCustom("Modify Notification".localized, subTitle: "", color: Color.Blue, icon: UIImage(named: "AlarmOnWhite")!)
   }
 
   @objc private func dateSelected(datePicker: UIDatePicker) {

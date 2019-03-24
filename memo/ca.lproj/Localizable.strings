@@ -20,6 +20,8 @@
 
 "SATURDAY" = "Dissabte";
 
+"Canceled" = "Cancel·lat";
+
 "Notification Settings" = "Configuració de notificació";
 
 "No Upcoming Notification" = "Sense notificació futura";
@@ -52,7 +54,7 @@
 
 "No Upcoming Notification" = "Sense notificació pròxima";
 
-"Date Created by %@" = "Data de creació a partir de les %@";
+"Date created by %@" = "Data de creació a partir de les %@";
 
 "You can not set notification for text that are repeated every day." = "No podeu establir la notificació per al text que es repeteix cada dia.";
 
@@ -61,3 +63,5 @@
 "You can not set notification for text that are repeated every month." = "No podeu establir la notificació per al text que es repeteix cada mes.";
 
 "Notification was deleted." = "S'ha suprimit la notificació.";
+
+"The notification time has been changed to %@." = "L’hora de notificació s’ha canviat a %@.";

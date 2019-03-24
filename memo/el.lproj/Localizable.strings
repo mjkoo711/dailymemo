@@ -20,6 +20,8 @@
 
 "SATURDAY" = "Σάββατο";
 
+"Canceled" = "ακυρώθηκε";
+
 "Notification Settings" = "Ρυθμίσεις ειδοποιήσεων";
 
 "No Upcoming Notification" = "Δεν υπάρχει επερχόμενη ειδοποίηση";
@@ -52,7 +54,7 @@
 
 "No Upcoming Notification" = "Δεν υπάρχει επικείμενη ειδοποίηση";
 
-"Date Created by %@" = "Ημερομηνία δημιουργήθηκε στις %@";
+"Date created by %@" = "Ημερομηνία δημιουργήθηκε στις %@";
 
 "You can not set notification for text that are repeated every day." = "Δεν μπορείτε να ορίσετε ειδοποίηση για κείμενο που επαναλαμβάνεται καθημερινά.";
 
@@ -61,3 +63,5 @@
 "You can not set notification for text that are repeated every month." = "Δεν μπορείτε να ορίσετε ειδοποίηση για κείμενο που επαναλαμβάνεται κάθε μήνα.";
 
 "Notification was deleted." = "Η ειδοποίηση διαγράφηκε.";
+
+"The notification time has been changed to %@." = "Ο χρόνος ειδοποίησης έχει αλλάξει σε %@.";

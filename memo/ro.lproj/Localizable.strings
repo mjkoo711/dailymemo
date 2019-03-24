@@ -20,6 +20,8 @@
 
 "SATURDAY" = "Sâmbătă";
 
+"Canceled" = "Anulat";
+
 "Notification Settings" = "Setări de notificare";
 
 "No Upcoming Notification" = "Nicio notificare viitoare";
@@ -52,7 +54,7 @@
 
 "No Upcoming Notification" = "Nicio notificare viitoare";
 
-"Date Created by %@" = "Data creării până la ora %@";
+"Date created by %@" = "Data creării până la ora %@";
 
 "You can not set notification for text that are repeated every day." = "Nu puteți seta o notificare pentru text care se repetă în fiecare zi.";
 
@@ -61,3 +63,5 @@
 "You can not set notification for text that are repeated every month." = "Nu puteți seta o notificare pentru text care se repetă în fiecare lună.";
 
 "Notification was deleted." = "Notificarea a fost ștearsă.";
+
+"The notification time has been changed to %@." = "Timpul de notificare a fost schimbat la %@.";

@@ -20,6 +20,8 @@
 
 "SATURDAY" = "Lauantai";
 
+"Canceled" = "Peruttu";
+
 "Notification Settings" = "Ilmoitusasetukset";
 
 "No Upcoming Notification" = "Ei tulevaa ilmoitusta";
@@ -52,7 +54,7 @@
 
 "No Upcoming Notification" = "Ei tulevaa ilmoitusta";
 
-"Date Created by %@" = "Päivämäärä luotiin klo %@ mennessä";
+"Date created by %@" = "Päivämäärä luotiin klo %@ mennessä";
 
 "You can not set notification for text that are repeated every day." = "Et voi asettaa ilmoitusta tekstille, jota toistetaan päivittäin.";
 
@@ -61,3 +63,5 @@
 "You can not set notification for text that are repeated every month." = "Et voi asettaa ilmoitusta tekstille, joka toistetaan joka kuukausi.";
 
 "Notification was deleted." = "Ilmoitus poistettiin.";
+
+"The notification time has been changed to %@." = "Ilmoitusaika on muutettu %@.";

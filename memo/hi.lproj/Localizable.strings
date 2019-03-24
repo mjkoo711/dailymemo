@@ -20,6 +20,8 @@
 
 "SATURDAY" = "शनिवार";
 
+"Canceled" = "रद्द";
+
 "Notification Settings" = "अधिसूचना सेटिंग";
 
 "No Upcoming Notification" = "कोई आगामी अधिसूचना नहीं";
@@ -52,7 +54,7 @@
 
 "No Upcoming Notification" = "कोई आगामी अधिसूचना नहीं";
 
-"Date Created by %@" = "दिनांक %@ बजे तक बनाया गया";
+"Date created by %@" = "दिनांक %@ बजे तक बनाया गया";
 
 "You can not set notification for text that are repeated every day." = "आप हर दिन दोहराए जाने वाले पाठ के लिए अधिसूचना सेट नहीं कर सकते।";
 
@@ -61,3 +63,5 @@
 "You can not set notification for text that are repeated every month." = "आप हर महीने दोहराए जाने वाले पाठ के लिए अधिसूचना सेट नहीं कर सकते।";
 
 "Notification was deleted." = "अधिसूचना हटा दी गई थी।";
+
+"The notification time has been changed to %@." = "अधिसूचना समय को बदलकर %@ कर दिया गया है।";

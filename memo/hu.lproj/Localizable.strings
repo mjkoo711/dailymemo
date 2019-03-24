@@ -20,6 +20,8 @@
 
 "SATURDAY" = "Szombat";
 
+"Canceled" = "Törölve";
+
 "%@년 %@월 %@일" = "%@ %@ %@";
 
 "Notification Settings" = "Értesítési beállítások";
@@ -54,7 +56,7 @@
 
 "No Upcoming Notification" = "Nincs közelgő értesítés";
 
-"Date Created by %@" = "A dátum létrehozása: %@";
+"Date created by %@" = "A dátum létrehozása: %@";
 
 "You can not set notification for text that are repeated every day." = "Nem állíthat be értesítést a naponta ismétlődő szövegekre.";
 
@@ -63,3 +65,5 @@
 "You can not set notification for text that are repeated every month." = "Nem lehet beállítani a havonta ismétlődő szöveges értesítést.";
 
 "Notification was deleted." = "Az értesítést törölték.";
+
+"The notification time has been changed to %@." = "Az értesítési idő %@ órára változott.";
