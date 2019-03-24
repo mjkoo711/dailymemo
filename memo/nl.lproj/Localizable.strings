@@ -53,3 +53,11 @@
 "No Upcoming Notification" = "Geen aankomende melding";
 
 "Date Created by %@" = "Datum gemaakt om %@";
+
+"You can not set notification for text that are repeated every day." = "YU kunt geen melding instellen voor tekst die elke dag wordt herhaald.";
+
+"You can not set notification for text that are repeated every week." = "U kunt geen melding instellen voor tekst die elke week wordt herhaald.";
+
+"You can not set notification for text that are repeated every month." = "U kunt geen melding instellen voor tekst die elke maand wordt herhaald.";
+
+"Notification was deleted." = "Melding is verwijderd.";

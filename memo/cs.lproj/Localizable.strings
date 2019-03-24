@@ -53,3 +53,11 @@
 "No Upcoming Notification" = "Žádné nadcházející oznámení";
 
 "Date Created by %@" = "Datum Vytvořeno do %@";
+
+"You can not set notification for text that are repeated every day." = "Nelze nastavit oznámení pro text, který se opakuje každý den.";
+
+"You can not set notification for text that are repeated every week." = "Nelze nastavit oznámení pro text, který se opakuje každý týden.";
+
+"You can not set notification for text that are repeated every month." = "Nelze nastavit oznámení pro text, který se opakuje každý měsíc.";
+
+"Notification was deleted." = "Oznámení bylo smazáno.";

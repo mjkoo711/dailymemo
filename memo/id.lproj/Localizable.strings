@@ -54,7 +54,10 @@
 
 "Date Created by %@" = "Tanggal Dibuat oleh %@";
 
+"You can not set notification for text that are repeated every day." = "Anda tidak dapat mengatur notifikasi untuk teks yang diulang setiap hari.";
 
+"You can not set notification for text that are repeated every week." = "Anda tidak dapat mengatur notifikasi untuk teks yang diulang setiap minggu.";
 
+"You can not set notification for text that are repeated every month." = "Anda tidak dapat mengatur notifikasi untuk teks yang diulang setiap bulan.";
 
-
+"Notification was deleted." = "Pemberitahuan telah dihapus.";

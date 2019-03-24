@@ -56,5 +56,10 @@
 
 "Date Created by %@" = "%@作成日";
 
+"You can not set notification for text that are repeated every day." = "毎日繰り返されるテキストには通知を設定できません。";
 
+"You can not set notification for text that are repeated every week." = "毎週繰り返されるテキストには通知を設定できません。";
 
+"You can not set notification for text that are repeated every month." = "毎月繰り返されるテキストには通知を設定できません。";
+
+"Notification was deleted." = "通知が削除されました";

@@ -55,3 +55,11 @@
 "No Upcoming Notification" = "沒有即將發布的通知";
 
 "Date Created by %@" = "日期由%@創建";
+
+"You can not set notification for text that are repeated every day." = "您無法為每天重複的文本設置通知。";
+
+"You can not set notification for text that are repeated every week." = "您無法為每週重複的文本設置通知。";
+
+"You can not set notification for text that are repeated every month." = "您無法為每月重複的文本設置通知。";
+
+"Notification was deleted." = "通知已刪除。";

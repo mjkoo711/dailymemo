@@ -56,3 +56,10 @@
 
 "Date Created by %@" = "A dátum létrehozása: %@";
 
+"You can not set notification for text that are repeated every day." = "Nem állíthat be értesítést a naponta ismétlődő szövegekre.";
+
+"You can not set notification for text that are repeated every week." = "Nem lehet beállítani a héten ismétlődő szöveges értesítést.";
+
+"You can not set notification for text that are repeated every month." = "Nem lehet beállítani a havonta ismétlődő szöveges értesítést.";
+
+"Notification was deleted." = "Az értesítést törölték.";

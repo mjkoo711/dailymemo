@@ -53,3 +53,11 @@
 "No Upcoming Notification" = "Nicio notificare viitoare";
 
 "Date Created by %@" = "Data creării până la ora %@";
+
+"You can not set notification for text that are repeated every day." = "Nu puteți seta o notificare pentru text care se repetă în fiecare zi.";
+
+"You can not set notification for text that are repeated every week." = "Nu puteți seta o notificare pentru text care se repetă în fiecare săptămână.";
+
+"You can not set notification for text that are repeated every month." = "Nu puteți seta o notificare pentru text care se repetă în fiecare lună.";
+
+"Notification was deleted." = "Notificarea a fost ștearsă.";

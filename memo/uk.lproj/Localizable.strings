@@ -54,3 +54,11 @@
 "No Upcoming Notification" = "Немає попереднього сповіщення";
 
 "Date Created by %@" = "Дата створення: %@";
+
+"You can not set notification for text that are repeated every day." = "Не можна встановлювати сповіщення для тексту, які повторюються щодня.";
+
+"You can not set notification for text that are repeated every week." = "Не можна встановлювати сповіщення для тексту, які повторюються щотижня.";
+
+"You can not set notification for text that are repeated every month." = "Не можна встановлювати сповіщення для тексту, які повторюються кожен місяць.";
+
+"Notification was deleted." = "Сповіщення було видалено.";

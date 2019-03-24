@@ -53,3 +53,11 @@
 "No Upcoming Notification" = "لا الإخطار القادم";
 
 "Date Created by %@" = "تاريخ الإنشاء بواسطة %@";
+
+"You can not set notification for text that are repeated every day." = "لا يمكنك تعيين إشعار للنص الذي يتكرر كل يوم.";
+
+"You can not set notification for text that are repeated every week." = "لا يمكنك تعيين إشعار للنص الذي يتكرر كل أسبوع.";
+
+"You can not set notification for text that are repeated every month." = "لا يمكنك تعيين إشعار للنص الذي يتكرر كل شهر.";
+
+"Notification was deleted." = "تم حذف الإشعار.";

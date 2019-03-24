@@ -53,3 +53,11 @@
 "No Upcoming Notification" = "Nema nadolazeće Obavijesti";
 
 "Date Created by %@" = "Datum kreiranja %@";
+
+"You can not set notification for text that are repeated every day." = "Ne možete postaviti obavijest za tekst koji se ponavlja svaki dan.";
+
+"You can not set notification for text that are repeated every week." = "Ne možete postaviti obavijest za tekst koji se ponavlja svaki tjedan.";
+
+"You can not set notification for text that are repeated every month." = "Ne možete postaviti obavijest za tekst koji se ponavlja svaki mjesec.";
+
+"Notification was deleted." = "Obavijest je izbrisana.";

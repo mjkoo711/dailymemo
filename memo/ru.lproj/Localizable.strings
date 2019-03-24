@@ -54,5 +54,10 @@
 
 "Date Created by %@" = "Дата создания %@";
 
+"You can not set notification for text that are repeated every day." = "Вы не можете установить уведомление для текста, который повторяется каждый день.";
 
+"You can not set notification for text that are repeated every week." = "Вы не можете установить уведомление для текста, который повторяется каждую неделю.";
 
+"You can not set notification for text that are repeated every month." = "Вы не можете установить уведомление для текста, который повторяется каждый месяц.";
+
+"Notification was deleted." = "Уведомление было удалено.";

@@ -53,3 +53,11 @@
 "No Upcoming Notification" = "Sense notificació pròxima";
 
 "Date Created by %@" = "Data de creació a partir de les %@";
+
+"You can not set notification for text that are repeated every day." = "No podeu establir la notificació per al text que es repeteix cada dia.";
+
+"You can not set notification for text that are repeated every week." = "No podeu establir la notificació per al text que es repeteix cada setmana.";
+
+"You can not set notification for text that are repeated every month." = "No podeu establir la notificació per al text que es repeteix cada mes.";
+
+"Notification was deleted." = "S'ha suprimit la notificació.";

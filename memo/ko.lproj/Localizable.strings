@@ -56,6 +56,10 @@
 
 "Date Created by %@" = "작성일 : %@";
 
+"You can not set notification for text that are repeated every day." = "매일 반복되는 텍스트에 대한 알림을 설정할 수 없습니다.";
 
+"You can not set notification for text that are repeated every week." = "매주 반복되는 텍스트에 대한 알림을 설정할 수 없습니다.";
 
+"You can not set notification for text that are repeated every month." = "매월 반복되는 텍스트에 대한 알림을 설정할 수 없습니다.";
 
+"Notification was deleted." = "알림을 삭제했습니다.";

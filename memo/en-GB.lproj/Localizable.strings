@@ -55,3 +55,11 @@
 "No Upcoming Notification" = "No Upcoming Notification";
 
 "Date Created by %@" = "Date Creatd by %@";
+
+"You can not set notification for text that are repeated every day." = "You can not set notification for text that are repeated every day.";
+
+"You can not set notification for text that are repeated every week." = "You can not set notification for text that are repeated every week.";
+
+"You can not set notification for text that are repeated every month." = "You can not set notification for text that are repeated every month.";
+
+"Notification was deleted." = "Notification was deleted.";

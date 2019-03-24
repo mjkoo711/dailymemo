@@ -53,3 +53,12 @@
 "No Upcoming Notification" = "Nessuna notifica imminente";
 
 "Date Created by %@" = "Data creata da %@";
+
+"You can not set notification for text that are repeated every day." = "Non è possibile impostare la notifica per il testo che viene ripetuto ogni giorno.";
+
+"You can not set notification for text that are repeated every week." = "Non è possibile impostare la notifica per il testo che viene ripetuto ogni settimana.
+";
+
+"You can not set notification for text that are repeated every month." = "Non è possibile impostare la notifica per il testo che viene ripetuto ogni mese.";
+
+"Notification was deleted." = "La notifica è stata cancellata.";

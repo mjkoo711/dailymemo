@@ -53,3 +53,11 @@
 "No Upcoming Notification" = "אין הודעה קרובה";
 
 "Date Created by %@" = "תאריך יצירה: %@";
+
+"You can not set notification for text that are repeated every day." = "לא ניתן להגדיר הודעה לטקסט החוזרים על עצמם מדי יום.";
+
+"You can not set notification for text that are repeated every week." = "לא ניתן להגדיר התראה לטקסט החוזר על עצמו מדי שבוע.";
+
+"You can not set notification for text that are repeated every month." = "לא ניתן להגדיר התראה לטקסט החוזר על עצמו מדי חודש.";
+
+"Notification was deleted." = "ההודעה נמחקה.";

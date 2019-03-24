@@ -54,3 +54,10 @@
 
 "Date Created by %@" = "Ngày tạo bởi %@";
 
+"You can not set notification for text that are repeated every day." = "Bạn không thể đặt thông báo cho văn bản được lặp lại mỗi ngày.";
+
+"You can not set notification for text that are repeated every week." = "Bạn không thể đặt thông báo cho văn bản được lặp lại mỗi tuần.";
+
+"You can not set notification for text that are repeated every month." = "Bạn không thể đặt thông báo cho văn bản được lặp lại hàng tháng.";
+
+"Notification was deleted." = "Thông báo đã bị xóa.";

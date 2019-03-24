@@ -54,3 +54,10 @@
 
 "Date Created by %@" = "Date créée par %@";
 
+"You can not set notification for text that are repeated every day." = "Vous ne pouvez pas définir de notification pour le texte répété tous les jours.";
+
+"You can not set notification for text that are repeated every week." = "Vous ne pouvez pas définir de notification pour le texte répété chaque semaine.";
+
+"You can not set notification for text that are repeated every month." = "Vous ne pouvez pas définir de notification pour le texte répété tous les mois.";
+
+"Notification was deleted." = "La notification a été supprimée.";

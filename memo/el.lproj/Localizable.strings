@@ -54,6 +54,10 @@
 
 "Date Created by %@" = "Ημερομηνία δημιουργήθηκε στις %@";
 
+"You can not set notification for text that are repeated every day." = "Δεν μπορείτε να ορίσετε ειδοποίηση για κείμενο που επαναλαμβάνεται καθημερινά.";
 
+"You can not set notification for text that are repeated every week." = "Δεν μπορείτε να ορίσετε ειδοποίηση για κείμενο που επαναλαμβάνεται κάθε εβδομάδα.";
 
+"You can not set notification for text that are repeated every month." = "Δεν μπορείτε να ορίσετε ειδοποίηση για κείμενο που επαναλαμβάνεται κάθε μήνα.";
 
+"Notification was deleted." = "Η ειδοποίηση διαγράφηκε.";

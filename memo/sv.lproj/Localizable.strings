@@ -53,3 +53,11 @@
 "No Upcoming Notification" = "Ingen Kommande Meddelande";
 
 "Date Created by %@" = "Datum Skapat av %@";
+
+"You can not set notification for text that are repeated every day." = "Du kan inte ställa in meddelande för text som upprepas varje dag.";
+
+"You can not set notification for text that are repeated every week." = "Du kan inte ställa in meddelande för text som upprepas varje vecka.";
+
+"You can not set notification for text that are repeated every month." = "Du kan inte ställa in meddelande för text som upprepas varje månad.";
+
+"Notification was deleted." = "Meddelandet togs bort.";

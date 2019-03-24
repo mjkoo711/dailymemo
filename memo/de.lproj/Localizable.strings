@@ -54,6 +54,10 @@
 
 "Date Created by %@" = "Erstellt am um %@ Uhr";
 
+"You can not set notification for text that are repeated every day." = "Sie können keine Benachrichtigung für Text festlegen, der täglich wiederholt wird.";
 
+"You can not set notification for text that are repeated every week." = "Sie können keine Benachrichtigung für Text festlegen, der wöchentlich wiederholt wird.";
 
+"You can not set notification for text that are repeated every month." = "Sie können keine Benachrichtigung für Text festlegen, der jeden Monat wiederholt wird.";
 
+"Notification was deleted." = "Benachrichtigung wurde gelöscht.";

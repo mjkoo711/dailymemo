@@ -54,5 +54,10 @@
 
 "Date Created by %@" = "Dato Oprettet af %@";
 
+"You can not set notification for text that are repeated every day." = "Du kan ikke indstille underretning for tekst, der gentages hver dag.";
 
+"You can not set notification for text that are repeated every week." = "Du kan ikke angive besked for tekst, der gentages hver uge.";
 
+"You can not set notification for text that are repeated every month." = "Du kan ikke angive besked for tekst, der gentages hver måned.";
+
+"Notification was deleted." = "Meddelelsen blev slettet.";
