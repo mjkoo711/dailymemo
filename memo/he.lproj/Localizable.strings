@@ -50,7 +50,7 @@
 
 "DONE" = "בוצע";
 
-"Upcoming Notification" = "הודעה קרובה";
+"Reminder" = "תזכורת";
 
 "No Upcoming Notification" = "אין הודעה קרובה";
 
@@ -113,3 +113,9 @@
 "Black & Red" = "שחור & אדום";
 
 "To Be Updated" = "להתעדכן";
+
+"Notification permission had not allowed." = "הרשאת התראה לא התירה.";
+
+"Set Up" = "ללכת";
+
+"Notification Permission has already been allowed" = "התראה כבר הורשתה";

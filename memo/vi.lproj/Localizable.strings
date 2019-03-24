@@ -50,7 +50,7 @@
 
 "DONE" = "LÀM XONG";
 
-"Upcoming Notification" = "Thông báo sắp tới";
+"Reminder" = "Nhắc nhở";
 
 "No Upcoming Notification" = "Không có thông báo sắp tới";
 
@@ -113,3 +113,9 @@
 "Black & Red" = "Đen & đỏ";
 
 "To Be Updated" = "Được cập nhật";
+
+"Notification permission had not allowed." = "Cho phép thông báo đã không được phép.";
+
+"Set Up" = "ĐI";
+
+"Notification Permission has already been allowed" = "Giấy phép thông báo đã được cho phép";

@@ -50,7 +50,7 @@
 
 "DONE" = "Suksess";
 
-"Upcoming Notification" = "Kommende Melding";
+"Reminder" = "Påminnelse";
 
 "No Upcoming Notification" = "Ingen Kommende Varsling";
 
@@ -113,3 +113,9 @@
 "Black & Red" = "Svart & Rød";
 
 "To Be Updated" = "Å være oppdatert";
+
+"Notification permission had not allowed." = "Varsel om tillatelse var ikke tillatt.";
+
+"Set Up" = "GÅ";
+
+"Notification Permission has already been allowed" = "Varsling Tillatelse er allerede tillatt";

@@ -52,7 +52,7 @@
 
 "DONE" = "완료";
 
-"Upcoming Notification" = "예정된 알림";
+"Reminder" = "예정된 알림";
 
 "No Upcoming Notification" = "예정된 알림 없음";
 
@@ -115,3 +115,9 @@
 "Black & Red" = "블랙 & 레드";
 
 "To Be Updated" = "업데이트 예정";
+
+"Notification permission had not allowed." = "알림 권한이 허용되어있지 않습니다.";
+
+"Set Up" = "설정하기";
+
+"Notification Permission has already been allowed" = "알림 권한이 이미 허용되어 있습니다.";

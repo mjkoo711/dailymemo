@@ -50,7 +50,7 @@
 
 "DONE" = "किया हुआ";
 
-"Upcoming Notification" = "आगामी अधिसूचना";
+"Reminder" = "अनुस्मारक";
 
 "No Upcoming Notification" = "कोई आगामी अधिसूचना नहीं";
 
@@ -113,3 +113,9 @@
 "Black & Red" = "काला & लाल";
 
 "To Be Updated" = "अद्यतन किया जाएगा";
+
+"Notification permission had not allowed." = "अधिसूचना की अनुमति नहीं दी थी।";
+
+"Set Up" = "चले जाओ";
+
+"Notification Permission has already been allowed" = "अधिसूचना की अनुमति पहले ही दी जा चुकी है";

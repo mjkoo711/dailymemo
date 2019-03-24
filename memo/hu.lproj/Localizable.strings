@@ -52,7 +52,7 @@
 
 "DONE" = "KÉSZ";
 
-"Upcoming Notification" = "Közelgő értesítés";
+"Reminder" = "Påminnelse";
 
 "No Upcoming Notification" = "Nincs közelgő értesítés";
 
@@ -115,3 +115,9 @@
 "Black & Red" = "Fekete & Piros";
 
 "To Be Updated" = "Frissíteni";
+
+"Notification permission had not allowed." = "Az értesítési engedély nem volt engedélyezett.";
+
+"Set Up" = "MEGY";
+
+"Notification Permission has already been allowed" = "Értesítés Engedély már engedélyezett";

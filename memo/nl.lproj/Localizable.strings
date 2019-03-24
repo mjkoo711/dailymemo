@@ -50,7 +50,7 @@
 
 "DONE" = "GEDAAN";
 
-"Upcoming Notification" = "Aankomende melding";
+"Reminder" = "Herinnering";
 
 "No Upcoming Notification" = "Geen aankomende melding";
 
@@ -114,3 +114,8 @@
 
 "To Be Updated" = "Om te worden bijgewerkt";
 
+"Notification permission had not allowed." = "Melding van aanmelding had niet toegestaan.";
+
+"Set Up" = "GAAN";
+
+"Notification Permission has already been allowed" = "Melding Toestemming is al toegestaan";

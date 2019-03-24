@@ -50,7 +50,7 @@
 
 "DONE" = "Fet";
 
-"Upcoming Notification" = "Notificació pròxima";
+"Reminder" = "Recordatori";
 
 "No Upcoming Notification" = "Sense notificació pròxima";
 
@@ -113,3 +113,9 @@
 "Black & Red" = "Negre & Vermell";
 
 "To Be Updated" = "S'ha d'actualitzar";
+
+"Notification permission had not allowed." = "El permís de notificació no s'havia permès.";
+
+"Set Up" = "GO";
+
+"Notification Permission has already been allowed" = "El permís de notificació ja s'ha permès";

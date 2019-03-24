@@ -52,7 +52,7 @@
 
 "DONE" = "完了";
 
-"Upcoming Notification" = "今後の通知";
+"Reminder" = "催促状";
 
 "No Upcoming Notification" = "今後の通知はありません";
 
@@ -116,3 +116,8 @@
 
 "To Be Updated" = "更新する";
 
+"Notification permission had not allowed." = "通知許可が許可されていませんでした。";
+
+"Set Up" = "行く";
+
+"Notification Permission has already been allowed" = "通知許可は既に許可されています";

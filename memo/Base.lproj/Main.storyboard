@@ -656,13 +656,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPJ-5I-vLa">
                                 <rect key="frame" x="0.0" y="593" width="375" height="37"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Hh8-DQ-8TO">
-                                        <rect key="frame" x="112" y="4.5" width="151" height="29"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Hh8-DQ-8TO">
+                                        <rect key="frame" x="80" y="4.5" width="215" height="29"/>
                                         <segments>
-                                            <segment title="한번"/>
-                                            <segment title="매일"/>
-                                            <segment title="매주"/>
-                                            <segment title="매월"/>
+                                            <segment title="Once"/>
+                                            <segment title="Daily"/>
+                                            <segment title="Weekly"/>
+                                            <segment title="Monthly"/>
                                         </segments>
                                     </segmentedControl>
                                 </subviews>
@@ -736,7 +736,7 @@
                                                                 <constraint firstAttribute="height" constant="30" id="qXn-F7-hbO"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB1-b8-Igf">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB1-b8-Igf">
                                                             <rect key="frame" x="46" y="6" width="40" height="18"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="xC3-Qb-yfF"/>
@@ -814,7 +814,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgH-BF-IOI">
-                                        <rect key="frame" x="16" y="8" width="156" height="39"/>
+                                        <rect key="frame" x="16" y="11" width="156" height="39"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="IiN-wc-1Sf"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="156" id="nkS-qM-vxl"/>
@@ -824,7 +824,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKw-fO-jP6">
-                                        <rect key="frame" x="20" y="47" width="71" height="19"/>
+                                        <rect key="frame" x="20" y="50" width="71" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="71" id="0S8-my-q4g"/>
                                             <constraint firstAttribute="height" constant="19" id="acz-xd-cFv"/>
@@ -838,9 +838,9 @@
                                 <constraints>
                                     <constraint firstItem="RKw-fO-jP6" firstAttribute="top" secondItem="OgH-BF-IOI" secondAttribute="bottom" id="1NF-rj-8Ov"/>
                                     <constraint firstItem="1V7-T3-NKf" firstAttribute="top" secondItem="Wec-Cb-V7L" secondAttribute="top" constant="8" id="8nX-h3-h9H"/>
-                                    <constraint firstItem="OgH-BF-IOI" firstAttribute="top" secondItem="Wec-Cb-V7L" secondAttribute="top" constant="8" id="Mgq-v4-4u7"/>
+                                    <constraint firstItem="OgH-BF-IOI" firstAttribute="top" secondItem="Wec-Cb-V7L" secondAttribute="top" constant="11" id="Mgq-v4-4u7"/>
                                     <constraint firstItem="OgH-BF-IOI" firstAttribute="leading" secondItem="Wec-Cb-V7L" secondAttribute="leading" constant="16" id="PIq-f1-Naq"/>
-                                    <constraint firstAttribute="bottom" secondItem="RKw-fO-jP6" secondAttribute="bottom" constant="5" id="QVx-fS-Dj8"/>
+                                    <constraint firstAttribute="bottom" secondItem="RKw-fO-jP6" secondAttribute="bottom" constant="2" id="QVx-fS-Dj8"/>
                                     <constraint firstAttribute="height" constant="71" id="Zek-TP-aWk"/>
                                     <constraint firstAttribute="trailing" secondItem="1V7-T3-NKf" secondAttribute="trailing" constant="13" id="feZ-rL-HF5"/>
                                     <constraint firstItem="RKw-fO-jP6" firstAttribute="leading" secondItem="Wec-Cb-V7L" secondAttribute="leading" constant="20" id="tKl-Xv-Nsc"/>

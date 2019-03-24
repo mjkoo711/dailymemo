@@ -50,7 +50,7 @@
 
 "DONE" = "فعله";
 
-"Upcoming Notification" = "الإخطار القادم";
+"Reminder" = "تذكير";
 
 "No Upcoming Notification" = "لا الإخطار القادم";
 
@@ -113,3 +113,9 @@
 "Black & Red" = "أسود & أحمر";
 
 "To Be Updated" = "ليتم تحديثه";
+
+"Notification permission had not allowed." = "إذن الإخطار لم يسمح.";
+
+"Set Up" = "اذهب";
+
+"Notification Permission has already been allowed" = "تم السماح بإذن الإخطار بالفعل";

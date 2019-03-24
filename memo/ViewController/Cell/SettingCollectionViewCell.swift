@@ -74,7 +74,7 @@ class SettingCollectionViewCell: UICollectionViewCell {
           case .denied, .notDetermined:
             DispatchQueue.main.async {
               let message = MDCSnackbarMessage()
-              message.text = "알람 권한이 허용되어있지 않습니다."
+              message.text = "Notification permission had not allowed.".localized
               if let theme = SettingManager.shared.theme {
                 if theme == .blackRed || theme == .whiteRed {
                   message.buttonTextColor = Color.LightRed
@@ -95,7 +95,7 @@ class SettingCollectionViewCell: UICollectionViewCell {
                 }
               }
               action.handler = actionHandler
-              action.title = "설정하기"
+              action.title = "Set Up".localized
 
               message.action = action
               MDCSnackbarManager.show(message)
@@ -103,7 +103,7 @@ class SettingCollectionViewCell: UICollectionViewCell {
           case .authorized:
             DispatchQueue.main.async {
               let message = MDCSnackbarMessage()
-              message.text = "알람 권한이 이미 허용되어 있습니다."
+              message.text = "Notification Permission has already been allowed".localized
               MDCSnackbarManager.show(message)
             }
           case .provisional:

@@ -31,7 +31,7 @@ class AlarmListViewController: UIViewController {
     if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
       flowLayout.sectionHeadersPinToVisibleBounds = true
     }
-    self.navigationItem.title = "Upcoming Notification".localized
+    self.navigationItem.title = "Reminder".localized
     loadSetAlarmText()
     setTheme()
   }

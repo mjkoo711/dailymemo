@@ -50,7 +50,7 @@
 
 "DONE" = "TERMINÉ";
 
-"Upcoming Notification" = "Notification à venir";
+"Reminder" = "Rappel";
 
 "No Upcoming Notification" = "Aucune notification à venir";
 
@@ -76,13 +76,13 @@
 
 "Prevent Word Truncation" = "Empêcher la troncature des mots";
 
-"Notification Permissions Check" = "Contrôle des autorisations de notification";
+"Notification Permissions Check" = "Vérification des autorisations de notification";
 
 "Locking" = "Verrouillage";
 
 "Buy Pro Edition" = "Acheter Pro Edition";
 
-"Backup / Restore" = "Sauvegarde de restauration";
+"Backup / Restore" = "Sauvegarde / Restauration";
 
 "Leave a Review" = "Laisser un commentaire";
 
@@ -113,4 +113,12 @@
 "Black & Red" = "Noir & Rouge";
 
 "To Be Updated" = "À mettre à jour";
+
+"Notification permission had not allowed." = "L'autorisation de notification n'avait pas été autorisée.";
+
+"Set Up" = "ALLER";
+
+"Notification Permission has already been allowed" = "Notification L'autorisation a déjà été autorisée";
+
+
 

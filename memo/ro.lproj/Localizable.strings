@@ -50,7 +50,7 @@
 
 "DONE" = "TERMINAT";
 
-"Upcoming Notification" = "Notificare viitoare";
+"Reminder" = "Aducere aminte";
 
 "No Upcoming Notification" = "Nicio notificare viitoare";
 
@@ -113,3 +113,9 @@
 "Black & Red" = "Negru & Roșu";
 
 "To Be Updated" = "A fi tinut la curent";
+
+"Notification permission had not allowed." = "Notificarea permisiunii nu a fost permisă.";
+
+"Set Up" = "GO";
+
+"Notification Permission has already been allowed" = "Permisiunea de notificare a fost deja permisă";

@@ -50,7 +50,7 @@
 
 "DONE" = "TERMINÉ";
 
-"Upcoming Notification" = "Notification à venir";
+"Reminder" = "Rappel";
 
 "No Upcoming Notification" = "Aucune notification à venir";
 
@@ -113,4 +113,10 @@
 "Black & Red" = "Noir & Rouge";
 
 "To Be Updated" = "À mettre à jour";
+
+"Notification permission had not allowed." = "L'autorisation de notification n'avait pas été autorisée.";
+
+"Set Up" = "ALLER";
+
+"Notification Permission has already been allowed" = "Notification L'autorisation a déjà été autorisée";
 

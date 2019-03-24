@@ -50,7 +50,7 @@
 
 "DONE" = "Učinjen";
 
-"Upcoming Notification" = "Nadolazeća obavijest";
+"Reminder" = "Podsjetnik";
 
 "No Upcoming Notification" = "Nema nadolazeće Obavijesti";
 
@@ -113,3 +113,9 @@
 "Black & Red" = "Crno & Crveno";
 
 "To Be Updated" = "Biti nadograđen";
+
+"Notification permission had not allowed." = "Dozvola obavijesti nije dopuštena.";
+
+"Set Up" = "IĆI";
+
+"Notification Permission has already been allowed" = "Obavijest Dozvola je već dopuštena";

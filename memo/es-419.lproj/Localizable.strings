@@ -50,7 +50,7 @@
 
 "DONE" = "HECHO";
 
-"Upcoming Notification" = "Próxima notificación";
+"Reminder" = "Recordatorio";
 
 "No Upcoming Notification" = "No hay notificación próxima";
 
@@ -74,15 +74,15 @@
 
 "Vibration" = "Vibración";
 
-"Prevent Word Truncation" = "Prevenir el truncamiento de palabras";
+"Prevent Word Truncation" = "Truncamiento de palabras";
 
-"Notification Permissions Check" = "Control de Permisos de Notificación";
+"Notification Permissions Check" = "Verificación de permisos de notificación.";
 
 "Locking" = "Cierre";
 
 "Buy Pro Edition" = "Comprar Pro Edition";
 
-"Backup / Restore" = "Copia de seguridad de restauracion";
+"Backup / Restore" = "Copia de seguridad / Restaurar";
 
 "Leave a Review" = "Dejar un comentario";
 
@@ -113,4 +113,10 @@
 "Black & Red" = "Negro & Rojo";
 
 "To Be Updated" = "Para actualizarse";
+
+"Notification permission had not allowed." = "Permiso de notificación no había permitido.";
+
+"Set Up" = "IR";
+
+"Notification Permission has already been allowed" = "El permiso de notificación ya ha sido permitido";
 

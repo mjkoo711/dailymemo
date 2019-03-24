@@ -50,7 +50,7 @@
 
 "DONE" = "Виконано";
 
-"Upcoming Notification" = "Майбутнє повідомлення";
+"Reminder" = "Нагадування";
 
 "No Upcoming Notification" = "Немає попереднього сповіщення";
 
@@ -113,3 +113,9 @@
 "Black & Red" = "Чорний & червоний";
 
 "To Be Updated" = "Для оновлення";
+
+"Notification permission had not allowed." = "Дозвіл на сповіщення не допускається.";
+
+"Set Up" = "GO";
+
+"Notification Permission has already been allowed" = "Дозвіл сповіщення вже дозволено";

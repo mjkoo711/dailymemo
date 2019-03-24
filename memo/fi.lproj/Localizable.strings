@@ -50,7 +50,7 @@
 
 "DONE" = "TEHTY";
 
-"Upcoming Notification" = "Tuleva ilmoitus";
+"Reminder" = "Muistutus";
 
 "No Upcoming Notification" = "Ei tulevaa ilmoitusta";
 
@@ -113,3 +113,9 @@
 "Black & Red" = "Musta & Punainen";
 
 "To Be Updated" = "Tulla päivitetyksi";
+
+"Notification permission had not allowed." = "Ilmoituslupa ei ollut sallittu.";
+
+"Set Up" = "MENNÄ";
+
+"Notification Permission has already been allowed" = "MENNÄ";

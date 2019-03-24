@@ -52,7 +52,7 @@
 
 "DONE" = "完成";
 
-"Upcoming Notification" = "即将发布的通知";
+"Reminder" = "提醒";
 
 "No Upcoming Notification" = "没有即将发布的通知";
 
@@ -115,4 +115,10 @@
 "Black & Red" = "黑色 & 紅色";
 
 "To Be Updated" = "要被更新";
+
+"Notification permission had not allowed." = "通知許可不允許。";
+
+"Set Up" = "走";
+
+"Notification Permission has already been allowed" = "已經允許通知許可";
 

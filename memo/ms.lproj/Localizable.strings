@@ -50,7 +50,7 @@
 
 "DONE" = "Dilakukan";
 
-"Upcoming Notification" = "Pemberitahuan Akan Datang";
+"Reminder" = "Peringatan";
 
 "No Upcoming Notification" = "Pemberitahuan tidak akan datang";
 
@@ -113,3 +113,9 @@
 "Black & Red" = "Hitam & Merah";
 
 "To Be Updated" = "Akan dikemaskini";
+
+"Notification permission had not allowed." = "Kebenaran pemberitahuan tidak dibenarkan.";
+
+"Set Up" = "GO";
+
+"Notification Permission has already been allowed" = "Kebenaran Pemberitahuan telah dibenarkan";

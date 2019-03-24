@@ -50,7 +50,7 @@
 
 "DONE" = "FATTO";
 
-"Upcoming Notification" = "Notifica imminente";
+"Reminder" = "Promemoria";
 
 "No Upcoming Notification" = "Nessuna notifica imminente";
 
@@ -115,3 +115,8 @@
 
 "To Be Updated" = "Per Essere Aggiornato";
 
+"Notification permission had not allowed." = "Il permesso di notifica non era permesso.";
+
+"Set Up" = "PARTIRE";
+
+"Notification Permission has already been allowed" = "L'autorizzazione di notifica è già stata autorizzata.";

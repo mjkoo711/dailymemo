@@ -50,7 +50,7 @@
 
 "DONE" = "HOTOVÝ";
 
-"Upcoming Notification" = "Nadchádzajúce oznámenie";
+"Reminder" = "Pripomienka";
 
 "No Upcoming Notification" = "Žiadne nadchádzajúce oznámenie";
 
@@ -113,3 +113,9 @@
 "Black & Red" = "Čierna & Červená";
 
 "To Be Updated" = "Aktualizovať";
+
+"Notification permission had not allowed." = "Povolenie na oznámenie nebolo povolené.";
+
+"Set Up" = "GO";
+
+"Notification Permission has already been allowed" = "Povolenie na oznámenie už bolo povolené";

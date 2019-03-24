@@ -50,7 +50,7 @@
 
 "DONE" = "FEITO";
 
-"Upcoming Notification" = "Próxima notificação";
+"Reminder" = "Lembrete";
 
 "No Upcoming Notification" = "Nenhuma notificação futura";
 
@@ -113,4 +113,14 @@
 "Black & Red" = "Preto & Vermelho";
 
 "To Be Updated" = "Ser atualizado";
+
+"Notification permission had not allowed." = "Permissão de notificação não permitida.";
+
+"Set Up" = "VAI";
+
+"Notification Permission has already been allowed" = "Notificação Permissão já foi permitida";
+
+
+
+
 

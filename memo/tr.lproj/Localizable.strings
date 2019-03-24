@@ -50,7 +50,7 @@
 
 "DONE" = "TAMAMLANDI";
 
-"Upcoming Notification" = "Yaklaşan Bildirim";
+"Reminder" = "Hatırlatma";
 
 "No Upcoming Notification" = "Yakında Bildirim Yok";
 
@@ -114,3 +114,8 @@
 
 "To Be Updated" = "Güncellenecek";
 
+"Notification permission had not allowed." = "Bildirim iznine izin verilmedi.";
+
+"Set Up" = "GİTMEK";
+
+"Notification Permission has already been allowed" = "Bildirim İzni zaten verildi";

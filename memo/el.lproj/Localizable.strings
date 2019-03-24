@@ -50,7 +50,7 @@
 
 "DONE" = "ΕΓΙΝΕ";
 
-"Upcoming Notification" = "Επόμενη ειδοποίηση";
+"Reminder" = "Υπενθύμιση";
 
 "No Upcoming Notification" = "Δεν υπάρχει επικείμενη ειδοποίηση";
 
@@ -113,3 +113,9 @@
 "Black & Red" = "Μαύρο & κόκκινο";
 
 "To Be Updated" = "Για να ενημερωθείτε";
+
+"Notification permission had not allowed." = "Η άδεια ειδοποίησης δεν είχε επιτρέψει.";
+
+"Set Up" = "ΠΗΓΑΙΝΩ";
+
+"Notification Permission has already been allowed" = "Η άδεια ειδοποίησης έχει ήδη επιτραπεί";

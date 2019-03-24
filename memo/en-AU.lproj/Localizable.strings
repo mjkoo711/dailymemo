@@ -50,7 +50,7 @@
 
 "DONE" = "DONE";
 
-"Upcoming Notification" = "Upcoming Notification";
+"Reminder" = "Reminder";
 
 "No Upcoming Notification" = "No Upcoming Notification";
 
@@ -113,4 +113,10 @@
 "Black & Red" = "Black & Red";
 
 "To Be Updated" = "To Be Updated";
+
+"Notification permission had not allowed." = "Notification permission had not allowed.";
+
+"Set Up" = "GO";
+
+"Notification Permission has already been allowed" = "Notification Permission has already been allowed";
 

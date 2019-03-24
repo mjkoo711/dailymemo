@@ -50,7 +50,7 @@
 
 "DONE" = "GOTOWE";
 
-"Upcoming Notification" = "Nadchodzące Powiadomienie";
+"Reminder" = "Przypomnienie";
 
 "No Upcoming Notification" = "Brak Nadchodzących Powiadomień";
 
@@ -113,3 +113,9 @@
 "Black & Red" = "Czarny & Czerwony";
 
 "To Be Updated" = "Do Zaktualizowania";
+
+"Notification permission had not allowed." = "Pozwolenie na powiadomienie nie było dozwolone.";
+
+"Set Up" = "UDAĆ SIĘ";
+
+"Notification Permission has already been allowed" = "Zezwolenie na powiadomienie zostało już dozwolone";

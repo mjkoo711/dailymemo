@@ -50,7 +50,7 @@
 
 "DONE" = "СДЕЛАННЫЙ";
 
-"Upcoming Notification" = "Предстоящее уведомление";
+"Reminder" = "напоминание";
 
 "No Upcoming Notification" = "Нет предстоящих уведомлений";
 
@@ -113,4 +113,11 @@
 "Black & Red" = "Черный & Красный";
 
 "To Be Updated" = "Быть обновленным";
+
+"Notification permission had not allowed." = "Разрешение на уведомление не разрешено.";
+
+"Set Up" = "ИДТИ";
+
+"Notification Permission has already been allowed" = "Разрешение на уведомление уже разрешено";
+
 
