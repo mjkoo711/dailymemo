@@ -12,16 +12,16 @@
 "GB1-b8-Igf.text" = "Label";
 
 /* Class = "UISegmentedControl"; Hh8-DQ-8TO.segmentTitles[0] = "한번"; ObjectID = "Hh8-DQ-8TO"; */
-"Hh8-DQ-8TO.segmentTitles[0]" = "한번";
+"Hh8-DQ-8TO.segmentTitles[0]" = "Raz";
 
 /* Class = "UISegmentedControl"; Hh8-DQ-8TO.segmentTitles[1] = "매일"; ObjectID = "Hh8-DQ-8TO"; */
-"Hh8-DQ-8TO.segmentTitles[1]" = "매일";
+"Hh8-DQ-8TO.segmentTitles[1]" = "Każdego dnia";
 
 /* Class = "UISegmentedControl"; Hh8-DQ-8TO.segmentTitles[2] = "매주"; ObjectID = "Hh8-DQ-8TO"; */
-"Hh8-DQ-8TO.segmentTitles[2]" = "매주";
+"Hh8-DQ-8TO.segmentTitles[2]" = "Co tydzień";
 
 /* Class = "UISegmentedControl"; Hh8-DQ-8TO.segmentTitles[3] = "매월"; ObjectID = "Hh8-DQ-8TO"; */
-"Hh8-DQ-8TO.segmentTitles[3]" = "매월";
+"Hh8-DQ-8TO.segmentTitles[3]" = "Co miesiąc";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "IDD-Ra-A4A"; */
 "IDD-Ra-A4A.text" = "Label";
