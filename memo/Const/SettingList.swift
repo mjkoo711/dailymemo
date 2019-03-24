@@ -9,5 +9,5 @@
 import Foundation
 
 enum SettingList: Int {
-  case Theme = 0, FontSize, FontThickness, Vibration, Lock, LineBreak, Alarm
+  case Theme = 0, FontSize, FontThickness, Vibration, LineBreak, Alarm, Lock
 }

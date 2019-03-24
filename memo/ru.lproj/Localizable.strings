@@ -1,0 +1,123 @@
+/* 
+  Localizable.strings
+  memo
+
+  Created by MinJun KOO on 23/03/2019.
+  Copyright © 2019 mjkoo. All rights reserved.
+*/
+
+"SUNDAY" = "воскресенье";
+
+"MONDAY" = "понедельник";
+
+"TUESDAY" = "вторник";
+
+"WEDNESDAY" = "среда";
+
+"THURSDAY" = "четверг";
+
+"FRIDAY" = "пятница";
+
+"SATURDAY" = "суббота";
+
+"Canceled" = "отменен";
+
+"Notification Settings" = "Настройки уведомлений";
+
+"No Upcoming Notification" = "Нет предстоящих уведомлений";
+
+"Notification Time" = "Время уведомления";
+
+"You can not set reminders for repeatedly saved notes." = "Вы не можете установить напоминания для неоднократно сохраненных заметок.";
+
+"Modify Notification" = "Изменить уведомление";
+
+"Copy" = "копия";
+
+"Copied." = "скопированный";
+
+"Modify" = "изменять";
+
+"Delete" = "удалять";
+
+"Deleted." = "удаленный";
+
+"Cancel" = "отменить";
+
+"CANCEL" = "ОТМЕНИТЬ";
+
+"The Notification sounds at %@" = "Уведомление звучит в %@";
+
+"DONE" = "СДЕЛАННЫЙ";
+
+"Reminder" = "напоминание";
+
+"No Upcoming Notification" = "Нет предстоящих уведомлений";
+
+"Date created by %@" = "Дата создания %@";
+
+"You can not set notification for text that are repeated every day." = "Вы не можете установить уведомление для текста, который повторяется каждый день.";
+
+"You can not set notification for text that are repeated every week." = "Вы не можете установить уведомление для текста, который повторяется каждую неделю.";
+
+"You can not set notification for text that are repeated every month." = "Вы не можете установить уведомление для текста, который повторяется каждый месяц.";
+
+"Notification was deleted." = "Уведомление было удалено.";
+
+"The notification time has been changed to %@." = "Время уведомления было изменено на %@.";
+
+"Theme" = "Тема";
+
+"Text Size" = "Размер текста";
+
+"Text Thickness" = "Толщина текста";
+
+"Vibration" = "вибрация";
+
+"Prevent Word Truncation" = "Запрет усечения слова";
+
+"Notification Permissions Check" = "Проверка разрешений уведомлений";
+
+"Locking" = "Блокировка";
+
+"Buy Pro Edition" = "Купить Pro Edition";
+
+"Backup / Restore" = "Восстановления резервной копии";
+
+"Leave a Review" = "Оставить отзыв";
+
+"Contact Us" = "Связаться с нами";
+
+"Small" = "Маленький";
+
+"Middle" = "средний";
+
+"Big" = "большой";
+
+"Thin" = "тонкий";
+
+"Regular" = "регулярное";
+
+"Bold" = "Смелый";
+
+"Off" = "от";
+
+"On" = "На";
+
+"White & Blue" = "Белый & синий";
+
+"White & Red" = "Белый & красный";
+
+"Black & Blue" = "Черный & синий";
+
+"Black & Red" = "Черный & Красный";
+
+"To Be Updated" = "Быть обновленным";
+
+"Notification permission had not allowed." = "Разрешение на уведомление не разрешено.";
+
+"Set Up" = "ИДТИ";
+
+"Notification Permission has already been allowed" = "Разрешение на уведомление уже разрешено";
+
+

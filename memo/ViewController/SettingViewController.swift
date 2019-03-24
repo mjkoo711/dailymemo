@@ -14,16 +14,19 @@ protocol SettingViewControllerDelegate {
 }
 
 class SettingViewController: UIViewController {
-  let designList = ["테마", "메모 글자 크기", "메모 글자 두께", "진동", "잠금 설정", "단어잘림 방지", "알림권한 확인"]
-  let serviceList = ["프로버전 구매", "백업 / 복원", "리뷰 남기기", "문의메일 보내기"]
-  let size = ["작게", "중간", "크게"]
-  let thickness = ["얇게", "보통", "굵게"]
-  let onoff = ["끄기", "켜기"]
-  let theme = ["화이트 & 블루", "화이트 & 레드", "블랙 & 블루", "블랙 & 레드"]
+  let designList = ["Theme".localized, "Text Size".localized, "Text Thickness".localized, "Vibration".localized, "Prevent Word Truncation".localized, "Notification Permissions Check".localized, "Locking".localized]
+  let serviceList = ["Buy Pro Edition".localized, "Backup / Restore".localized, "Leave a Review".localized, "Contact Us".localized]
+  let size = ["Small".localized, "Middle".localized, "Big".localized]
+  let thickness = ["Thin".localized, "Regular".localized, "Bold".localized]
+  let onoff = ["Off".localized, "On".localized]
+  let theme = ["White & Blue".localized, "White & Red".localized, "Black & Blue".localized, "Black & Red".localized]
+  let lock = ["To Be Updated".localized]
 
   var delegate: SettingViewControllerDelegate?
   var date: String?
 
+  @IBOutlet var appNameLabel: UILabel!
+  @IBOutlet var appVersionLabel: UILabel!
   @IBOutlet var closeImageView: UIImageView!
   @IBOutlet var collectionView: UICollectionView!
   @IBOutlet var closeButtonView: UIView!
@@ -31,6 +34,19 @@ class SettingViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     updateSettingViewController()
+    if let appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String {
+      appVersionLabel.text = "Version \(appVersion)"
+    }
+
+    if let theme = SettingManager.shared.theme {
+      if theme == .blackRed || theme == .whiteRed {
+        appNameLabel.textColor = Color.LightRed
+      } else if theme == .blackBlue || theme == .whiteBlue {
+        appNameLabel.textColor = Color.Blue
+      }
+    }
+
+    appNameLabel.text = "Quick Memo"
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(returnMainViewController))
     closeButtonView.addGestureRecognizer(tapGesture)
   }
@@ -109,8 +125,10 @@ extension SettingViewController: UICollectionViewDataSource, UICollectionViewDel
 
       if indexPath.row == SettingList.Lock.rawValue {
         if let value = UserDefaults.standard.loadSettings(key: Key.LockFeature) {
-          cell.switchLabel.text = onoff[value]
-          cell.optionTotalCount = onoff.count
+          cell.switchLabel.text = lock[value]
+          cell.settingTitleLabel.textColor = Color.LightGray
+          cell.switchLabel.textColor = Color.LightGray
+          cell.optionTotalCount = lock.count
           cell.currentOption = value
           cell.settingMode = .Lock
           cell.switchLabel.isHidden = false
@@ -174,6 +192,13 @@ extension SettingViewController: SettingCollectionViewCellDelegate {
   }
 
   func changeTheme() {
+    if let theme = SettingManager.shared.theme {
+      if theme == .blackRed || theme == .whiteRed {
+        appNameLabel.textColor = Color.LightRed
+      } else if theme == .blackBlue || theme == .whiteBlue {
+        appNameLabel.textColor = Color.Blue
+      }
+    }
     delegate?.changeMainViewControllerTheme()
   }
 

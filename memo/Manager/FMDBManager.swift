@@ -13,17 +13,10 @@ class FMDBManager {
   static let shared = FMDBManager()
   private var fileManager: FileManager
   private var directory: URL?
-//  private var directoryPath: [String]
-//  private var documentDirectory: String
   private var databasePath: URL
   private var databasePathCompleted: URL
 
   private init() {
-//    fileManager = FileManager.default
-//    directoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-//    documentDirectory = directoryPath[0] as String
-//    databasePath = documentDirectory.appending("/contact.db")
-//    databasePathCompleted = documentDirectory.appending("/completed.db")
     fileManager = FileManager.default
     directory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.mjkoo.memo")
     databasePath = directory!.appendingPathComponent("contacts.db")
@@ -269,25 +262,4 @@ class FMDBManager {
 
     return dateList
   }
-//  func loadDataList() -> [MDate] {
-//    var dateList: [MDate] = []
-//    let contactDB = FMDatabase(path: databasesPath)
-//
-//    if contactDB.open() {
-//      let querySQL = "SELECT DISTINCT date FROM CONTACTS WHERE repeatmode = 0"
-//      let result: FMResultSet? = contactDB.executeQuery(querySQL, withArgumentsIn: [])
-//
-//      guard let resultDateList = result else { return dateList }
-//
-//      while resultDateList.next() {
-//        let date = resultDateList.string(forColumn: "date")
-//        let textList = findTextList(date: date!)
-//        let dateItem = MDate(date: date!, textList: textList)
-//        dateList.append(dateItem)
-//      }
-//    } else {
-//      print("Error \(contactDB.lastErrorMessage())")
-//    }
-//    return dateList
-//  }
 }

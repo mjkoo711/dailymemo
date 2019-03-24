@@ -1,0 +1,121 @@
+/* 
+  Localizable.strings
+  memo
+
+  Created by MinJun KOO on 23/03/2019.
+  Copyright © 2019 mjkoo. All rights reserved.
+*/
+
+"SUNDAY" = "Sonntag";
+
+"MONDAY" = "Montag";
+
+"TUESDAY" = "Dienstag";
+
+"WEDNESDAY" = "Mittwoch";
+
+"THURSDAY" = "Donnerstag";
+
+"FRIDAY" = "Freitag";
+
+"SATURDAY" = "Samstag";
+
+"Canceled" = "Abgebrochen";
+
+"Notification Settings" = "Benachrichtigungseinstellungen";
+
+"No Upcoming Notification" = "Keine bevorstehende Benachrichtigung";
+
+"Notification Time" = "Benachrichtigungszeit";
+
+"You can not set reminders for repeatedly saved notes." = "Sie können keine Erinnerungen für wiederholt gespeicherte Notizen einstellen.";
+
+"Modify Notification" = "Benachrichtigung ändern";
+
+"Copy" = "Kopieren";
+
+"Copied." = "Kopiert";
+
+"Modify" = "Ändern";
+
+"Delete" = "Gelöscht";
+
+"Deleted." = "Gelöscht";
+
+"Cancel" = "Stornieren";
+
+"CANCEL" = "STORNIEREN";
+
+"The Notification sounds at %@" = "Die Benachrichtigung ertönt um %@ Uhr";
+
+"DONE" = "ERLEDIGT";
+
+"Reminder" = "Erinnerung";
+
+"No Upcoming Notification" = "Keine bevorstehende Benachrichtigung";
+
+"Date created by %@" = "Erstellt am um %@ Uhr";
+
+"You can not set notification for text that are repeated every day." = "Sie können keine Benachrichtigung für Text festlegen, der täglich wiederholt wird.";
+
+"You can not set notification for text that are repeated every week." = "Sie können keine Benachrichtigung für Text festlegen, der wöchentlich wiederholt wird.";
+
+"You can not set notification for text that are repeated every month." = "Sie können keine Benachrichtigung für Text festlegen, der jeden Monat wiederholt wird.";
+
+"Notification was deleted." = "Benachrichtigung wurde gelöscht.";
+
+"The notification time has been changed to %@." = "Die Benachrichtigungszeit wurde auf %@ Uhr geändert.";
+
+"Theme" = "Thema";
+
+"Text Size" = "Textgröße";
+
+"Text Thickness" = "Textdicke";
+
+"Vibration" = "Vibration";
+
+"Prevent Word Truncation" = "Verhindern Sie das Abschneiden von Wörtern";
+
+"Notification Permissions Check" = "Benachrichtigungsberechtigungsprüfung";
+
+"Locking" = "Sperren";
+
+"Buy Pro Edition" = "Pro Edition kaufen";
+
+"Backup / Restore" = "Backup wiederherstellen";
+
+"Leave a Review" = "Hinterlassen Sie eine Bewertung";
+
+"Contact Us" = "Kontaktiere uns";
+
+"Small" = "Klein";
+
+"Middle" = "Mitte";
+
+"Big" = "Groß";
+
+"Thin" = "Dünn";
+
+"Regular" = "Regulär";
+
+"Bold" = "Fett gedruckt";
+
+"Off" = "Aus";
+
+"On" = "Auf";
+
+"White & Blue" = "Weiß & Blau";
+
+"White & Red" = "Weiß & Rot";
+
+"Black & Blue" = "Schwarz & Blau";
+
+"Black & Red" = "Schwarz & Rot";
+
+"To Be Updated" = "Aktualisiert werden";
+
+"Notification permission had not allowed." = "Benachrichtigungserlaubnis war nicht erlaubt.";
+
+"Set Up" = "GEHEN";
+
+"Notification Permission has already been allowed" = "Benachrichtigungsberechtigung wurde bereits erteilt";

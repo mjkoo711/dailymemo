@@ -1,0 +1,122 @@
+/* 
+  Localizable.strings
+  memo
+
+  Created by MinJun KOO on 23/03/2019.
+  Copyright © 2019 mjkoo. All rights reserved.
+*/
+
+"SUNDAY" = "Domenica";
+
+"MONDAY" = "Lunedi";
+
+"TUESDAY" = "Martedì";
+
+"WEDNESDAY" = "Mercoledì";
+
+"THURSDAY" = "Giovedi";
+
+"FRIDAY" = "Venerdì";
+
+"SATURDAY" = "Sabato";
+
+"Canceled" = "Annullato";
+
+"Notification Settings" = "Impostazioni di notifica";
+
+"No Upcoming Notification" = "Nessuna notifica imminente";
+
+"Notification Time" = "Tempo di notifica";
+
+"You can not set reminders for repeatedly saved notes." = "Non è possibile impostare promemoria per note salvate ripetutamente.";
+
+"Modify Notification" = "Modifica notifica";
+
+"Copy" = "Copia";
+
+"Copied." = "Copiato.";
+
+"Modify" = "Modificare";
+
+"Delete" = "Elimina";
+
+"Deleted." = "Eliminata.";
+
+"Cancel" = "Annulla";
+
+"CANCEL" = "ANNULLA";
+
+"The Notification sounds at %@" = "La notifica suona alle %@";
+
+"DONE" = "FATTO";
+
+"Reminder" = "Promemoria";
+
+"No Upcoming Notification" = "Nessuna notifica imminente";
+
+"Date created by %@" = "Data creata da %@";
+
+"You can not set notification for text that are repeated every day." = "Non è possibile impostare la notifica per il testo che viene ripetuto ogni giorno.";
+
+"You can not set notification for text that are repeated every week." = "Non è possibile impostare la notifica per il testo che viene ripetuto ogni settimana.
+";
+
+"You can not set notification for text that are repeated every month." = "Non è possibile impostare la notifica per il testo che viene ripetuto ogni mese.";
+
+"Notification was deleted." = "La notifica è stata cancellata.";
+
+"The notification time has been changed to %@." = "Il tempo di notifica è stato modificato in %@.";
+
+"Theme" = "Tema";
+
+"Text Size" = "Dimensione del testo";
+
+"Text Thickness" = "Spessore del testo";
+
+"Vibration" = "Vibrazione";
+
+"Prevent Word Truncation" = "Previene il troncamento delle parole";
+
+"Notification Permissions Check" = "Controllo delle autorizzazioni di notifica";
+
+"Locking" = "Blocco";
+
+"Buy Pro Edition" = "Acquista la Pro Edition";
+
+"Backup / Restore" = "Ripristinare il backup";
+
+"Leave a Review" = "Lascia una recensione";
+
+"Contact Us" = "Contattaci";
+
+"Small" = "Piccolo";
+
+"Middle" = "Mezzo";
+
+"Big" = "Grande";
+
+"Thin" = "Magro";
+
+"Regular" = "Regolare";
+
+"Bold" = "Grassetto";
+
+"Off" = "via";
+
+"On" = "Sopra";
+
+"White & Blue" = "Bianco & Blu";
+
+"White & Red" = "Bianco & Rosso";
+
+"Black & Blue" = "Nero & Blu";
+
+"Black & Red" = "Nero & Rosso";
+
+"To Be Updated" = "Per Essere Aggiornato";
+
+"Notification permission had not allowed." = "Il permesso di notifica non era permesso.";
+
+"Set Up" = "PARTIRE";
+
+"Notification Permission has already been allowed" = "L'autorizzazione di notifica è già stata autorizzata.";

@@ -1,0 +1,125 @@
+/*
+ Localizable.strings
+ memo
+
+ Created by MinJun KOO on 23/03/2019.
+ Copyright © 2019 mjkoo. All rights reserved.
+ */
+
+"SUNDAY" = "Domingo";
+
+"MONDAY" = "Segunda-feira";
+
+"TUESDAY" = "Terça";
+
+"WEDNESDAY" = "Quarta-feira";
+
+"THURSDAY" = "Quinta-feira";
+
+"FRIDAY" = "Sexta-feira";
+
+"SATURDAY" = "Sabado";
+
+"Canceled" = "Cancelado";
+
+"Notification Settings" = "Configurações de notificação";
+
+"No Upcoming Notification" = "Nenhuma notificação futura";
+
+"Notification Time" = "Horário de Notificação";
+
+"You can not set reminders for repeatedly saved notes." = "Você não pode definir lembretes para notas salvas repetidamente.";
+
+"Modify Notification" = "Modificar Notificação";
+
+"Copy" = "Copiado";
+
+"Copied." = "Copiado";
+
+"Modify" = "Modificar";
+
+"Delete" = "Excluir";
+
+"Deleted." = "Excluído";
+
+"Cancel" = "Cancelar";
+
+"CANCEL" = "CANCELAR";
+
+"The Notification sounds at %@" = "A notificação soa em %@";
+
+"DONE" = "FEITO";
+
+"Reminder" = "Lembrete";
+
+"No Upcoming Notification" = "Nenhuma notificação futura";
+
+"Date created by %@" = "Data criada por %@";
+
+"You can not set notification for text that are repeated every day." = "Você não pode definir notificações para textos que são repetidos todos os dias.";
+
+"You can not set notification for text that are repeated every week." = "Você não pode definir notificações para textos que são repetidos toda semana.";
+
+"You can not set notification for text that are repeated every month." = "Você não pode definir notificações para textos que são repetidos todo mês.";
+
+"Notification was deleted." = "Notificação foi eliminada.";
+
+"The notification time has been changed to %@." = "O horário da notificação foi alterado para %@.";
+
+"Theme" = "Tema";
+
+"Text Size" = "Tamanho do texto";
+
+"Text Thickness" = "Espessura do Texto";
+
+"Vibration" = "Vibração";
+
+"Prevent Word Truncation" = "Evitar truncamento de palavras";
+
+"Notification Permissions Check" = "Verificação de permissões de notificação";
+
+"Locking" = "Bloqueio";
+
+"Buy Pro Edition" = "Compre a edição Pro";
+
+"Backup / Restore" = "Restauração de backup";
+
+"Leave a Review" = "Deixe um comentário";
+
+"Contact Us" = "Contate-Nos";
+
+"Small" = "Pequeno";
+
+"Middle" = "Meio";
+
+"Big" = "grande";
+
+"Thin" = "Fino";
+
+"Regular" = "Regular";
+
+"Bold" = "Negrito";
+
+"Off" = "Fora";
+
+"On" = "Em";
+
+"White & Blue" = "Branco & Azul";
+
+"White & Red" = "Branco & Vermelho";
+
+"Black & Blue" = "Preto & Azul";
+
+"Black & Red" = "Preto & Vermelho";
+
+"To Be Updated" = "Ser atualizado";
+
+"Notification permission had not allowed." = "Permissão de notificação não permitida.";
+
+"Set Up" = "VAI";
+
+"Notification Permission has already been allowed" = "Notificação Permissão já foi permitida";
+
+
+
+

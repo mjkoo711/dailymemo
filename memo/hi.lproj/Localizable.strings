@@ -1,0 +1,121 @@
+/* 
+  Localizable.strings
+  memo
+
+  Created by MinJun KOO on 23/03/2019.
+  Copyright © 2019 mjkoo. All rights reserved.
+*/
+
+"SUNDAY" = "रविवार";
+
+"MONDAY" = "सोमवार";
+
+"TUESDAY" = "मंगलवार";
+
+"WEDNESDAY" = "बुधवार";
+
+"THURSDAY" = "बृहस्पतिवार";
+
+"FRIDAY" = "शुक्रवार";
+
+"SATURDAY" = "शनिवार";
+
+"Canceled" = "रद्द";
+
+"Notification Settings" = "अधिसूचना सेटिंग";
+
+"No Upcoming Notification" = "कोई आगामी अधिसूचना नहीं";
+
+"Notification Time" = "अधिसूचना समय";
+
+"You can not set reminders for repeatedly saved notes." = "आप बार-बार सहेजे गए नोटों के लिए अनुस्मारक सेट नहीं कर सकते।";
+
+"Modify Notification" = "अधिसूचना संशोधित करें";
+
+"Copy" = "प्रतिलिपि";
+
+"Copied." = "कॉपी किया गया.";
+
+"Modify" = "संशोधित करें";
+
+"Delete" = "हटाना";
+
+"Deleted." = "हटाए गए.";
+
+"Cancel" = "रद्द करना";
+
+"CANCEL" = "रद्द करना";
+
+"The Notification sounds at %@" = "अधिसूचना %@ बजे लगती है";
+
+"DONE" = "किया हुआ";
+
+"Reminder" = "अनुस्मारक";
+
+"No Upcoming Notification" = "कोई आगामी अधिसूचना नहीं";
+
+"Date created by %@" = "दिनांक %@ बजे तक बनाया गया";
+
+"You can not set notification for text that are repeated every day." = "आप हर दिन दोहराए जाने वाले पाठ के लिए अधिसूचना सेट नहीं कर सकते।";
+
+"You can not set notification for text that are repeated every week." = "आप हर हफ्ते दोहराए जाने वाले पाठ के लिए अधिसूचना सेट नहीं कर सकते।";
+
+"You can not set notification for text that are repeated every month." = "आप हर महीने दोहराए जाने वाले पाठ के लिए अधिसूचना सेट नहीं कर सकते।";
+
+"Notification was deleted." = "अधिसूचना हटा दी गई थी।";
+
+"The notification time has been changed to %@." = "अधिसूचना समय को बदलकर %@ कर दिया गया है।";
+
+"Theme" = "विषय";
+
+"Text Size" = "शब्दों का आकर";
+
+"Text Thickness" = "पाठ की मोटाई";
+
+"Vibration" = "कंपन";
+
+"Prevent Word Truncation" = "वर्ड ट्रंकेशन को रोकें";
+
+"Notification Permissions Check" = "अधिसूचना अनुमतियाँ जाँचें";
+
+"Locking" = "लॉक करना";
+
+"Buy Pro Edition" = "प्रो संस्करण खरीदें";
+
+"Backup / Restore" = "बैकअप बहाल";
+
+"Leave a Review" = "समीक्षा लिखें";
+
+"Contact Us" = "हमसे संपर्क करें";
+
+"Small" = "छोटा";
+
+"Middle" = "मध्य";
+
+"Big" = "बड़े";
+
+"Thin" = "पतला";
+
+"Regular" = "नियमित";
+
+"Bold" = "साहसिक";
+
+"Off" = "बंद";
+
+"On" = "पर";
+
+"White & Blue" = "सफ़ेद & नीला";
+
+"White & Red" = "सफेद & लाल";
+
+"Black & Blue" = "काला & नीला";
+
+"Black & Red" = "काला & लाल";
+
+"To Be Updated" = "अद्यतन किया जाएगा";
+
+"Notification permission had not allowed." = "अधिसूचना की अनुमति नहीं दी थी।";
+
+"Set Up" = "चले जाओ";
+
+"Notification Permission has already been allowed" = "अधिसूचना की अनुमति पहले ही दी जा चुकी है";

@@ -1,0 +1,54 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "0rF-Ca-XuN"; */
+"0rF-Ca-XuN.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Setting"; ObjectID = "7YK-WR-vV0"; */
+"7YK-WR-vV0.title" = "Setting";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Cji-4N-CJV"; */
+"Cji-4N-CJV.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "GB1-b8-Igf"; */
+"GB1-b8-Igf.text" = "Label";
+
+/* Class = "UISegmentedControl"; Hh8-DQ-8TO.segmentTitles[0] = "한번"; ObjectID = "Hh8-DQ-8TO"; */
+"Hh8-DQ-8TO.segmentTitles[0]" = "egyszer";
+
+/* Class = "UISegmentedControl"; Hh8-DQ-8TO.segmentTitles[1] = "매일"; ObjectID = "Hh8-DQ-8TO"; */
+"Hh8-DQ-8TO.segmentTitles[1]" = "Minden nap";
+
+/* Class = "UISegmentedControl"; Hh8-DQ-8TO.segmentTitles[2] = "매주"; ObjectID = "Hh8-DQ-8TO"; */
+"Hh8-DQ-8TO.segmentTitles[2]" = "Minden héten ";
+
+/* Class = "UISegmentedControl"; Hh8-DQ-8TO.segmentTitles[3] = "매월"; ObjectID = "Hh8-DQ-8TO"; */
+"Hh8-DQ-8TO.segmentTitles[3]" = "Minden hónapban";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "IDD-Ra-A4A"; */
+"IDD-Ra-A4A.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MgG-fJ-RwX"; */
+"MgG-fJ-RwX.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "OgH-BF-IOI"; */
+"OgH-BF-IOI.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "PJM-Sh-xCC"; */
+"PJM-Sh-xCC.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "PRP-DW-t2z"; */
+"PRP-DW-t2z.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "RKw-fO-jP6"; */
+"RKw-fO-jP6.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "S2G-FY-aVc"; */
+"S2G-FY-aVc.text" = "Label";
+
+/* Class = "UILabel"; text = "Today"; ObjectID = "fKe-hV-XoI"; */
+"fKe-hV-XoI.text" = "Today";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "gv8-qd-G3N"; */
+"gv8-qd-G3N.title" = "Item";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "kx7-WJ-BfT"; */
+"kx7-WJ-BfT.text" = "Label";

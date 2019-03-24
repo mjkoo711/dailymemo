@@ -45,8 +45,8 @@ class MainViewController: UIViewController {
   private var selectDayString: String!
 
   fileprivate let formatter = MDateFormatter().formatter
-  fileprivate let formatter2 = MDateFormatter().formatter2
   fileprivate let formatterKorea = MDateFormatter().formatterKorea
+  fileprivate let formatterLocalized = MDateFormatter().formatterLocalized
 
   override var prefersStatusBarHidden: Bool {
     return true
@@ -69,7 +69,7 @@ class MainViewController: UIViewController {
     selectDateString = formatter.string(from: Date())
     selectDayString = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(formatter.string(from: Date())))
 
-    dateLabel.text = formatterKorea.string(from: Date())
+    dateLabel.text = DateStringChanger().dateFormatChange(dateWithHyphen: formatter.string(from: today))
     dayLabel.text = selectDayString
 
     timeChanger = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(MainViewController.updateTimeLabel), userInfo: nil, repeats: true)
@@ -233,7 +233,7 @@ class MainViewController: UIViewController {
 
     let alertView = SCLAlertView(appearance: appearance)
     alertView.customSubview = datePicker
-    alertView.addButton("DONE") {
+    alertView.addButton("DONE".localized) {
       guard let text = self.textSelected else { return }
 
       text.alarmDatePicked = self.selectedDatePicked
@@ -243,27 +243,27 @@ class MainViewController: UIViewController {
       // MARK: snackbar
       let message = MDCSnackbarMessage()
       message.buttonTextColor = Color.LightRed
-      message.text = "알람이 \(self.formatter2.string(from: datePicker.date))에 울립니다."
+      message.text = String(format: NSLocalizedString("The Notification sounds at %@".localized, comment: ""), "\(self.formatterLocalized.string(from: datePicker.date))")
 
       let action = MDCSnackbarMessageAction()
       let actionHandler = {() in
         let answerMessage = MDCSnackbarMessage()
-        answerMessage.text = "취소되었습니다."
+        answerMessage.text = "Canceled".localized
         self.textAlarmTrigger(text: text, isAlarmSetting: false)
         AlarmManager().removeNotification(textSelected: self.textSelected!)
         MDCSnackbarManager.show(answerMessage)
       }
       action.handler = actionHandler
-      action.title = "취소하기"
+      action.title = "CANCEL".localized
       message.action = action
 
       MDCSnackbarManager.show(message)
 
     }
-    alertView.addButton("CANCEL", backgroundColor: Color.LightRed) {
+    alertView.addButton("CANCEL".localized, backgroundColor: Color.LightRed) {
 
     }
-    alertView.showCustom("알림설정", subTitle: "", color: Color.Blue, icon: UIImage(named: "AlarmOnWhite")!)
+    alertView.showCustom("Notification Settings".localized, subTitle: "", color: Color.Blue, icon: UIImage(named: "AlarmOnWhite")!)
   }
 
   private func textAlarmTrigger(text: Text, isAlarmSetting: Bool) {
@@ -346,7 +346,7 @@ extension MainViewController: FSCalendarDelegate {
     selectDateString = selectDate
     selectDayString = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(selectDate))
 
-    dateLabel.text = formatterKorea.string(from: date)
+    dateLabel.text = DateStringChanger().dateFormatChange(dateWithHyphen: formatter.string(from: date))
     dayLabel.text = selectDayString
     reloadCollectionView(date: selectDate)
   }
@@ -583,47 +583,40 @@ extension MainViewController: TextCollectionViewCellDelegate {
   func showActionSheet(text: Text) {
     textSelected = text
 
-    let actionSheet = UIAlertController(title: text.string, message: "예정된 알람 없음", preferredStyle: .actionSheet)
+    let actionSheet = UIAlertController(title: text.string, message: "No Upcoming Notification".localized, preferredStyle: .actionSheet)
 
     if let textAlarmDate = text.alarmDatePicked, text.isAlarmable() {
       actionSheet.title = text.string
-      actionSheet.message =  "알람 예정시간\n" + "\(formatter2.string(from: textAlarmDate))"
+      actionSheet.message =  "Notification Time".localized + "\n" + "\(formatterLocalized.string(from: textAlarmDate))"
     }
 
     if !text.isAlarmable() && text.repeatMode != .Once {
-      var repeatModeString = ""
-
-      switch text.repeatMode {
-      case .Daily:
-        repeatModeString = "매일"
-      case .Weekly:
-        repeatModeString = "매주"
-      case .Monthly:
-        repeatModeString = "매달"
-      default:
-        repeatModeString = ""
-      }
-      actionSheet.message = "\(repeatModeString)" + " 설정된 메모는 알람설정이 불가합니다."
+      actionSheet.message = "You can not set reminders for repeatedly saved notes.".localized
     }
-    let modifyAlarmAction = UIAlertAction(title: "Modify Alarm", style: .default, handler: { (action) in
+
+    let modifyAlarmAction = UIAlertAction(title: "Modify Notification".localized, style: .default, handler: { (action) in
       self.showAlarmSettingView()
     })
-    let copyAction = UIAlertAction(title: "Copy", style: .default, handler: { (action) in
+
+    let copyAction = UIAlertAction(title: "Copy".localized, style: .default, handler: { (action) in
       UIPasteboard.general.string = text.string
       let message = MDCSnackbarMessage()
-      message.text = "복사되었습니다."
+      message.text = "Copied.".localized
       MDCSnackbarManager.show(message)
     })
-    let modifyAction = UIAlertAction(title: "Modify", style: .default, handler: {(action) in
+
+    let modifyAction = UIAlertAction(title: "Modify".localized, style: .default, handler: { (action) in
       self.modifyTapped()
     })
-    let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: {(action) in
+
+    let deleteAction = UIAlertAction(title: "Delete".localized, style: .destructive, handler: {(action) in
       self.removeTapped()
       let message = MDCSnackbarMessage()
-      message.text = "삭제되었습니다."
+      message.text = "Deleted.".localized
       MDCSnackbarManager.show(message)
     })
-    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+    let cancelAction = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
 
     if text.isAlarmable() {
       actionSheet.addAction(modifyAlarmAction)

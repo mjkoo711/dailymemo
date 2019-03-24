@@ -1,0 +1,121 @@
+/* 
+  Localizable.strings
+  memo
+
+  Created by MinJun KOO on 23/03/2019.
+  Copyright © 2019 mjkoo. All rights reserved.
+*/
+
+"SUNDAY" = "Ahad";
+
+"MONDAY" = "Isnin";
+
+"TUESDAY" = "Selasa";
+
+"WEDNESDAY" = "Rabu";
+
+"THURSDAY" = "Khamis";
+
+"FRIDAY" = "Jumaat";
+
+"SATURDAY" = "Sabtu";
+
+"Canceled" = "Dibatalkan";
+
+"Notification Settings" = "Tetapan Pemberitahuan";
+
+"No Upcoming Notification" = "Pemberitahuan Akan Datang";
+
+"Notification Time" = "Waktu Pemberitahuan";
+
+"You can not set reminders for repeatedly saved notes." = "Anda tidak boleh menetapkan peringatan untuk nota berulang kali disimpan.";
+
+"Modify Notification" = "Ubah Suai Pemberitahuan";
+
+"Copy" = "Salinan";
+
+"Copied." = "Disalin.";
+
+"Modify" = "Ubah suai";
+
+"Delete" = "Padam";
+
+"Deleted." = "Dihapuskan.";
+
+"Cancel" = "Batalkan";
+
+"CANCEL" = "Batalkan";
+
+"The Notification sounds at %@" = "Pemberitahuan berbunyi pada jam %@";
+
+"DONE" = "Dilakukan";
+
+"Reminder" = "Peringatan";
+
+"No Upcoming Notification" = "Pemberitahuan tidak akan datang";
+
+"Date created by %@" = "Tarikh Dibuat oleh %@";
+
+"You can not set notification for text that are repeated every day." = "Anda tidak boleh menetapkan pemberitahuan untuk teks yang diulang setiap hari.";
+
+"You can not set notification for text that are repeated every week." = "Anda tidak boleh menetapkan pemberitahuan untuk teks yang diulang setiap minggu.";
+
+"You can not set notification for text that are repeated every month." = "Anda tidak boleh menetapkan pemberitahuan untuk teks yang diulang setiap bulan.";
+
+"Notification was deleted." = "Pemberitahuan telah dipadamkan.";
+
+"The notification time has been changed to %@." = "Masa pemberitahuan telah ditukar kepada %@.";
+
+"Theme" = "Tema";
+
+"Text Size" = "Saiz Teks";
+
+"Text Thickness" = "Ketebalan Teks";
+
+"Vibration" = "Getaran";
+
+"Prevent Word Truncation" = "Mencegah Pemotongan Kata";
+
+"Notification Permissions Check" = "Semak Kebenaran Pemberitahuan";
+
+"Locking" = "Mengunci";
+
+"Buy Pro Edition" = "Beli Pro Edition";
+
+"Backup / Restore" = "Sandaran / Pulihkan";
+
+"Leave a Review" = "Tinggalkan Semakan";
+
+"Contact Us" = "Hubungi Kami";
+
+"Small" = "Kecil";
+
+"Middle" = "Tengah";
+
+"Big" = "Besar";
+
+"Thin" = "Nipis";
+
+"Regular" = "Biasa";
+
+"Bold" = "Bold";
+
+"Off" = "Off";
+
+"On" = "Pada";
+
+"White & Blue" = "Putih & Biru";
+
+"White & Red" = "Putih & Merah";
+
+"Black & Blue" = "Hitam & Biru";
+
+"Black & Red" = "Hitam & Merah";
+
+"To Be Updated" = "Akan dikemaskini";
+
+"Notification permission had not allowed." = "Kebenaran pemberitahuan tidak dibenarkan.";
+
+"Set Up" = "GO";
+
+"Notification Permission has already been allowed" = "Kebenaran Pemberitahuan telah dibenarkan";

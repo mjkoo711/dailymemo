@@ -1,0 +1,121 @@
+/* 
+  Localizable.strings
+  memo
+
+  Created by MinJun KOO on 23/03/2019.
+  Copyright © 2019 mjkoo. All rights reserved.
+*/
+
+"SUNDAY" = "Nedeľa";
+
+"MONDAY" = "Pondelok";
+
+"TUESDAY" = "Utorok";
+
+"WEDNESDAY" = "Streda";
+
+"THURSDAY" = "štvrtok";
+
+"FRIDAY" = "Piatok";
+
+"SATURDAY" = "Sobota";
+
+"Canceled" = "Zrušený";
+
+"Notification Settings" = "Nastavenia upozornení";
+
+"No Upcoming Notification" = "Žiadne prichádzajúce oznámenie";
+
+"Notification Time" = "Čas oznámenia";
+
+"You can not set reminders for repeatedly saved notes." = "Nie je možné nastaviť pripomenutia pre opakovane uložené poznámky.";
+
+"Modify Notification" = "Zmeniť upozornenie";
+
+"Copy" = "Kópie";
+
+"Copied." = "Skopírované.";
+
+"Modify" = "Pozmeniť";
+
+"Delete" = "Vymazať";
+
+"Deleted." = "Vypúšťa.";
+
+"Cancel" = "Zrušiť";
+
+"CANCEL" = "ZRUŠIŤ";
+
+"The Notification sounds at %@" = "Oznámenie zaznie o %@";
+
+"DONE" = "HOTOVÝ";
+
+"Reminder" = "Pripomienka";
+
+"No Upcoming Notification" = "Žiadne nadchádzajúce oznámenie";
+
+"Date created by %@" = "Dátum Vytvorené do %@";
+
+"You can not set notification for text that are repeated every day." = "Nie je možné nastaviť upozornenie na text, ktorý sa opakuje každý deň.";
+
+"You can not set notification for text that are repeated every week." = "Nie je možné nastaviť upozornenie na text, ktorý sa opakuje každý týždeň.";
+
+"You can not set notification for text that are repeated every month." = "Nie je možné nastaviť upozornenie na text, ktorý sa opakuje každý mesiac.";
+
+"Notification was deleted." = "Upozornenie bolo odstránené.";
+
+"The notification time has been changed to %@." = "Čas oznámenia bol zmenený na %@.";
+
+"Theme" = "Téma";
+
+"Text Size" = "Veľkosť textu";
+
+"Text Thickness" = "Hrúbka textu";
+
+"Vibration" = "chvenie";
+
+"Prevent Word Truncation" = "Zabrániť skráteniu slov";
+
+"Notification Permissions Check" = "Kontrola povolení na oznámenie";
+
+"Locking" = "zamykanie";
+
+"Buy Pro Edition" = "Kúpiť Pro Edition";
+
+"Backup / Restore" = "Zálohovanie / Obnovenie";
+
+"Leave a Review" = "Zanechajte recenziu";
+
+"Contact Us" = "Kontaktuj nás";
+
+"Small" = "malý";
+
+"Middle" = "prostredný";
+
+"Big" = "veľký";
+
+"Thin" = "Tenký";
+
+"Regular" = "pravidelný";
+
+"Bold" = "smelý";
+
+"Off" = "preč";
+
+"On" = "na";
+
+"White & Blue" = "Biela & Modrá";
+
+"White & Red" = "Biela & Červená";
+
+"Black & Blue" = "Čierna & Modrá";
+
+"Black & Red" = "Čierna & Červená";
+
+"To Be Updated" = "Aktualizovať";
+
+"Notification permission had not allowed." = "Povolenie na oznámenie nebolo povolené.";
+
+"Set Up" = "GO";
+
+"Notification Permission has already been allowed" = "Povolenie na oznámenie už bolo povolené";

@@ -1,0 +1,124 @@
+/*
+ Localizable.strings
+ memo
+
+ Created by MinJun KOO on 23/03/2019.
+ Copyright © 2019 mjkoo. All rights reserved.
+ */
+
+"SUNDAY" = "星期天";
+
+"MONDAY" = "星期一";
+
+"TUESDAY" = "星期二";
+
+"WEDNESDAY" = "星期三";
+
+"THURSDAY" = "星期四";
+
+"FRIDAY" = "星期五";
+
+"SATURDAY" = "星期六";
+
+"Canceled" = "取消";
+
+"%@년 %@월 %@일" = "%@年 %@月 %@日";
+
+"Notification Settings" = "通知设置";
+
+"No Upcoming Notification" = "没有即将发布的通知";
+
+"Notification Time" = "通知时间";
+
+"You can not set reminders for repeatedly saved notes." = "您无法为重复保存的笔记设置提醒。";
+
+"Modify Notification" = "修改通知";
+
+"Copy" = "复制";
+
+"Copied." = "复制.";
+
+"Modify" = "修改";
+
+"Delete" = "删除";
+
+"Deleted." = "删除.";
+
+"Cancel" = "取消";
+
+"CANCEL" = "取消";
+
+"The Notification sounds at %@" = "通知在%@响起";
+
+"DONE" = "完成";
+
+"Reminder" = "提醒";
+
+"No Upcoming Notification" = "没有即将发布的通知";
+
+"Date created by %@" = "日期由%@创建";
+
+"You can not set notification for text that are repeated every day." = "您无法为每天重复的文本设置通知。";
+
+"You can not set notification for text that are repeated every week." = "您无法为每周重复的文本设置通知。";
+
+"You can not set notification for text that are repeated every month." = "您无法为每月重复的文本设置通知。";
+
+"Notification was deleted." = "通知已删除。";
+
+"The notification time has been changed to %@." = "通知时间已更改为%@。";
+
+"Theme" = "主題";
+
+"Text Size" = "字體大小";
+
+"Text Thickness" = "文字厚度";
+
+"Vibration" = "振動";
+
+"Prevent Word Truncation" = "防止Word截斷";
+
+"Notification Permissions Check" = "通知權限檢查";
+
+"Locking" = "鎖定";
+
+"Buy Pro Edition" = "購買專業版";
+
+"Backup / Restore" = "備份 / 還原";
+
+"Leave a Review" = "發表評論";
+
+"Contact Us" = "聯繫我們";
+
+"Small" = "小";
+
+"Middle" = "中";
+
+"Big" = "大";
+
+"Thin" = "瘦";
+
+"Regular" = "定期";
+
+"Bold" = "膽大";
+
+"Off" = "離";
+
+"On" = "上";
+
+"White & Blue" = "白色 & 蓝色";
+
+"White & Red" = "白色 & 紅色";
+
+"Black & Blue" = "黑色 & 藍色";
+
+"Black & Red" = "黑色 & 紅色";
+
+"To Be Updated" = "要被更新";
+
+"Notification permission had not allowed." = "通知許可不允許。";
+
+"Set Up" = "走";
+
+"Notification Permission has already been allowed" = "已經允許通知許可";
+

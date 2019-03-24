@@ -1,0 +1,121 @@
+/* 
+  Localizable.strings
+  memo
+
+  Created by MinJun KOO on 23/03/2019.
+  Copyright © 2019 mjkoo. All rights reserved.
+*/
+
+"SUNDAY" = "Chủ nhật";
+
+"MONDAY" = "Thứ hai";
+
+"TUESDAY" = "Thứ ba";
+
+"WEDNESDAY" = "Thứ tư";
+
+"THURSDAY" = "Thứ năm";
+
+"FRIDAY" = "Thứ sáu";
+
+"SATURDAY" = "Thứ bảy";
+
+"Canceled" = "Hủy bỏ";
+
+"Notification Settings" = "Thiết lập thông báo";
+
+"No Upcoming Notification" = "Không có thông báo sắp tới";
+
+"Notification Time" = "Thời gian thông báo";
+
+"You can not set reminders for repeatedly saved notes." = "Bạn không thể đặt lời nhắc cho ghi chú đã lưu nhiều lần.";
+
+"Modify Notification" = "Sửa đổi thông báo";
+
+"Copy" = "Sao chép";
+
+"Copied." = "Sao chép.";
+
+"Modify" = "Sửa đổi";
+
+"Delete" = "Xóa bỏ";
+
+"Deleted." = "Đã xóa.";
+
+"Cancel" = "Hủy bỏ";
+
+"CANCEL" = "HỦY BỎ";
+
+"The Notification sounds at %@" = "Thông báo phát ra lúc %@";
+
+"DONE" = "LÀM XONG";
+
+"Reminder" = "Nhắc nhở";
+
+"No Upcoming Notification" = "Không có thông báo sắp tới";
+
+"Date created by %@" = "Ngày tạo bởi %@";
+
+"You can not set notification for text that are repeated every day." = "Bạn không thể đặt thông báo cho văn bản được lặp lại mỗi ngày.";
+
+"You can not set notification for text that are repeated every week." = "Bạn không thể đặt thông báo cho văn bản được lặp lại mỗi tuần.";
+
+"You can not set notification for text that are repeated every month." = "Bạn không thể đặt thông báo cho văn bản được lặp lại hàng tháng.";
+
+"Notification was deleted." = "Thông báo đã bị xóa.";
+
+"The notification time has been changed to %@." = "Thời gian thông báo đã được thay đổi thành %@.";
+
+"Theme" = "Chủ đề";
+
+"Text Size" = "Cỡ chữ";
+
+"Text Thickness" = "Độ dày văn bản";
+
+"Vibration" = "Rung";
+
+"Prevent Word Truncation" = "Ngăn chặn từ cắt ngắn";
+
+"Notification Permissions Check" = "Kiểm tra quyền thông báo";
+
+"Locking" = "Khóa";
+
+"Buy Pro Edition" = "Mua phiên bản Pro";
+
+"Backup / Restore" = "Phục hồi dữ liệu đã lưu";
+
+"Leave a Review" = "Để lại một đánh giá";
+
+"Contact Us" = "Liên hệ chúng tôi";
+
+"Small" = "Nhỏ bé";
+
+"Middle" = "Ở giữa";
+
+"Big" = "Lớn";
+
+"Thin" = "Gầy";
+
+"Regular" = "Đều đặn";
+
+"Bold" = "Dũng cảm";
+
+"Off" = "Tắt";
+
+"On" = "Trên";
+
+"White & Blue" = "Trắng & xanh";
+
+"White & Red" = "Trắng & đỏ";
+
+"Black & Blue" = "Đen & xanh";
+
+"Black & Red" = "Đen & đỏ";
+
+"To Be Updated" = "Được cập nhật";
+
+"Notification permission had not allowed." = "Cho phép thông báo đã không được phép.";
+
+"Set Up" = "ĐI";
+
+"Notification Permission has already been allowed" = "Giấy phép thông báo đã được cho phép";

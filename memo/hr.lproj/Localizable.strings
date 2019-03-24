@@ -1,0 +1,121 @@
+/* 
+  Localizable.strings
+  memo
+
+  Created by MinJun KOO on 23/03/2019.
+  Copyright © 2019 mjkoo. All rights reserved.
+*/
+
+"SUNDAY" = "Nedjelja";
+
+"MONDAY" = "Ponedjeljak";
+
+"TUESDAY" = "Utorak";
+
+"WEDNESDAY" = "Srijeda";
+
+"THURSDAY" = "četvrtak";
+
+"FRIDAY" = "Petak";
+
+"SATURDAY" = "Subota";
+
+"Canceled" = "Otkazan";
+
+"Notification Settings" = "Postavke obavijesti";
+
+"No Upcoming Notification" = "Nema nadolazeće obavijesti";
+
+"Notification Time" = "Vrijeme obavijesti";
+
+"You can not set reminders for repeatedly saved notes." = "Ne možete podesiti podsjetnike za opetovano spremljene bilješke.";
+
+"Modify Notification" = "Izmijeni obavijest";
+
+"Copy" = "Kopirati";
+
+"Copied." = "Kopirano.";
+
+"Modify" = "izmijeniti";
+
+"Delete" = "Izbrisati";
+
+"Deleted." = "Izbrisana.";
+
+"Cancel" = "Otkazati";
+
+"CANCEL" = "OTKAZATI";
+
+"The Notification sounds at %@" = "Obavijest se oglašava u %@";
+
+"DONE" = "Učinjen";
+
+"Reminder" = "Podsjetnik";
+
+"No Upcoming Notification" = "Nema nadolazeće Obavijesti";
+
+"Date created by %@" = "Datum kreiranja %@";
+
+"You can not set notification for text that are repeated every day." = "Ne možete postaviti obavijest za tekst koji se ponavlja svaki dan.";
+
+"You can not set notification for text that are repeated every week." = "Ne možete postaviti obavijest za tekst koji se ponavlja svaki tjedan.";
+
+"You can not set notification for text that are repeated every month." = "Ne možete postaviti obavijest za tekst koji se ponavlja svaki mjesec.";
+
+"Notification was deleted." = "Obavijest je izbrisana.";
+
+"The notification time has been changed to %@." = "Vrijeme obavijesti je promijenjeno u %@.";
+
+"Theme" = "Tema";
+
+"Text Size" = "Veličina teksta";
+
+"Text Thickness" = "Debljina teksta";
+
+"Vibration" = "Vibracija";
+
+"Prevent Word Truncation" = "Spriječite skraćivanje riječi";
+
+"Notification Permissions Check" = "Provjera dopuštenja za obavijesti";
+
+"Locking" = "Zaključavanje";
+
+"Buy Pro Edition" = "Kupite Pro Edition";
+
+"Backup / Restore" = "Sigurnosna kopija / vraćanje";
+
+"Leave a Review" = "Ostavite pregled";
+
+"Contact Us" = "Kontaktirajte nas";
+
+"Small" = "Mali";
+
+"Middle" = "Srednji";
+
+"Big" = "Velik";
+
+"Thin" = "Tanak";
+
+"Regular" = "Redovan";
+
+"Bold" = "Odvažan";
+
+"Off" = "Od";
+
+"On" = "Na";
+
+"White & Blue" = "Bijela & Plava";
+
+"White & Red" = "Bijela & Crvena";
+
+"Black & Blue" = "Crna & Plava";
+
+"Black & Red" = "Crno & Crveno";
+
+"To Be Updated" = "Biti nadograđen";
+
+"Notification permission had not allowed." = "Dozvola obavijesti nije dopuštena.";
+
+"Set Up" = "IĆI";
+
+"Notification Permission has already been allowed" = "Obavijest Dozvola je već dopuštena";

@@ -1,0 +1,121 @@
+/* 
+  Localizable.strings
+  memo
+
+  Created by MinJun KOO on 23/03/2019.
+  Copyright © 2019 mjkoo. All rights reserved.
+*/
+
+"SUNDAY" = "Sunnuntai";
+
+"MONDAY" = "Maanantai";
+
+"TUESDAY" = "Tiistai";
+
+"WEDNESDAY" = "Keskiviikko";
+
+"THURSDAY" = "Torstai";
+
+"FRIDAY" = "Perjantai";
+
+"SATURDAY" = "Lauantai";
+
+"Canceled" = "Peruttu";
+
+"Notification Settings" = "Ilmoitusasetukset";
+
+"No Upcoming Notification" = "Ei tulevaa ilmoitusta";
+
+"Notification Time" = "Ilmoitusaika";
+
+"You can not set reminders for repeatedly saved notes." = "Et voi asettaa muistutuksia toistuvasti tallennetuille muistiinpanoille.";
+
+"Modify Notification" = "Muokkaa ilmoitusta";
+
+"Copy" = "Kopio";
+
+"Copied." = "Kopioitu.";
+
+"Modify" = "Muuttaa";
+
+"Delete" = "Poistaa";
+
+"Deleted." = "Poistettu.";
+
+"Cancel" = "Peruuttaa";
+
+"CANCEL" = "PERUUTTAA";
+
+"The Notification sounds at %@" = "Ilmoitus kuulostaa kello %@";
+
+"DONE" = "TEHTY";
+
+"Reminder" = "Muistutus";
+
+"No Upcoming Notification" = "Ei tulevaa ilmoitusta";
+
+"Date created by %@" = "Päivämäärä luotiin klo %@ mennessä";
+
+"You can not set notification for text that are repeated every day." = "Et voi asettaa ilmoitusta tekstille, jota toistetaan päivittäin.";
+
+"You can not set notification for text that are repeated every week." = "Et voi asettaa ilmoitusta tekstille, jota toistetaan joka viikko.";
+
+"You can not set notification for text that are repeated every month." = "Et voi asettaa ilmoitusta tekstille, joka toistetaan joka kuukausi.";
+
+"Notification was deleted." = "Ilmoitus poistettiin.";
+
+"The notification time has been changed to %@." = "Ilmoitusaika on muutettu %@.";
+
+"Theme" = "Teema";
+
+"Text Size" = "Tekstin koko";
+
+"Text Thickness" = "Tekstin paksuus";
+
+"Vibration" = "värähtely";
+
+"Prevent Word Truncation" = "Estä sanan lyhentäminen";
+
+"Notification Permissions Check" = "Ilmoituslupien tarkistus";
+
+"Locking" = "Lukitus";
+
+"Buy Pro Edition" = "Osta Pro Edition";
+
+"Backup / Restore" = "Varmuuskopio";
+
+"Leave a Review" = "Jätä arvostelu";
+
+"Contact Us" = "Ota meihin yhteyttä";
+
+"Small" = "Pieni";
+
+"Middle" = "keskimmäinen";
+
+"Big" = "Iso";
+
+"Thin" = "Ohut";
+
+"Regular" = "säännöllinen";
+
+"Bold" = "rohkea";
+
+"Off" = "Pois päältä";
+
+"On" = "Päällä";
+
+"White & Blue" = "Valkoinen & Sininen";
+
+"White & Red" = "Valkoinen & Punainen";
+
+"Black & Blue" = "Musta & Sininen";
+
+"Black & Red" = "Musta & Punainen";
+
+"To Be Updated" = "Tulla päivitetyksi";
+
+"Notification permission had not allowed." = "Ilmoituslupa ei ollut sallittu.";
+
+"Set Up" = "MENNÄ";
+
+"Notification Permission has already been allowed" = "MENNÄ";

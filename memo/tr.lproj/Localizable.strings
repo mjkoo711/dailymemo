@@ -1,0 +1,121 @@
+/* 
+  Localizable.strings
+  memo
+
+  Created by MinJun KOO on 23/03/2019.
+  Copyright © 2019 mjkoo. All rights reserved.
+*/
+
+"SUNDAY" = "Pazar";
+
+"MONDAY" = "Pazartesi";
+
+"TUESDAY" = "Salı";
+
+"WEDNESDAY" = "Çarşamba";
+
+"THURSDAY" = "Perşembe";
+
+"FRIDAY" = "Cuma";
+
+"SATURDAY" = "Cumartesi";
+
+"Canceled" = " Iptal edildi";
+
+"Notification Settings" = "Bildirim ayarları";
+
+"No Upcoming Notification" = "Yakında Bildirim Yok";
+
+"Notification Time" = "Bildirim Zamanı";
+
+"You can not set reminders for repeatedly saved notes." = "Tekrar tekrar kaydedilmiş notlar için hatırlatıcı ayarlayamazsınız.";
+
+"Modify Notification" = "Bildirimi Değiştir";
+
+"Copy" = "Kopya";
+
+"Copied." = "Kopyalanan.";
+
+"Modify" = "Değiştirmek";
+
+"Delete" = "Silmek";
+
+"Deleted." = "Silindi.";
+
+"Cancel" = "İptal etmek";
+
+"CANCEL" = "İPTAL ETMEK";
+
+"The Notification sounds at %@" = "Bildirim %@ de geliyor";
+
+"DONE" = "TAMAMLANDI";
+
+"Reminder" = "Hatırlatma";
+
+"No Upcoming Notification" = "Yakında Bildirim Yok";
+
+"Date created by %@" = "Tarih %@ tarafından oluşturulan";
+
+"You can not set notification for text that are repeated every day." = "Her gün tekrarlanan metinler için bildirim ayarlayamazsınız.";
+
+"You can not set notification for text that are repeated every week." = "Her hafta tekrarlanan metin için bildirim ayarlayamazsınız.";
+
+"You can not set notification for text that are repeated every month." = "Her ay tekrarlanan metinler için bildirim ayarlayamazsınız.";
+
+"Notification was deleted." = "Bildirim silindi.";
+
+"The notification time has been changed to %@." = "Bildirim zamanı %@ olarak değiştirildi.";
+
+"Theme" = "Tema";
+
+"Text Size" = "Yazı Boyutu";
+
+"Text Thickness" = "Metin Kalınlığı";
+
+"Vibration" = "Titreşim";
+
+"Prevent Word Truncation" = "Sözcük Kısaltmasını Önle";
+
+"Notification Permissions Check" = "Bildirim İzinleri Kontrolü";
+
+"Locking" = "Kilitleme";
+
+"Buy Pro Edition" = "Pro Edition Satın Alın";
+
+"Backup / Restore" = "Yedekle / Geri Yükle";
+
+"Leave a Review" = "Lİnceleme bırak";
+
+"Contact Us" = "Bizimle iletişime geçin";
+
+"Small" = "Küçük";
+
+"Middle" = "Orta";
+
+"Big" = "Büyük";
+
+"Thin" = "İnce";
+
+"Regular" = "Düzenli";
+
+"Bold" = "Cesur";
+
+"Off" = "Kapalı";
+
+"On" = "üzerinde";
+
+"White & Blue" = "Beyaz & Mavi";
+
+"White & Red" = "Beyaz & Kırmızı";
+
+"Black & Blue" = "Siyah & Mavi";
+
+"Black & Red" = "Siyah & Kırmızı";
+
+"To Be Updated" = "Güncellenecek";
+
+"Notification permission had not allowed." = "Bildirim iznine izin verilmedi.";
+
+"Set Up" = "GİTMEK";
+
+"Notification Permission has already been allowed" = "Bildirim İzni zaten verildi";

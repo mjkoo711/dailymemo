@@ -9,10 +9,12 @@
 import Foundation
 
 class DateStringChanger {
+  let YearMonthDayCountry = ["ko", "zh", "zh-Hans", "zh-Hant", "zh-HK", "ja", "hu"]
+  let MonthDayYearCountry = ["en", "en-GB", "en-AU", "en-CA", "en-IN"]
   fileprivate let formatter = MDateFormatter().formatter
   
-  func getStringYear(year: String) -> String {
-    switch year {
+  func getStringMonth(month: String) -> String {
+    switch month {
     case "01":
       return "January"
     case "02":
@@ -42,22 +44,53 @@ class DateStringChanger {
     }
   }
 
+  func getMinimumStringMonth(month: String) -> String {
+    switch month {
+    case "01":
+      return "Jan"
+    case "02":
+      return "Fab"
+    case "03":
+      return "Mar"
+    case "04":
+      return "Apr"
+    case "05":
+      return "May"
+    case "06":
+      return "Jun"
+    case "07":
+      return "Jul"
+    case "08":
+      return "Aug"
+    case "09":
+      return "Sep"
+    case "10":
+      return "Oct"
+    case "11":
+      return "Nov"
+    case "12":
+      return "Dec"
+    default:
+      return ""
+    }
+  }
+
   func getStringDayOfWeek(weekDay: Int) -> String {
     switch weekDay {
     case 1:
-      return "Sunday"
+      return "SUNDAY".localized
     case 2:
-      return "Monday"
+      return "MONDAY".localized
     case 3:
-      return "Tuesday"
+      return "TUESDAY".localized
     case 4:
-      return "Wednesday"
+      return "WEDNESDAY".localized
     case 5:
-      return "Thursday"
+      return "THURSDAY".localized
     case 6:
-      return "Friday"
+      return "FRIDAY".localized
     case 7:
-      return "Saturday"
+      return "SATURDAY".localized
     default:
       return ""
     }
@@ -72,7 +105,18 @@ class DateStringChanger {
 
   func dateFormatChange(dateWithHyphen: String) -> String {
     let array = dateWithHyphen.split(separator: "-")
+    let year = array[0]
+    let month = getMinimumStringMonth(month: String(array[1]))
+    let day = array[2]
 
-    return "\(array[0])년 \(array[1])월 \(array[2])일"
+    if let languageCode = Locale.current.languageCode {
+      if YearMonthDayCountry.contains(languageCode) {
+        return String(format: NSLocalizedString("%@년 %@월 %@일", comment: ""), "\(year)", "\(array[1])", "\(day)")
+      } else if MonthDayYearCountry.contains(languageCode) {
+        return String(format: NSLocalizedString("%@ %@, %@", comment: ""), "\(month)", "\(day)", "\(year)")
+      }
+    }
+
+    return String(format: NSLocalizedString("%@ %@, %@", comment: ""), "\(day)", "\(month)", "\(year)")
   }
 }

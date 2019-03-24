@@ -1,0 +1,123 @@
+/* 
+  Localizable.strings
+  memo
+
+  Created by MinJun KOO on 23/03/2019.
+  Copyright © 2019 mjkoo. All rights reserved.
+*/
+
+"SUNDAY" = "일요일";
+
+"MONDAY" = "월요일";
+
+"TUESDAY" = "화요일";
+
+"WEDNESDAY" = "수요일";
+
+"THURSDAY" = "목요일";
+
+"FRIDAY" = "금요일";
+
+"SATURDAY" = "토요일";
+
+"Canceled" = "취소됨";
+
+"%@년 %@월 %@일" = "%@년 %@월 %@일";
+
+"Notification Settings" = "알림 설정";
+
+"No Upcoming Notification" = "예정된 알림 없음";
+
+"Notification Time" = "알림 시간";
+
+"You can not set reminders for repeatedly saved notes." = "반복적으로 기록된 메모는 알림 설정이 불가능합니다.";
+
+"Modify Notification" = "알림 변경";
+
+"Copy" = "복사";
+
+"Copied." = "복사됨.";
+
+"Modify" = "변경";
+
+"Delete" = "삭제";
+
+"Deleted." = "삭제됨.";
+
+"Cancel" = "취소";
+
+"CANCEL" = "취소";
+
+"The Notification sounds at %@" = "알림이 %@에 울립니다.";
+
+"DONE" = "완료";
+
+"Reminder" = "예정된 알림";
+
+"No Upcoming Notification" = "예정된 알림 없음";
+
+"Date created by %@" = "작성일 : %@";
+
+"You can not set notification for text that are repeated every day." = "매일 반복되는 텍스트에 대한 알림을 설정할 수 없습니다.";
+
+"You can not set notification for text that are repeated every week." = "매주 반복되는 텍스트에 대한 알림을 설정할 수 없습니다.";
+
+"You can not set notification for text that are repeated every month." = "매월 반복되는 텍스트에 대한 알림을 설정할 수 없습니다.";
+
+"Notification was deleted." = "알림을 삭제했습니다.";
+
+"The notification time has been changed to %@." = "알림 시간이 %@로 변경되었습니다.";
+
+"Theme" = "테마";
+
+"Text Size" = "텍스트 크기";
+
+"Text Thickness" = "텍스트 두께";
+
+"Vibration" = "진동";
+
+"Prevent Word Truncation" = "단어잘림 방지";
+
+"Notification Permissions Check" = "알림권한 확인";
+
+"Locking" = "잠금설정";
+
+"Buy Pro Edition" = "프로버전 구매";
+
+"Backup / Restore" = "백업 / 복원";
+
+"Leave a Review" = "리뷰 남기기";
+
+"Contact Us" = "문의메일 보내기";
+
+"Small" = "작게";
+
+"Middle" = "중간";
+
+"Big" = "크게";
+
+"Thin" = "얇게";
+
+"Regular" = "보통";
+
+"Bold" = "굵게";
+
+"Off" = "끄기";
+
+"On" = "켜기";
+
+"White & Blue" = "화이트 & 블루";
+
+"White & Red" = "화이트 & 레드";
+
+"Black & Blue" = "블랙 & 블루";
+
+"Black & Red" = "블랙 & 레드";
+
+"To Be Updated" = "업데이트 예정";
+
+"Notification permission had not allowed." = "알림 권한이 허용되어있지 않습니다.";
+
+"Set Up" = "설정하기";
+
+"Notification Permission has already been allowed" = "알림 권한이 이미 허용되어 있습니다.";
