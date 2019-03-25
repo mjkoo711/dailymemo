@@ -196,9 +196,23 @@
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNr-Yo-yb2">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdt-p5-rbj" customClass="GADBannerView">
+                                        <rect key="frame" x="27.5" y="0.0" width="320" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="1Dt-TV-s8F"/>
+                                            <constraint firstAttribute="height" constant="50" id="6dM-ff-J4N"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="cdt-p5-rbj" firstAttribute="centerX" secondItem="gNr-Yo-yb2" secondAttribute="centerX" id="Fof-kt-eIz"/>
+                                    <constraint firstItem="cdt-p5-rbj" firstAttribute="top" secondItem="gNr-Yo-yb2" secondAttribute="top" id="Lej-ZQ-3WB"/>
                                     <constraint firstAttribute="height" constant="50" id="PSR-cL-nna"/>
+                                    <constraint firstAttribute="bottom" secondItem="cdt-p5-rbj" secondAttribute="bottom" id="kOO-cT-OTJ"/>
+                                    <constraint firstItem="cdt-p5-rbj" firstAttribute="centerY" secondItem="gNr-Yo-yb2" secondAttribute="centerY" id="pam-X4-Gdu"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nI-qG-yjq">
@@ -356,7 +370,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VMC-8u-7Zw">
                                 <rect key="frame" x="8" y="367" width="359" height="25"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DownWhite" translatesAutoresizingMaskIntoConstraints="NO" id="wgH-aY-NVD">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UpWhite" translatesAutoresizingMaskIntoConstraints="NO" id="wgH-aY-NVD">
                                         <rect key="frame" x="153.5" y="0.0" width="52" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="52" id="tRd-B4-J11"/>
@@ -416,6 +430,7 @@
                     <navigationItem key="navigationItem" id="gqN-AJ-KhC"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="bannerView" destination="cdt-p5-rbj" id="dXN-EW-Pbq"/>
                         <outlet property="calendarHeightConstraint" destination="6SG-ws-Idx" id="kp3-UB-sNx"/>
                         <outlet property="calendarView" destination="Ue5-Zv-IL9" id="Tx8-d0-UUo"/>
                         <outlet property="collectionView" destination="NZu-dQ-sUh" id="HLQ-wf-sH2"/>
@@ -956,7 +971,6 @@
         <image name="Arrow" width="72" height="72"/>
         <image name="Close" width="48" height="48"/>
         <image name="DeleteWhite" width="48" height="48"/>
-        <image name="DownWhite" width="48" height="48"/>
         <image name="Left" width="48" height="48"/>
         <image name="MoreLeft" width="48" height="48"/>
         <image name="MoreRight" width="48" height="48"/>
@@ -964,5 +978,6 @@
         <image name="Setting" width="48" height="48"/>
         <image name="Today" width="48" height="48"/>
         <image name="UncheckBox" width="48" height="48"/>
+        <image name="UpWhite" width="48" height="48"/>
     </resources>
 </document>

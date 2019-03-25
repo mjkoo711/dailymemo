@@ -9,14 +9,20 @@
 import UIKit
 import IQKeyboardManagerSwift
 import UserNotifications
+import GoogleMobileAds
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
   var window: UIWindow?
-
-
+  
+  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    let appId = Const.appId
+    FirebaseApp.configure()
+    GADMobileAds.configure(withApplicationID: appId)
+  
     setIQKeyboardPreference()
     setUNUserNotification()
     FMDBManager.shared.createDatabase()
