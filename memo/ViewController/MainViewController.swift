@@ -580,8 +580,8 @@ extension MainViewController: TextCollectionViewCellDelegate {
   }
 
   func removeAlarm(text: Text) {
+    text.alarmDatePicked = nil
     textSelected = text
-
     text.offAlarmSetting()
     FMDBManager.shared.updateText(text: text)
     AlarmManager().removeNotification(textSelected: text)

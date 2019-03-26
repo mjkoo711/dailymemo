@@ -228,11 +228,11 @@ extension SettingViewController: SettingCollectionViewCellDelegate {
     let actionViewController = UIAlertController(title: "백업 & 복원", message: "iCloud를 통해서 이용가능합니다.", preferredStyle: .actionSheet)
     let backupAction = UIAlertAction(title: "백업", style: .default) { (action) in
       // TODO
-      self.clickFunction()
+      self.backup()
     }
     let restoreAction = UIAlertAction(title: "복원", style: .default) { (action) in
       // TODO
-      self.clickFunction()
+      self.restore()
     }
     let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
     actionViewController.addAction(backupAction)
@@ -263,11 +263,25 @@ extension SettingViewController: UIDocumentMenuDelegate,UIDocumentPickerDelegate
 //    dismiss(animated: true, completion: nil)
   }
 
-  func clickFunction(){
-    let importMenu = UIDocumentMenuViewController(documentTypes: ["public.png"], in: .import)
-    importMenu.delegate = self
-    importMenu.modalPresentationStyle = .formSheet
-    self.present(importMenu, animated: true, completion: nil)
+  func backup(){
+    let fileManager = FileManager.default
+    let directory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.mjkoo.memo")
+    let databasePath = directory!.appendingPathComponent("contacts.db")
+    let databasePathCompleted = directory!.appendingPathComponent("completed.db")
+
+    let documentPicker = UIDocumentPickerViewController.init(url: databasePath, in: .exportToService)
+
+    documentPicker.delegate = self
+    documentPicker.modalPresentationStyle = .formSheet
+    self.present(documentPicker, animated: true, completion: nil)
+  }
+
+  func restore() {
+    //    let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.png"], in: .import)
+    //    let importMenu = UIDocumentMenuViewController(documentTypes: ["public.png"], in: .import)
+    //    importMenu.delegate = self
+    //    importMenu.modalPresentationStyle = .formSheet
+    //    self.present(importMenu, animated: true, completion: nil)
   }
 }
 

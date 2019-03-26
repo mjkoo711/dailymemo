@@ -11,8 +11,8 @@
 	</dict>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-6738092375038703~5820049888</string>
-  <key>GADApplicationIdentifierTest</key>
-  <string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>GADApplicationIdentifierTest</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
