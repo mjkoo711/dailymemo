@@ -15,6 +15,7 @@ protocol SettingCollectionViewCellDelegate {
   func reloadMainViewController()
   func changeTheme()
   func updateSettingViewController()
+  func backupAndRestore()
 }
 
 class SettingCollectionViewCell: UICollectionViewCell {
@@ -25,6 +26,7 @@ class SettingCollectionViewCell: UICollectionViewCell {
   var indexPath: IndexPath?
   var optionTotalCount: Int?
   var settingMode: SettingList?
+  var serviceType: ServiceType?
   var currentOption: Int?
   
   var delegate: SettingCollectionViewCellDelegate?
@@ -116,6 +118,18 @@ class SettingCollectionViewCell: UICollectionViewCell {
         })
       }
     }
+
+    if let serviceType = serviceType {
+      if serviceType == .BuyProEdition {
+
+      } else if serviceType == .BackUp_Restore {
+        delegate?.backupAndRestore()
+      } else if serviceType == .WriteA_Review {
+
+      }
+    }
+
+
 
     if let indexPath = indexPath, indexPath.section == 0, indexPath.row != SettingList.Alarm.rawValue {
       delegate?.reloadSettings(indexPath: indexPath)

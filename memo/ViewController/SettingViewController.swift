@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MobileCoreServices
+
 
 protocol SettingViewControllerDelegate {
   func reloadCollectionViewAndCalendarView(date: String)
@@ -151,9 +153,17 @@ extension SettingViewController: UICollectionViewDataSource, UICollectionViewDel
         cell.currentOption = 0
         cell.settingMode = .Alarm
       }
-    } else {
+    } else if indexPath.section == 1 {
       cell.settingTitleLabel.text = serviceList[indexPath.row]
       cell.switchLabel.isHidden = true
+      
+      if indexPath.row == ServiceType.BuyProEdition.rawValue {
+        cell.serviceType = ServiceType.BuyProEdition
+      } else if indexPath.row == ServiceType.BackUp_Restore.rawValue {
+        cell.serviceType = ServiceType.BackUp_Restore
+      } else if indexPath.row == ServiceType.WriteA_Review.rawValue {
+        cell.serviceType = ServiceType.WriteA_Review
+      }
     }
 
     cell.delegate = self
@@ -212,4 +222,52 @@ extension SettingViewController: SettingCollectionViewCellDelegate {
       delegate?.reloadCollectionViewAndCalendarView(date: date)
     }
   }
+
+  func backupAndRestore() {
+    // TODO: actionView 띄워서 백업또는 복원 선택하게 하기
+    let actionViewController = UIAlertController(title: "백업 & 복원", message: "iCloud를 통해서 이용가능합니다.", preferredStyle: .actionSheet)
+    let backupAction = UIAlertAction(title: "백업", style: .default) { (action) in
+      // TODO
+      self.clickFunction()
+    }
+    let restoreAction = UIAlertAction(title: "복원", style: .default) { (action) in
+      // TODO
+      self.clickFunction()
+    }
+    let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+    actionViewController.addAction(backupAction)
+    actionViewController.addAction(restoreAction)
+    actionViewController.addAction(cancelAction)
+    present(actionViewController, animated: true, completion: nil)
+  }
 }
+
+
+extension SettingViewController: UIDocumentMenuDelegate,UIDocumentPickerDelegate,UINavigationControllerDelegate {
+  public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
+    let myURL = url as URL
+    print("import result : \(myURL)")
+  }
+
+
+  public func documentMenu(_ documentMenu:UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
+    documentPicker.delegate = self
+    documentPicker.modalPresentationStyle = .fullScreen
+    documentPicker.modalTransitionStyle = .crossDissolve
+    present(documentPicker, animated: true, completion: nil)
+  }
+
+
+  func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+    print("view was cancelled")
+//    dismiss(animated: true, completion: nil)
+  }
+
+  func clickFunction(){
+    let importMenu = UIDocumentMenuViewController(documentTypes: ["public.png"], in: .import)
+    importMenu.delegate = self
+    importMenu.modalPresentationStyle = .formSheet
+    self.present(importMenu, animated: true, completion: nil)
+  }
+}
+

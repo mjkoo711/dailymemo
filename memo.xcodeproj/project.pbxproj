@@ -81,6 +81,7 @@
 		E28D454122432AF600F67B08 /* WidgetTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D454022432AF600F67B08 /* WidgetTextCollectionViewCell.swift */; };
 		E29A247422415655004504B8 /* Vibrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A247322415655004504B8 /* Vibrate.swift */; };
 		E29A247622415665004504B8 /* LineBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A247522415665004504B8 /* LineBreak.swift */; };
+		E29EF94C224A863900F96D35 /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29EF94B224A863900F96D35 /* ServiceType.swift */; };
 		E2C37AE5222D146400D84894 /* AlarmCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE4222D146400D84894 /* AlarmCollectionViewCell.swift */; };
 		E2C37AE9222D59C400D84894 /* AlarmCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE8222D59C400D84894 /* AlarmCollectionReusableView.swift */; };
 		E2C37AEB222D7B2B00D84894 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AEA222D7B2B00D84894 /* IntExtensions.swift */; };
@@ -317,6 +318,7 @@
 		E28D454022432AF600F67B08 /* WidgetTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTextCollectionViewCell.swift; sourceTree = "<group>"; };
 		E29A247322415655004504B8 /* Vibrate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibrate.swift; sourceTree = "<group>"; };
 		E29A247522415665004504B8 /* LineBreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineBreak.swift; sourceTree = "<group>"; };
+		E29EF94B224A863900F96D35 /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
 		E2C37AE2222D12CE00D84894 /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
 		E2C37AE4222D146400D84894 /* AlarmCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCollectionViewCell.swift; sourceTree = "<group>"; };
 		E2C37AE8222D59C400D84894 /* AlarmCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -429,6 +431,7 @@
 				E246D338223781E50022FC4D /* Color.swift */,
 				E2635383223C23B0006A2E43 /* Key.swift */,
 				E2635385223C2633006A2E43 /* SettingList.swift */,
+				E29EF94B224A863900F96D35 /* ServiceType.swift */,
 				E2635387223CF894006A2E43 /* FontSize.swift */,
 				E268F3B7223E2FBE00534565 /* FontWeight.swift */,
 				E272F74F223E6F2000CD5FA8 /* Theme.swift */,
@@ -601,6 +604,12 @@
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
@@ -829,6 +838,7 @@
 			files = (
 				E20CE65321FD8E0300FF495E /* TextInputViewController.swift in Sources */,
 				E2E3C3D7220175A500C74C57 /* Text.swift in Sources */,
+				E29EF94C224A863900F96D35 /* ServiceType.swift in Sources */,
 				E2635386223C2633006A2E43 /* SettingList.swift in Sources */,
 				E2635384223C23B0006A2E43 /* Key.swift in Sources */,
 				E2C37B0A2232793900D84894 /* TextLoader.swift in Sources */,
