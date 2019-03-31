@@ -8,6 +8,8 @@
 
 import UIKit
 import MobileCoreServices
+import MaterialComponents.MaterialSnackbar
+import Zip
 
 
 protocol SettingViewControllerDelegate {
@@ -224,14 +226,11 @@ extension SettingViewController: SettingCollectionViewCellDelegate {
   }
 
   func backupAndRestore() {
-    // TODO: actionView 띄워서 백업또는 복원 선택하게 하기
     let actionViewController = UIAlertController(title: "백업 & 복원", message: "iCloud를 통해서 이용가능합니다.", preferredStyle: .actionSheet)
     let backupAction = UIAlertAction(title: "백업", style: .default) { (action) in
-      // TODO
       self.backup()
     }
     let restoreAction = UIAlertAction(title: "복원", style: .default) { (action) in
-      // TODO
       self.restore()
     }
     let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
@@ -240,17 +239,68 @@ extension SettingViewController: SettingCollectionViewCellDelegate {
     actionViewController.addAction(cancelAction)
     present(actionViewController, animated: true, completion: nil)
   }
+
+  private func restoreDatabase(fileName: String, url: URL) {
+    let fileManager = FileManager.default
+    guard let directory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.mjkoo.memo") else {
+      return
+    }
+
+    let fromURL = directory.appendingPathComponent(fileName)
+    let toURL = url.appendingPathComponent(fileName)
+
+    if fileManager.fileExists(atPath: fromURL.path) {
+      do {
+        try fileManager.removeItem(at: fromURL)
+      } catch {
+        print(error)
+      }
+      do {
+        try fileManager.moveItem(at: toURL, to: fromURL)
+      } catch {
+        print(error)
+      }
+    } else {
+      do {
+        try fileManager.moveItem(at: toURL, to: fromURL)
+      } catch {
+        print(error)
+      }
+    }
+  }
 }
 
 
 extension SettingViewController: UIDocumentMenuDelegate,UIDocumentPickerDelegate,UINavigationControllerDelegate {
   public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
-    let myURL = url as URL
-    print("import result : \(myURL)")
+    // https://stackoverflow.com/questions/33890225/how-to-access-files-in-icloud-drive-from-within-my-ios-app
+
+    if url.lastPathComponent == "memo.zip" {
+      do {
+        let progressViewController = ProgressViewController()
+        progressViewController.modalTransitionStyle = .crossDissolve
+        progressViewController.modalPresentationStyle = .overFullScreen
+        present(progressViewController, animated: true, completion: nil)
+        let unzipURL = try Zip.quickUnzipFile(url) // Unzip
+        restoreDatabase(fileName: "contacts.db", url: unzipURL)
+        restoreDatabase(fileName: "completed.db", url: unzipURL)
+        if let date = self.date {
+          delegate?.reloadCollectionViewAndCalendarView(date: date)
+        }
+        progressViewController.dismiss(animated: true, completion: nil)
+      }
+      catch {
+        print("Something went wrong")
+      }
+    } else {
+      let message = MDCSnackbarMessage()
+      message.text = "memo.zip 파일을 선택하셔야 합니다."
+      MDCSnackbarManager().show(message)
+    }
   }
 
 
-  public func documentMenu(_ documentMenu:UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
+  public func documentMenu(_ documentMenu: UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
     documentPicker.delegate = self
     documentPicker.modalPresentationStyle = .fullScreen
     documentPicker.modalTransitionStyle = .crossDissolve
@@ -259,29 +309,34 @@ extension SettingViewController: UIDocumentMenuDelegate,UIDocumentPickerDelegate
 
 
   func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
-    print("view was cancelled")
-//    dismiss(animated: true, completion: nil)
+    let message = MDCSnackbarMessage()
+    message.text = "Canceled"
+    MDCSnackbarManager().show(message)
   }
 
-  func backup(){
-    let fileManager = FileManager.default
-    let directory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.mjkoo.memo")
-    let databasePath = directory!.appendingPathComponent("contacts.db")
-    let databasePathCompleted = directory!.appendingPathComponent("completed.db")
+  func backup() {
+    do {
+      let fileManager = FileManager.default
+      let directory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.mjkoo.memo")
+      let databasePath = directory!.appendingPathComponent("contacts.db")
+      let databasePathCompleted = directory!.appendingPathComponent("completed.db")
+      let zipFilePath = try Zip.quickZipFiles([databasePath, databasePathCompleted], fileName: "memo") // Zip
+      let documentPicker = UIDocumentPickerViewController.init(url: zipFilePath, in: .exportToService)
 
-    let documentPicker = UIDocumentPickerViewController.init(url: databasePath, in: .exportToService)
-
-    documentPicker.delegate = self
-    documentPicker.modalPresentationStyle = .formSheet
-    self.present(documentPicker, animated: true, completion: nil)
+      documentPicker.delegate = self
+      documentPicker.modalPresentationStyle = .formSheet
+      self.present(documentPicker, animated: true, completion: nil)
+    }
+    catch {
+      // TODO:  error message
+    }
   }
 
   func restore() {
-    //    let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.png"], in: .import)
-    //    let importMenu = UIDocumentMenuViewController(documentTypes: ["public.png"], in: .import)
-    //    importMenu.delegate = self
-    //    importMenu.modalPresentationStyle = .formSheet
-    //    self.present(importMenu, animated: true, completion: nil)
+    let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.archive"], in: .import)
+    documentPicker.delegate = self
+    documentPicker.modalPresentationStyle = .formSheet
+    self.present(documentPicker, animated: true, completion: nil)
   }
 }
 

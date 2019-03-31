@@ -14,6 +14,8 @@
 		E2314808223B925200161724 /* UIShortTapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2314807223B925200161724 /* UIShortTapGestureRecognizer.swift */; };
 		E246D339223781E50022FC4D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246D338223781E50022FC4D /* Color.swift */; };
 		E25447C022253F2F00F48A80 /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25447BF22253F2F00F48A80 /* NotificationType.swift */; };
+		E2565F7C2250C5F500BC13FD /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2565F7A2250C5F500BC13FD /* ProgressViewController.swift */; };
+		E2565F7D2250C5F500BC13FD /* ProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2565F7B2250C5F500BC13FD /* ProgressViewController.xib */; };
 		E2635382223C06DF006A2E43 /* SettingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635381223C06DF006A2E43 /* SettingCollectionViewCell.swift */; };
 		E2635384223C23B0006A2E43 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635383223C23B0006A2E43 /* Key.swift */; };
 		E2635386223C2633006A2E43 /* SettingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635385223C2633006A2E43 /* SettingList.swift */; };
@@ -98,6 +100,7 @@
 		E2E3C3D7220175A500C74C57 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3D6220175A500C74C57 /* Text.swift */; };
 		E2E3C3DB22017A2100C74C57 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3DA22017A2100C74C57 /* UserDefaultsExtension.swift */; };
 		E2E3C3DD2201839B00C74C57 /* DateStringChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3DC2201839B00C74C57 /* DateStringChanger.swift */; };
+		E2EEC6C2224BEB9E00A59E0D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2EEC6C1224BEB9E00A59E0D /* CloudKit.framework */; };
 		E2F36CF421FAE0FA00A9C24C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F36CF321FAE0FA00A9C24C /* AppDelegate.swift */; };
 		E2F36CF621FAE0FA00A9C24C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F36CF521FAE0FA00A9C24C /* MainViewController.swift */; };
 		E2F36CF921FAE0FA00A9C24C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F36CF721FAE0FA00A9C24C /* Main.storyboard */; };
@@ -143,6 +146,8 @@
 		E2314807223B925200161724 /* UIShortTapGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIShortTapGestureRecognizer.swift; sourceTree = "<group>"; };
 		E246D338223781E50022FC4D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E25447BF22253F2F00F48A80 /* NotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
+		E2565F7A2250C5F500BC13FD /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		E2565F7B2250C5F500BC13FD /* ProgressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressViewController.xib; sourceTree = "<group>"; };
 		E2635381223C06DF006A2E43 /* SettingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionViewCell.swift; sourceTree = "<group>"; };
 		E2635383223C23B0006A2E43 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		E2635385223C2633006A2E43 /* SettingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingList.swift; sourceTree = "<group>"; };
@@ -337,6 +342,7 @@
 		E2E3C3D6220175A500C74C57 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		E2E3C3DA22017A2100C74C57 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		E2E3C3DC2201839B00C74C57 /* DateStringChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStringChanger.swift; sourceTree = "<group>"; };
+		E2EEC6C1224BEB9E00A59E0D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		E2F36CF021FAE0FA00A9C24C /* memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F36CF321FAE0FA00A9C24C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2F36CF521FAE0FA00A9C24C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -363,6 +369,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2EEC6C2224BEB9E00A59E0D /* CloudKit.framework in Frameworks */,
 				E2C37B042232534200D84894 /* libsqlite3.tbd in Frameworks */,
 				DF191B90BF36C3030333F89D /* Pods_memo.framework in Frameworks */,
 			);
@@ -390,6 +397,8 @@
 				E266367422089106001D05C8 /* TextModifyViewController.swift */,
 				E2C37AE2222D12CE00D84894 /* AlarmListViewController.swift */,
 				E2C37AEC222D87A900D84894 /* SettingViewController.swift */,
+				E2565F7A2250C5F500BC13FD /* ProgressViewController.swift */,
+				E2565F7B2250C5F500BC13FD /* ProgressViewController.xib */,
 				E266367B2208A37C001D05C8 /* Cell */,
 				E2C37AEE222D87B000D84894 /* View */,
 			);
@@ -529,6 +538,7 @@
 		E32097C5322B1DB39896B99C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E2EEC6C1224BEB9E00A59E0D /* CloudKit.framework */,
 				E21F9BBA2247A428004D5482 /* GoogleUtilities.framework */,
 				E21F9BB82247A3F3004D5482 /* SafariServices.framework */,
 				E2C37B032232534200D84894 /* libsqlite3.tbd */,
@@ -607,6 +617,9 @@
 								enabled = 1;
 							};
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 							com.apple.iCloud = {
@@ -689,6 +702,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2565F7D2250C5F500BC13FD /* ProgressViewController.xib in Resources */,
 				E27FD8A5224638BF00339705 /* Localizable.strings in Resources */,
 				E2F36CFE21FAE0FD00A9C24C /* LaunchScreen.storyboard in Resources */,
 				E28D450D2242814800F67B08 /* MainInterface.storyboard in Resources */,
@@ -713,11 +727,13 @@
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/GradientLoadingBar/GradientLoadingBar.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -727,11 +743,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GradientLoadingBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -839,6 +857,7 @@
 				E20CE65321FD8E0300FF495E /* TextInputViewController.swift in Sources */,
 				E2E3C3D7220175A500C74C57 /* Text.swift in Sources */,
 				E29EF94C224A863900F96D35 /* ServiceType.swift in Sources */,
+				E2565F7C2250C5F500BC13FD /* ProgressViewController.swift in Sources */,
 				E2635386223C2633006A2E43 /* SettingList.swift in Sources */,
 				E2635384223C23B0006A2E43 /* Key.swift in Sources */,
 				E2C37B0A2232793900D84894 /* TextLoader.swift in Sources */,
