@@ -128,7 +128,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
   func applicationDidEnterBackground(_ application: UIApplication) { }
 
-  func applicationWillEnterForeground(_ application: UIApplication) { }
+  func applicationWillEnterForeground(_ application: UIApplication) {
+    NotificationCenter.default.post(
+      name: NSNotification.Name(rawValue: "ReloadCollectionView"),
+      object: nil)
+  }
 
   func applicationDidBecomeActive(_ application: UIApplication) { }
 

@@ -53,7 +53,7 @@ class SettingViewController: UIViewController {
       }
     }
 
-    appNameLabel.text = "QUICK Memo"
+    appNameLabel.text = "Memoment"
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(returnMainViewController))
     closeButtonView.addGestureRecognizer(tapGesture)
   }

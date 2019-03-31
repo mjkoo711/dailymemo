@@ -65,9 +65,9 @@ class AlarmListViewController: UIViewController {
       navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: Color.DarkModeFontColor]
       navigationController?.navigationBar.barStyle = .black
       if theme == .blackRed {
-        UINavigationBar.appearance().tintColor = Color.LightRed
+        navigationController?.navigationBar.tintColor = Color.LightRed
       } else if theme == .blackBlue {
-        UINavigationBar.appearance().tintColor = Color.Blue
+        navigationController?.navigationBar.tintColor = Color.Blue
       }
     } else if theme == .whiteBlue || theme == .whiteRed {
       view.backgroundColor = Color.WhiteModeMain
@@ -75,9 +75,9 @@ class AlarmListViewController: UIViewController {
       navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: Color.WhiteModeFontColor]
       navigationController?.navigationBar.barStyle = .default
       if theme == .whiteRed {
-        UINavigationBar.appearance().tintColor = Color.LightRed
+        navigationController?.navigationBar.tintColor = Color.LightRed
       } else if theme == .whiteBlue {
-        UINavigationBar.appearance().tintColor = Color.Blue
+        navigationController?.navigationBar.tintColor = Color.Blue
       }
     }
   }

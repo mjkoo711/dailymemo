@@ -78,6 +78,10 @@ class MainViewController: UIViewController {
     timeChanger = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(MainViewController.updateTimeLabel), userInfo: nil, repeats: true)
 
     changeCalendarMode()
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(reloadTodayCollectionViewAndCalendarView),
+                                           name: NSNotification.Name(rawValue: "ReloadCollectionView"),
+                                           object: nil)
 
     let tapGestureForCollectionView = UITapGestureRecognizer(target: self, action: #selector(showInputTextViewController))
     collectionView.addGestureRecognizer(tapGestureForCollectionView)
@@ -498,6 +502,16 @@ extension MainViewController: TextInputViewControllerDelegate, TextModifyViewCon
     setTheme()
   }
 
+  @objc func reloadTodayCollectionViewAndCalendarView() {
+    let date = formatter.string(from: Date())
+    textList = TextLoader().findOnceTextList(date: date) + TextLoader().findDailyTextList() + TextLoader().findWeeklyTextList(date: date) + TextLoader().findMonthlyTextList(date: date)
+    textCompletedList = FMDBManager.shared.findTextCompleted(currentDate: selectDateString)
+
+    collectionView.reloadData()
+    calendarView.reloadData()
+    collectionViewScrollToBottom()
+  }
+
   func reloadCollectionView(date: String) {
     textList = TextLoader().findOnceTextList(date: date) + TextLoader().findDailyTextList() + TextLoader().findWeeklyTextList(date: date) + TextLoader().findMonthlyTextList(date: date)
     textCompletedList = FMDBManager.shared.findTextCompleted(currentDate: selectDateString)
@@ -506,7 +520,7 @@ extension MainViewController: TextInputViewControllerDelegate, TextModifyViewCon
     collectionViewScrollToBottom()
   }
 
-  func reloadCollectionViewAndCalendarView(date: String) {
+  @objc func reloadCollectionViewAndCalendarView(date: String) {
     textList = TextLoader().findOnceTextList(date: date) + TextLoader().findDailyTextList() + TextLoader().findWeeklyTextList(date: date) + TextLoader().findMonthlyTextList(date: date)
     textCompletedList = FMDBManager.shared.findTextCompleted(currentDate: selectDateString)
 
