@@ -230,7 +230,6 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
       let message = MDCSnackbarMessage()
       message.buttonTextColor = Color.LightRed
       message.text = String(format: NSLocalizedString("The notification time has been changed to %@.", comment: ""), "\(self.formatterLocalized.string(from: datePicker.date))")
-
       MDCSnackbarManager.show(message)
 
     }
@@ -245,7 +244,6 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
   }
 
   private func textAlarmTrigger(text: Text, isAlarmSetting: Bool) {
-//    let textManager = OnceTextManager()
     if isAlarmSetting {
       text.onAlarmSetting()
     } else {

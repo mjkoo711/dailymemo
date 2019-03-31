@@ -43,7 +43,7 @@ struct MDateFormatter {
     formatter.locale = Locale.init(identifier: Locale.current.languageCode!)
     formatter.amSymbol = "AM"
     formatter.pmSymbol = "PM"
-    formatter.dateFormat = localDateFormat + " " + " hh:mm a"
+    formatter.dateFormat = localDateFormat + " " + "hh:mm a"
     return formatter
   }()
 

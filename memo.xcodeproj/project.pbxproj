@@ -1067,6 +1067,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CDA1FC91C7A6A2F05C1A2E33 /* Pods-memoWidget.debug.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_ENTITLEMENTS = memoWidget/memoWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TYXYQ3XS3W;
@@ -1089,6 +1090,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EFCC3A4D82504480A31990A0 /* Pods-memoWidget.release.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_ENTITLEMENTS = memoWidget/memoWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TYXYQ3XS3W;
