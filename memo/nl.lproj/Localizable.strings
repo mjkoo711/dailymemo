@@ -119,3 +119,11 @@
 "Set Up" = "GAAN";
 
 "Notification Permission has already been allowed" = "Melding Toestemming is al toegestaan";
+
+"You need to select a file named 'memoBackup.zip'" = "U moet een bestand selecteren met de naam 'memoBackup.zip'";
+
+"Calendar Mode" = "Kalender Mode";
+
+"Week" = "Week";
+
+"Month" = "Maand";

@@ -53,6 +53,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (5.5.0):
     - GoogleUtilities/Logger
+  - GradientLoadingBar (1.1.15)
   - IQKeyboardManagerSwift (6.2.0)
   - MaterialComponents/AnimationTiming (78.0.0)
   - MaterialComponents/Buttons (78.0.0):
@@ -98,6 +99,7 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - SCLAlertView (0.8)
+  - Zip (1.1.0)
 
 DEPENDENCIES:
   - Firebase/AdMob
@@ -105,9 +107,11 @@ DEPENDENCIES:
   - FMDB
   - FSCalendar
   - Google-Mobile-Ads-SDK
+  - GradientLoadingBar (~> 1.0)
   - IQKeyboardManagerSwift
   - MaterialComponents/Snackbar
   - SCLAlertView
+  - Zip (~> 1.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -120,12 +124,14 @@ SPEC REPOS:
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleUtilities
+    - GradientLoadingBar
     - IQKeyboardManagerSwift
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
     - nanopb
     - SCLAlertView
+    - Zip
 
 SPEC CHECKSUMS:
   Firebase: c60d49e9c2630875a96207d15e2affb8364996d1
@@ -137,13 +143,15 @@ SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: c7bec408202526ec4e9ccd025c00f9f30e9f8807
   GoogleAppMeasurement: 1624046ab1bcc5e170061a56ef5679000b079c8e
   GoogleUtilities: 6481e6318c5fcabaaa8513ef8120f329055d7c10
+  GradientLoadingBar: 7d390dbfc3ead827a71a6af39a79533aa432eb37
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   MaterialComponents: f50582fcff415a2459e62a29310fb3ec70a70234
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
+  Zip: 8877eede3dda76bcac281225c20e71c25270774c
 
-PODFILE CHECKSUM: 160cc1350136729f1872695531c7b75706e2606f
+PODFILE CHECKSUM: 36bc0d03dc9e69c76573e1a2bdf84e5526051e1e
 
 COCOAPODS: 1.5.3

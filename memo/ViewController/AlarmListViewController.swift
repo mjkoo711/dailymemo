@@ -168,6 +168,7 @@ extension AlarmListViewController: UICollectionViewDelegateFlowLayout {
 
 extension AlarmListViewController: AlarmCollectionViewCellDelegate {
   func deleteAlarmText(text: Text) {
+    text.alarmDatePicked = nil
     text.offAlarmSetting()
     FMDBManager.shared.updateText(text: text)
     AlarmManager().removeNotification(textSelected: text)

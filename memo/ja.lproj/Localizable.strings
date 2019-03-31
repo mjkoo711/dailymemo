@@ -121,3 +121,11 @@
 "Set Up" = "行く";
 
 "Notification Permission has already been allowed" = "通知許可は既に許可されています";
+
+"You need to select a file named 'memoBackup.zip'" = "あなたは 'memoBackup.zip'という名前のファイルを選択する必要があります。";
+
+"Calendar Mode" = "カレンダーモード";
+
+"Week" = "週";
+
+"Month" = "月";

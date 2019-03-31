@@ -119,3 +119,11 @@
 "Set Up" = "PERGI";
 
 "Notification Permission has already been allowed" = "Izin Pemberitahuan telah diizinkan";
+
+"You need to select a file named 'memoBackup.zip'" = "Anda harus memilih file bernama 'memoBackup.zip'";
+
+"Calendar Mode" = "Mode Kalender";
+
+"Week" = "Pekan";
+
+"Month" = "Bulan";

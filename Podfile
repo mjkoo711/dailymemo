@@ -13,6 +13,9 @@ target 'memo' do
   pod 'Google-Mobile-Ads-SDK'
   pod 'Firebase/Core'
   pod 'Firebase/AdMob'
+  pod 'Zip', '~> 1.1'
+  pod 'GradientLoadingBar', '~> 1.0'
+
   # Pods for memo
   target 'memoWidget' do 
     inherit! :search_paths

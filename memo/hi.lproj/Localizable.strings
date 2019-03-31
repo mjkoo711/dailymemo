@@ -119,3 +119,11 @@
 "Set Up" = "चले जाओ";
 
 "Notification Permission has already been allowed" = "अधिसूचना की अनुमति पहले ही दी जा चुकी है";
+
+"You need to select a file named 'memoBackup.zip'" = "आपको 'memoBackup.zip' नाम की फ़ाइल का चयन करना होगा";
+
+"Calendar Mode" = "कैलेंडर मोड";
+
+"Week" = "सप्ताह";
+
+"Month" = "महीना";
