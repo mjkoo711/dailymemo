@@ -119,3 +119,11 @@
 "Set Up" = "اذهب";
 
 "Notification Permission has already been allowed" = "تم السماح بإذن الإخطار بالفعل";
+
+"You need to select a file named 'memoBackup.zip'" = "تحتاج إلى تحديد ملف باسم 'memoBackup.zip'";
+
+"Calendar Mode" = "وضع التقويم";
+
+"Week" = "أسبوع";
+
+"Month" = "شهر";

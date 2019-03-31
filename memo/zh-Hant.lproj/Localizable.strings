@@ -122,3 +122,10 @@
 
 "Notification Permission has already been allowed" = "已經允許通知許可";
 
+"You need to select a file named 'memoBackup.zip'" = "您需要選擇名為'memoBackup.zip'的文件。";
+
+"Calendar Mode" = "日曆模式";
+
+"Week" = "週";
+
+"Month" = "月";

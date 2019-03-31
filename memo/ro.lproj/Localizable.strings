@@ -119,3 +119,11 @@
 "Set Up" = "GO";
 
 "Notification Permission has already been allowed" = "Permisiunea de notificare a fost deja permisă";
+
+"You need to select a file named 'memoBackup.zip'" = "Trebuie să selectați un fișier numit 'memoBackup.zip'";
+
+"Calendar Mode" = "Modul Calendar";
+
+"Week" = "Săptămână";
+
+"Month" = "Lună";

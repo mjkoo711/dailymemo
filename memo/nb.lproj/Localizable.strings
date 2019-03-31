@@ -119,3 +119,11 @@
 "Set Up" = "GÅ";
 
 "Notification Permission has already been allowed" = "Varsling Tillatelse er allerede tillatt";
+
+"You need to select a file named 'memoBackup.zip'" = "Du må velge en fil som heter 'memoBackup.zip'";
+
+"Calendar Mode" = "Kalendermoduser";
+
+"Week" = "Uke";
+
+"Month" = "Måned";

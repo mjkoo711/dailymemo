@@ -16,6 +16,7 @@ class SettingManager {
   var vibrate: Vibrate?
   var theme: Theme?
   var lineBreak: LineBreak?
+  var calendarMode: CalendarMode?
 
   private init() { }
 
@@ -64,6 +65,14 @@ class SettingManager {
       lineBreak = LineBreak.off
     } else {
       lineBreak = LineBreak.on
+    }
+  }
+
+  func setCalendarMode(value: Int) {
+    if value == 0 {
+      calendarMode = CalendarMode.week
+    } else {
+      calendarMode = CalendarMode.month
     }
   }
 }

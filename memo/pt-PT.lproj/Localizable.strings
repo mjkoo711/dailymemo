@@ -120,6 +120,10 @@
 
 "Notification Permission has already been allowed" = "Notificação Permissão já foi permitida";
 
+"You need to select a file named 'memoBackup.zip'" = "Você precisa selecionar um arquivo chamado 'memoBackup.zip'";
 
+"Calendar Mode" = "Modo de calendário";
 
+"Week" = "Semana";
 
+"Month" = "Mês";

@@ -120,4 +120,14 @@
 
 "Notification Permission has already been allowed" = "Разрешение на уведомление уже разрешено";
 
+"You need to select a file named 'memoBackup.zip'" = "Вам нужно выбрать файл с именем «memoBackup.zip»";
+
+"Calendar Mode" = "Режим календаря";
+
+"Week" = "Неделю";
+
+"Month" = "Месяц";
+
+
+
 

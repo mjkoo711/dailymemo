@@ -121,3 +121,12 @@
 "Set Up" = "MEGY";
 
 "Notification Permission has already been allowed" = "Értesítés Engedély már engedélyezett";
+
+"You need to select a file named 'memoBackup.zip'" = "Válasszon ki egy 'memoBackup.zip' nevű fájlt";
+
+"Calendar Mode" = "Naptár mód";
+
+"Week" = "Héten";
+
+"Month" = "Hónap";
+

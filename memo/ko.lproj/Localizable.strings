@@ -121,3 +121,11 @@
 "Set Up" = "설정하기";
 
 "Notification Permission has already been allowed" = "알림 권한이 이미 허용되어 있습니다.";
+
+"You need to select a file named 'memoBackup.zip'" = "'memoBackup.zip' 이름의 파일을 선택하셔야 합니다";
+
+"Calendar Mode" = "달력 모드";
+
+"Week" = "주간";
+
+"Month" = "월간";

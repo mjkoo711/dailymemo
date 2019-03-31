@@ -119,3 +119,11 @@
 "Set Up" = "GÅ";
 
 "Notification Permission has already been allowed" = "Anmälan Tillstånd har redan tillåtits";
+
+"You need to select a file named 'memoBackup.zip'" = "Du måste välja en fil med namnet 'memoBackup.zip'";
+
+"Calendar Mode" = "Kalenderläge";
+
+"Week" = "Vecka";
+
+"Month" = "Månad";

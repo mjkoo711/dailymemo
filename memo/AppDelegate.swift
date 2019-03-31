@@ -115,6 +115,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
       UserDefaults.standard.saveSettings(value: 1, key: Key.LineBreak)
       SettingManager.shared.setLineBreak(value: 1)
     }
+
+    if let value = UserDefaults.standard.loadSettings(key: Key.CalendarMode) {
+      SettingManager.shared.setCalendarMode(value: value)
+    } else {
+      UserDefaults.standard.saveSettings(value: 1, key: Key.CalendarMode)
+      SettingManager.shared.setCalendarMode(value: 1)
+    }
   }
 
   func applicationWillResignActive(_ application: UIApplication) { }

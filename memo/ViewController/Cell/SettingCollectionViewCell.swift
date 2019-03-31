@@ -16,6 +16,7 @@ protocol SettingCollectionViewCellDelegate {
   func changeTheme()
   func updateSettingViewController()
   func backupAndRestore()
+  func changeCalendarMode()
 }
 
 class SettingCollectionViewCell: UICollectionViewCell {
@@ -38,100 +39,106 @@ class SettingCollectionViewCell: UICollectionViewCell {
 
   @objc private func tapOptionChange() {
     Vibration.heavy.vibrate()
-    if let optionTotalCount = optionTotalCount, let currentOption = currentOption, let settingMode = settingMode {
-      let nextOption = currentOption + 1
-      let value = nextOption == optionTotalCount ? 0 : nextOption
+    guard let indexPath = indexPath else { return }
+    if indexPath.section == 0 {
+      if let optionTotalCount = optionTotalCount, let currentOption = currentOption, let settingMode = settingMode {
+        let nextOption = currentOption + 1
+        let value = nextOption == optionTotalCount ? 0 : nextOption
 
-      if settingMode == .Theme {
-        UserDefaults.standard.saveSettings(value: value, key: Key.Theme)
-        SettingManager.shared.setTheme(value: value)
-        delegate?.changeTheme()
-      }
-      else if settingMode == .FontSize {
-        UserDefaults.standard.saveSettings(value: value, key: Key.FontSize)
-        SettingManager.shared.setFontSize(value: value)
-      }
-      else if settingMode == .FontThickness {
-        UserDefaults.standard.saveSettings(value: value, key: Key.FontWeight)
-        SettingManager.shared.setFontWeight(value: value)
-      }
-      else if settingMode == .Vibration {
-        UserDefaults.standard.saveSettings(value: value, key: Key.Vibrate)
-        SettingManager.shared.setVibration(value: value)
-      }
-      else if settingMode == .Lock {
-        UserDefaults.standard.saveSettings(value: value, key: Key.LockFeature)
-        // TODO
-      }
-      else if settingMode == .LineBreak {
-        UserDefaults.standard.saveSettings(value: value, key: Key.LineBreak)
-        SettingManager.shared.setLineBreak(value: value)
-      }
-      else if settingMode == .Alarm {
-        let current = UNUserNotificationCenter.current()
+        if settingMode == .Theme {
+          UserDefaults.standard.saveSettings(value: value, key: Key.Theme)
+          SettingManager.shared.setTheme(value: value)
+          delegate?.changeTheme()
+        }
+        else if settingMode == .FontSize {
+          UserDefaults.standard.saveSettings(value: value, key: Key.FontSize)
+          SettingManager.shared.setFontSize(value: value)
+        }
+        else if settingMode == .FontThickness {
+          UserDefaults.standard.saveSettings(value: value, key: Key.FontWeight)
+          SettingManager.shared.setFontWeight(value: value)
+        }
+        else if settingMode == .Vibration {
+          UserDefaults.standard.saveSettings(value: value, key: Key.Vibrate)
+          SettingManager.shared.setVibration(value: value)
+        }
+        else if settingMode == .Lock {
+          UserDefaults.standard.saveSettings(value: value, key: Key.LockFeature)
+          // TODO
+        }
+        else if settingMode == .LineBreak {
+          UserDefaults.standard.saveSettings(value: value, key: Key.LineBreak)
+          SettingManager.shared.setLineBreak(value: value)
+        }
+        else if settingMode == .CalendarMode {
+          UserDefaults.standard.saveSettings(value: value, key: Key.CalendarMode)
+          SettingManager.shared.setCalendarMode(value: value)
+          delegate?.changeCalendarMode()
+        }
+        else if settingMode == .Alarm {
+          let current = UNUserNotificationCenter.current()
 
-        current.getNotificationSettings(completionHandler: { settings in
+          current.getNotificationSettings(completionHandler: { settings in
 
-          switch settings.authorizationStatus {
-          case .denied, .notDetermined:
-            DispatchQueue.main.async {
-              let message = MDCSnackbarMessage()
-              message.text = "Notification permission had not allowed.".localized
-              if let theme = SettingManager.shared.theme {
-                if theme == .blackRed || theme == .whiteRed {
-                  message.buttonTextColor = Color.LightRed
-                } else if theme == .blackBlue || theme == .whiteBlue {
-                  message.buttonTextColor = Color.Blue
+            switch settings.authorizationStatus {
+            case .denied, .notDetermined:
+              DispatchQueue.main.async {
+                let message = MDCSnackbarMessage()
+                message.text = "Notification permission had not allowed.".localized
+                if let theme = SettingManager.shared.theme {
+                  if theme == .blackRed || theme == .whiteRed {
+                    message.buttonTextColor = Color.LightRed
+                  } else if theme == .blackBlue || theme == .whiteBlue {
+                    message.buttonTextColor = Color.Blue
+                  }
                 }
+
+                let action = MDCSnackbarMessageAction()
+                let actionHandler = {() in
+                  guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                    return
+                  }
+                  if UIApplication.shared.canOpenURL(settingsUrl) {
+                    UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                      print("Settings opened: \(success)") // Prints true
+                    })
+                  }
+                }
+                action.handler = actionHandler
+                action.title = "Set Up".localized
+
+                message.action = action
+                MDCSnackbarManager.show(message)
               }
-
-              let action = MDCSnackbarMessageAction()
-              let actionHandler = {() in
-                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-                  return
-                }
-                if UIApplication.shared.canOpenURL(settingsUrl) {
-                  UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                    print("Settings opened: \(success)") // Prints true
-                  })
-                }
+            case .authorized:
+              DispatchQueue.main.async {
+                let message = MDCSnackbarMessage()
+                message.text = "Notification Permission has already been allowed".localized
+                MDCSnackbarManager.show(message)
               }
-              action.handler = actionHandler
-              action.title = "Set Up".localized
+            case .provisional:
+              DispatchQueue.main.async {
+                let message = MDCSnackbarMessage()
+                message.text = "provisinal"
+                MDCSnackbarManager.show(message)
+              }
+            }
+          })
+        }
+      }
+    } else if indexPath.section == 1 {
+      if let serviceType = serviceType {
+        if serviceType == .BuyProEdition {
 
-              message.action = action
-              MDCSnackbarManager.show(message)
-            }
-          case .authorized:
-            DispatchQueue.main.async {
-              let message = MDCSnackbarMessage()
-              message.text = "Notification Permission has already been allowed".localized
-              MDCSnackbarManager.show(message)
-            }
-          case .provisional:
-            DispatchQueue.main.async {
-              let message = MDCSnackbarMessage()
-              message.text = "provisinal"
-              MDCSnackbarManager.show(message)
-            }
-          }
-        })
+        } else if serviceType == .BackUp_Restore {
+          delegate?.backupAndRestore()
+        } else if serviceType == .WriteA_Review {
+
+        }
       }
     }
 
-    if let serviceType = serviceType {
-      if serviceType == .BuyProEdition {
-
-      } else if serviceType == .BackUp_Restore {
-        delegate?.backupAndRestore()
-      } else if serviceType == .WriteA_Review {
-
-      }
-    }
-
-
-
-    if let indexPath = indexPath, indexPath.section == 0, indexPath.row != SettingList.Alarm.rawValue {
+    if indexPath.section == 0, indexPath.row != SettingList.Alarm.rawValue {
       delegate?.reloadSettings(indexPath: indexPath)
       delegate?.reloadMainViewController()
     }

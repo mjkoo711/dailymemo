@@ -77,7 +77,7 @@ class MainViewController: UIViewController {
 
     timeChanger = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(MainViewController.updateTimeLabel), userInfo: nil, repeats: true)
 
-    calendarView.scope = .week
+    changeCalendarMode()
 
     let tapGestureForCollectionView = UITapGestureRecognizer(target: self, action: #selector(showInputTextViewController))
     collectionView.addGestureRecognizer(tapGestureForCollectionView)
@@ -484,6 +484,16 @@ extension MainViewController: FSCalendarDelegateAppearance {
 }
 
 extension MainViewController: TextInputViewControllerDelegate, TextModifyViewControllerDelegate, SettingViewControllerDelegate {
+  func changeCalendarMode() {
+    if SettingManager.shared.calendarMode == CalendarMode.week {
+      calendarView.scope = .week
+      expandImageButtonView.image = UIImage(named: "UpWhite")
+    } else if SettingManager.shared.calendarMode == CalendarMode.month {
+      calendarView.scope = .month
+      expandImageButtonView.image = UIImage(named: "DownWhite")
+    }
+  }
+
   func changeMainViewControllerTheme() {
     setTheme()
   }

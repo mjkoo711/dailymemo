@@ -16,6 +16,8 @@
 		E25447C022253F2F00F48A80 /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25447BF22253F2F00F48A80 /* NotificationType.swift */; };
 		E2565F7C2250C5F500BC13FD /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2565F7A2250C5F500BC13FD /* ProgressViewController.swift */; };
 		E2565F7D2250C5F500BC13FD /* ProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2565F7B2250C5F500BC13FD /* ProgressViewController.xib */; };
+		E2565F7F2250CD1900BC13FD /* CalendarMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2565F7E2250CD1900BC13FD /* CalendarMode.swift */; };
+		E2565F802250CD5E00BC13FD /* CalendarMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2565F7E2250CD1900BC13FD /* CalendarMode.swift */; };
 		E2635382223C06DF006A2E43 /* SettingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635381223C06DF006A2E43 /* SettingCollectionViewCell.swift */; };
 		E2635384223C23B0006A2E43 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635383223C23B0006A2E43 /* Key.swift */; };
 		E2635386223C2633006A2E43 /* SettingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2635385223C2633006A2E43 /* SettingList.swift */; };
@@ -148,6 +150,7 @@
 		E25447BF22253F2F00F48A80 /* NotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
 		E2565F7A2250C5F500BC13FD /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		E2565F7B2250C5F500BC13FD /* ProgressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressViewController.xib; sourceTree = "<group>"; };
+		E2565F7E2250CD1900BC13FD /* CalendarMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarMode.swift; sourceTree = "<group>"; };
 		E2635381223C06DF006A2E43 /* SettingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionViewCell.swift; sourceTree = "<group>"; };
 		E2635383223C23B0006A2E43 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		E2635385223C2633006A2E43 /* SettingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingList.swift; sourceTree = "<group>"; };
@@ -236,9 +239,6 @@
 		E27FD87822462AE700339705 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Main.strings; sourceTree = "<group>"; };
 		E27FD87922462AE700339705 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E27FD87A22462AE700339705 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/MainInterface.strings; sourceTree = "<group>"; };
-		E27FD87B22462B1B00339705 /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Main.strings; sourceTree = "<group>"; };
-		E27FD87C22462B1B00339705 /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		E27FD87D22462B1C00339705 /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		E27FD87E22462B2A00339705 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Main.strings; sourceTree = "<group>"; };
 		E27FD87F22462B2A00339705 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E27FD88022462B2A00339705 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/MainInterface.strings; sourceTree = "<group>"; };
@@ -260,15 +260,6 @@
 		E27FD89022462B7600339705 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Main.strings; sourceTree = "<group>"; };
 		E27FD89122462B7600339705 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E27FD89222462B7600339705 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/MainInterface.strings; sourceTree = "<group>"; };
-		E27FD89322462B8200339705 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/Main.strings; sourceTree = "<group>"; };
-		E27FD89422462B8200339705 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		E27FD89522462B8200339705 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/MainInterface.strings; sourceTree = "<group>"; };
-		E27FD89622462B8800339705 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Main.strings; sourceTree = "<group>"; };
-		E27FD89722462B8800339705 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		E27FD89822462B8900339705 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/MainInterface.strings; sourceTree = "<group>"; };
-		E27FD89922462B8D00339705 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/Main.strings; sourceTree = "<group>"; };
-		E27FD89A22462B8D00339705 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		E27FD89B22462B8D00339705 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		E27FD89C22462B9600339705 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/Main.strings; sourceTree = "<group>"; };
 		E27FD89D22462B9600339705 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E27FD89E22462B9600339705 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/MainInterface.strings; sourceTree = "<group>"; };
@@ -300,7 +291,6 @@
 		E27FD8C0224638E800339705 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E27FD8C1224638EA00339705 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E27FD8C2224638EA00339705 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
-		E27FD8C3224638EC00339705 /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E27FD8C4224638ED00339705 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E27FD8C5224638EE00339705 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E27FD8C6224638EF00339705 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -308,9 +298,6 @@
 		E27FD8C8224638F000339705 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E27FD8C9224638F200339705 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E27FD8CA224638F300339705 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
-		E27FD8CB224638F400339705 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/Localizable.strings; sourceTree = "<group>"; };
-		E27FD8CC224638F400339705 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
-		E27FD8CD224638F800339705 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E27FD8CE224638F900339705 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E27FD8CF224638FB00339705 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E28D44FC2242813800F67B08 /* memoWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = memoWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -446,6 +433,7 @@
 				E272F74F223E6F2000CD5FA8 /* Theme.swift */,
 				E29A247322415655004504B8 /* Vibrate.swift */,
 				E29A247522415665004504B8 /* LineBreak.swift */,
+				E2565F7E2250CD1900BC13FD /* CalendarMode.swift */,
 			);
 			path = Const;
 			sourceTree = "<group>";
@@ -660,7 +648,6 @@
 				vi,
 				el,
 				hi,
-				ms,
 				id,
 				fi,
 				he,
@@ -668,9 +655,6 @@
 				nb,
 				hu,
 				ro,
-				sk,
-				cs,
-				ca,
 				hr,
 				uk,
 			);
@@ -820,6 +804,7 @@
 				E28D4513224284A100F67B08 /* TextModifyViewController.swift in Sources */,
 				E28D4528224284DB00F67B08 /* UserDefaultsExtension.swift in Sources */,
 				E28D4529224284DE00F67B08 /* StringExtension.swift in Sources */,
+				E2565F802250CD5E00BC13FD /* CalendarMode.swift in Sources */,
 				E28D4533224284FF00F67B08 /* TextLoader.swift in Sources */,
 				E28D45112242817600F67B08 /* Text.swift in Sources */,
 				E28D451A224284B300F67B08 /* AlarmCollectionReusableView.swift in Sources */,
@@ -884,6 +869,7 @@
 				E2C37AE5222D146400D84894 /* AlarmCollectionViewCell.swift in Sources */,
 				E2E3C3DD2201839B00C74C57 /* DateStringChanger.swift in Sources */,
 				E246D339223781E50022FC4D /* Color.swift in Sources */,
+				E2565F7F2250CD1900BC13FD /* CalendarMode.swift in Sources */,
 				E2E3C3DB22017A2100C74C57 /* UserDefaultsExtension.swift in Sources */,
 				E266366022058BC2001D05C8 /* TextCollectionViewCell.swift in Sources */,
 				E2F36CF421FAE0FA00A9C24C /* AppDelegate.swift in Sources */,
@@ -938,7 +924,6 @@
 				E27FD8C0224638E800339705 /* vi */,
 				E27FD8C1224638EA00339705 /* el */,
 				E27FD8C2224638EA00339705 /* hi */,
-				E27FD8C3224638EC00339705 /* ms */,
 				E27FD8C4224638ED00339705 /* id */,
 				E27FD8C5224638EE00339705 /* fi */,
 				E27FD8C6224638EF00339705 /* he */,
@@ -946,9 +931,6 @@
 				E27FD8C8224638F000339705 /* nb */,
 				E27FD8C9224638F200339705 /* hu */,
 				E27FD8CA224638F300339705 /* ro */,
-				E27FD8CB224638F400339705 /* sk */,
-				E27FD8CC224638F400339705 /* cs */,
-				E27FD8CD224638F800339705 /* ca */,
 				E27FD8CE224638F900339705 /* hr */,
 				E27FD8CF224638FB00339705 /* uk */,
 			);
@@ -983,7 +965,6 @@
 				E27FD87422462AD700339705 /* vi */,
 				E27FD87722462ADE00339705 /* el */,
 				E27FD87A22462AE700339705 /* hi */,
-				E27FD87D22462B1C00339705 /* ms */,
 				E27FD88022462B2A00339705 /* id */,
 				E27FD88322462B3600339705 /* fi */,
 				E27FD88622462B5100339705 /* he */,
@@ -991,9 +972,6 @@
 				E27FD88C22462B6600339705 /* nb */,
 				E27FD88F22462B6E00339705 /* hu */,
 				E27FD89222462B7600339705 /* ro */,
-				E27FD89522462B8200339705 /* sk */,
-				E27FD89822462B8900339705 /* cs */,
-				E27FD89B22462B8D00339705 /* ca */,
 				E27FD89E22462B9600339705 /* hr */,
 				E27FD8A122462BA100339705 /* uk */,
 			);
@@ -1028,7 +1006,6 @@
 				E27FD87222462AD600339705 /* vi */,
 				E27FD87522462ADE00339705 /* el */,
 				E27FD87822462AE700339705 /* hi */,
-				E27FD87B22462B1B00339705 /* ms */,
 				E27FD87E22462B2A00339705 /* id */,
 				E27FD88122462B3600339705 /* fi */,
 				E27FD88422462B5100339705 /* he */,
@@ -1036,9 +1013,6 @@
 				E27FD88A22462B6600339705 /* nb */,
 				E27FD88D22462B6D00339705 /* hu */,
 				E27FD89022462B7600339705 /* ro */,
-				E27FD89322462B8200339705 /* sk */,
-				E27FD89622462B8800339705 /* cs */,
-				E27FD89922462B8D00339705 /* ca */,
 				E27FD89C22462B9600339705 /* hr */,
 				E27FD89F22462BA000339705 /* uk */,
 			);
@@ -1073,7 +1047,6 @@
 				E27FD87322462AD600339705 /* vi */,
 				E27FD87622462ADE00339705 /* el */,
 				E27FD87922462AE700339705 /* hi */,
-				E27FD87C22462B1B00339705 /* ms */,
 				E27FD87F22462B2A00339705 /* id */,
 				E27FD88222462B3600339705 /* fi */,
 				E27FD88522462B5100339705 /* he */,
@@ -1081,9 +1054,6 @@
 				E27FD88B22462B6600339705 /* nb */,
 				E27FD88E22462B6E00339705 /* hu */,
 				E27FD89122462B7600339705 /* ro */,
-				E27FD89422462B8200339705 /* sk */,
-				E27FD89722462B8800339705 /* cs */,
-				E27FD89A22462B8D00339705 /* ca */,
 				E27FD89D22462B9600339705 /* hr */,
 				E27FD8A022462BA000339705 /* uk */,
 			);

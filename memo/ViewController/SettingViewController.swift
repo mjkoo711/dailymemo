@@ -15,19 +15,22 @@ import Zip
 protocol SettingViewControllerDelegate {
   func reloadCollectionViewAndCalendarView(date: String)
   func changeMainViewControllerTheme()
+  func changeCalendarMode()
 }
 
 class SettingViewController: UIViewController {
-  let designList = ["Theme".localized, "Text Size".localized, "Text Thickness".localized, "Vibration".localized, "Prevent Word Truncation".localized, "Notification Permissions Check".localized, "Locking".localized]
+  let designList = ["Theme".localized, "Text Size".localized, "Text Thickness".localized, "Vibration".localized, "Prevent Word Truncation".localized, "Calendar Mode".localized, "Notification Permissions Check".localized, "Locking".localized]
   let serviceList = ["Buy Pro Edition".localized, "Backup / Restore".localized, "Leave a Review".localized] //"Contact Us".localized 일시 제거
   let size = ["Small".localized, "Middle".localized, "Big".localized]
   let thickness = ["Thin".localized, "Regular".localized, "Bold".localized]
   let onoff = ["Off".localized, "On".localized]
   let theme = ["White & Blue".localized, "White & Red".localized, "Black & Blue".localized, "Black & Red".localized]
   let lock = ["To Be Updated".localized]
+  let calendarMode = ["Week".localized, "Month".localized]
 
   var delegate: SettingViewControllerDelegate?
   var date: String?
+  var isRestoreProgress: Bool = false
 
   @IBOutlet var appNameLabel: UILabel!
   @IBOutlet var appVersionLabel: UILabel!
@@ -127,6 +130,16 @@ extension SettingViewController: UICollectionViewDataSource, UICollectionViewDel
         }
       }
 
+      if indexPath.row == SettingList.CalendarMode.rawValue {
+        if let value = UserDefaults.standard.loadSettings(key: Key.CalendarMode) {
+          cell.switchLabel.text = calendarMode[value]
+          cell.optionTotalCount = calendarMode.count
+          cell.currentOption = value
+          cell.settingMode = .CalendarMode
+          cell.switchLabel.isHidden = false
+        }
+      }
+
       if indexPath.row == SettingList.Lock.rawValue {
         if let value = UserDefaults.standard.loadSettings(key: Key.LockFeature) {
           cell.switchLabel.text = lock[value]
@@ -192,6 +205,9 @@ extension SettingViewController {
 }
 
 extension SettingViewController: SettingCollectionViewCellDelegate {
+  func changeCalendarMode() {
+    delegate?.changeCalendarMode()
+  }
   func updateSettingViewController() {
     guard let value = SettingManager.shared.theme else { return }
     if value == .blackBlue || value == .blackRed {
@@ -275,28 +291,33 @@ extension SettingViewController: UIDocumentMenuDelegate,UIDocumentPickerDelegate
   public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
     // https://stackoverflow.com/questions/33890225/how-to-access-files-in-icloud-drive-from-within-my-ios-app
 
-    if url.lastPathComponent == "memo.zip" {
-      do {
-        let progressViewController = ProgressViewController()
-        progressViewController.modalTransitionStyle = .crossDissolve
-        progressViewController.modalPresentationStyle = .overFullScreen
-        present(progressViewController, animated: true, completion: nil)
-        let unzipURL = try Zip.quickUnzipFile(url) // Unzip
-        restoreDatabase(fileName: "contacts.db", url: unzipURL)
-        restoreDatabase(fileName: "completed.db", url: unzipURL)
-        if let date = self.date {
-          delegate?.reloadCollectionViewAndCalendarView(date: date)
+
+    let progressViewController = ProgressViewController()
+    progressViewController.modalTransitionStyle = .crossDissolve
+    progressViewController.modalPresentationStyle = .overFullScreen
+    present(progressViewController, animated: true, completion: nil)
+
+    if isRestoreProgress {
+      if url.lastPathComponent == "memoBackup.zip" {
+        do {
+          let unzipURL = try Zip.quickUnzipFile(url) // Unzip
+          restoreDatabase(fileName: "contacts.db", url: unzipURL)
+          restoreDatabase(fileName: "completed.db", url: unzipURL)
+          if let date = self.date {
+            delegate?.reloadCollectionViewAndCalendarView(date: date)
+          }
         }
-        progressViewController.dismiss(animated: true, completion: nil)
+        catch {
+          print("Something went wrong")
+        }
+      } else {
+        let message = MDCSnackbarMessage()
+        message.text = "You need to select a file named 'memoBackup.zip'".localized
+        MDCSnackbarManager().show(message)
       }
-      catch {
-        print("Something went wrong")
-      }
-    } else {
-      let message = MDCSnackbarMessage()
-      message.text = "memo.zip 파일을 선택하셔야 합니다."
-      MDCSnackbarManager().show(message)
     }
+    progressViewController.dismiss(animated: true, completion: nil)
+
   }
 
 
@@ -315,12 +336,13 @@ extension SettingViewController: UIDocumentMenuDelegate,UIDocumentPickerDelegate
   }
 
   func backup() {
+    isRestoreProgress = false
     do {
       let fileManager = FileManager.default
       let directory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.mjkoo.memo")
       let databasePath = directory!.appendingPathComponent("contacts.db")
       let databasePathCompleted = directory!.appendingPathComponent("completed.db")
-      let zipFilePath = try Zip.quickZipFiles([databasePath, databasePathCompleted], fileName: "memo") // Zip
+      let zipFilePath = try Zip.quickZipFiles([databasePath, databasePathCompleted], fileName: "memoBackup") // Zip
       let documentPicker = UIDocumentPickerViewController.init(url: zipFilePath, in: .exportToService)
 
       documentPicker.delegate = self
@@ -333,6 +355,7 @@ extension SettingViewController: UIDocumentMenuDelegate,UIDocumentPickerDelegate
   }
 
   func restore() {
+    isRestoreProgress = true
     let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.archive"], in: .import)
     documentPicker.delegate = self
     documentPicker.modalPresentationStyle = .formSheet

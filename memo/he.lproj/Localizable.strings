@@ -119,3 +119,11 @@
 "Set Up" = "ללכת";
 
 "Notification Permission has already been allowed" = "התראה כבר הורשתה";
+
+"You need to select a file named 'memoBackup.zip'" = "עליך לבחור קובץ בשם 'memoBackup.zip";
+
+"Calendar Mode" = "מצבי לוח שנה";
+
+"Week" = "שבוע";
+
+"Month" = "חודש";

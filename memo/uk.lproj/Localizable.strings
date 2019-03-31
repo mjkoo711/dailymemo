@@ -119,3 +119,11 @@
 "Set Up" = "GO";
 
 "Notification Permission has already been allowed" = "Дозвіл сповіщення вже дозволено";
+
+"You need to select a file named 'memoBackup.zip'" = "Вам потрібно вибрати файл з назвою 'memoBackup.zip'";
+
+"Calendar Mode" = "Календарний режим";
+
+"Week" = "Тиждень";
+
+"Month" = "Місяць";

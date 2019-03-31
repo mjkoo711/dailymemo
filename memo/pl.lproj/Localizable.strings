@@ -119,3 +119,11 @@
 "Set Up" = "UDAĆ SIĘ";
 
 "Notification Permission has already been allowed" = "Zezwolenie na powiadomienie zostało już dozwolone";
+
+"You need to select a file named 'memoBackup.zip'" = "Musisz wybrać plik o nazwie „memoBackup.zip”";
+
+"Calendar Mode" = "Tryby Kalendarz";
+
+"Week" = "Tydzień";
+
+"Month" = "Miesiąc";
