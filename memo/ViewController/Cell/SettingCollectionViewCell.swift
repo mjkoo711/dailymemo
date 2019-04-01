@@ -16,6 +16,7 @@ protocol SettingCollectionViewCellDelegate {
   func changeTheme()
   func updateSettingViewController()
   func backupAndRestore()
+  func purchaseAndRestore()
   func changeCalendarMode()
 }
 
@@ -129,7 +130,7 @@ class SettingCollectionViewCell: UICollectionViewCell {
     } else if indexPath.section == 1 {
       if let serviceType = serviceType {
         if serviceType == .BuyProEdition {
-
+          delegate?.purchaseAndRestore()
         } else if serviceType == .BackUp_Restore {
           delegate?.backupAndRestore()
         } else if serviceType == .WriteA_Review {

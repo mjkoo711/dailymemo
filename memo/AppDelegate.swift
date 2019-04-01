@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     IQKeyboardManager.shared.enable = true
     IQKeyboardManager.shared.layoutIfNeededOnUpdate = true
     IQKeyboardManager.shared.enableAutoToolbar = false
-    IQKeyboardManager.shared.keyboardDistanceFromTextField = 8
+    IQKeyboardManager.shared.keyboardDistanceFromTextField = 0
   }
 
   private func setUNUserNotification() {

@@ -99,6 +99,7 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - SCLAlertView (0.8)
+  - WhatsNew (0.4.4)
   - Zip (1.1.0)
 
 DEPENDENCIES:
@@ -111,6 +112,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - MaterialComponents/Snackbar
   - SCLAlertView
+  - WhatsNew
   - Zip (~> 1.1)
 
 SPEC REPOS:
@@ -131,6 +133,7 @@ SPEC REPOS:
     - MDFTextAccessibility
     - nanopb
     - SCLAlertView
+    - WhatsNew
     - Zip
 
 SPEC CHECKSUMS:
@@ -150,8 +153,9 @@ SPEC CHECKSUMS:
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
+  WhatsNew: ebb4e2a85a0975c7c2705087c0c67939451f8b49
   Zip: 8877eede3dda76bcac281225c20e71c25270774c
 
-PODFILE CHECKSUM: 36bc0d03dc9e69c76573e1a2bdf84e5526051e1e
+PODFILE CHECKSUM: 39e415a1e51d540f90098f9cfbf5990f1c7a6589
 
 COCOAPODS: 1.5.3

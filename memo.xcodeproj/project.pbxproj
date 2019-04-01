@@ -86,6 +86,9 @@
 		E29A247422415655004504B8 /* Vibrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A247322415655004504B8 /* Vibrate.swift */; };
 		E29A247622415665004504B8 /* LineBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A247522415665004504B8 /* LineBreak.swift */; };
 		E29EF94C224A863900F96D35 /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29EF94B224A863900F96D35 /* ServiceType.swift */; };
+		E2A2B0E9225272C20002E6D2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A2B0E8225272C20002E6D2 /* StoreKit.framework */; };
+		E2A2B0EC225272FB0002E6D2 /* IAPAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2B0EA225272FB0002E6D2 /* IAPAlertViewController.swift */; };
+		E2A2B0ED225272FB0002E6D2 /* IAPAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2A2B0EB225272FB0002E6D2 /* IAPAlertViewController.xib */; };
 		E2C37AE5222D146400D84894 /* AlarmCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE4222D146400D84894 /* AlarmCollectionViewCell.swift */; };
 		E2C37AE9222D59C400D84894 /* AlarmCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE8222D59C400D84894 /* AlarmCollectionReusableView.swift */; };
 		E2C37AEB222D7B2B00D84894 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AEA222D7B2B00D84894 /* IntExtensions.swift */; };
@@ -311,6 +314,9 @@
 		E29A247322415655004504B8 /* Vibrate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibrate.swift; sourceTree = "<group>"; };
 		E29A247522415665004504B8 /* LineBreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineBreak.swift; sourceTree = "<group>"; };
 		E29EF94B224A863900F96D35 /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
+		E2A2B0E8225272C20002E6D2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E2A2B0EA225272FB0002E6D2 /* IAPAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPAlertViewController.swift; sourceTree = "<group>"; };
+		E2A2B0EB225272FB0002E6D2 /* IAPAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IAPAlertViewController.xib; sourceTree = "<group>"; };
 		E2C37AE2222D12CE00D84894 /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
 		E2C37AE4222D146400D84894 /* AlarmCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCollectionViewCell.swift; sourceTree = "<group>"; };
 		E2C37AE8222D59C400D84894 /* AlarmCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -359,6 +365,7 @@
 				E2EEC6C2224BEB9E00A59E0D /* CloudKit.framework in Frameworks */,
 				E2C37B042232534200D84894 /* libsqlite3.tbd in Frameworks */,
 				DF191B90BF36C3030333F89D /* Pods_memo.framework in Frameworks */,
+				E2A2B0E9225272C20002E6D2 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +393,8 @@
 				E2C37AEC222D87A900D84894 /* SettingViewController.swift */,
 				E2565F7A2250C5F500BC13FD /* ProgressViewController.swift */,
 				E2565F7B2250C5F500BC13FD /* ProgressViewController.xib */,
+				E2A2B0EA225272FB0002E6D2 /* IAPAlertViewController.swift */,
+				E2A2B0EB225272FB0002E6D2 /* IAPAlertViewController.xib */,
 				E266367B2208A37C001D05C8 /* Cell */,
 				E2C37AEE222D87B000D84894 /* View */,
 			);
@@ -526,6 +535,7 @@
 		E32097C5322B1DB39896B99C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E2A2B0E8225272C20002E6D2 /* StoreKit.framework */,
 				E2EEC6C1224BEB9E00A59E0D /* CloudKit.framework */,
 				E21F9BBA2247A428004D5482 /* GoogleUtilities.framework */,
 				E21F9BB82247A3F3004D5482 /* SafariServices.framework */,
@@ -602,6 +612,9 @@
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 							com.apple.Keychain = {
@@ -690,6 +703,7 @@
 				E27FD8A5224638BF00339705 /* Localizable.strings in Resources */,
 				E2F36CFE21FAE0FD00A9C24C /* LaunchScreen.storyboard in Resources */,
 				E28D450D2242814800F67B08 /* MainInterface.storyboard in Resources */,
+				E2A2B0ED225272FB0002E6D2 /* IAPAlertViewController.xib in Resources */,
 				E2F36CFB21FAE0FD00A9C24C /* Assets.xcassets in Resources */,
 				E2F36CF921FAE0FA00A9C24C /* Main.storyboard in Resources */,
 				E21F9BBD2247A675004D5482 /* GoogleService-Info.plist in Resources */,
@@ -717,6 +731,7 @@
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/WhatsNew/WhatsNew.framework",
 				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -733,6 +748,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WhatsNew.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -851,6 +867,7 @@
 				E2314808223B925200161724 /* UIShortTapGestureRecognizer.swift in Sources */,
 				E263538A223CFA46006A2E43 /* SettingManager.swift in Sources */,
 				E2C37B102232ADEA00D84894 /* DateLoader.swift in Sources */,
+				E2A2B0EC225272FB0002E6D2 /* IAPAlertViewController.swift in Sources */,
 				E25447C022253F2F00F48A80 /* NotificationType.swift in Sources */,
 				E266367522089106001D05C8 /* TextModifyViewController.swift in Sources */,
 				E2C37B0C22327A5C00D84894 /* Day.swift in Sources */,

@@ -256,6 +256,21 @@ extension SettingViewController: SettingCollectionViewCellDelegate {
     present(actionViewController, animated: true, completion: nil)
   }
 
+  func purchaseAndRestore() {
+    let actionViewController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+    let purchaseAction = UIAlertAction(title: "구매", style: .destructive) { (action) in
+      // TODO: show IAP ViewController
+    }
+    let restoreAction = UIAlertAction(title: "복원", style: .default) { (action) in
+      // TODO: restorePurchaseFunction (purchaseManager를 만들어서 걔가 purchase, restore, check 다 해주자)
+    }
+    let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+    actionViewController.addAction(purchaseAction)
+    actionViewController.addAction(restoreAction)
+    actionViewController.addAction(cancelAction)
+    present(actionViewController, animated: true, completion: nil)
+  }
+
   private func restoreDatabase(fileName: String, url: URL) {
     let fileManager = FileManager.default
     guard let directory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.mjkoo.memo") else {
