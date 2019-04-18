@@ -242,6 +242,7 @@ extension SettingViewController: SettingCollectionViewCellDelegate {
   }
 
   func backupAndRestore() {
+    //TODO : 이쪽 부분 번역 완료하기
     let actionViewController = UIAlertController(title: "백업 & 복원", message: "iCloud를 통해서 이용가능합니다.", preferredStyle: .actionSheet)
     let backupAction = UIAlertAction(title: "백업", style: .default) { (action) in
       self.backup()
@@ -258,11 +259,13 @@ extension SettingViewController: SettingCollectionViewCellDelegate {
 
   func purchaseAndRestore() {
     let actionViewController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-    let purchaseAction = UIAlertAction(title: "구매", style: .destructive) { (action) in
+    let purchaseAction = UIAlertAction(title: "프로버전 둘러보기", style: .default) { (action) in
       // TODO: show IAP ViewController
     }
-    let restoreAction = UIAlertAction(title: "복원", style: .default) { (action) in
+    let restoreAction = UIAlertAction(title: "프로버전 복원하기", style: .default) { (action) in
       // TODO: restorePurchaseFunction (purchaseManager를 만들어서 걔가 purchase, restore, check 다 해주자)
+      // TODO: 구매를 했는지 확인해서 구매를 했다면, NSUserDefaults에 값을 true로 바꾼 뒤에 그것을 적용해아하는 곳에 세팅하자.
+      // TODO: 구매를 하지 않았다면, 구매를 안했을 떄 막아야 할 곳들을 막자 (광고, theme, backup/restore, 장금기능)
     }
     let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
     actionViewController.addAction(purchaseAction)

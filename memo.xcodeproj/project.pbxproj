@@ -10,7 +10,6 @@
 		DF191B90BF36C3030333F89D /* Pods_memo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A59B9B7599E790392A2260F /* Pods_memo.framework */; };
 		E20CE65321FD8E0300FF495E /* TextInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20CE65221FD8E0300FF495E /* TextInputViewController.swift */; };
 		E21E11F121FC2485004BBFD9 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E11F021FC2485004BBFD9 /* Clock.swift */; };
-		E21F9BBD2247A675004D5482 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E21F9BBC2247A675004D5482 /* GoogleService-Info.plist */; };
 		E2314808223B925200161724 /* UIShortTapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2314807223B925200161724 /* UIShortTapGestureRecognizer.swift */; };
 		E246D339223781E50022FC4D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246D338223781E50022FC4D /* Color.swift */; };
 		E25447C022253F2F00F48A80 /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25447BF22253F2F00F48A80 /* NotificationType.swift */; };
@@ -102,6 +101,7 @@
 		E2C37B0E22327AB400D84894 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37B0D22327AB400D84894 /* Month.swift */; };
 		E2C37B102232ADEA00D84894 /* DateLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37B0F2232ADEA00D84894 /* DateLoader.swift */; };
 		E2D0402D222783F400D10B51 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0402C222783F400D10B51 /* AlarmManager.swift */; };
+		E2DA13B6226703CD00376282 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2DA13B5226703CD00376282 /* GoogleService-Info.plist */; };
 		E2E3C3D7220175A500C74C57 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3D6220175A500C74C57 /* Text.swift */; };
 		E2E3C3DB22017A2100C74C57 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3DA22017A2100C74C57 /* UserDefaultsExtension.swift */; };
 		E2E3C3DD2201839B00C74C57 /* DateStringChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3DC2201839B00C74C57 /* DateStringChanger.swift */; };
@@ -147,7 +147,6 @@
 		E21E11F021FC2485004BBFD9 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		E21F9BB82247A3F3004D5482 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		E21F9BBA2247A428004D5482 /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E21F9BBC2247A675004D5482 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E2314807223B925200161724 /* UIShortTapGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIShortTapGestureRecognizer.swift; sourceTree = "<group>"; };
 		E246D338223781E50022FC4D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E25447BF22253F2F00F48A80 /* NotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
@@ -332,6 +331,7 @@
 		E2C37B0D22327AB400D84894 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
 		E2C37B0F2232ADEA00D84894 /* DateLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLoader.swift; sourceTree = "<group>"; };
 		E2D0402C222783F400D10B51 /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
+		E2DA13B5226703CD00376282 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E2E3C3D6220175A500C74C57 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		E2E3C3DA22017A2100C74C57 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		E2E3C3DC2201839B00C74C57 /* DateStringChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStringChanger.swift; sourceTree = "<group>"; };
@@ -515,7 +515,7 @@
 		E2F36CF221FAE0FA00A9C24C /* memo */ = {
 			isa = PBXGroup;
 			children = (
-				E21F9BBC2247A675004D5482 /* GoogleService-Info.plist */,
+				E2DA13B5226703CD00376282 /* GoogleService-Info.plist */,
 				E28D453E2242881400F67B08 /* memo.entitlements */,
 				E26636762208A247001D05C8 /* ViewController */,
 				E26636792208A28F001D05C8 /* Const */,
@@ -700,13 +700,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2565F7D2250C5F500BC13FD /* ProgressViewController.xib in Resources */,
+				E2DA13B6226703CD00376282 /* GoogleService-Info.plist in Resources */,
 				E27FD8A5224638BF00339705 /* Localizable.strings in Resources */,
 				E2F36CFE21FAE0FD00A9C24C /* LaunchScreen.storyboard in Resources */,
 				E28D450D2242814800F67B08 /* MainInterface.storyboard in Resources */,
 				E2A2B0ED225272FB0002E6D2 /* IAPAlertViewController.xib in Resources */,
 				E2F36CFB21FAE0FD00A9C24C /* Assets.xcassets in Resources */,
 				E2F36CF921FAE0FA00A9C24C /* Main.storyboard in Resources */,
-				E21F9BBD2247A675004D5482 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
