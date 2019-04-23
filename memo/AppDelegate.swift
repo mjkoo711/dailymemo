@@ -11,6 +11,7 @@ import IQKeyboardManagerSwift
 import UserNotifications
 import GoogleMobileAds
 import Firebase
+import SwiftyStoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -22,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     let appId = Const.appId
     FirebaseApp.configure()
     GADMobileAds.configure(withApplicationID: appId)
-  
+
+    swiftyStoreKit()
     setIQKeyboardPreference()
     setUNUserNotification()
     FMDBManager.shared.createDatabase()
@@ -30,6 +32,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     initSetting()
     setNavigationbarTheme()
     return true
+  }
+
+  private func swiftyStoreKit() {
+    SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+      for purchase in purchases {
+        switch purchase.transaction.transactionState {
+        case .purchased, .restored:
+          if purchase.needsFinishTransaction {
+            // Deliver content from server, then:
+            SwiftyStoreKit.finishTransaction(purchase.transaction)
+          }
+        // Unlock content
+        case .failed, .purchasing, .deferred:
+          break // do nothing
+        }
+      }
+    }
   }
 
   private func setNavigationbarTheme() {

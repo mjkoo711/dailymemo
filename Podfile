@@ -15,7 +15,8 @@ target 'memo' do
   pod 'Firebase/AdMob'
   pod 'Zip', '~> 1.1'
   pod 'GradientLoadingBar', '~> 1.0'
-  pod 'WhatsNew'
+  pod 'WhatsNewKit'
+  pod 'SwiftyStoreKit'
 
   # Pods for memo
   target 'memoWidget' do 
