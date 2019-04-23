@@ -96,12 +96,15 @@
     {
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "AppStore.png",
+      "filename" : "iPhoneAppStore.png",
       "scale" : "1x"
     }
   ],
   "info" : {
     "version" : 1,
     "author" : "xcode"
+  },
+  "properties" : {
+    "pre-rendered" : true
   }
 }
