@@ -18,6 +18,7 @@ class SettingManager {
   var lineBreak: LineBreak?
   var calendarMode: CalendarMode?
   var purchaseMode: PurchaseMode?
+  var startKitMode: StartKitMode?
 
   private init() { }
 
@@ -82,6 +83,14 @@ class SettingManager {
       purchaseMode = PurchaseMode.off
     } else {
       purchaseMode = PurchaseMode.on
+    }
+  }
+
+  func setStartKitMode(value: Int) {
+    if value == 0 {
+      startKitMode = StartKitMode.off
+    } else {
+      startKitMode = StartKitMode.on
     }
   }
 }

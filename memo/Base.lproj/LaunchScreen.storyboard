@@ -19,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImageLogo" translatesAutoresizingMaskIntoConstraints="NO" id="YNJ-6Q-S0A">
-                                <rect key="frame" x="167" y="408" width="80" height="80"/>
+                                <rect key="frame" x="167" y="378" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="P41-B1-Lk6"/>
                                     <constraint firstAttribute="width" secondItem="YNJ-6Q-S0A" secondAttribute="height" multiplier="1:1" id="UF9-Ax-VNh"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MEMOMENT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GxD-YC-ADm">
-                                <rect key="frame" x="99" y="488" width="216" height="36.5"/>
+                                <rect key="frame" x="99" y="458" width="216" height="37"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="36"/>
                                 <color key="textColor" red="0.20415809750556946" green="0.47127145528793335" blue="0.9647560715675354" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -34,7 +34,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="YNJ-6Q-S0A" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Po3-IU-lp2"/>
+                            <constraint firstItem="YNJ-6Q-S0A" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-30" id="Po3-IU-lp2"/>
                             <constraint firstItem="GxD-YC-ADm" firstAttribute="top" secondItem="YNJ-6Q-S0A" secondAttribute="bottom" id="XBR-Vc-iOk"/>
                             <constraint firstItem="GxD-YC-ADm" firstAttribute="centerX" secondItem="YNJ-6Q-S0A" secondAttribute="centerX" id="rrU-1Q-SlI"/>
                             <constraint firstItem="YNJ-6Q-S0A" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="uW1-2y-H1X"/>

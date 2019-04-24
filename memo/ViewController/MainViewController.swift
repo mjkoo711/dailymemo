@@ -117,6 +117,9 @@ class MainViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    if let value = SettingManager.shared.startKitMode, value == .on {
+      WhatsNewAppHandler().showsWhatsNewApp(presentViewController: self)
+    }
     reloadCollectionView(date: selectDateString)
     navigationController?.setNavigationBarHidden(true, animated: animated)
     updateTimeLabel()

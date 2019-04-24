@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     let appId = Const.appId
     FirebaseApp.configure()
     GADMobileAds.configure(withApplicationID: appId)
-
     swiftyStoreKit()
     setIQKeyboardPreference()
     setUNUserNotification()
@@ -146,6 +145,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     } else {
       UserDefaults.standard.saveSettings(value: 0, key: Key.PurchaseCheckKey) // 구매 안한게 기본임
       SettingManager.shared.setPurchaseMode(value: 0)
+    }
+
+    if let value = UserDefaults.standard.loadSettings(key: Key.StartKit) {
+      SettingManager.shared.setStartKitMode(value: value)
+    } else {
+      UserDefaults.standard.saveSettings(value: 1, key: Key.StartKit)
+      SettingManager.shared.setStartKitMode(value: 1)
     }
   }
 

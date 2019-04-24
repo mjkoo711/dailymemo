@@ -31,6 +31,9 @@
 		E266367522089106001D05C8 /* TextModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367422089106001D05C8 /* TextModifyViewController.swift */; };
 		E266367D2208B319001D05C8 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367C2208B319001D05C8 /* Vibration.swift */; };
 		E268F3B8223E2FBE00534565 /* FontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268F3B7223E2FBE00534565 /* FontWeight.swift */; };
+		E26C6E062270601300CEC0B9 /* WhatsNewAppHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26C6E052270601300CEC0B9 /* WhatsNewAppHandler.swift */; };
+		E26C6E082270A4F100CEC0B9 /* StartKitMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26C6E072270A4F100CEC0B9 /* StartKitMode.swift */; };
+		E26C6E092270A53600CEC0B9 /* StartKitMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26C6E072270A4F100CEC0B9 /* StartKitMode.swift */; };
 		E272F750223E6F2000CD5FA8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E272F74F223E6F2000CD5FA8 /* Theme.swift */; };
 		E27FD82C2245EC6B00339705 /* WidgetHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27FD82B2245EC6B00339705 /* WidgetHeaderView.swift */; };
 		E27FD8A5224638BF00339705 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E27FD8A8224638BF00339705 /* Localizable.strings */; };
@@ -169,6 +172,8 @@
 		E266367422089106001D05C8 /* TextModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifyViewController.swift; sourceTree = "<group>"; };
 		E266367C2208B319001D05C8 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
 		E268F3B7223E2FBE00534565 /* FontWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWeight.swift; sourceTree = "<group>"; };
+		E26C6E052270601300CEC0B9 /* WhatsNewAppHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewAppHandler.swift; sourceTree = "<group>"; };
+		E26C6E072270A4F100CEC0B9 /* StartKitMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartKitMode.swift; sourceTree = "<group>"; };
 		E272F74F223E6F2000CD5FA8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E27FD82B2245EC6B00339705 /* WidgetHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetHeaderView.swift; sourceTree = "<group>"; };
 		E27FD82D22462A5700339705 /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -447,6 +452,7 @@
 				E29A247522415665004504B8 /* LineBreak.swift */,
 				E2565F7E2250CD1900BC13FD /* CalendarMode.swift */,
 				E2CC101D226F57B4003C1B89 /* PurchaseMode.swift */,
+				E26C6E072270A4F100CEC0B9 /* StartKitMode.swift */,
 			);
 			path = Const;
 			sourceTree = "<group>";
@@ -461,6 +467,7 @@
 				E2C37B092232793900D84894 /* TextLoader.swift */,
 				E2C37B0F2232ADEA00D84894 /* DateLoader.swift */,
 				E2635389223CFA46006A2E43 /* SettingManager.swift */,
+				E26C6E052270601300CEC0B9 /* WhatsNewAppHandler.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -854,6 +861,7 @@
 				E28D4522224284CB00F67B08 /* SettingList.swift in Sources */,
 				E28D451C224284BC00F67B08 /* Vibration.swift in Sources */,
 				E28D4532224284FA00F67B08 /* AlarmManager.swift in Sources */,
+				E26C6E092270A53600CEC0B9 /* StartKitMode.swift in Sources */,
 				E28D454122432AF600F67B08 /* WidgetTextCollectionViewCell.swift in Sources */,
 				E28D450F2242817100F67B08 /* MDateFormatter.swift in Sources */,
 				E28D451B224284B800F67B08 /* Const.swift in Sources */,
@@ -871,6 +879,8 @@
 				E2635386223C2633006A2E43 /* SettingList.swift in Sources */,
 				E2635384223C23B0006A2E43 /* Key.swift in Sources */,
 				E2C37B0A2232793900D84894 /* TextLoader.swift in Sources */,
+				E26C6E082270A4F100CEC0B9 /* StartKitMode.swift in Sources */,
+				E26C6E062270601300CEC0B9 /* WhatsNewAppHandler.swift in Sources */,
 				E266366222059357001D05C8 /* StringExtension.swift in Sources */,
 				E2635388223CF894006A2E43 /* FontSize.swift in Sources */,
 				E2314808223B925200161724 /* UIShortTapGestureRecognizer.swift in Sources */,
@@ -1273,7 +1283,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mjkoo.memo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1295,7 +1305,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mjkoo.memo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
