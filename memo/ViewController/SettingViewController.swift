@@ -59,6 +59,11 @@ class SettingViewController: UIViewController {
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(returnMainViewController))
     closeButtonView.addGestureRecognizer(tapGesture)
   }
+
+  @objc func returnMainViewController() {
+    Vibration.heavy.vibrate()
+    performSegue(withIdentifier: "unwindMainVC", sender: self)
+  }
 }
 
 extension SettingViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -204,13 +209,6 @@ extension SettingViewController: UICollectionViewDelegateFlowLayout {
   }
 }
 
-extension SettingViewController {
-  @objc func returnMainViewController() {
-    Vibration.heavy.vibrate()
-    performSegue(withIdentifier: "unwindMainVC", sender: self)
-  }
-}
-
 extension SettingViewController: SettingCollectionViewCellDelegate {
   func changeCalendarMode() {
     delegate?.changeCalendarMode()
@@ -253,7 +251,7 @@ extension SettingViewController: SettingCollectionViewCellDelegate {
     //TODO : 이쪽 부분 번역 완료하기
     let actionViewController = UIAlertController(title: "백업 & 복원", message: "iCloud를 통해서 이용가능합니다.", preferredStyle: .actionSheet)
     let backupAction = UIAlertAction(title: "백업", style: .default) { (action) in
-      self.backupData()
+      self.backup()
     }
     let restoreAction = UIAlertAction(title: "복원", style: .default) { (action) in
       self.restoreData()
@@ -303,10 +301,8 @@ extension SettingViewController: SettingCollectionViewCellDelegate {
   }
 }
 
-
 extension SettingViewController: UIDocumentMenuDelegate,UIDocumentPickerDelegate,UINavigationControllerDelegate {
   public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
-    // https://stackoverflow.com/questions/33890225/how-to-access-files-in-icloud-drive-from-within-my-ios-app
     let progressViewController = ProgressViewController()
     progressViewController.modalTransitionStyle = .crossDissolve
     progressViewController.modalPresentationStyle = .overFullScreen
@@ -342,14 +338,13 @@ extension SettingViewController: UIDocumentMenuDelegate,UIDocumentPickerDelegate
     present(documentPicker, animated: true, completion: nil)
   }
 
-
   func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
     let message = MDCSnackbarMessage()
     message.text = "Canceled"
     MDCSnackbarManager().show(message)
   }
 
-  func backupData() {
+  func backup() {
     isRestoreProgress = false
     do {
       let fileManager = FileManager.default

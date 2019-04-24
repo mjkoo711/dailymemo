@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GradientLoadingBar
 import MaterialComponents.MaterialButtons
 import MaterialComponents.MaterialButtons_ButtonThemer
 import MaterialComponents.MaterialButtons_ColorThemer
@@ -36,9 +35,7 @@ class IAPAlertViewController: UIViewController {
   @IBOutlet var purchaseButton: MDCButton!
 
   var delegate: IAPAlertViewControllerDelegate?
-  
-  private let safeAreaGradientLoadingBar = GradientLoadingBar(height: 3.0,
-                                                              isRelativeToSafeArea: true)
+
   override func viewDidLoad() {
     super.viewDidLoad()
     setTextLabel()
@@ -127,14 +124,6 @@ class IAPAlertViewController: UIViewController {
     backupDescriptionLabel.text = "저장된 메모를 백업하고 복원할 수 있습니다."
     restoreButtonLabel.text = "구매 복원하기"
     purchaseButton.setTitle("구매하기", for: .normal)
-  }
-
-  private func showLoadingBar() {
-    safeAreaGradientLoadingBar.show()
-  }
-
-  private func hideLoadingBar() {
-    safeAreaGradientLoadingBar.hide()
   }
 
   private func purchase() {
