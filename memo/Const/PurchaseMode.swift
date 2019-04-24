@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+enum PurchaseMode: Int {
+  case off = 0, on
+
+  func onoff() -> Int {
+    switch self {
+    case .off:
+      return 0
+    case .on:
+      return 1
+    }
+  }
+}

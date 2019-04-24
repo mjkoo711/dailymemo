@@ -104,7 +104,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     } else {
       UserDefaults.standard.saveSettings(value: 1, key: Key.FontSize)
       SettingManager.shared.setFontSize(value: 1)
-
     }
 
     if let value = UserDefaults.standard.loadSettings(key: Key.FontWeight) {
@@ -140,6 +139,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     } else {
       UserDefaults.standard.saveSettings(value: 1, key: Key.CalendarMode)
       SettingManager.shared.setCalendarMode(value: 1)
+    }
+
+    if let value = UserDefaults.standard.loadSettings(key: Key.PurchaseCheckKey) {
+      SettingManager.shared.setPurchaseMode(value: value)
+    } else {
+      UserDefaults.standard.saveSettings(value: 0, key: Key.PurchaseCheckKey) // 구매 안한게 기본임
+      SettingManager.shared.setPurchaseMode(value: 0)
     }
   }
 

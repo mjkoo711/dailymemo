@@ -18,6 +18,11 @@ target 'memo' do
   pod 'WhatsNewKit'
   pod 'SwiftyStoreKit'
 
+  pod 'MaterialComponents/Buttons'
+  pod 'MaterialComponents/Buttons+ButtonThemer'
+  pod 'MaterialComponents/Buttons+ColorThemer'
+
+
   # Pods for memo
   target 'memoWidget' do 
     inherit! :search_paths

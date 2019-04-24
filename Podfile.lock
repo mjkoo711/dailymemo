@@ -65,18 +65,43 @@ PODS:
     - MaterialComponents/Typography
     - MDFInternationalization
     - MDFTextAccessibility
+  - "MaterialComponents/Buttons+ButtonThemer (80.0.0)":
+    - MaterialComponents/Buttons
+    - "MaterialComponents/Buttons+ColorThemer"
+    - "MaterialComponents/Buttons+ShapeThemer"
+    - "MaterialComponents/Buttons+TypographyThemer"
+    - MaterialComponents/Palettes
+  - "MaterialComponents/Buttons+ColorThemer (80.0.0)":
+    - MaterialComponents/Buttons
+    - MaterialComponents/schemes/Color
+  - "MaterialComponents/Buttons+ShapeThemer (80.0.0)":
+    - MaterialComponents/Buttons
+    - MaterialComponents/schemes/Shape
+  - "MaterialComponents/Buttons+TypographyThemer (80.0.0)":
+    - MaterialComponents/Buttons
+    - MaterialComponents/schemes/Typography
   - MaterialComponents/Ink (80.0.0):
     - MaterialComponents/private/Math
   - MaterialComponents/OverlayWindow (80.0.0):
     - MaterialComponents/private/Application
+  - MaterialComponents/Palettes (80.0.0)
   - MaterialComponents/private/Application (80.0.0)
   - MaterialComponents/private/KeyboardWatcher (80.0.0):
     - MaterialComponents/private/Application
   - MaterialComponents/private/Math (80.0.0)
   - MaterialComponents/private/Overlay (80.0.0)
+  - MaterialComponents/schemes/Color (80.0.0)
+  - MaterialComponents/schemes/Shape (80.0.0):
+    - MaterialComponents/ShapeLibrary
+    - MaterialComponents/Shapes
+  - MaterialComponents/schemes/Typography (80.0.0):
+    - MaterialComponents/Typography
   - MaterialComponents/ShadowElevations (80.0.0)
   - MaterialComponents/ShadowLayer (80.0.0):
     - MaterialComponents/ShadowElevations
+  - MaterialComponents/ShapeLibrary (80.0.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/Shapes
   - MaterialComponents/Shapes (80.0.0):
     - MaterialComponents/private/Math
     - MaterialComponents/ShadowLayer
@@ -111,6 +136,9 @@ DEPENDENCIES:
   - Google-Mobile-Ads-SDK
   - GradientLoadingBar (~> 1.0)
   - IQKeyboardManagerSwift
+  - MaterialComponents/Buttons
+  - "MaterialComponents/Buttons+ButtonThemer"
+  - "MaterialComponents/Buttons+ColorThemer"
   - MaterialComponents/Snackbar
   - SCLAlertView
   - SwiftyStoreKit
@@ -160,6 +188,6 @@ SPEC CHECKSUMS:
   WhatsNewKit: 971d8dc185b2c73a9a3706a4cce27e8e955b3459
   Zip: 8877eede3dda76bcac281225c20e71c25270774c
 
-PODFILE CHECKSUM: f70498feead80e50971da80ba41cc7aa4f54181e
+PODFILE CHECKSUM: 9b342896543e9326451cbc3a280832b83a403dc2
 
 COCOAPODS: 1.5.3

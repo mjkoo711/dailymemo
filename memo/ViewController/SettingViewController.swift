@@ -17,6 +17,7 @@ protocol SettingViewControllerDelegate {
   func reloadCollectionViewAndCalendarView(date: String)
   func changeMainViewControllerTheme()
   func changeCalendarMode()
+  func removeBanner()
 }
 
 class SettingViewController: UIViewController {
@@ -174,6 +175,11 @@ extension SettingViewController: UICollectionViewDataSource, UICollectionViewDel
       cell.switchLabel.isHidden = true
       
       if indexPath.row == ServiceType.BuyProEdition.rawValue {
+        if themeValue == .whiteRed || themeValue == .blackRed {
+          cell.settingTitleLabel.textColor = Color.LightRed
+        } else if themeValue == .blackBlue || themeValue == .whiteBlue {
+          cell.settingTitleLabel.textColor = Color.Blue
+        }
         cell.serviceType = ServiceType.BuyProEdition
       } else if indexPath.row == ServiceType.BackUp_Restore.rawValue {
         cell.serviceType = ServiceType.BackUp_Restore
@@ -209,6 +215,7 @@ extension SettingViewController: SettingCollectionViewCellDelegate {
   func changeCalendarMode() {
     delegate?.changeCalendarMode()
   }
+
   func updateSettingViewController() {
     guard let value = SettingManager.shared.theme else { return }
     if value == .blackBlue || value == .blackRed {
@@ -259,64 +266,13 @@ extension SettingViewController: SettingCollectionViewCellDelegate {
   }
 
   func purchaseAndRestore() {
-    let actionViewController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-    let purchaseAction = UIAlertAction(title: "프로버전 구매", style: .default) { (action) in
-      self.purchase()
-    }
-    let restoreAction = UIAlertAction(title: "구매 복원하기", style: .default) { (action) in
-      self.restorePurchase()
-      // TODO: restorePurchaseFunction (purchaseManager를 만들어서 걔가 purchase, restore, check 다 해주자)
-      // TODO: 구매를 했는지 확인해서 구매를 했다면, NSUserDefaults에 값을 true로 바꾼 뒤에 그것을 적용해아하는 곳에 세팅하자.
-      // TODO: 구매를 하지 않았다면, 구매를 안했을 떄 막아야 할 곳들을 막자 (광고, theme, backup/restore, 장금기능)
-    }
-    let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-    actionViewController.addAction(purchaseAction)
-    actionViewController.addAction(restoreAction)
-    actionViewController.addAction(cancelAction)
-    present(actionViewController, animated: true, completion: nil)
+    let iapAlertViewController = IAPAlertViewController()
+    iapAlertViewController.modalTransitionStyle = .crossDissolve
+    iapAlertViewController.modalPresentationStyle = .overFullScreen
+    iapAlertViewController.delegate = self
+    self.present(iapAlertViewController, animated: true, completion: nil)
   }
 
-  private func purchase() {
-    SwiftyStoreKit.purchaseProduct("com.mjkoo.memo.memomentPro", quantity: 1, atomically: true) { result in
-      switch result {
-      case .success(let purchase):
-        print("Purchase Success: \(purchase.productId)")
-      case .error(let error):
-        switch error.code {
-        case .unknown: print("Unknown error. Please contact support")
-        case .clientInvalid: print("Not allowed to make the payment")
-        case .paymentCancelled: break
-        case .paymentInvalid: print("The purchase identifier was invalid")
-        case .paymentNotAllowed: print("The device is not allowed to make the payment")
-        case .storeProductNotAvailable: print("The product is not available in the current storefront")
-        case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
-        case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
-        case .cloudServiceRevoked: print("User has revoked permission to use this cloud service")
-        default: print((error as NSError).localizedDescription)
-        }
-      }
-    }
-  }
-
-  private func restorePurchase() {
-    SwiftyStoreKit.restorePurchases(atomically: true) { results in
-      if results.restoreFailedPurchases.count > 0 {
-        print("Restore Failed: \(results.restoreFailedPurchases)")
-      }
-      else if results.restoredPurchases.count > 0 {
-        let alertViewController = UIAlertController(title: "알림", message: "구매내역이 복원되었습니다.", preferredStyle: .alert)
-        alertViewController.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
-        self.present(alertViewController, animated: true, completion: nil)
-        print("Restore Success: \(results.restoredPurchases)")
-      }
-      else {
-        let alertViewController = UIAlertController(title: "알림", message: "구매한 기록이 없습니다.", preferredStyle: .alert)
-        alertViewController.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
-        self.present(alertViewController, animated: true, completion: nil)
-        print("Nothing to Restore")
-      }
-    }
-  }
   private func restoreDatabase(fileName: String, url: URL) {
     let fileManager = FileManager.default
     guard let directory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.mjkoo.memo") else {
@@ -379,7 +335,6 @@ extension SettingViewController: UIDocumentMenuDelegate,UIDocumentPickerDelegate
 
   }
 
-
   public func documentMenu(_ documentMenu: UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
     documentPicker.delegate = self
     documentPicker.modalPresentationStyle = .fullScreen
@@ -422,3 +377,8 @@ extension SettingViewController: UIDocumentMenuDelegate,UIDocumentPickerDelegate
   }
 }
 
+extension SettingViewController: IAPAlertViewControllerDelegate {
+  func removeBanner() {
+    delegate?.removeBanner()
+  }
+}
