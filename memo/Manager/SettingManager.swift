@@ -17,6 +17,7 @@ class SettingManager {
   var theme: Theme?
   var lineBreak: LineBreak?
   var calendarMode: CalendarMode?
+  var purchaseMode: PurchaseMode?
 
   private init() { }
 
@@ -73,6 +74,14 @@ class SettingManager {
       calendarMode = CalendarMode.week
     } else {
       calendarMode = CalendarMode.month
+    }
+  }
+
+  func setPurchaseMode(value: Int) {
+    if value == 0 {
+      purchaseMode = PurchaseMode.off
+    } else {
+      purchaseMode = PurchaseMode.on
     }
   }
 }

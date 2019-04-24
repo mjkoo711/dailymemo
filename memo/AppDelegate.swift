@@ -11,6 +11,7 @@ import IQKeyboardManagerSwift
 import UserNotifications
 import GoogleMobileAds
 import Firebase
+import SwiftyStoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -22,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     let appId = Const.appId
     FirebaseApp.configure()
     GADMobileAds.configure(withApplicationID: appId)
-  
+
+    swiftyStoreKit()
     setIQKeyboardPreference()
     setUNUserNotification()
     FMDBManager.shared.createDatabase()
@@ -30,6 +32,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     initSetting()
     setNavigationbarTheme()
     return true
+  }
+
+  private func swiftyStoreKit() {
+    SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+      for purchase in purchases {
+        switch purchase.transaction.transactionState {
+        case .purchased, .restored:
+          if purchase.needsFinishTransaction {
+            // Deliver content from server, then:
+            SwiftyStoreKit.finishTransaction(purchase.transaction)
+          }
+        // Unlock content
+        case .failed, .purchasing, .deferred:
+          break // do nothing
+        }
+      }
+    }
   }
 
   private func setNavigationbarTheme() {
@@ -45,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     IQKeyboardManager.shared.enable = true
     IQKeyboardManager.shared.layoutIfNeededOnUpdate = true
     IQKeyboardManager.shared.enableAutoToolbar = false
-    IQKeyboardManager.shared.keyboardDistanceFromTextField = 8
+    IQKeyboardManager.shared.keyboardDistanceFromTextField = 0
   }
 
   private func setUNUserNotification() {
@@ -85,7 +104,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     } else {
       UserDefaults.standard.saveSettings(value: 1, key: Key.FontSize)
       SettingManager.shared.setFontSize(value: 1)
-
     }
 
     if let value = UserDefaults.standard.loadSettings(key: Key.FontWeight) {
@@ -121,6 +139,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     } else {
       UserDefaults.standard.saveSettings(value: 1, key: Key.CalendarMode)
       SettingManager.shared.setCalendarMode(value: 1)
+    }
+
+    if let value = UserDefaults.standard.loadSettings(key: Key.PurchaseCheckKey) {
+      SettingManager.shared.setPurchaseMode(value: value)
+    } else {
+      UserDefaults.standard.saveSettings(value: 0, key: Key.PurchaseCheckKey) // 구매 안한게 기본임
+      SettingManager.shared.setPurchaseMode(value: 0)
     }
   }
 

@@ -10,12 +10,14 @@ import UIKit
 import MobileCoreServices
 import MaterialComponents.MaterialSnackbar
 import Zip
-
+import WhatsNewKit
+import SwiftyStoreKit
 
 protocol SettingViewControllerDelegate {
   func reloadCollectionViewAndCalendarView(date: String)
   func changeMainViewControllerTheme()
   func changeCalendarMode()
+  func removeBanner()
 }
 
 class SettingViewController: UIViewController {
@@ -53,9 +55,14 @@ class SettingViewController: UIViewController {
       }
     }
 
-    appNameLabel.text = "Memo:ment"
+    appNameLabel.text = "Memoment"
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(returnMainViewController))
     closeButtonView.addGestureRecognizer(tapGesture)
+  }
+
+  @objc func returnMainViewController() {
+    Vibration.heavy.vibrate()
+    performSegue(withIdentifier: "unwindMainVC", sender: self)
   }
 }
 
@@ -173,6 +180,11 @@ extension SettingViewController: UICollectionViewDataSource, UICollectionViewDel
       cell.switchLabel.isHidden = true
       
       if indexPath.row == ServiceType.BuyProEdition.rawValue {
+        if themeValue == .whiteRed || themeValue == .blackRed {
+          cell.settingTitleLabel.textColor = Color.LightRed
+        } else if themeValue == .blackBlue || themeValue == .whiteBlue {
+          cell.settingTitleLabel.textColor = Color.Blue
+        }
         cell.serviceType = ServiceType.BuyProEdition
       } else if indexPath.row == ServiceType.BackUp_Restore.rawValue {
         cell.serviceType = ServiceType.BackUp_Restore
@@ -197,17 +209,11 @@ extension SettingViewController: UICollectionViewDelegateFlowLayout {
   }
 }
 
-extension SettingViewController {
-  @objc func returnMainViewController() {
-    Vibration.heavy.vibrate()
-    performSegue(withIdentifier: "unwindMainVC", sender: self)
-  }
-}
-
 extension SettingViewController: SettingCollectionViewCellDelegate {
   func changeCalendarMode() {
     delegate?.changeCalendarMode()
   }
+
   func updateSettingViewController() {
     guard let value = SettingManager.shared.theme else { return }
     if value == .blackBlue || value == .blackRed {
@@ -242,18 +248,27 @@ extension SettingViewController: SettingCollectionViewCellDelegate {
   }
 
   func backupAndRestore() {
+    //TODO : 이쪽 부분 번역 완료하기
     let actionViewController = UIAlertController(title: "백업 & 복원", message: "iCloud를 통해서 이용가능합니다.", preferredStyle: .actionSheet)
     let backupAction = UIAlertAction(title: "백업", style: .default) { (action) in
       self.backup()
     }
     let restoreAction = UIAlertAction(title: "복원", style: .default) { (action) in
-      self.restore()
+      self.restoreData()
     }
     let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
     actionViewController.addAction(backupAction)
     actionViewController.addAction(restoreAction)
     actionViewController.addAction(cancelAction)
     present(actionViewController, animated: true, completion: nil)
+  }
+
+  func purchaseAndRestore() {
+    let iapAlertViewController = IAPAlertViewController()
+    iapAlertViewController.modalTransitionStyle = .crossDissolve
+    iapAlertViewController.modalPresentationStyle = .overFullScreen
+    iapAlertViewController.delegate = self
+    self.present(iapAlertViewController, animated: true, completion: nil)
   }
 
   private func restoreDatabase(fileName: String, url: URL) {
@@ -286,12 +301,8 @@ extension SettingViewController: SettingCollectionViewCellDelegate {
   }
 }
 
-
 extension SettingViewController: UIDocumentMenuDelegate,UIDocumentPickerDelegate,UINavigationControllerDelegate {
   public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
-    // https://stackoverflow.com/questions/33890225/how-to-access-files-in-icloud-drive-from-within-my-ios-app
-
-
     let progressViewController = ProgressViewController()
     progressViewController.modalTransitionStyle = .crossDissolve
     progressViewController.modalPresentationStyle = .overFullScreen
@@ -320,14 +331,12 @@ extension SettingViewController: UIDocumentMenuDelegate,UIDocumentPickerDelegate
 
   }
 
-
   public func documentMenu(_ documentMenu: UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
     documentPicker.delegate = self
     documentPicker.modalPresentationStyle = .fullScreen
     documentPicker.modalTransitionStyle = .crossDissolve
     present(documentPicker, animated: true, completion: nil)
   }
-
 
   func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
     let message = MDCSnackbarMessage()
@@ -354,7 +363,7 @@ extension SettingViewController: UIDocumentMenuDelegate,UIDocumentPickerDelegate
     }
   }
 
-  func restore() {
+  func restoreData() {
     isRestoreProgress = true
     let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.archive"], in: .import)
     documentPicker.delegate = self
@@ -363,3 +372,8 @@ extension SettingViewController: UIDocumentMenuDelegate,UIDocumentPickerDelegate
   }
 }
 
+extension SettingViewController: IAPAlertViewControllerDelegate {
+  func removeBanner() {
+    delegate?.removeBanner()
+  }
+}

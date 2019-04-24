@@ -15,6 +15,13 @@ target 'memo' do
   pod 'Firebase/AdMob'
   pod 'Zip', '~> 1.1'
   pod 'GradientLoadingBar', '~> 1.0'
+  pod 'WhatsNewKit'
+  pod 'SwiftyStoreKit'
+
+  pod 'MaterialComponents/Buttons'
+  pod 'MaterialComponents/Buttons+ButtonThemer'
+  pod 'MaterialComponents/Buttons+ColorThemer'
+
 
   # Pods for memo
   target 'memoWidget' do 

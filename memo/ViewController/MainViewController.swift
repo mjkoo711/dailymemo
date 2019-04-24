@@ -66,7 +66,11 @@ class MainViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    loadBannerView()
+    if let value = SettingManager.shared.purchaseMode {
+      if value == .off {
+         loadBannerView()
+      }
+    }
     today = Date()
     calendarView.placeholderType = .none
     selectDateString = formatter.string(from: Date())
@@ -500,6 +504,10 @@ extension MainViewController: TextInputViewControllerDelegate, TextModifyViewCon
 
   func changeMainViewControllerTheme() {
     setTheme()
+  }
+
+  func removeBanner() {
+    bannerView.isHidden = true
   }
 
   @objc func reloadTodayCollectionViewAndCalendarView() {

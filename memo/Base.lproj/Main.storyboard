@@ -834,8 +834,8 @@
                                             <constraint firstAttribute="height" constant="39" id="IiN-wc-1Sf"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="156" id="nkS-qM-vxl"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="36"/>
-                                        <color key="textColor" red="0.13473534579999999" green="0.55229115490000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="36"/>
+                                        <color key="textColor" red="0.2041580975" green="0.47127145529999998" blue="0.96475607159999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKw-fO-jP6">
@@ -844,7 +844,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="71" id="0S8-my-q4g"/>
                                             <constraint firstAttribute="height" constant="19" id="acz-xd-cFv"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
                                         <color key="textColor" red="0.85102665420000001" green="0.85089892150000002" blue="0.85490316150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>

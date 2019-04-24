@@ -17,4 +17,6 @@ enum Key {
   static let Alarm = "Alarm"
   static let LineBreak = "LineBreakMode"
   static let CalendarMode = "CalendarMode"
+
+  static let PurchaseCheckKey = "PurchaseCheckKey"
 }

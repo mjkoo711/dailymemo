@@ -16,6 +16,7 @@ protocol SettingCollectionViewCellDelegate {
   func changeTheme()
   func updateSettingViewController()
   func backupAndRestore()
+  func purchaseAndRestore()
   func changeCalendarMode()
 }
 
@@ -46,6 +47,10 @@ class SettingCollectionViewCell: UICollectionViewCell {
         let value = nextOption == optionTotalCount ? 0 : nextOption
 
         if settingMode == .Theme {
+          if let purchaseMode = SettingManager.shared.purchaseMode, purchaseMode == .off {
+            self.showSnackbar()
+            return
+          }
           UserDefaults.standard.saveSettings(value: value, key: Key.Theme)
           SettingManager.shared.setTheme(value: value)
           delegate?.changeTheme()
@@ -129,11 +134,29 @@ class SettingCollectionViewCell: UICollectionViewCell {
     } else if indexPath.section == 1 {
       if let serviceType = serviceType {
         if serviceType == .BuyProEdition {
+          if let purchaseMode = SettingManager.shared.purchaseMode, purchaseMode == .on {
+            let message = MDCSnackbarMessage()
+            message.text = "이미 구매하셨습니다."
+            if let theme = SettingManager.shared.theme {
+              if theme == .blackRed || theme == .whiteRed {
+                message.buttonTextColor = Color.LightRed
+              } else if theme == .blackBlue || theme == .whiteBlue {
+                message.buttonTextColor = Color.Blue
+              }
+            }
 
+            MDCSnackbarManager.show(message)
+            return
+          }
+          delegate?.purchaseAndRestore()
         } else if serviceType == .BackUp_Restore {
+          if let purchaseMode = SettingManager.shared.purchaseMode, purchaseMode == .off {
+            self.showSnackbar()
+            return
+          }
           delegate?.backupAndRestore()
         } else if serviceType == .WriteA_Review {
-
+          // TODO
         }
       }
     }
@@ -142,5 +165,30 @@ class SettingCollectionViewCell: UICollectionViewCell {
       delegate?.reloadSettings(indexPath: indexPath)
       delegate?.reloadMainViewController()
     }
+  }
+
+  private func showSnackbar() {
+    let message = MDCSnackbarMessage()
+    message.text = "프로버전 구매시 이용가능합니다."
+    if let theme = SettingManager.shared.theme {
+      if theme == .blackRed || theme == .whiteRed {
+        message.buttonTextColor = Color.LightRed
+      } else if theme == .blackBlue || theme == .whiteBlue {
+        message.buttonTextColor = Color.Blue
+      }
+    }
+
+    let action = MDCSnackbarMessageAction()
+    let actionHandler = {() in
+      // TODO : 구매함수 호출
+      if let delegate = self.delegate {
+        delegate.purchaseAndRestore()
+      }
+    }
+    action.handler = actionHandler
+    action.title = "구매하기"
+
+    message.action = action
+    MDCSnackbarManager.show(message)
   }
 }
