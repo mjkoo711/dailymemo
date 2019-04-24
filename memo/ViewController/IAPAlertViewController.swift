@@ -81,6 +81,7 @@ class IAPAlertViewController: UIViewController {
         let alertViewController = UIAlertController(title: "알림", message: "\(results.restoreFailedPurchases)", preferredStyle: .alert)
         alertViewController.addAction(UIAlertAction(title: "확인", style: .default, handler: { _ in
           progressViewController.dismiss(animated: true, completion: nil)
+          self.dismiss(animated: true, completion: nil)
         }))
         progressViewController.present(alertViewController, animated: true, completion: nil)
         print("Restore Failed: \(results.restoreFailedPurchases)")
@@ -93,6 +94,7 @@ class IAPAlertViewController: UIViewController {
         let alertViewController = UIAlertController(title: "알림", message: "구매내역이 복원되었습니다.", preferredStyle: .alert)
         alertViewController.addAction(UIAlertAction(title: "확인", style: .default, handler: { _ in
           progressViewController.dismiss(animated: true, completion: nil)
+          self.dismiss(animated: true, completion: nil)
         }))
         progressViewController.present(alertViewController, animated: true, completion: nil)
         print("Restore Success: \(results.restoredPurchases)")
@@ -101,6 +103,7 @@ class IAPAlertViewController: UIViewController {
         let alertViewController = UIAlertController(title: "알림", message: "구매한 기록이 없습니다.", preferredStyle: .alert)
         alertViewController.addAction(UIAlertAction(title: "확인", style: .default, handler: { _ in
           progressViewController.dismiss(animated: true, completion: nil)
+          self.dismiss(animated: true, completion: nil)
         }))
         progressViewController.present(alertViewController, animated: true, completion: nil)
         print("Nothing to Restore")
@@ -138,12 +141,16 @@ class IAPAlertViewController: UIViewController {
         UserDefaults.standard.saveSettings(value: 1, key: Key.PurchaseCheckKey)
         SettingManager.shared.setPurchaseMode(value: 1)
         self.delegate?.removeBanner()
+        progressViewController.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         print("Purchase Success: \(purchase.productId)")
       case .error(let error):
         switch error.code {
         case .unknown: print("Unknown error. Please contact support")
         case .clientInvalid: print("Not allowed to make the payment")
-        case .paymentCancelled: break
+        case .paymentCancelled:
+          progressViewController.dismiss(animated: true, completion: nil)
+          break
         case .paymentInvalid: print("The purchase identifier was invalid")
         case .paymentNotAllowed: print("The device is not allowed to make the payment")
         case .storeProductNotAvailable: print("The product is not available in the current storefront")
@@ -151,9 +158,9 @@ class IAPAlertViewController: UIViewController {
         case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
         case .cloudServiceRevoked: print("User has revoked permission to use this cloud service")
         default: print((error as NSError).localizedDescription)
+        progressViewController.dismiss(animated: true, completion: nil)
         }
       }
-      progressViewController.dismiss(animated: true, completion: nil)
     }
   }
 }
