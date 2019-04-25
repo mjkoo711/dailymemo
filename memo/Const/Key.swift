@@ -21,4 +21,5 @@ enum Key {
   static let PurchaseCheckKey = "PurchaseCheckKey"
 
   static let StartKit = "StartKit"
+  static let OpenCount = "OpenCount"
 }

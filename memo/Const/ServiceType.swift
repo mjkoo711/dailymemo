@@ -9,5 +9,5 @@
 import Foundation
 
 enum ServiceType: Int {
-  case BuyProEdition = 0, BackUp_Restore, WriteA_Review
+  case BuyProEdition = 0, StartKit , WriteA_Review, Rate, BackUp_Restore
 }

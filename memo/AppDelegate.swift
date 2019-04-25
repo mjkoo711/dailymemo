@@ -17,8 +17,7 @@ import SwiftyStoreKit
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
   var window: UIWindow?
-  
-  
+
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     let appId = Const.appId
     FirebaseApp.configure()
@@ -30,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     FMDBManager.shared.createDatabaseCompleted()
     initSetting()
     setNavigationbarTheme()
+    checkOpenCount()
     return true
   }
 
@@ -168,5 +168,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   func applicationDidBecomeActive(_ application: UIApplication) { }
 
   func applicationWillTerminate(_ application: UIApplication) { }
+
+  func checkOpenCount() {
+    var count = UserDefaults.standard.integer(forKey: Key.OpenCount)
+
+    if count < Const.RequestAppReviewRateCount {
+      count = count + 1
+      UserDefaults.standard.set(count, forKey: Key.OpenCount)
+    } else if count == Const.RequestAppReviewRateCount {
+      SKStoreReviewController.requestReview()
+    }
+  }
 }
 

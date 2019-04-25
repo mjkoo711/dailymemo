@@ -13,6 +13,9 @@ enum Const {
   static let DailyTextKey = "KDailyTextKey"
   static let WeeklyTextKey = "KWeeklyTextKey"
   static let MonthlyTextKey = "KMonthlyTextKey"
+
+  static let AppID = "1457446485"
+  static let RequestAppReviewRateCount = 10
   
   static let DAY = TimeInterval(60.0 * 60.0 * 24.0)
 

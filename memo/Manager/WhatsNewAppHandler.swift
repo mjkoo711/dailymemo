@@ -48,7 +48,7 @@ class WhatsNewAppHandler {
 
     var configuration = WhatsNewViewController.Configuration()
     configuration.completionButton.backgroundColor = Color.Blue
-    configuration.completionButton.animation = .slideUp
+    configuration.apply(animation: .slideUp)
     configuration.itemsView.autoTintImage = false
     configuration.itemsView.subtitleColor = Color.Gray
     configuration.itemsView.subtitleFont = .systemFont(ofSize: 14, weight: .regular)
