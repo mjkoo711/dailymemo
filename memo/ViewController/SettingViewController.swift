@@ -22,7 +22,7 @@ protocol SettingViewControllerDelegate {
 
 class SettingViewController: UIViewController {
   let designList = ["Theme".localized, "Text Size".localized, "Text Thickness".localized, "Vibration".localized, "Prevent Word Truncation".localized, "Calendar Mode".localized, "Notification Permissions Check".localized, "Locking".localized]
-  let serviceList = ["Buy Pro Edition".localized, "읽어보세요!", "Leave a Review".localized, "별점 주기", "Backup / Restore".localized] //"Contact Us".localized 일시 제거
+  let serviceList = ["💎 " + "Buy Pro Edition".localized, "🙆‍♂️ 읽어보세요!", "👨‍💻 개발자 응원하기".localized, "⭐️ 점수 주기", "Backup / Restore".localized] //"Contact Us".localized 일시 제거
   let size = ["Small".localized, "Middle".localized, "Big".localized]
   let thickness = ["Thin".localized, "Regular".localized, "Bold".localized]
   let onoff = ["Off".localized, "On".localized]

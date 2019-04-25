@@ -68,7 +68,8 @@ class MainViewController: UIViewController {
     super.viewDidLoad()
     if let value = SettingManager.shared.purchaseMode {
       if value == .off {
-         loadBannerView()
+        // TODO: 언젠간 광고를 띄우자 
+//         loadBannerView()
       }
     }
     today = Date()
@@ -151,10 +152,16 @@ class MainViewController: UIViewController {
   }
 
   private func loadBannerView() {
-    self.bannerView.adUnitID = Const.appId
+    self.bannerView.adUnitID = Const.adUnitId
+    self.bannerView.adSize = kGADAdSizeSmartBannerPortrait
     self.bannerView.rootViewController = self
-    self.bannerView.load(GADRequest())
+    let request = GADRequest()
+    #if DEBUG
+    request.testDevices = [ "eb00b8743bf86e937aead12a47fe397a" ];
+    #endif
+    self.bannerView.load(request)
   }
+
   private func setTheme() {
     guard let value = SettingManager.shared.theme else { return }
     if value == .blackBlue || value == .blackRed { // Dark

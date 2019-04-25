@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   var window: UIWindow?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    let appId = Const.appId
+    let appId = Const.admobAppId
     FirebaseApp.configure()
     GADMobileAds.configure(withApplicationID: appId)
     swiftyStoreKit()
@@ -171,11 +171,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
   func checkOpenCount() {
     var count = UserDefaults.standard.integer(forKey: Key.OpenCount)
+    count = count + 1
 
     if count < Const.RequestAppReviewRateCount {
-      count = count + 1
       UserDefaults.standard.set(count, forKey: Key.OpenCount)
     } else if count == Const.RequestAppReviewRateCount {
+      UserDefaults.standard.set(count, forKey: Key.OpenCount)
       SKStoreReviewController.requestReview()
     }
   }
