@@ -119,11 +119,11 @@ class IAPAlertViewController: UIViewController {
   private func setTextLabel() {
     subTitleLabel.text = "더 많은 기능을 사용해보세요!"
     titleLabel.text = "Memoment Pro"
-    adRemoveTitleLabel.text = "광고가 제거됩니다."
+    adRemoveTitleLabel.text = "광고 제거"
     adRemoveDesciptionLabel.text = "배너 광고가 제거된 더 깔끔한 화면을 경험하세요."
-    themeTitleLabel.text = "더 많은 테마를 사용해보세요."
+    themeTitleLabel.text = "다양한 테마"
     themeDescriptionLabel.text = "기존의 다크모드를 포함한 새로운 테마가 계속 업데이트 될 예정입니다."
-    backupTitleLabel.text = "데이터 백업/복원이 가능합니다."
+    backupTitleLabel.text = "데이터 백업/복원"
     backupDescriptionLabel.text = "저장된 메모를 백업하고 복원할 수 있습니다."
     restoreButtonLabel.text = "구매 복원하기"
     purchaseButton.setTitle("구매하기", for: .normal)

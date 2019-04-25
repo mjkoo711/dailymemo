@@ -17,13 +17,11 @@ import SwiftyStoreKit
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
   var window: UIWindow?
-  
-  
+
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    let appId = Const.appId
+    let appId = Const.admobAppId
     FirebaseApp.configure()
     GADMobileAds.configure(withApplicationID: appId)
-
     swiftyStoreKit()
     setIQKeyboardPreference()
     setUNUserNotification()
@@ -31,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     FMDBManager.shared.createDatabaseCompleted()
     initSetting()
     setNavigationbarTheme()
+    checkOpenCount()
     return true
   }
 
@@ -147,6 +146,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
       UserDefaults.standard.saveSettings(value: 0, key: Key.PurchaseCheckKey) // 구매 안한게 기본임
       SettingManager.shared.setPurchaseMode(value: 0)
     }
+
+    if let value = UserDefaults.standard.loadSettings(key: Key.StartKit) {
+      SettingManager.shared.setStartKitMode(value: value)
+    } else {
+      UserDefaults.standard.saveSettings(value: 1, key: Key.StartKit)
+      SettingManager.shared.setStartKitMode(value: 1)
+    }
   }
 
   func applicationWillResignActive(_ application: UIApplication) { }
@@ -162,5 +168,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   func applicationDidBecomeActive(_ application: UIApplication) { }
 
   func applicationWillTerminate(_ application: UIApplication) { }
+
+  func checkOpenCount() {
+    var count = UserDefaults.standard.integer(forKey: Key.OpenCount)
+    count = count + 1
+
+    if count < Const.RequestAppReviewRateCount {
+      UserDefaults.standard.set(count, forKey: Key.OpenCount)
+    } else if count == Const.RequestAppReviewRateCount {
+      UserDefaults.standard.set(count, forKey: Key.OpenCount)
+      SKStoreReviewController.requestReview()
+    }
+  }
 }
 

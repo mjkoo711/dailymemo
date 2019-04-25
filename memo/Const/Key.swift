@@ -19,4 +19,7 @@ enum Key {
   static let CalendarMode = "CalendarMode"
 
   static let PurchaseCheckKey = "PurchaseCheckKey"
+
+  static let StartKit = "StartKit"
+  static let OpenCount = "OpenCount"
 }

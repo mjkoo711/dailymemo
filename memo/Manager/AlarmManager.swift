@@ -58,16 +58,16 @@ class AlarmManager {
 
     switch notificationType {
     case .Daily:
-      let triggerDaily = Calendar.current.dateComponents([.hour,.minute,.second,], from: datePicked)
+      let triggerDaily = Calendar.current.dateComponents([.hour,.minute,], from: datePicked)
       trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: true)
     case .Once:
       let triggerDaily = Calendar.current.dateComponents([.hour,.minute,], from: datePicked)
       trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: false)
     case .Weekly:
-      let triggerWeekly = Calendar.current.dateComponents([.weekday,.hour,.minute,.second,], from: datePicked)
+      let triggerWeekly = Calendar.current.dateComponents([.weekday,.hour,.minute,], from: datePicked)
       trigger = UNCalendarNotificationTrigger(dateMatching: triggerWeekly, repeats: true)
     case .Monthly:
-      let triggerWeekly = Calendar.current.dateComponents([.month,.weekday,.hour,.minute,.second,], from: datePicked)
+      let triggerWeekly = Calendar.current.dateComponents([.month,.weekday,.hour,.minute,], from: datePicked)
       trigger = UNCalendarNotificationTrigger(dateMatching: triggerWeekly, repeats: true)
     }
 

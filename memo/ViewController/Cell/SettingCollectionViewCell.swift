@@ -9,6 +9,7 @@
 import UIKit
 import MaterialComponents.MaterialSnackbar
 import UserNotifications
+import StoreKit
 
 protocol SettingCollectionViewCellDelegate {
   func reloadSettings(indexPath: IndexPath)
@@ -18,6 +19,7 @@ protocol SettingCollectionViewCellDelegate {
   func backupAndRestore()
   func purchaseAndRestore()
   func changeCalendarMode()
+  func showStartKit()
 }
 
 class SettingCollectionViewCell: UICollectionViewCell {
@@ -156,7 +158,11 @@ class SettingCollectionViewCell: UICollectionViewCell {
           }
           delegate?.backupAndRestore()
         } else if serviceType == .WriteA_Review {
-          // TODO
+          self.showAppStoreReviewPage()
+        } else if serviceType == .Rate {
+          SKStoreReviewController.requestReview()
+        } else if serviceType == .StartKit {
+          delegate?.showStartKit()
         }
       }
     }
@@ -190,5 +196,11 @@ class SettingCollectionViewCell: UICollectionViewCell {
 
     message.action = action
     MDCSnackbarManager.show(message)
+  }
+
+  private func showAppStoreReviewPage() {
+    guard let writeReviewURL = URL(string: "https://itunes.apple.com/app/id\(Const.AppID)?action=write-review")
+      else { fatalError("Expected a valid URL") }
+    UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
   }
 }
