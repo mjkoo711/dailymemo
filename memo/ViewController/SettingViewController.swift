@@ -21,9 +21,9 @@ protocol SettingViewControllerDelegate {
 }
 
 class SettingViewController: UIViewController {
-  let designList = ["Theme".localized, "Text Size".localized, "Text Thickness".localized, "Vibration".localized, "Prevent Word Truncation".localized, "Calendar Mode".localized, "Notification Permissions Check".localized, "Locking".localized]
-  let serviceList = ["💎 " + "Buy Pro Edition".localized, "🙆‍♂️ 읽어보세요!", "👨‍💻 개발자 응원하기".localized, "⭐️ 점수 주기", "Backup / Restore".localized] //"Contact Us".localized 일시 제거
-  let size = ["Small".localized, "Middle".localized, "Big".localized]
+  let designList = ["Theme".localized, "Font Size".localized, "Font Weight".localized, "Haptic".localized, "Prevent Word Truncation".localized, "Calendar Mode".localized, "Notification Permissions Check".localized, "Locking".localized]
+  let serviceList = ["💎 " + "Buy Pro Edition".localized, "🙆‍♂️ " + "Read Me!".localized, "👨‍💻 " + "Cheer Up Developer".localized, "⭐️ " + "Rating".localized, "Backup / Restore".localized] //"Contact Us".localized 일시 제거
+  let size = ["Small".localized, "Middle".localized, "Large".localized]
   let thickness = ["Thin".localized, "Regular".localized, "Bold".localized]
   let onoff = ["Off".localized, "On".localized]
   let theme = ["White & Blue".localized, "White & Red".localized, "Black & Blue".localized, "Black & Red".localized]
@@ -253,14 +253,14 @@ extension SettingViewController: SettingCollectionViewCellDelegate {
 
   func backupAndRestore() {
     //TODO : 이쪽 부분 번역 완료하기
-    let actionViewController = UIAlertController(title: "백업 & 복원", message: "iCloud를 통해서 이용가능합니다.", preferredStyle: .actionSheet)
-    let backupAction = UIAlertAction(title: "백업", style: .default) { (action) in
+    let actionViewController = UIAlertController(title: "Backup & Restore".localized, message: "You can do it through iCloud.".localized, preferredStyle: .actionSheet)
+    let backupAction = UIAlertAction(title: "Backup".localized, style: .default) { (action) in
       self.backup()
     }
-    let restoreAction = UIAlertAction(title: "복원", style: .default) { (action) in
+    let restoreAction = UIAlertAction(title: "Restore".localized, style: .default) { (action) in
       self.restoreData()
     }
-    let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+    let cancelAction = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
     actionViewController.addAction(backupAction)
     actionViewController.addAction(restoreAction)
     actionViewController.addAction(cancelAction)
@@ -344,7 +344,7 @@ extension SettingViewController: UIDocumentMenuDelegate,UIDocumentPickerDelegate
 
   func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
     let message = MDCSnackbarMessage()
-    message.text = "Canceled"
+    message.text = "Canceled".localized
     MDCSnackbarManager().show(message)
   }
 

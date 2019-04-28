@@ -78,8 +78,8 @@ class IAPAlertViewController: UIViewController {
     present(progressViewController, animated: true, completion: nil)
     SwiftyStoreKit.restorePurchases(atomically: true) { results in
       if results.restoreFailedPurchases.count > 0 {
-        let alertViewController = UIAlertController(title: "알림", message: "\(results.restoreFailedPurchases)", preferredStyle: .alert)
-        alertViewController.addAction(UIAlertAction(title: "확인", style: .default, handler: { _ in
+        let alertViewController = UIAlertController(title: "Notice".localized, message: "\(results.restoreFailedPurchases)", preferredStyle: .alert)
+        alertViewController.addAction(UIAlertAction(title: "OK".localized, style: .default, handler: { _ in
           progressViewController.dismiss(animated: true, completion: nil)
           self.dismiss(animated: true, completion: nil)
         }))
@@ -91,8 +91,8 @@ class IAPAlertViewController: UIViewController {
         UserDefaults.standard.saveSettings(value: 1, key: Key.PurchaseCheckKey)
         self.delegate?.removeBanner()
 
-        let alertViewController = UIAlertController(title: "알림", message: "구매내역이 복원되었습니다.", preferredStyle: .alert)
-        alertViewController.addAction(UIAlertAction(title: "확인", style: .default, handler: { _ in
+        let alertViewController = UIAlertController(title: "Notice".localized, message: "Your purchase history has been restored.".localized, preferredStyle: .alert)
+        alertViewController.addAction(UIAlertAction(title: "OK".localized, style: .default, handler: { _ in
           progressViewController.dismiss(animated: true, completion: nil)
           self.dismiss(animated: true, completion: nil)
         }))
@@ -100,8 +100,8 @@ class IAPAlertViewController: UIViewController {
         print("Restore Success: \(results.restoredPurchases)")
       }
       else {
-        let alertViewController = UIAlertController(title: "알림", message: "구매한 기록이 없습니다.", preferredStyle: .alert)
-        alertViewController.addAction(UIAlertAction(title: "확인", style: .default, handler: { _ in
+        let alertViewController = UIAlertController(title: "Notice".localized, message: "There is no purchase history.".localized, preferredStyle: .alert)
+        alertViewController.addAction(UIAlertAction(title: "OK".localized, style: .default, handler: { _ in
           progressViewController.dismiss(animated: true, completion: nil)
           self.dismiss(animated: true, completion: nil)
         }))
@@ -117,16 +117,16 @@ class IAPAlertViewController: UIViewController {
   }
 
   private func setTextLabel() {
-    subTitleLabel.text = "더 많은 기능을 사용해보세요!"
+    subTitleLabel.text = "Try more features!".localized
     titleLabel.text = "Memoment Pro"
-    adRemoveTitleLabel.text = "광고 제거"
-    adRemoveDesciptionLabel.text = "배너 광고가 제거된 더 깔끔한 화면을 경험하세요."
-    themeTitleLabel.text = "다양한 테마"
-    themeDescriptionLabel.text = "기존의 다크모드를 포함한 새로운 테마가 계속 업데이트 될 예정입니다."
-    backupTitleLabel.text = "데이터 백업/복원"
-    backupDescriptionLabel.text = "저장된 메모를 백업하고 복원할 수 있습니다."
-    restoreButtonLabel.text = "구매 복원하기"
-    purchaseButton.setTitle("구매하기", for: .normal)
+    adRemoveTitleLabel.text = "Remove Ads".localized
+    adRemoveDesciptionLabel.text = "Experience cleaner screens with no ads removed.".localized // "광고가 제거된 더 깔끔한 화면을 경험하세요."
+    themeTitleLabel.text = "Various Themes".localized
+    themeDescriptionLabel.text = "The new theme will continue to be updated, including the existing Dark Mode.".localized
+    backupTitleLabel.text = "Backup / Restore".localized
+    backupDescriptionLabel.text = "You can back up & restore memo recorded.".localized
+    restoreButtonLabel.text = "Restore Your Purchase".localized
+    purchaseButton.setTitle("Purchase".localized, for: .normal)
   }
 
   private func purchase() {

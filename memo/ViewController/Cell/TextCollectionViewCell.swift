@@ -62,21 +62,21 @@ class TextCollectionViewCell: UICollectionViewCell {
       delegate?.setAlarm(text: textInstance!)
     } else if text.repeatMode == .Daily {
       let message = MDCSnackbarMessage()
-      message.text = "You can not set notification for text that are repeated every day.".localized
+      message.text = "You can not set reminder for text that are repeated every day.".localized
       MDCSnackbarManager.show(message)
     } else if text.repeatMode == .Weekly {
       let message = MDCSnackbarMessage()
-      message.text = "You can not set notification for text that are repeated every week.".localized
+      message.text = "You can not set reminder for text that are repeated every week.".localized
       MDCSnackbarManager.show(message)
     } else if text.repeatMode == .Monthly {
       let message = MDCSnackbarMessage()
-      message.text = "You can not set notification for text that are repeated every month.".localized
+      message.text = "You can not set reminder for text that are repeated every month.".localized
       MDCSnackbarManager.show(message)
     } else if text.isAlarmSetting == 1 {
       Vibration.oldSchool.vibrate()
 
       let message = MDCSnackbarMessage()
-      message.text = "Notification was deleted.".localized
+      message.text = "Reminder was deleted.".localized
       MDCSnackbarManager.show(message)
 
       delegate?.removeAlarm(text: textInstance!)

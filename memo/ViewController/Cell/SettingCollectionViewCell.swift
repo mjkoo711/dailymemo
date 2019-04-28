@@ -126,7 +126,7 @@ class SettingCollectionViewCell: UICollectionViewCell {
             case .provisional:
               DispatchQueue.main.async {
                 let message = MDCSnackbarMessage()
-                message.text = "provisinal"
+                message.text = "Provisional".localized
                 MDCSnackbarManager.show(message)
               }
             }
@@ -138,7 +138,7 @@ class SettingCollectionViewCell: UICollectionViewCell {
         if serviceType == .BuyProEdition {
           if let purchaseMode = SettingManager.shared.purchaseMode, purchaseMode == .on {
             let message = MDCSnackbarMessage()
-            message.text = "이미 구매하셨습니다."
+            message.text = "You already purchase Memoment Pro.".localized
             if let theme = SettingManager.shared.theme {
               if theme == .blackRed || theme == .whiteRed {
                 message.buttonTextColor = Color.LightRed
@@ -175,7 +175,7 @@ class SettingCollectionViewCell: UICollectionViewCell {
 
   private func showSnackbar() {
     let message = MDCSnackbarMessage()
-    message.text = "프로버전 구매시 이용가능합니다."
+    message.text = "Pro version is available for purchase.".localized
     if let theme = SettingManager.shared.theme {
       if theme == .blackRed || theme == .whiteRed {
         message.buttonTextColor = Color.LightRed
@@ -186,22 +186,21 @@ class SettingCollectionViewCell: UICollectionViewCell {
 
     let action = MDCSnackbarMessageAction()
     let actionHandler = {() in
-      // TODO : 구매함수 호출
       if let delegate = self.delegate {
         delegate.purchaseAndRestore()
       }
     }
     action.handler = actionHandler
-    action.title = "구매하기"
+    action.title = "Purchase".localized
 
     message.action = action
     MDCSnackbarManager.show(message)
   }
 
   private func showAppStoreReviewPage() {
-    let alertViewController = UIAlertController(title: "고맙습니다", message: "앱에 바라는 점이나 칭찬을 적어주시면 개발자는 행복할거에요 🥰😍", preferredStyle: .alert)
-    let cancelAction = UIAlertAction(title: "취소", style: .destructive, handler: nil)
-    let goAction = UIAlertAction(title: "글 남기기", style: .default) { (action) in
+    let alertViewController = UIAlertController(title: "Thank You".localized, message: "The developer will be happy if you write down your app's wishes or compliments.".localized + " 🥰😍", preferredStyle: .alert)
+    let cancelAction = UIAlertAction(title: "Cancel".localized, style: .destructive, handler: nil)
+    let goAction = UIAlertAction(title: "Leave Comment".localized, style: .default) { (action) in
       guard let writeReviewURL = URL(string: "https://itunes.apple.com/app/id\(Const.AppID)?action=write-review")
         else { fatalError("Expected a valid URL") }
       UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
