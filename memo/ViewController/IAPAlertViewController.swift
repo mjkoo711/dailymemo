@@ -58,7 +58,7 @@ class IAPAlertViewController: UIViewController {
     SwiftyStoreKit.retrieveProductsInfo(["com.mjkoo.memo.memomentPro"]) { result in
       if let product = result.retrievedProducts.first {
         let priceString = product.localizedPrice!
-        self.purchaseButton.setTitle("구매하기" + " - " + "\(priceString)", for: .normal)
+        self.purchaseButton.setTitle("Purchase".localized + " - " + "\(priceString)", for: .normal)
         print("Product: \(product.localizedDescription), price: \(priceString)")
       }
       else if let invalidProductId = result.invalidProductIDs.first {

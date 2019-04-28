@@ -19,7 +19,7 @@ class WhatsNewAppHandler {
       image: UIImage(named: "StartKitEasyMemo2")
     )
     let memoAlarmItem = WhatsNew.Item(
-      title: "Double tap to set memo Reminder".localized,
+      title: "Double tap to set reminder".localized,
       subtitle: "Double tap the note you have created to set the alarm. Does not ring during in-app. (Alarm permission required)".localized,
       image: UIImage(named: "StartKitMemoAlarm2")
     )

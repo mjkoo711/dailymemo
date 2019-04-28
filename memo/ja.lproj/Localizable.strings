@@ -99,13 +99,13 @@
 "FRIDAY" = "金曜日";
 "SATURDAY" = "土曜日";
 
-"%@년 %@월 %@일" = "%@년 %@월 %@일";
+"%@년 %@월 %@일" = "%@年 %@月 %@日";
 "%@ %@, %@" = "%@ %@, %@";
 
 
 "Single tap to write memo" =  "メモを書くためのシングルタップ";
 "Write a simple note with a click on the screen." = "画面をクリックして簡単なメモを書きます。";
-"Double tap to set memo Reminder" = "メモを設定するにはダブルタップ";
+"Double tap to set reminder" = "メモを設定するにはダブルタップ";
 "Double tap the note you have created to set the alarm. Does not ring during in-app. (Alarm permission required)" = "作成したメモをダブルタップしてアラームを設定します。 アプリ内で鳴りません。 （警報許可が必要です）";
 "Buy a Pro version to apply a variety of color themes. Themes will continue to be added." = "さまざまなカラーテーマを適用するためにPro版を購入してください。 テーマは今後も追加されます。";
 "Widget available" = "利用可能なウィジェット";

@@ -12,16 +12,16 @@
 "GB1-b8-Igf.text" = "Label";
 
 /* Class = "UISegmentedControl"; Hh8-DQ-8TO.segmentTitles[0] = "Once"; ObjectID = "Hh8-DQ-8TO"; */
-"Hh8-DQ-8TO.segmentTitles[0]" = "Once";
+"Hh8-DQ-8TO.segmentTitles[0]" = "一旦";
 
 /* Class = "UISegmentedControl"; Hh8-DQ-8TO.segmentTitles[1] = "Daily"; ObjectID = "Hh8-DQ-8TO"; */
-"Hh8-DQ-8TO.segmentTitles[1]" = "Daily";
+"Hh8-DQ-8TO.segmentTitles[1]" = "每日";
 
 /* Class = "UISegmentedControl"; Hh8-DQ-8TO.segmentTitles[2] = "Weekly"; ObjectID = "Hh8-DQ-8TO"; */
-"Hh8-DQ-8TO.segmentTitles[2]" = "Weekly";
+"Hh8-DQ-8TO.segmentTitles[2]" = "每周";
 
 /* Class = "UISegmentedControl"; Hh8-DQ-8TO.segmentTitles[3] = "Monthly"; ObjectID = "Hh8-DQ-8TO"; */
-"Hh8-DQ-8TO.segmentTitles[3]" = "Monthly";
+"Hh8-DQ-8TO.segmentTitles[3]" = "月度";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "IDD-Ra-A4A"; */
 "IDD-Ra-A4A.text" = "Label";
