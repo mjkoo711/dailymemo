@@ -24,7 +24,7 @@
 "Date created by %@" = "작성일 : %@";
 "Reminder was deleted." = "알람이 삭제되었습니다.";
 "Reminder Time" = "알람 시간";
-"Modify Reminder" = "알람이 변경되었습니다.";
+"Modify Reminder" = "알람 변경";
 "The reminder time has been changed to %@." = "알람이 %@로 변경되었습니다.";
 
 "Theme" = "테마";
