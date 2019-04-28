@@ -5,127 +5,115 @@
   Created by MinJun KOO on 23/03/2019.
   Copyright © 2019 mjkoo. All rights reserved.
 */
-
-"SUNDAY" = "日曜日";
-
-"MONDAY" = "月曜日";
-
-"TUESDAY" = "火曜日";
-
-"WEDNESDAY" = "水曜日";
-
-"THURSDAY" = "木曜日";
-
-"FRIDAY" = "金曜日";
-
-"SATURDAY" = "土曜日";
-
-"Canceled" = "キャンセル";
-
-"%@년 %@월 %@일" = "%@年 %@月 %@日";
-
-"Notification Settings" = "通知設定";
-
-"No Upcoming Notification" = "今後の通知はありません";
-
-"Notification Time" = "通知時間";
-
-"You can not set reminders for repeatedly saved notes." = "繰り返し保存されたメモにアラームを設定することはできません。";
-
-"Modify Notification" = "通知を変更";
-
-"Copy" = "コピーする";
-
-"Copied." = "コピーしました";
-
-"Modify" = "修正する";
-
-"Delete" = "削除する";
-
-"Deleted." = "削除済み";
-
-"Cancel" = "キャンセル";
-
-"CANCEL" = "キャンセル";
-
-"The Notification sounds at %@" = "通知は%@に鳴ります";
-
 "DONE" = "完了";
-
-"Reminder" = "催促状";
-
-"No Upcoming Notification" = "今後の通知はありません";
-
-"Date created by %@" = "%@作成日";
-
-"You can not set notification for text that are repeated every day." = "毎日繰り返されるテキストには通知を設定できません。";
-
-"You can not set notification for text that are repeated every week." = "毎週繰り返されるテキストには通知を設定できません。";
-
-"You can not set notification for text that are repeated every month." = "毎月繰り返されるテキストには通知を設定できません。";
-
-"Notification was deleted." = "通知が削除されました";
-
-"The notification time has been changed to %@." = "通知時間は%@に変更されました。";
+"The Reminder sounds at %@" = "アラームは%@に鳴ります。";
+"Canceled" = "キャンセル";
+"CANCEL" = "キャンセル";
+"Reminder Settings" = "リマインダーの設定";
+"No Upcoming Reminder" = "今後の通知はありません";
+"Reminder Time" = "リマインダータイム";
+"You can not set reminders for repeatedly saved memo." = "繰り返し保存したメモにはアラームを設定できません。";
+"Modify Reminder" = "リマインダーを変更";
+"Copy" = "コピーする";
+"Copied." = "コピーしました";
+"Modify" = "修正する";
+"Delete" = "削除する";
+"Deleted." = "削除済み";
+"Cancel" = "キャンセル";
+"Reminder List" = "リマインダーリスト";
+"Date created by %@" = "生成日：%@";
+"Reminder was deleted." = "リマインダーが削除されました。";
+"Reminder Time" = "リマインダータイム";
+"Modify Reminder" = "リマインダーを変更";
+"The reminder time has been changed to %@." = "催促時間は%@に変更されました。";
 
 "Theme" = "テーマ";
-
-"Text Size" = "文字サイズ";
-
-"Text Thickness" = "テキストの太さ";
-
-"Vibration" = "振動";
-
+"Font Size" = "フォントサイズ";
+"Font Weight" = "フォントの太さ";
+"Haptic" = "ハプティック";
 "Prevent Word Truncation" = "単語の切り捨てを防ぐ";
-
-"Notification Permissions Check" = "通知権限チェック";
-
-"Locking" = "ロッキング";
-
-"Buy Pro Edition" = "Pro Editionを購入する";
-
-"Backup / Restore" = "復元する";
-
-"Leave a Review" = "レビューを残す";
-
-"Contact Us" = "お問い合わせ";
-
-"Small" = "小さい";
-
-"Middle" = "中間";
-
-"Big" = "大きい";
-
-"Thin" = "薄いです";
-
-"Regular" = "定期的";
-
-"Bold" = "大胆な";
-
-"Off" = "オフ";
-
-"On" = "に";
-
-"White & Blue" = "白 & 青";
-
-"White & Red" = "白 & 赤";
-
-"Black & Blue" = "黒 & 青";
-
-"Black & Red" = "黒 & 赤";
-
-"To Be Updated" = "更新する";
-
-"Notification permission had not allowed." = "通知許可が許可されていませんでした。";
-
-"Set Up" = "行く";
-
-"Notification Permission has already been allowed" = "通知許可は既に許可されています";
-
-"You need to select a file named 'memoBackup.zip'" = "あなたは 'memoBackup.zip'という名前のファイルを選択する必要があります。";
-
 "Calendar Mode" = "カレンダーモード";
-
+"Notification Permissions Check" = "通知権限チェック";
+"Buy Pro Edition" = "Pro Editionを購入する";
+"Read Me!" = "ミーを読みます！";
+"Locking" = "ロッキング";
+"Cheer Up Developer" = "開発者を応援";
+"Rating" = "評価";
+"Backup / Restore" = "バックアップ/復元";
+"Small" = "小さい";
+"Middle" = "中間";
+"Large" = "大";
+"Thin" = "薄い";
+"Regular" = "定期的";
+"Bold" = "太字";
+"Off" = "オフ";
+"On" = "に";
+"White & Blue" = "白青";
+"White & Red" = "白赤";
+"Black & Blue" = "黒青";
+"Black & Red" = "黒赤";
+"To Be Updated" = "更新されます。";
 "Week" = "週";
-
 "Month" = "月";
+"Backup & Restore" = "バックアップ & 復元";
+"You can do it through iCloud." = "あなたはiCloudを通してそれをすることができる。";
+"Backup" = "バックアップ";
+"Restore" = "復元";
+"You need to select a file named 'memoBackup.zip'" = "あなたは「memoBackup.zip」という名前のファイルを選択する必要があります。";
+
+"Notice" = "通知";
+"OK" = "OK";
+"Your purchase history has been restored." = "購入履歴が復元されました。";
+"There is no purchase history." = "購入履歴はありません。";
+"Try more features!" = "もっと機能を試してみてください。";
+"Remove Ads" = "広告を削除";
+"Experience cleaner screens with no ads removed." = "広告が削除されていないきれいなスクリーンを体験してください。";
+"Various Themes" = "様々なテーマ";
+"The new theme will continue to be updated, including the existing Dark Mode." = "既存のダークモードを含め、新しいテーマは今後も更新されます。";
+"You can back up & restore memo recorded." = "記録したメモをバックアップして復元することができます。";
+
+"Restore Your Purchase" = "購入を復元する";
+"Purchase" = "購入";
+
+
+"You can not set reminder for text that are repeated every day." = "あなたは毎日繰り返されているテキストのリマインダーを設定することはできません。";
+"You can not set reminder for text that are repeated every week." = "あなたは毎週繰り返されるテキストのリマインダーを設定することはできません。";
+"You can not set reminder for text that are repeated every month." = "毎月繰り返されるテキストにアラームを設定することはできません。";
+"Reminder was deleted." = "通知が削除されました";
+
+"Notification permission had not allowed." = "通知許可が許可されていません。";
+"Set Up" = "セットアップ";
+"Notification Permission has already been allowed" = "通知許可は既に許可されています";
+"Provisional" = "Provisional";
+"You already purchase Memoment Pro." = "Memoment Proはすでに購入済みです。";
+"Pro version is available for purchase." = "Pro版は購入可能です。";
+"Thank You" = "ありがとうございました";
+"The developer will be happy if you write down your app's wishes or compliments." = "あなたがあなたのアプリの願いや賛辞を書き留めたら、開発者は幸せになるでしょう。";
+"Leave Comment" = "コメントを残す";
+
+"SUNDAY" = "日曜日";
+"MONDAY" = "月曜日";
+"TUESDAY" = "火曜日";
+"WEDNESDAY" = "水曜日";
+"THURSDAY" = "木曜日";
+"FRIDAY" = "金曜日";
+"SATURDAY" = "土曜日";
+
+"%@년 %@월 %@일" = "%@년 %@월 %@일";
+"%@ %@, %@" = "%@ %@, %@";
+
+
+"Single tap to write memo" =  "メモを書くためのシングルタップ";
+"Write a simple note with a click on the screen." = "画面をクリックして簡単なメモを書きます。";
+"Double tap to set memo Reminder" = "メモを設定するにはダブルタップ";
+"Double tap the note you have created to set the alarm. Does not ring during in-app. (Alarm permission required)" = "作成したメモをダブルタップしてアラームを設定します。 アプリ内で鳴りません。 （警報許可が必要です）";
+"Buy a Pro version to apply a variety of color themes. Themes will continue to be added." = "さまざまなカラーテーマを適用するためにPro版を購入してください。 テーマは今後も追加されます。";
+"Widget available" = "利用可能なウィジェット";
+"You can easily check memo and write memo with the widget." = "あなたは簡単にメモをチェックし、ウィジェットでメモを書くことができます。";
+
+"Please read it!" = "読んでください！";
+"Getting Started" = "入門";
+
+"Write A Memo" = "メモを書く";
+
+
