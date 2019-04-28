@@ -274,7 +274,7 @@ class MainViewController: UIViewController {
       // MARK: snackbar
       let message = MDCSnackbarMessage()
       message.buttonTextColor = Color.LightRed
-      message.text = String(format: NSLocalizedString("The Notification sounds at %@".localized, comment: ""), "\(self.formatterLocalized.string(from: datePicker.date))")
+      message.text = String(format: NSLocalizedString("The Reminder sounds at %@", comment: ""), "\(self.formatterLocalized.string(from: datePicker.date))")
 
       let action = MDCSnackbarMessageAction()
       let actionHandler = {() in
@@ -294,7 +294,7 @@ class MainViewController: UIViewController {
     alertView.addButton("CANCEL".localized, backgroundColor: Color.LightRed) {
 
     }
-    alertView.showCustom("Notification Settings".localized, subTitle: "", color: Color.Blue, icon: UIImage(named: "AlarmOnWhite")!)
+    alertView.showCustom("Reminder Settings".localized, subTitle: "", color: Color.Blue, icon: UIImage(named: "AlarmOnWhite")!)
   }
 
   private func textAlarmTrigger(text: Text, isAlarmSetting: Bool) {
@@ -638,18 +638,18 @@ extension MainViewController: TextCollectionViewCellDelegate {
   func showActionSheet(text: Text) {
     textSelected = text
 
-    let actionSheet = UIAlertController(title: text.string, message: "No Upcoming Notification".localized, preferredStyle: .actionSheet)
+    let actionSheet = UIAlertController(title: text.string, message: "No Upcoming Reminder".localized, preferredStyle: .actionSheet)
 
     if let textAlarmDate = text.alarmDatePicked, text.isAlarmable() {
       actionSheet.title = text.string
-      actionSheet.message =  "Notification Time".localized + "\n" + "\(formatterLocalized.string(from: textAlarmDate))"
+      actionSheet.message =  "Reminder Time".localized + "\n" + "\(formatterLocalized.string(from: textAlarmDate))"
     }
 
     if !text.isAlarmable() && text.repeatMode != .Once {
-      actionSheet.message = "You can not set reminders for repeatedly saved notes.".localized
+      actionSheet.message = "You can not set reminders for repeatedly saved memo.".localized
     }
 
-    let modifyAlarmAction = UIAlertAction(title: "Modify Notification".localized, style: .default, handler: { (action) in
+    let modifyAlarmAction = UIAlertAction(title: "Modify Reminder".localized, style: .default, handler: { (action) in
       self.showAlarmSettingView()
     })
 

@@ -6,126 +6,116 @@
   Copyright © 2019 mjkoo. All rights reserved.
 */
 
-"SUNDAY" = "SUNDAY";
-
-"MONDAY" = "MONDAY";
-
-"TUESDAY" = "TUESDAY";
-
-"WEDNESDAY" = "WEDNESDAY";
-
-"THURSDAY" = "THURSDAY";
-
-"FRIDAY" = "FRIDAY";
-
-"SATURDAY" = "SATURDAY";
-
-"Canceled" = "Canceled";
-
-"CANCEL" = "CANCEL";
-
-"Notification Settings" = "Notification Settings";
-
-"No Upcoming Notification" = "No Upcoming Notification";
-
-"Notification Time" = "Notification Time";
-
-"You can not set reminders for repeatedly saved notes." = "You can not set reminders for repeatedly saved notes.";
-
-"Modify Notification" = "Modify Notification";
-
-"Copy" = "Copy";
-
-"Copied." = "Copied.";
-
-"Modify" = "Modify";
-
-"Delete" = "Delete";
-
-"Deleted." = "Deleted.";
-
-"Cancel" = "Cancel";
-
-"CANCEL" = "CANCEL";
-
-"The Notification sounds at %@" = "The Notification sounds at %@";
-
 "DONE" = "DONE";
-
-"Reminder" = "Reminder";
-
-"No Upcoming Notification" = "No Upcoming Notification";
-
-"Date Created by %@" = "Date created by %@";
-
-"You can not set notification for text that are repeated every day." = "You can not set notification for text that are repeated every day.";
-
-"You can not set notification for text that are repeated every week." = "You can not set notification for text that are repeated every week.";
-
-"You can not set notification for text that are repeated every month." = "You can not set notification for text that are repeated every month.";
-
-"Notification was deleted." = "Notification was deleted.";
-
-"The notification time has been changed to %@." = "The notification time has been changed to %@.";
+"The Reminder sounds at %@" = "The Reminder sounds at %@";
+"Canceled" = "Canceled";
+"CANCEL" = "CANCEL";
+"Reminder Settings" = "Reminder Settings";
+"No Upcoming Reminder" = "No Upcoming Reminder";
+"Reminder Time" = "Reminder Time";
+"You can not set reminders for repeatedly saved memo." = "You can not set reminders for repeatedly saved memo.";
+"Modify Reminder" = "Modify Reminder";
+"Copy" = "Copy";
+"Copied." = "Copied.";
+"Modify" = "Modify";
+"Delete" = "Delete";
+"Deleted." = "Deleted.";
+"Cancel" = "Cancel";
+"Reminder List" = "Reminder List";
+"Date created by %@" = "Date created by %@";
+"Reminder was deleted." = "Reminder was deleted.";
+"Reminder Time" = "Reminder Time";
+"Modify Reminder" = "Modify Reminder";
+"The reminder time has been changed to %@." = "The reminder time has been changed to %@.";
 
 "Theme" = "Theme";
-
-"Text Size" = "Text Size";
-
-"Text Thickness" = "Text Thickness";
-
-"Vibration" = "Vibration";
-
+"Font Size" = "Font Size";
+"Font Weight" = "Font Weight";
+"Haptic" = "Haptic";
 "Prevent Word Truncation" = "Prevent Word Truncation";
-
+"Calendar Mode" = "Calendar Mode";
 "Notification Permissions Check" = "Notification Permissions Check";
-
-"Locking" = "Locking";
-
 "Buy Pro Edition" = "Buy Pro Edition";
-
+"Read Me!" = "Read Me!";
+"Locking" = "Locking";
+"Cheer Up Developer" = "Cheer Up Developer";
+"Rating" = "Rating";
 "Backup / Restore" = "Backup / Restore";
-
-"Leave a Review" = "Leave a Review";
-
-"Contact Us" = "Contact Us";
-
 "Small" = "Small";
-
 "Middle" = "Middle";
-
-"Big" = "Big";
-
+"Large" = "Large";
 "Thin" = "Thin";
-
 "Regular" = "Regular";
-
 "Bold" = "Bold";
-
 "Off" = "Off";
-
 "On" = "On";
-
 "White & Blue" = "White & Blue";
-
 "White & Red" = "White & Red";
-
 "Black & Blue" = "Black & Blue";
-
 "Black & Red" = "Black & Red";
-
 "To Be Updated" = "To Be Updated";
-
-"Notification permission had not allowed." = "Notification permission had not allowed.";
-
-"Set Up" = "GO";
-
-"Notification Permission has already been allowed" = "Notification Permission has already been allowed";
-
+"Week" = "Week";
+"Month" = "Month";
+"Backup & Restore" = "Backup & Restore";
+"You can do it through iCloud." = "You can do it through iCloud.";
+"Backup" = "Backup";
+"Restore" = "Restore";
 "You need to select a file named 'memoBackup.zip'" = "You need to select a file named 'memoBackup.zip'";
 
-"Calendar Mode" = "Calendar Mode";
+"Notice" = "Notice";
+"OK" = "OK";
+"Your purchase history has been restored." = "Your purchase history has been restored.";
+"There is no purchase history." = "There is no purchase history.";
+"Try more features!" = "Try more features!";
+"Remove Ads" = "Remove Ads";
+"Experience cleaner screens with no ads removed." = "Experience cleaner screens with no ads removed.";
+"Various Themes" = "Various Themes";
+"The new theme will continue to be updated, including the existing Dark Mode." = "The new theme will continue to be updated, including the existing Dark Mode.";
+"You can back up & restore memo recorded." = "You can back up & restore memo recorded.";
 
-"Week" = "Week";
+"Restore Your Purchase" = "Restore Your Purchase";
+"Purchase" = "Purchase";
 
-"Month" = "Month";
+
+"You can not set reminder for text that are repeated every day." = "You can not set reminder for text that are repeated every day.";
+"You can not set reminder for text that are repeated every week." = "You can not set reminder for text that are repeated every week.";
+"You can not set reminder for text that are repeated every month." = "You can not set reminder for text that are repeated every month.";
+"Reminder was deleted." = "Reminder was deleted.";
+
+"Notification permission had not allowed." = "Notification permission had not allowed.";
+"Set Up" = "Set Up";
+"Notification Permission has already been allowed" = "Notification Permission has already been allowed";
+"Provisional" = "Provisional";
+"You already purchase Memoment Pro." = "You already purchase Memoment Pro.";
+"Pro version is available for purchase." = "Pro version is available for purchase.";
+"Thank You" = "Thank You";
+"The developer will be happy if you write down your app's wishes or compliments." = "The developer will be happy if you write down your app's wishes or compliments.";
+"Leave Comment" = "Leave Comment";
+
+"SUNDAY" = "SUNDAY";
+"MONDAY" = "MONDAY";
+"TUESDAY" = "TUESDAY";
+"WEDNESDAY" = "WEDNESDAY";
+"THURSDAY" = "THURSDAY";
+"FRIDAY" = "FRIDAY";
+"SATURDAY" = "SATURDAY";
+
+"%@년 %@월 %@일" = "%@년 %@월 %@일";
+"%@ %@, %@" = "%@ %@, %@";
+
+
+
+"Single tap to write memo" =  "Single tap to write memo";
+"Write a simple note with a click on the screen." = "Write a simple note with a click on the screen.";
+"Double tap to set memo Reminder" = "Double tap to set memo Reminder";
+"Double tap the note you have created to set the alarm. Does not ring during in-app. (Alarm permission required)" = "Double tap the note you have created to set the alarm. Does not ring during in-app. (Alarm permission required)";
+"Buy a Pro version to apply a variety of color themes. Themes will continue to be added." = "Buy a Pro version to apply a variety of color themes. Themes will continue to be added.";
+"Widget available" = "Widget available";
+"You can easily check memo and write memo with the widget." = "You can easily check memo and write memo with the widget.";
+
+"Please read it!" = "Please read it!";
+"Getting Started" = "Getting Started";
+
+"Write A Memo" = "Write A Memo";
+
+

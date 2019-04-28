@@ -55,8 +55,8 @@ PODS:
     - GoogleUtilities/Logger
   - GradientLoadingBar (1.1.16)
   - IQKeyboardManagerSwift (6.2.1)
-  - MaterialComponents/AnimationTiming (83.0.0)
-  - MaterialComponents/Buttons (83.0.0):
+  - MaterialComponents/AnimationTiming (83.0.1)
+  - MaterialComponents/Buttons (83.0.1):
     - MaterialComponents/Ink
     - MaterialComponents/private/Math
     - MaterialComponents/Ripple
@@ -66,50 +66,50 @@ PODS:
     - MaterialComponents/Typography
     - MDFInternationalization
     - MDFTextAccessibility
-  - "MaterialComponents/Buttons+ButtonThemer (83.0.0)":
+  - "MaterialComponents/Buttons+ButtonThemer (83.0.1)":
     - MaterialComponents/Buttons
     - "MaterialComponents/Buttons+ColorThemer"
     - "MaterialComponents/Buttons+ShapeThemer"
     - "MaterialComponents/Buttons+TypographyThemer"
     - MaterialComponents/Palettes
-  - "MaterialComponents/Buttons+ColorThemer (83.0.0)":
+  - "MaterialComponents/Buttons+ColorThemer (83.0.1)":
     - MaterialComponents/Buttons
     - MaterialComponents/schemes/Color
-  - "MaterialComponents/Buttons+ShapeThemer (83.0.0)":
+  - "MaterialComponents/Buttons+ShapeThemer (83.0.1)":
     - MaterialComponents/Buttons
     - MaterialComponents/schemes/Shape
-  - "MaterialComponents/Buttons+TypographyThemer (83.0.0)":
+  - "MaterialComponents/Buttons+TypographyThemer (83.0.1)":
     - MaterialComponents/Buttons
     - MaterialComponents/schemes/Typography
-  - MaterialComponents/Ink (83.0.0):
+  - MaterialComponents/Ink (83.0.1):
     - MaterialComponents/private/Math
-  - MaterialComponents/OverlayWindow (83.0.0):
+  - MaterialComponents/OverlayWindow (83.0.1):
     - MaterialComponents/private/Application
-  - MaterialComponents/Palettes (83.0.0)
-  - MaterialComponents/private/Application (83.0.0)
-  - MaterialComponents/private/KeyboardWatcher (83.0.0):
+  - MaterialComponents/Palettes (83.0.1)
+  - MaterialComponents/private/Application (83.0.1)
+  - MaterialComponents/private/KeyboardWatcher (83.0.1):
     - MaterialComponents/private/Application
-  - MaterialComponents/private/Math (83.0.0)
-  - MaterialComponents/private/Overlay (83.0.0)
-  - MaterialComponents/Ripple (83.0.0):
+  - MaterialComponents/private/Math (83.0.1)
+  - MaterialComponents/private/Overlay (83.0.1)
+  - MaterialComponents/Ripple (83.0.1):
     - MaterialComponents/AnimationTiming
     - MaterialComponents/private/Math
-  - MaterialComponents/schemes/Color (83.0.0)
-  - MaterialComponents/schemes/Shape (83.0.0):
+  - MaterialComponents/schemes/Color (83.0.1)
+  - MaterialComponents/schemes/Shape (83.0.1):
     - MaterialComponents/ShapeLibrary
     - MaterialComponents/Shapes
-  - MaterialComponents/schemes/Typography (83.0.0):
+  - MaterialComponents/schemes/Typography (83.0.1):
     - MaterialComponents/Typography
-  - MaterialComponents/ShadowElevations (83.0.0)
-  - MaterialComponents/ShadowLayer (83.0.0):
+  - MaterialComponents/ShadowElevations (83.0.1)
+  - MaterialComponents/ShadowLayer (83.0.1):
     - MaterialComponents/ShadowElevations
-  - MaterialComponents/ShapeLibrary (83.0.0):
+  - MaterialComponents/ShapeLibrary (83.0.1):
     - MaterialComponents/private/Math
     - MaterialComponents/Shapes
-  - MaterialComponents/Shapes (83.0.0):
+  - MaterialComponents/Shapes (83.0.1):
     - MaterialComponents/private/Math
     - MaterialComponents/ShadowLayer
-  - MaterialComponents/Snackbar (83.0.0):
+  - MaterialComponents/Snackbar (83.0.1):
     - MaterialComponents/AnimationTiming
     - MaterialComponents/Buttons
     - MaterialComponents/OverlayWindow
@@ -117,7 +117,7 @@ PODS:
     - MaterialComponents/private/KeyboardWatcher
     - MaterialComponents/private/Overlay
     - MaterialComponents/Typography
-  - MaterialComponents/Typography (83.0.0):
+  - MaterialComponents/Typography (83.0.1):
     - MaterialComponents/private/Application
     - MaterialComponents/private/Math
   - MDFInternationalization (2.0.0)
@@ -183,7 +183,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: 04fce34bcd5620c1ee76fb79172105c74a4df335
   GradientLoadingBar: fc794fdbbb3aac46e27785e871af3ab66486018c
   IQKeyboardManagerSwift: 0f0ae8935360b4003e6ea1ac7c19898f01e2f7c7
-  MaterialComponents: e08fa415e0d9cd614b32e3e7bdaf1f968735d3d0
+  MaterialComponents: 2363f5dab79a96d3958e6aaf49ec116e102d23dc
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48

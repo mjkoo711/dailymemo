@@ -5,127 +5,115 @@
   Created by MinJun KOO on 23/03/2019.
   Copyright © 2019 mjkoo. All rights reserved.
 */
-
-"SUNDAY" = "일요일";
-
-"MONDAY" = "월요일";
-
-"TUESDAY" = "화요일";
-
-"WEDNESDAY" = "수요일";
-
-"THURSDAY" = "목요일";
-
-"FRIDAY" = "금요일";
-
-"SATURDAY" = "토요일";
-
-"Canceled" = "취소되었습니다.";
-
-"%@년 %@월 %@일" = "%@년 %@월 %@일";
-
-"Notification Settings" = "알림 설정";
-
-"No Upcoming Notification" = "예정된 알림 없음";
-
-"Notification Time" = "알림 시간";
-
-"You can not set reminders for repeatedly saved notes." = "반복적으로 기록된 메모는 알림 설정이 불가능합니다.";
-
-"Modify Notification" = "알림 변경";
-
-"Copy" = "복사";
-
-"Copied." = "복사되었습니다.";
-
-"Modify" = "변경";
-
-"Delete" = "삭제";
-
-"Deleted." = "삭제되었습니다.";
-
-"Cancel" = "취소";
-
-"CANCEL" = "취소";
-
-"The Notification sounds at %@" = "알림이 %@에 울립니다.";
-
 "DONE" = "완료";
-
-"Reminder" = "설정된 알림";
-
-"No Upcoming Notification" = "예정된 알림 없음";
-
+"The Reminder sounds at %@" = "알람이 %@에 울립니다.";
+"Canceled" = "취소됨";
+"CANCEL" = "취소";
+"Reminder Settings" = "알람 설정";
+"No Upcoming Reminder" = "예정된 알람 없음";
+"Reminder Time" = "알람 시간";
+"You can not set reminders for repeatedly saved memo." = "반복된 메모에는 알람 설정이 불가합니다.";
+"Modify Reminder" = "알람 변경";
+"Copy" = "복사하기";
+"Copied." = "복사됨.";
+"Modify" = "수정하기";
+"Delete" = "삭제하기";
+"Deleted." = "삭제됨.";
+"Cancel" = "취소";
+"Reminder List" = "설정된 알람";
 "Date created by %@" = "작성일 : %@";
-
-"You can not set notification for text that are repeated every day." = "매일 반복되는 텍스트에 대한 알림을 설정할 수 없습니다.";
-
-"You can not set notification for text that are repeated every week." = "매주 반복되는 텍스트에 대한 알림을 설정할 수 없습니다.";
-
-"You can not set notification for text that are repeated every month." = "매월 반복되는 텍스트에 대한 알림을 설정할 수 없습니다.";
-
-"Notification was deleted." = "알림을 삭제했습니다.";
-
-"The notification time has been changed to %@." = "알림 시간이 %@로 변경되었습니다.";
+"Reminder was deleted." = "알람이 삭제되었습니다.";
+"Reminder Time" = "알람 시간";
+"Modify Reminder" = "알람이 변경되었습니다.";
+"The reminder time has been changed to %@." = "알람이 %@로 변경되었습니다.";
 
 "Theme" = "테마";
-
-"Text Size" = "텍스트 크기";
-
-"Text Thickness" = "텍스트 두께";
-
-"Vibration" = "진동";
-
-"Prevent Word Truncation" = "단어잘림 방지";
-
-"Notification Permissions Check" = "알림권한 확인";
-
-"Locking" = "잠금설정";
-
-"Buy Pro Edition" = "프로버전 구매";
-
-"Backup / Restore" = "백업 / 복원";
-
-"Leave a Review" = "리뷰 남기기";
-
-"Contact Us" = "문의메일 보내기";
-
-"Small" = "작게";
-
-"Middle" = "중간";
-
-"Big" = "크게";
-
-"Thin" = "얇게";
-
-"Regular" = "보통";
-
-"Bold" = "굵게";
-
-"Off" = "끄기";
-
-"On" = "켜기";
-
-"White & Blue" = "화이트 & 블루";
-
-"White & Red" = "화이트 & 레드";
-
-"Black & Blue" = "블랙 & 블루";
-
-"Black & Red" = "블랙 & 레드";
-
-"To Be Updated" = "업데이트 예정";
-
-"Notification permission had not allowed." = "알림 권한이 허용되어있지 않습니다.";
-
-"Set Up" = "설정하기";
-
-"Notification Permission has already been allowed" = "알림 권한이 이미 허용되어 있습니다.";
-
-"You need to select a file named 'memoBackup.zip'" = "'memoBackup.zip' 이름의 파일을 선택하셔야 합니다";
-
+"Font Size" = "글자 크기";
+"Font Weight" = "글자 두께";
+"Haptic" = "진동";
+"Prevent Word Truncation" = "단어 잘림 방지";
 "Calendar Mode" = "달력 모드";
-
+"Notification Permissions Check" = "알림 권한 체크";
+"Buy Pro Edition" = "프로버전 구매";
+"Read Me!" = "읽어보세요!";
+"Locking" = "잠금 설정";
+"Cheer Up Developer" = "개발자 응원하기";
+"Rating" = "별점 주기";
+"Backup / Restore" = "백업 / 복원";
+"Small" = "작게";
+"Middle" = "중간";
+"Large" = "크게";
+"Thin" = "얇게";
+"Regular" = "보통";
+"Bold" = "굵게";
+"Off" = "끄기";
+"On" = "켜기";
+"White & Blue" = "화이트 & 블루";
+"White & Red" = "화이트 & 레드";
+"Black & Blue" = "블랙 & 블루";
+"Black & Red" = "블랙 & 레드";
+"To Be Updated" = "업데이트 예정";
 "Week" = "주간";
-
 "Month" = "월간";
+"Backup & Restore" = "백업 & 복원";
+"You can do it through iCloud." = "iCloud를 통해서 할 수 있습니다.";
+"Backup" = "백업";
+"Restore" = "복원";
+"You need to select a file named 'memoBackup.zip'" = "'memoBackup.zip 파일을 선택하셔야 합니다.";
+
+"Notice" = "알림";
+"OK" = "확인";
+"Your purchase history has been restored." = "구매내역이 복원되었습니다.";
+"There is no purchase history." = "구매기록이 없습니다.";
+"Try more features!" = "더 많은 기능을 경험하세요";
+"Remove Ads" = "광고 제거";
+"Experience cleaner screens with no ads removed." = "광고가 제거된 더 깔끔한 화면을 경험하세요.";
+"Various Themes" = "다양한 테마";
+"The new theme will continue to be updated, including the existing Dark Mode." = "기존의 다크모드를 포함한 새로운 테마가 계속 업데이트 될 예정입니다.";
+"You can back up & restore memo recorded." = "기록한 메모를 백업하고 복원할 수 있습니다.";
+
+"Restore Your Purchase" = "구매내역 복원";
+"Purchase" = "구매하기";
+
+
+"You can not set reminder for text that are repeated every day." = "매일 반복된 메모에 대해서는 알람 설정이 불가합니다.";
+"You can not set reminder for text that are repeated every week." = "매주 반복된 메모에 대해서는 알람 설정이 불가합니다.";
+"You can not set reminder for text that are repeated every month." = "매월 반복된 메모에 대해서는 알람 설정이 불가합니다.";
+"Reminder was deleted." = "알림이 삭제되었습니다.";
+
+"Notification permission had not allowed." = "알림 권한이 허용되어 있지 않습니다.";
+"Set Up" = "설정하기";
+"Notification Permission has already been allowed" = "알림 권한이 이미 허용되어 있습니다.";
+"Provisional" = "Provisional";
+"You already purchase Memoment Pro." = "이미 Memoment Pro를 구매하였습니다.";
+"Pro version is available for purchase." = "프로 버전을 구매하여 사용할 수 있습니다.";
+"Thank You" = "고맙습니다";
+"The developer will be happy if you write down your app's wishes or compliments." = "앱에 바라는 점이나 칭찬을 적어주시면 개발자는 행복할거에요";
+"Leave Comment" = "글 남기기";
+
+"SUNDAY" = "일요일";
+"MONDAY" = "월요일";
+"TUESDAY" = "화요일";
+"WEDNESDAY" = "수요일";
+"THURSDAY" = "목요일";
+"FRIDAY" = "금요일";
+"SATURDAY" = "토요일";
+
+"%@년 %@월 %@일" = "%@년 %@월 %@일";
+"%@ %@, %@" = "%@ %@, %@";
+
+
+"Single tap to write memo" =  "한번 탭하여 메모작성";
+"Write a simple note with a click on the screen." = "화면을 한번 클릭하는 것으로 간단한 메모를 작성해보세요.";
+"Double tap to set memo Reminder" = "두번 탭하여 메모 알림 설정";
+"Double tap the note you have created to set the alarm. Does not ring during in-app. (Alarm permission required)" = "작성한 메모를 두 번 클릭하여 알람을 설정해보세요. 인앱 동안에는 울리지 않습니다. (알람권한허용 필수)";
+"Buy a Pro version to apply a variety of color themes. Themes will continue to be added." = "프로버전을 구매하여 다양한 색상의 테마를 만나보세요. 테마는 계속 추가될 예정입니다.";
+"Widget available" = "위젯 사용가능";
+"You can easily check memo and write memo with the widget." = "위젯으로도 쉽게 메모를 체크하고, 메모를 작성할 수 있습니다.";
+
+"Please read it!" = "한번 읽어보세요!";
+"Getting Started" = "시작하기";
+
+"Write A Memo" = "메모 작성하기";
+
+

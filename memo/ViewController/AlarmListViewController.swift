@@ -31,7 +31,7 @@ class AlarmListViewController: UIViewController {
     if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
       flowLayout.sectionHeadersPinToVisibleBounds = true
     }
-    self.navigationItem.title = "Reminder".localized
+    self.navigationItem.title = "Reminder List".localized
     loadSetAlarmText()
     setTheme()
   }
@@ -51,7 +51,7 @@ class AlarmListViewController: UIViewController {
     alarmTextDictionary = dic.sorted { $0.0 < $1.0 }
     if alarmTextList.count == 0 {
       messageLabel.isHidden = false
-      messageLabel.text = "No Upcoming Notification".localized
+      messageLabel.text = "No Upcoming Reminder".localized
     } else {
       messageLabel.isHidden = true
     }
@@ -174,7 +174,7 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
     AlarmManager().removeNotification(textSelected: text)
 
     let message = MDCSnackbarMessage()
-    message.text = "Notification was deleted.".localized
+    message.text = "Reminder was deleted.".localized
     MDCSnackbarManager.show(message)
 
     self.reloadCollectionView()
@@ -187,10 +187,10 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
 
     if let textAlarmDate = text.alarmDatePicked, text.isAlarmable() {
       actionSheet.title = text.string
-      actionSheet.message = "Notification Time".localized + "\n" + "\(formatterLocalized.string(from: textAlarmDate))"
+      actionSheet.message = "Reminder Time".localized + "\n" + "\(formatterLocalized.string(from: textAlarmDate))"
     }
 
-    let setAlarmAction = UIAlertAction(title: "Modify Notification".localized, style: .default, handler: { (action) in
+    let setAlarmAction = UIAlertAction(title: "Modify Reminder".localized, style: .default, handler: { (action) in
       self.showAlarmSettingView()
     })
 
@@ -229,14 +229,14 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
       // MARK: snackbar
       let message = MDCSnackbarMessage()
       message.buttonTextColor = Color.LightRed
-      message.text = String(format: NSLocalizedString("The notification time has been changed to %@.", comment: ""), "\(self.formatterLocalized.string(from: datePicker.date))")
+      message.text = String(format: NSLocalizedString("The reminder time has been changed to %@.", comment: ""), "\(self.formatterLocalized.string(from: datePicker.date))")
       MDCSnackbarManager.show(message)
 
     }
     alertView.addButton("CANCEL".localized, backgroundColor: Color.LightRed) {
 
     }
-     alertView.showCustom("Modify Notification".localized, subTitle: "", color: Color.Blue, icon: UIImage(named: "AlarmOnWhite")!)
+     alertView.showCustom("Modify Reminder".localized, subTitle: "", color: Color.Blue, icon: UIImage(named: "AlarmOnWhite")!)
   }
 
   @objc private func dateSelected(datePicker: UIDatePicker) {

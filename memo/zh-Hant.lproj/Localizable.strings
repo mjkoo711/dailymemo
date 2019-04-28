@@ -1,131 +1,121 @@
-/*
- Localizable.strings
- memo
+/* 
+  Localizable.strings
+  memo
 
- Created by MinJun KOO on 23/03/2019.
- Copyright © 2019 mjkoo. All rights reserved.
- */
-
-"SUNDAY" = "星期天";
-
-"MONDAY" = "星期一";
-
-"TUESDAY" = "星期二";
-
-"WEDNESDAY" = "星期三";
-
-"THURSDAY" = "星期四";
-
-"FRIDAY" = "星期五";
-
-"SATURDAY" = "星期六";
-
-"Canceled" = "取消";
-
-"%@년 %@월 %@일" = "%@年 %@月 %@日";
-
-"Notification Settings" = "通知设置";
-
-"No Upcoming Notification" = "没有即将发布的通知";
-
-"Notification Time" = "通知时间";
-
-"You can not set reminders for repeatedly saved notes." = "您无法为重复保存的笔记设置提醒。";
-
-"Modify Notification" = "修改通知";
-
-"Copy" = "复制";
-
-"Copied." = "复制.";
-
-"Modify" = "修改";
-
-"Delete" = "删除";
-
-"Deleted." = "删除.";
-
-"Cancel" = "取消";
-
-"CANCEL" = "取消";
-
-"The Notification sounds at %@" = "通知在%@响起";
+  Created by MinJun KOO on 23/03/2019.
+  Copyright © 2019 mjkoo. All rights reserved.
+*/
 
 "DONE" = "完成";
-
-"Reminder" = "提醒";
-
-"No Upcoming Notification" = "没有即将发布的通知";
-
+"The Reminder sounds at %@" = "提醒在%@響起";
+"Canceled" = "取消";
+"CANCEL" = "取消";
+"Reminder Settings" = "提醒设置";
+"No Upcoming Reminder" = "没有即将到来的提醒";
+"Reminder Time" = "提醒时间";
+"You can not set reminders for repeatedly saved memo." = "您無法為重複保存的備忘錄設置提醒。";
+"Modify Reminder" = "修改提醒";
+"Copy" = "复制";
+"Copied." = "复制.";
+"Modify" = "修改";
+"Delete" = "删除";
+"Deleted." = "删除.";
+"Cancel" = "取消";
+"Reminder List" = "提醒清单";
 "Date created by %@" = "日期由%@创建";
+"Reminder was deleted." = "提醒已删除。";
+"Reminder Time" = "提醒时间";
+"Modify Reminder" = "修改提醒";
+"The reminder time has been changed to %@." = "提醒時間已更改為%@";
 
-"You can not set notification for text that are repeated every day." = "您无法为每天重复的文本设置通知。";
-
-"You can not set notification for text that are repeated every week." = "您无法为每周重复的文本设置通知。";
-
-"You can not set notification for text that are repeated every month." = "您无法为每月重复的文本设置通知。";
-
-"Notification was deleted." = "通知已删除。";
-
-"The notification time has been changed to %@." = "通知时间已更改为%@。";
-
-"Theme" = "主題";
-
-"Text Size" = "字體大小";
-
-"Text Thickness" = "文字厚度";
-
-"Vibration" = "振動";
-
+"Theme" = "主题";
+"Font Size" = "字體大小";
+"Font Weight" = "字體重量";
+"Haptic" = "觸感";
 "Prevent Word Truncation" = "防止Word截斷";
-
-"Notification Permissions Check" = "通知權限檢查";
-
-"Locking" = "鎖定";
-
-"Buy Pro Edition" = "購買專業版";
-
-"Backup / Restore" = "備份 / 還原";
-
-"Leave a Review" = "發表評論";
-
-"Contact Us" = "聯繫我們";
-
-"Small" = "小";
-
-"Middle" = "中";
-
-"Big" = "大";
-
-"Thin" = "瘦";
-
-"Regular" = "定期";
-
-"Bold" = "膽大";
-
-"Off" = "離";
-
-"On" = "上";
-
-"White & Blue" = "白色 & 蓝色";
-
-"White & Red" = "白色 & 紅色";
-
-"Black & Blue" = "黑色 & 藍色";
-
-"Black & Red" = "黑色 & 紅色";
-
-"To Be Updated" = "要被更新";
-
-"Notification permission had not allowed." = "通知許可不允許。";
-
-"Set Up" = "走";
-
-"Notification Permission has already been allowed" = "已經允許通知許可";
-
-"You need to select a file named 'memoBackup.zip'" = "您需要選擇名為'memoBackup.zip'的文件。";
-
 "Calendar Mode" = "日曆模式";
-
+"Notification Permissions Check" = "通知權限檢查";
+"Buy Pro Edition" = "購買專業版";
+"Read Me!" = "讀我！";
+"Locking" = "鎖定";
+"Cheer Up Developer" = "註釋為開發者";
+"Rating" = "評分";
+"Backup / Restore" = "備份/還原";
+"Small" = "小";
+"Middle" = "中";
+"Large" = "大";
+"Thin" = "瘦";
+"Regular" = "有規律";
+"Bold" = "膽大";
+"Off" = "關";
+"On" = "上";
+"White & Blue" = "白色 ＆ 蓝色";
+"White & Red" = "白色 ＆ 红色";
+"Black & Blue" = "黑色 ＆ 蓝色";
+"Black & Red" = "黑色 ＆ 红色";
+"To Be Updated" = "要被更新";
 "Week" = "週";
-
 "Month" = "月";
+"Backup & Restore" = "備份 & 還原";
+"You can do it through iCloud." = "你可以通過iCloud完成。";
+"Backup" = "備份";
+"Restore" = "还原";
+"You need to select a file named 'memoBackup.zip'" = "您需要選擇名為“memoBackup.zip”的文件";
+
+"Notice" = "注意";
+"OK" = "好";
+"Your purchase history has been restored." = "您的購買歷史記錄已恢復。";
+"There is no purchase history." = "沒有購買歷史記錄。";
+"Try more features!" = "嘗試更多功能！";
+"Remove Ads" = "移除廣告";
+"Experience cleaner screens with no ads removed." = "體驗清潔屏幕，不刪除廣告。";
+"Various Themes" = "各種主題";
+"The new theme will continue to be updated, including the existing Dark Mode." = "新主題將繼續更新，包括現有的暗模式。";
+"You can back up & restore memo recorded." = "您可以備份和恢復記錄的備忘錄。";
+
+"Restore Your Purchase" = "恢復購買";
+"Purchase" = "採購";
+
+
+"You can not set reminder for text that are repeated every day." = "您無法為每天重複的文本設置提醒。";
+"You can not set reminder for text that are repeated every week." = "您無法為每週重複的文本設置提醒。";
+"You can not set reminder for text that are repeated every month." = "您無法為每月重複的文本設置提醒。";
+"Reminder was deleted." = "提醒已刪除。";
+
+"Notification permission had not allowed." = "不允許通知權限。";
+"Set Up" = "建立";
+"Notification Permission has already been allowed" = "已經允許通知許可";
+"Provisional" = "Provisional";
+"You already purchase Memoment Pro." = "您已經購買了Memoment Pro。";
+"Pro version is available for purchase." = "專業版可供購買。";
+"Thank You" = "謝謝";
+"The developer will be happy if you write down your app's wishes or compliments." = "如果您寫下應用程序的願望或讚美，開發人員會很高興。";
+"Leave Comment" = "發表評論";
+
+"SUNDAY" = "星期天";
+"MONDAY" = "星期一";
+"TUESDAY" = "星期二";
+"WEDNESDAY" = "星期三";
+"THURSDAY" = "星期四";
+"FRIDAY" = "星期五";
+"SATURDAY" = "星期六";
+
+"%@년 %@월 %@일" = "%@년 %@월 %@일";
+"%@ %@, %@" = "%@ %@, %@";
+
+
+
+"Single tap to write memo" =  "單擊即可撰寫備忘錄";
+"Write a simple note with a click on the screen." = "只需點擊屏幕即可編寫簡單的筆記。";
+"Double tap to set memo Reminder" = "雙擊以設置備忘錄提醒";
+"Double tap the note you have created to set the alarm. Does not ring during in-app. (Alarm permission required)" = "雙擊您創建的音符以設置鬧鐘。 在應用內不響鈴。 （需要報警許可）";
+"Buy a Pro version to apply a variety of color themes. Themes will continue to be added." = "購買專業版以應用各種顏色主題。 主題將繼續增加。";
+"Widget available" = "小工具可用";
+"You can easily check memo and write memo with the widget." = "您可以使用窗口小部件輕鬆檢查備忘錄和編寫備忘錄。";
+
+"Please read it!" = "請閱讀它！";
+"Getting Started" = "入門";
+
+"Write A Memo" = "寫一個備忘錄";
+
+
