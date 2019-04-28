@@ -154,6 +154,10 @@
 		E21F25D62275BE4100A38B8D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		E21F25D72275BE4100A38B8D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E21F25D82275BE4100A38B8D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E21F25D92275C41400A38B8D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainInterface.strings"; sourceTree = "<group>"; };
+		E21F25DA2275C41400A38B8D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E21F25DB2275C41400A38B8D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		E21F25DC2275C41400A38B8D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		E21F9BB82247A3F3004D5482 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		E21F9BBA2247A428004D5482 /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2314807223B925200161724 /* UIShortTapGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIShortTapGestureRecognizer.swift; sourceTree = "<group>"; };
@@ -528,6 +532,7 @@
 				Base,
 				ko,
 				ja,
+				"zh-Hans",
 			);
 			mainGroup = E2F36CE721FAE0FA00A9C24C;
 			productRefGroup = E2F36CF121FAE0FA00A9C24C /* Products */;
@@ -784,6 +789,7 @@
 				E27FD8A7224638BF00339705 /* en */,
 				E27FD8B8224638E000339705 /* ko */,
 				E21F25D82275BE4100A38B8D /* ja */,
+				E21F25DA2275C41400A38B8D /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -794,6 +800,7 @@
 				E28D45032242813800F67B08 /* Base */,
 				E27FD85C22462AA400339705 /* ko */,
 				E21F25D52275BE4000A38B8D /* ja */,
+				E21F25D92275C41400A38B8D /* zh-Hans */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -804,6 +811,7 @@
 				E2F36CF821FAE0FA00A9C24C /* Base */,
 				E27FD85A22462AA400339705 /* ko */,
 				E21F25D62275BE4100A38B8D /* ja */,
+				E21F25DB2275C41400A38B8D /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -814,6 +822,7 @@
 				E2F36CFD21FAE0FD00A9C24C /* Base */,
 				E27FD85B22462AA400339705 /* ko */,
 				E21F25D72275BE4100A38B8D /* ja */,
+				E21F25DC2275C41400A38B8D /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
