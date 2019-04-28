@@ -199,8 +199,15 @@ class SettingCollectionViewCell: UICollectionViewCell {
   }
 
   private func showAppStoreReviewPage() {
-    guard let writeReviewURL = URL(string: "https://itunes.apple.com/app/id\(Const.AppID)?action=write-review")
-      else { fatalError("Expected a valid URL") }
-    UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
+    let alertViewController = UIAlertController(title: "고맙습니다", message: "앱에 바라는 점이나 칭찬을 적어주시면 개발자는 행복할거에요 🥰😍", preferredStyle: .alert)
+    let cancelAction = UIAlertAction(title: "취소", style: .destructive, handler: nil)
+    let goAction = UIAlertAction(title: "글 남기기", style: .default) { (action) in
+      guard let writeReviewURL = URL(string: "https://itunes.apple.com/app/id\(Const.AppID)?action=write-review")
+        else { fatalError("Expected a valid URL") }
+      UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
+    }
+    alertViewController.addAction(cancelAction)
+    alertViewController.addAction(goAction)
+    self.parentContainerViewController()?.present(alertViewController, animated: true, completion: nil)
   }
 }

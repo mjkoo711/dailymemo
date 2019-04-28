@@ -112,8 +112,13 @@ class MainViewController: UIViewController {
     let tapGestureForTodayButtonView = UITapGestureRecognizer(target: self, action: #selector(moveToday))
     todayButtonView.addGestureRecognizer(tapGestureForTodayButtonView)
 
-    let tapGestureForExpandButtonView = UITapGestureRecognizer(target: self, action: #selector(expandCalendar))
-    expandView.addGestureRecognizer(tapGestureForExpandButtonView)
+    let swipeDownGestureForExpandButtonView = UISwipeGestureRecognizer(target: self, action: #selector(shrinkCalendar))
+    swipeDownGestureForExpandButtonView.direction = .down
+    expandView.addGestureRecognizer(swipeDownGestureForExpandButtonView)
+
+    let swipeUpGestureForExpandButtonView = UISwipeGestureRecognizer(target: self, action: #selector(expandCalendar))
+    swipeUpGestureForExpandButtonView.direction = .up
+    expandView.addGestureRecognizer(swipeUpGestureForExpandButtonView)
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -729,14 +734,19 @@ extension MainViewController {
     reloadDataShowed(date: date)
   }
 
-  @objc private func expandCalendar() {
+  @objc private func shrinkCalendar(_ sender: UISwipeGestureRecognizer) {
     Vibration.heavy.vibrate()
-    if calendarView.scope == .week {
-      calendarView.scope = .month
-      expandImageButtonView.image = UIImage(named: "DownWhite")
-    } else {
+    if calendarView.scope == .month && sender.direction == .down {
       calendarView.scope = .week
       expandImageButtonView.image = UIImage(named: "UpWhite")
+    }
+  }
+
+  @objc private func expandCalendar(_ sender: UISwipeGestureRecognizer) {
+    Vibration.heavy.vibrate()
+    if calendarView.scope == .week && sender.direction == .up  {
+      calendarView.scope = .month
+      expandImageButtonView.image = UIImage(named: "DownWhite")
     }
   }
 }

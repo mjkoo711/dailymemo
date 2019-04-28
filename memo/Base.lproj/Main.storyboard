@@ -127,7 +127,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NZu-dQ-sUh">
-                                <rect key="frame" x="8" y="83" width="359" height="280"/>
+                                <rect key="frame" x="8" y="83" width="359" height="277"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="221" id="KSW-g8-I3F"/>
@@ -368,10 +368,10 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VMC-8u-7Zw">
-                                <rect key="frame" x="8" y="367" width="359" height="25"/>
+                                <rect key="frame" x="8" y="364" width="359" height="28"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UpWhite" translatesAutoresizingMaskIntoConstraints="NO" id="wgH-aY-NVD">
-                                        <rect key="frame" x="153.5" y="0.0" width="52" height="25"/>
+                                        <rect key="frame" x="153.5" y="0.0" width="52" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="52" id="tRd-B4-J11"/>
                                         </constraints>
@@ -381,7 +381,7 @@
                                 <constraints>
                                     <constraint firstItem="wgH-aY-NVD" firstAttribute="centerX" secondItem="VMC-8u-7Zw" secondAttribute="centerX" id="3cV-FH-GKI"/>
                                     <constraint firstItem="wgH-aY-NVD" firstAttribute="centerY" secondItem="VMC-8u-7Zw" secondAttribute="centerY" id="9S7-uJ-WfK"/>
-                                    <constraint firstAttribute="height" constant="25" id="Fbo-Yb-dOZ"/>
+                                    <constraint firstAttribute="height" constant="28" id="Fbo-Yb-dOZ"/>
                                     <constraint firstItem="wgH-aY-NVD" firstAttribute="top" secondItem="VMC-8u-7Zw" secondAttribute="top" id="ZiO-dY-Taj"/>
                                     <constraint firstAttribute="bottom" secondItem="wgH-aY-NVD" secondAttribute="bottom" id="e4n-um-2vI"/>
                                 </constraints>
