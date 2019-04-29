@@ -55,7 +55,7 @@ class SettingViewController: UIViewController {
       }
     }
 
-    appNameLabel.text = "Memoment"
+    appNameLabel.text = "BLANCO"
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(returnMainViewController))
     closeButtonView.addGestureRecognizer(tapGesture)
   }

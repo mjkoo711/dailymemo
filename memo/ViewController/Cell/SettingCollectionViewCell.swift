@@ -138,7 +138,7 @@ class SettingCollectionViewCell: UICollectionViewCell {
         if serviceType == .BuyProEdition {
           if let purchaseMode = SettingManager.shared.purchaseMode, purchaseMode == .on {
             let message = MDCSnackbarMessage()
-            message.text = "You already purchase Memoment Pro.".localized
+            message.text = "You already purchase BLANCO Pro.".localized
             if let theme = SettingManager.shared.theme {
               if theme == .blackRed || theme == .whiteRed {
                 message.buttonTextColor = Color.LightRed

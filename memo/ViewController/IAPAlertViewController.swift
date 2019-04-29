@@ -55,7 +55,7 @@ class IAPAlertViewController: UIViewController {
   }
 
   private func loadStorekitInfo() {
-    SwiftyStoreKit.retrieveProductsInfo(["com.mjkoo.memo.memomentPro"]) { result in
+    SwiftyStoreKit.retrieveProductsInfo(["com.mjkoo.memo.blancoPro"]) { result in
       if let product = result.retrievedProducts.first {
         let priceString = product.localizedPrice!
         self.purchaseButton.setTitle("Purchase".localized + " - " + "\(priceString)", for: .normal)
@@ -118,7 +118,7 @@ class IAPAlertViewController: UIViewController {
 
   private func setTextLabel() {
     subTitleLabel.text = "Try more features!".localized
-    titleLabel.text = "Memoment Pro"
+    titleLabel.text = "BLANCO Pro"
     adRemoveTitleLabel.text = "Remove Ads".localized
     adRemoveDesciptionLabel.text = "Experience cleaner screens with no ads removed.".localized // "광고가 제거된 더 깔끔한 화면을 경험하세요."
     themeTitleLabel.text = "Various Themes".localized
@@ -135,7 +135,7 @@ class IAPAlertViewController: UIViewController {
     progressViewController.modalPresentationStyle = .overFullScreen
     present(progressViewController, animated: true, completion: nil)
 
-    SwiftyStoreKit.purchaseProduct("com.mjkoo.memo.memomentPro", quantity: 1, atomically: true) { result in
+    SwiftyStoreKit.purchaseProduct("com.mjkoo.memo.blancoPro", quantity: 1, atomically: true) { result in
       switch result {
       case .success(let purchase):
         UserDefaults.standard.saveSettings(value: 1, key: Key.PurchaseCheckKey)
