@@ -16,7 +16,7 @@ enum Color {
   static let Orange = UIColor(red: 255/255.0, green: 149/255.0, blue: 0/255.0, alpha: 1.0)
   static let Pink = UIColor(red: 255/255.0, green: 45/255.0, blue: 85/255.0, alpha: 1.0)
   static let Green = UIColor(red: 76/255.0, green: 217/255.0, blue: 100/255.0, alpha: 1.0)
-  static let LightRed = UIColor(red: 255/255.0, green: 17/255.0, blue: 63/255.0, alpha: 1.0) // origin : 255, 59, 48
+  static let LightRed = UIColor(red: 255/255.0, green: 59/255.0, blue: 48/255.0, alpha: 1.0) // origin : 255, 59, 48
   static let Black = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
   static let White = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0)
   static let DarkGray = UIColor(red: 102/255.0, green: 102/255.0, blue: 102/255.0, alpha: 1.0)
