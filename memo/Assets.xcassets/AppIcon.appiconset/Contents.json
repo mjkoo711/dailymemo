@@ -27,13 +27,13 @@
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "iPhoneSpotlight@2x.png",
+      "filename" : "iPhoneSpotLight@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "iPhoneSpotlight@3x.png",
+      "filename" : "iPhoneSpotLight@3x.png",
       "scale" : "3x"
     },
     {
@@ -103,8 +103,5 @@
   "info" : {
     "version" : 1,
     "author" : "xcode"
-  },
-  "properties" : {
-    "pre-rendered" : true
   }
 }

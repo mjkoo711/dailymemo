@@ -119,6 +119,9 @@ class MainViewController: UIViewController {
     let swipeUpGestureForExpandButtonView = UISwipeGestureRecognizer(target: self, action: #selector(expandCalendar))
     swipeUpGestureForExpandButtonView.direction = .up
     expandView.addGestureRecognizer(swipeUpGestureForExpandButtonView)
+
+    let tapGestureForExpandButtonView = UITapGestureRecognizer(target: self, action: #selector(toggleCalendar))
+    expandView.addGestureRecognizer(tapGestureForExpandButtonView)
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -747,6 +750,17 @@ extension MainViewController {
     if calendarView.scope == .week && sender.direction == .up  {
       calendarView.scope = .month
       expandImageButtonView.image = UIImage(named: "DownWhite")
+    }
+  }
+
+  @objc private func toggleCalendar(_ sender: UITapGestureRecognizer) {
+    Vibration.heavy.vibrate()
+    if calendarView.scope == .week {
+      calendarView.scope = .month
+      expandImageButtonView.image = UIImage(named: "DownWhite")
+    } else if calendarView.scope == .month {
+      calendarView.scope = .week
+      expandImageButtonView.image = UIImage(named: "UpWhite")
     }
   }
 }
