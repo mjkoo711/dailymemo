@@ -118,7 +118,7 @@ class IAPAlertViewController: UIViewController {
 
   private func setTextLabel() {
     subTitleLabel.text = "Try more features!".localized
-    titleLabel.text = "BLANCO Pro"
+    titleLabel.text = "Blanco Pro"
     adRemoveTitleLabel.text = "Remove Ads".localized
     adRemoveDesciptionLabel.text = "Experience cleaner screens with no ads removed.".localized // "광고가 제거된 더 깔끔한 화면을 경험하세요."
     themeTitleLabel.text = "Various Themes".localized
