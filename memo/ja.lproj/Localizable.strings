@@ -100,8 +100,7 @@
 "SATURDAY" = "土曜日";
 
 "%@년 %@월 %@일" = "%@年 %@月 %@日";
-"%@ %@, %@" = "%@ %@, %@";
-
+"%@ %@ / %@" = "%@ %@ / %@";
 
 "Single tap to write memo" =  "メモを書くためのシングルタップ";
 "Write a simple note with a click on the screen." = "画面をクリックして簡単なメモを書きます。";

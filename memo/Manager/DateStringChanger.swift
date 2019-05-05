@@ -113,10 +113,10 @@ class DateStringChanger {
       if YearMonthDayCountry.contains(languageCode) {
         return String(format: NSLocalizedString("%@년 %@월 %@일", comment: ""), "\(year)", "\(array[1])", "\(day)")
       } else if MonthDayYearCountry.contains(languageCode) {
-        return String(format: NSLocalizedString("%@ %@, %@", comment: ""), "\(month)", "\(day)", "\(year)")
+        return String(format: NSLocalizedString("%@ %@ / %@", comment: ""), "\(day)", "\(month)", "\(year)")
       }
     }
 
-    return String(format: NSLocalizedString("%@ %@, %@", comment: ""), "\(day)", "\(month)", "\(year)")
+    return String(format: NSLocalizedString("%@ %@ / %@", comment: ""), "\(day)", "\(month)", "\(year)")
   }
 }
