@@ -91,13 +91,13 @@
 "The developer will be happy if you write down your app's wishes or compliments." = "あなたがあなたのアプリの願いや賛辞を書き留めたら、開発者は幸せになるでしょう。";
 "Leave Comment" = "コメントを残す";
 
-"Sunday" = "日曜日";
-"Monday" = "月曜日";
-"Tuesday" = "火曜日";
-"Wednesday" = "水曜日";
-"Thursday" = "木曜日";
-"Friday" = "金曜日";
-"Saturday" = "土曜日";
+"SUNDAY" = "日曜日";
+"MONDAY" = "月曜日";
+"TUESDAY" = "火曜日";
+"WEDNESDAY" = "水曜日";
+"THURSDAY" = "木曜日";
+"FRIDAY" = "金曜日";
+"SATURDAY" = "土曜日";
 
 "%@년 %@월 %@일" = "%@年 %@月 %@日";
 "%@ %@ %@" = "%@ %@ %@";

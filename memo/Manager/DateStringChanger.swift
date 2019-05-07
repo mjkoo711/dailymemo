@@ -78,19 +78,19 @@ class DateStringChanger {
   func getStringDayOfWeek(weekDay: Int) -> String {
     switch weekDay {
     case 1:
-      return "Sunday".localized
+      return "SUNDAY".localized
     case 2:
-      return "Monday".localized
+      return "MONDAY".localized
     case 3:
-      return "Tuesday".localized
+      return "TUESDAY".localized
     case 4:
-      return "Wednesday".localized
+      return "WEDNESDAY".localized
     case 5:
-      return "Thursday".localized
+      return "THURSDAY".localized
     case 6:
-      return "Friday".localized
+      return "FRIDAY".localized
     case 7:
-      return "Saturday".localized
+      return "SATURDAY".localized
     default:
       return ""
     }

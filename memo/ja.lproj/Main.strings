@@ -45,7 +45,7 @@
 "S2G-FY-aVc.text" = "Label";
 
 /* Class = "UILabel"; text = "Today"; ObjectID = "fKe-hV-XoI"; */
-"fKe-hV-XoI.text" = "Today";
+"fKe-hV-XoI.text" = "TODAY";
 
 /* Class = "UITabBarItem"; title = "Item"; ObjectID = "gv8-qd-G3N"; */
 "gv8-qd-G3N.title" = "Item";
