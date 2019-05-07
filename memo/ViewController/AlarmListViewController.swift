@@ -123,7 +123,7 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
     cell.textInstance = alarmTextDictionary[indexPath.section].value[indexPath.row]
 
     cell.textLabel.text = alarmTextDictionary[indexPath.section].value[indexPath.row].string
-    cell.dateLabel.text = String(format: NSLocalizedString("Date created by %@", comment: ""), dateWrittenFormat)
+    cell.dateLabel.text = String(format: NSLocalizedString("Memo Location : %@", comment: ""), dateWrittenFormat)
 
     cell.delegate = self
 

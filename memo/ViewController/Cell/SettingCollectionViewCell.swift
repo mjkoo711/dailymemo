@@ -41,7 +41,7 @@ class SettingCollectionViewCell: UICollectionViewCell {
   }
 
   @objc private func tapOptionChange() {
-    Vibration.heavy.vibrate()
+    Vibration.medium.vibrate()
     guard let indexPath = indexPath else { return }
     if indexPath.section == 0 {
       if let optionTotalCount = optionTotalCount, let currentOption = currentOption, let settingMode = settingMode {

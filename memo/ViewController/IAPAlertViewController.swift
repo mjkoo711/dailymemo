@@ -50,7 +50,7 @@ class IAPAlertViewController: UIViewController {
   }
 
   @objc private func dismissViewController() {
-    Vibration.heavy.vibrate()
+    Vibration.medium.vibrate()
     self.dismiss(animated: true, completion: nil)
   }
 
@@ -71,7 +71,7 @@ class IAPAlertViewController: UIViewController {
   }
 
   @objc private func restorePurchase() {
-    Vibration.heavy.vibrate()
+    Vibration.medium.vibrate()
     let progressViewController = ProgressViewController()
     progressViewController.modalTransitionStyle = .crossDissolve
     progressViewController.modalPresentationStyle = .overFullScreen
@@ -112,7 +112,7 @@ class IAPAlertViewController: UIViewController {
   }
 
   @IBAction private func purchaseTapped() {
-    Vibration.heavy.vibrate()
+    Vibration.medium.vibrate()
     self.purchase()
   }
 

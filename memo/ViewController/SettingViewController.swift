@@ -61,7 +61,7 @@ class SettingViewController: UIViewController {
   }
 
   @objc func returnMainViewController() {
-    Vibration.heavy.vibrate()
+    Vibration.medium.vibrate()
     performSegue(withIdentifier: "unwindMainVC", sender: self)
   }
 }

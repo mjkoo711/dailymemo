@@ -58,7 +58,7 @@ class TextCollectionViewCell: UICollectionViewCell {
     guard let text = textInstance else { return }
 
     if text.repeatMode == .Once, text.isAlarmSetting == 0 {
-      Vibration.heavy.vibrate()
+      Vibration.medium.vibrate()
       delegate?.setAlarm(text: textInstance!)
     } else if text.repeatMode == .Daily {
       let message = MDCSnackbarMessage()

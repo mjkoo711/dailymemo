@@ -73,6 +73,13 @@ class MainViewController: UIViewController {
       }
     }
     today = Date()
+    if Locale.current.languageCode == "ko" {
+      calendarView.appearance.headerDateFormat = "YYYY년 MM월"
+    } else if Locale.current.languageCode == "ja" {
+      calendarView.appearance.headerDateFormat = "YYYY年 MM月"
+    } else {
+      calendarView.appearance.headerDateFormat = "MMM YYYY"
+    }
     calendarView.placeholderType = .none
     selectDateString = formatter.string(from: Date())
     selectDayString = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(formatter.string(from: Date())))
@@ -243,12 +250,12 @@ class MainViewController: UIViewController {
   }
 
   @objc private func showAlarmList() {
-    Vibration.heavy.vibrate()
+    Vibration.medium.vibrate()
     performSegue(withIdentifier: "showAlarmList", sender: self)
   }
 
   @objc private func showSettingViewController() {
-    Vibration.heavy.vibrate()
+    Vibration.medium.vibrate()
     performSegue(withIdentifier: "showSetting", sender: self)
   }
 
@@ -347,7 +354,7 @@ class MainViewController: UIViewController {
 // MARK: - collectionView와 관련된 함수
 extension MainViewController {
   @objc func showInputTextViewController() {
-    Vibration.heavy.vibrate()
+    Vibration.medium.vibrate()
     performSegue(withIdentifier: "textInputSegue", sender: self)
   }
 }
@@ -364,7 +371,7 @@ extension MainViewController {
 // MARK: - FSCalendarDelegate 함수
 extension MainViewController: FSCalendarDelegate {
   func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-    Vibration.heavy.vibrate()
+    Vibration.medium.vibrate()
     reloadDataShowed(date: date)
   }
 
@@ -698,7 +705,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 extension MainViewController {
   //MARK: move calender
   @objc private func moveToday() {
-    Vibration.heavy.vibrate()
+    Vibration.medium.vibrate()
     let date = Date()
     todayLabel.isHidden = false
     calendarView.select(date)
@@ -706,7 +713,7 @@ extension MainViewController {
   }
 
   @objc private func moveNextDay() {
-    Vibration.heavy.vibrate()
+    Vibration.medium.vibrate()
     guard let currentDate = formatter.date(from: selectDateString) else { return }
     guard let date = Calendar.current.date(byAdding: .day, value: 1, to: currentDate) else { return }
     calendarView.select(date, scrollToDate: true)
@@ -714,7 +721,7 @@ extension MainViewController {
   }
 
   @objc private func movePreviousDay() {
-    Vibration.heavy.vibrate()
+    Vibration.medium.vibrate()
     guard let currentDate = formatter.date(from: selectDateString) else { return }
     guard let date = Calendar.current.date(byAdding: .day, value: -1, to: currentDate) else { return }
     calendarView.select(date, scrollToDate: true)
@@ -722,7 +729,7 @@ extension MainViewController {
   }
 
   @objc private func moveNextMonth() {
-    Vibration.heavy.vibrate()
+    Vibration.medium.vibrate()
     guard let currentDate = formatter.date(from: selectDateString) else { return }
     guard let date = Calendar.current.date(byAdding: .month, value: 1, to: currentDate) else { return }
     calendarView.select(date, scrollToDate: true)
@@ -730,7 +737,7 @@ extension MainViewController {
   }
 
   @objc private func movePreviousMonth() {
-    Vibration.heavy.vibrate()
+    Vibration.medium.vibrate()
     guard let currentDate = formatter.date(from: selectDateString) else { return }
     guard let date = Calendar.current.date(byAdding: .month, value: -1, to: currentDate) else { return }
     calendarView.select(date, scrollToDate: true)
@@ -738,7 +745,7 @@ extension MainViewController {
   }
 
   @objc private func shrinkCalendar(_ sender: UISwipeGestureRecognizer) {
-    Vibration.heavy.vibrate()
+    Vibration.medium.vibrate()
     if calendarView.scope == .month && sender.direction == .down {
       calendarView.scope = .week
       expandImageButtonView.image = UIImage(named: "UpWhite")
@@ -746,7 +753,7 @@ extension MainViewController {
   }
 
   @objc private func expandCalendar(_ sender: UISwipeGestureRecognizer) {
-    Vibration.heavy.vibrate()
+    Vibration.medium.vibrate()
     if calendarView.scope == .week && sender.direction == .up  {
       calendarView.scope = .month
       expandImageButtonView.image = UIImage(named: "DownWhite")
@@ -754,7 +761,7 @@ extension MainViewController {
   }
 
   @objc private func toggleCalendar(_ sender: UITapGestureRecognizer) {
-    Vibration.heavy.vibrate()
+    Vibration.medium.vibrate()
     if calendarView.scope == .week {
       calendarView.scope = .month
       expandImageButtonView.image = UIImage(named: "DownWhite")

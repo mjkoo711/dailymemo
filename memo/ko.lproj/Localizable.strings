@@ -7,21 +7,21 @@
 */
 "DONE" = "완료";
 "The Reminder sounds at %@" = "알람이 %@에 울립니다.";
-"Canceled" = "취소됨";
+"Canceled" = "취소되었습니다";
 "CANCEL" = "취소";
 "Reminder Settings" = "알람 설정";
 "No Upcoming Reminder" = "예정된 알람 없음";
 "Reminder Time" = "알람 시간";
-"You can not set reminders for repeatedly saved memo." = "반복된 메모에는 알람 설정이 불가합니다.";
+"You can not set reminders for repeatedly saved memo." = "반복된 메모에는 알람 설정이 불가합니다. (업데이트 예정)";
 "Modify Reminder" = "알람 변경";
 "Copy" = "복사하기";
-"Copied." = "복사됨.";
+"Copied." = "복사되었습니다";
 "Modify" = "수정하기";
 "Delete" = "삭제하기";
-"Deleted." = "삭제됨.";
+"Deleted." = "삭제되었습니다";
 "Cancel" = "취소";
 "Reminder List" = "설정된 알람";
-"Date created by %@" = "작성일 : %@";
+"Memo Location : %@" = "메모 위치 : %@";
 "Reminder was deleted." = "알람이 삭제되었습니다.";
 "Reminder Time" = "알람 시간";
 "Modify Reminder" = "알람 변경";

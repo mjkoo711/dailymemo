@@ -21,7 +21,7 @@
 "Deleted." = "削除済み";
 "Cancel" = "キャンセル";
 "Reminder List" = "リマインダーリスト";
-"Date created by %@" = "生成日：%@";
+"Memo Location : %@" = "メモ位置：%@";
 "Reminder was deleted." = "リマインダーが削除されました。";
 "Reminder Time" = "リマインダータイム";
 "Modify Reminder" = "リマインダーを変更";

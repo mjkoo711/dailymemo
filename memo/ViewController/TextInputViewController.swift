@@ -88,7 +88,7 @@ extension TextInputViewController: UITextFieldDelegate {
   }
 
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-    Vibration.heavy.vibrate()
+    Vibration.medium.vibrate()
     return true
   }
 }
