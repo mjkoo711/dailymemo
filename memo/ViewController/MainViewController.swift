@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
   @IBOutlet var dateLabel: UILabel!
   @IBOutlet var dayLabel: UILabel!
 
+  @IBOutlet var informationView: UIView!
   @IBOutlet var calendarHeightConstraint: NSLayoutConstraint!
   @IBOutlet var showAlarmListButtonView: UIView!
   @IBOutlet var showAlarmListButtonViewImage: UIImageView!
@@ -185,6 +186,8 @@ class MainViewController: UIViewController {
       dayLabel.textColor = Color.DarkModeFontColor
       calendarView.backgroundColor = Color.DarkModeMain
       collectionView.backgroundColor = Color.DarkModeSub
+      informationView.backgroundColor = Color.DarkModeSub
+      calendarView.appearance.headerTitleColor = Color.White
       if value == .blackRed {
         calendarView.appearance.todayColor = Color.LightRed
         expandView.backgroundColor = Color.LightRed
@@ -219,6 +222,9 @@ class MainViewController: UIViewController {
       dayLabel.textColor = Color.WhiteModeFontColor
       calendarView.backgroundColor = Color.WhiteModeMain
       collectionView.backgroundColor = Color.WhiteModeSub
+      informationView.backgroundColor = Color.WhiteModeSub
+      calendarView.appearance.headerTitleColor = Color.Black
+
       if value == .whiteRed {
         calendarView.appearance.todayColor = Color.LightRed
         expandView.backgroundColor = Color.LightRed

@@ -55,7 +55,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJ4-M2-L03">
-                                        <rect key="frame" x="295" y="4" width="28" height="28"/>
+                                        <rect key="frame" x="291" y="4" width="28" height="28"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alarm" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ieB-fx-G1S">
                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -80,7 +80,7 @@
                                     <constraint firstItem="7kO-DX-Wzu" firstAttribute="top" secondItem="703-uA-LwR" secondAttribute="top" constant="4" id="nVW-eK-DzO"/>
                                     <constraint firstItem="fKe-hV-XoI" firstAttribute="leading" secondItem="703-uA-LwR" secondAttribute="leading" id="rFw-Yl-SQG"/>
                                     <constraint firstAttribute="bottom" secondItem="JJ4-M2-L03" secondAttribute="bottom" constant="4" id="rKc-gm-4vk"/>
-                                    <constraint firstItem="7kO-DX-Wzu" firstAttribute="leading" secondItem="JJ4-M2-L03" secondAttribute="trailing" constant="8" id="tnL-xI-yHE"/>
+                                    <constraint firstItem="7kO-DX-Wzu" firstAttribute="leading" secondItem="JJ4-M2-L03" secondAttribute="trailing" constant="12" id="tnL-xI-yHE"/>
                                     <constraint firstItem="fKe-hV-XoI" firstAttribute="centerY" secondItem="703-uA-LwR" secondAttribute="centerY" id="v4P-nF-rTP"/>
                                 </constraints>
                             </view>
@@ -438,6 +438,7 @@
                         <outlet property="dayLabel" destination="S2G-FY-aVc" id="k7t-JH-bnD"/>
                         <outlet property="expandImageButtonView" destination="wgH-aY-NVD" id="tn0-M3-CCU"/>
                         <outlet property="expandView" destination="VMC-8u-7Zw" id="Wl8-Da-E98"/>
+                        <outlet property="informationView" destination="Brl-U8-liL" id="pvf-sY-2kp"/>
                         <outlet property="nextDayButtonView" destination="fdV-IP-90j" id="USc-3h-J6C"/>
                         <outlet property="nextDayButtonViewImage" destination="WZw-8Z-Tua" id="YYa-6X-trz"/>
                         <outlet property="nextMonthButtonView" destination="XbR-3n-qkW" id="0WF-Bk-1aS"/>
