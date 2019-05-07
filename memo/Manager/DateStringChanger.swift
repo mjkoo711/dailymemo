@@ -78,19 +78,19 @@ class DateStringChanger {
   func getStringDayOfWeek(weekDay: Int) -> String {
     switch weekDay {
     case 1:
-      return "SUNDAY".localized
+      return "Sunday".localized
     case 2:
-      return "MONDAY".localized
+      return "Monday".localized
     case 3:
-      return "TUESDAY".localized
+      return "Tuesday".localized
     case 4:
-      return "WEDNESDAY".localized
+      return "Wednesday".localized
     case 5:
-      return "THURSDAY".localized
+      return "Thursday".localized
     case 6:
-      return "FRIDAY".localized
+      return "Friday".localized
     case 7:
-      return "SATURDAY".localized
+      return "Saturday".localized
     default:
       return ""
     }
@@ -107,16 +107,16 @@ class DateStringChanger {
     let array = dateWithHyphen.split(separator: "-")
     let year = array[0]
     let month = getMinimumStringMonth(month: String(array[1]))
-    let day = array[2]
+    let day = Int(String(array[2]))!
 
     if let languageCode = Locale.current.languageCode {
       if YearMonthDayCountry.contains(languageCode) {
-        return String(format: NSLocalizedString("%@년 %@월 %@일", comment: ""), "\(year)", "\(array[1])", "\(day)")
+        return String(format: NSLocalizedString("%@년 %@월 %@일", comment: ""), "\(year)", "\(Int(String(array[1]))!)", "\(day)")
       } else if MonthDayYearCountry.contains(languageCode) {
-        return String(format: NSLocalizedString("%@ %@ / %@", comment: ""), "\(day)", "\(month)", "\(year)")
+        return String(format: NSLocalizedString("%@ %@ %@", comment: ""), "\(day)", "\(month)", "\(year)")
       }
     }
 
-    return String(format: NSLocalizedString("%@ %@ / %@", comment: ""), "\(day)", "\(month)", "\(year)")
+    return String(format: NSLocalizedString("%@ %@ %@", comment: ""), "\(day)", "\(month)", "\(year)")
   }
 }
