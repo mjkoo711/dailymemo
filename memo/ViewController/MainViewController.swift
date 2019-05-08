@@ -30,6 +30,7 @@ class MainViewController: UIViewController {
   @IBOutlet var expandImageButtonView: UIImageView!
   @IBOutlet var collectionView: UICollectionView!
   @IBOutlet weak var timeLabel: UILabel!
+  @IBOutlet var timeView: UIView!
 
   @IBOutlet var previousMonthButtonView: UIView!
   @IBOutlet var nextMonthButtonView: UIView!
@@ -45,6 +46,7 @@ class MainViewController: UIViewController {
 
   @IBOutlet var bannerView: GADBannerView!
   private var selectDateString: String!
+  private var selectDateObject: Date!
   private var selectDayString: String!
   private var selectDayInt: Int!
 
@@ -63,7 +65,7 @@ class MainViewController: UIViewController {
 
   var textList: [Text] = []
   var textCompletedList: [String] = []
-  var selectedDatePicked: Date!
+  var selectedDateAlarmPicked: Date!
   var today: Date!
 
   override func viewDidLoad() {
@@ -84,6 +86,7 @@ class MainViewController: UIViewController {
     }
     calendarView.placeholderType = .none
     selectDateString = formatter.string(from: Date())
+    selectDateObject = Date()
     selectDayString = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(formatter.string(from: Date())))
     selectDayInt = DateStringChanger().getDayOfWeek(formatter.string(from: Date()))
 
@@ -187,7 +190,6 @@ class MainViewController: UIViewController {
     guard let value = SettingManager.shared.theme else { return }
     if value == .blackBlue || value == .blackRed { // Dark
       view.backgroundColor = Color.DarkModeMain
-      timeLabel.textColor = Color.DarkModeFontColor
       setDayLabelTextColor()
       setDateLabelTextColor()
       calendarView.backgroundColor = Color.DarkModeMain
@@ -195,10 +197,12 @@ class MainViewController: UIViewController {
       informationView.backgroundColor = Color.DarkModeSub
       calendarView.appearance.headerTitleColor = Color.White
       if value == .blackRed {
+        timeView.backgroundColor = Color.LightRed
         calendarView.appearance.todayColor = Color.LightRed
         expandView.backgroundColor = Color.LightRed
         todayLabel.backgroundColor = Color.LightRed
       } else if value == .blackBlue {
+        timeView.backgroundColor = Color.Blue
         calendarView.appearance.todayColor = Color.Blue
         expandView.backgroundColor = Color.Blue
         todayLabel.backgroundColor = Color.Blue
@@ -224,7 +228,6 @@ class MainViewController: UIViewController {
       }
     } else if value == .whiteRed || value == .whiteBlue { // White
       view.backgroundColor = Color.WhiteModeMain
-      timeLabel.textColor = Color.WhiteModeFontColor
       setDayLabelTextColor()
       setDateLabelTextColor()
       calendarView.backgroundColor = Color.WhiteModeMain
@@ -233,10 +236,12 @@ class MainViewController: UIViewController {
       calendarView.appearance.headerTitleColor = Color.Black
 
       if value == .whiteRed {
+        timeView.backgroundColor = Color.LightRed
         calendarView.appearance.todayColor = Color.LightRed
         expandView.backgroundColor = Color.LightRed
         todayLabel.backgroundColor = Color.LightRed
       } else if value == .whiteBlue {
+        timeView.backgroundColor = Color.Blue
         calendarView.appearance.todayColor = Color.Blue
         expandView.backgroundColor = Color.Blue
         todayLabel.backgroundColor = Color.Blue
@@ -276,10 +281,11 @@ class MainViewController: UIViewController {
     let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 230))
     datePicker.datePickerMode = .dateAndTime
     datePicker.minimumDate = Date()
+    datePicker.setDate(selectDateObject, animated: true)
     datePicker.locale = Locale.init(identifier: Locale.current.languageCode!)
     datePicker.addTarget(self, action:
       #selector(MainViewController.dateSelected(datePicker:)), for: UIControl.Event.valueChanged)
-    self.selectedDatePicked = datePicker.date // 이것을 넣은 이유는 selectedDatePicked가 처음에 값이 없기때문
+    self.selectedDateAlarmPicked = datePicker.date // 이것을 넣은 이유는 selectedDatePicked가 처음에 값이 없기때문
 
     let appearance = SCLAlertView.SCLAppearance(
       kWindowWidth: datePicker.frame.size.width + 10.0, showCloseButton: false
@@ -290,9 +296,9 @@ class MainViewController: UIViewController {
     alertView.addButton("DONE".localized) {
       guard let text = self.textSelected else { return }
 
-      text.alarmDatePicked = self.selectedDatePicked
+      text.alarmDatePicked = self.selectedDateAlarmPicked
       self.textAlarmTrigger(text: text, isAlarmSetting: true)
-      AlarmManager().addNotification(textSelected: text, datePicked: self.selectedDatePicked, notificationType: .Once)
+      AlarmManager().addNotification(textSelected: text, datePicked: self.selectedDateAlarmPicked, notificationType: .Once)
       self.reloadCollectionView(date: self.selectDateString)
       // MARK: snackbar
       let message = MDCSnackbarMessage()
@@ -331,7 +337,7 @@ class MainViewController: UIViewController {
   }
 
   @objc private func dateSelected(datePicker: UIDatePicker) {
-    selectedDatePicked = datePicker.date
+    selectedDateAlarmPicked = datePicker.date
   }
 
   func removeTapped() {
@@ -398,6 +404,7 @@ extension MainViewController: FSCalendarDelegate {
       todayLabel.isHidden = true
     }
     selectDateString = selectDate
+    selectDateObject = date
     selectDayString = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(selectDate))
     selectDayInt = DateStringChanger().getDayOfWeek(selectDate)
 
