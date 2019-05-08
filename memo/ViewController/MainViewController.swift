@@ -99,6 +99,9 @@ class MainViewController: UIViewController {
     let tapGestureForCollectionView = UITapGestureRecognizer(target: self, action: #selector(showInputTextViewController))
     collectionView.addGestureRecognizer(tapGestureForCollectionView)
 
+    informationView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showInputTextViewController)))
+    informationView.isUserInteractionEnabled = true
+
     let tapGestureForAlarmListButtonView = UITapGestureRecognizer(target: self, action: #selector(showAlarmList))
     showAlarmListButtonView.addGestureRecognizer(tapGestureForAlarmListButtonView)
 
