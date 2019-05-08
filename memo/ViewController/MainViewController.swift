@@ -46,6 +46,7 @@ class MainViewController: UIViewController {
   @IBOutlet var bannerView: GADBannerView!
   private var selectDateString: String!
   private var selectDayString: String!
+  private var selectDayInt: Int!
 
   fileprivate let formatter = MDateFormatter().formatter
   fileprivate let formatterKorea = MDateFormatter().formatterKorea
@@ -84,6 +85,7 @@ class MainViewController: UIViewController {
     calendarView.placeholderType = .none
     selectDateString = formatter.string(from: Date())
     selectDayString = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(formatter.string(from: Date())))
+    selectDayInt = DateStringChanger().getDayOfWeek(formatter.string(from: Date()))
 
     dateLabel.text = DateStringChanger().dateFormatChange(dateWithHyphen: formatter.string(from: today))
     dayLabel.text = selectDayString
@@ -186,7 +188,8 @@ class MainViewController: UIViewController {
     if value == .blackBlue || value == .blackRed { // Dark
       view.backgroundColor = Color.DarkModeMain
       timeLabel.textColor = Color.DarkModeFontColor
-      dayLabel.textColor = Color.DarkModeFontColor
+      setDayLabelTextColor()
+      setDateLabelTextColor()
       calendarView.backgroundColor = Color.DarkModeMain
       collectionView.backgroundColor = Color.DarkModeSub
       informationView.backgroundColor = Color.DarkModeSub
@@ -222,7 +225,8 @@ class MainViewController: UIViewController {
     } else if value == .whiteRed || value == .whiteBlue { // White
       view.backgroundColor = Color.WhiteModeMain
       timeLabel.textColor = Color.WhiteModeFontColor
-      dayLabel.textColor = Color.WhiteModeFontColor
+      setDayLabelTextColor()
+      setDateLabelTextColor()
       calendarView.backgroundColor = Color.WhiteModeMain
       collectionView.backgroundColor = Color.WhiteModeSub
       informationView.backgroundColor = Color.WhiteModeSub
@@ -395,44 +399,77 @@ extension MainViewController: FSCalendarDelegate {
     }
     selectDateString = selectDate
     selectDayString = DateStringChanger().getStringDayOfWeek(weekDay: DateStringChanger().getDayOfWeek(selectDate))
+    selectDayInt = DateStringChanger().getDayOfWeek(selectDate)
 
     dateLabel.text = DateStringChanger().dateFormatChange(dateWithHyphen: formatter.string(from: date))
     dayLabel.text = selectDayString
+    setDayLabelTextColor()
+    setDateLabelTextColor()
     reloadCollectionView(date: selectDate)
   }
-}
 
-extension MainViewController: FSCalendarDataSource {
-  func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, borderDefaultColorFor date: Date) -> UIColor? {
+  private func setDayLabelTextColor() {
+    guard let value = SettingManager.shared.theme else { return }
+
+    if value == .whiteRed || value == .whiteBlue { // White
+      if selectDayInt == 1 {
+        dayLabel.textColor = Color.LightRed
+      } else if selectDayInt == 7 {
+        dayLabel.textColor = Color.Blue
+      } else {
+        dayLabel.textColor = Color.WhiteModeFontColor
+      }
+    } else if value == .blackRed || value == .blackBlue {
+      if selectDayInt == 1 {
+        dayLabel.textColor = Color.LightRed
+      } else if selectDayInt == 7 {
+        dayLabel.textColor = Color.Blue
+      } else {
+        dayLabel.textColor = Color.DarkModeFontColor
+      }
+    }
+  }
+
+  private func setDateLabelTextColor() {
+    guard let value = SettingManager.shared.theme else { return }
+
+    if value == .whiteRed || value == .whiteBlue { // White
+      dateLabel.textColor = .black
+    } else if value == .blackRed || value == .blackBlue {
+      dateLabel.textColor = .white
+    }
+  }
+
+  private func checkCalendarEventColor(date: Date) -> [UIColor]? {
     let dateString = formatter.string(from: date)
     let dateList = DateLoader().findOnceDateList()
 
     if TextLoader().findDailyTextList().count != 0 {
       if let value = SettingManager.shared.theme {
-        if value == .blackRed || value == .blackBlue {
-          return Color.DarkModeFontColorSub
+        if value == .blackRed || value == .whiteRed {
+          return [Color.LightRed]
         } else {
-          return Color.WhiteModeFontColorSub
+          return [Color.Blue]
         }
       }
     }
 
     if TextLoader().findWeeklyTextList(date: dateString).count != 0 {
       if let value = SettingManager.shared.theme {
-        if value == .blackRed || value == .blackBlue {
-          return Color.DarkModeFontColorSub
+        if value == .blackRed || value == .whiteRed {
+          return [Color.LightRed]
         } else {
-          return Color.WhiteModeFontColorSub
+          return [Color.Blue]
         }
       }
     }
 
     if TextLoader().findMonthlyTextList(date: dateString).count != 0 {
       if let value = SettingManager.shared.theme {
-        if value == .blackRed || value == .blackBlue {
-          return Color.DarkModeFontColorSub
+        if value == .blackRed || value == .whiteRed {
+          return [Color.LightRed]
         } else {
-          return Color.WhiteModeFontColorSub
+          return [Color.Blue]
         }
       }
     }
@@ -440,24 +477,43 @@ extension MainViewController: FSCalendarDataSource {
     for dateItem in dateList {
       if dateItem == dateString {
         if let value = SettingManager.shared.theme {
-          if value == .blackRed || value == .blackBlue {
-            return Color.DarkModeFontColorSub
+          if value == .blackRed || value == .whiteRed {
+            return [Color.LightRed]
           } else {
-            return Color.WhiteModeFontColorSub
+            return [Color.Blue]
           }
         }
       }
     }
 
-    if let value = SettingManager.shared.theme {
-      if value == .blackRed || value == .blackBlue {
-        return Color.DarkModeMain
-      } else {
-        return Color.WhiteModeMain
+    return nil
+  }
+}
+
+extension MainViewController: FSCalendarDataSource {
+  func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+    let dateString = formatter.string(from: date)
+    let dateList = DateLoader().findOnceDateList()
+
+    if TextLoader().findDailyTextList().count != 0 { return 1 }
+    if TextLoader().findWeeklyTextList(date: dateString).count != 0 { return 1 }
+    if TextLoader().findMonthlyTextList(date: dateString).count != 0 { return 1 }
+
+    for dateItem in dateList {
+      if dateItem == dateString {
+        return 1
       }
     }
 
-    return nil
+    return 0
+  }
+
+  func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventSelectionColorsFor date: Date) -> [UIColor]? {
+    return checkCalendarEventColor(date: date)
+  }
+
+  func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventDefaultColorsFor date: Date) -> [UIColor]? {
+    return checkCalendarEventColor(date: date)
   }
 
   func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
