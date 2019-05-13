@@ -18,6 +18,12 @@ class AlarmListViewController: UIViewController {
   
   var alarmTextList: [Text] = []
   var alarmTextDictionary: [(key: String, value: [Text])] = []
+
+  var textList: [Text] = []
+  var textDic: [(key: String, value: [Text])] = []
+  var startDate = Date()
+  var endDate = Date()
+
   var textSelected: Text?
 
   var selectedDatePicked: Date!
@@ -32,30 +38,47 @@ class AlarmListViewController: UIViewController {
       flowLayout.sectionHeadersPinToVisibleBounds = true
     }
     self.navigationItem.title = "Reminder List".localized
-    loadSetAlarmText()
+//    loadSetAlarmText()
+    loadTextList(date: startDate)
     setTheme()
   }
 
-  private func loadSetAlarmText() {
-    alarmTextList = TextLoader().findAlarmTextList()
+  private func loadTextList(date: Date) {
+    let loader = TextLoader()
+    var tempTextList: [Text] = []
 
-    var dic: [String: [Text]] = [:]
+    let dateString = formatter.string(from: date)
 
-    for text in alarmTextList {
-      if let _ = dic["\(formatter.string(from: text.alarmDatePicked!))"] {
-        dic["\(formatter.string(from: text.alarmDatePicked!))"]?.append(text)
-      } else {
-        dic["\(formatter.string(from: text.alarmDatePicked!))"] = [text]
-      }
-    }
-    alarmTextDictionary = dic.sorted { $0.0 < $1.0 }
-    if alarmTextList.count == 0 {
-      messageLabel.isHidden = false
-      messageLabel.text = "No Upcoming Reminder".localized
-    } else {
-      messageLabel.isHidden = true
+    tempTextList += loader.findOnceTextList(date: dateString)
+    tempTextList += loader.findDailyTextList()
+    tempTextList += loader.findWeeklyTextList(date: dateString)
+    tempTextList += loader.findMonthlyTextList(date: dateString)
+
+    if tempTextList.count != 0 {
+      textDic.append((key: dateString, value: tempTextList))
     }
   }
+//
+//  private func loadSetAlarmText() {
+//    alarmTextList = TextLoader().findAlarmTextList()
+//
+//    var dic: [String: [Text]] = [:]
+//
+//    for text in alarmTextList {
+//      if let _ = dic["\(formatter.string(from: text.alarmDatePicked!))"] {
+//        dic["\(formatter.string(from: text.alarmDatePicked!))"]?.append(text)
+//      } else {
+//        dic["\(formatter.string(from: text.alarmDatePicked!))"] = [text]
+//      }
+//    }
+//    alarmTextDictionary = dic.sorted { $0.0 < $1.0 }
+//    if alarmTextList.count == 0 {
+//      messageLabel.isHidden = false
+//      messageLabel.text = "No Upcoming Reminder".localized
+//    } else {
+//      messageLabel.isHidden = true
+//    }
+//  }
 
   private func setTheme() {
     guard let theme = SettingManager.shared.theme else { return }
@@ -85,11 +108,10 @@ class AlarmListViewController: UIViewController {
 
 extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return alarmTextDictionary[section].value.count
+    return textDic[section].value.count
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlarmCollectionViewCell", for: indexPath) as! AlarmCollectionViewCell
 
     guard let theme = SettingManager.shared.theme else { return cell }
@@ -117,12 +139,12 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
       }
     }
 
-    let dateWritten = alarmTextDictionary[indexPath.section].value[indexPath.row].date
+    let dateWritten = textDic[indexPath.section].value[indexPath.row].date
     let dateWrittenFormat = DateStringChanger().dateFormatChange(dateWithHyphen: dateWritten)
 
-    cell.textInstance = alarmTextDictionary[indexPath.section].value[indexPath.row]
+    cell.textInstance = textDic[indexPath.section].value[indexPath.row]
 
-    cell.textLabel.text = alarmTextDictionary[indexPath.section].value[indexPath.row].string
+    cell.textLabel.text = textDic[indexPath.section].value[indexPath.row].string
     cell.dateLabel.text = String(format: NSLocalizedString("Memo Location : %@", comment: ""), dateWrittenFormat)
 
     cell.delegate = self
@@ -135,13 +157,13 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
   }
 
   func numberOfSections(in collectionView: UICollectionView) -> Int {
-    return alarmTextDictionary.count
+    return textDic.count
   }
 
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
     let alarmTimeHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "AlarmCollectionReusableView", for: indexPath) as! AlarmCollectionReusableView
 
-    alarmTimeHeaderView.alarmTimeLabel.text = DateStringChanger().dateFormatChange(dateWithHyphen: alarmTextDictionary[indexPath.section].key)
+    alarmTimeHeaderView.alarmTimeLabel.text = DateStringChanger().dateFormatChange(dateWithHyphen: textDic[indexPath.section].key)
 
     guard let theme = SettingManager.shared.theme else { return alarmTimeHeaderView }
 
@@ -160,7 +182,7 @@ extension AlarmListViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let constDateTextHeight = "text".height(withConstrainedWidth: UIScreen.main.bounds.width - 40 - 40, font: UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.medium))
 
-    let height = alarmTextDictionary[indexPath.section].value[indexPath.row].string.height(withConstrainedWidth: UIScreen.main.bounds.width - 40 - 40, font: UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.semibold)) + constDateTextHeight + 10
+    let height = textDic[indexPath.section].value[indexPath.row].string.height(withConstrainedWidth: UIScreen.main.bounds.width - 40 - 40, font: UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.semibold)) + constDateTextHeight + 10
 
     return CGSize(width: UIScreen.main.bounds.width - 20, height: height)
   }
@@ -254,7 +276,7 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
   }
 
   private func reloadCollectionView() {
-    loadSetAlarmText()
+//    loadSetAlarmText()
     collectionView.reloadData()
   }
 }
