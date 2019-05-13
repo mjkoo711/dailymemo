@@ -525,7 +525,7 @@ extension MainViewController: FSCalendarDataSource {
 
   func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
     if let value = SettingManager.shared.theme {
-      if formatter.string(from: date) == formatter.string(from: today) {
+      if formatter.string(from: date) == formatter.string(from: calendar.today ?? today) {
         return Color.White
       }
       if value == .blackRed || value == .blackBlue {
@@ -544,13 +544,6 @@ extension MainViewController: FSCalendarDataSource {
 
   // MARK: select date border color
   func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, borderSelectionColorFor date: Date) -> UIColor? {
-    if let value = SettingManager.shared.theme {
-      if value == .blackBlue || value == .whiteBlue {
-        return Color.Blue
-      } else  if value == .blackRed || value == .whiteRed {
-        return Color.LightRed
-      }
-    }
     return nil
   }
 
@@ -558,9 +551,9 @@ extension MainViewController: FSCalendarDataSource {
   func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleSelectionColorFor date: Date) -> UIColor? {
     if let value = SettingManager.shared.theme {
       if value == .blackBlue || value == .blackRed {
-        return Color.DarkModeFontColor
+        return .white
       } else if value == .whiteBlue || value == .whiteRed {
-        return Color.WhiteModeFontColor
+        return .white
       }
     }
     return nil
@@ -570,15 +563,23 @@ extension MainViewController: FSCalendarDataSource {
   func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
     if let value = SettingManager.shared.theme {
       if value == .blackBlue || value == .blackRed {
-        if date == today {
-          return Color.Blue
+        if date == calendar.today || date == today {
+          if value == .blackBlue {
+            return Color.Blue
+          } else if value == .blackRed {
+            return Color.LightRed
+          }
         }
-        return Color.DarkModeMain
+        return Color.DarkGray
       } else  if value == .whiteBlue || value == .whiteRed {
-        if date == today {
-          return Color.LightRed
+        if date == calendar.today || date == today {
+          if value == .whiteBlue {
+            return Color.Blue
+          } else if value == .whiteRed {
+            return Color.LightRed
+          }
         }
-        return Color.WhiteModeMain
+        return Color.LightGray
       }
     }
     return nil
@@ -608,7 +609,13 @@ extension MainViewController: TextInputViewControllerDelegate, TextModifyViewCon
   }
 
   @objc func reloadTodayCollectionViewAndCalendarView() {
-    let date = formatter.string(from: Date())
+    today = Date()
+    var date = ""
+    if let selectDateStr = selectDateString {
+      date = selectDateStr
+    } else {
+      date = formatter.string(from: Date())
+    }
     textList = TextLoader().findOnceTextList(date: date) + TextLoader().findDailyTextList() + TextLoader().findWeeklyTextList(date: date) + TextLoader().findMonthlyTextList(date: date)
     textCompletedList = FMDBManager.shared.findTextCompleted(currentDate: selectDateString)
 
@@ -618,6 +625,7 @@ extension MainViewController: TextInputViewControllerDelegate, TextModifyViewCon
   }
 
   func reloadCollectionView(date: String) {
+    today = Date()
     textList = TextLoader().findOnceTextList(date: date) + TextLoader().findDailyTextList() + TextLoader().findWeeklyTextList(date: date) + TextLoader().findMonthlyTextList(date: date)
     textCompletedList = FMDBManager.shared.findTextCompleted(currentDate: selectDateString)
 
@@ -626,6 +634,7 @@ extension MainViewController: TextInputViewControllerDelegate, TextModifyViewCon
   }
 
   @objc func reloadCollectionViewAndCalendarView(date: String) {
+    today = Date()
     textList = TextLoader().findOnceTextList(date: date) + TextLoader().findDailyTextList() + TextLoader().findWeeklyTextList(date: date) + TextLoader().findMonthlyTextList(date: date)
     textCompletedList = FMDBManager.shared.findTextCompleted(currentDate: selectDateString)
 
