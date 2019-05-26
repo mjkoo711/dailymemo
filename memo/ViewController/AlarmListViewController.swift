@@ -18,6 +18,7 @@ class AlarmListViewController: UIViewController {
   
   var alarmTextList: [Text] = []
   var alarmTextDictionary: [(key: String, value: [Text])] = []
+  let loader = TextLoader()
 
   var textList: [Text] = []
   var textDic: [(key: String, value: [Text])] = []
@@ -44,19 +45,23 @@ class AlarmListViewController: UIViewController {
   }
 
   private func loadTextList(date: Date) {
-    let loader = TextLoader()
+    weak var weakSelf = self
+    guard let weakself = weakSelf else { return }
+
     var tempTextList: [Text] = []
 
-    let dateString = formatter.string(from: date)
+    let dateString = weakself.formatter.string(from: date)
 
-    tempTextList += loader.findOnceTextList(date: dateString)
-    tempTextList += loader.findDailyTextList()
-    tempTextList += loader.findWeeklyTextList(date: dateString)
-    tempTextList += loader.findMonthlyTextList(date: dateString)
+    tempTextList += weakself.loader.findOnceTextList(date: dateString)
+    tempTextList += weakself.loader.findDailyTextList()
+    tempTextList += weakself.loader.findWeeklyTextList(date: dateString)
+    tempTextList += weakself.loader.findMonthlyTextList(date: dateString)
 
     if tempTextList.count != 0 {
-      textDic.append((key: dateString, value: tempTextList))
+      weakself.textDic.append((key: dateString, value: tempTextList))
+      weakself.collectionView.reloadData()
     }
+
   }
 //
 //  private func loadSetAlarmText() {
@@ -152,6 +157,11 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
     // delete height size 임시방편 코드
     let frame = CGRect(x: cell.deleteButtonView.frame.origin.x, y: cell.deleteButtonView.frame.minY, width: 40, height: cell.frame.height)
     cell.deleteButtonView.frame = frame
+
+    if indexPath.section == textDic.count - 1 && indexPath.row == textDic[indexPath.section].value.count - 1 {
+      endDate = endDate.addingTimeInterval(86400)
+      loadTextList(date: endDate)
+    }
 
     return cell
   }
@@ -277,6 +287,8 @@ extension AlarmListViewController: AlarmCollectionViewCellDelegate {
 
   private func reloadCollectionView() {
 //    loadSetAlarmText()
+    let indexPaths = self.collectionView.indexPathsForVisibleItems
+    collectionView.reloadItems(at: indexPaths)
     collectionView.reloadData()
   }
 }

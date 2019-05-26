@@ -20,8 +20,6 @@ class MainViewController: UIViewController {
 
   @IBOutlet var informationView: UIView!
   @IBOutlet var calendarHeightConstraint: NSLayoutConstraint!
-  @IBOutlet var showAlarmListButtonView: UIView!
-  @IBOutlet var showAlarmListButtonViewImage: UIImageView!
   @IBOutlet var showSettingButtonView: UIView!
   @IBOutlet var showSettingButtonViewImage: UIImageView!
   @IBOutlet var todayLabel: UILabel!
@@ -106,9 +104,6 @@ class MainViewController: UIViewController {
 
     informationView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showInputTextViewController)))
     informationView.isUserInteractionEnabled = true
-
-    let tapGestureForAlarmListButtonView = UITapGestureRecognizer(target: self, action: #selector(showAlarmList))
-    showAlarmListButtonView.addGestureRecognizer(tapGestureForAlarmListButtonView)
 
     let tapGestureForSettingButtonView = UITapGestureRecognizer(target: self, action: #selector(showSettingViewController))
     showSettingButtonView.addGestureRecognizer(tapGestureForSettingButtonView)
@@ -208,7 +203,6 @@ class MainViewController: UIViewController {
         todayLabel.backgroundColor = Color.Blue
       }
       showSettingButtonViewImage.image = UIImage(named: "SettingWhite")
-      showAlarmListButtonViewImage.image = UIImage(named: "AlarmWhite")
       previousMonthButtonViewImage.image = UIImage(named: "MoreLeftWhite")
       previousDayButtonViewImage.image = UIImage(named: "LeftWhite")
       todayButtonViewImage.image = UIImage(named: "TodayWhite")
@@ -247,7 +241,6 @@ class MainViewController: UIViewController {
         todayLabel.backgroundColor = Color.Blue
       }
       showSettingButtonViewImage.image = UIImage(named: "Setting")
-      showAlarmListButtonViewImage.image = UIImage(named: "Alarm")
       previousMonthButtonViewImage.image = UIImage(named: "MoreLeft")
       previousDayButtonViewImage.image = UIImage(named: "Left")
       todayButtonViewImage.image = UIImage(named: "Today")

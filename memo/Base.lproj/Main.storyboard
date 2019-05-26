@@ -37,22 +37,6 @@
                                             <constraint firstItem="Q7I-ef-yy6" firstAttribute="width" secondItem="7kO-DX-Wzu" secondAttribute="width" id="vcA-zW-l5o"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJ4-M2-L03">
-                                        <rect key="frame" x="291" y="4" width="28" height="28"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alarm" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ieB-fx-G1S">
-                                                <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="JJ4-M2-L03" secondAttribute="height" multiplier="1:1" id="8um-Uj-UuV"/>
-                                            <constraint firstItem="ieB-fx-G1S" firstAttribute="height" secondItem="JJ4-M2-L03" secondAttribute="height" id="Dk5-ip-kI9"/>
-                                            <constraint firstItem="ieB-fx-G1S" firstAttribute="centerY" secondItem="JJ4-M2-L03" secondAttribute="centerY" id="Hf9-sc-nLT"/>
-                                            <constraint firstItem="ieB-fx-G1S" firstAttribute="width" secondItem="JJ4-M2-L03" secondAttribute="width" id="IBW-dj-AJz"/>
-                                            <constraint firstItem="ieB-fx-G1S" firstAttribute="centerX" secondItem="JJ4-M2-L03" secondAttribute="centerX" id="hnC-WV-09E"/>
-                                        </constraints>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GvL-Y1-cFd">
                                         <rect key="frame" x="0.0" y="6" width="65.5" height="24"/>
                                         <subviews>
@@ -96,14 +80,11 @@
                                     <constraint firstAttribute="trailing" secondItem="7kO-DX-Wzu" secondAttribute="trailing" id="1uB-2E-EGG"/>
                                     <constraint firstAttribute="bottom" secondItem="7kO-DX-Wzu" secondAttribute="bottom" constant="4" id="2Ce-zb-xSS"/>
                                     <constraint firstItem="GvL-Y1-cFd" firstAttribute="centerY" secondItem="703-uA-LwR" secondAttribute="centerY" id="BSG-Vu-lwD"/>
-                                    <constraint firstItem="JJ4-M2-L03" firstAttribute="top" secondItem="703-uA-LwR" secondAttribute="top" constant="4" id="MUn-yR-Dsu"/>
                                     <constraint firstItem="fKe-hV-XoI" firstAttribute="leading" secondItem="GvL-Y1-cFd" secondAttribute="trailing" id="TOs-wC-S6S"/>
                                     <constraint firstAttribute="height" constant="36" id="UPJ-7P-RBi"/>
                                     <constraint firstItem="GvL-Y1-cFd" firstAttribute="leading" secondItem="703-uA-LwR" secondAttribute="leading" id="X1c-cZ-6jM"/>
                                     <constraint firstItem="fKe-hV-XoI" firstAttribute="centerY" secondItem="GvL-Y1-cFd" secondAttribute="centerY" id="mGU-l7-esO"/>
                                     <constraint firstItem="7kO-DX-Wzu" firstAttribute="top" secondItem="703-uA-LwR" secondAttribute="top" constant="4" id="nVW-eK-DzO"/>
-                                    <constraint firstAttribute="bottom" secondItem="JJ4-M2-L03" secondAttribute="bottom" constant="4" id="rKc-gm-4vk"/>
-                                    <constraint firstItem="7kO-DX-Wzu" firstAttribute="leading" secondItem="JJ4-M2-L03" secondAttribute="trailing" constant="12" id="tnL-xI-yHE"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNr-Yo-yb2">
@@ -461,8 +442,6 @@
                         <outlet property="previousDayButtonViewImage" destination="NHE-g9-cFM" id="hbe-gf-ek4"/>
                         <outlet property="previousMonthButtonView" destination="SXw-Dn-k6v" id="jZa-HO-xUD"/>
                         <outlet property="previousMonthButtonViewImage" destination="ivg-Zb-rsp" id="TTQ-Ou-9Ba"/>
-                        <outlet property="showAlarmListButtonView" destination="JJ4-M2-L03" id="JNi-cr-ttN"/>
-                        <outlet property="showAlarmListButtonViewImage" destination="ieB-fx-G1S" id="RYt-tB-24d"/>
                         <outlet property="showSettingButtonView" destination="7kO-DX-Wzu" id="31F-p5-jsp"/>
                         <outlet property="showSettingButtonViewImage" destination="Q7I-ef-yy6" id="axm-5E-aOM"/>
                         <outlet property="timeLabel" destination="PJM-Sh-xCC" id="kZu-Vz-n1M"/>
@@ -472,7 +451,6 @@
                         <outlet property="todayLabel" destination="fKe-hV-XoI" id="YKu-K8-7xG"/>
                         <segue destination="tn0-Aa-Vxe" kind="presentation" identifier="textInputSegue" animates="NO" id="XST-5e-hpe"/>
                         <segue destination="1tT-NR-09D" kind="presentation" identifier="textModifySegue" animates="NO" id="3k1-ZI-Ovd"/>
-                        <segue destination="PlM-GZ-WKH" kind="show" identifier="showAlarmList" id="ZGY-Yp-MGe"/>
                         <segue destination="C2d-1L-H3u" kind="presentation" identifier="showSetting" id="Zty-7p-0zc"/>
                     </connections>
                 </viewController>
@@ -518,9 +496,6 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRP-DW-t2z">
                                                             <rect key="frame" x="0.0" y="5" width="260" height="22"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="260" id="nQp-Dc-jDN"/>
-                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -537,7 +512,6 @@
                                                         <constraint firstItem="PRP-DW-t2z" firstAttribute="top" secondItem="bWe-kz-zo2" secondAttribute="top" constant="5" id="ClP-iF-ZfO"/>
                                                         <constraint firstItem="kx7-WJ-BfT" firstAttribute="leading" secondItem="bWe-kz-zo2" secondAttribute="leading" id="alz-dI-dDY"/>
                                                         <constraint firstItem="kx7-WJ-BfT" firstAttribute="top" secondItem="PRP-DW-t2z" secondAttribute="bottom" constant="3" id="cId-Qv-AV8"/>
-                                                        <constraint firstAttribute="width" constant="270" id="daA-hk-HZk"/>
                                                         <constraint firstAttribute="trailing" secondItem="PRP-DW-t2z" secondAttribute="trailing" constant="10" id="gng-E7-HHW"/>
                                                         <constraint firstItem="PRP-DW-t2z" firstAttribute="leading" secondItem="bWe-kz-zo2" secondAttribute="leading" id="hay-kM-UcD"/>
                                                         <constraint firstAttribute="trailing" secondItem="kx7-WJ-BfT" secondAttribute="trailing" constant="10" id="oSR-Lh-omm"/>
@@ -550,7 +524,6 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DeleteWhite" translatesAutoresizingMaskIntoConstraints="NO" id="sAW-zl-alk">
                                                             <rect key="frame" x="8" y="13" width="24" height="24"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="24" id="PU7-2M-DdK"/>
                                                                 <constraint firstAttribute="width" secondItem="sAW-zl-alk" secondAttribute="height" multiplier="1:1" id="Wpo-dd-YnJ"/>
                                                                 <constraint firstAttribute="width" constant="24" id="nVB-vd-5tB"/>
                                                             </constraints>
@@ -980,7 +953,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Alarm" width="24" height="24"/>
         <image name="Arrow" width="36" height="36"/>
         <image name="Close" width="24" height="24"/>
         <image name="DeleteWhite" width="24" height="24"/>
