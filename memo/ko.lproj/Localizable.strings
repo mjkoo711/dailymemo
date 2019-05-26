@@ -6,7 +6,6 @@
   Copyright © 2019 mjkoo. All rights reserved.
 */
 "DONE" = "완료";
-"The Reminder sounds at %@" = "알람이 %@에 울립니다.";
 "Canceled" = "취소되었습니다";
 "CANCEL" = "취소";
 "Reminder Settings" = "알람 설정";
@@ -116,4 +115,7 @@
 
 "Write A Memo" = "메모 작성하기";
 
-
+"The reminder rings once at the set time." = "설정한 시간에 알람이 한번 울립니다";
+"The reminder rings every day at the set time." = "설정한 시간에 알람이 매일 울립니다" ;
+"The reminder rings every week at the set time." = "설정한 시간에 알람이 매주 울립니다";
+"The reminder rings every month at the set time." = "설정한 시간에 알람이 매월 울립니다";

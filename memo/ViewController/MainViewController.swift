@@ -22,6 +22,10 @@ class MainViewController: UIViewController {
   @IBOutlet var calendarHeightConstraint: NSLayoutConstraint!
   @IBOutlet var showSettingButtonView: UIView!
   @IBOutlet var showSettingButtonViewImage: UIImageView!
+
+  @IBOutlet var showNewReleaseButtonView: UIView!
+  @IBOutlet var showNewReleaseButtonViewImage: UIImageView!
+
   @IBOutlet var todayLabel: UILabel!
 
   @IBOutlet var expandView: UIView!
@@ -108,6 +112,9 @@ class MainViewController: UIViewController {
     let tapGestureForSettingButtonView = UITapGestureRecognizer(target: self, action: #selector(showSettingViewController))
     showSettingButtonView.addGestureRecognizer(tapGestureForSettingButtonView)
 
+    let tapGesgureForNewReleaseButtonView = UITapGestureRecognizer(target: self, action: #selector(showNewReleaseViewController) )
+    showNewReleaseButtonView.addGestureRecognizer(tapGesgureForNewReleaseButtonView)
+
     let tapGestureForPreviousMonthButtonView = UITapGestureRecognizer(target: self, action: #selector(movePreviousMonth))
     previousMonthButtonView.addGestureRecognizer(tapGestureForPreviousMonthButtonView)
 
@@ -133,6 +140,7 @@ class MainViewController: UIViewController {
 
     let tapGestureForExpandButtonView = UITapGestureRecognizer(target: self, action: #selector(toggleCalendar))
     expandView.addGestureRecognizer(tapGestureForExpandButtonView)
+//    setFirstTimeDescription()
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -203,6 +211,7 @@ class MainViewController: UIViewController {
         todayLabel.backgroundColor = Color.Blue
       }
       showSettingButtonViewImage.image = UIImage(named: "SettingWhite")
+      showNewReleaseButtonViewImage.image = UIImage(named: "ReleaseWhite")
       previousMonthButtonViewImage.image = UIImage(named: "MoreLeftWhite")
       previousDayButtonViewImage.image = UIImage(named: "LeftWhite")
       todayButtonViewImage.image = UIImage(named: "TodayWhite")
@@ -241,6 +250,7 @@ class MainViewController: UIViewController {
         todayLabel.backgroundColor = Color.Blue
       }
       showSettingButtonViewImage.image = UIImage(named: "Setting")
+      showNewReleaseButtonViewImage.image = UIImage(named: "Release")
       previousMonthButtonViewImage.image = UIImage(named: "MoreLeft")
       previousDayButtonViewImage.image = UIImage(named: "Left")
       todayButtonViewImage.image = UIImage(named: "Today")
@@ -270,7 +280,12 @@ class MainViewController: UIViewController {
     performSegue(withIdentifier: "showSetting", sender: self)
   }
 
-  private func showAlarmSettingView() {
+  @objc private func showNewReleaseViewController() {
+    Vibration.medium.vibrate()
+    WhatsNewAppHandler().showsWhatsNewApp(presentViewController: self)
+  }
+
+  private func showAlarmSettingView(type: NotificationType) {
     let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 230))
     datePicker.datePickerMode = .dateAndTime
     datePicker.minimumDate = Date()
@@ -291,12 +306,20 @@ class MainViewController: UIViewController {
 
       text.alarmDatePicked = self.selectedDateAlarmPicked
       self.textAlarmTrigger(text: text, isAlarmSetting: true)
-      AlarmManager().addNotification(textSelected: text, datePicked: self.selectedDateAlarmPicked, notificationType: .Once)
+      AlarmManager().addNotification(textSelected: text, datePicked: self.selectedDateAlarmPicked, notificationType: type)
       self.reloadCollectionView(date: self.selectDateString)
       // MARK: snackbar
       let message = MDCSnackbarMessage()
       message.buttonTextColor = Color.LightRed
-      message.text = String(format: NSLocalizedString("The Reminder sounds at %@", comment: ""), "\(self.formatterLocalized.string(from: datePicker.date))")
+      if type == .Once {
+        message.text = "The reminder rings once at the set time.".localized
+      } else if type == .Daily {
+        message.text = "The reminder rings every day at the set time.".localized
+      } else if type == .Weekly {
+        message.text = "The reminder rings every week at the set time.".localized
+      } else if type == .Monthly {
+        message.text = "The reminder rings every month at the set time.".localized
+      }
 
       let action = MDCSnackbarMessageAction()
       let actionHandler = {() in
@@ -492,20 +515,21 @@ extension MainViewController: FSCalendarDelegate {
 
 extension MainViewController: FSCalendarDataSource {
   func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+    var count = 0
     let dateString = formatter.string(from: date)
     let dateList = DateLoader().findOnceDateList()
 
-    if TextLoader().findDailyTextList().count != 0 { return 1 }
-    if TextLoader().findWeeklyTextList(date: dateString).count != 0 { return 1 }
-    if TextLoader().findMonthlyTextList(date: dateString).count != 0 { return 1 }
+    if TextLoader().findDailyTextList().count != 0 { count = count + 1 }
+    if TextLoader().findWeeklyTextList(date: dateString).count != 0 { count = count + 1 }
+    if TextLoader().findMonthlyTextList(date: dateString).count != 0 { count = count + 1 }
 
     for dateItem in dateList {
       if dateItem == dateString {
-        return 1
+        count = count + 1
+        break
       }
     }
-
-    return 0
+    return count
   }
 
   func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventSelectionColorsFor date: Date) -> [UIColor]? {
@@ -705,9 +729,9 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 extension MainViewController: TextCollectionViewCellDelegate {
-  func setAlarm(text: Text) {
+  func setAlarm(text: Text, type: NotificationType) {
     textSelected = text
-    self.showAlarmSettingView()
+    self.showAlarmSettingView(type: type)
   }
 
   func removeAlarm(text: Text) {
@@ -728,13 +752,21 @@ extension MainViewController: TextCollectionViewCellDelegate {
       actionSheet.title = text.string
       actionSheet.message =  "Reminder Time".localized + "\n" + "\(formatterLocalized.string(from: textAlarmDate))"
     }
-
-    if !text.isAlarmable() && text.repeatMode != .Once {
-      actionSheet.message = "You can not set reminders for repeatedly saved memo.".localized
-    }
+//
+//    if !text.isAlarmable() && text.repeatMode != .Once {
+//      actionSheet.message = "You can not set reminders for repeatedly saved memo.".localized
+//    }
 
     let modifyAlarmAction = UIAlertAction(title: "Modify Reminder".localized, style: .default, handler: { (action) in
-      self.showAlarmSettingView()
+      if text.repeatMode == .Once {
+        self.showAlarmSettingView(type: .Once)
+      } else if text.repeatMode == .Daily {
+        self.showAlarmSettingView(type: .Daily)
+      } else if text.repeatMode == .Weekly {
+        self.showAlarmSettingView(type: .Weekly)
+      } else if text.repeatMode == .Monthly {
+        self.showAlarmSettingView(type: .Monthly)
+      }
     })
 
     let copyAction = UIAlertAction(title: "Copy".localized, style: .default, handler: { (action) in
@@ -771,7 +803,7 @@ extension MainViewController: TextCollectionViewCellDelegate {
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let height = textList[indexPath.row].string.height(withConstrainedWidth: UIScreen.main.bounds.width - 57, font: UIFont.systemFont(ofSize: SettingManager.shared.fontSize!, weight: UIFont.Weight.medium)) + 8
+    let height = textList[indexPath.row].string.height(withConstrainedWidth: UIScreen.main.bounds.width - 60, font: UIFont.systemFont(ofSize: SettingManager.shared.fontSize!, weight: SettingManager.shared.fontWeight!)) + 8
     return CGSize(width: UIScreen.main.bounds.width - 25, height: height)
   }
 }
