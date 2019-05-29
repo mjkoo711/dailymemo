@@ -58,17 +58,17 @@ class AlarmManager {
 
     switch notificationType {
     case .Daily:
-      let triggerDaily = Calendar.current.dateComponents([.hour,.minute,], from: datePicked)
+      let triggerDaily = Calendar.current.dateComponents([.hour, .minute], from: datePicked)
       trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: true)
     case .Once:
-      let triggerDaily = Calendar.current.dateComponents([.year, .month, .day, .hour,.minute,], from: datePicked)
-      trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: false)
+      let triggerOnce = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute,], from: datePicked)
+      trigger = UNCalendarNotificationTrigger(dateMatching: triggerOnce, repeats: false)
     case .Weekly:
-      let triggerWeekly = Calendar.current.dateComponents([.weekday,.hour,.minute,], from: datePicked)
+      let triggerWeekly = Calendar.current.dateComponents([.weekday, .hour, .minute], from: datePicked)
       trigger = UNCalendarNotificationTrigger(dateMatching: triggerWeekly, repeats: true)
     case .Monthly:
-      let triggerWeekly = Calendar.current.dateComponents([.month,.weekday,.hour,.minute,], from: datePicked)
-      trigger = UNCalendarNotificationTrigger(dateMatching: triggerWeekly, repeats: true)
+      let triggerMonthly = Calendar.current.dateComponents([.day, .hour, .minute,], from: datePicked)
+      trigger = UNCalendarNotificationTrigger(dateMatching: triggerMonthly, repeats: true)
     }
 
     let request = UNNotificationRequest(identifier: textSelected.createdAt, content: content, trigger: trigger)

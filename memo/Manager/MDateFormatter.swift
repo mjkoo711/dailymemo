@@ -33,9 +33,9 @@ struct MDateFormatter {
       if YearMonthDayCountry.contains(languageCode) {
         localDateFormat = String(format: NSLocalizedString("%@년 %@월 %@일", comment: ""), "YYYY", "MM", "dd")
       } else if MonthDayYearCountry.contains(languageCode) {
-        localDateFormat = String(format: NSLocalizedString("%@ %@ / %@", comment: ""), "dd", "MM", "YYYY")
+        localDateFormat = String(format: NSLocalizedString("%@ %@ %@", comment: ""), "dd", "MM", "YYYY")
       } else {
-        localDateFormat = String(format: NSLocalizedString("%@ %@ / %@", comment: ""), "dd", "MM", "YYYY")
+        localDateFormat = String(format: NSLocalizedString("%@ %@ %@", comment: ""), "dd", "MM", "YYYY")
       }
     }
 

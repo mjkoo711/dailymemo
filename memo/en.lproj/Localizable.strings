@@ -7,7 +7,6 @@
 */
 
 "DONE" = "DONE";
-"The Reminder sounds at %@" = "The Reminder sounds at %@";
 "Canceled" = "Canceled";
 "CANCEL" = "CANCEL";
 "Reminder Settings" = "Reminder Settings";
@@ -101,7 +100,7 @@
 "SATURDAY" = "SATURDAY";
 
 "%@년 %@월 %@일" = "%@년 %@월 %@일";
-"%@ %@ / %@" = "%@ %@ / %@";
+"%@ %@ %@" = "%@ %@ %@";
 
 
 
@@ -118,4 +117,7 @@
 
 "Write A Memo" = "Write A Memo";
 
-
+"The reminder rings once at the set time." = "The reminder rings once at the set time.";
+"The reminder rings every day at the set time." = "The reminder rings every day at the set time." ;
+"The reminder rings every week at the set time." = "The reminder rings every week at the set time.";
+"The reminder rings every month at the set time." = "The reminder rings every month at the set time.";

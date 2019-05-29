@@ -6,7 +6,6 @@
   Copyright © 2019 mjkoo. All rights reserved.
 */
 "DONE" = "完了";
-"The Reminder sounds at %@" = "アラームは%@に鳴ります。";
 "Canceled" = "キャンセル";
 "CANCEL" = "キャンセル";
 "Reminder Settings" = "リマインダーの設定";
@@ -100,7 +99,7 @@
 "SATURDAY" = "土曜日";
 
 "%@년 %@월 %@일" = "%@年 %@月 %@日";
-"%@ %@ / %@" = "%@ %@ / %@";
+"%@ %@ %@" = "%@ %@ %@";
 
 "Single tap to write memo" =  "メモを書くためのシングルタップ";
 "Write a simple note with a click on the screen." = "画面をクリックして簡単なメモを書きます。";
@@ -115,4 +114,7 @@
 
 "Write A Memo" = "メモを書く";
 
-
+"The reminder rings once at the set time." = "設定した時間にアラームが一度鳴ります。";
+"The reminder rings every day at the set time." = "設定した時間にアラームが毎日鳴ります" ;
+"The reminder rings every week at the set time." = "設定した時間にアラームが毎週鳴ります";
+"The reminder rings every month at the set time." = "設定した時間にアラームが毎月鳴ります";

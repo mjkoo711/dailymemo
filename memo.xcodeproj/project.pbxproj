@@ -49,10 +49,7 @@
 		E28D45112242817600F67B08 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3C3D6220175A500C74C57 /* Text.swift */; };
 		E28D45122242849D00F67B08 /* TextInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20CE65221FD8E0300FF495E /* TextInputViewController.swift */; };
 		E28D4513224284A100F67B08 /* TextModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367422089106001D05C8 /* TextModifyViewController.swift */; };
-		E28D4514224284A300F67B08 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE2222D12CE00D84894 /* AlarmListViewController.swift */; };
-		E28D4515224284A400F67B08 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE2222D12CE00D84894 /* AlarmListViewController.swift */; };
 		E28D4517224284AB00F67B08 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266365F22058BC2001D05C8 /* TextCollectionViewCell.swift */; };
-		E28D4518224284AE00F67B08 /* AlarmCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE4222D146400D84894 /* AlarmCollectionViewCell.swift */; };
 		E28D451A224284B300F67B08 /* AlarmCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE8222D59C400D84894 /* AlarmCollectionReusableView.swift */; };
 		E28D451B224284B800F67B08 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367222087213001D05C8 /* Const.swift */; };
 		E28D451C224284BC00F67B08 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266367C2208B319001D05C8 /* Vibration.swift */; };
@@ -92,7 +89,6 @@
 		E2A2B0E9225272C20002E6D2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A2B0E8225272C20002E6D2 /* StoreKit.framework */; };
 		E2A2B0EC225272FB0002E6D2 /* IAPAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2B0EA225272FB0002E6D2 /* IAPAlertViewController.swift */; };
 		E2A2B0ED225272FB0002E6D2 /* IAPAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2A2B0EB225272FB0002E6D2 /* IAPAlertViewController.xib */; };
-		E2C37AE5222D146400D84894 /* AlarmCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE4222D146400D84894 /* AlarmCollectionViewCell.swift */; };
 		E2C37AE9222D59C400D84894 /* AlarmCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AE8222D59C400D84894 /* AlarmCollectionReusableView.swift */; };
 		E2C37AEB222D7B2B00D84894 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AEA222D7B2B00D84894 /* IntExtensions.swift */; };
 		E2C37AED222D87A900D84894 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C37AEC222D87A900D84894 /* SettingViewController.swift */; };
@@ -199,8 +195,6 @@
 		E2A2B0E8225272C20002E6D2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E2A2B0EA225272FB0002E6D2 /* IAPAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPAlertViewController.swift; sourceTree = "<group>"; };
 		E2A2B0EB225272FB0002E6D2 /* IAPAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IAPAlertViewController.xib; sourceTree = "<group>"; };
-		E2C37AE2222D12CE00D84894 /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
-		E2C37AE4222D146400D84894 /* AlarmCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCollectionViewCell.swift; sourceTree = "<group>"; };
 		E2C37AE8222D59C400D84894 /* AlarmCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCollectionReusableView.swift; sourceTree = "<group>"; };
 		E2C37AEA222D7B2B00D84894 /* IntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
 		E2C37AEC222D87A900D84894 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -273,7 +267,6 @@
 				E2F36CF521FAE0FA00A9C24C /* MainViewController.swift */,
 				E20CE65221FD8E0300FF495E /* TextInputViewController.swift */,
 				E266367422089106001D05C8 /* TextModifyViewController.swift */,
-				E2C37AE2222D12CE00D84894 /* AlarmListViewController.swift */,
 				E2C37AEC222D87A900D84894 /* SettingViewController.swift */,
 				E2565F7A2250C5F500BC13FD /* ProgressViewController.swift */,
 				E2565F7B2250C5F500BC13FD /* ProgressViewController.xib */,
@@ -352,7 +345,6 @@
 			isa = PBXGroup;
 			children = (
 				E266365F22058BC2001D05C8 /* TextCollectionViewCell.swift */,
-				E2C37AE4222D146400D84894 /* AlarmCollectionViewCell.swift */,
 				E2635381223C06DF006A2E43 /* SettingCollectionViewCell.swift */,
 			);
 			path = Cell;
@@ -669,7 +661,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E28D45352242850400F67B08 /* SettingManager.swift in Sources */,
-				E28D4514224284A300F67B08 /* AlarmListViewController.swift in Sources */,
 				E28D4521224284C900F67B08 /* Key.swift in Sources */,
 				E28D451D224284BE00F67B08 /* RepeatMode.swift in Sources */,
 				E28D451F224284C300F67B08 /* Month.swift in Sources */,
@@ -697,7 +688,6 @@
 				E27FD82C2245EC6B00339705 /* WidgetHeaderView.swift in Sources */,
 				E28D451E224284C100F67B08 /* Day.swift in Sources */,
 				E28D452B224284E200F67B08 /* UILabelExtension.swift in Sources */,
-				E28D4518224284AE00F67B08 /* AlarmCollectionViewCell.swift in Sources */,
 				E28D45342242850200F67B08 /* DateLoader.swift in Sources */,
 				E28D45122242849D00F67B08 /* TextInputViewController.swift in Sources */,
 				E28D452D224284E800F67B08 /* UIVIewExtensions.swift in Sources */,
@@ -739,7 +729,6 @@
 				E29A247422415655004504B8 /* Vibrate.swift in Sources */,
 				E272F750223E6F2000CD5FA8 /* Theme.swift in Sources */,
 				E26636672205A225001D05C8 /* UILabelExtension.swift in Sources */,
-				E28D4515224284A400F67B08 /* AlarmListViewController.swift in Sources */,
 				E21E11F121FC2485004BBFD9 /* Clock.swift in Sources */,
 				E2C37AEB222D7B2B00D84894 /* IntExtensions.swift in Sources */,
 				E2C37AF822323D1F00D84894 /* RepeatMode.swift in Sources */,
@@ -748,7 +737,6 @@
 				E2F36CF621FAE0FA00A9C24C /* MainViewController.swift in Sources */,
 				E268F3B8223E2FBE00534565 /* FontWeight.swift in Sources */,
 				E29A247622415665004504B8 /* LineBreak.swift in Sources */,
-				E2C37AE5222D146400D84894 /* AlarmCollectionViewCell.swift in Sources */,
 				E2E3C3DD2201839B00C74C57 /* DateStringChanger.swift in Sources */,
 				E246D339223781E50022FC4D /* Color.swift in Sources */,
 				E2565F7F2250CD1900BC13FD /* CalendarMode.swift in Sources */,

@@ -11,7 +11,7 @@ import MaterialComponents.MaterialSnackbar
 
 protocol TextCollectionViewCellDelegate {
   func showActionSheet(text: Text)
-  func setAlarm(text: Text)
+  func setAlarm(text: Text, type: NotificationType)
   func removeAlarm(text: Text)
   func reloadCollectionView(date: String)
 }
@@ -57,21 +57,20 @@ class TextCollectionViewCell: UICollectionViewCell {
   @objc func didDoubleTap() {
     guard let text = textInstance else { return }
 
-    if text.repeatMode == .Once, text.isAlarmSetting == 0 {
-      Vibration.medium.vibrate()
-      delegate?.setAlarm(text: textInstance!)
-    } else if text.repeatMode == .Daily {
-      let message = MDCSnackbarMessage()
-      message.text = "You can not set reminder for text that are repeated every day.".localized
-      MDCSnackbarManager.show(message)
-    } else if text.repeatMode == .Weekly {
-      let message = MDCSnackbarMessage()
-      message.text = "You can not set reminder for text that are repeated every week.".localized
-      MDCSnackbarManager.show(message)
-    } else if text.repeatMode == .Monthly {
-      let message = MDCSnackbarMessage()
-      message.text = "You can not set reminder for text that are repeated every month.".localized
-      MDCSnackbarManager.show(message)
+    if text.isAlarmSetting == 0  {
+      if text.repeatMode == .Once {
+        Vibration.medium.vibrate()
+        delegate?.setAlarm(text: textInstance!, type: .Once)
+      } else if text.repeatMode == .Daily {
+        Vibration.medium.vibrate()
+        delegate?.setAlarm(text: textInstance!, type: .Daily)
+      } else if text.repeatMode == .Weekly {
+        Vibration.medium.vibrate()
+        delegate?.setAlarm(text: textInstance!, type: .Weekly)
+      } else if text.repeatMode == .Monthly {
+        Vibration.medium.vibrate()
+        delegate?.setAlarm(text: textInstance!, type: .Monthly)
+      }
     } else if text.isAlarmSetting == 1 {
       Vibration.oldSchool.vibrate()
 

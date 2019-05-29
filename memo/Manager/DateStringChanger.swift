@@ -107,16 +107,16 @@ class DateStringChanger {
     let array = dateWithHyphen.split(separator: "-")
     let year = array[0]
     let month = getMinimumStringMonth(month: String(array[1]))
-    let day = array[2]
+    let day = Int(String(array[2]))!
 
     if let languageCode = Locale.current.languageCode {
       if YearMonthDayCountry.contains(languageCode) {
-        return String(format: NSLocalizedString("%@년 %@월 %@일", comment: ""), "\(year)", "\(array[1])", "\(day)")
+        return String(format: NSLocalizedString("%@년 %@월 %@일", comment: ""), "\(year)", "\(Int(String(array[1]))!)", "\(day)")
       } else if MonthDayYearCountry.contains(languageCode) {
-        return String(format: NSLocalizedString("%@ %@ / %@", comment: ""), "\(day)", "\(month)", "\(year)")
+        return String(format: NSLocalizedString("%@ %@ %@", comment: ""), "\(day)", "\(month)", "\(year)")
       }
     }
 
-    return String(format: NSLocalizedString("%@ %@ / %@", comment: ""), "\(day)", "\(month)", "\(year)")
+    return String(format: NSLocalizedString("%@ %@ %@", comment: ""), "\(day)", "\(month)", "\(year)")
   }
 }
